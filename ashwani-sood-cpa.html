@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashwani Sood CPA | Accountants You Can Count On — Brampton, ON</title>
+<meta name="description" content="Brampton CPA firm offering personal & corporate tax, bookkeeping, payroll, HST/GST, financial statements, CRA audit support, incorporation, NUANS & business advisory. Rated 4.9 on Google. Book a free consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#1B2A33; --charcoal-2:#22343f; --ink:#1d2a31; --slate:#5d6f78;
+  --teal:#1F7A6D; --teal-2:#2a988a; --teal-soft:#bfe0d9; --copper:#c08a4a;
+  --sand:#F6F1E7; --paper:#ffffff; --line:#e7ddcb; --mist:#efe8d9;
+  --r:16px; --shadow:0 18px 50px -24px rgba(27,42,51,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--sand);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Newsreader',serif;font-weight:600;line-height:1.12;letter-spacing:-.01em;color:var(--charcoal)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:'Inter';font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.95rem;padding:.92rem 1.6rem;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
+.btn-teal{background:linear-gradient(135deg,#239485,#1c6b60);color:#fff;box-shadow:0 12px 26px -12px rgba(31,122,109,.7)}
+.btn-teal:hover{transform:translateY(-2px);box-shadow:0 18px 34px -12px rgba(31,122,109,.8)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--charcoal);color:#fff}
+.btn-dark:hover{background:var(--charcoal-2);transform:translateY(-2px)}
+
+/* top bar */
+.topbar{background:var(--charcoal);color:#cfe0dd;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;gap:1rem}
+.topbar a{color:#dceae7;transition:.2s}.topbar a:hover{color:#fff}
+.topbar .tb-r{display:flex;gap:1.4rem;align-items:center}
+.topbar .pill{display:inline-flex;align-items:center;gap:.4rem}
+@media(max-width:760px){.topbar .hidem{display:none}}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mark{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--charcoal),#2b4750);display:grid;place-items:center;box-shadow:var(--shadow)}
+.brand .mark svg{width:24px;height:24px}
+.brand b{font-family:'Newsreader';font-size:1.18rem;font-weight:600;color:var(--charcoal);letter-spacing:-.02em;line-height:1}
+.brand span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-top:3px}
+.menu{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500}
+.menu a{color:var(--ink);transition:.2s;position:relative}
+.menu a:hover{color:var(--teal)}
+.nav-cta{display:flex;align-items:center;gap:1rem}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:26px;height:2px;background:var(--charcoal);border-radius:2px;transition:.3s}
+@media(max-width:960px){
+  .menu{position:fixed;inset:78px 0 auto 0;background:var(--sand);flex-direction:column;padding:1.6rem 28px;gap:1.2rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;box-shadow:var(--shadow)}
+  .menu.open{transform:translateY(0)}
+  .burger{display:flex}.nav-cta .btn:not(.callbtn){display:none}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+   radial-gradient(1100px 520px at 80% -10%,rgba(31,122,109,.22),transparent 60%),
+   linear-gradient(160deg,#1B2A33 0%,#1e3640 55%,#214049 100%);color:#e9f1ef}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:5.2rem 28px 5.6rem}
+.hero h1{color:#fff;font-size:clamp(2.5rem,4.6vw,4rem);font-weight:600}
+.hero h1 em{font-style:italic;color:var(--teal-soft);font-weight:500}
+.hero p.lead{color:#c5d6d2;font-size:1.12rem;max-width:34rem;margin:1.4rem 0 2.1rem}
+.hero .acts{display:flex;gap:1rem;flex-wrap:wrap}
+.hero .meta{display:flex;gap:2rem;margin-top:2.6rem;flex-wrap:wrap}
+.hero .meta .n{font-family:'Newsreader';font-size:1.9rem;color:#fff;font-weight:600}
+.hero .meta .l{font-size:.78rem;color:#9fb6b1;letter-spacing:.04em}
+.leaf{position:absolute;right:-50px;top:-30px;width:480px;opacity:.07;z-index:1}
+.card-trust{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:2rem;backdrop-filter:blur(6px)}
+.card-trust h4{color:#fff;font-size:1.15rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem}
+.tl{display:flex;gap:.85rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.09);align-items:flex-start}
+.tl:last-child{border:0}
+.tl svg{flex:none;width:22px;height:22px;margin-top:2px;color:var(--teal-soft)}
+.tl b{color:#fff;font-weight:600;display:block;font-size:.95rem}
+.tl span{color:#aec2bd;font-size:.84rem}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:2.4rem}.leaf{display:none}}
+
+/* trust strip */
+.strip{background:var(--charcoal-2);color:#cddfdb}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;justify-content:center;align-items:center;padding:1.1rem 28px;font-size:.86rem;font-weight:500}
+.strip .i{display:flex;align-items:center;gap:.55rem}
+.strip svg{width:18px;height:18px;color:var(--teal-soft)}
+
+/* sections */
+section{padding:5.4rem 0}
+.sec-head{max-width:660px;margin-bottom:3rem}
+.sec-head.center{margin:0 auto 3rem;text-align:center}
+.sec-head h2{font-size:clamp(2rem,3.4vw,2.85rem);margin:.7rem 0 .8rem}
+.sec-head p{color:var(--slate);font-size:1.04rem}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;align-items:center}
+.about .visual{position:relative;border-radius:24px;min-height:440px;overflow:hidden;background:linear-gradient(150deg,#1e3640,#27505b);box-shadow:var(--shadow);display:grid;place-items:center;padding:2rem}
+.badge-stack{display:grid;gap:1rem;width:100%}
+.bcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:1.3rem 1.5rem;color:#fff}
+.bcard .big{font-family:'Newsreader';font-size:2.1rem;font-weight:600;color:var(--teal-soft)}
+.bcard .sm{color:#c0d3cf;font-size:.86rem}
+.about ul{list-style:none;margin-top:1.4rem;display:grid;gap:.9rem}
+.about li{display:flex;gap:.75rem;align-items:flex-start;color:var(--ink)}
+.about li svg{flex:none;width:22px;height:22px;color:var(--teal);margin-top:2px}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:2.2rem}.about .visual{min-height:340px}}
+
+/* services */
+.services{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.svc{background:var(--sand);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;transition:.28s;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--teal-soft)}
+.svc .ic{width:50px;height:50px;border-radius:13px;background:linear-gradient(135deg,#1f7a6d22,#c08a4a22);display:grid;place-items:center;margin-bottom:1.1rem}
+.svc .ic svg{width:26px;height:26px;color:var(--teal)}
+.svc h3{font-size:1.18rem;margin-bottom:.55rem}
+.svc ul{list-style:none;display:grid;gap:.4rem}
+.svc li{display:flex;gap:.5rem;align-items:flex-start;color:var(--slate);font-size:.9rem}
+.svc li svg{flex:none;width:16px;height:16px;color:var(--teal);margin-top:4px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+
+/* split band */
+.band{background:linear-gradient(160deg,#1e3640,#1B2A33);color:#dce8e5;border-radius:26px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;box-shadow:var(--shadow)}
+.band h3{color:#fff;font-size:1.9rem}
+.band p{color:#b6c9c4;margin:.8rem 0 1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.5rem 1rem;font-size:.84rem;color:#e7f0ee}
+@media(max-width:780px){.band{grid-template-columns:1fr;padding:2rem}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem;position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:'Newsreader';font-size:1.5rem;color:var(--teal);font-weight:600}
+.step h4{font-size:1.1rem;margin:.5rem 0 .4rem}
+.step p{color:var(--slate);font-size:.9rem}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* testimonials */
+.tests{background:var(--mist)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem}
+.stars{color:var(--copper);letter-spacing:2px;margin-bottom:.7rem}
+.quote p{font-size:.95rem;color:var(--ink)}
+.quote .who{margin-top:1.1rem;font-weight:600;font-size:.9rem;color:var(--charcoal)}
+.quote .who span{display:block;font-weight:400;color:var(--slate);font-size:.8rem}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+
+/* rating banner */
+.ratebar{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 2rem;max-width:640px;margin:0 auto 3rem;box-shadow:var(--shadow)}
+.ratebar .num{font-family:'Newsreader';font-size:2.6rem;color:var(--charcoal);font-weight:700;line-height:1}
+.ratebar .stars{font-size:1.1rem;margin:0}
+.ratebar .lbl{font-size:.86rem;color:var(--slate)}
+
+/* cta */
+.cta-final{background:linear-gradient(135deg,#1B2A33,#225a51);color:#fff;border-radius:28px;padding:3.4rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cta-final h2{color:#fff;font-size:clamp(1.9rem,3.2vw,2.6rem)}
+.cta-final p{color:#c4d8d3;max-width:38rem;margin:1rem auto 1.9rem}
+.cta-final .acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* locations */
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.loc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.loc .tag{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.loc h4{font-size:1.08rem;margin:.4rem 0 .5rem}
+.loc p{color:var(--slate);font-size:.9rem}
+.loc a{color:var(--teal);font-weight:600;font-size:.9rem}
+@media(max-width:880px){.loc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.loc-grid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem}
+.cinfo .row{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.cinfo .row svg{width:24px;height:24px;color:var(--teal);flex:none}
+.cinfo .row b{display:block;color:var(--charcoal);font-size:1rem}
+.cinfo .row span{color:var(--slate);font-size:.92rem}
+.mapwrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.mapwrap iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.15)}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--charcoal);color:#bacbc6;padding:3.4rem 0 1.6rem;font-size:.9rem}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h5{color:#fff;font-family:'Inter';font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+footer a{color:#a9c0bb;display:block;padding:.28rem 0;transition:.2s}footer a:hover{color:var(--teal-soft)}
+.fbrand b{font-family:'Newsreader';color:#fff;font-size:1.3rem}
+.fbrand p{margin-top:.8rem;color:#90a8a2;max-width:22rem}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding-top:1.4rem;color:#7f9893;font-size:.82rem}
+@media(max-width:780px){.fgrid{grid-template-columns:1fr 1fr}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.float-call{position:fixed;right:18px;bottom:18px;z-index:60;display:none}
+.float-call a{display:flex;align-items:center;gap:.5rem}
+@media(max-width:960px){.float-call{display:block}}
+</style>
+</head>
+<body>
+
+<!-- top bar -->
+<div class="topbar"><div class="wrap">
+  <span class="pill hidem">🍁 Brampton CPA firm · Personal & corporate tax, accounting & business advisory</span>
+  <div class="tb-r">
+    <a href="tel:9057994660" class="pill">📞 (905) 799-4660</a>
+    <a href="mailto:aksood@ashwanisood.com" class="pill hidem">✉ aksood@ashwanisood.com</a>
+  </div>
+</div></div>
+
+<!-- nav -->
+<header><div class="wrap"><nav>
+  <a class="brand" href="#top">
+    <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#bfe0d9" stroke-width="2"><path d="M4 20h16M6 20V9m4 11V9m4 11V9m4 11V9M4 9l8-5 8 5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span><b>Ashwani Sood CPA</b><span>Chartered Professional Accountant</span></span>
+  </a>
+  <div class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#locations">Locations</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="tel:9057994660" class="btn btn-dark callbtn">Call Now</a>
+    <a href="#contact" class="btn btn-teal">Free Consultation</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav></div></header>
+
+<!-- hero -->
+<section class="hero" id="top" style="padding:0">
+  <svg class="leaf" viewBox="0 0 24 24" fill="#1F7A6D"><path d="M12 2l2.4 5.2L20 8l-4 3.9.95 5.6L12 14.9 7.05 17.5 8 11.9 4 8l5.6-.8L12 2z"/></svg>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Brampton · Serving the GTA</span>
+      <h1>Accountants you can <em>count on.</em></h1>
+      <p class="lead">A trusted Brampton CPA firm helping individuals, families and businesses with tax, accounting, bookkeeping and advisory — packaged together to realize your goals and keep you onside with the CRA, all year round.</p>
+      <div class="acts">
+        <a href="#contact" class="btn btn-teal">Book a Free Consultation →</a>
+        <a href="tel:9057994660" class="btn btn-ghost">📞 (905) 799-4660</a>
+      </div>
+      <div class="meta">
+        <div><div class="n">4.9★</div><div class="l">311 Google reviews</div></div>
+        <div><div class="n">5</div><div class="l">Offices across Brampton</div></div>
+        <div><div class="n">CPA</div><div class="l">Designated & regulated</div></div>
+      </div>
+    </div>
+    <div class="card-trust reveal">
+      <h4>🍁 Why clients count on us</h4>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><div><b>Designated CPA expertise</b><span>Corporate (T2), personal (T1), HST, payroll and WSIB filings handled accurately and on time.</span></div></div>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v5c0 5-3.5 9-8 11-4.5-2-8-6-8-11V6l8-4z" stroke-linejoin="round"/></svg><div><b>Proactive tax planning</b><span>We plan ahead for tax efficiency so there are no costly surprises down the road.</span></div></div>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2M12 3a4 4 0 100 8 4 4 0 000-8z" stroke-linejoin="round"/></svg><div><b>One firm, full package</b><span>Accounting, advisory and taxes offered together so your whole financial picture stays connected.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- strip -->
+<div class="strip"><div class="wrap">
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> CPA-Designated Firm</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free Tax Consultation</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Cloud Accounting Available</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> CRA Audit & Appeals Support</div>
+</div></div>
+
+<!-- about -->
+<section id="about"><div class="wrap about">
+  <div class="reveal">
+    <span class="eyebrow">About the firm</span>
+    <h2>The language of practical business life.</h2>
+    <p style="color:var(--slate);margin-top:1rem">Ashwani Sood CPA is an accounting firm built to help you and your business succeed. We bring accounting, business advisory and taxation together as one package — giving entrepreneurs the first-hand information they need to grow, while keeping their statutory filings accurate and on time. As a commercially focused practice, we understand business owners because we work alongside them every day, right here in Brampton.</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Accounting, advisory & tax offered as one connected package</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Cloud accounting & digital solutions for timely filings</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Tax planning that avoids surprises and maximizes efficiency</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Five convenient office locations across Brampton</li>
+    </ul>
+  </div>
+  <div class="visual reveal">
+    <div class="badge-stack">
+      <div class="bcard"><div class="big">4.9 ★</div><div class="sm">Rated across 311 Google reviews from Brampton clients</div></div>
+      <div class="bcard"><div class="big">All-in-one</div><div class="sm">Personal & corporate tax, bookkeeping, payroll, HST and advisory under one roof</div></div>
+      <div class="bcard"><div class="big">Free</div><div class="sm">Start with a no-obligation tax consultation — get your questions answered first</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- services -->
+<section class="services" id="services"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Business, accounting & tax solutions</span>
+    <h2>Everything your numbers need — in one place.</h2>
+    <p>From a single personal return to full corporate compliance, we cover the complete range of accounting and tax work for individuals and businesses.</p>
+  </div>
+  <div class="grid">
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6l1 4H8l1-4z"/><rect x="5" y="6" width="14" height="16" rx="2"/><path d="M9 11h6M9 15h6" stroke-linecap="round"/></svg></div>
+      <h3>Personal Tax (T1)</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Individual T1 return preparation & filing</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Self-employed & rental income</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Credits, deductions & tax planning</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13" stroke-linejoin="round"/><path d="M3 21h18M9 21v-5h6v5M8 11h.01M12 11h.01M16 11h.01" stroke-linecap="round"/></svg></div>
+      <h3>Corporation Tax (T2)</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Corporate T2 returns & year-end</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> PREC — Personal Real Estate Corporations</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Corporate tax strategy & efficiency</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M8 9h8M8 13h8M8 17h5" stroke-linecap="round"/></svg></div>
+      <h3>Accounting & Bookkeeping</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Cloud & online bookkeeping</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Monthly, quarterly & year-end books</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Timely statutory filings</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18" stroke-linecap="round"/><path d="M7 14l3-3 3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Financial Statements</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Year-end financial statements</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Notice to reader & compilation</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Statements for banks & lenders</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>HST / GST & Payroll</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> HST/GST returns & registration</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Payroll, T4 / T5 & EHT returns</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> WSIB filings & remittances</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v5c0 5-3.5 9-8 11-4.5-2-8-6-8-11V6l8-4z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Appeals & CRA Audit</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> CRA audit support — HST, corporate & payroll</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Notices of objection & appeals</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> WSIB audit assistance</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6M9 13l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Business Registration</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Ontario & Canada incorporation</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> NUANS name search</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Sole proprietor & partnership setup</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 7a4 4 0 108 0 4 4 0 00-8 0M22 21v-2a4 4 0 00-3-3.87" stroke-linejoin="round"/></svg></div>
+      <h3>Business Advisory</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Practical, commercially focused advice</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Growth planning for entrepreneurs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Cash flow & structuring guidance</li>
+      </ul>
+    </div>
+
+    <div class="svc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9z" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke-linejoin="round"/></svg></div>
+      <h3>HST Rebate — NRRP</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> New Residential Rental Property rebate</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Eligibility review & application</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Documentation handled end-to-end</li>
+      </ul>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- band -->
+<section><div class="wrap">
+  <div class="band reveal">
+    <div>
+      <span class="eyebrow" style="color:var(--teal-soft)">For modern businesses</span>
+      <h3>Cloud accounting that keeps you filed and on time.</h3>
+      <p>The modern business needs digital solutions. We offer cloud accounting and online tools so your books stay current and every statutory deadline is met — no scrambling at year-end.</p>
+      <div class="chips">
+        <span class="chip">Corporate Tax (T2)</span>
+        <span class="chip">Personal Tax (T1)</span>
+        <span class="chip">HST Returns</span>
+        <span class="chip">WSIB Filings</span>
+        <span class="chip">EHT Returns</span>
+        <span class="chip">Payroll (T4 / T5)</span>
+        <span class="chip">Incorporation</span>
+        <span class="chip">NUANS</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="font-family:'Newsreader';font-size:2.6rem;color:#fff;line-height:1.2">A package built<br>around your goals</div>
+      <p style="color:#bcd0cc;margin:1rem 0 1.4rem">Accounting, advisory and tax — working together.</p>
+      <a href="#contact" class="btn btn-teal">Get started free →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- process -->
+<section id="process" style="background:var(--paper)"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">How it works</span>
+    <h2>A clear, four-step path — no guesswork.</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><h4>Free consultation</h4><p>We listen to your situation and answer your questions — at no cost and no obligation.</p></div>
+    <div class="step reveal"><h4>Review & plan</h4><p>We review your records, map out the right tax and accounting approach, and plan for efficiency.</p></div>
+    <div class="step reveal"><h4>Prepare & file</h4><p>We prepare your books, returns and statements accurately and submit every filing on time.</p></div>
+    <div class="step reveal"><h4>Ongoing support</h4><p>Year-round advisory plus full support if the CRA ever comes calling with an audit or query.</p></div>
+  </div>
+</div></section>
+
+<!-- testimonials -->
+<section class="tests"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Client stories</span>
+    <h2>Rated 4.9 across 311 Google reviews.</h2>
+  </div>
+  <div class="ratebar reveal">
+    <div class="num">4.9</div>
+    <div>
+      <div class="stars">★★★★★</div>
+      <div class="lbl">Based on 311 verified Google reviews</div>
+    </div>
+  </div>
+  <div class="tgrid">
+    <div class="quote reveal"><div class="stars">★★★★★</div><p>"Knowledgeable, patient and always on time. They handled my corporate return and HST without a single hiccup and explained everything in plain language."</p><div class="who">Verified Google review<span>Corporate tax client</span></div></div>
+    <div class="quote reveal"><div class="stars">★★★★★</div><p>"I've trusted them with my personal taxes for years. Honest advice, quick turnaround, and they always find the credits I'd have missed on my own."</p><div class="who">Verified Google review<span>Personal tax client</span></div></div>
+    <div class="quote reveal"><div class="stars">★★★★★</div><p>"They set up my incorporation, took over the bookkeeping and got me on cloud accounting. As a small business owner, it's a huge weight off my shoulders."</p><div class="who">Verified Google review<span>Small business owner</span></div></div>
+  </div>
+</div></section>
+
+<!-- final cta -->
+<section><div class="wrap">
+  <div class="cta-final reveal">
+    <svg class="leaf" style="opacity:.08;right:-40px;top:-30px;width:300px;position:absolute" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.4 5.2L20 8l-4 3.9.95 5.6L12 14.9 7.05 17.5 8 11.9 4 8l5.6-.8L12 2z"/></svg>
+    <h2>Get started with a free tax consultation.</h2>
+    <p>Whether it's a personal return, a corporate year-end or your whole bookkeeping setup, we'll review where you stand and lay out your best options — in plain language.</p>
+    <div class="acts">
+      <a href="#contact" class="btn btn-teal">Book a Free Consultation →</a>
+      <a href="tel:9057994660" class="btn btn-ghost">📞 Call (905) 799-4660</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- locations -->
+<section id="locations"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Five Brampton offices</span>
+    <h2>A location close to you.</h2>
+    <p>Serving Brampton and the Greater Toronto Area with convenient offices across the city.</p>
+  </div>
+  <div class="loc-grid">
+    <div class="loc reveal"><div class="tag">Steeles &amp; Torbram · Head Office</div><h4>Torbram Road</h4><p>8-7955 Torbram Road, Brampton, ON L6T 5B9</p><p style="margin-top:.4rem"><a href="tel:9057994660">Ph: 905-799-4660</a></p></div>
+    <div class="loc reveal"><div class="tag">Torbram &amp; Steeplebush</div><h4>Steeplebush Avenue</h4><p>8-31 Steeplebush Avenue, Brampton, ON L6R 3B4</p><p style="margin-top:.4rem"><a href="tel:9057891011">Ph: 905-789-1011</a></p></div>
+    <div class="loc reveal"><div class="tag">Airport &amp; Sandalwood</div><h4>Sandalwood Pkwy E</h4><p>8-2945 Sandalwood Pkwy E, Brampton, ON L6R 3J6</p><p style="margin-top:.4rem"><a href="tel:9057930030">Ph: 905-793-0030</a></p></div>
+    <div class="loc reveal"><div class="tag">Sandalwood &amp; Bramalea</div><h4>Dewside Drive</h4><p>1-6 Dewside Dr, Brampton, ON L6R 3Y3</p><p style="margin-top:.4rem"><a href="tel:9057919991">Ph: 905-791-9991</a></p></div>
+    <div class="loc reveal"><div class="tag">Vankirk &amp; Mayfield</div><h4>Vankirk Drive</h4><p>111-537 Vankirk Dr, Brampton, ON L7A 0P4</p><p style="margin-top:.4rem"><a href="tel:9059702525">Ph: 905-970-2525</a></p></div>
+    <div class="loc reveal" style="background:linear-gradient(150deg,#1e3640,#27505b);color:#dce8e5;border-color:transparent"><div class="tag" style="color:var(--teal-soft)">Not sure which?</div><h4 style="color:#fff">Let us help</h4><p style="color:#bcd0cc">Call our head office and we'll connect you to the location nearest you.</p><p style="margin-top:.6rem"><a href="tel:9057994660" style="color:var(--teal-soft)">📞 (905) 799-4660</a></p></div>
+  </div>
+</div></section>
+
+<!-- contact -->
+<section id="contact" style="background:var(--paper)"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Get in touch</span><h2>Visit our Brampton head office or book online.</h2></div>
+  <div class="contact">
+    <div class="cinfo reveal">
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg><div><b>Head Office</b><span>8-7955 Torbram Road, Brampton, ON L6T 5B9</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg><div><b>Phone</b><span><a href="tel:9057994660">(905) 799-4660</a> · Toll-free <a href="tel:8446121313">(844) 612-1313</a></span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 7l8 6 8-6"/></svg><div><b>Email</b><span><a href="mailto:aksood@ashwanisood.com">aksood@ashwanisood.com</a></span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg><div><b>Hours</b><span>Open today · 10:00 a.m. – 4:00 p.m. · Call ahead during tax season</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L4 20M16 4l4 4M8 20l-4-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21l4-1 13-13-3-3L4 17l-1 4z" stroke-linejoin="round"/></svg><div><b>WhatsApp</b><span><a href="https://wa.me/19057930030">Message us on WhatsApp</a></span></div></div>
+      <a href="tel:9057994660" class="btn btn-teal" style="margin-top:1.6rem">Book a Free Consultation →</a>
+    </div>
+    <div class="mapwrap reveal">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=8-7955%20Torbram%20Road%20Brampton%20ON%20L6T%205B9&z=15&output=embed" title="Ashwani Sood CPA — Torbram Road head office"></iframe>
+    </div>
+  </div>
+</div></section>
+
+<!-- footer -->
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand">
+      <b>Ashwani Sood CPA</b>
+      <p>A Brampton CPA firm offering accounting, business advisory and taxation as one connected package — helping individuals, families and businesses across the GTA stay organized, efficient and onside with the CRA.</p>
+    </div>
+    <div><h5>Services</h5><a href="#services">Personal Tax (T1)</a><a href="#services">Corporation Tax (T2)</a><a href="#services">Accounting & Bookkeeping</a><a href="#services">Financial Statements</a><a href="#services">HST / GST & Payroll</a><a href="#services">Appeals & CRA Audit</a></div>
+    <div><h5>Business</h5><a href="#services">Business Registration</a><a href="#services">Incorporation</a><a href="#services">NUANS Name Search</a><a href="#services">PREC</a><a href="#services">HST Rebate — NRRP</a><a href="#services">Business Advisory</a></div>
+    <div><h5>Company</h5><a href="#about">About Us</a><a href="#process">Our Process</a><a href="#locations">Locations</a><a href="#contact">Contact</a><a href="#contact">Book a Consultation</a></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Ashwani Sood CPA. All rights reserved. · Chartered Professional Accountant · Brampton, ON.</span>
+    <span>8-7955 Torbram Road, Brampton, ON · (905) 799-4660</span>
+  </div>
+</div></footer>
+
+<div class="float-call"><a href="tel:9057994660" class="btn btn-teal">📞 Call Us</a></div>
+
+<script>
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

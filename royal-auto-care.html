@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Auto Care | Trusted Auto Repair Garage — Hamilton, ON</title>
+<meta name="description" content="Royal Auto Care: full-service auto repair in Hamilton, ON. Oil changes, brakes, free diagnostics, tires & alignment, exhaust, A/C and Ontario Safety Inspections. Rated 4.9 across 157 Google reviews. Book a service today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --royal:#14233F; --royal-2:#1d3358; --ink:#16202b; --slate:#5d6b7d;
+  --red:#C0392B; --red-2:#a5301f; --chrome:#e7ebf1; --steel:#cdd5e0;
+  --silver:#f4f6f9; --paper:#ffffff; --line:#e2e7ef; --mist:#eef1f6;
+  --r:16px; --shadow:0 18px 50px -24px rgba(20,35,63,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--silver);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.12;letter-spacing:-.02em;color:var(--royal)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:'Inter';font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.95rem;padding:.92rem 1.6rem;border-radius:10px;transition:.25s;cursor:pointer;border:1px solid transparent}
+.btn-red{background:linear-gradient(135deg,#cf4434,#a5301f);color:#fff;box-shadow:0 12px 26px -12px rgba(192,57,43,.75)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 18px 34px -12px rgba(192,57,43,.85)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--royal);color:#fff}
+.btn-dark:hover{background:var(--royal-2);transform:translateY(-2px)}
+.btn-chrome{background:linear-gradient(135deg,#fff,#dfe6ef);color:var(--royal);border-color:var(--steel)}
+.btn-chrome:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+/* top bar */
+.topbar{background:var(--royal);color:#c8d4e6;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;gap:1rem}
+.topbar a{color:#dbe5f2;transition:.2s}.topbar a:hover{color:#fff}
+.topbar .tb-r{display:flex;gap:1.4rem;align-items:center}
+.topbar .pill{display:inline-flex;align-items:center;gap:.45rem}
+.topbar svg{width:15px;height:15px;color:var(--red)}
+@media(max-width:760px){.topbar .hidem{display:none}}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(244,246,249,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--royal),#27416c);display:grid;place-items:center;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
+.brand .mark svg{width:26px;height:26px;color:#fff}
+.brand b{font-family:'Sora';font-size:1.2rem;font-weight:800;color:var(--royal);letter-spacing:-.02em;line-height:1}
+.brand span{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;margin-top:4px}
+.menu{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500}
+.menu a{color:var(--ink);transition:.2s;position:relative}
+.menu a:hover{color:var(--red)}
+.nav-cta{display:flex;align-items:center;gap:1rem}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:26px;height:2px;background:var(--royal);border-radius:2px;transition:.3s}
+@media(max-width:960px){
+  .menu{position:fixed;inset:78px 0 auto 0;background:var(--silver);flex-direction:column;padding:1.6rem 28px;gap:1.2rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;box-shadow:var(--shadow)}
+  .menu.open{transform:translateY(0)}
+  .burger{display:flex}.nav-cta .btn:not(.callbtn){display:none}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+   radial-gradient(1100px 520px at 80% -10%,rgba(192,57,43,.18),transparent 60%),
+   linear-gradient(160deg,#14233F 0%,#1a2e4f 55%,#1d3358 100%);color:#eaf0f8}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:5.2rem 28px 5.6rem}
+.hero h1{color:#fff;font-size:clamp(2.5rem,4.6vw,4rem);font-weight:800}
+.hero h1 em{font-style:normal;color:#ff7a6b;font-weight:800}
+.hero p.lead{color:#c3d1e3;font-size:1.12rem;max-width:34rem;margin:1.4rem 0 2.1rem}
+.hero .acts{display:flex;gap:1rem;flex-wrap:wrap}
+.hero .meta{display:flex;gap:2rem;margin-top:2.6rem;flex-wrap:wrap}
+.hero .meta .n{font-family:'Sora';font-size:1.9rem;color:#fff;font-weight:700}
+.hero .meta .l{font-size:.78rem;color:#9eb1c9;letter-spacing:.04em}
+.cog{position:absolute;right:-70px;top:-50px;width:520px;opacity:.06;z-index:1;color:#fff}
+.card-trust{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:2rem;backdrop-filter:blur(6px)}
+.card-trust h4{color:#fff;font-size:1.15rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem}
+.card-trust h4 svg{width:22px;height:22px;color:var(--red)}
+.tl{display:flex;gap:.85rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.09);align-items:flex-start}
+.tl:last-child{border:0}
+.tl svg{flex:none;width:22px;height:22px;margin-top:2px;color:#ff7a6b}
+.tl b{color:#fff;font-weight:600;display:block;font-size:.95rem}
+.tl span{color:#aabdd2;font-size:.84rem}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:2.4rem}.cog{display:none}}
+
+/* trust strip */
+.strip{background:var(--royal-2);color:#cbd9ec}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;justify-content:center;align-items:center;padding:1.1rem 28px;font-size:.86rem;font-weight:500}
+.strip .i{display:flex;align-items:center;gap:.55rem}
+.strip svg{width:18px;height:18px;color:#ff7a6b}
+
+/* sections */
+section{padding:5.4rem 0}
+.sec-head{max-width:660px;margin-bottom:3rem}
+.sec-head.center{margin:0 auto 3rem;text-align:center}
+.sec-head h2{font-size:clamp(2rem,3.4vw,2.85rem);margin:.7rem 0 .8rem}
+.sec-head p{color:var(--slate);font-size:1.04rem}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;align-items:center}
+.about .visual{position:relative;border-radius:24px;min-height:420px;overflow:hidden;background:linear-gradient(150deg,#1a2e4f,#27416c);box-shadow:var(--shadow);display:grid;place-items:center;padding:2rem}
+.badge-stack{display:grid;gap:1rem;width:100%}
+.bcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:1.3rem 1.5rem;color:#fff}
+.bcard .big{font-family:'Sora';font-size:2.1rem;font-weight:800;color:#ff7a6b}
+.bcard .sm{color:#bccfe4;font-size:.86rem}
+.about ul{list-style:none;margin-top:1.4rem;display:grid;gap:.9rem}
+.about li{display:flex;gap:.75rem;align-items:flex-start;color:var(--ink)}
+.about li svg{flex:none;width:22px;height:22px;color:var(--red);margin-top:2px}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:2.2rem}.about .visual{min-height:320px}}
+
+/* services */
+.services{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.svc{background:var(--silver);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;transition:.28s;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--steel)}
+.svc .ic{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,#14233f12,#c0392b14);display:grid;place-items:center;margin-bottom:1.1rem;border:1px solid var(--line)}
+.svc .ic svg{width:28px;height:28px;color:var(--royal)}
+.svc h3{font-size:1.18rem;margin-bottom:.55rem}
+.svc ul{list-style:none;display:grid;gap:.4rem}
+.svc li{display:flex;gap:.5rem;align-items:flex-start;color:var(--slate);font-size:.9rem}
+.svc li svg{flex:none;width:16px;height:16px;color:var(--red);margin-top:4px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+
+/* pricing band */
+.pricing{background:var(--mist)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;transition:.28s}
+.pcard:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.pcard h4{font-size:1.12rem;margin-bottom:1rem;display:flex;align-items:center;gap:.55rem}
+.pcard h4 svg{width:22px;height:22px;color:var(--red)}
+.prow{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.prow:last-child{border:0}
+.prow .nm{color:var(--ink)}
+.prow .pr{font-family:'Sora';font-weight:600;color:var(--royal);white-space:nowrap}
+.prow .pr.free{color:#1f8a4c}
+@media(max-width:880px){.pgrid{grid-template-columns:1fr}}
+.pnote{text-align:center;color:var(--slate);font-size:.86rem;margin-top:1.6rem}
+
+/* split band */
+.band{background:linear-gradient(160deg,#1a2e4f,#14233F);color:#dbe5f3;border-radius:24px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;box-shadow:var(--shadow)}
+.band h3{color:#fff;font-size:1.9rem}
+.band p{color:#b4c6da;margin:.8rem 0 1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.5rem 1rem;font-size:.84rem;color:#e6eef8}
+@media(max-width:780px){.band{grid-template-columns:1fr;padding:2rem}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem;position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:'Sora';font-size:1.5rem;color:var(--red);font-weight:800}
+.step h4{font-size:1.1rem;margin:.5rem 0 .4rem}
+.step p{color:var(--slate);font-size:.9rem}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* testimonials */
+.tests{background:var(--paper)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.quote{background:var(--silver);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem}
+.stars{color:#f0a500;letter-spacing:2px;margin-bottom:.7rem;font-size:1.05rem}
+.quote p{font-size:.95rem;color:var(--ink)}
+.quote .who{margin-top:1.1rem;font-weight:600;font-size:.9rem;color:var(--royal)}
+.quote .who span{display:block;font-weight:400;color:var(--slate);font-size:.8rem}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+
+/* cta */
+.cta-final{background:linear-gradient(135deg,#14233F,#27416c);color:#fff;border-radius:26px;padding:3.4rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cta-final h2{color:#fff;font-size:clamp(1.9rem,3.2vw,2.6rem)}
+.cta-final p{color:#c3d4e6;max-width:38rem;margin:1rem auto 1.9rem}
+.cta-final .acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem}
+.cinfo .row{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.cinfo .row svg{width:24px;height:24px;color:var(--red);flex:none}
+.cinfo .row b{display:block;color:var(--royal);font-size:1rem}
+.cinfo .row span{color:var(--slate);font-size:.92rem}
+.mapwrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.mapwrap iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.15)}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--royal);color:#b6c6db;padding:3.4rem 0 1.6rem;font-size:.9rem}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h5{color:#fff;font-family:'Inter';font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+footer a{color:#a6bacf;display:block;padding:.28rem 0;transition:.2s}footer a:hover{color:#ff7a6b}
+.fbrand b{font-family:'Sora';color:#fff;font-size:1.3rem;font-weight:800}
+.fbrand p{margin-top:.8rem;color:#8da3ba;max-width:22rem}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding-top:1.4rem;color:#7c93a9;font-size:.82rem}
+@media(max-width:780px){.fgrid{grid-template-columns:1fr 1fr}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.float-call{position:fixed;right:18px;bottom:18px;z-index:60;display:none}
+.float-call a{display:flex;align-items:center;gap:.5rem;box-shadow:0 14px 30px -10px rgba(192,57,43,.8)}
+@media(max-width:960px){.float-call{display:block}}
+</style>
+</head>
+<body>
+
+<!-- top bar -->
+<div class="topbar"><div class="wrap">
+  <span class="pill hidem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg> Mon–Sat · Same-day service on most repairs · Free diagnostics</span>
+  <div class="tb-r">
+    <a href="tel:9059639009" class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> (905) 963-9009</a>
+    <a href="mailto:hamiltonroyalauto@gmail.com" class="pill hidem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 7l8 6 8-6"/></svg> hamiltonroyalauto@gmail.com</a>
+  </div>
+</div></div>
+
+<!-- nav -->
+<header><div class="wrap"><nav>
+  <a class="brand" href="#top">
+    <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2.1-.5-.5-2.1 2.7-2.5z" stroke-linejoin="round"/></svg></span>
+    <span><b>Royal Auto Care</b><span>Auto Repair · Hamilton, ON</span></span>
+  </a>
+  <div class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#process">How It Works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="tel:9059639009" class="btn btn-dark callbtn">Call Now</a>
+    <a href="#contact" class="btn btn-red">Book a Service</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav></div></header>
+
+<!-- hero -->
+<section class="hero" id="top" style="padding:0">
+  <svg class="cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Hamilton's trusted full-service garage</span>
+      <h1>Royal treatment for your <em>car</em> — honest work, fair price.</h1>
+      <p class="lead">From oil changes and brakes to Ontario Safety Inspections, Royal Auto Care keeps every make and model running smoothly. Free diagnostics, transparent pricing and same-day service on most repairs — right here in Hamilton.</p>
+      <div class="acts">
+        <a href="#contact" class="btn btn-red">Book a Service →</a>
+        <a href="tel:9059639009" class="btn btn-ghost"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> (905) 963-9009</a>
+      </div>
+      <div class="meta">
+        <div><div class="n">4.9★</div><div class="l">157 Google reviews</div></div>
+        <div><div class="n">$0</div><div class="l">Free diagnostics</div></div>
+        <div><div class="n">All</div><div class="l">Makes &amp; models</div></div>
+      </div>
+    </div>
+    <div class="card-trust reveal">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v5c0 5-3.5 9-8 11-4.5-2-8-6-8-11V6l8-4z" stroke-linejoin="round"/></svg> Why Hamilton drivers trust us</h4>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><div><b>Honest, patient mechanics</b><span>We diagnose the real problem and explain it in plain language — no upselling, no surprises.</span></div></div>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Latest diagnostic tools</b><span>State-of-the-art equipment for no-start, drivability, engine, ABS and check-engine issues.</span></div></div>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg><div><b>Same-day service</b><span>Most repairs done the same day so you get back on the road faster.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- strip -->
+<div class="strip"><div class="wrap">
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> All Makes &amp; Models</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free Diagnostics</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Ontario Safety Inspections</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Fair, Transparent Pricing</div>
+</div></div>
+
+<!-- about -->
+<section id="about"><div class="wrap about">
+  <div class="reveal">
+    <span class="eyebrow">About the shop</span>
+    <h2>Safety is our first and main priority.</h2>
+    <p style="color:var(--slate);margin-top:1rem">At Royal Auto Care in Hamilton, your safety and vehicle performance come first. Our expert mechanics and state-of-the-art equipment ensure every service meets the highest standards — whether it's a routine oil change, major repair or a provincial safety certificate. We treat every car that comes through our bay like our own.</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> We handle all makes and models</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Technicians equipped with the latest diagnostic tools</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Same-day service available on most repairs</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Fair, transparent pricing — true value for money</li>
+    </ul>
+  </div>
+  <div class="visual reveal">
+    <div class="badge-stack">
+      <div class="bcard"><div class="big">4.9★ / 157</div><div class="sm">Rated 4.9 across 157 Google reviews from Hamilton drivers</div></div>
+      <div class="bcard"><div class="big">FREE</div><div class="sm">Diagnostics for no-start, drivability, engine light &amp; ABS</div></div>
+      <div class="bcard"><div class="big">DOT</div><div class="sm">Certified Ontario provincial safety inspections &amp; certificates</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- services -->
+<section class="services" id="services"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Our Services</span>
+    <h2>Keeping your vehicle in its best condition.</h2>
+    <p>Comprehensive maintenance and repair under one roof — our expert mechanics cover every service category your car needs.</p>
+  </div>
+  <div class="grid">
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 14l-3 7M6 14h6a3 3 0 003-3V8a2 2 0 00-2-2h-1V4H8v2H7a2 2 0 00-2 2v3a3 3 0 003 3z" stroke-linejoin="round"/><path d="M15 9h3a2 2 0 012 2v2a2 2 0 01-2 2" stroke-linecap="round"/></svg></div><h3>Oil &amp; Lube Service</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Semi-synthetic &amp; full-synthetic oil changes</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> European vehicle oil service (BMW, Mercedes)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Filter replacement &amp; multi-point check</li>
+      </ul>
+    </div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke-linecap="round"/></svg></div><h3>Brake Service</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Front &amp; rear ceramic brake pads</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Rotor replacement &amp; resurfacing</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Brake inspection &amp; squeal diagnosis</li>
+      </ul>
+    </div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3.5l1.5 4.3M20.5 12l-4.3 1.5M12 20.5l-1.5-4.3M3.5 12l4.3-1.5" stroke-linecap="round"/></svg></div><h3>Tires &amp; Alignment</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Seasonal tire changeover &amp; balancing</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Run-flat tire mounting on/off rims</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Precision wheel alignment</li>
+      </ul>
+    </div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 13l2-5a2 2 0 012-1.3h10A2 2 0 0119 8l2 5v5a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-5z" stroke-linejoin="round"/><circle cx="7.5" cy="14.5" r="1"/><circle cx="16.5" cy="14.5" r="1"/></svg></div><h3>Diagnostics &amp; Inspection</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free no-start, drivability &amp; engine-light scan</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> ABS &amp; warning-light diagnosis</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Ontario DOT provincial safety inspection</li>
+      </ul>
+    </div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M8 8V6h8v2M8.5 12.5h3M10 11v3M15 13h1.5" stroke-linecap="round"/></svg></div><h3>Electrical &amp; Battery</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Battery testing &amp; replacement</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Alternator &amp; starter diagnosis</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Wiring &amp; electrical fault repair</li>
+      </ul>
+    </div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h11a3 3 0 013 3v1a3 3 0 003 3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="1.2"/><path d="M3 12V9a2 2 0 012-2h6" stroke-linecap="round"/></svg></div><h3>Exhaust, A/C &amp; More</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Exhaust welding &amp; muffler repair</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> A/C check, recharge &amp; coolant flush</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Tune-ups, towing &amp; suspension work</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- pricing -->
+<section class="pricing" id="pricing"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Pricing</span>
+    <h2>All automotive services — clear, upfront prices.</h2>
+    <p>No hidden fees, no surprises at the counter. Here's a sample of our most popular services.</p>
+  </div>
+  <div class="pgrid">
+    <div class="pcard reveal">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 14l-3 7M6 14h6a3 3 0 003-3V8a2 2 0 00-2-2h-2V4H8v2H7a2 2 0 00-2 2v3a3 3 0 003 3z" stroke-linejoin="round"/></svg> Oil Services</h4>
+      <div class="prow"><span class="nm">Semi-Synthetic Oil Service (up to 5L, incl. filter)</span><span class="pr">$70</span></div>
+      <div class="prow"><span class="nm">Full Synthetic Oil Service (5W20 / 5W30)</span><span class="pr">$95</span></div>
+      <div class="prow"><span class="nm">Full Synthetic (0W20 — Nissan, Mazda, Acura)</span><span class="pr">$95</span></div>
+      <div class="prow"><span class="nm">European Oil Service (up to 9L — Mercedes, BMW)</span><span class="pr">$149.99</span></div>
+    </div>
+    <div class="pcard reveal">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/></svg> Brakes, Tires &amp; Alignment</h4>
+      <div class="prow"><span class="nm">Front/Rear Ceramic Pads &amp; Rotors</span><span class="pr">From $349.99</span></div>
+      <div class="prow"><span class="nm">Seasonal Changeover (on rims) w/ balancing</span><span class="pr">$65.99</span></div>
+      <div class="prow"><span class="nm">Seasonal Changeover (off rims) w/ balancing</span><span class="pr">$119.99</span></div>
+      <div class="prow"><span class="nm">Run-Flat Changeover w/ balancing</span><span class="pr">$159.99</span></div>
+      <div class="prow"><span class="nm">Wheel Alignment</span><span class="pr">From $119.95</span></div>
+    </div>
+    <div class="pcard reveal">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13l2-5a2 2 0 012-1.3h10A2 2 0 0119 8l2 5v5h-2v-1H5v1H3v-5z" stroke-linejoin="round"/></svg> Diagnostics &amp; Other</h4>
+      <div class="prow"><span class="nm">Diagnostics (no-start, engine light, ABS)</span><span class="pr free">FREE</span></div>
+      <div class="prow"><span class="nm">Ontario DOT Provincial Safety Inspection</span><span class="pr">$149.99</span></div>
+      <div class="prow"><span class="nm">Coolant / Fluids Flush</span><span class="pr">$149.99</span></div>
+      <div class="prow"><span class="nm">A/C Check / Hook-Up Fee</span><span class="pr">$120</span></div>
+      <div class="prow"><span class="nm">Exhaust Welding</span><span class="pr">From $150</span></div>
+      <div class="prow"><span class="nm">Towing</span><span class="pr">From $90</span></div>
+      <div class="prow"><span class="nm">Hourly Service Rate</span><span class="pr">$120 / hr</span></div>
+    </div>
+  </div>
+  <p class="pnote">Prices may vary by vehicle and parts. Call <a href="tel:9059639009" style="color:var(--red);font-weight:600">(905) 963-9009</a> for an exact quote.</p>
+</div></section>
+
+<!-- why-us band -->
+<section><div class="wrap">
+  <div class="band reveal">
+    <div>
+      <span class="eyebrow" style="color:#ff9a8d">Why choose Royal Auto Care</span>
+      <h3>Dealership-level care without the dealership price.</h3>
+      <p>We combine the latest diagnostic equipment with old-fashioned honesty. Bring us the problem three other shops couldn't crack — patient, straight-talking mechanics are what our customers remember most.</p>
+      <div class="chips">
+        <span class="chip">Oil Change</span>
+        <span class="chip">Brakes</span>
+        <span class="chip">Diagnostics</span>
+        <span class="chip">Tires &amp; Alignment</span>
+        <span class="chip">Suspension</span>
+        <span class="chip">Exhaust</span>
+        <span class="chip">A/C</span>
+        <span class="chip">Safety Certificate</span>
+        <span class="chip">Pre-Purchase Inspection</span>
+        <span class="chip">Towing</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="font-family:'Sora';font-size:3.4rem;color:#fff;line-height:1;font-weight:800">4.9★</div>
+      <p style="color:#bccfe4;margin:.6rem 0 1.4rem">Across 157 verified Google reviews from Hamilton drivers.</p>
+      <a href="#contact" class="btn btn-red">Get a Free Quote →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- process -->
+<section id="process" style="background:var(--paper)"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">How it works</span>
+    <h2>Back on the road in four simple steps.</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><h4>Book or drop in</h4><p>Call, email or book online. Tell us the symptoms — or just bring it by and we'll take a look.</p></div>
+    <div class="step reveal"><h4>Free diagnosis</h4><p>We scan and inspect to pinpoint the real issue, then explain it in plain language — at no charge.</p></div>
+    <div class="step reveal"><h4>Transparent quote</h4><p>You get a clear, upfront price before any work starts. No surprises, no pressure to add on.</p></div>
+    <div class="step reveal"><h4>Fixed, same day</h4><p>Most repairs are completed the same day so you're back on the road faster than you expected.</p></div>
+  </div>
+</div></section>
+
+<!-- testimonials -->
+<section class="tests" id="reviews"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Customer reviews</span>
+    <h2>Rated 4.9 across 157 Google reviews.</h2>
+  </div>
+  <div class="tgrid">
+    <div class="quote reveal"><div class="stars">★★★★★</div><p>"Went in with my 2010 Chevy Malibu. I'd been to four different shops before this one and no one could figure out a simple electrical problem. Ameer was very patient and honest with me and got me back on the road in no time."</p><div class="who">Mohammed<span>Google review</span></div></div>
+    <div class="quote reveal"><div class="stars">★★★★★</div><p>"I was on my way home on Canada Day and my transmission started leaking. They were open and took me in right away, helped diagnose and fix my leak. Thank you Royal Auto Care!"</p><div class="who">Raf<span>Google review</span></div></div>
+    <div class="quote reveal"><div class="stars">★★★★★</div><p>"Their pricing is fair and transparent — definitely value for money and great staff. Highly recommend giving them a visit."</p><div class="who">Jordan<span>Google review</span></div></div>
+  </div>
+</div></section>
+
+<!-- final cta -->
+<section><div class="wrap">
+  <div class="cta-final reveal">
+    <h2>Let's get you back on the road faster.</h2>
+    <p>Book a service or grab a free, no-obligation quote today. Honest mechanics, fair pricing and same-day service on most repairs — right here in Hamilton.</p>
+    <div class="acts">
+      <a href="#contact" class="btn btn-red">Book a Service →</a>
+      <a href="tel:9059639009" class="btn btn-ghost"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> Call (905) 963-9009</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- contact -->
+<section id="contact"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Get in touch</span><h2>Visit our Hamilton shop or book by phone.</h2></div>
+  <div class="contact">
+    <div class="cinfo reveal">
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg><div><b>Address</b><span>1580 Main St W, Hamilton, ON L8S 1E9</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg><div><b>Phone</b><span><a href="tel:9059639009">(905) 963-9009</a> · Call anytime</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 7l8 6 8-6"/></svg><div><b>Email</b><span><a href="mailto:hamiltonroyalauto@gmail.com">hamiltonroyalauto@gmail.com</a></span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg><div><b>Hours</b><span>Monday – Saturday · 8:00 am – 6:00 pm<br>Sunday · Closed</span></div></div>
+      <a href="tel:9059639009" class="btn btn-red" style="margin-top:1.6rem">Book a Service →</a>
+    </div>
+    <div class="mapwrap reveal">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=1580%20Main%20St%20W%2C%20Hamilton%2C%20ON%20L8S%201E9&z=15&output=embed" title="Royal Auto Care — Hamilton, ON"></iframe>
+    </div>
+  </div>
+</div></section>
+
+<!-- footer -->
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand">
+      <b>Royal Auto Care</b>
+      <p>A trusted full-service auto repair garage in Hamilton, ON — keeping every make and model running smoothly with honest work, the latest diagnostics and fair, transparent pricing.</p>
+    </div>
+    <div><h5>Services</h5><a href="#services">Oil &amp; Lube</a><a href="#services">Brakes</a><a href="#services">Tires &amp; Alignment</a><a href="#services">Diagnostics</a><a href="#services">Electrical &amp; Battery</a><a href="#services">Exhaust &amp; A/C</a></div>
+    <div><h5>Shop</h5><a href="#about">About Us</a><a href="#pricing">Pricing</a><a href="#process">How It Works</a><a href="#reviews">Reviews</a><a href="#contact">Safety Inspection</a></div>
+    <div><h5>Visit</h5><a href="tel:9059639009">(905) 963-9009</a><a href="mailto:hamiltonroyalauto@gmail.com">Email Us</a><a href="#contact">1580 Main St W, Hamilton</a><a href="#contact">Mon–Sat · 8am–6pm</a></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Royal Auto Care. All rights reserved. · Serving Hamilton &amp; surrounding areas.</span>
+    <span>1580 Main St W, Hamilton, ON L8S 1E9 · (905) 963-9009</span>
+  </div>
+</div></footer>
+
+<div class="float-call"><a href="tel:9059639009" class="btn btn-red"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> Call Us</a></div>
+
+<script>
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

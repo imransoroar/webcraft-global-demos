@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paragon Accounting & Financial Services Inc. | Tax, Bookkeeping & Payroll — Brampton, ON</title>
+<meta name="description" content="Paragon Accounting & Financial Services Inc. is a full-service Brampton accounting firm: personal & corporate tax, bookkeeping, payroll, GST/HST returns and business incorporation. Rated 4.8 across 435 Google reviews. Book a free consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#102A43; --navy-2:#16395a; --ink:#16202b; --slate:#5a6b7b;
+  --copper:#B06A3B; --copper-soft:#e7cdb6; --copper-2:#9a5a2f;
+  --ivory:#FBF7F0; --paper:#ffffff; --line:#ece3d6; --mist:#f4eee3;
+  --r:16px; --shadow:0 18px 50px -24px rgba(16,42,67,.38);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Spectral',serif;font-weight:600;line-height:1.14;letter-spacing:-.01em;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:'Inter';font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--copper)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.95rem;padding:.92rem 1.6rem;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
+.btn-copper{background:linear-gradient(135deg,#bf7a48,#9a5a2f);color:#fff;box-shadow:0 12px 26px -12px rgba(176,106,59,.75)}
+.btn-copper:hover{transform:translateY(-2px);box-shadow:0 18px 34px -12px rgba(176,106,59,.85)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--navy-2);transform:translateY(-2px)}
+
+/* top bar */
+.topbar{background:var(--navy);color:#cfe0ee;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;gap:1rem}
+.topbar a{color:#dce8f2;transition:.2s}.topbar a:hover{color:#fff}
+.topbar .tb-r{display:flex;gap:1.4rem;align-items:center}
+.topbar .pill{display:inline-flex;align-items:center;gap:.4rem}
+@media(max-width:760px){.topbar .hidem{display:none}}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--navy),#1c4267);display:grid;place-items:center;box-shadow:var(--shadow)}
+.brand .mark svg{width:24px;height:24px}
+.brand b{font-family:'Spectral';font-size:1.18rem;font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.brand span{display:block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-top:3px}
+.menu{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500}
+.menu a{color:var(--ink);transition:.2s;position:relative}
+.menu a:hover{color:var(--copper)}
+.nav-cta{display:flex;align-items:center;gap:1rem}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:26px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+@media(max-width:960px){
+  .menu{position:fixed;inset:78px 0 auto 0;background:var(--ivory);flex-direction:column;padding:1.6rem 28px;gap:1.2rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;box-shadow:var(--shadow)}
+  .menu.open{transform:translateY(0)}
+  .burger{display:flex}.nav-cta .btn:not(.callbtn){display:none}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+   radial-gradient(1100px 520px at 78% -10%,rgba(176,106,59,.18),transparent 60%),
+   linear-gradient(160deg,#102A43 0%,#143653 55%,#17415f 100%);color:#eaf1f8}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:5.2rem 28px 5.6rem}
+.hero h1{color:#fff;font-size:clamp(2.5rem,4.6vw,4rem);font-weight:600}
+.hero h1 em{font-style:italic;color:var(--copper-soft);font-weight:500}
+.hero p.lead{color:#c4d4e3;font-size:1.12rem;max-width:34rem;margin:1.4rem 0 2.1rem}
+.hero .acts{display:flex;gap:1rem;flex-wrap:wrap}
+.hero .meta{display:flex;gap:2rem;margin-top:2.6rem;flex-wrap:wrap}
+.hero .meta .n{font-family:'Spectral';font-size:1.9rem;color:#fff;font-weight:600}
+.hero .meta .l{font-size:.78rem;color:#9fb3c7;letter-spacing:.04em}
+.ornament{position:absolute;right:-60px;top:-40px;width:520px;opacity:.07;z-index:1;color:var(--copper)}
+.card-trust{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:2rem;backdrop-filter:blur(6px)}
+.card-trust h4{color:#fff;font-size:1.15rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem}
+.card-trust h4 svg{width:22px;height:22px;color:var(--copper-soft)}
+.tl{display:flex;gap:.85rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.09);align-items:flex-start}
+.tl:last-child{border:0}
+.tl svg{flex:none;width:22px;height:22px;margin-top:2px;color:var(--copper-soft)}
+.tl b{color:#fff;font-weight:600;display:block;font-size:.95rem}
+.tl span{color:#aebfce;font-size:.84rem}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:2.4rem}.ornament{display:none}}
+
+/* trust strip */
+.strip{background:var(--navy-2);color:#cdddec}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;justify-content:center;align-items:center;padding:1.1rem 28px;font-size:.86rem;font-weight:500}
+.strip .i{display:flex;align-items:center;gap:.55rem}
+.strip svg{width:18px;height:18px;color:var(--copper-soft)}
+
+/* sections */
+section{padding:5.4rem 0}
+.sec-head{max-width:660px;margin-bottom:3rem}
+.sec-head.center{margin:0 auto 3rem;text-align:center}
+.sec-head h2{font-size:clamp(2rem,3.4vw,2.85rem);margin:.7rem 0 .8rem}
+.sec-head p{color:var(--slate);font-size:1.04rem}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;align-items:center}
+.about .visual{position:relative;border-radius:24px;min-height:420px;overflow:hidden;background:linear-gradient(150deg,#143653,#1c4267);box-shadow:var(--shadow);display:grid;place-items:center;padding:2rem}
+.badge-stack{display:grid;gap:1rem;width:100%}
+.bcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:1.3rem 1.5rem;color:#fff}
+.bcard .big{font-family:'Spectral';font-size:2.1rem;font-weight:600;color:var(--copper-soft)}
+.bcard .sm{color:#bcd0e2;font-size:.86rem}
+.about ul{list-style:none;margin-top:1.4rem;display:grid;gap:.9rem}
+.about li{display:flex;gap:.75rem;align-items:flex-start;color:var(--ink)}
+.about li svg{flex:none;width:22px;height:22px;color:var(--copper);margin-top:2px}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:2.2rem}.about .visual{min-height:320px}}
+
+/* services */
+.services{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.svc{background:var(--ivory);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;transition:.28s;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--copper-soft)}
+.svc .ic{width:50px;height:50px;border-radius:13px;background:linear-gradient(135deg,#10324340,#b06a3b22);display:grid;place-items:center;margin-bottom:1.1rem}
+.svc .ic svg{width:26px;height:26px;color:var(--navy)}
+.svc h3{font-size:1.18rem;margin-bottom:.45rem}
+.svc p{color:var(--slate);font-size:.92rem;margin-bottom:.9rem}
+.svc ul{list-style:none;display:grid;gap:.42rem;margin-bottom:.3rem}
+.svc li{display:flex;gap:.5rem;align-items:flex-start;font-size:.86rem;color:var(--ink)}
+.svc li svg{flex:none;width:16px;height:16px;color:var(--copper);margin-top:3px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+
+/* split band */
+.band{background:linear-gradient(160deg,#143653,#102A43);color:#dce8f2;border-radius:26px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;box-shadow:var(--shadow)}
+.band h3{color:#fff;font-size:1.9rem}
+.band p{color:#b6c8d8;margin:.8rem 0 1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.5rem 1rem;font-size:.84rem;color:#e7f0f8}
+@media(max-width:780px){.band{grid-template-columns:1fr;padding:2rem}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem;position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:'Spectral';font-size:1.5rem;color:var(--copper);font-weight:600}
+.step h4{font-size:1.1rem;margin:.5rem 0 .4rem}
+.step p{color:var(--slate);font-size:.9rem}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.tm{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;text-align:center}
+.tm .av{width:84px;height:84px;border-radius:50%;margin:0 auto 1rem;background:linear-gradient(135deg,#10324330,#b06a3b30);display:grid;place-items:center;font-family:'Spectral';font-size:1.7rem;color:var(--navy);font-weight:600;border:2px solid var(--copper-soft)}
+.tm h4{font-size:1.2rem}
+.tm .role{color:var(--copper);font-weight:600;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;margin-top:.2rem}
+.tm p{color:var(--slate);font-size:.9rem;margin-top:.6rem}
+@media(max-width:760px){.team-grid{grid-template-columns:1fr}}
+
+/* testimonials */
+.tests{background:var(--mist)}
+.rating-band{display:flex;align-items:center;justify-content:center;gap:1.6rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.rating-band .score{font-family:'Spectral';font-size:3rem;color:var(--navy);font-weight:700;line-height:1}
+.rating-band .stars{color:var(--copper);letter-spacing:3px;font-size:1.3rem}
+.rating-band .sub{color:var(--slate);font-size:.9rem}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem}
+.stars-sm{color:var(--copper);letter-spacing:2px;margin-bottom:.7rem}
+.quote p{font-size:.95rem;color:var(--ink)}
+.quote .who{margin-top:1.1rem;font-weight:600;font-size:.9rem;color:var(--navy)}
+.quote .who span{display:block;font-weight:400;color:var(--slate);font-size:.8rem}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+
+/* cta */
+.cta-final{background:linear-gradient(135deg,#102A43,#1a4d72);color:#fff;border-radius:28px;padding:3.4rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cta-final h2{color:#fff;font-size:clamp(1.9rem,3.2vw,2.6rem)}
+.cta-final p{color:#c4d6e6;max-width:38rem;margin:1rem auto 1.9rem}
+.cta-final .acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem}
+.cinfo .row{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.cinfo .row svg{width:24px;height:24px;color:var(--copper);flex:none}
+.cinfo .row b{display:block;color:var(--navy);font-size:1rem}
+.cinfo .row span{color:var(--slate);font-size:.92rem}
+.cinfo .row a{color:var(--slate)}.cinfo .row a:hover{color:var(--copper)}
+.mapwrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.mapwrap iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.15)}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--navy);color:#b9cadb;padding:3.4rem 0 1.6rem;font-size:.9rem}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h5{color:#fff;font-family:'Inter';font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+footer a{color:#a9bccf;display:block;padding:.28rem 0;transition:.2s}footer a:hover{color:var(--copper-soft)}
+.fbrand b{font-family:'Spectral';color:#fff;font-size:1.3rem}
+.fbrand p{margin-top:.8rem;color:#90a6ba;max-width:22rem}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding-top:1.4rem;color:#7f95aa;font-size:.82rem}
+@media(max-width:780px){.fgrid{grid-template-columns:1fr 1fr}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.float-call{position:fixed;right:18px;bottom:18px;z-index:60;display:none}
+.float-call a{display:flex;align-items:center;gap:.5rem}
+@media(max-width:960px){.float-call{display:block}}
+</style>
+</head>
+<body>
+
+<!-- top bar -->
+<div class="topbar"><div class="wrap">
+  <span class="pill hidem">Serving Brampton & the GTA · Mon–Fri 9:00 am – 7:00 pm</span>
+  <div class="tb-r">
+    <a href="tel:4164773359" class="pill">Office: (416) 477-3359</a>
+    <a href="mailto:info@paragonafs.ca" class="pill hidem">info@paragonafs.ca</a>
+  </div>
+</div></div>
+
+<!-- nav -->
+<header><div class="wrap"><nav>
+  <a class="brand" href="#top">
+    <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#B06A3B" stroke-width="2"><path d="M4 21h16M6 21V10m4 11V10m4 11V10m4 11V10M3 10l9-6 9 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span><b>Paragon Accounting</b><span>& Financial Services · Brampton</span></span>
+  </a>
+  <div class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#team">Our Team</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="tel:4164773359" class="btn btn-dark callbtn">Call Now</a>
+    <a href="#contact" class="btn btn-copper">Book a Free Consultation</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav></div></header>
+
+<!-- hero -->
+<section class="hero" id="top" style="padding:0">
+  <svg class="ornament" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16M6 21V10m4 11V10m4 11V10m4 11V10M3 10l9-6 9 6"/></svg>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Brampton's trusted accounting & tax firm</span>
+      <h1>Taxes done right, <em>year-round</em> peace of mind.</h1>
+      <p class="lead">Paragon is a full-service accounting firm handling personal and corporate taxes, GST/HST filings, payroll and bookkeeping — so you keep more of what you earn and never lose sleep over the CRA again.</p>
+      <div class="acts">
+        <a href="#contact" class="btn btn-copper">Book a Free Consultation →</a>
+        <a href="tel:4164773359" class="btn btn-ghost">Call (416) 477-3359</a>
+      </div>
+      <div class="meta">
+        <div><div class="n">4.8 ★</div><div class="l">435 Google reviews</div></div>
+        <div><div class="n">7,500+</div><div class="l">Returns & files handled</div></div>
+        <div><div class="n">CRA</div><div class="l">e-File authorized firm</div></div>
+      </div>
+    </div>
+    <div class="card-trust reveal">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v5c0 5-3.5 9-8 11-4.5-2-8-6-8-11V6l8-4z" stroke-linejoin="round"/></svg> Why clients stay with Paragon</h4>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><div><b>Maximize every credit & deduction</b><span>We stay current on new tax laws to minimize your liability and maximize available credits.</span></div></div>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Accurate & on-time filing</b><span>Complete, accurate returns filed promptly — for individuals and corporations alike.</span></div></div>
+      <div class="tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2M12 3a4 4 0 100 8 4 4 0 000-8z" stroke-linejoin="round"/></svg><div><b>A team that's by your side</b><span>Contact us any time of year for tax advice and support — you're treated like family.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- strip -->
+<div class="strip"><div class="wrap">
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Personal & Corporate Tax</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free Initial Consultation</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> File In-Person or Online</div>
+  <div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Honest, Reasonable Pricing</div>
+</div></div>
+
+<!-- about -->
+<section id="about"><div class="wrap about">
+  <div class="reveal">
+    <span class="eyebrow">About the firm</span>
+    <h2>A professional accounting firm that handles every dollar.</h2>
+    <p style="color:var(--slate);margin-top:1rem">Paragon Accounting & Financial Services Inc. provides expert help with personal and corporate tax preparation, income tax planning, accounting and bookkeeping, GST/HST returns, and business incorporation. Our accountants take care of all your financial needs and have a proven track record of satisfied clients across Brampton and the GTA.</p>
+    <p style="color:var(--slate);margin-top:.9rem">We recognize key tax-preparation opportunities that minimize both current and potential liabilities by staying up to date on new tax laws and regulations — delivering hassle-free, high-quality service at a reasonable price.</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Comprehensive, full-service firm under one roof</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> A commitment to accuracy on every return</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Step-by-step guidance — we're always by your side</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Maximized tax credits, minimized stress</li>
+    </ul>
+  </div>
+  <div class="visual reveal">
+    <div class="badge-stack">
+      <div class="bcard"><div class="big">4.8 ★</div><div class="sm">Average rating across 435 verified Google reviews</div></div>
+      <div class="bcard"><div class="big">All-in-one</div><div class="sm">Tax · Bookkeeping · Payroll · GST/HST · Incorporation</div></div>
+      <div class="bcard"><div class="big">Mon–Fri</div><div class="sm">9:00 am – 7:00 pm · #19A-1 Bartley Bull Pkwy, Brampton</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- services -->
+<section class="services" id="services"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Services you can trust</span>
+    <h2>Everything your finances need, expertly handled.</h2>
+    <p>With deep knowledge of the Canadian taxation system, your personal and business taxes are completed correctly — and your credits maximized.</p>
+  </div>
+  <div class="grid">
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6l2 4H7l2-4zM6 6h12v15a1 1 0 01-1 1H7a1 1 0 01-1-1V6z" stroke-linejoin="round"/><path d="M9 11h6M9 15h6"/></svg></div><h3>Personal Income Tax (T1)</h3><p>Extensive expertise in personal taxation for accurate, timely filing — preserving as much of your income as possible.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Employment, self-employed & rental income</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Newcomer & student returns</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Credit & deduction optimization</li></ul></div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6" stroke-linejoin="round"/><path d="M7 11h.01M12 11h.01M17 11h.01"/></svg></div><h3>Corporation Income Tax (T2)</h3><p>Strategies that minimize tax on corporate earnings and maximize the credits your business is entitled to.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Full T2 corporate return preparation</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Year-round corporate tax planning</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> CRA correspondence & support</li></ul></div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Incorporate / Register a Business</h3><p>Complete start-up services to get your venture off the ground, correctly registered and ready to operate.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Ontario & Federal incorporation</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Numbered or named corporations</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Payroll & HST account set-up</li></ul></div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div><h3>Accounting & Bookkeeping</h3><p>Let our team manage, maintain and update your day-to-day books so you can focus on your customers and core business.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Monthly & year-end bookkeeping</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Bank & account reconciliations</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Financial statement preparation</li></ul></div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 7a4 4 0 108 0 4 4 0 00-8 0M22 21v-2a4 4 0 00-3-3.87" stroke-linejoin="round"/></svg></div><h3>Payroll & Salary Calculations</h3><p>From one employee to thousands, a fully managed, standardized payroll service wherever you operate in Canada.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Pay runs, deductions & remittances</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> T4 / T4A & ROE preparation</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> CRA payroll account compliance</li></ul></div>
+    <div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>GST/HST Returns</h3><p>We take over the indirect-tax filing of your company so you can focus on customers and building your business.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> GST/HST registration & filing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Input tax credit recovery</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Remittance & deadline management</li></ul></div>
+  </div>
+</div></section>
+
+<!-- ways to file band -->
+<section id="ways"><div class="wrap">
+  <div class="band reveal">
+    <div>
+      <span class="eyebrow" style="color:var(--copper-soft)">How can we help you today?</span>
+      <h3>File your taxes your way — in person or online.</h3>
+      <p>Prefer to sit down with an accountant, or want to start from your couch? Paragon makes both simple, secure and stress-free.</p>
+      <div class="chips">
+        <span class="chip">In-Person Appointment</span>
+        <span class="chip">Start Online</span>
+        <span class="chip">Secure Document Upload</span>
+        <span class="chip">Personal Tax Intake</span>
+        <span class="chip">Corporate Tax Intake</span>
+        <span class="chip">Business Registration</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="font-family:'Spectral';font-size:2.2rem;color:#fff;line-height:1.2;font-weight:600">In-person<br><span style="color:var(--copper-soft)">or</span><br>online</div>
+      <p style="color:#bcd0e2;margin:1rem 0 1.4rem">One firm, two easy ways to get started.</p>
+      <a href="#contact" class="btn btn-copper">Book an Appointment →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- process -->
+<section id="process" style="background:var(--paper)"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">How it works</span>
+    <h2>A simple, four-step path to filed and stress-free.</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><h4>Free consultation</h4><p>Tell us about your situation. We review your needs and outline the best approach — at no cost.</p></div>
+    <div class="step reveal"><h4>Share your documents</h4><p>Bring them in or upload securely online. We'll send a clear checklist so nothing is missed.</p></div>
+    <div class="step reveal"><h4>We prepare & review</h4><p>Your accountant prepares everything accurately, finding every credit and deduction you qualify for.</p></div>
+    <div class="step reveal"><h4>File & follow up</h4><p>We file with the CRA and stay available all year for advice, support and any questions.</p></div>
+  </div>
+</div></section>
+
+<!-- team -->
+<section id="team"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Meet the team</span>
+    <h2>Real professionals behind your numbers.</h2>
+  </div>
+  <div class="team-grid">
+    <div class="tm reveal"><div class="av">R</div><h4>Rani</h4><div class="role">Lead Accountant</div><p>Trusted by clients year after year for handling all their account needs — friendly, professional and detail-driven.</p></div>
+    <div class="tm reveal"><div class="av">PT</div><h4>Personal Tax Team</h4><div class="role">T1 Specialists</div><p>Focused on individuals, families, students and newcomers — making personal filing headache-free and maximizing refunds.</p></div>
+    <div class="tm reveal"><div class="av">CB</div><h4>Corporate & Bookkeeping</h4><div class="role">T2 & Books Specialists</div><p>Looking after corporate returns, payroll, GST/HST and day-to-day bookkeeping for businesses across the GTA.</p></div>
+  </div>
+</div></section>
+
+<!-- testimonials -->
+<section class="tests" id="reviews"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Client feedback</span>
+    <h2>Trusted by Brampton, rated 4.8 on Google.</h2>
+  </div>
+  <div class="rating-band reveal">
+    <div class="score">4.8</div>
+    <div>
+      <div class="stars">★★★★★</div>
+      <div class="sub">Average across <b>435</b> verified Google reviews</div>
+    </div>
+  </div>
+  <div class="tgrid">
+    <div class="quote reveal"><div class="stars-sm">★★★★★</div><p>"It's almost 4 years I am using Paragon for filing my taxes. They are very responsible, reliable and offer reasonable prices. Miss Rani takes care of all my account needs — with them I feel like working with a family."</p><div class="who">Sarathchand<span>Google review · Personal Tax client</span></div></div>
+    <div class="quote reveal"><div class="stars-sm">★★★★★</div><p>"This is my 3rd year with Paragon and I've never been so impressed with a service. Friendly and professional. Throughout the year you can contact them for any tax advice or support. I'll definitely recommend."</p><div class="who">Navpreet Singh<span>Google review · Returning client</span></div></div>
+    <div class="quote reveal"><div class="stars-sm">★★★★★</div><p>"Filing taxes was something I dreaded, especially after moving to a new country. With Rani's help the process was completely headache-free. Great service I've used for three years and will continue to use."</p><div class="who">Amit Maheshwari<span>Google review · Newcomer client</span></div></div>
+  </div>
+</div></section>
+
+<!-- final cta -->
+<section><div class="wrap">
+  <div class="cta-final reveal">
+    <svg class="ornament" style="opacity:.1;right:-40px;top:-30px;width:300px;color:#fff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 21h16M6 21V10m4 11V10m4 11V10m4 11V10M3 10l9-6 9 6"/></svg>
+    <h2>Ready to take the stress out of tax season?</h2>
+    <p>Book a free, no-obligation consultation. We'll review your situation and lay out the smartest, most cost-effective path — in plain language.</p>
+    <div class="acts">
+      <a href="#contact" class="btn btn-copper">Book a Free Consultation →</a>
+      <a href="tel:4164773359" class="btn btn-ghost">Call (416) 477-3359</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- contact -->
+<section id="contact"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Get in touch</span><h2>Visit our Brampton office or book online.</h2></div>
+  <div class="contact">
+    <div class="cinfo reveal">
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg><div><b>Office</b><span>#19A - 1 Bartley Bull Pkwy, Brampton, Ontario L6W 3T7</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg><div><b>Phone</b><span><a href="tel:4164773359">Office: (416) 477-3359</a> · <a href="tel:6479098484">(647) 909-8484</a> · <a href="tel:4378819175">(437) 881-9175</a></span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 7l8 6 8-6"/></svg><div><b>Email</b><span><a href="mailto:info@paragonafs.ca">info@paragonafs.ca</a></span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg><div><b>Hours</b><span>Monday – Friday · 9:00 am – 7:00 pm</span></div></div>
+      <a href="#" class="btn btn-copper" style="margin-top:1.6rem">Book a Free Consultation →</a>
+    </div>
+    <div class="mapwrap reveal">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=1%20Bartley%20Bull%20Pkwy%20%2319a%2C%20Brampton%2C%20ON%20L6W%203T7%2C%20Canada&z=15&output=embed" title="Paragon Accounting & Financial Services location"></iframe>
+    </div>
+  </div>
+</div></section>
+
+<!-- footer -->
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand">
+      <b>Paragon Accounting & Financial Services Inc.</b>
+      <p>A full-service Brampton accounting firm handling personal and corporate tax, bookkeeping, payroll, GST/HST returns and business incorporation for individuals and businesses across the GTA.</p>
+    </div>
+    <div><h5>Services</h5><a href="#services">Personal Income Tax (T1)</a><a href="#services">Corporate Income Tax (T2)</a><a href="#services">Incorporate / Register a Business</a><a href="#services">Accounting & Bookkeeping</a><a href="#services">Payroll & Salary</a><a href="#services">GST/HST Returns</a></div>
+    <div><h5>Company</h5><a href="#about">About Us</a><a href="#process">How It Works</a><a href="#team">Our Team</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+    <div><h5>Contact</h5><a href="tel:4164773359">(416) 477-3359</a><a href="mailto:info@paragonafs.ca">info@paragonafs.ca</a><a href="#contact">#19A-1 Bartley Bull Pkwy</a><a href="#contact">Brampton, ON L6W 3T7</a><a href="#contact">Mon–Fri · 9am–7pm</a></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Paragon Accounting & Financial Services Inc. All rights reserved.</span>
+    <span>Serving Brampton & the GTA · (416) 477-3359</span>
+  </div>
+</div></footer>
+
+<div class="float-call"><a href="tel:4164773359" class="btn btn-copper"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> Call Us</a></div>
+
+<script>
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
