@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Al-Nur Property Builders and Traders Ltd | Dhaka</title>
+<meta name="description" content="Al-Nur Property Builders and Traders Ltd is a family rooted real estate development, construction and property trading company in Dhaka, building trust brick by brick." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --sand:#e8ddca;
+    --sand-deep:#dccdb2;
+    --terracotta:#b5603a;
+    --terracotta-deep:#9a4c2c;
+    --green:#22402f;
+    --green-soft:#33543f;
+    --cream:#f6f0e4;
+    --ink:#2c241b;
+    --ink-soft:#5d5142;
+    --line:rgba(44,36,27,.14);
+    --shadow:0 22px 50px -28px rgba(34,40,20,.55);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Inter",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1160px,92vw);margin:0 auto}
+  .eyebrow{
+    font-family:var(--sans);font-size:.74rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);
+    display:inline-flex;align-items:center;gap:.6rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--terracotta);opacity:.7}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* NAV */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    padding:1.1rem 0;transition:background .4s,box-shadow .4s,padding .4s;
+  }
+  header.nav.stuck{background:rgba(246,240,228,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:.7rem 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--serif);font-size:1.18rem;color:var(--green);font-weight:600}
+  .mark{width:34px;height:34px;flex:0 0 34px}
+  .nav-links{display:flex;gap:2rem;align-items:center;font-size:.92rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);position:relative;transition:color .25s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--terracotta);transition:width .3s}
+  .nav-links a:hover{color:var(--green)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{background:var(--terracotta);color:#fff!important;padding:.6rem 1.2rem;border-radius:40px;font-weight:600;transition:background .25s,transform .25s}
+  .nav-cta:hover{background:var(--terracotta-deep);transform:translateY(-2px)}
+  .nav-cta::after{display:none}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--green);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;padding:9.5rem 0 5.5rem;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:
+     radial-gradient(120% 80% at 82% 8%,rgba(181,96,58,.16),transparent 55%),
+     linear-gradient(165deg,var(--sand) 0%,var(--cream) 60%);}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+     background-image:radial-gradient(rgba(44,36,27,.05) 1px,transparent 1px);
+     background-size:22px 22px;mask-image:linear-gradient(to bottom,#000,transparent 70%)}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+  .hero h1{font-size:clamp(2.7rem,6vw,4.6rem);color:var(--green);margin:1.3rem 0 1.4rem}
+  .hero h1 em{font-style:italic;color:var(--terracotta)}
+  .hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:34ch;margin-bottom:2rem}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.6rem;border-radius:44px;font-weight:600;font-size:.95rem;transition:transform .25s,background .25s,box-shadow .25s;cursor:pointer;border:0}
+  .btn-primary{background:var(--green);color:var(--cream)}
+  .btn-primary:hover{background:var(--green-soft);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--green);transform:translateY(-2px)}
+
+  /* hero art: stacked brick house SVG card */
+  .hero-art{position:relative}
+  .hero-card{background:var(--cream);border:1px solid var(--line);border-radius:26px;padding:1.4rem;box-shadow:var(--shadow);position:relative}
+  .hero-card svg{display:block;width:100%;height:auto;border-radius:16px}
+  .hero-badge{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);background:var(--terracotta);color:#fff;padding:.7rem 1.4rem;border-radius:40px;font-size:.82rem;font-weight:600;box-shadow:var(--shadow);white-space:nowrap;display:flex;gap:.6rem;align-items:center}
+  .hero-badge b{font-family:var(--serif)}
+
+  /* trust strip */
+  .trust{background:var(--green);color:var(--sand);padding:1.4rem 0}
+  .trust .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center}
+  .trust .ts{display:flex;align-items:baseline;gap:.6rem}
+  .trust .ts b{font-family:var(--serif);font-size:1.9rem;color:#fff;line-height:1}
+  .trust .ts span{font-size:.82rem;letter-spacing:.04em;opacity:.85;max-width:16ch}
+
+  section{padding:6rem 0}
+  .sec-head{max-width:48ch;margin-bottom:3rem}
+  .sec-head h2{font-size:clamp(2rem,4.2vw,3rem);color:var(--green);margin:.9rem 0}
+  .sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+  /* narrative: brick by brick */
+  .narr{background:linear-gradient(180deg,var(--cream),var(--sand) 130%)}
+  .narr-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:4rem;align-items:center}
+  .bricks{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  .brick{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:1.6rem;transition:transform .3s,box-shadow .3s,background .3s;position:relative;overflow:hidden}
+  .brick::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--terracotta);opacity:.7}
+  .brick:hover{transform:translateY(-5px);box-shadow:var(--shadow);background:#fff}
+  .brick .bi{width:42px;height:42px;border-radius:12px;background:rgba(181,96,58,.12);display:grid;place-items:center;margin-bottom:1rem;color:var(--terracotta)}
+  .brick h4{font-size:1.18rem;color:var(--green);margin-bottom:.4rem}
+  .brick p{font-size:.92rem;color:var(--ink-soft)}
+  .narr-copy h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--green);margin:1rem 0 1.2rem}
+  .narr-copy h2 em{font-style:italic;color:var(--terracotta)}
+  .narr-copy p{color:var(--ink-soft);margin-bottom:1.1rem;max-width:46ch}
+
+  /* projects */
+  .proj-tabs{display:inline-flex;background:var(--sand);padding:.4rem;border-radius:48px;gap:.3rem;margin-bottom:2.6rem}
+  .proj-tabs button{border:0;background:transparent;font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--ink-soft);padding:.62rem 1.3rem;border-radius:40px;cursor:pointer;transition:.3s}
+  .proj-tabs button.active{background:var(--green);color:var(--cream);box-shadow:0 6px 16px -8px rgba(34,64,47,.7)}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .pcard{background:var(--cream);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+  .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .pcard .pic{height:180px;position:relative}
+  .pcard .pic svg{width:100%;height:100%;display:block}
+  .pcard .ptag{position:absolute;top:.9rem;left:.9rem;background:rgba(246,240,228,.92);color:var(--green);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.32rem .75rem;border-radius:30px}
+  .pcard .pbody{padding:1.4rem 1.4rem 1.6rem}
+  .pcard h4{font-size:1.22rem;color:var(--green);margin-bottom:.3rem}
+  .pcard .loc{font-size:.82rem;color:var(--terracotta);font-weight:600;margin-bottom:.7rem;display:flex;align-items:center;gap:.35rem}
+  .pcard p{font-size:.9rem;color:var(--ink-soft)}
+  .pcard .pmeta{margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-soft)}
+  .pcard .pmeta b{display:block;font-family:var(--serif);font-size:1rem;color:var(--green)}
+  .panel{display:none}
+  .panel.show{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* MD message */
+  .md{background:var(--green);color:var(--sand);position:relative;overflow:hidden}
+  .md::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(181,96,58,.3),transparent 70%)}
+  .md-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3.5rem;align-items:center;position:relative;z-index:2}
+  .md-portrait{position:relative}
+  .md-portrait svg{width:100%;height:auto;border-radius:24px;display:block;box-shadow:var(--shadow)}
+  .md-name{margin-top:1.2rem}
+  .md-name .nm{font-family:var(--serif);font-size:1.5rem;color:#fff}
+  .md-name .ttl{font-size:.85rem;letter-spacing:.04em;opacity:.8}
+  .md-copy .eyebrow{color:var(--sand)}
+  .md-copy .eyebrow::before{background:var(--sand)}
+  .md-copy h2{font-size:clamp(1.9rem,4vw,2.7rem);color:#fff;margin:1rem 0 1.4rem}
+  .md-copy blockquote{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--sand);margin-bottom:1.4rem;position:relative;padding-left:1.4rem;border-left:3px solid var(--terracotta)}
+  .md-copy p{color:rgba(232,221,202,.82);margin-bottom:1rem;max-width:54ch;font-size:.98rem}
+  .board{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid rgba(232,221,202,.2);font-size:.88rem;color:rgba(232,221,202,.75)}
+  .board b{color:#fff;font-weight:600}
+
+  /* promise band */
+  .promise{background:var(--terracotta);color:#fff;text-align:center;padding:4.5rem 0}
+  .promise h2{font-size:clamp(1.8rem,4vw,2.8rem);max-width:20ch;margin:0 auto 1rem}
+  .promise p{max-width:50ch;margin:0 auto;opacity:.9;font-size:1.05rem}
+  .promise-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;text-align:left}
+  .promise-row .pi{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:1.6rem;transition:background .3s}
+  .promise-row .pi:hover{background:rgba(255,255,255,.16)}
+  .promise-row .pi b{font-family:var(--serif);font-size:1.15rem;display:block;margin-bottom:.4rem}
+  .promise-row .pi span{font-size:.9rem;opacity:.88}
+
+  /* enquiry */
+  .enq-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+  .enq-copy h2{font-size:clamp(2rem,4.4vw,3rem);color:var(--green);margin:1rem 0 1.2rem}
+  .enq-copy p{color:var(--ink-soft);margin-bottom:2rem;max-width:42ch}
+  .contact-card{display:flex;align-items:center;gap:1rem;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.4rem;margin-bottom:1rem;transition:transform .25s,box-shadow .25s}
+  .contact-card:hover{transform:translateX(5px);box-shadow:var(--shadow)}
+  .contact-card .ci{width:46px;height:46px;flex:0 0 46px;border-radius:12px;background:var(--green);display:grid;place-items:center;color:var(--sand)}
+  .contact-card .cl{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
+  .contact-card .cv{font-family:var(--serif);font-size:1.2rem;color:var(--green)}
+  form{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:var(--shadow)}
+  .field{margin-bottom:1.1rem}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--green);margin-bottom:.4rem;letter-spacing:.02em}
+  .field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:.8rem .9rem;font-family:var(--sans);font-size:.95rem;color:var(--ink);transition:border .25s,box-shadow .25s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,96,58,.14)}
+  .field textarea{resize:vertical;min-height:96px}
+  form .btn-primary{width:100%;justify-content:center;background:var(--terracotta);margin-top:.4rem}
+  form .btn-primary:hover{background:var(--terracotta-deep)}
+  .form-note{font-size:.78rem;color:var(--ink-soft);text-align:center;margin-top:.9rem}
+  .ok{display:none;text-align:center;padding:1rem;background:rgba(34,64,47,.08);border-radius:12px;color:var(--green);font-weight:600;margin-top:1rem}
+  .ok.show{display:block}
+
+  /* footer */
+  footer{background:var(--green);color:var(--sand);padding:4rem 0 1.8rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(232,221,202,.18)}
+  .foot-brand{display:flex;align-items:center;gap:.7rem;font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:1rem}
+  .foot-grid p{color:rgba(232,221,202,.72);font-size:.92rem;max-width:34ch}
+  .foot-col h5{font-family:var(--sans);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--terracotta);margin-bottom:1rem;font-weight:600}
+  .foot-col a,.foot-col span{display:block;color:rgba(232,221,202,.8);font-size:.92rem;margin-bottom:.55rem;transition:color .25s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem;color:rgba(232,221,202,.6)}
+  .foot-bottom .credit{color:rgba(232,221,202,.45)}
+
+  @media(max-width:880px){
+    .nav-links{position:fixed;inset:0 0 0 38%;background:var(--cream);flex-direction:column;justify-content:center;gap:1.6rem;padding:2rem;transform:translateX(100%);transition:transform .4s;box-shadow:var(--shadow)}
+    .nav-links.open{transform:none}
+    .burger{display:flex}
+    .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.x span:nth-child(2){opacity:0}
+    .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .hero .wrap,.narr-grid,.md-grid,.enq-grid{grid-template-columns:1fr}
+    .hero-art{max-width:420px}
+    .proj-grid{grid-template-columns:1fr}
+    .promise-row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .md-portrait{max-width:300px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="44" height="44" rx="11" fill="#22402f"/>
+        <path d="M24 11 L37 21 V37 H11 V21 Z" fill="#e8ddca"/>
+        <rect x="20" y="27" width="8" height="10" fill="#b5603a"/>
+        <path d="M24 11 L37 21 H11 Z" fill="#b5603a"/>
+      </svg>
+      <span>Al-Nur</span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#story">Our Story</a>
+      <a href="#projects">Projects</a>
+      <a href="#md">Leadership</a>
+      <a href="#promise">Promise</a>
+      <a href="#enquiry" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Property Builders &amp; Traders, Dhaka</span>
+      <h1>Homes built to <em>hold a family</em>, not just a footprint.</h1>
+      <p class="lead">Al-Nur Property Builders and Traders Ltd has spent two decades raising residential and commercial spaces across Dhaka, one honest brick at a time.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">See our projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#enquiry" class="btn btn-ghost">Talk to our team</a>
+      </div>
+    </div>
+    <div class="hero-art reveal d2">
+      <div class="hero-card">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a warm Dhaka residence at dusk">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f0e3cd"/><stop offset="1" stop-color="#e6cbb0"/>
+            </linearGradient>
+            <linearGradient id="bld" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c87a52"/><stop offset="1" stop-color="#b5603a"/>
+            </linearGradient>
+            <linearGradient id="bld2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3a5c46"/><stop offset="1" stop-color="#22402f"/>
+            </linearGradient>
+          </defs>
+          <rect width="420" height="300" fill="url(#sky)"/>
+          <circle cx="330" cy="70" r="40" fill="#e8a77c" opacity="0.55"/>
+          <!-- back building -->
+          <rect x="40" y="90" width="120" height="180" fill="url(#bld2)"/>
+          <g fill="#e8ddca" opacity="0.85">
+            <rect x="56" y="108" width="18" height="22"/><rect x="86" y="108" width="18" height="22"/><rect x="116" y="108" width="18" height="22"/>
+            <rect x="56" y="146" width="18" height="22"/><rect x="86" y="146" width="18" height="22"/><rect x="116" y="146" width="18" height="22"/>
+            <rect x="56" y="184" width="18" height="22"/><rect x="86" y="184" width="18" height="22"/><rect x="116" y="184" width="18" height="22"/>
+            <rect x="56" y="222" width="18" height="22"/><rect x="86" y="222" width="18" height="22"/><rect x="116" y="222" width="18" height="22"/>
+          </g>
+          <!-- front building -->
+          <rect x="178" y="130" width="150" height="140" fill="url(#bld)"/>
+          <g stroke="#9a4c2c" stroke-width="2" opacity="0.4">
+            <line x1="178" y1="160" x2="328" y2="160"/><line x1="178" y1="195" x2="328" y2="195"/><line x1="178" y1="230" x2="328" y2="230"/>
+          </g>
+          <g fill="#f6f0e4">
+            <rect x="194" y="142" width="22" height="22" rx="2"/><rect x="228" y="142" width="22" height="22" rx="2"/><rect x="262" y="142" width="22" height="22" rx="2"/><rect x="296" y="142" width="22" height="22" rx="2"/>
+            <rect x="194" y="200" width="22" height="22" rx="2"/><rect x="296" y="200" width="22" height="22" rx="2"/>
+          </g>
+          <rect x="240" y="236" width="34" height="34" fill="#22402f"/>
+          <!-- tower -->
+          <rect x="344" y="60" width="48" height="210" fill="url(#bld2)"/>
+          <g fill="#e8a77c" opacity="0.9"><rect x="354" y="84" width="12" height="16"/><rect x="372" y="84" width="12" height="16"/><rect x="354" y="116" width="12" height="16"/><rect x="372" y="116" width="12" height="16"/><rect x="354" y="148" width="12" height="16"/><rect x="372" y="148" width="12" height="16"/></g>
+          <!-- ground -->
+          <rect x="0" y="270" width="420" height="30" fill="#22402f"/>
+          <!-- crane -->
+          <line x1="120" y1="50" x2="120" y2="90" stroke="#9a4c2c" stroke-width="4"/>
+          <line x1="120" y1="50" x2="200" y2="50" stroke="#9a4c2c" stroke-width="4"/>
+          <line x1="170" y1="50" x2="170" y2="70" stroke="#9a4c2c" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="hero-badge"><b>20+</b> years building across Dhaka</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="ts reveal"><b>20+</b><span>Years of building in Dhaka</span></div>
+    <div class="ts reveal d1"><b>40+</b><span>Projects delivered and handed over</span></div>
+    <div class="ts reveal d2"><b>900+</b><span>Families and tenants housed</span></div>
+    <div class="ts reveal d3"><b>3</b><span>Generations of trust kept</span></div>
+  </div>
+</div>
+
+<!-- NARRATIVE -->
+<section class="narr" id="story">
+  <div class="wrap narr-grid">
+    <div class="bricks reveal">
+      <div class="brick">
+        <div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Honest land</h4>
+        <p>Clear titles and verified plots in neighbourhoods families actually want to live in.</p>
+      </div>
+      <div class="brick">
+        <div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 .8-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.9L3 8.8 9 8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h4>Sound build</h4>
+        <p>Structures engineered for Dhaka soil, monsoon and the long decades that follow.</p>
+      </div>
+      <div class="brick">
+        <div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Fair trade</h4>
+        <p>Property bought and sold with paperwork you can hand to a lawyer without worry.</p>
+      </div>
+      <div class="brick">
+        <div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.4-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h4>Kept word</h4>
+        <p>Handover dates we mean and a team that answers the phone years after the keys.</p>
+      </div>
+    </div>
+    <div class="narr-copy reveal d2">
+      <span class="eyebrow">Why Al-Nur</span>
+      <h2>Building trust, <em>brick by brick.</em></h2>
+      <p>Al-Nur began as a family that believed a good building is a promise you can stand inside. We did not start with a tower and a slogan. We started with one plot, one careful foundation, and neighbours who told other neighbours.</p>
+      <p>That word of mouth is still how most of our work arrives. We develop, we construct, and we trade property the way you would for your own relatives: slowly enough to get it right, and openly enough that nobody is surprised at signing.</p>
+      <p>Today the same family stewards the company, working alongside engineers and craftsmen who have stayed with us for years. Every project carries that continuity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our work</span>
+      <h2>Projects across the city, in every stage.</h2>
+      <p>From foundations being poured today to homes that families have lived in for years, here is where Al-Nur is building.</p>
+    </div>
+    <div class="proj-tabs reveal d1" id="tabs">
+      <button class="active" data-tab="ongoing">Ongoing</button>
+      <button data-tab="completed">Completed</button>
+      <button data-tab="upcoming">Upcoming</button>
+    </div>
+
+    <!-- ONGOING -->
+    <div class="panel show" data-panel="ongoing">
+      <div class="proj-grid">
+        <article class="pcard reveal">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#dccdb2"/><rect x="60" y="40" width="120" height="120" fill="#b5603a"/><rect x="200" y="20" width="120" height="140" fill="#22402f"/><g fill="#f6f0e4" opacity=".85"><rect x="78" y="58" width="20" height="22"/><rect x="118" y="58" width="20" height="22"/><rect x="78" y="96" width="20" height="22"/><rect x="118" y="96" width="20" height="22"/><rect x="218" y="40" width="18" height="20"/><rect x="252" y="40" width="18" height="20"/><rect x="286" y="40" width="18" height="20"/><rect x="218" y="80" width="18" height="20"/><rect x="286" y="80" width="18" height="20"/></g><rect x="0" y="160" width="400" height="20" fill="#9a4c2c"/></svg>
+            <span class="ptag">Ongoing</span>
+          </div>
+          <div class="pbody">
+            <h4>Al-Nur Greenview Residence</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Mirpur, Dhaka</div>
+            <p>A twelve storey residential block with cross ventilated flats and a shaded community courtyard.</p>
+            <div class="pmeta"><span>Type<b>Residential</b></span><span>Status<b>Structure</b></span><span>Handover<b>Late 2026</b></span></div>
+          </div>
+        </article>
+        <article class="pcard reveal d1">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#e6d6bd"/><rect x="90" y="30" width="210" height="130" fill="#22402f"/><g fill="#c87a52"><rect x="110" y="50" width="40" height="30"/><rect x="170" y="50" width="40" height="30"/><rect x="230" y="50" width="40" height="30"/><rect x="110" y="100" width="40" height="30"/><rect x="170" y="100" width="40" height="30"/><rect x="230" y="100" width="40" height="30"/></g><rect x="0" y="160" width="400" height="20" fill="#9a4c2c"/></svg>
+            <span class="ptag">Ongoing</span>
+          </div>
+          <div class="pbody">
+            <h4>Akter Trade Centre</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Motijheel, Dhaka</div>
+            <p>A mixed use commercial building with ground floor retail and flexible office floors above.</p>
+            <div class="pmeta"><span>Type<b>Commercial</b></span><span>Status<b>Finishing</b></span><span>Handover<b>Mid 2026</b></span></div>
+          </div>
+        </article>
+        <article class="pcard reveal d2">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#dccdb2"/><rect x="70" y="50" width="90" height="110" fill="#b5603a"/><rect x="180" y="30" width="90" height="130" fill="#3a5c46"/><rect x="290" y="60" width="60" height="100" fill="#c87a52"/><g fill="#f6f0e4" opacity=".8"><rect x="88" y="70" width="16" height="18"/><rect x="122" y="70" width="16" height="18"/><rect x="198" y="50" width="16" height="18"/><rect x="232" y="50" width="16" height="18"/></g><rect x="0" y="160" width="400" height="20" fill="#9a4c2c"/></svg>
+            <span class="ptag">Ongoing</span>
+          </div>
+          <div class="pbody">
+            <h4>Noor Garden Apartments</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Bashundhara, Dhaka</div>
+            <p>Family sized three bedroom flats arranged around a planted central garden and play area.</p>
+            <div class="pmeta"><span>Type<b>Residential</b></span><span>Status<b>Foundation</b></span><span>Handover<b>2027</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- COMPLETED -->
+    <div class="panel" data-panel="completed">
+      <div class="proj-grid">
+        <article class="pcard reveal">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#e6d6bd"/><rect x="80" y="40" width="240" height="120" fill="#22402f"/><g fill="#e8a77c"><rect x="100" y="60" width="22" height="26"/><rect x="138" y="60" width="22" height="26"/><rect x="176" y="60" width="22" height="26"/><rect x="214" y="60" width="22" height="26"/><rect x="252" y="60" width="22" height="26"/><rect x="290" y="60" width="22" height="26"/><rect x="100" y="104" width="22" height="26"/><rect x="138" y="104" width="22" height="26"/><rect x="252" y="104" width="22" height="26"/><rect x="290" y="104" width="22" height="26"/></g><rect x="186" y="120" width="40" height="40" fill="#b5603a"/><rect x="0" y="160" width="400" height="20" fill="#9a4c2c"/></svg>
+            <span class="ptag">Completed</span>
+          </div>
+          <div class="pbody">
+            <h4>Al-Nur Palli Heights</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Uttara, Dhaka</div>
+            <p>A handed over residential tower of forty eight flats, fully occupied and self managed by its residents.</p>
+            <div class="pmeta"><span>Type<b>Residential</b></span><span>Flats<b>48</b></span><span>Delivered<b>2021</b></span></div>
+          </div>
+        </article>
+        <article class="pcard reveal d1">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#dccdb2"/><rect x="110" y="60" width="180" height="100" fill="#b5603a"/><path d="M110 60 L200 24 L290 60 Z" fill="#9a4c2c"/><rect x="180" y="110" width="40" height="50" fill="#22402f"/><g fill="#f6f0e4"><rect x="130" y="80" width="24" height="24"/><rect x="246" y="80" width="24" height="24"/></g><rect x="0" y="160" width="400" height="20" fill="#9a4c2c"/></svg>
+            <span class="ptag">Completed</span>
+          </div>
+          <div class="pbody">
+            <h4>Rahman Family Villa</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Gulshan, Dhaka</div>
+            <p>A bespoke three storey private residence built to a single family brief, on time and on budget.</p>
+            <div class="pmeta"><span>Type<b>Private home</b></span><span>Floors<b>3</b></span><span>Delivered<b>2020</b></span></div>
+          </div>
+        </article>
+        <article class="pcard reveal d2">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#e6d6bd"/><rect x="60" y="50" width="280" height="110" fill="#3a5c46"/><g fill="#e8ddca" opacity=".9"><rect x="80" y="70" width="30" height="70"/><rect x="130" y="70" width="30" height="70"/><rect x="180" y="70" width="30" height="70"/><rect x="230" y="70" width="30" height="70"/><rect x="280" y="70" width="30" height="70"/></g><rect x="0" y="160" width="400" height="20" fill="#9a4c2c"/></svg>
+            <span class="ptag">Completed</span>
+          </div>
+          <div class="pbody">
+            <h4>Al-Nur Bazaar Arcade</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Mohammadpur, Dhaka</div>
+            <p>A ground plus two commercial arcade of small shops, leased and trading since handover.</p>
+            <div class="pmeta"><span>Type<b>Commercial</b></span><span>Shops<b>26</b></span><span>Delivered<b>2019</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- UPCOMING -->
+    <div class="panel" data-panel="upcoming">
+      <div class="proj-grid">
+        <article class="pcard reveal">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#dccdb2"/><g stroke="#b5603a" stroke-width="2.5" stroke-dasharray="8 6" fill="none"><rect x="90" y="50" width="100" height="110"/><rect x="210" y="40" width="100" height="120"/></g><line x1="120" y1="30" x2="120" y2="50" stroke="#9a4c2c" stroke-width="3"/><line x1="120" y1="30" x2="180" y2="30" stroke="#9a4c2c" stroke-width="3"/><rect x="0" y="160" width="400" height="20" fill="#22402f"/></svg>
+            <span class="ptag">Upcoming</span>
+          </div>
+          <div class="pbody">
+            <h4>Al-Nur Riverside Enclave</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Keraniganj, Dhaka</div>
+            <p>A planned low rise community of family apartments near the river, currently in design and approvals.</p>
+            <div class="pmeta"><span>Type<b>Residential</b></span><span>Stage<b>Planning</b></span><span>Launch<b>2027</b></span></div>
+          </div>
+        </article>
+        <article class="pcard reveal d1">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#e6d6bd"/><g stroke="#22402f" stroke-width="2.5" stroke-dasharray="8 6" fill="none"><rect x="120" y="30" width="160" height="130"/></g><line x1="120" y1="80" x2="280" y2="80" stroke="#3a5c46" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="120" y1="120" x2="280" y2="120" stroke="#3a5c46" stroke-width="1.5" stroke-dasharray="4 4"/><rect x="0" y="160" width="400" height="20" fill="#22402f"/></svg>
+            <span class="ptag">Upcoming</span>
+          </div>
+          <div class="pbody">
+            <h4>Nur Corporate Square</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Banani, Dhaka</div>
+            <p>A future commercial office tower with flexible floor plates, now gathering its land and partners.</p>
+            <div class="pmeta"><span>Type<b>Commercial</b></span><span>Stage<b>Land assembly</b></span><span>Launch<b>2028</b></span></div>
+          </div>
+        </article>
+        <article class="pcard reveal d2">
+          <div class="pic">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none"><rect width="400" height="180" fill="#dccdb2"/><g stroke="#b5603a" stroke-width="2.5" stroke-dasharray="8 6" fill="none"><rect x="80" y="60" width="70" height="100"/><rect x="165" y="60" width="70" height="100"/><rect x="250" y="60" width="70" height="100"/></g><rect x="0" y="160" width="400" height="20" fill="#22402f"/></svg>
+            <span class="ptag">Upcoming</span>
+          </div>
+          <div class="pbody">
+            <h4>Al-Nur Townhouse Row</h4>
+            <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Savar, Dhaka</div>
+            <p>A row of private townhouses for families who want a home of their own with a small green frontage.</p>
+            <div class="pmeta"><span>Type<b>Residential</b></span><span>Stage<b>Concept</b></span><span>Launch<b>2028</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MD MESSAGE -->
+<section class="md" id="md">
+  <div class="wrap md-grid">
+    <div class="md-portrait reveal">
+      <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portrait illustration of Managing Director Mahinur Akter">
+        <defs>
+          <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c87a52"/><stop offset="1" stop-color="#b5603a"/></linearGradient>
+        </defs>
+        <rect width="320" height="360" rx="24" fill="url(#pbg)"/>
+        <circle cx="160" cy="150" r="74" fill="#e8ddca"/>
+        <path d="M160 90 q-50 0 -50 56 q0 8 4 18 q-14 -2 -14 -22 q0 -64 60 -64 q60 0 60 64 q0 20 -14 22 q4 -10 4 -18 q0 -56 -50 -56 z" fill="#22402f"/>
+        <path d="M118 150 q0 -26 42 -26 q42 0 42 26 q0 30 -42 30 q-42 0 -42 -30z" fill="#f0d9c2"/>
+        <circle cx="142" cy="150" r="5" fill="#2c241b"/><circle cx="178" cy="150" r="5" fill="#2c241b"/>
+        <path d="M150 168 q10 8 20 0" stroke="#9a4c2c" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M110 360 q0 -78 50 -78 q50 0 50 78 z" fill="#22402f"/>
+        <path d="M126 300 q34 30 68 0 l0 60 l-68 0 z" fill="#f0d9c2"/>
+        <path d="M126 300 q34 30 68 0 l0 18 q-34 26 -68 0 z" fill="#dccdb2"/>
+      </svg>
+      <div class="md-name">
+        <div class="nm">Mahinur Akter</div>
+        <div class="ttl">Managing Director</div>
+      </div>
+    </div>
+    <div class="md-copy reveal d2">
+      <span class="eyebrow">A message from our Managing Director</span>
+      <h2>We do not sell buildings. We hand over homes.</h2>
+      <blockquote>"Every key we give back was once a worry on a family's mind. My job is to make sure that worry never becomes a regret."</blockquote>
+      <p>When my family started Al-Nur, we made a simple rule: never promise a wall we cannot stand behind. Decades later that rule still decides how we choose land, how we pour concrete, and how we treat the people who trust us with their savings.</p>
+      <p>I read the enquiries. I visit the sites. And I would rather lose a sale than lose your confidence. If you are thinking about a home, an investment, or a plot you are unsure of, come and talk to us first.</p>
+      <div class="board"><b>Board of Directors:</b> Al-Nur is guided by a small family board that meets each project at the foundation and again at handover, keeping our standards consistent from the first brick to the final key.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE BAND -->
+<section class="promise" id="promise">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="color:#fff7ef">Our promise</span>
+    <h2 class="reveal d1">The Al-Nur promise to every family we build for.</h2>
+    <p class="reveal d2">Three things we will not bend on, no matter the project, the budget, or the season.</p>
+    <div class="promise-row">
+      <div class="pi reveal d1"><b>Clean paperwork</b><span>Verified titles, transparent agreements, and documents you can review with your own lawyer before anything is signed.</span></div>
+      <div class="pi reveal d2"><b>Built to last</b><span>Materials and engineering chosen for Dhaka conditions, so the home you buy holds up long after the warranty ends.</span></div>
+      <div class="pi reveal d3"><b>We stay reachable</b><span>The same family and team that sold you the home will still pick up the phone years later. That is the whole point.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry">
+  <div class="wrap enq-grid">
+    <div class="enq-copy reveal">
+      <span class="eyebrow">Enquire</span>
+      <h2>Let us talk about your next home or investment.</h2>
+      <p>Tell us a little about what you are looking for, or simply call. A member of our team in Dhaka will get back to you, often the same day.</p>
+      <a href="tel:+8801711172044" class="contact-card">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><div class="cl">Call us</div><div class="cv">+880 1711-172044</div></div>
+      </a>
+      <a href="mailto:info@alnur.com.bd" class="contact-card">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div><div class="cl">Email us</div><div class="cv">info@alnur.com.bd</div></div>
+      </a>
+      <a href="#top" class="contact-card">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg></div>
+        <div><div class="cl">Visit us</div><div class="cv">Dhaka, Bangladesh</div></div>
+      </a>
+    </div>
+    <form class="reveal d2" id="enqForm" novalidate>
+      <div class="field"><label for="nm">Your name</label><input id="nm" type="text" placeholder="e.g. Mahinur Akter" required /></div>
+      <div class="field"><label for="ph">Phone number</label><input id="ph" type="tel" placeholder="+880" required /></div>
+      <div class="field"><label for="int">I am interested in</label>
+        <select id="int">
+          <option>Buying a residential home</option>
+          <option>Commercial space</option>
+          <option>Selling or trading a property</option>
+          <option>A construction project</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">A few details</label><textarea id="msg" placeholder="Tell us roughly what you are looking for, your preferred area, and your timeline."></textarea></div>
+      <button type="submit" class="btn btn-primary">Send enquiry
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="form-note">This demo form does not send data. Please call +880 1711-172044 to reach us directly.</p>
+      <div class="ok" id="okMsg">Thank you. In a live site your enquiry would now reach our Dhaka team.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#33543f"/><path d="M24 11 L37 21 V37 H11 V21 Z" fill="#e8ddca"/><rect x="20" y="27" width="8" height="10" fill="#b5603a"/><path d="M24 11 L37 21 H11 Z" fill="#b5603a"/></svg>
+          <span>Al-Nur</span>
+        </div>
+        <p>Al-Nur Property Builders and Traders Ltd. A family rooted real estate development, construction and property trading company, building trust across Dhaka brick by brick.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#story">Our Story</a>
+        <a href="#projects">Projects</a>
+        <a href="#md">Leadership</a>
+        <a href="#promise">Our Promise</a>
+        <a href="#enquiry">Enquire</a>
+      </div>
+      <div class="foot-col">
+        <h5>Reach us</h5>
+        <a href="tel:+8801711172044">+880 1711-172044</a>
+        <a href="mailto:info@alnur.com.bd">info@alnur.com.bd</a>
+        <span>Dhaka, Bangladesh</span>
+        <span>Managing Director: Mahinur Akter</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr"></span> Al-Nur Property Builders and Traders Ltd, Dhaka, Bangladesh. All rights reserved.</span>
+      <span class="credit">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // sticky nav
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('stuck', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navlinks');
+  burger.addEventListener('click', () => {
+    links.classList.toggle('open');
+    burger.classList.toggle('x');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); burger.classList.remove('x');
+  }));
+
+  // scroll reveals
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // project tabs
+  const tabs = document.getElementById('tabs');
+  tabs.addEventListener('click', (e) => {
+    const btn = e.target.closest('button'); if(!btn) return;
+    tabs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const key = btn.dataset.tab;
+    document.querySelectorAll('.panel').forEach(p => {
+      p.classList.toggle('show', p.dataset.panel === key);
+    });
+  });
+
+  // form
+  const form = document.getElementById('enqForm');
+  const ok = document.getElementById('okMsg');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nm = document.getElementById('nm');
+    const ph = document.getElementById('ph');
+    if(!nm.value.trim() || !ph.value.trim()){
+      (!nm.value.trim() ? nm : ph).focus(); return;
+    }
+    ok.classList.add('show');
+    form.querySelector('button').textContent = 'Enquiry received';
+    setTimeout(() => { ok.classList.remove('show'); form.reset(); form.querySelector('button').innerHTML = 'Send enquiry'; }, 4200);
+  });
+</script>
+</body>
+</html>

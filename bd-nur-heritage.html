@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nur Heritage Holdings | Heritage Real Estate Development in Dhaka</title>
+<meta name="description" content="Nur Heritage Holdings develops land plots, apartments, township and commercial estates across Dhaka. Signature addresses including Dhaka Western Valley, Pushpodhara and The Bay Icon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  :root{
+    --emerald:#0f3d2e;
+    --emerald-deep:#0a2c20;
+    --emerald-soft:#16513c;
+    --gold:#c8a24b;
+    --gold-light:#dcc081;
+    --ivory:#f6f1e7;
+    --ivory-dim:#ece4d2;
+    --ink:#13201a;
+    --hair:rgba(200,162,75,.32);
+    --shadow:0 30px 80px -40px rgba(8,30,22,.65);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--emerald-deep)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .eyebrow{
+    font-family:var(--sans);font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+    font-weight:500;color:var(--gold);display:inline-flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+  .eyebrow.center::after{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+  .eyebrow.center{justify-content:center}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    transition:background .5s ease,box-shadow .5s ease,padding .4s ease;
+    padding:22px 0;
+  }
+  header.solid{background:rgba(10,44,32,.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--hair);padding:14px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:13px;color:var(--ivory)}
+  .monogram{
+    width:42px;height:42px;flex:none;
+  }
+  .brand-txt{display:flex;flex-direction:column;line-height:1}
+  .brand-txt b{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.03em}
+  .brand-txt span{font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-light);margin-top:4px;font-weight:500}
+  .menu{display:flex;align-items:center;gap:38px}
+  .menu a{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(246,241,231,.78);font-weight:400;position:relative;padding:4px 0}
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+  .menu a:hover{color:var(--ivory)}
+  .menu a:hover::after{width:100%}
+  .nav-cta{
+    border:1px solid var(--gold);color:var(--gold-light);padding:11px 22px;border-radius:2px;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;transition:.35s;font-weight:500;
+  }
+  .nav-cta:hover{background:var(--gold);color:var(--emerald-deep)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+  .burger span{width:26px;height:2px;background:var(--ivory);transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:
+      radial-gradient(120% 90% at 80% 10%,rgba(22,81,60,.55),transparent 60%),
+      radial-gradient(90% 70% at 12% 90%,rgba(200,162,75,.10),transparent 55%),
+      linear-gradient(160deg,var(--emerald-deep),var(--emerald) 55%,var(--emerald-deep));
+    color:var(--ivory);overflow:hidden;padding:130px 0 60px;
+  }
+  .hero-skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:46%;z-index:1;opacity:.9}
+  .hero-grain{position:absolute;inset:0;opacity:.05;z-index:2;pointer-events:none;
+    background-image:radial-gradient(rgba(246,241,231,.7) .5px,transparent .5px);background-size:4px 4px}
+  .hero-inner{position:relative;z-index:5;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;width:100%}
+  .hero h1{font-size:clamp(46px,7vw,92px);font-weight:500;letter-spacing:-.01em;margin:26px 0 6px}
+  .hero h1 em{font-style:italic;color:var(--gold-light);font-weight:500}
+  .hero .lede{font-size:18px;color:rgba(246,241,231,.82);max-width:480px;margin-top:22px;font-weight:300}
+  .hero-actions{display:flex;gap:18px;margin-top:38px;flex-wrap:wrap}
+  .btn-gold{
+    background:linear-gradient(120deg,var(--gold),var(--gold-light));color:var(--emerald-deep);
+    padding:16px 30px;border-radius:2px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;transition:.4s;box-shadow:0 18px 40px -18px rgba(200,162,75,.7);
+  }
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 26px 52px -18px rgba(200,162,75,.85)}
+  .btn-ghost{
+    border:1px solid rgba(246,241,231,.35);color:var(--ivory);padding:16px 28px;border-radius:2px;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:.4s;
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
+  .hero-emblem{display:flex;justify-content:center;align-items:center}
+  .crest{width:min(360px,80%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.35))}
+  .hero-meta{
+    position:absolute;bottom:38px;left:32px;right:32px;z-index:6;display:flex;justify-content:space-between;
+    align-items:flex-end;border-top:1px solid var(--hair);padding-top:18px;max-width:1240px;margin:0 auto;
+  }
+  .hero-meta .mleft{font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(246,241,231,.7)}
+  .hero-meta .mright{display:flex;gap:36px}
+  .hero-meta .mright div span{display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+  .hero-meta .mright div b{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--ivory)}
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{background:var(--emerald-deep);color:var(--ivory);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden;padding:18px 0}
+  .strip-track{display:flex;gap:60px;white-space:nowrap;width:max-content;animation:slide 32s linear infinite}
+  .strip-track span{font-family:var(--serif);font-style:italic;font-size:20px;color:rgba(246,241,231,.6);display:inline-flex;align-items:center;gap:60px}
+  .strip-track span::after{content:"✦";color:var(--gold);font-size:13px}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- LEGACY ---------- */
+  .legacy{padding:140px 0 120px;position:relative}
+  .legacy-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
+  .legacy h2{font-size:clamp(36px,4.6vw,58px);color:var(--emerald);margin:24px 0 26px}
+  .legacy h2 em{font-style:italic;color:var(--gold)}
+  .legacy p{color:#3d4a42;font-size:16.5px;font-weight:300;margin-bottom:20px}
+  .legacy p strong{font-weight:500;color:var(--emerald)}
+  .legacy-visual{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;box-shadow:var(--shadow);
+    background:linear-gradient(160deg,var(--emerald-soft),var(--emerald-deep))}
+  .legacy-visual svg{position:absolute;inset:0;width:100%;height:100%}
+  .legacy-tag{position:absolute;left:28px;bottom:28px;z-index:3;color:var(--ivory)}
+  .legacy-tag span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light)}
+  .legacy-tag b{display:block;font-family:var(--serif);font-size:27px;font-weight:600;margin-top:6px}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:36px;border-top:1px solid var(--hair)}
+  .pillar{padding:24px 22px 24px 0;border-bottom:1px solid var(--hair)}
+  .pillar:nth-child(odd){padding-right:30px}
+  .pillar:nth-child(even){padding-left:30px;border-left:1px solid var(--hair)}
+  .pillar h4{font-size:21px;color:var(--emerald);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .pillar h4 i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex:none}
+  .pillar p{font-size:14px;color:#52605a;margin:0;font-weight:300}
+
+  /* ---------- SIGNATURE ---------- */
+  .signature{padding:120px 0 130px;background:linear-gradient(180deg,var(--ivory),var(--ivory-dim));position:relative}
+  .sig-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:60px}
+  .sig-head h2{font-size:clamp(36px,5vw,64px);color:var(--emerald);margin-top:18px;max-width:640px}
+  .sig-head h2 em{font-style:italic;color:var(--gold)}
+  .sig-head p{max-width:330px;color:#52605a;font-size:15px;font-weight:300}
+  .sig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:26px}
+  .estate{
+    position:relative;border-radius:4px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;
+    justify-content:flex-end;padding:30px;color:var(--ivory);cursor:pointer;border:1px solid rgba(15,61,46,.08);
+    box-shadow:0 24px 60px -42px rgba(10,40,28,.6);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;
+  }
+  .estate:hover{transform:translateY(-8px);box-shadow:0 40px 80px -40px rgba(10,40,28,.75)}
+  .estate .bg{position:absolute;inset:0;z-index:0}
+  .estate .bg svg{width:100%;height:100%}
+  .estate::after{content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(10,40,28,.05) 30%,rgba(8,30,22,.9))}
+  .estate-body{position:relative;z-index:2}
+  .estate .kind{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);font-weight:600}
+  .estate h3{font-size:30px;font-weight:600;margin:10px 0 8px}
+  .estate p{font-size:13.5px;color:rgba(246,241,231,.82);font-weight:300;max-width:90%}
+  .estate .more{margin-top:16px;display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gold-light);opacity:0;transform:translateX(-8px);transition:.45s;font-weight:500}
+  .estate:hover .more{opacity:1;transform:translateX(0)}
+  .estate.span3{grid-column:span 3}
+  .estate.span2{grid-column:span 2}
+  .estate.span4{grid-column:span 4}
+  .estate.tall{min-height:420px}
+
+  /* ---------- NUMBERS BAND ---------- */
+  .band{
+    background:
+      radial-gradient(80% 120% at 85% 0%,rgba(22,81,60,.6),transparent 60%),
+      linear-gradient(135deg,var(--emerald-deep),var(--emerald));
+    color:var(--ivory);padding:90px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;inset:0;opacity:.05;
+    background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
+    background-size:60px 60px;pointer-events:none}
+  .band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative;z-index:2}
+  .stat{text-align:center;padding:14px 10px;position:relative}
+  .stat:not(:last-child)::after{content:"";position:absolute;right:0;top:18%;height:64%;width:1px;background:var(--hair)}
+  .stat b{font-family:var(--serif);font-size:clamp(48px,6vw,74px);font-weight:600;color:var(--gold-light);display:block;line-height:1}
+  .stat span{display:block;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(246,241,231,.7);margin-top:14px;font-weight:400}
+
+  /* ---------- TRUST / GROUP ---------- */
+  .trust{padding:130px 0;position:relative}
+  .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .trust h2{font-size:clamp(34px,4.4vw,54px);color:var(--emerald);margin:22px 0 24px}
+  .trust h2 em{font-style:italic;color:var(--gold)}
+  .trust p{color:#3d4a42;font-size:16.5px;font-weight:300;margin-bottom:18px}
+  .quote{border-left:2px solid var(--gold);padding:6px 0 6px 26px;margin:30px 0;font-family:var(--serif);
+    font-style:italic;font-size:23px;color:var(--emerald);line-height:1.35}
+  .seal-stack{display:grid;gap:18px}
+  .seal{display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--hair);
+    border-radius:4px;box-shadow:0 20px 50px -40px rgba(10,40,28,.5);transition:.4s}
+  .seal:hover{transform:translateX(6px);box-shadow:0 26px 56px -38px rgba(10,40,28,.65)}
+  .seal-ic{width:48px;height:48px;flex:none;border-radius:3px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--emerald),var(--emerald-soft))}
+  .seal h4{font-size:21px;color:var(--emerald);margin-bottom:5px}
+  .seal p{font-size:14px;color:#52605a;margin:0;font-weight:300}
+
+  /* ---------- PROCESS ---------- */
+  .process{padding:0 0 130px}
+  .process-head{text-align:center;max-width:640px;margin:0 auto 64px}
+  .process-head h2{font-size:clamp(34px,4.6vw,56px);color:var(--emerald);margin-top:18px}
+  .process-head h2 em{font-style:italic;color:var(--gold)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair)}
+  .step{padding:38px 26px 38px 0;position:relative;border-right:1px solid var(--hair)}
+  .step:last-child{border-right:none;padding-right:0}
+  .step:not(:last-child){padding-right:30px}
+  .step:not(:first-child){padding-left:30px}
+  .step .num{font-family:var(--serif);font-size:20px;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .step .num::after{content:"";flex:1;height:1px;background:var(--hair)}
+  .step h4{font-size:23px;color:var(--emerald);margin-bottom:10px}
+  .step p{font-size:14px;color:#52605a;font-weight:300}
+
+  /* ---------- ENQUIRY ---------- */
+  .enquiry{
+    background:linear-gradient(160deg,var(--emerald),var(--emerald-deep));color:var(--ivory);
+    padding:120px 0;position:relative;overflow:hidden}
+  .enquiry-deco{position:absolute;right:-120px;top:-80px;width:520px;opacity:.16;z-index:0}
+  .enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;position:relative;z-index:2}
+  .enquiry h2{font-size:clamp(36px,5vw,62px);margin:22px 0 22px}
+  .enquiry h2 em{font-style:italic;color:var(--gold-light)}
+  .enquiry .lede{color:rgba(246,241,231,.82);font-size:17px;font-weight:300;max-width:440px;margin-bottom:40px}
+  .contact-lines{display:grid;gap:2px;margin-top:10px}
+  .cline{display:flex;gap:20px;align-items:center;padding:22px 0;border-top:1px solid var(--hair)}
+  .cline:last-child{border-bottom:1px solid var(--hair)}
+  .cline .ci{width:42px;height:42px;flex:none;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-light)}
+  .cline span{display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+  .cline a,.cline b{font-family:var(--serif);font-size:25px;font-weight:500;color:var(--ivory);transition:.3s}
+  .cline a:hover{color:var(--gold-light)}
+  form{background:rgba(246,241,231,.04);border:1px solid var(--hair);border-radius:6px;padding:38px;backdrop-filter:blur(6px)}
+  .field{margin-bottom:22px}
+  .field label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:9px;font-weight:500}
+  .field input,.field select,.field textarea{
+    width:100%;background:transparent;border:none;border-bottom:1px solid rgba(246,241,231,.25);
+    color:var(--ivory);font-family:var(--sans);font-size:15px;padding:10px 2px;transition:.3s;font-weight:300}
+  .field select option{color:#13201a}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(246,241,231,.4)}
+  .field textarea{resize:vertical;min-height:74px}
+  form button{
+    width:100%;background:linear-gradient(120deg,var(--gold),var(--gold-light));color:var(--emerald-deep);
+    border:none;padding:17px;border-radius:2px;font-family:var(--sans);font-size:12.5px;letter-spacing:.16em;
+    text-transform:uppercase;font-weight:600;cursor:pointer;transition:.4s;margin-top:6px}
+  form button:hover{transform:translateY(-2px);box-shadow:0 18px 40px -16px rgba(200,162,75,.6)}
+  .form-note{font-size:12px;color:rgba(246,241,231,.55);text-align:center;margin-top:16px;font-weight:300}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--emerald-deep);color:var(--ivory);padding:80px 0 34px;border-top:1px solid var(--hair)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:54px;border-bottom:1px solid var(--hair)}
+  .foot-brand .brand{margin-bottom:20px}
+  .foot-brand p{color:rgba(246,241,231,.65);font-size:14px;font-weight:300;max-width:300px}
+  .foot-col h5{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:rgba(246,241,231,.72);font-size:14px;margin-bottom:13px;font-weight:300;transition:.3s}
+  .foot-col a:hover{color:var(--gold-light)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:28px}
+  .foot-bottom p{font-size:12.5px;color:rgba(246,241,231,.5);font-weight:300}
+  .foot-bottom .credit{color:rgba(246,241,231,.4)}
+  .foot-bottom .credit b{color:var(--gold-light);font-weight:500}
+
+  .reveal{opacity:0;transform:translateY(38px)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .hero-inner,.legacy-grid,.trust-grid,.enquiry-grid{grid-template-columns:1fr;gap:46px}
+    .hero-emblem{order:-1}.crest{width:200px}
+    .band-grid,.steps{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2)::after,.step:nth-child(2){border-right:none}
+    .step{border-right:none;border-bottom:1px solid var(--hair);padding:30px 0!important}
+    .sig-grid{grid-template-columns:1fr}
+    .estate,.estate.span3,.estate.span2,.estate.span4{grid-column:span 1}
+    .foot-top{grid-template-columns:1fr 1fr;gap:34px}
+    .hero-meta{position:static;margin-top:50px;flex-direction:column;align-items:flex-start;gap:24px}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 22px}
+    .menu{display:none}.burger{display:flex}
+    .menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+      background:var(--emerald-deep);padding:14px 0;border-top:1px solid var(--hair)}
+    .menu.open a{padding:15px 32px;width:100%}
+    .menu.open .nav-cta{margin:14px 32px;text-align:center}
+    .band-grid{grid-template-columns:1fr 1fr;gap:18px}
+    .stat:not(:last-child)::after{display:none}
+    .pillars{grid-template-columns:1fr}
+    .pillar:nth-child(even){padding-left:0;border-left:none}
+    .pillar:nth-child(odd){padding-right:0}
+    .foot-top{grid-template-columns:1fr}
+    .hero-meta .mright{gap:24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <svg class="monogram" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#c8a24b" stroke-width="1.4"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#c8a24b" stroke-width=".6" opacity=".5"/>
+        <path d="M34 66V34l32 32V34" fill="none" stroke="#dcc081" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="50" cy="50" r="2.4" fill="#c8a24b"/>
+      </svg>
+      <span class="brand-txt"><b>Nur Heritage</b><span>Holdings</span></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#legacy">Legacy</a>
+      <a href="#developments">Developments</a>
+      <a href="#trust">The Group</a>
+      <a href="#process">Approach</a>
+      <a href="#enquiry" class="nav-cta">Enquire</a>
+    </nav>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-grain"></div>
+  <!-- skyline motif -->
+  <svg class="hero-skyline" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="tw" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#16513c"/><stop offset="1" stop-color="#0a2c20"/>
+      </linearGradient>
+      <linearGradient id="goldwin" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#dcc081"/><stop offset="1" stop-color="#c8a24b"/>
+      </linearGradient>
+    </defs>
+    <g fill="url(#tw)" stroke="#c8a24b" stroke-width=".6" stroke-opacity=".25">
+      <rect x="60" y="180" width="120" height="180"/>
+      <rect x="210" y="120" width="90" height="240"/>
+      <rect x="330" y="210" width="100" height="150"/>
+      <polygon points="500,90 560,40 620,90 620,360 500,360"/>
+      <rect x="500" y="90" width="120" height="270"/>
+      <rect x="660" y="160" width="80" height="200"/>
+      <rect x="770" y="100" width="110" height="260"/>
+      <rect x="910" y="200" width="90" height="160"/>
+      <polygon points="1030,140 1080,90 1130,140 1130,360 1030,360"/>
+      <rect x="1030" y="140" width="100" height="220"/>
+      <rect x="1170" y="190" width="90" height="170"/>
+      <rect x="1290" y="150" width="110" height="210"/>
+    </g>
+    <g fill="url(#goldwin)" opacity=".75">
+      <rect x="80" y="200" width="8" height="12"/><rect x="100" y="200" width="8" height="12"/><rect x="120" y="230" width="8" height="12"/>
+      <rect x="230" y="150" width="7" height="11"/><rect x="250" y="150" width="7" height="11"/><rect x="270" y="190" width="7" height="11"/>
+      <rect x="525" y="120" width="9" height="14"/><rect x="555" y="120" width="9" height="14"/><rect x="585" y="160" width="9" height="14"/><rect x="525" y="200" width="9" height="14"/><rect x="585" y="200" width="9" height="14"/>
+      <rect x="790" y="130" width="8" height="13"/><rect x="820" y="130" width="8" height="13"/><rect x="850" y="180" width="8" height="13"/>
+      <rect x="1055" y="170" width="9" height="14"/><rect x="1095" y="170" width="9" height="14"/><rect x="1055" y="230" width="9" height="14"/>
+      <rect x="1310" y="180" width="8" height="13"/><rect x="1340" y="180" width="8" height="13"/><rect x="1370" y="220" width="8" height="13"/>
+    </g>
+    <line x1="0" y1="358" x2="1440" y2="358" stroke="#c8a24b" stroke-width="1" stroke-opacity=".5"/>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Heritage Real Estate &nbsp;&middot;&nbsp; Dhaka</span>
+      <h1>Addresses that<br><em>endure</em> a lifetime.</h1>
+      <p class="lede">Nur Heritage Holdings shapes land, homes and townships across Dhaka with the patience of a property house that builds for generations, not seasons.</p>
+      <div class="hero-actions">
+        <a href="#developments" class="btn-gold">View Signature Estates</a>
+        <a href="#enquiry" class="btn-ghost">Reserve a Consultation</a>
+      </div>
+    </div>
+    <div class="hero-emblem">
+      <svg class="crest" viewBox="0 0 300 360" aria-hidden="true">
+        <defs>
+          <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#dcc081"/><stop offset="1" stop-color="#a07d2f"/>
+          </linearGradient>
+        </defs>
+        <path d="M150 10 L280 56 V196 C280 286 220 332 150 350 C80 332 20 286 20 196 V56 Z"
+              fill="none" stroke="url(#cg)" stroke-width="2"/>
+        <path d="M150 26 L264 66 V194 C264 274 212 316 150 332 C88 316 36 274 36 194 V66 Z"
+              fill="rgba(200,162,75,.06)" stroke="url(#cg)" stroke-width=".8" stroke-opacity=".55"/>
+        <path d="M150 70 L150 270 M150 70 L210 130 M150 70 L90 130" stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <path d="M110 150 V270 M190 150 V270 M150 130 L210 130 M150 130 L90 130" stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <text x="150" y="178" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="74" font-weight="600" fill="url(#cg)">N</text>
+        <text x="150" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" letter-spacing="6" fill="#dcc081">EST. HERITAGE</text>
+        <circle cx="150" cy="320" r="2.5" fill="#c8a24b"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <div class="mleft">A member of an international group, with roots in Dhaka and ties to Korea.</div>
+    <div class="mright">
+      <div><span>Estates</span><b>5</b></div>
+      <div><span>Disciplines</span><b>4</b></div>
+      <div><span>City</span><b>Dhaka</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRIP ============ -->
+<div class="strip">
+  <div class="strip-track" id="strip">
+    <span>Dhaka Western Valley<span>Pushpodhara<span>Pushpo Homes<span>The Bay Icon<span>ATN Satellite City<span>Land Plots<span>Apartments<span>Townships<span>Commercial Estates</span></span></span></span></span></span></span></span></span>
+    <span>Dhaka Western Valley<span>Pushpodhara<span>Pushpo Homes<span>The Bay Icon<span>ATN Satellite City<span>Land Plots<span>Apartments<span>Townships<span>Commercial Estates</span></span></span></span></span></span></span></span></span>
+  </div>
+</div>
+
+<!-- ============ LEGACY ============ -->
+<section class="legacy" id="legacy">
+  <div class="wrap legacy-grid">
+    <div class="legacy-visual reveal">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="lv" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#16513c"/><stop offset="1" stop-color="#0a2c20"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#lv)"/>
+        <g stroke="#c8a24b" stroke-opacity=".25" stroke-width=".7" fill="none">
+          <path d="M0 380 H400 M0 320 H400 M0 260 H400"/>
+        </g>
+        <!-- estate house elevation -->
+        <g fill="none" stroke="#c8a24b" stroke-width="1.6" stroke-opacity=".85">
+          <rect x="120" y="220" width="160" height="160"/>
+          <polygon points="110,220 200,140 290,220"/>
+          <rect x="150" y="280" width="34" height="100"/>
+          <rect x="216" y="280" width="34" height="100"/>
+          <rect x="160" y="180" width="80" height="2" fill="#c8a24b"/>
+          <line x1="120" y1="380" x2="280" y2="380"/>
+          <circle cx="200" cy="170" r="5"/>
+        </g>
+        <g fill="#dcc081" opacity=".5">
+          <rect x="158" y="290" width="18" height="34"/><rect x="224" y="290" width="18" height="34"/>
+        </g>
+        <line x1="60" y1="420" x2="340" y2="420" stroke="#c8a24b" stroke-opacity=".5"/>
+        <text x="200" y="455" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-size="22" fill="#dcc081">Built to be inherited</text>
+      </svg>
+      <div class="legacy-tag">
+        <span>Our Discipline</span>
+        <b>Land. Home. Township.</b>
+      </div>
+    </div>
+
+    <div class="legacy-copy reveal">
+      <span class="eyebrow">The House of Nur Heritage</span>
+      <h2>A property house measured<br>in <em>decades</em>, not deadlines.</h2>
+      <p>Nur Heritage Holdings is a real estate development company headquartered in Dhaka. We acquire, master plan and deliver <strong>land plots, apartments, township and commercial developments</strong>, each conceived as a long term address rather than a quick transaction.</p>
+      <p>As part of a larger group with an international footprint and a Korean connection, we bring disciplined capital, modern planning and a reverence for craft to every parcel of land we touch.</p>
+      <div class="pillars">
+        <div class="pillar"><h4><i></i>Serviced Land Plots</h4><p>Surveyed, titled and ready, in planned communities designed for orderly, lasting growth.</p></div>
+        <div class="pillar"><h4><i></i>Signature Apartments</h4><p>Residences with generous proportions, considered light and finishes meant to age gracefully.</p></div>
+        <div class="pillar"><h4><i></i>Townships</h4><p>Self contained neighbourhoods that pair homes with the everyday life around them.</p></div>
+        <div class="pillar"><h4><i></i>Commercial Estates</h4><p>Mixed use and commercial addresses positioned where the city is growing next.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIGNATURE DEVELOPMENTS ============ -->
+<section class="signature" id="developments">
+  <div class="wrap">
+    <div class="sig-head reveal">
+      <div>
+        <span class="eyebrow">Signature Developments</span>
+        <h2>Five addresses, one <em>standard</em> of permanence.</h2>
+      </div>
+      <p>A curated portfolio spanning planned valleys, riverside towers and a satellite city in the making, each carrying the Nur Heritage seal.</p>
+    </div>
+
+    <div class="sig-grid">
+      <!-- Dhaka Western Valley -->
+      <article class="estate span3 tall reveal">
+        <div class="bg">
+          <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <linearGradient id="e1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a5e44"/><stop offset="1" stop-color="#0a2c20"/></linearGradient>
+            <rect width="600" height="420" fill="url(#e1)"/>
+            <g stroke="#c8a24b" stroke-opacity=".3" fill="none" stroke-width="1">
+              <path d="M0 300 Q150 250 300 300 T600 300"/><path d="M0 340 Q150 300 300 340 T600 340"/>
+              <path d="M0 380 Q150 350 300 380 T600 380"/>
+            </g>
+            <g fill="none" stroke="#dcc081" stroke-opacity=".55" stroke-width="1.2">
+              <rect x="120" y="200" width="60" height="100"/><rect x="200" y="170" width="60" height="130"/>
+              <rect x="280" y="210" width="60" height="90"/><rect x="360" y="180" width="60" height="120"/>
+            </g>
+            <circle cx="470" cy="110" r="34" fill="none" stroke="#dcc081" stroke-opacity=".4"/>
+          </svg>
+        </div>
+        <div class="estate-body">
+          <div class="kind">Township &middot; Planned Valley</div>
+          <h3>Dhaka Western Valley</h3>
+          <p>A master planned valley on the city's western frontier, where serviced plots and green corridors set the rhythm of a new community.</p>
+          <span class="more">Discover the masterplan &rarr;</span>
+        </div>
+      </article>
+
+      <!-- Pushpodhara -->
+      <article class="estate span3 tall reveal">
+        <div class="bg">
+          <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <linearGradient id="e2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16513c"/><stop offset="1" stop-color="#08251b"/></linearGradient>
+            <rect width="600" height="420" fill="url(#e2)"/>
+            <g fill="#c8a24b" opacity=".35">
+              <path d="M300 150 q-26 30 0 60 q26 -30 0 -60Z"/>
+              <path d="M260 180 q4 40 40 30 q-12 -38 -40 -30Z"/>
+              <path d="M340 180 q-4 40 -40 30 q12 -38 40 -30Z"/>
+              <path d="M270 210 q14 36 30 0 q-14 12 -30 0Z"/>
+            </g>
+            <circle cx="300" cy="200" r="8" fill="#dcc081" opacity=".7"/>
+            <g stroke="#dcc081" stroke-opacity=".4" fill="none"><path d="M0 330 H600 M0 370 H600"/></g>
+          </svg>
+        </div>
+        <div class="estate-body">
+          <div class="kind">Residential &middot; Plotted Community</div>
+          <h3>Pushpodhara</h3>
+          <p>A flowering of homes and serviced plots, named for an unbroken stream of blossom, planned for families who plant roots.</p>
+          <span class="more">Explore Pushpodhara &rarr;</span>
+        </div>
+      </article>
+
+      <!-- Pushpo Homes -->
+      <article class="estate span2 reveal">
+        <div class="bg">
+          <svg viewBox="0 0 420 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <linearGradient id="e3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a5e44"/><stop offset="1" stop-color="#0a2c20"/></linearGradient>
+            <rect width="420" height="340" fill="url(#e3)"/>
+            <g fill="none" stroke="#dcc081" stroke-opacity=".55" stroke-width="1.3">
+              <rect x="150" y="150" width="120" height="120"/><polygon points="140,150 210,95 280,150"/>
+              <rect x="175" y="195" width="30" height="75"/><rect x="218" y="195" width="30" height="75"/>
+            </g>
+          </svg>
+        </div>
+        <div class="estate-body">
+          <div class="kind">Residential &middot; Apartments</div>
+          <h3>Pushpo Homes</h3>
+          <p>Considered apartment living for the modern Dhaka family.</p>
+          <span class="more">View residences &rarr;</span>
+        </div>
+      </article>
+
+      <!-- The Bay Icon -->
+      <article class="estate span2 reveal">
+        <div class="bg">
+          <svg viewBox="0 0 420 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <linearGradient id="e4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16513c"/><stop offset="1" stop-color="#08251b"/></linearGradient>
+            <rect width="420" height="340" fill="url(#e4)"/>
+            <g fill="none" stroke="#dcc081" stroke-opacity=".6" stroke-width="1.3">
+              <polygon points="190,70 230,70 218,300 202,300"/>
+              <line x1="190" y1="120" x2="230" y2="120"/><line x1="192" y1="170" x2="228" y2="170"/><line x1="196" y1="230" x2="224" y2="230"/>
+            </g>
+            <g stroke="#c8a24b" stroke-opacity=".35" fill="none"><path d="M0 300 Q210 270 420 300"/></g>
+          </svg>
+        </div>
+        <div class="estate-body">
+          <div class="kind">Landmark &middot; Tower</div>
+          <h3>The Bay Icon</h3>
+          <p>A signature tower poised to define its skyline.</p>
+          <span class="more">See the landmark &rarr;</span>
+        </div>
+      </article>
+
+      <!-- ATN Satellite City -->
+      <article class="estate span2 reveal">
+        <div class="bg">
+          <svg viewBox="0 0 420 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <linearGradient id="e5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a5e44"/><stop offset="1" stop-color="#0a2c20"/></linearGradient>
+            <rect width="420" height="340" fill="url(#e5)"/>
+            <g fill="none" stroke="#dcc081" stroke-opacity=".5" stroke-width="1.1">
+              <rect x="90" y="180" width="40" height="90"/><rect x="150" y="150" width="40" height="120"/>
+              <rect x="210" y="190" width="40" height="80"/><rect x="270" y="160" width="40" height="110"/>
+              <circle cx="320" cy="90" r="26"/><line x1="294" y1="90" x2="346" y2="90"/>
+            </g>
+          </svg>
+        </div>
+        <div class="estate-body">
+          <div class="kind">Township &middot; Satellite City</div>
+          <h3>ATN Satellite City</h3>
+          <p>A city beside the city, planned end to end.</p>
+          <span class="more">Tour the city &rarr;</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NUMBERS BAND ============ -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div class="stat reveal"><b data-target="5" data-suffix="">0</b><span>Signature Estates</span></div>
+    <div class="stat reveal"><b data-target="4" data-suffix="">0</b><span>Development Disciplines</span></div>
+    <div class="stat reveal"><b data-target="2500" data-suffix="+">0</b><span>Planned Plots &amp; Homes</span></div>
+    <div class="stat reveal"><b data-target="1" data-suffix="">0</b><span>International Group</span></div>
+  </div>
+</section>
+
+<!-- ============ TRUST / GROUP ============ -->
+<section class="trust" id="trust">
+  <div class="wrap trust-grid">
+    <div class="reveal">
+      <span class="eyebrow">The Group &amp; Our Word</span>
+      <h2>Backed by a group<br>that thinks <em>globally</em>.</h2>
+      <p>Nur Heritage Holdings is part of a larger group whose reach extends beyond Bangladesh, with an international link to Korea. That partnership brings discipline, technology and a standard of governance rarely seen at this scale in Dhaka.</p>
+      <div class="quote">We do not sell land. We hand over an address our buyers are proud to pass on.</div>
+      <p>Every title is clear, every masterplan is honoured, and every handover is treated as the beginning of a relationship rather than the end of a sale.</p>
+    </div>
+    <div class="seal-stack">
+      <div class="seal reveal">
+        <div class="seal-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dcc081" stroke-width="1.6"><path d="M12 2 L20 6 V12 C20 17 16 20 12 22 C8 20 4 17 4 12 V6 Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h4>Clear Title, Always</h4><p>Verified ownership and transparent documentation on every plot we deliver.</p></div>
+      </div>
+      <div class="seal reveal">
+        <div class="seal-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dcc081" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h4>Delivered On Time</h4><p>Master plans honoured to schedule, with progress you can walk and see.</p></div>
+      </div>
+      <div class="seal reveal">
+        <div class="seal-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dcc081" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div><h4>Built to Endure</h4><p>Planning and construction standards meant to hold their value for decades.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process">
+  <div class="wrap">
+    <div class="process-head reveal">
+      <span class="eyebrow center">Our Approach</span>
+      <h2>From first survey to <em>handover</em>.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h4>Acquire</h4><p>We secure land in the city's path of growth, with title and survey verified before a single line is drawn.</p></div>
+      <div class="step reveal"><div class="num">02</div><h4>Master Plan</h4><p>Planners and architects shape roads, plots and open space into a community designed to last.</p></div>
+      <div class="step reveal"><div class="num">03</div><h4>Develop</h4><p>Infrastructure, utilities and structures are built to standards you can inspect at every stage.</p></div>
+      <div class="step reveal"><div class="num">04</div><h4>Hand Over</h4><p>Keys, deeds and a lasting relationship, as your address joins the Nur Heritage portfolio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENQUIRY ============ -->
+<section class="enquiry" id="enquiry">
+  <svg class="enquiry-deco" viewBox="0 0 300 300" aria-hidden="true">
+    <circle cx="150" cy="150" r="140" fill="none" stroke="#c8a24b" stroke-width="1"/>
+    <circle cx="150" cy="150" r="110" fill="none" stroke="#c8a24b" stroke-width=".6"/>
+    <path d="M150 60 V240 M150 60 L210 120 M150 60 L90 120 M110 150V240 M190 150V240" stroke="#dcc081" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>
+  <div class="wrap enquiry-grid">
+    <div class="reveal">
+      <span class="eyebrow">Reserve a Consultation</span>
+      <h2>Let us help you choose<br>the right <em>address</em>.</h2>
+      <p class="lede">Speak with our advisory team about plots, apartments and the developments shaping Dhaka's next decade. Every enquiry is answered personally.</p>
+      <div class="contact-lines">
+        <div class="cline">
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><span>Direct Line</span><a href="tel:+8801404055894">+880 1404-055894</a></div>
+        </div>
+        <div class="cline">
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div><span>Email</span><a href="mailto:info@nurheritageholdings.com">info@nurheritageholdings.com</a></div>
+        </div>
+        <div class="cline">
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><span>Head Office</span><b>Dhaka, Bangladesh</b></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="reveal" id="enqForm" novalidate>
+      <div class="field"><label for="nm">Full Name</label><input id="nm" type="text" placeholder="Your name" required></div>
+      <div class="field"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="+880" required></div>
+      <div class="field"><label for="in">I am interested in</label>
+        <select id="in">
+          <option>Land Plots</option>
+          <option>Apartments</option>
+          <option>Township Living</option>
+          <option>Commercial Estate</option>
+          <option>Dhaka Western Valley</option>
+          <option>Pushpodhara</option>
+          <option>Pushpo Homes</option>
+          <option>The Bay Icon</option>
+          <option>ATN Satellite City</option>
+        </select>
+      </div>
+      <div class="field"><label for="ms">Message</label><textarea id="ms" placeholder="Tell us what you are looking for"></textarea></div>
+      <button type="submit" id="sendBtn">Request Consultation</button>
+      <p class="form-note">A senior advisor responds within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="monogram" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="47" fill="none" stroke="#c8a24b" stroke-width="1.4"/>
+            <path d="M34 66V34l32 32V34" fill="none" stroke="#dcc081" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-txt"><b>Nur Heritage</b><span>Holdings</span></span>
+        </a>
+        <p>A real estate development house in Dhaka, building land plots, apartments and townships meant to be inherited.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Developments</h5>
+        <a href="#developments">Dhaka Western Valley</a>
+        <a href="#developments">Pushpodhara</a>
+        <a href="#developments">Pushpo Homes</a>
+        <a href="#developments">The Bay Icon</a>
+        <a href="#developments">ATN Satellite City</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#legacy">Our Legacy</a>
+        <a href="#trust">The Group</a>
+        <a href="#process">Our Approach</a>
+        <a href="#enquiry">Enquire</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="tel:+8801404055894">+880 1404-055894</a>
+        <a href="mailto:info@nurheritageholdings.com">info@nurheritageholdings.com</a>
+        <p>Dhaka, Bangladesh</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="yr"></span> Nur Heritage Holdings &middot; Dhaka, Bangladesh &middot; +880 1404-055894</p>
+      <p class="credit">Concept site by <b>WebCraft Global</b></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // sticky nav
+  var hdr = document.getElementById('hdr');
+  function onScroll(){ hdr.classList.toggle('solid', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.addEventListener('click', function(e){ if(e.target.tagName==='A') menu.classList.remove('open'); });
+
+  // GSAP reveals
+  if(window.gsap && window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(function(el){
+      gsap.to(el, {
+        opacity:1, y:0, duration:1, ease:'power3.out',
+        scrollTrigger:{ trigger:el, start:'top 86%' }
+      });
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.style.opacity=1; el.style.transform='none'; });
+  }
+
+  // counter band
+  var counted = false;
+  function runCounters(){
+    if(counted) return; counted = true;
+    document.querySelectorAll('.stat b').forEach(function(el){
+      var target = +el.getAttribute('data-target'), suffix = el.getAttribute('data-suffix')||'';
+      var dur = 1600, t0 = null;
+      function tick(t){
+        if(!t0) t0 = t;
+        var p = Math.min((t - t0)/dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = Math.round(eased * target);
+        el.textContent = (val >= 1000 ? val.toLocaleString('en-US') : val) + (p===1 ? suffix : '');
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+  if(window.ScrollTrigger){
+    ScrollTrigger.create({ trigger:'.band', start:'top 78%', onEnter:runCounters });
+  } else {
+    window.addEventListener('scroll', function(){
+      var b = document.querySelector('.band');
+      if(b && b.getBoundingClientRect().top < window.innerHeight*0.8) runCounters();
+    }, {passive:true});
+  }
+
+  // hero parallax on skyline
+  var skyline = document.querySelector('.hero-skyline');
+  if(window.gsap){
+    gsap.to(skyline, { yPercent:14, ease:'none', scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:0.6 } });
+  }
+
+  // form
+  var form = document.getElementById('enqForm'), btn = document.getElementById('sendBtn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nm = document.getElementById('nm').value.trim(), ph = document.getElementById('ph').value.trim();
+    if(!nm || !ph){ btn.textContent = 'Please add name and phone'; setTimeout(function(){ btn.textContent='Request Consultation'; }, 2200); return; }
+    btn.textContent = 'Thank you, we will call you'; btn.style.background = 'linear-gradient(120deg,#dcc081,#f0e0b6)';
+    form.reset();
+    setTimeout(function(){ btn.textContent='Request Consultation'; btn.style.background=''; }, 3200);
+  });
+})();
+</script>
+</body>
+</html>

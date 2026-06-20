@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sightedge Property Development Ltd | Forward-Built Living in Dhaka</title>
+<meta name="description" content="Sightedge Property Development Ltd builds residential and commercial property, apartments, and land projects across Dhaka with a digital-first, future-ready approach." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  :root{
+    --indigo:#1d1b4b;
+    --indigo-deep:#13122f;
+    --violet:#6d4bff;
+    --violet-soft:#8e74ff;
+    --lilac:#cdc3ff;
+    --lilac-soft:#e8e4ff;
+    --white:#ffffff;
+    --ink:#0d0c24;
+    --glass:rgba(255,255,255,0.06);
+    --glass-line:rgba(255,255,255,0.12);
+    --maxw:1240px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Manrope',system-ui,sans-serif;
+    background:var(--indigo-deep);
+    color:var(--lilac-soft);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{font-family:'Sora',sans-serif;color:var(--white);line-height:1.04;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--violet);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:'Sora',sans-serif;font-size:.74rem;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--violet-soft);font-weight:600;display:inline-block;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;font-family:'Sora',sans-serif;
+    font-weight:600;font-size:.92rem;padding:.95em 1.7em;border-radius:100px;
+    cursor:pointer;border:1px solid transparent;transition:.4s var(--ease);position:relative;
+  }
+  .btn-primary{
+    background:linear-gradient(120deg,var(--violet),var(--violet-soft));
+    color:#fff;box-shadow:0 10px 40px -12px rgba(109,75,255,.7);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 48px -12px rgba(109,75,255,.9)}
+  .btn-ghost{
+    background:var(--glass);color:#fff;border:1px solid var(--glass-line);backdrop-filter:blur(10px);
+  }
+  .btn-ghost:hover{border-color:var(--violet-soft);background:rgba(109,75,255,.12)}
+  .btn .arrow{transition:transform .4s var(--ease)}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* ===== NAV ===== */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;transition:.5s var(--ease);
+    padding:18px 0;
+  }
+  header.nav.scrolled{
+    background:rgba(19,18,47,.78);backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.07);padding:12px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:.65rem;font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;color:#fff;letter-spacing:-.02em}
+  .logo .mark{width:34px;height:34px;flex:0 0 auto}
+  .logo b{color:var(--violet-soft)}
+  .nav-links{display:flex;gap:2.1rem;align-items:center}
+  .nav-links a{font-size:.9rem;font-weight:500;color:var(--lilac);transition:.3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--violet-soft);transition:width .35s var(--ease)}
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{padding:.7em 1.3em;font-size:.85rem}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+  .mobile-menu{
+    position:fixed;inset:0;z-index:99;background:rgba(13,12,36,.97);backdrop-filter:blur(20px);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.6rem;
+    transform:translateY(-100%);transition:.55s var(--ease);
+  }
+  .mobile-menu.open{transform:translateY(0)}
+  .mobile-menu a{font-family:'Sora';font-size:1.7rem;font-weight:600;color:#fff}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:140px 0 90px}
+  #particles{position:absolute;inset:0;z-index:0;opacity:.9}
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(900px 600px at 78% 18%,rgba(109,75,255,.42),transparent 60%),
+      radial-gradient(700px 500px at 12% 82%,rgba(141,116,255,.28),transparent 60%),
+      linear-gradient(165deg,var(--indigo) 0%,var(--indigo-deep) 70%);
+  }
+  .hero-grid-lines{
+    position:absolute;inset:0;z-index:0;opacity:.35;
+    background-image:linear-gradient(rgba(141,116,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(141,116,255,.07) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);
+  }
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:.6rem;padding:.5em 1em;border-radius:100px;
+    background:var(--glass);border:1px solid var(--glass-line);font-size:.78rem;
+    font-weight:600;color:var(--lilac);margin-bottom:1.7rem;backdrop-filter:blur(8px);
+  }
+  .hero-tag .dot{width:8px;height:8px;border-radius:50%;background:#3df0a8;box-shadow:0 0 12px #3df0a8}
+  .hero h1{font-size:clamp(2.6rem,5.6vw,4.6rem);font-weight:700;margin-bottom:1.4rem}
+  .hero h1 .grad{background:linear-gradient(110deg,var(--violet-soft),var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:1.13rem;max-width:33rem;color:#bcb6e0;margin-bottom:2.3rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .hero-mini{display:flex;gap:2.4rem;margin-top:3rem}
+  .hero-mini .n{font-family:'Sora';font-size:1.7rem;font-weight:700;color:#fff;display:block}
+  .hero-mini .l{font-size:.8rem;color:#9b95c4;letter-spacing:.04em}
+
+  /* hero glass stack */
+  .hero-visual{position:relative;height:480px}
+  .glass-card{
+    position:absolute;border-radius:22px;background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(18px);
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.7);padding:22px;
+  }
+  .gc-main{top:30px;right:0;width:330px;height:400px;overflow:hidden}
+  .gc-main .tower{position:absolute;inset:0;z-index:0}
+  .gc-main .meta{position:relative;z-index:2}
+  .gc-main .meta .live{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:#3df0a8;background:rgba(61,240,168,.1);padding:.3em .7em;border-radius:100px;margin-bottom:auto}
+  .gc-main h4{font-size:1.15rem;margin:.5rem 0 .2rem}
+  .gc-main .sub{font-size:.82rem;color:#bcb6e0}
+  .gc-main .bottom{position:absolute;left:22px;right:22px;bottom:22px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end}
+  .gc-main .bottom .price{font-family:'Sora';font-weight:700;color:#fff;font-size:1.3rem}
+  .gc-main .bottom .unit{font-size:.74rem;color:#9b95c4}
+  .gc-float{top:-6px;left:-10px;width:200px;padding:16px 18px;display:flex;flex-direction:column;gap:.3rem}
+  .gc-float .ico{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--violet-soft));display:grid;place-items:center;margin-bottom:.5rem}
+  .gc-float .ti{font-family:'Sora';font-weight:600;color:#fff;font-size:.95rem}
+  .gc-float .tx{font-size:.76rem;color:#a9a3d2}
+  .gc-bar{bottom:6px;left:0;width:250px;padding:16px 18px}
+  .gc-bar .row{display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:.5rem;color:#bcb6e0}
+  .gc-bar .track{height:7px;border-radius:10px;background:rgba(255,255,255,.12);overflow:hidden}
+  .gc-bar .fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--violet),var(--lilac));width:0}
+
+  /* ===== SECTION BASE ===== */
+  section{position:relative;padding:108px 0}
+  .sec-head{max-width:640px;margin-bottom:62px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:700;margin:1rem 0 1.1rem}
+  .sec-head p{font-size:1.06rem;color:#a9a3d2}
+
+  /* ===== TRUST STRIP ===== */
+  .strip{padding:34px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+  .strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+  .strip .lbl{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#7d77a8;font-weight:600;font-family:'Sora'}
+  .strip .items{display:flex;gap:2.6rem;flex-wrap:wrap;align-items:center;opacity:.85}
+  .strip .items span{font-family:'Sora';font-weight:600;color:#cdc3ff;font-size:1.02rem;display:flex;align-items:center;gap:.5rem}
+
+  /* ===== SERVICES ===== */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{
+    position:relative;border-radius:20px;padding:34px 30px 38px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.09);overflow:hidden;transition:.5s var(--ease);
+  }
+  .svc::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 50% -10%,rgba(109,75,255,.3),transparent 70%);opacity:0;transition:.5s}
+  .svc:hover{transform:translateY(-8px);border-color:rgba(141,116,255,.5)}
+  .svc:hover::before{opacity:1}
+  .svc .num{font-family:'Sora';font-size:.8rem;color:var(--violet-soft);font-weight:600;letter-spacing:.1em}
+  .svc .ico{width:54px;height:54px;border-radius:15px;background:rgba(109,75,255,.16);border:1px solid rgba(141,116,255,.35);display:grid;place-items:center;margin:18px 0 22px;position:relative;z-index:1}
+  .svc h3{font-size:1.32rem;margin-bottom:.7rem;position:relative;z-index:1}
+  .svc p{font-size:.95rem;color:#a9a3d2;position:relative;z-index:1}
+  .svc .tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.3rem;position:relative;z-index:1}
+  .svc .tags i{font-style:normal;font-size:.74rem;padding:.35em .8em;border-radius:100px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#c7c0eb}
+
+  /* ===== WHY (glass panels) ===== */
+  .why{background:linear-gradient(180deg,transparent,rgba(109,75,255,.06),transparent)}
+  .why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}
+  .why-feature{
+    grid-row:span 2;border-radius:24px;padding:40px;position:relative;overflow:hidden;
+    background:linear-gradient(150deg,rgba(109,75,255,.22),rgba(29,27,75,.5));
+    border:1px solid rgba(141,116,255,.3);
+  }
+  .why-feature .orb{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(141,116,255,.5),transparent 70%);right:-90px;bottom:-90px;filter:blur(10px)}
+  .why-feature h3{font-size:1.8rem;margin-bottom:1rem;position:relative}
+  .why-feature p{position:relative;color:#cdc3ff;margin-bottom:2rem}
+  .why-feature .chip{position:relative;display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:600;color:#fff;background:rgba(255,255,255,.1);padding:.6em 1.1em;border-radius:100px;border:1px solid rgba(255,255,255,.16)}
+  .why-panel{
+    border-radius:20px;padding:30px;background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(12px);transition:.45s var(--ease);
+  }
+  .why-panel:hover{background:rgba(255,255,255,.07);transform:translateY(-5px)}
+  .why-panel .ico{width:46px;height:46px;border-radius:12px;background:rgba(109,75,255,.18);display:grid;place-items:center;margin-bottom:1rem}
+  .why-panel h4{font-size:1.18rem;margin-bottom:.5rem}
+  .why-panel p{font-size:.92rem;color:#a9a3d2}
+
+  /* ===== PROJECTS ===== */
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .proj{
+    position:relative;border-radius:22px;overflow:hidden;min-height:340px;
+    border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:flex-end;
+    padding:30px;transition:.55s var(--ease);cursor:pointer;
+  }
+  .proj.tall{min-height:430px}
+  .proj .canvasbg{position:absolute;inset:0;z-index:0}
+  .proj .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(13,12,36,.1) 0%,rgba(13,12,36,.5) 55%,rgba(13,12,36,.92) 100%)}
+  .proj:hover{transform:translateY(-8px);border-color:rgba(141,116,255,.55)}
+  .proj .content{position:relative;z-index:2}
+  .proj .status{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;padding:.35em .8em;border-radius:100px;margin-bottom:1rem;backdrop-filter:blur(6px)}
+  .proj .status.on{background:rgba(61,240,168,.15);color:#3df0a8;border:1px solid rgba(61,240,168,.3)}
+  .proj .status.up{background:rgba(141,116,255,.18);color:var(--lilac);border:1px solid rgba(141,116,255,.35)}
+  .proj .status.done{background:rgba(255,255,255,.1);color:#cdc3ff;border:1px solid rgba(255,255,255,.18)}
+  .proj h3{font-size:1.55rem;margin-bottom:.4rem}
+  .proj .loc{font-size:.9rem;color:#bcb6e0;margin-bottom:1.1rem;display:flex;align-items:center;gap:.4rem}
+  .proj .specs{display:flex;gap:1.6rem;border-top:1px solid rgba(255,255,255,.14);padding-top:1.1rem}
+  .proj .specs div .v{font-family:'Sora';font-weight:600;color:#fff;font-size:1.05rem}
+  .proj .specs div .k{font-size:.74rem;color:#9b95c4}
+
+  /* ===== PROCESS ===== */
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .proc-line{position:absolute;top:34px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,rgba(141,116,255,.5),transparent);z-index:0}
+  .proc{position:relative;padding:0 18px;text-align:center}
+  .proc .node{width:70px;height:70px;border-radius:20px;margin:0 auto 22px;display:grid;place-items:center;background:linear-gradient(150deg,rgba(109,75,255,.25),rgba(29,27,75,.7));border:1px solid rgba(141,116,255,.4);position:relative;z-index:1;font-family:'Sora';font-weight:700;font-size:1.2rem;color:#fff}
+  .proc h4{font-size:1.16rem;margin-bottom:.5rem}
+  .proc p{font-size:.9rem;color:#a9a3d2;padding:0 6px}
+
+  /* ===== STATS BAND ===== */
+  .stats{
+    margin:0 auto;max-width:var(--maxw);border-radius:28px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--indigo),var(--indigo-deep));
+    border:1px solid rgba(141,116,255,.25);
+  }
+  .stats .glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(109,75,255,.4),transparent 65%);top:-200px;left:50%;transform:translateX(-50%)}
+  .stats-inner{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);padding:56px 30px}
+  .stat{text-align:center;padding:0 12px;border-right:1px solid rgba(255,255,255,.1)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:'Sora';font-size:clamp(2.3rem,4vw,3.3rem);font-weight:800;color:#fff;line-height:1}
+  .stat .n .suf{color:var(--violet-soft)}
+  .stat .l{font-size:.88rem;color:#bcb6e0;margin-top:.6rem}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .contact-info .eyebrow{margin-bottom:1rem}
+  .contact-info h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:1.3rem}
+  .contact-info p{color:#a9a3d2;margin-bottom:2.4rem;max-width:30rem}
+  .contact-card{
+    display:flex;align-items:center;gap:1.1rem;padding:20px 22px;border-radius:16px;
+    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);margin-bottom:14px;transition:.4s var(--ease);
+  }
+  .contact-card:hover{border-color:rgba(141,116,255,.5);transform:translateX(5px)}
+  .contact-card .ico{width:48px;height:48px;flex:0 0 auto;border-radius:13px;background:rgba(109,75,255,.18);display:grid;place-items:center}
+  .contact-card .k{font-size:.78rem;color:#9b95c4;letter-spacing:.05em}
+  .contact-card .v{font-family:'Sora';font-weight:600;color:#fff;font-size:1.12rem}
+  .form{
+    border-radius:22px;padding:34px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);
+  }
+  .form h3{font-size:1.35rem;margin-bottom:1.5rem}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.82rem;color:#bcb6e0;margin-bottom:.45rem;font-weight:500}
+  .field input,.field select,.field textarea{
+    width:100%;padding:.85em 1em;border-radius:12px;background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'Manrope';font-size:.95rem;transition:.3s;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:#7d77a8}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--violet-soft);background:rgba(109,75,255,.08)}
+  .field select option{background:var(--indigo-deep)}
+  .form .btn-primary{width:100%;justify-content:center;margin-top:8px}
+  .form-note{font-size:.78rem;color:#7d77a8;margin-top:1rem;text-align:center}
+  .form-ok{display:none;text-align:center;padding:14px;border-radius:12px;background:rgba(61,240,168,.12);border:1px solid rgba(61,240,168,.3);color:#3df0a8;font-size:.9rem;margin-top:14px}
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid rgba(255,255,255,.07);padding:64px 0 32px;background:var(--ink)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
+  .foot-brand p{color:#9b95c4;font-size:.94rem;max-width:24rem;margin-top:1.1rem}
+  .foot-col h5{font-family:'Sora';font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#7d77a8;margin-bottom:1.1rem;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:#bcb6e0;font-size:.94rem;margin-bottom:.7rem;transition:.3s}
+  .foot-col a:hover{color:var(--violet-soft)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:26px;border-top:1px solid rgba(255,255,255,.06)}
+  .foot-bottom p{font-size:.82rem;color:#7d77a8}
+  .foot-bottom .concept{color:#5a5582}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(34px)}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:980px){
+    .hero .wrap{grid-template-columns:1fr;gap:60px}
+    .hero-visual{height:430px;max-width:380px;margin:0 auto;width:100%}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .why-grid{grid-template-columns:1fr}
+    .why-feature{grid-row:auto}
+    .proj-grid{grid-template-columns:1fr}
+    .proc-grid{grid-template-columns:1fr 1fr;gap:40px 0}
+    .proc-line{display:none}
+    .stats-inner{grid-template-columns:1fr 1fr;gap:40px 0}
+    .stat:nth-child(2){border-right:0}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none}
+    .nav .nav-cta{display:none}
+    .burger{display:flex}
+    .svc-grid{grid-template-columns:1fr}
+    .proc-grid{grid-template-columns:1fr}
+    .stats-inner{grid-template-columns:1fr;gap:34px 0}
+    .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:24px}
+    .stat:last-child{border-bottom:0;padding-bottom:0}
+    .hero-mini{gap:1.6rem}
+    .strip .items{gap:1.4rem}
+    section{padding:78px 0}
+    .gc-float{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="32" height="32" rx="9" fill="url(#lg1)"/>
+        <path d="M11 22 L17 9 L23 22 Z" stroke="#fff" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+        <circle cx="17" cy="22" r="2.2" fill="#fff"/>
+        <defs><linearGradient id="lg1" x1="1" y1="1" x2="33" y2="33"><stop stop-color="#6d4bff"/><stop offset="1" stop-color="#8e74ff"/></linearGradient></defs>
+      </svg>
+      Sight<b>edge</b>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Sightedge</a>
+      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#why">Why Sightedge</a>
+  <a href="#projects">Projects</a>
+  <a href="#process">Process</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <canvas id="particles"></canvas>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-tag"><span class="dot"></span> Building Dhaka's next chapter</div>
+      <h1>Property development,<br><span class="grad">engineered for what's next.</span></h1>
+      <p class="lead">Sightedge Property Development Ltd designs and delivers residential and commercial spaces across Dhaka, blending forward-looking design with a transparent, digital-first way of building.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Explore Projects <span class="arrow">&rarr;</span></a>
+        <a href="#contact" class="btn btn-ghost">Talk to our team</a>
+      </div>
+      <div class="hero-mini">
+        <div><span class="n" data-count="12" data-suffix="+">0</span><span class="l">Active developments</span></div>
+        <div><span class="n" data-count="850" data-suffix="+">0</span><span class="l">Homes planned</span></div>
+        <div><span class="n" data-count="100" data-suffix="%">0</span><span class="l">Dhaka focused</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="glass-card gc-main">
+        <canvas class="tower" id="towerCanvas"></canvas>
+        <div class="meta">
+          <span class="live"><span style="width:7px;height:7px;border-radius:50%;background:#3df0a8;display:inline-block"></span> Now selling</span>
+          <h4>Edge Vantage</h4>
+          <div class="sub">Gulshan, Dhaka</div>
+        </div>
+        <div class="bottom">
+          <div><div class="price">3 to 4 BHK</div><div class="unit">Smart residences</div></div>
+          <div style="text-align:right"><div class="price">28</div><div class="unit">Floors</div></div>
+        </div>
+      </div>
+      <div class="glass-card gc-float">
+        <div class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="ti">Verified land titles</div>
+        <div class="tx">Every plot checked end to end</div>
+      </div>
+      <div class="glass-card gc-bar">
+        <div class="row"><span>Construction progress</span><span>72%</span></div>
+        <div class="track"><div class="fill" id="heroFill"></div></div>
+        <div class="row" style="margin-top:.7rem;margin-bottom:0"><span>On schedule</span><span style="color:#3df0a8">Q4 handover</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="strip">
+  <div class="wrap">
+    <span class="lbl">Built around your trust</span>
+    <div class="items">
+      <span>&#9670; Transparent pricing</span>
+      <span>&#9670; RAJUK aligned</span>
+      <span>&#9670; Digital documentation</span>
+      <span>&#9670; On-time handover</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we build</span>
+      <h2>One developer, the full property journey.</h2>
+      <p>From a single apartment to large mixed-use projects, Sightedge handles design, approvals, construction, and delivery under one accountable roof.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="num">01</span>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><path d="M3 21V9l9-6 9 6v12" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linejoin="round"/></svg></div>
+        <h3>Residential development</h3>
+        <p>Future-ready apartments and homes designed for how Dhaka families actually live, with smart layouts, light, and air at the centre.</p>
+        <div class="tags"><i>Apartments</i><i>Condominiums</i><i>Townhouses</i></div>
+      </div>
+      <div class="svc reveal">
+        <span class="num">02</span>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" stroke-linecap="round"/></svg></div>
+        <h3>Commercial spaces</h3>
+        <p>Offices, retail, and mixed-use buildings positioned for growth, with infrastructure that keeps modern businesses running.</p>
+        <div class="tags"><i>Office towers</i><i>Retail</i><i>Mixed-use</i></div>
+      </div>
+      <div class="svc reveal">
+        <span class="num">03</span>
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><path d="M3 18l6-3 6 3 6-3V6l-6 3-6-3-6 3z" stroke-linejoin="round"/><path d="M9 6v12M15 9v12" stroke-linecap="round"/></svg></div>
+        <h3>Land &amp; project development</h3>
+        <p>Land sourcing, due diligence, and full project development, turning raw plots into planned communities with clear titles.</p>
+        <div class="tags"><i>Land sourcing</i><i>Due diligence</i><i>Master plans</i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ===== -->
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why Sightedge</span>
+      <h2>A developer built for a sharper generation of buyers.</h2>
+      <p>We pair real construction discipline with a digital, transparent experience, so you always know where your investment stands.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-feature reveal">
+        <div class="orb"></div>
+        <h3>Transparency you can actually see.</h3>
+        <p>Track approvals, construction milestones, and payment schedules through clear, documented updates. No guesswork, no chasing, no surprises at handover.</p>
+        <span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke-linecap="round"/><circle cx="12" cy="12" r="4"/></svg> Live project visibility</span>
+      </div>
+      <div class="why-panel reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Clear, verified titles</h4>
+        <p>Every plot passes legal and ownership checks before a single design begins, so your purchase rests on solid ground.</p>
+      </div>
+      <div class="why-panel reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>On-time delivery</h4>
+        <p>Disciplined scheduling and tight site management mean handovers that respect your timeline and your plans.</p>
+      </div>
+      <div class="why-panel reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><path d="M3 21V8l9-5 9 5v13" stroke-linejoin="round"/><path d="M3 21h18M8 21v-5h8v5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Design that lasts</h4>
+        <p>Modern, efficient buildings made to hold their value, with materials and detailing chosen for the long run.</p>
+      </div>
+      <div class="why-panel reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.7"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M10 6h4M9 18h6" stroke-linecap="round"/></svg></div>
+        <h4>Digital-first journey</h4>
+        <p>From first enquiry to keys in hand, your documents, updates, and decisions live in one organised, accessible place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Selected developments</span>
+      <h2>Spaces taking shape across Dhaka.</h2>
+      <p>A look at the kind of residential and commercial projects Sightedge brings to life, from skyline residences to ground-up communities.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj tall reveal">
+        <canvas class="canvasbg" data-scene="towerA"></canvas>
+        <div class="shade"></div>
+        <div class="content">
+          <span class="status on">Now selling</span>
+          <h3>Edge Vantage</h3>
+          <div class="loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bcb6e0" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Gulshan, Dhaka</div>
+          <div class="specs">
+            <div><div class="v">28</div><div class="k">Floors</div></div>
+            <div><div class="v">3 to 4</div><div class="k">Bedrooms</div></div>
+            <div><div class="v">Q4</div><div class="k">Handover</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj reveal">
+        <canvas class="canvasbg" data-scene="towerB"></canvas>
+        <div class="shade"></div>
+        <div class="content">
+          <span class="status up">Upcoming</span>
+          <h3>Sightedge Commerce Hub</h3>
+          <div class="loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bcb6e0" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Banani, Dhaka</div>
+          <div class="specs">
+            <div><div class="v">Grade A</div><div class="k">Offices</div></div>
+            <div><div class="v">Retail</div><div class="k">Ground floor</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj reveal">
+        <canvas class="canvasbg" data-scene="towerC"></canvas>
+        <div class="shade"></div>
+        <div class="content">
+          <span class="status done">Delivered</span>
+          <h3>Lumen Residences</h3>
+          <div class="loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bcb6e0" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Dhanmondi, Dhaka</div>
+          <div class="specs">
+            <div><div class="v">120</div><div class="k">Homes</div></div>
+            <div><div class="v">2 to 3</div><div class="k">Bedrooms</div></div>
+            <div><div class="v">2025</div><div class="k">Completed</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj reveal">
+        <canvas class="canvasbg" data-scene="towerD"></canvas>
+        <div class="shade"></div>
+        <div class="content">
+          <span class="status up">In planning</span>
+          <h3>Northgate Land Project</h3>
+          <div class="loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bcb6e0" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Uttara, Dhaka</div>
+          <div class="specs">
+            <div><div class="v">Master</div><div class="k">Planned community</div></div>
+            <div><div class="v">Clear</div><div class="k">Titles</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How we work</span>
+      <h2>A clear path from first call to your keys.</h2>
+      <p>Four deliberate stages, each documented, so you always know what is happening and what comes next.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-line"></div>
+      <div class="proc reveal">
+        <div class="node">01</div>
+        <h4>Discover</h4>
+        <p>We learn your needs and budget, then match you to the right unit, plot, or project.</p>
+      </div>
+      <div class="proc reveal">
+        <div class="node">02</div>
+        <h4>Verify</h4>
+        <p>Titles, approvals, and plans are checked and shared with you in clear digital records.</p>
+      </div>
+      <div class="proc reveal">
+        <div class="node">03</div>
+        <h4>Build</h4>
+        <p>Construction runs on a tracked schedule with milestone updates you can follow.</p>
+      </div>
+      <div class="proc reveal">
+        <div class="node">04</div>
+        <h4>Handover</h4>
+        <p>Final checks, documentation, and a smooth handover of keys, on the date promised.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="glow"></div>
+      <div class="stats-inner">
+        <div class="stat"><div class="n"><span data-count="12">0</span><span class="suf">+</span></div><div class="l">Developments in motion</div></div>
+        <div class="stat"><div class="n"><span data-count="850">0</span><span class="suf">+</span></div><div class="l">Homes designed</div></div>
+        <div class="stat"><div class="n"><span data-count="98">0</span><span class="suf">%</span></div><div class="l">On-time handovers</div></div>
+        <div class="stat"><div class="n"><span data-count="100">0</span><span class="suf">%</span></div><div class="l">Verified land titles</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Let's build together</span>
+        <h2>Tell us what you're looking for.</h2>
+        <p>Whether you want a home in Dhaka, commercial space, or a development partner for land, our team is ready to talk it through. Share a few details and we will reach out.</p>
+        <a class="contact-card" href="tel:+8801730805524">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z" stroke-linejoin="round"/></svg></div>
+          <div><div class="k">Call us directly</div><div class="v">+880 1730-805524</div></div>
+        </a>
+        <div class="contact-card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><div class="k">Based in</div><div class="v">Dhaka, Bangladesh</div></div>
+        </div>
+        <div class="contact-card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cdc3ff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="k">Office hours</div><div class="v">Sat to Thu, 10am to 7pm</div></div>
+        </div>
+      </div>
+
+      <form class="form reveal" id="contactForm" novalidate>
+        <h3>Request a consultation</h3>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="+880 1XXX-XXXXXX" required />
+        </div>
+        <div class="field">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option>A residential apartment</option>
+            <option>Commercial or office space</option>
+            <option>Land or project development</option>
+            <option>A partnership or investment</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">A few details</label>
+          <textarea id="msg" name="msg" rows="3" placeholder="Preferred area, budget, timeline, or any questions"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send request <span class="arrow">&rarr;</span></button>
+        <div class="form-ok" id="formOk">Thank you. Your request is noted, our team will call you on the number provided.</div>
+        <p class="form-note">Prefer to talk now? Call +880 1730-805524.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="32" height="32" rx="9" fill="url(#lg2)"/>
+            <path d="M11 22 L17 9 L23 22 Z" stroke="#fff" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+            <circle cx="17" cy="22" r="2.2" fill="#fff"/>
+            <defs><linearGradient id="lg2" x1="1" y1="1" x2="33" y2="33"><stop stop-color="#6d4bff"/><stop offset="1" stop-color="#8e74ff"/></linearGradient></defs>
+          </svg>
+          Sight<b>edge</b>
+        </a>
+        <p>Sightedge Property Development Ltd builds residential and commercial property, apartments, and land projects across Dhaka, with a transparent, future-ready approach to every brick.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#services">Services</a>
+        <a href="#why">Why Sightedge</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+      </div>
+      <div class="foot-col">
+        <h5>Reach us</h5>
+        <a href="tel:+8801730805524">+880 1730-805524</a>
+        <p>Dhaka, Bangladesh</p>
+        <p>Sat to Thu, 10am to 7pm</p>
+        <a href="#contact">Book a consultation</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="yr"></span> Sightedge Property Development Ltd. Dhaka, Bangladesh. +880 1730-805524.</p>
+      <p class="concept">Concept site by WebCraft Global</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== year ===== */
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ===== nav scroll ===== */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+
+/* ===== mobile menu ===== */
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{mm.classList.toggle('open');burger.classList.toggle('x')});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+/* ===== hero particle field ===== */
+(function(){
+  const c=document.getElementById('particles'),x=c.getContext('2d');
+  let w,h,pts,dpr;
+  function size(){
+    dpr=Math.min(devicePixelRatio||1,2);
+    w=c.width=innerWidth*dpr;h=c.height=c.offsetHeight*dpr;
+    c.style.width=innerWidth+'px';
+    const n=Math.min(70,Math.floor(innerWidth/22));
+    pts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25*dpr,vy:(Math.random()-.5)*.25*dpr}));
+  }
+  function tick(){
+    x.clearRect(0,0,w,h);
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
+      for(let j=i+1;j<pts.length;j++){
+        const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+        if(d<130*dpr){
+          x.strokeStyle='rgba(141,116,255,'+(.16*(1-d/(130*dpr)))+')';
+          x.lineWidth=dpr;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke();
+        }
+      }
+      x.fillStyle='rgba(205,195,255,.55)';
+      x.beginPath();x.arc(p.x,p.y,1.4*dpr,0,7);x.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  size();tick();addEventListener('resize',size);
+})();
+
+/* ===== generative tower scenes (canvas) for project cards + hero card ===== */
+function drawTower(canvas,seed,opts){
+  opts=opts||{};
+  const x=canvas.getContext('2d');
+  function paint(){
+    const dpr=Math.min(devicePixelRatio||1,2);
+    const W=canvas.width=canvas.offsetWidth*dpr,H=canvas.height=canvas.offsetHeight*dpr;
+    let r=seed;const rnd=()=>{r=(r*9301+49297)%233280;return r/233280;};
+    // sky gradient
+    const g=x.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,opts.top||'#2a2766');g.addColorStop(1,opts.bot||'#15143a');
+    x.fillStyle=g;x.fillRect(0,0,W,H);
+    // soft glow sun
+    const gg=x.createRadialGradient(W*.8,H*.25,0,W*.8,H*.25,W*.5);
+    gg.addColorStop(0,'rgba(141,116,255,.35)');gg.addColorStop(1,'rgba(141,116,255,0)');
+    x.fillStyle=gg;x.fillRect(0,0,W,H);
+    // skyline buildings
+    const base=H*0.96;const n=Math.floor(6+rnd()*4);const bw=W/n;
+    for(let i=0;i<n;i++){
+      const bh=H*(0.32+rnd()*0.55);
+      const bx=i*bw+bw*0.08;const ww=bw*0.84;
+      const by=base-bh;
+      x.fillStyle='rgba(29,27,75,'+(0.55+rnd()*0.3)+')';
+      x.fillRect(bx,by,ww,bh);
+      // top edge highlight
+      x.fillStyle='rgba(141,116,255,.22)';
+      x.fillRect(bx,by,ww,2*dpr);
+      // windows
+      const cols=Math.max(2,Math.floor(ww/(11*dpr)));
+      const rows=Math.max(3,Math.floor(bh/(15*dpr)));
+      for(let cx=0;cx<cols;cx++)for(let cy=0;cy<rows;cy++){
+        if(rnd()>0.45){
+          x.fillStyle='rgba(205,195,255,'+(0.25+rnd()*0.55)+')';
+          x.fillRect(bx+4*dpr+cx*(ww/cols),by+6*dpr+cy*(bh/rows),3.2*dpr,4.2*dpr);
+        }
+      }
+    }
+    // ground
+    x.fillStyle='rgba(13,12,36,.9)';x.fillRect(0,base,W,H-base);
+  }
+  paint();
+  return paint;
+}
+
+document.querySelectorAll('canvas[data-scene]').forEach((cv,i)=>{
+  const palettes=[
+    {top:'#322a78',bot:'#171540'},
+    {top:'#2a2766',bot:'#13122f'},
+    {top:'#3a2e7a',bot:'#1a1648'},
+    {top:'#241f5e',bot:'#100f2c'}
+  ];
+  const repaint=drawTower(cv,(i+3)*137+11,palettes[i%palettes.length]);
+  addEventListener('resize',()=>setTimeout(repaint,60));
+});
+const towerCv=document.getElementById('towerCanvas');
+if(towerCv){const rp=drawTower(towerCv,777,{top:'#352d80',bot:'#1a1648'});addEventListener('resize',()=>setTimeout(rp,60));}
+
+/* ===== counters ===== */
+function runCount(el){
+  const target=+el.dataset.count;const suf=el.dataset.suffix||'';
+  let t0=null;const dur=1500;
+  function step(ts){
+    if(!t0)t0=ts;const p=Math.min((ts-t0)/dur,1);
+    const e=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*e)+suf;
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ===== GSAP reveals + triggers ===== */
+window.addEventListener('load',()=>{
+  // hero progress fill
+  const hf=document.getElementById('heroFill');
+  if(hf)setTimeout(()=>hf.style.transition='width 1.6s cubic-bezier(.2,.7,.2,1)',300),setTimeout(()=>hf.style.width='72%',600);
+
+  if(window.gsap&&window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      gsap.to(el,{
+        opacity:1,y:0,duration:.9,ease:'power3.out',
+        scrollTrigger:{trigger:el,start:'top 86%'}
+      });
+    });
+    // counters fire on scroll
+    document.querySelectorAll('[data-count]').forEach(el=>{
+      ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:()=>runCount(el)});
+    });
+  }else{
+    document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none'});
+    document.querySelectorAll('[data-count]').forEach(runCount);
+  }
+});
+
+/* ===== contact form ===== */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=this.name.value.trim(),phone=this.phone.value.trim();
+  if(!name||!phone){
+    if(!name)this.name.style.borderColor='#ff6b8a';
+    if(!phone)this.phone.style.borderColor='#ff6b8a';
+    return;
+  }
+  const ok=document.getElementById('formOk');
+  ok.style.display='block';
+  this.querySelector('button').textContent='Request sent';
+  setTimeout(()=>{this.reset();this.name.style.borderColor='';this.phone.style.borderColor='';},400);
+});
+</script>
+</body>
+</html>

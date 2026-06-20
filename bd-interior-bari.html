@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Interior Bari | Friendly home interiors in Dhaka</title>
+<meta name="description" content="Interior Bari makes Dhaka homes beautiful without breaking the budget. Kitchen, bedroom, drawing room, office and duplex interiors by Mahfuz Biswas." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --teal:#1aa897;
+  --teal-deep:#127c70;
+  --teal-soft:#e2f4f0;
+  --sand:#f6efe4;
+  --sand-deep:#ece0cc;
+  --warm-white:#fdfaf4;
+  --ink:#2b2b2b;
+  --ink-soft:#5a5854;
+  --line:#e7ddca;
+  --honey:#f0a04b;
+  --radius:22px;
+  --shadow:0 18px 50px -22px rgba(18,124,112,.35);
+  --shadow-soft:0 10px 30px -18px rgba(43,43,43,.3);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  background:var(--warm-white);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{line-height:1.12;font-weight:700;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,92vw);margin-inline:auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);
+}
+.eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--teal);}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.92rem 1.6rem;border-radius:60px;font-weight:600;font-size:.96rem;
+  cursor:pointer;border:none;transition:transform .25s ease,box-shadow .25s ease,background .25s;
+}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 12px 26px -12px rgba(26,168,151,.8);}
+.btn-primary:hover{transform:translateY(-3px);background:var(--teal-deep);box-shadow:0 18px 34px -14px rgba(18,124,112,.9);}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--teal);color:var(--teal-deep);}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  padding:1.05rem 0;transition:background .35s,box-shadow .35s,padding .35s;
+}
+header.nav.scrolled{background:rgba(253,250,244,.86);backdrop-filter:blur(12px);box-shadow:0 6px 24px -18px rgba(43,43,43,.5);padding:.7rem 0;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.28rem;letter-spacing:-.02em}
+.brand .mark{
+  width:38px;height:38px;border-radius:12px;flex:none;
+  background:linear-gradient(150deg,var(--teal),var(--teal-deep));
+  display:grid;place-items:center;box-shadow:0 8px 18px -10px rgba(18,124,112,.9);
+}
+.brand b{color:var(--teal-deep)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.95rem;font-weight:500;color:var(--ink-soft);position:relative;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--teal);border-radius:2px;transition:width .25s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:.6rem 1.25rem;font-size:.9rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2.4px;background:var(--ink);border-radius:2px;transition:.3s}
+.mobile-menu{display:none}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:9.5rem 0 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(1100px 540px at 78% -8%,var(--teal-soft),transparent 60%),
+    radial-gradient(900px 600px at -5% 110%,var(--sand),transparent 55%),
+    var(--warm-white);
+}
+.blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:3.4rem;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4rem);margin:1.1rem 0 1.2rem}
+.hero h1 .pop{color:var(--teal-deep);position:relative;white-space:nowrap}
+.hero h1 .pop::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.36em;background:rgba(240,160,75,.32);z-index:-1;border-radius:4px}
+.hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:34rem;margin-bottom:1.9rem}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+.hero-actions .phone{display:flex;align-items:center;gap:.55rem;font-weight:600;color:var(--teal-deep);font-size:.98rem}
+.trust{display:flex;gap:1.8rem;margin-top:2.4rem;flex-wrap:wrap}
+.trust div{font-size:.86rem;color:var(--ink-soft)}
+.trust b{display:block;font-size:1.5rem;color:var(--ink);font-weight:700}
+
+/* hero illustration : a cozy room drawn in SVG */
+.hero-art{position:relative}
+.room-card{
+  background:#fff;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+  border:1px solid var(--line);position:relative;
+}
+.room-card svg{width:100%;height:auto;display:block;border-radius:14px}
+.float-chip{
+  position:absolute;background:#fff;border-radius:16px;padding:.7rem 1rem;
+  box-shadow:var(--shadow-soft);font-size:.83rem;font-weight:600;display:flex;align-items:center;gap:.5rem;
+  border:1px solid var(--line);
+}
+.float-chip .dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.chip-a{top:-18px;left:-22px}
+.chip-b{bottom:24px;right:-26px}
+.chip-b .dot{background:var(--honey)}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:5.5rem 0;position:relative}
+.sec-head{max-width:42rem;margin-bottom:3rem}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:.7rem 0 .8rem}
+.sec-head p{color:var(--ink-soft);font-size:1.05rem}
+.center{text-align:center;margin-inline:auto}
+
+/* ---------- WELCOME STRIP ---------- */
+.welcome{background:var(--sand);border-radius:0}
+.welcome .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:3rem;align-items:center}
+.welcome-card{background:#fff;border-radius:var(--radius);padding:2rem;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.welcome-card .quote{font-size:1.25rem;font-weight:500;line-height:1.5;color:var(--ink)}
+.welcome-card .who{margin-top:1.4rem;display:flex;align-items:center;gap:.9rem}
+.welcome-card .ava{width:48px;height:48px;border-radius:50%;background:linear-gradient(150deg,var(--teal),var(--honey));display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+.welcome-card .who b{display:block;font-size:.98rem}
+.welcome-card .who span{font-size:.84rem;color:var(--ink-soft)}
+
+/* ---------- SERVICES ---------- */
+.services{background:var(--warm-white)}
+.grid-rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.room{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.8rem 1.6rem;transition:transform .3s,box-shadow .3s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.room::before{content:"";position:absolute;inset:auto -30% -40% auto;width:160px;height:160px;border-radius:50%;background:var(--teal-soft);opacity:0;transition:opacity .35s}
+.room:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.room:hover::before{opacity:.7}
+.room .ico{width:58px;height:58px;border-radius:16px;background:var(--sand);display:grid;place-items:center;margin-bottom:1.1rem;position:relative;z-index:1;transition:background .3s}
+.room:hover .ico{background:var(--teal);}
+.room:hover .ico svg *{stroke:#fff}
+.room .ico svg{width:30px;height:30px}
+.room h3{font-size:1.18rem;margin-bottom:.45rem;position:relative;z-index:1}
+.room p{font-size:.93rem;color:var(--ink-soft);position:relative;z-index:1}
+
+/* ---------- HOW IT WORKS ---------- */
+.how{background:var(--teal-soft)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;position:relative}
+.step{background:#fff;border-radius:var(--radius);padding:2rem 1.7rem;position:relative;border:1px solid rgba(255,255,255,.6);box-shadow:var(--shadow-soft)}
+.step .num{
+  width:46px;height:46px;border-radius:14px;background:var(--teal);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:1.15rem;margin-bottom:1.1rem;
+}
+.step:nth-child(2) .num{background:var(--honey)}
+.step:nth-child(3) .num{background:var(--teal-deep)}
+.step h3{font-size:1.22rem;margin-bottom:.5rem}
+.step p{color:var(--ink-soft);font-size:.95rem}
+
+/* ---------- BUDGET / PACKAGES ---------- */
+.packages{background:var(--warm-white)}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+.pack{
+  background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:2rem 1.7rem;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;
+}
+.pack:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.pack.featured{background:linear-gradient(165deg,var(--teal),var(--teal-deep));color:#fff;border-color:transparent;box-shadow:var(--shadow)}
+.pack .tag{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep)}
+.pack.featured .tag{color:#bff0e8}
+.pack .nm{font-size:1.4rem;font-weight:700;margin:.5rem 0 .25rem}
+.pack .price{font-size:.95rem;color:var(--ink-soft);margin-bottom:1.3rem}
+.pack.featured .price{color:#d6f4ef}
+.pack ul{list-style:none;margin-bottom:1.6rem;flex:1}
+.pack li{display:flex;gap:.6rem;align-items:flex-start;font-size:.93rem;padding:.4rem 0;border-bottom:1px dashed var(--line)}
+.pack.featured li{border-color:rgba(255,255,255,.22)}
+.pack li svg{flex:none;margin-top:3px}
+.pack .ribbon{position:absolute;top:1.3rem;right:1.3rem;background:var(--honey);color:#fff;font-size:.72rem;font-weight:600;padding:.28rem .7rem;border-radius:30px}
+.pack .btn{width:100%;justify-content:center}
+.pack.featured .btn-ghost{background:#fff;color:var(--teal-deep);border-color:#fff}
+.note{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:1.6rem}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--sand)}
+.contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:3rem;align-items:start}
+.contact-side h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:.7rem 0 1rem}
+.contact-side p{color:var(--ink-soft);margin-bottom:2rem;max-width:30rem}
+.contact-line{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.05rem 1.2rem;margin-bottom:1rem}
+.contact-line .ci{width:46px;height:46px;border-radius:13px;background:var(--teal-soft);display:grid;place-items:center;flex:none}
+.contact-line b{display:block;font-size:1.02rem}
+.contact-line span{font-size:.85rem;color:var(--ink-soft)}
+.contact-line a.big{font-size:1.18rem;font-weight:700;color:var(--teal-deep)}
+form.card{background:#fff;border-radius:var(--radius);padding:2rem;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.field{margin-bottom:1.05rem}
+.field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.4rem}
+.field input,.field select,.field textarea{
+  width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:13px;
+  font-family:inherit;font-size:.95rem;background:var(--warm-white);color:var(--ink);transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(26,168,151,.12)}
+.field textarea{resize:vertical;min-height:96px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+form .btn{width:100%;justify-content:center;margin-top:.4rem}
+.form-msg{margin-top:1rem;font-size:.9rem;font-weight:600;color:var(--teal-deep);display:none}
+.form-msg.show{display:block}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#e8e6e0;padding:3.6rem 0 1.8rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-grid .brand{color:#fff}
+.foot-grid p{color:#aba9a3;font-size:.92rem;margin-top:1rem;max-width:24rem}
+.foot-col h4{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#8e8c86;margin-bottom:1rem}
+.foot-col a{display:block;color:#cfcdc7;font-size:.93rem;padding:.28rem 0;transition:color .2s}
+.foot-col a:hover{color:var(--teal)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.6rem}
+.foot-bottom p{font-size:.85rem;color:#8e8c86}
+.foot-bottom .concept{font-size:.8rem;color:#6f6d68}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:2.6rem}
+  .welcome .wrap{grid-template-columns:1fr;gap:2rem}
+  .grid-rooms,.steps,.pack-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;background:var(--warm-white);
+    padding:5.5rem 2rem 2rem;transform:translateY(-110%);transition:transform .4s cubic-bezier(.2,.7,.2,1);
+    z-index:45;box-shadow:0 18px 40px -20px rgba(0,0,0,.4)}
+  .mobile-menu.open{transform:translateY(0)}
+  .mobile-menu a{display:block;font-size:1.15rem;font-weight:600;padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+  .grid-rooms,.steps,.pack-grid,.foot-grid,.row2{grid-template-columns:1fr}
+  .pack.featured{order:-1}
+  .hero{padding-top:7.5rem}
+  .trust{gap:1.2rem}
+  .chip-a{left:-8px;top:-12px}.chip-b{right:-8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5V20h14v-9.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Interior <b>Bari</b>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Rooms</a>
+      <a href="#how">How it works</a>
+      <a href="#packages">Budget</a>
+      <a href="#welcome">About</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Get a free visit</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Rooms</a>
+  <a href="#how">How it works</a>
+  <a href="#packages">Budget</a>
+  <a href="#welcome">About</a>
+  <a href="#contact" class="btn btn-primary">Get a free visit</a>
+</div>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <span class="blob" style="width:220px;height:220px;background:rgba(240,160,75,.25);top:18%;left:6%"></span>
+  <span class="blob" style="width:160px;height:160px;background:rgba(26,168,151,.2);bottom:12%;right:10%"></span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Home interiors in Dhaka</span>
+      <h1>Make your <span class="pop">bari</span> beautiful, without stretching the budget.</h1>
+      <p class="lead">Interior Bari is a friendly Dhaka studio that designs warm, liveable homes. We plan room by room, keep the costs honest, and build spaces your family will actually love to come home to.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a free home visit</a>
+        <a href="tel:+8801521471208" class="phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="#127c70" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          +880 1521-471208
+        </a>
+      </div>
+      <div class="trust">
+        <div><b>6</b>room types we design</div>
+        <div><b>3 step</b>simple, clear process</div>
+        <div><b>Bari</b>means home, that is the point</div>
+      </div>
+    </div>
+    <div class="hero-art reveal d2">
+      <div class="float-chip chip-a"><span class="dot"></span>Budget friendly</div>
+      <div class="float-chip chip-b"><span class="dot"></span>Made homely</div>
+      <div class="room-card">
+        <!-- cosy drawing room scene, pure SVG -->
+        <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a cosy drawing room">
+          <defs>
+            <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6efe4"/><stop offset="1" stop-color="#efe5d2"/></linearGradient>
+            <linearGradient id="sofa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1aa897"/><stop offset="1" stop-color="#127c70"/></linearGradient>
+            <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdeee8"/><stop offset="1" stop-color="#e2f4f0"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="420" height="320" rx="14" fill="url(#wall)"/>
+          <!-- floor -->
+          <rect x="0" y="248" width="420" height="72" fill="#e3d4ba"/>
+          <rect x="0" y="248" width="420" height="6" fill="#d6c3a2"/>
+          <!-- window -->
+          <rect x="38" y="44" width="118" height="92" rx="8" fill="url(#win)" stroke="#fff" stroke-width="6"/>
+          <line x1="97" y1="50" x2="97" y2="130" stroke="#fff" stroke-width="4"/>
+          <line x1="44" y1="90" x2="150" y2="90" stroke="#fff" stroke-width="4"/>
+          <!-- sun -->
+          <circle cx="128" cy="72" r="12" fill="#f0a04b" opacity=".7"/>
+          <!-- plant -->
+          <rect x="300" y="180" width="34" height="68" rx="6" fill="#e8dcc4"/>
+          <path d="M317 184c-18-8-26-30-22-50 14 6 24 26 22 50Z" fill="#1aa897"/>
+          <path d="M317 184c16-10 22-32 16-52-13 8-20 30-16 52Z" fill="#127c70"/>
+          <!-- lamp -->
+          <line x1="372" y1="118" x2="372" y2="248" stroke="#b89b6f" stroke-width="4"/>
+          <path d="M356 118h32l-6 26h-20Z" fill="#f0a04b"/>
+          <!-- sofa -->
+          <rect x="70" y="170" width="210" height="80" rx="20" fill="url(#sofa)"/>
+          <rect x="60" y="150" width="44" height="100" rx="18" fill="#127c70"/>
+          <rect x="246" y="150" width="44" height="100" rx="18" fill="#127c70"/>
+          <rect x="104" y="158" width="64" height="40" rx="10" fill="#37b8a7"/>
+          <rect x="182" y="158" width="64" height="40" rx="10" fill="#37b8a7"/>
+          <!-- cushions -->
+          <rect x="116" y="166" width="34" height="34" rx="8" fill="#f0a04b"/>
+          <rect x="196" y="166" width="34" height="34" rx="8" fill="#fdfaf4"/>
+          <!-- rug -->
+          <ellipse cx="180" cy="288" rx="150" ry="20" fill="#d8b78a" opacity=".6"/>
+          <!-- table -->
+          <rect x="146" y="262" width="70" height="12" rx="6" fill="#b89b6f"/>
+          <rect x="152" y="274" width="6" height="22" fill="#a3854f"/>
+          <rect x="204" y="274" width="6" height="22" fill="#a3854f"/>
+          <!-- frame on wall -->
+          <rect x="230" y="60" width="64" height="48" rx="6" fill="#fff" stroke="#d6c3a2" stroke-width="3"/>
+          <path d="M236 96l16-18 12 12 10-10 14 16Z" fill="#1aa897" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WELCOME / ABOUT ============ -->
+<section class="welcome" id="welcome">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">A warm hello</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem);margin:.7rem 0 1rem">We treat every flat like it is our own home.</h2>
+      <p style="color:var(--ink-soft);max-width:32rem;margin-bottom:1.4rem">Interior Bari started with one simple belief: a lovely home should not be a luxury reserved for a few. Whether it is a two room flat in Mirpur or a duplex in Bashundhara, we listen first, plan within your number, and design spaces that feel calm, cared for and yours.</p>
+      <a href="#contact" class="btn btn-ghost">Talk to Mahfuz</a>
+    </div>
+    <div class="welcome-card reveal d2">
+      <p class="quote">"Good interior is not about expensive things. It is about the right things, in the right place, made for the way your family lives."</p>
+      <div class="who">
+        <span class="ava">MB</span>
+        <div>
+          <b>Mahfuz Biswas</b>
+          <span>Founder and lead designer, Interior Bari, Dhaka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES / ROOMS ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">What we design</span>
+      <h2>Room by room, with care</h2>
+      <p>Pick a space, or do the whole home. We handle the layout, the colours, the storage and the build so you do not have to chase ten different people.</p>
+    </div>
+    <div class="grid-rooms">
+
+      <article class="room reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#127c70" stroke-width="1.7"/><path d="M3 10h18M8 4v6" stroke="#127c70" stroke-width="1.7"/><circle cx="6" cy="14.5" r="1" fill="#127c70"/></svg></div>
+        <h3>Kitchen</h3>
+        <p>Smart, easy to clean kitchens with proper storage and a layout that actually works while you cook.</p>
+      </article>
+
+      <article class="room reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18v-5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v5" stroke="#127c70" stroke-width="1.7" stroke-linecap="round"/><path d="M3 18h18M5 10V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2M5 18v2M19 18v2" stroke="#127c70" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Bedroom</h3>
+        <p>Restful bedrooms with wardrobes that fit your space and a calm palette to help everyone sleep better.</p>
+      </article>
+
+      <article class="room reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 17v-4a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke="#127c70" stroke-width="1.7"/><path d="M5 17h14M7 13V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4M8 17v2M16 17v2" stroke="#127c70" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Drawing room</h3>
+        <p>A welcoming living and guest space that looks great in photos and feels even better in person.</p>
+      </article>
+
+      <article class="room reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="11" rx="2" stroke="#127c70" stroke-width="1.7"/><path d="M9 9V6a3 3 0 0 1 6 0v3M3 14h18" stroke="#127c70" stroke-width="1.7"/></svg></div>
+        <h3>Office</h3>
+        <p>Focused, professional workspaces for small offices that keep your team comfortable and your brand on show.</p>
+      </article>
+
+      <article class="room reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10l5-4 5 4M4 20h6V14h0M14 20V8l5-3v15M4 20h16" stroke="#127c70" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Duplex house</h3>
+        <p>Whole home duplex design that ties two floors together, from the stairwell down to the smallest detail.</p>
+      </article>
+
+      <article class="room reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9 5 5h14l1 4M4 9h16M4 9v10h16V9M4 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0M9 19v-5h4v5" stroke="#127c70" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Shop and showroom</h3>
+        <p>Retail interiors built to pull people in, show your products well and make the most of every square foot.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Simple from day one</span>
+      <h2>How it works</h2>
+      <p>No confusing jargon, no surprise bills. Just three clear steps from first chat to handover.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>Consult</h3>
+        <p>We visit your home, listen to how you live and talk openly about your budget. You get honest advice, free of cost, before anything starts.</p>
+      </div>
+      <div class="step reveal d1">
+        <div class="num">2</div>
+        <h3>Design</h3>
+        <p>We share a clear plan with layouts, colours, materials and a costing you can actually understand. We adjust until it feels right.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="num">3</div>
+        <h3>Build</h3>
+        <p>Our team handles the work and the supervision. You stay updated at every stage and we hand over a finished, ready to live in home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUDGET / PACKAGES ============ -->
+<section class="packages" id="packages">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Honest, friendly pricing</span>
+      <h2>Plans for every budget</h2>
+      <p>Every home is different, so these are starting points, not fixed boxes. Tell us your number and we will shape a plan around it.</p>
+    </div>
+    <div class="pack-grid">
+
+      <div class="pack reveal">
+        <span class="tag">To begin</span>
+        <div class="nm">Refresh</div>
+        <div class="price">A single room, made lovely</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>One room design plan</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Colour and material picks</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Furniture and storage advice</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear, itemised costing</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Start here</a>
+      </div>
+
+      <div class="pack featured reveal d1" style="position:relative">
+        <span class="ribbon">Most chosen</span>
+        <span class="tag">Best value</span>
+        <div class="nm">Full Home</div>
+        <div class="price">Every room, one happy team</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>All rooms designed together</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>3D views before we build</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Full build and supervision</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>One point of contact throughout</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Get my quote</a>
+      </div>
+
+      <div class="pack reveal d2">
+        <span class="tag">For business</span>
+        <div class="nm">Commercial</div>
+        <div class="price">Offices, shops and showrooms</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Space planning for footfall</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Branding built into the design</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Durable, low upkeep finishes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-11" stroke="#1aa897" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Fast, tidy on site work</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Let us talk</a>
+      </div>
+
+    </div>
+    <p class="note">Not sure where you fit? Just call and we will help you find the friendliest plan for your space.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-side reveal">
+      <span class="eyebrow">Let us start</span>
+      <h2>A warm welcome is one call away.</h2>
+      <p>Tell us a little about your home and what you are hoping for. We will get back quickly to set up a free visit. No pressure, no obligation, just a friendly chat.</p>
+
+      <a href="tel:+8801521471208" class="contact-line" style="text-decoration:none">
+        <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="#127c70" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+        <div>
+          <span>Call or WhatsApp</span>
+          <b class="big">+880 1521-471208</b>
+        </div>
+      </a>
+
+      <div class="contact-line">
+        <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z" stroke="#127c70" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="#127c70" stroke-width="1.7"/></svg></span>
+        <div>
+          <span>Where we work</span>
+          <b>Dhaka, Bangladesh and nearby</b>
+        </div>
+      </div>
+
+      <div class="contact-line">
+        <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 7h14v12H5z" stroke="#127c70" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 8l7 5 7-5" stroke="#127c70" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div>
+          <span>Prefer to write?</span>
+          <b>Use the form, we reply by phone</b>
+        </div>
+      </div>
+    </div>
+
+    <form class="card reveal d2" id="contactForm" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" placeholder="e.g. Rahim Uddin" required />
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="01XXX-XXXXXX" required />
+        </div>
+        <div class="field">
+          <label for="space">Space to design</label>
+          <select id="space" name="space">
+            <option>Kitchen</option>
+            <option>Bedroom</option>
+            <option>Drawing room</option>
+            <option>Office</option>
+            <option>Duplex house</option>
+            <option>Shop or showroom</option>
+            <option>Full home</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="area">Area and budget range (optional)</label>
+        <input id="area" name="area" type="text" placeholder="e.g. Mirpur, around 4 lakh" />
+      </div>
+      <div class="field">
+        <label for="msg">Tell us a little more</label>
+        <textarea id="msg" name="msg" placeholder="What are you hoping to change or build?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Request my free visit</button>
+      <p class="form-msg" id="formMsg">Thank you. Your request is noted. Mahfuz will call you on the number you gave shortly.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand" style="color:#fff">
+          <span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10.5V20h14v-9.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Interior Bari
+        </a>
+        <p>Friendly, budget aware home interiors in Dhaka. We design kitchens, bedrooms, drawing rooms, offices, duplex homes and shops, and we make every one of them feel like home.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#services">Rooms we design</a>
+        <a href="#how">How it works</a>
+        <a href="#packages">Budget plans</a>
+        <a href="#welcome">About Mahfuz</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach us</h4>
+        <a href="tel:+8801521471208">+880 1521-471208</a>
+        <a href="#contact">Book a free visit</a>
+        <span style="display:block;color:#cfcdc7;font-size:.93rem;padding:.28rem 0">Dhaka, Bangladesh</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Interior Bari, Dhaka. Run by Mahfuz Biswas. Phone +880 1521-471208.</p>
+      <span class="concept">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// sticky nav style
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>24);},{passive:true});
+
+// mobile menu
+const burger=document.getElementById('burger');
+const menu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{menu.classList.toggle('open');burger.classList.toggle('active');});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+// scroll reveals
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// gentle parallax on hero blobs
+const blobs=document.querySelectorAll('.blob');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  blobs.forEach((b,i)=>{b.style.transform='translateY('+(y*(i?0.06:-0.05))+'px)';});
+},{passive:true});
+
+// contact form (demo, no backend)
+const form=document.getElementById('contactForm');
+const msg=document.getElementById('formMsg');
+form.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const name=document.getElementById('name');
+  const phone=document.getElementById('phone');
+  if(!name.value.trim()||!phone.value.trim()){
+    name.focus();
+    msg.textContent='Please add your name and phone so we can call you back.';
+    msg.style.color='#c0593b';
+    msg.classList.add('show');
+    return;
+  }
+  msg.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. Your request is noted. Mahfuz will call you on '+phone.value.trim()+' shortly.';
+  msg.style.color='#127c70';
+  msg.classList.add('show');
+  form.querySelector('button').textContent='Request sent';
+  setTimeout(()=>form.reset(),200);
+});
+</script>
+</body>
+</html>
