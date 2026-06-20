@@ -113,7 +113,7 @@ section{position:relative;z-index:2}
 .ba{padding:150px 0}
 .bawrap{position:relative;width:100%;height:clamp(360px,62vh,640px);border-radius:18px;overflow:hidden;border:1px solid var(--line);user-select:none}
 .baside{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px}
-.before{background:#15140f;color:#b8b2a4}
+.before{background:#15140f;color:#b8b2a4;clip-path:inset(0 50% 0 0)}
 .before .mockb{font-family:'Times New Roman',serif;color:#9a937f}
 .after{clip-path:inset(0 0 0 50%);background:linear-gradient(135deg,#0c1622,#0a1118)}
 .bamock{position:absolute;inset:0;z-index:0;opacity:.6}
@@ -329,8 +329,8 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;});
   (function loop(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;if(on){pv.style.left=cx+'px';pv.style.top=cy+'px';}requestAnimationFrame(loop);})();})();
 /* before/after */
-(function(){var w=document.getElementById('bawrap'),a=document.getElementById('baAfter'),h=document.getElementById('bahandle'),r=document.getElementById('curR');if(!w)return;var drag=false;
-  function set(x){var rect=w.getBoundingClientRect();var p=Math.max(4,Math.min(96,(x-rect.left)/rect.width*100));a.style.clipPath='inset(0 0 0 '+p+'%)';h.style.left=p+'%';}
+(function(){var w=document.getElementById('bawrap'),a=document.getElementById('baAfter'),h=document.getElementById('bahandle'),r=document.getElementById('curR');if(!w)return;var bf=w.querySelector('.before');var drag=false;
+  function set(x){var rect=w.getBoundingClientRect();var p=Math.max(4,Math.min(96,(x-rect.left)/rect.width*100));a.style.clipPath='inset(0 0 0 '+p+'%)';if(bf)bf.style.clipPath='inset(0 '+(100-p)+'% 0 0)';h.style.left=p+'%';}
   w.addEventListener('mousedown',function(e){drag=true;set(e.clientX);});
   addEventListener('mousemove',function(e){if(drag)set(e.clientX);});
   addEventListener('mouseup',function(){drag=false;});
@@ -351,7 +351,7 @@ function initScroll(){
   if(innerWidth>820){var track=document.getElementById('gtrack');var dist=track.scrollWidth-innerWidth;
     gsap.to(track,{x:-dist,ease:'none',scrollTrigger:{trigger:'#gal',start:'top top',end:'+='+dist,scrub:1,pin:true,invalidateOnRefresh:true}});}
   /* counters */
-  document.querySelectorAll('[data-c]').forEach(function(el){var end=+el.dataset.c;ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){gsap.to({v:0},{v:end,duration:1.6,ease:'power2.out',onUpdate:function(){el.textContent=Math.floor(this.targets()[0].v);}});}});});
+  document.querySelectorAll('.stat [data-c]').forEach(function(el){var end=+el.dataset.c;ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){gsap.to({v:0},{v:end,duration:1.6,ease:'power2.out',onUpdate:function(){el.textContent=Math.floor(this.targets()[0].v);}});}});});
   ScrollTrigger.refresh();
 }
 /* ===== three.js hero: morphing point cloud (sphere <-> wave grid) ===== */
