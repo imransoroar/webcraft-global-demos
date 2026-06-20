@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AGFA Accountants | AgfaTax | Bankstown and Tamworth NSW</title>
+<meta name="description" content="AGFA Accountants is a member of the Institute of Public Accountants serving Bankstown and Tamworth, New South Wales. Tax, BAS, payroll, SMSF, bookkeeping and business setup." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0f2747;
+    --navy-deep:#0a1d36;
+    --navy-soft:#1a3a63;
+    --gold:#c8a24b;
+    --gold-soft:#d9bd78;
+    --gold-deep:#a8842f;
+    --ivory:#faf7f0;
+    --ivory-warm:#f3ede0;
+    --ink:#27313f;
+    --paper:#fffdf8;
+    --rule:rgba(200,162,75,.34);
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.16;color:var(--navy)}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.72rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    font-weight:600;
+    display:flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+  .eyebrow.center{justify-content:center}
+  .eyebrow.center::after{content:"";width:34px;height:1px;background:var(--gold)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.1s}
+  .reveal[data-d="2"]{transition-delay:.2s}
+  .reveal[data-d="3"]{transition-delay:.3s}
+  .reveal[data-d="4"]{transition-delay:.4s}
+
+  /* ===== NAV ===== */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+    padding:20px 0;
+  }
+  header.nav.solid{
+    background:rgba(10,29,54,.96);
+    box-shadow:0 1px 0 rgba(200,162,75,.22),0 18px 40px -28px rgba(0,0,0,.7);
+    padding:12px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:13px;color:#fff}
+  .brand .crest{width:38px;height:46px;flex:none}
+  .brand-txt{line-height:1.05}
+  .brand-txt .nm{font-family:var(--serif);font-size:1.18rem;letter-spacing:.04em;font-weight:600;color:#fff}
+  .brand-txt .sub{font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft)}
+  nav ul{list-style:none;display:flex;align-items:center;gap:30px}
+  nav ul a{
+    color:rgba(255,255,255,.82);font-size:.82rem;letter-spacing:.06em;font-weight:500;
+    position:relative;padding:4px 0;transition:color .3s;
+  }
+  nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+  nav ul a:hover{color:#fff}
+  nav ul a:hover::after{width:100%}
+  .nav-cta{
+    border:1px solid var(--gold);color:var(--gold-soft);
+    padding:9px 20px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    transition:background .35s,color .35s;
+  }
+  .nav-cta:hover{background:var(--gold);color:var(--navy-deep)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--gold-soft);transition:.3s}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 90% 60% at 78% 12%,rgba(200,162,75,.16),transparent 60%),
+      linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 52%,#0c2140 100%);
+    color:#fff;
+    padding:172px 0 96px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:62px 62px;
+    mask-image:radial-gradient(ellipse 70% 70% at 30% 40%,#000,transparent 75%);
+    opacity:.6;
+  }
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.15rem);color:#fff;letter-spacing:.005em;margin:24px 0 0}
+  .hero h1 .gild{color:var(--gold-soft);font-style:italic;font-weight:500}
+  .hero .lede{
+    margin-top:26px;max-width:30em;color:rgba(255,255,255,.8);font-size:1.06rem;font-weight:300;
+  }
+  .hero .actions{margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    padding:15px 28px;transition:transform .3s,box-shadow .3s,background .3s,color .3s;
+  }
+  .btn-gold{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--navy-deep);box-shadow:0 16px 34px -16px rgba(200,162,75,.7)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 22px 42px -16px rgba(200,162,75,.8)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+  .hero-meta{margin-top:42px;display:flex;gap:34px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
+  .hero-meta div{line-height:1.25}
+  .hero-meta .k{font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft)}
+  .hero-meta .v{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+  /* crest panel */
+  .crest-panel{display:flex;justify-content:center}
+  .crest-frame{
+    position:relative;width:330px;max-width:100%;
+    border:1px solid rgba(200,162,75,.4);
+    padding:34px 28px 30px;
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0));
+    text-align:center;
+  }
+  .crest-frame::before,.crest-frame::after{
+    content:"";position:absolute;width:14px;height:14px;border:1px solid var(--gold);
+  }
+  .crest-frame::before{top:8px;left:8px;border-right:none;border-bottom:none}
+  .crest-frame::after{bottom:8px;right:8px;border-left:none;border-top:none}
+  .crest-frame .bigcrest{width:170px;height:200px;margin:0 auto}
+  .crest-frame .est{margin-top:18px;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-soft)}
+  .crest-frame .ttl{font-family:var(--serif);font-size:1.35rem;color:#fff;margin-top:6px;letter-spacing:.04em}
+  .crest-frame .rule{height:1px;background:var(--rule);margin:14px auto;width:64%}
+  .crest-frame .pa{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+  /* ===== TRUST STRIP ===== */
+  .strip{background:var(--navy-deep);border-top:1px solid rgba(200,162,75,.18);border-bottom:1px solid rgba(200,162,75,.18)}
+  .strip-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:22px 28px;max-width:var(--maxw);margin:0 auto}
+  .strip-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.78);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+  .strip-item svg{flex:none}
+  .strip-divider{width:1px;height:26px;background:rgba(200,162,75,.3)}
+
+  /* ===== SECTION SHELL ===== */
+  section.block{padding:108px 0;position:relative}
+  .sec-head{max-width:680px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.85rem);margin-top:18px}
+  .sec-head p{margin-top:18px;color:#566174;font-size:1.04rem}
+
+  /* ===== ABOUT (editorial columns) ===== */
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:start;margin-top:8px}
+  .about-figure{position:relative}
+  .ledger{
+    border:1px solid var(--rule);background:linear-gradient(180deg,#fff,var(--ivory-warm));
+    padding:36px 34px;position:relative;
+  }
+  .ledger::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold-deep))}
+  .ledger h3{font-size:1.4rem;color:var(--navy)}
+  .ledger .num{font-family:var(--serif);font-size:.9rem;color:var(--gold-deep);letter-spacing:.18em}
+  .ledger-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px dashed var(--rule)}
+  .ledger-row:last-child{border-bottom:none}
+  .ledger-row .lbl{color:var(--ink);font-size:.95rem;font-weight:500}
+  .ledger-row .val{font-family:var(--serif);color:var(--navy);font-size:1.1rem}
+  .columns{column-gap:40px}
+  .about-body .lead{font-family:var(--serif);font-size:1.35rem;line-height:1.5;color:var(--navy);font-style:italic;margin-bottom:22px}
+  .about-body p{margin-bottom:18px;color:#4c5667}
+  .about-body p:first-letter{}
+  .drop p:first-of-type::first-letter{
+    font-family:var(--serif);float:left;font-size:3.6rem;line-height:.82;
+    padding:6px 12px 0 0;color:var(--gold-deep);font-weight:600;
+  }
+  .sign{margin-top:26px;display:flex;align-items:center;gap:16px}
+  .sign .line{flex:1;height:1px;background:var(--rule)}
+  .sign .name{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:1.1rem}
+
+  /* ===== SERVICES ===== */
+  .services{background:linear-gradient(180deg,var(--ivory),var(--ivory-warm))}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:50px;border:1px solid var(--rule)}
+  .svc{
+    background:var(--paper);padding:38px 32px;position:relative;transition:background .4s,transform .4s;
+    overflow:hidden;
+  }
+  .svc::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold-soft),var(--gold-deep));transform:scaleX(0);transform-origin:left;transition:transform .5s ease}
+  .svc:hover{background:var(--navy);transform:translateY(-3px)}
+  .svc:hover::after{transform:scaleX(1)}
+  .svc:hover h3,.svc:hover p,.svc:hover .svc-no{color:#fff!important}
+  .svc:hover .svc-ic circle,.svc:hover .svc-ic rect{stroke:var(--gold-soft)}
+  .svc:hover .svc-ic path,.svc:hover .svc-ic line,.svc:hover .svc-ic polyline{stroke:var(--gold-soft)}
+  .svc-no{font-family:var(--serif);font-size:.84rem;letter-spacing:.2em;color:var(--gold-deep);transition:color .4s}
+  .svc-ic{margin:18px 0 16px}
+  .svc-ic svg *{transition:stroke .4s}
+  .svc h3{font-size:1.28rem;margin-bottom:10px;transition:color .4s}
+  .svc p{color:#5a6577;font-size:.94rem;transition:color .4s}
+
+  /* ===== APPROACH ===== */
+  .approach{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .approach::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 80% at 90% 10%,rgba(200,162,75,.12),transparent 60%);
+  }
+  .approach .sec-head h2,.approach .sec-head p{color:#fff}
+  .approach .sec-head p{color:rgba(255,255,255,.7)}
+  .steps{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px}
+  .step{padding:0 26px;position:relative}
+  .step:not(:last-child)::after{content:"";position:absolute;right:0;top:6px;bottom:0;width:1px;background:rgba(200,162,75,.25)}
+  .step .rn{font-family:var(--serif);font-size:2.6rem;color:var(--gold-soft);line-height:1}
+  .step h4{color:#fff;font-size:1.18rem;margin:14px 0 8px}
+  .step p{color:rgba(255,255,255,.66);font-size:.9rem}
+
+  /* ===== OFFICES ===== */
+  .offices{background:var(--paper)}
+  .office-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:50px}
+  .office{
+    border:1px solid var(--rule);background:linear-gradient(180deg,#fff,var(--ivory));
+    padding:40px 38px;position:relative;transition:box-shadow .4s,transform .4s;
+  }
+  .office:hover{box-shadow:0 30px 60px -34px rgba(15,39,71,.4);transform:translateY(-3px)}
+  .office .pin{display:flex;align-items:center;gap:12px}
+  .office .pin .city{font-family:var(--serif);font-size:1.7rem;color:var(--navy)}
+  .office .tag{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+  .office address{font-style:normal;color:#4c5667;margin-top:16px;line-height:1.8;font-size:.98rem}
+  .office .map{margin-top:22px;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+  .office .ph{margin-top:18px;display:inline-flex;align-items:center;gap:10px;color:var(--navy);font-weight:600;font-size:.95rem}
+  .office .ph svg{flex:none}
+
+  /* ===== CONTACT / CTA ===== */
+  .contact{
+    background:linear-gradient(160deg,var(--navy-deep),var(--navy) 60%,#0c2342);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .contact::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+    background-size:54px 54px;mask-image:radial-gradient(ellipse 60% 70% at 80% 60%,#000,transparent 70%);
+  }
+  .contact-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .contact h2{color:#fff;font-size:clamp(2rem,3.6vw,2.9rem)}
+  .contact .lede{color:rgba(255,255,255,.74);margin-top:18px;max-width:30em}
+  .contact .callbox{
+    margin-top:34px;border:1px solid rgba(200,162,75,.4);padding:26px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);
+  }
+  .callbox .ttl{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft)}
+  .callbox .num{font-family:var(--serif);font-size:1.9rem;color:#fff;margin-top:4px}
+
+  form{display:grid;gap:16px}
+  .field{display:grid;gap:6px}
+  .field label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+  .field input,.field select,.field textarea{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.18);
+    color:#fff;padding:13px 15px;font-family:var(--sans);font-size:.95rem;border-radius:2px;
+    transition:border .3s,background .3s;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.08)}
+  .field select option{color:var(--navy)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .btn-gold{justify-content:center;border:none;cursor:pointer;width:100%;margin-top:6px}
+  .form-note{font-size:.78rem;color:rgba(255,255,255,.5);text-align:center}
+  .ok-msg{display:none;border:1px solid var(--gold);padding:18px;text-align:center;color:var(--gold-soft);font-size:.92rem}
+  .ok-msg.show{display:block}
+
+  /* ===== FOOTER ===== */
+  footer{background:#081729;color:rgba(255,255,255,.7);padding:64px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+  .foot-brand .brand{margin-bottom:18px}
+  .foot-brand p{font-size:.92rem;max-width:30em;color:rgba(255,255,255,.55)}
+  .foot-col h5{font-family:var(--serif);color:#fff;font-size:1.05rem;margin-bottom:16px;font-weight:500}
+  .foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:9px;transition:color .3s}
+  .foot-col a:hover{color:var(--gold-soft)}
+  .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:.78rem;color:rgba(255,255,255,.4)}
+  .foot-bottom .wc{color:rgba(255,255,255,.34)}
+
+  /* responsive */
+  @media(max-width:960px){
+    .hero-grid,.about-grid,.contact-grid,.office-grid{grid-template-columns:1fr}
+    .crest-panel{order:-1}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr;gap:36px 0}
+    .step:nth-child(2)::after{display:none}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:680px){
+    nav ul,.nav-cta.deskcta{display:none}
+    .burger{display:flex}
+    nav.mobile-open ul{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--navy-deep);padding:24px 28px;gap:18px;border-top:1px solid var(--rule);
+    }
+    header.nav{padding:14px 0}
+    section.block{padding:74px 0}
+    .svc-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .step::after{display:none!important}
+    .step{padding:0;border-bottom:1px solid rgba(200,162,75,.2);padding-bottom:22px}
+    .foot-grid{grid-template-columns:1fr}
+    .two{grid-template-columns:1fr}
+    .hero{padding:140px 0 70px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="AGFA Accountants home">
+      <svg class="crest" viewBox="0 0 60 72" aria-hidden="true">
+        <defs>
+          <linearGradient id="gShield" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#d9bd78"/><stop offset="1" stop-color="#a8842f"/>
+          </linearGradient>
+        </defs>
+        <path d="M30 2 L56 11 V36 C56 53 44 64 30 70 C16 64 4 53 4 36 V11 Z" fill="none" stroke="url(#gShield)" stroke-width="2"/>
+        <text x="30" y="42" text-anchor="middle" font-family="Playfair Display,serif" font-size="20" font-weight="600" fill="#d9bd78" letter-spacing="1">A</text>
+      </svg>
+      <span class="brand-txt"><span class="nm">AGFA Accountants</span><span class="sub">AgfaTax</span></span>
+    </a>
+    <nav id="navmenu">
+      <ul>
+        <li><a href="#about">Practice</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#offices">Offices</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cta deskcta">Book a Consultation</a>
+    <div class="burger" id="burger" aria-label="Menu" role="button" tabindex="0"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <p class="eyebrow">Public Accountants &middot; New South Wales</p>
+      <h1>Considered counsel for the <span class="gild">numbers that matter.</span></h1>
+      <p class="lede">AGFA Accountants is a registered public accountancy serving families, sole traders and growing businesses across Bankstown and Tamworth. Accredited, methodical and quietly thorough with every return we lodge.</p>
+      <div class="actions">
+        <a href="#contact" class="btn btn-gold">Arrange a Meeting
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">View Our Services</a>
+      </div>
+      <div class="hero-meta">
+        <div><div class="k">IPA</div><div class="v">Institute Member</div></div>
+        <div><div class="k">2</div><div class="v">NSW Offices</div></div>
+        <div><div class="k">Xero</div><div class="v">&amp; QuickBooks Certified</div></div>
+      </div>
+    </div>
+
+    <div class="crest-panel reveal" data-d="2">
+      <div class="crest-frame">
+        <svg class="bigcrest" viewBox="0 0 140 168" aria-label="AGFA crest">
+          <defs>
+            <linearGradient id="bigG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e3cd8f"/><stop offset="1" stop-color="#a8842f"/>
+            </linearGradient>
+          </defs>
+          <path d="M70 4 L132 25 V78 C132 118 104 144 70 162 C36 144 8 118 8 78 V25 Z" fill="rgba(200,162,75,.06)" stroke="url(#bigG)" stroke-width="2.2"/>
+          <path d="M70 14 L122 32 V78 C122 112 99 134 70 150 C41 134 18 112 18 78 V32 Z" fill="none" stroke="rgba(200,162,75,.4)" stroke-width="1"/>
+          <line x1="70" y1="38" x2="70" y2="128" stroke="rgba(200,162,75,.45)" stroke-width="1"/>
+          <line x1="34" y1="83" x2="106" y2="83" stroke="rgba(200,162,75,.45)" stroke-width="1"/>
+          <text x="52" y="76" text-anchor="middle" font-family="Playfair Display,serif" font-size="26" font-weight="600" fill="#e3cd8f">A</text>
+          <text x="88" y="76" text-anchor="middle" font-family="Playfair Display,serif" font-size="26" font-weight="600" fill="#e3cd8f">G</text>
+          <text x="52" y="116" text-anchor="middle" font-family="Playfair Display,serif" font-size="26" font-weight="600" fill="#e3cd8f">F</text>
+          <text x="88" y="116" text-anchor="middle" font-family="Playfair Display,serif" font-size="26" font-weight="600" fill="#e3cd8f">A</text>
+        </svg>
+        <div class="est">Public Accountancy</div>
+        <div class="ttl">AGFA Accountants</div>
+        <div class="rule"></div>
+        <div class="pa">Member &middot; Institute of Public Accountants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      IPA Member Practice
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v16"/></svg>
+      Registered Tax Agents
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.6"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-7"/></svg>
+      Xero &amp; QuickBooks
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      Bankstown &amp; Tamworth
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="block about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-figure reveal">
+        <div class="ledger">
+          <div class="num">Folio No. 001</div>
+          <h3 style="margin:6px 0 18px">The Practice at a Glance</h3>
+          <div class="ledger-row"><span class="lbl">Accreditation</span><span class="val">IPA</span></div>
+          <div class="ledger-row"><span class="lbl">Trading as</span><span class="val">AgfaTax</span></div>
+          <div class="ledger-row"><span class="lbl">Principal Office</span><span class="val">Bankstown</span></div>
+          <div class="ledger-row"><span class="lbl">Second Office</span><span class="val">Tamworth</span></div>
+          <div class="ledger-row"><span class="lbl">Software</span><span class="val">Xero, QuickBooks</span></div>
+          <div class="ledger-row"><span class="lbl">Disciplines</span><span class="val">Eight</span></div>
+        </div>
+      </div>
+
+      <div class="about-body reveal" data-d="2">
+        <p class="eyebrow">The Practice</p>
+        <div class="sec-head" style="margin-bottom:6px"><h2>A traditional accountancy with a modern ledger.</h2></div>
+        <div class="drop">
+          <p class="lead">We believe sound accounting is built on patience, precision and a long view of your affairs.</p>
+          <p>AGFA Accountants, also known as AgfaTax, is a public accountancy practice and a member of the Institute of Public Accountants. From offices in Bankstown and Tamworth, we advise individuals, families and businesses throughout New South Wales on the full breadth of their tax and financial obligations.</p>
+          <p>Our work is methodical by design. Every return is reviewed, every figure reconciled, and every obligation tracked against the calendar so that nothing is left to the final week. We combine the discipline of established practice with cloud accounting in Xero and QuickBooks, giving you both rigour and a clear, current picture of where you stand.</p>
+          <p>Whether you need a single tax return prepared with care or a complete bookkeeping and advisory arrangement for your enterprise, you will find the same steady hand and the same plain English explanations behind every recommendation.</p>
+        </div>
+        <div class="sign">
+          <span class="name">AGFA Accountants</span>
+          <span class="line"></span>
+          <span class="name" style="font-size:.86rem;color:var(--gold-deep)">Bankstown &middot; Tamworth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="block services" id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow center">What We Attend To</p>
+      <h2>A full register of accounting disciplines.</h2>
+      <p>From day to day compliance to considered strategy, our services are arranged to carry a client from first registration through to a settled, well managed set of accounts.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal" data-d="1">
+        <div class="svc-no">I</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3>GST &amp; BAS</h3>
+        <p>Accurate Business Activity Statements prepared and lodged on time, with GST positions checked and reconciled each period.</p>
+      </article>
+
+      <article class="svc reveal" data-d="2">
+        <div class="svc-no">II</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><path d="M6 3h9l5 5v13a0 0 0 0 1 0 0H6z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
+        <h3>Tax Returns</h3>
+        <p>Individual, sole trader, company and trust returns, prepared to claim every entitlement you are properly due.</p>
+      </article>
+
+      <article class="svc reveal" data-d="3">
+        <div class="svc-no">III</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 11h5M18.5 8.5v5"/></svg></div>
+        <h3>Payroll &amp; STP</h3>
+        <p>Reliable payroll runs with Single Touch Payroll reporting, so your staff are paid correctly and the ATO is kept current.</p>
+      </article>
+
+      <article class="svc reveal" data-d="1">
+        <div class="svc-no">IV</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 4"/></svg></div>
+        <h3>Tax Consultancy</h3>
+        <p>Forward looking advice on structure, timing and obligations, helping you plan rather than simply react at year end.</p>
+      </article>
+
+      <article class="svc reveal" data-d="2">
+        <div class="svc-no">V</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><path d="M4 19V5M4 19h16M8 16v-5M12 16V9M16 16v-8"/></svg></div>
+        <h3>Accounting &amp; Bookkeeping</h3>
+        <p>Day to day bookkeeping and management accounts in Xero and QuickBooks, kept tidy, reconciled and report ready.</p>
+      </article>
+
+      <article class="svc reveal" data-d="3">
+        <div class="svc-no">VI</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><path d="M12 3l8 4v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V7z"/><circle cx="12" cy="11" r="2.4"/><path d="M12 13.4V16"/></svg></div>
+        <h3>Self-Managed Super Funds</h3>
+        <p>SMSF administration, compliance and reporting, handled with the diligence your retirement savings deserve.</p>
+      </article>
+
+      <article class="svc reveal" data-d="1">
+        <div class="svc-no">VII</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+        <h3>Business Setup</h3>
+        <p>Company, partnership and sole trader registrations established correctly from the outset, with ABN, GST and structure in order.</p>
+      </article>
+
+      <article class="svc reveal" data-d="2">
+        <div class="svc-no">VIII</div>
+        <div class="svc-ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M9 9.5a3 3 0 0 1 5.5 1.5c0 2-3 2-3 4M12 17.5v.01"/></svg></div>
+        <h3>Considered Advice</h3>
+        <p>Whatever the question of tax or compliance, a clear conversation and a plain answer are always part of the engagement.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="block approach" id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How We Work</p>
+      <h2>A measured engagement, from first meeting to lodged return.</h2>
+      <p>Our process is unhurried and transparent. You always know where matters stand and what falls due next.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-d="1">
+        <div class="rn">01</div>
+        <h4>Consultation</h4>
+        <p>We sit down, understand your situation and set out exactly what your affairs require.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <div class="rn">02</div>
+        <h4>Organisation</h4>
+        <p>Records are gathered and reconciled in Xero or QuickBooks so the figures are sound.</p>
+      </div>
+      <div class="step reveal" data-d="3">
+        <div class="rn">03</div>
+        <h4>Preparation</h4>
+        <p>Returns, statements and reports are prepared and reviewed line by line before lodgement.</p>
+      </div>
+      <div class="step reveal" data-d="4">
+        <div class="rn">04</div>
+        <h4>Ongoing Care</h4>
+        <p>We track your obligations through the year and advise well ahead of every deadline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFICES ============ -->
+<section class="block offices" id="offices">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow center">Where to Find Us</p>
+      <h2>Two offices across New South Wales.</h2>
+      <p>Visit us in Bankstown or Tamworth. We are glad to meet in person or to arrange a time by telephone.</p>
+    </div>
+
+    <div class="office-grid">
+      <div class="office reveal" data-d="1">
+        <div class="pin">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.6"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span class="city">Bankstown</span>
+        </div>
+        <div class="tag" style="margin-top:6px">Principal Office</div>
+        <address>
+          Level 1, Suite 5<br/>
+          443 Chapel Road<br/>
+          Bankstown NSW 2200
+        </address>
+        <div class="map">
+          <svg viewBox="0 0 400 150" width="100%" role="img" aria-label="Stylised street map of Bankstown office">
+            <rect width="400" height="150" fill="#eef1ec"/>
+            <path d="M0 90 H400 M0 50 H400 M120 0 V150 M280 0 V150" stroke="#d7dcd0" stroke-width="8"/>
+            <path d="M0 90 H400" stroke="#c8a24b" stroke-width="3" opacity=".5"/>
+            <rect x="40" y="20" width="50" height="24" fill="#dfe3da"/><rect x="300" y="100" width="60" height="34" fill="#dfe3da"/><rect x="150" y="100" width="40" height="30" fill="#dfe3da"/>
+            <circle cx="200" cy="90" r="9" fill="#0f2747"/><circle cx="200" cy="90" r="4" fill="#c8a24b"/>
+            <path d="M200 90 L200 70" stroke="#0f2747" stroke-width="2"/><circle cx="200" cy="66" r="6" fill="#c8a24b"/>
+          </svg>
+        </div>
+        <a href="tel:+61435797376" class="ph">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0f2747" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          +61 435 797 376
+        </a>
+      </div>
+
+      <div class="office reveal" data-d="2">
+        <div class="pin">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.6"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span class="city">Tamworth</span>
+        </div>
+        <div class="tag" style="margin-top:6px">Regional Office</div>
+        <address>
+          AGFA Accountants<br/>
+          Tamworth NSW<br/>
+          New South Wales
+        </address>
+        <div class="map">
+          <svg viewBox="0 0 400 150" width="100%" role="img" aria-label="Stylised street map of Tamworth office">
+            <rect width="400" height="150" fill="#eef1ec"/>
+            <path d="M0 60 H400 M0 110 H400 M160 0 V150 M320 0 V150" stroke="#d7dcd0" stroke-width="8"/>
+            <path d="M160 0 V150" stroke="#c8a24b" stroke-width="3" opacity=".5"/>
+            <rect x="60" y="70" width="60" height="30" fill="#dfe3da"/><rect x="220" y="20" width="44" height="26" fill="#dfe3da"/><rect x="340" y="115" width="46" height="28" fill="#dfe3da"/>
+            <circle cx="160" cy="60" r="9" fill="#0f2747"/><circle cx="160" cy="60" r="4" fill="#c8a24b"/>
+            <path d="M160 60 L160 40" stroke="#0f2747" stroke-width="2"/><circle cx="160" cy="36" r="6" fill="#c8a24b"/>
+          </svg>
+        </div>
+        <a href="tel:+61435797376" class="ph">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0f2747" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          +61 435 797 376
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Begin the Conversation</p>
+        <h2>Arrange a consultation with AGFA Accountants.</h2>
+        <p class="lede">Tell us a little about what you need and we will be in touch to arrange a time. For anything urgent, a telephone call is always welcome.</p>
+        <div class="callbox">
+          <div>
+            <div class="ttl">Speak with us</div>
+            <a href="tel:+61435797376" class="num">+61 435 797 376</a>
+          </div>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#c8a24b" stroke-width="1.3"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        </div>
+        <p style="margin-top:24px;font-size:.92rem;color:rgba(255,255,255,.6)">
+          Level 1, Suite 5, 443 Chapel Road, Bankstown NSW 2200<br/>
+          Second office at Tamworth NSW
+        </p>
+      </div>
+
+      <div class="reveal" data-d="2">
+        <form id="enquiry" novalidate>
+          <div class="two">
+            <div class="field">
+              <label for="fn">Full Name</label>
+              <input id="fn" name="fn" type="text" placeholder="Jane Citizen" required />
+            </div>
+            <div class="field">
+              <label for="ph">Phone</label>
+              <input id="ph" name="ph" type="tel" placeholder="04xx xxx xxx" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="em">Email</label>
+            <input id="em" name="em" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="svc">How can we help?</label>
+            <select id="svc" name="svc">
+              <option>Tax Returns</option>
+              <option>GST &amp; BAS</option>
+              <option>Payroll &amp; STP</option>
+              <option>Accounting &amp; Bookkeeping</option>
+              <option>Self-Managed Super Funds</option>
+              <option>Business Setup</option>
+              <option>Tax Consultancy</option>
+              <option>Something Else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="msg">Brief Message</label>
+            <textarea id="msg" name="msg" rows="3" placeholder="A sentence or two about your situation"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold">Send Enquiry
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-note">We reply to every enquiry within one business day.</p>
+          <div class="ok-msg" id="okmsg">Thank you. Your enquiry has been noted and a member of the practice will be in touch shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="crest" viewBox="0 0 60 72" aria-hidden="true">
+            <path d="M30 2 L56 11 V36 C56 53 44 64 30 70 C16 64 4 53 4 36 V11 Z" fill="none" stroke="#c8a24b" stroke-width="2"/>
+            <text x="30" y="42" text-anchor="middle" font-family="Playfair Display,serif" font-size="20" font-weight="600" fill="#c8a24b">A</text>
+          </svg>
+          <span class="brand-txt"><span class="nm">AGFA Accountants</span><span class="sub">AgfaTax</span></span>
+        </a>
+        <p>A public accountancy practice and member of the Institute of Public Accountants, serving New South Wales from Bankstown and Tamworth.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Practice</h5>
+        <a href="#about">The Practice</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#offices">Offices</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Bankstown Office</h5>
+        <p>Level 1, Suite 5<br/>443 Chapel Road<br/>Bankstown NSW 2200</p>
+        <a href="tel:+61435797376">+61 435 797 376</a>
+        <h5 style="margin-top:18px">Tamworth Office</h5>
+        <p>Tamworth NSW</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr"></span> AGFA Accountants &middot; AgfaTax. Member of the Institute of Public Accountants.</span>
+      <span class="wc">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // sticky nav state
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if(window.scrollY > 40) nav.classList.add('solid');
+    else nav.classList.remove('solid');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const navmenu = document.getElementById('navmenu');
+  const toggle = () => navmenu.classList.toggle('mobile-open');
+  burger.addEventListener('click', toggle);
+  burger.addEventListener('keypress', e => { if(e.key==='Enter') toggle(); });
+  navmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navmenu.classList.remove('mobile-open')));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // form
+  const form = document.getElementById('enquiry');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fn = document.getElementById('fn').value.trim();
+    const em = document.getElementById('em').value.trim();
+    const ph = document.getElementById('ph').value.trim();
+    if(!fn || !em || !ph){
+      [['fn',fn],['em',em],['ph',ph]].forEach(([id,v]) => {
+        document.getElementById(id).style.borderColor = v ? '' : '#c8a24b';
+      });
+      return;
+    }
+    form.querySelectorAll('input,select,textarea,.form-note').forEach(el => el.style.display='none');
+    form.querySelector('button').style.display='none';
+    document.getElementById('okmsg').classList.add('show');
+  });
+</script>
+</body>
+</html>

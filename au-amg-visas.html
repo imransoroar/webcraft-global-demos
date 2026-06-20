@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMG Visas | Registered Migration Agents, Parramatta</title>
+<meta name="description" content="AMG Visas Pty Ltd. Registered migration agency in Parramatta since 2006. Family, skilled, employer-sponsored and student visas guided by Anthony Takchi, Registered Migration Agent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#f6f2ea;
+    --ivory-2:#efe9dd;
+    --ink:#14213a;
+    --ink-soft:#26314f;
+    --oxblood:#7c2230;
+    --oxblood-deep:#5c1a24;
+    --grey:#7d7568;
+    --grey-line:rgba(20,33,58,.16);
+    --gold:#a98b4e;
+    --maxw:1240px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--oxblood);color:var(--ivory)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .serif{font-family:"Fraunces",serif}
+  .small-caps{
+    font-family:"Inter",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--oxblood);
+  }
+  .rule{height:1px;background:var(--grey-line);transform-origin:left center}
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:sticky;top:0;z-index:80;
+    background:rgba(246,242,234,.82);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid transparent;
+    transition:border-color .4s ease, background .4s ease;
+  }
+  header.nav.scrolled{border-bottom-color:var(--grey-line);background:rgba(246,242,234,.94)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+  .brand{display:flex;align-items:baseline;gap:11px;line-height:1}
+  .brand .mark{
+    font-family:"Fraunces",serif;font-weight:600;font-size:25px;letter-spacing:.01em;color:var(--ink)
+  }
+  .brand .mark em{color:var(--oxblood);font-style:normal}
+  .brand .sub{
+    font-family:"Inter",sans-serif;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey)
+  }
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{
+    font-family:"Inter",sans-serif;font-size:12.5px;letter-spacing:.06em;font-weight:500;color:var(--ink-soft);
+    position:relative;padding:6px 0;transition:color .25s
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--oxblood);transition:width .3s ease
+  }
+  .nav-links a:hover{color:var(--oxblood)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    font-family:"Inter",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.03em;
+    background:var(--ink);color:var(--ivory);padding:11px 19px;border-radius:2px;
+    transition:background .3s, transform .3s; white-space:nowrap
+  }
+  .nav-cta:hover{background:var(--oxblood);transform:translateY(-1px)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);transition:.3s}
+
+  /* ============ MASTHEAD / HERO ============ */
+  .masthead{padding:30px 0 12px;position:relative}
+  .nameplate{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .nameplate .dateline,.nameplate .edition{
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)
+  }
+  .nameplate .edition{text-align:right}
+  .hero{padding:34px 0 56px;position:relative}
+  .hero-rule-top{margin:10px 0 30px}
+  .hero-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:54px;align-items:end}
+  .kicker{margin-bottom:20px;display:flex;align-items:center;gap:14px}
+  .kicker .line{flex:0 0 46px;height:1px;background:var(--oxblood);opacity:.7}
+  h1.headline{
+    font-family:"Fraunces",serif;font-weight:500;
+    font-size:clamp(44px,7.4vw,104px);
+    line-height:.97;letter-spacing:-.018em;color:var(--ink)
+  }
+  h1.headline em{font-style:italic;color:var(--oxblood);font-weight:500}
+  .hero-lede{
+    margin-top:30px;font-size:21px;line-height:1.55;max-width:30ch;color:var(--ink-soft)
+  }
+  .hero-side{padding-bottom:8px}
+  .hero-stat{margin-bottom:26px}
+  .hero-stat .num{
+    font-family:"Fraunces",serif;font-weight:500;font-size:48px;line-height:1;color:var(--ink);letter-spacing:-.02em
+  }
+  .hero-stat .lab{
+    font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.05em;color:var(--grey);margin-top:6px;max-width:24ch
+  }
+  .stars{color:var(--gold);font-size:18px;letter-spacing:2px}
+  .hero-actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    font-family:"Inter",sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.02em;
+    padding:15px 26px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+    transition:transform .3s, background .3s, color .3s, box-shadow .3s;cursor:pointer;border:1px solid transparent
+  }
+  .btn-primary{background:var(--oxblood);color:var(--ivory)}
+  .btn-primary:hover{background:var(--oxblood-deep);transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(124,34,48,.7)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--grey-line)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn .arr{transition:transform .3s}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  /* decorative engraving panel under hero side */
+  .crest{
+    margin-top:8px;border:1px solid var(--grey-line);border-radius:3px;padding:22px 22px 20px;
+    background:linear-gradient(160deg, rgba(255,255,255,.5), rgba(239,233,221,.2));position:relative;overflow:hidden
+  }
+  .crest .small-caps{margin-bottom:10px;display:block}
+  .crest p{font-size:15.5px;line-height:1.5;color:var(--ink-soft)}
+  .crest svg{position:absolute;right:-20px;bottom:-26px;opacity:.08}
+
+  /* ============ MARQUEE ============ */
+  .marquee{
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    background:var(--ink);color:var(--ivory);overflow:hidden;padding:16px 0;position:relative
+  }
+  .marquee .track{display:flex;width:max-content;animation:scrollx 38s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee .item{
+    font-family:"Fraunces",serif;font-weight:500;font-size:24px;letter-spacing:.02em;padding:0 34px;display:flex;align-items:center;gap:34px;white-space:nowrap
+  }
+  .marquee .item .dot{width:6px;height:6px;border-radius:50%;background:var(--oxblood)}
+  .marquee .item .tag{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,234,.55)}
+  @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ SECTION SHELL ============ */
+  section{position:relative}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:36px}
+  .sec-num{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;font-size:18px;color:var(--oxblood);
+    flex:0 0 auto;padding-top:4px
+  }
+  .sec-title{
+    font-family:"Fraunces",serif;font-weight:500;font-size:clamp(28px,4vw,46px);line-height:1.02;letter-spacing:-.015em
+  }
+  .sec-kicker{font-family:"Inter",sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:11.5px;font-weight:600;color:var(--oxblood);margin-bottom:14px}
+
+  /* ============ PRACTICE / EDITORIAL ============ */
+  .practice{padding:84px 0}
+  .editorial{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:42px;margin-top:8px}
+  .editorial .lead-col p{font-size:23px;line-height:1.5;color:var(--ink)}
+  .editorial .lead-col p .drop{
+    font-family:"Fraunces",serif;float:left;font-size:78px;line-height:.7;padding:8px 12px 0 0;color:var(--oxblood);font-weight:500
+  }
+  .editorial .col p{font-size:16.5px;color:var(--ink-soft);margin-bottom:16px}
+  .editorial .col h4{font-family:"Fraunces",serif;font-weight:600;font-size:18px;margin-bottom:8px}
+  .col-divider{border-left:1px solid var(--grey-line);padding-left:26px}
+  .principal{
+    margin-top:60px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--grey-line);padding:28px 0
+  }
+  .monogram{
+    width:84px;height:84px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;
+    font-family:"Fraunces",serif;font-weight:600;font-size:30px;color:var(--ink);background:rgba(255,255,255,.4)
+  }
+  .principal .pr-name{font-family:"Fraunces",serif;font-size:22px;font-weight:600}
+  .principal .pr-role{font-family:"Inter",sans-serif;font-size:12.5px;letter-spacing:.05em;color:var(--grey);margin-top:4px}
+  .principal .pr-quote{font-style:italic;font-size:17px;color:var(--ink-soft);max-width:60ch;margin-top:2px}
+
+  /* ============ PATHWAYS INDEX ============ */
+  .pathways{padding:84px 0;background:var(--ink);color:var(--ivory)}
+  .pathways .sec-num,.pathways .sec-kicker{color:#c98592}
+  .pathways .sec-title{color:var(--ivory)}
+  .path-intro{max-width:58ch;color:rgba(246,242,234,.78);font-size:18px;margin-bottom:46px}
+  .path-list{border-top:1px solid rgba(246,242,234,.22)}
+  .path-row{
+    display:grid;grid-template-columns:78px 1.6fr 2fr auto;gap:24px;align-items:center;
+    padding:24px 8px;border-bottom:1px solid rgba(246,242,234,.16);
+    transition:background .35s, padding-left .35s;cursor:default;position:relative
+  }
+  .path-row:hover{background:rgba(246,242,234,.05);padding-left:18px}
+  .path-row .idx{font-family:"Fraunces",serif;font-style:italic;color:#c98592;font-size:17px}
+  .path-row .pname{font-family:"Fraunces",serif;font-weight:500;font-size:23px;letter-spacing:-.01em}
+  .path-row .pname small{display:block;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:5px;font-weight:500}
+  .path-row .pdesc{font-size:15.5px;color:rgba(246,242,234,.72);line-height:1.5}
+  .path-row .pcode{
+    font-family:"Fraunces",serif;font-weight:600;font-size:30px;color:var(--ivory);justify-self:end;
+    transition:color .3s
+  }
+  .path-row:hover .pcode{color:#c98592}
+  .path-row .pcode span{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.16em;display:block;text-align:right;color:rgba(246,242,234,.45);margin-top:3px}
+
+  /* ============ JOURNEY TIMELINE ============ */
+  .journey{padding:88px 0}
+  .timeline{position:relative;margin-top:18px}
+  .tl-track{position:absolute;left:0;top:14px;height:2px;width:100%;background:var(--grey-line)}
+  .tl-track .fill{height:100%;background:var(--oxblood);width:0;transform-origin:left}
+  .tl-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative}
+  .tl-step .node{width:14px;height:14px;border-radius:50%;background:var(--ivory);border:2px solid var(--oxblood);position:relative;margin-bottom:24px}
+  .tl-step .yr{font-family:"Fraunces",serif;font-weight:600;font-size:32px;color:var(--ink);letter-spacing:-.01em}
+  .tl-step h4{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);margin:8px 0 10px;font-weight:600}
+  .tl-step p{font-size:15.5px;color:var(--ink-soft);line-height:1.5}
+
+  /* ============ PULL QUOTE ============ */
+  .quote-sec{padding:86px 0;background:var(--ivory-2);border-top:1px solid var(--grey-line);border-bottom:1px solid var(--grey-line)}
+  .pullquote{max-width:18ch;margin:0 auto;text-align:center}
+  .pullquote .qmark{font-family:"Fraunces",serif;font-size:90px;color:var(--oxblood);line-height:.4;display:block;height:46px}
+  .pullquote blockquote{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+    font-size:clamp(28px,4.4vw,52px);line-height:1.12;letter-spacing:-.01em;color:var(--ink);max-width:none
+  }
+  .pullquote .cite{margin-top:32px;font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.05em;color:var(--grey)}
+  .pullquote .cite strong{color:var(--ink);font-weight:600}
+  .qrating{margin-top:14px;color:var(--gold);font-size:20px;letter-spacing:3px}
+
+  /* ============ SETTLEMENT ============ */
+  .settle{padding:84px 0}
+  .settle-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+  .settle-copy p{font-size:18px;color:var(--ink-soft);margin-top:18px}
+  .settle-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--grey-line);border:1px solid var(--grey-line)}
+  .scard{background:var(--ivory);padding:28px 24px;transition:background .35s, transform .35s}
+  .scard:hover{background:#fff;transform:translateY(-3px)}
+  .scard .sicon{width:34px;height:34px;color:var(--oxblood);margin-bottom:16px}
+  .scard h4{font-family:"Fraunces",serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  .scard p{font-size:15px;color:var(--ink-soft);line-height:1.5}
+
+  /* ============ BOOKING ============ */
+  .booking{padding:88px 0;background:var(--ink);color:var(--ivory);position:relative;overflow:hidden}
+  .booking .glow{position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(124,34,48,.55),transparent 65%);top:-260px;right:-160px;filter:blur(20px);pointer-events:none}
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;position:relative;z-index:2}
+  .book-grid .sec-num,.book-grid .sec-kicker{color:#c98592}
+  .book-grid h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(30px,4.2vw,50px);line-height:1.04;letter-spacing:-.015em;margin-bottom:22px}
+  .book-grid h2 em{font-style:italic;color:#c98592}
+  .book-grid .blede{color:rgba(246,242,234,.78);font-size:18px;max-width:42ch}
+  .contact-line{display:flex;align-items:center;gap:16px;margin-top:30px;padding:18px 0;border-top:1px solid rgba(246,242,234,.18)}
+  .contact-line:last-child{border-bottom:1px solid rgba(246,242,234,.18)}
+  .contact-line .ci{width:22px;height:22px;color:#c98592;flex:0 0 auto}
+  .contact-line .ctxt small{display:block;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-bottom:3px}
+  .contact-line .ctxt .big{font-family:"Fraunces",serif;font-size:22px;font-weight:500}
+  .contact-line a.big:hover{color:#c98592}
+
+  form.consult{background:rgba(246,242,234,.04);border:1px solid rgba(246,242,234,.16);border-radius:4px;padding:30px}
+  form.consult .frow{margin-bottom:18px}
+  form.consult label{display:block;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,242,234,.6);margin-bottom:8px}
+  form.consult input,form.consult select,form.consult textarea{
+    width:100%;background:transparent;border:0;border-bottom:1px solid rgba(246,242,234,.3);
+    color:var(--ivory);font-family:"Newsreader",serif;font-size:17px;padding:8px 2px;transition:border-color .3s
+  }
+  form.consult input::placeholder,form.consult textarea::placeholder{color:rgba(246,242,234,.4)}
+  form.consult input:focus,form.consult select:focus,form.consult textarea:focus{outline:0;border-color:#c98592}
+  form.consult select option{color:var(--ink)}
+  form.consult textarea{resize:vertical;min-height:54px}
+  form.consult .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  form.consult button{width:100%;margin-top:8px;background:var(--oxblood);color:var(--ivory);border:0;padding:16px;border-radius:2px;font-family:"Inter",sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;cursor:pointer;transition:background .3s,transform .3s}
+  form.consult button:hover{background:var(--oxblood-deep);transform:translateY(-2px)}
+  .formnote{font-family:"Inter",sans-serif;font-size:11.5px;color:rgba(246,242,234,.45);margin-top:14px;text-align:center}
+
+  /* ============ FOOTER ============ */
+  footer.site{padding:62px 0 30px;background:var(--ivory)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--grey-line)}
+  .foot-brand .mark{font-family:"Fraunces",serif;font-weight:600;font-size:28px}
+  .foot-brand .mark em{color:var(--oxblood);font-style:normal}
+  .foot-brand p{font-size:15.5px;color:var(--ink-soft);margin-top:14px;max-width:40ch}
+  .foot-col h5{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--oxblood);margin-bottom:16px;font-weight:600}
+  .foot-col a,.foot-col p{display:block;font-size:15.5px;color:var(--ink-soft);margin-bottom:10px;transition:color .25s}
+  .foot-col a:hover{color:var(--oxblood)}
+  .foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px}
+  .foot-bottom .legal{font-family:"Inter",sans-serif;font-size:12px;color:var(--grey)}
+  .foot-bottom .concept{font-family:"Inter",sans-serif;font-size:12px;color:rgba(125,117,104,.65)}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-side{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .editorial{grid-template-columns:1fr 1fr;gap:34px}
+    .col-divider{border-left:0;padding-left:0}
+    .settle-grid,.book-grid{grid-template-columns:1fr;gap:42px}
+    .foot-top{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:760px){
+    body{font-size:17px}
+    .nav-links{
+      position:fixed;inset:72px 0 auto 0;background:var(--ivory);flex-direction:column;gap:0;
+      padding:10px 28px 24px;border-bottom:1px solid var(--grey-line);
+      transform:translateY(-130%);transition:transform .4s cubic-bezier(.3,.7,.2,1);z-index:79
+    }
+    .nav-links.open{transform:translateY(0)}
+    .nav-links a{width:100%;padding:15px 0;border-bottom:1px solid var(--grey-line);font-size:15px}
+    .nav-links a::after{display:none}
+    .nav-cta{display:none}
+    .burger{display:flex}
+    .nav-links.open + .burger span:nth-child(1),.burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.active span:nth-child(2){opacity:0}
+    .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .hero-side{grid-template-columns:1fr}
+    .editorial{grid-template-columns:1fr}
+    .principal{grid-template-columns:1fr;gap:18px;text-align:left}
+    .path-row{grid-template-columns:40px 1fr;gap:14px;padding:20px 4px}
+    .path-row .pdesc{grid-column:1/-1;padding-left:54px}
+    .path-row .pcode{grid-column:2;justify-self:start;font-size:24px}
+    .path-row .pcode span{text-align:left}
+    .path-row:hover{padding-left:4px}
+    .tl-steps{grid-template-columns:1fr;gap:0}
+    .tl-track{left:6px;top:0;width:2px;height:100%}
+    .tl-track .fill{width:100%!important;height:0}
+    .tl-step{padding:0 0 34px 34px;position:relative}
+    .tl-step .node{position:absolute;left:0;top:6px;margin:0}
+    .settle-cards{grid-template-columns:1fr}
+    form.consult .frow-2{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+    .nameplate .edition{text-align:left}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="AMG Visas home">
+      <span class="mark">AMG<em>.</em>Visas</span>
+      <span class="sub">Est. 2006 &middot; Parramatta</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#practice">The Practice</a>
+      <a href="#pathways">Visa Pathways</a>
+      <a href="#journey">Our Journey</a>
+      <a href="#settlement">Settlement</a>
+      <a href="#booking">Book a Consult</a>
+    </nav>
+    <a class="nav-cta" href="#booking">Reserve a Consultation</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ MASTHEAD + HERO ============ -->
+<div id="top"></div>
+<div class="masthead">
+  <div class="wrap">
+    <div class="nameplate">
+      <span class="dateline">The Migration Broadsheet</span>
+      <span class="edition">Volume XX &middot; Parramatta New South Wales</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="rule hero-rule-top" data-rule></div>
+    <div class="hero-grid">
+      <div class="hero-main">
+        <div class="kicker reveal">
+          <span class="line"></span>
+          <span class="small-caps">Registered Migration Agents</span>
+        </div>
+        <h1 class="headline reveal">Your future in Australia, <em>argued with care.</em></h1>
+        <p class="hero-lede reveal">Since 2006, AMG Visas has guided families, skilled workers and students through the migration system from one Parramatta office, with the steady hand of a registered agent on every file.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#booking">Reserve a Consultation <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost" href="#pathways">Explore Visa Pathways</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div class="hero-stat reveal">
+          <div class="num" data-count="20">20</div>
+          <div class="lab">Years of registered practice, established 2006</div>
+        </div>
+        <div class="hero-stat reveal">
+          <div class="num">4.8 <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <div class="lab">Average across 106 verified Google reviews</div>
+        </div>
+        <div class="crest reveal">
+          <span class="small-caps">Principal Agent</span>
+          <p>Anthony Takchi, Registered Migration Agent, personally oversees the practice and its case strategy.</p>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="60" cy="60" r="46"/><circle cx="60" cy="60" r="34"/>
+            <path d="M60 14 L60 106 M14 60 L106 60"/>
+          </svg>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="marquee">
+    <div class="item"><span class="dot"></span>Subclass 189 <span class="tag">Skilled Independent</span></div>
+    <div class="item"><span class="dot"></span>Subclass 190 <span class="tag">State Nominated</span></div>
+    <div class="item"><span class="dot"></span>Subclass 491 <span class="tag">Regional</span></div>
+    <div class="item"><span class="dot"></span>Subclass 500 <span class="tag">Student</span></div>
+    <div class="item"><span class="dot"></span>Family Visas <span class="tag">Partner &amp; Parent</span></div>
+    <div class="item"><span class="dot"></span>Employer Sponsored <span class="tag">Workforce</span></div>
+    <div class="item"><span class="dot"></span>Working Holiday <span class="tag">417 &amp; 462</span></div>
+  </div>
+</div>
+
+<!-- ============ PRACTICE / EDITORIAL ============ -->
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">No. 01</span>
+      <div>
+        <div class="sec-kicker">The Practice</div>
+        <h2 class="sec-title">A migration office built on judgement,<br>not guesswork.</h2>
+      </div>
+    </div>
+
+    <div class="editorial">
+      <div class="lead-col reveal">
+        <p><span class="drop">A</span>MG Visas Pty Ltd is a registered migration agency in the heart of Parramatta. For close to two decades we have read the legislation closely, prepared applications meticulously, and stood beside clients through every stage of their move to Australia.</p>
+      </div>
+      <div class="col col-divider reveal">
+        <h4>Considered, not rushed</h4>
+        <p>Every matter begins with an honest assessment of eligibility. We map the visa options that genuinely fit your circumstances, then build the strongest possible case around them.</p>
+        <h4>One agent, accountable</h4>
+        <p>Your file is overseen by Anthony Takchi, a Registered Migration Agent, so the advice you act on is regulated, current and yours alone.</p>
+      </div>
+      <div class="col col-divider reveal">
+        <h4>From first enquiry to arrival</h4>
+        <p>We do not close the file at approval. New arrivals receive practical settlement support, from finding work to securing somewhere to live.</p>
+        <h4>Local, and lasting</h4>
+        <p>Generations of Parramatta families have passed through our Marsden Street office. Many return years later for the next relative, the next chapter.</p>
+      </div>
+    </div>
+
+    <div class="principal reveal">
+      <div class="monogram">AT</div>
+      <div>
+        <div class="pr-name">Anthony Takchi</div>
+        <div class="pr-role">Principal &middot; Registered Migration Agent</div>
+        <p class="pr-quote">"Migration law rewards precision. My job is to remove the uncertainty, present your case properly, and let your story do the rest."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATHWAYS INDEX ============ -->
+<section class="pathways" id="pathways">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">No. 02</span>
+      <div>
+        <div class="sec-kicker">Visa Pathways &middot; An Index</div>
+        <h2 class="sec-title">Routes we prepare and lodge.</h2>
+      </div>
+    </div>
+    <p class="path-intro reveal">A registered agent does not sell a single product. We work across the breadth of Australian visa classes, matching the right pathway to your skills, your family and your timeline.</p>
+
+    <div class="path-list" id="pathList">
+      <div class="path-row reveal">
+        <span class="idx">i.</span>
+        <div class="pname">Skilled Independent <small>Points Tested Migration</small></div>
+        <p class="pdesc">For skilled workers with an occupation in demand, applying on merit without a sponsor or nominator.</p>
+        <div class="pcode">189<span>Subclass</span></div>
+      </div>
+      <div class="path-row reveal">
+        <span class="idx">ii.</span>
+        <div class="pname">State Nominated <small>Permanent Skilled</small></div>
+        <p class="pdesc">Permanent residence backed by a state or territory nomination that strengthens your points position.</p>
+        <div class="pcode">190<span>Subclass</span></div>
+      </div>
+      <div class="path-row reveal">
+        <span class="idx">iii.</span>
+        <div class="pname">Skilled Work Regional <small>Provisional Pathway</small></div>
+        <p class="pdesc">A regional route to permanent residence for nominated or sponsored skilled applicants outside major cities.</p>
+        <div class="pcode">491<span>Subclass</span></div>
+      </div>
+      <div class="path-row reveal">
+        <span class="idx">iv.</span>
+        <div class="pname">Student Visa <small>Study in Australia</small></div>
+        <p class="pdesc">For international students enrolled in a registered course, with guidance on conditions and pathways beyond study.</p>
+        <div class="pcode">500<span>Subclass</span></div>
+      </div>
+      <div class="path-row reveal">
+        <span class="idx">v.</span>
+        <div class="pname">Family Visas <small>Partner, Parent &amp; Child</small></div>
+        <p class="pdesc">Reuniting families through partner, parent and dependent applications, prepared with the evidence they demand.</p>
+        <div class="pcode">Family<span>Class</span></div>
+      </div>
+      <div class="path-row reveal">
+        <span class="idx">vi.</span>
+        <div class="pname">Employer Sponsored <small>Workforce Migration</small></div>
+        <p class="pdesc">For businesses sponsoring skilled staff, and for workers securing temporary or permanent sponsored roles.</p>
+        <div class="pcode">Sponsored<span>Class</span></div>
+      </div>
+      <div class="path-row reveal">
+        <span class="idx">vii.</span>
+        <div class="pname">Working Holiday &amp; Temporary <small>Short Stay &amp; Transition</small></div>
+        <p class="pdesc">Working holiday and temporary visas for those exploring Australia or bridging toward a longer term plan.</p>
+        <div class="pcode">Temp<span>Class</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY TIMELINE ============ -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">No. 03</span>
+      <div>
+        <div class="sec-kicker">Our Journey</div>
+        <h2 class="sec-title">Twenty years on Marsden Street.</h2>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-track"><div class="fill" id="tlFill"></div></div>
+      <div class="tl-steps">
+        <div class="tl-step reveal">
+          <div class="node"></div>
+          <div class="yr">2006</div>
+          <h4>Doors Open</h4>
+          <p>AMG Visas is established in Parramatta as a registered migration practice, taking on its first family and skilled matters.</p>
+        </div>
+        <div class="tl-step reveal">
+          <div class="node"></div>
+          <div class="yr">2012</div>
+          <h4>A Trusted Name</h4>
+          <p>Word of mouth across western Sydney builds a steady client base, with returning families bringing relatives into the practice.</p>
+        </div>
+        <div class="tl-step reveal">
+          <div class="node"></div>
+          <div class="yr">2019</div>
+          <h4>Beyond the Visa</h4>
+          <p>Settlement support becomes part of the service, helping new arrivals find work, accommodation and a footing in their new home.</p>
+        </div>
+        <div class="tl-step reveal">
+          <div class="node"></div>
+          <div class="yr">2026</div>
+          <h4>4.8 Across 106 Reviews</h4>
+          <p>Two decades on, the practice is recognised for careful, accountable advice and a reputation earned client by client.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<section class="quote-sec">
+  <div class="wrap">
+    <div class="pullquote reveal">
+      <span class="qmark">&ldquo;</span>
+      <blockquote>They turned a daunting process into something we actually understood.</blockquote>
+      <div class="qrating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="cite">From a verified Google review &middot; <strong>AMG Visas, Parramatta</strong> &middot; 4.8 across 106 reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETTLEMENT ============ -->
+<section class="settle" id="settlement">
+  <div class="wrap">
+    <div class="settle-grid">
+      <div class="settle-copy reveal">
+        <div class="sec-head" style="margin-bottom:22px">
+          <span class="sec-num">No. 04</span>
+          <div>
+            <div class="sec-kicker">Settlement Support</div>
+            <h2 class="sec-title">The first weeks matter most.</h2>
+          </div>
+        </div>
+        <p>An approval is the beginning, not the end. Arriving in a new country is overwhelming, so we stay involved well past the grant letter.</p>
+        <p>For newcomers, we help with the practical foundations of a new life in Australia, the things that rarely fit neatly in an application but make all the difference once you land.</p>
+      </div>
+      <div class="settle-cards reveal">
+        <div class="scard">
+          <svg class="sicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>
+          <h4>Accommodation</h4>
+          <p>Guidance on finding somewhere to stay and settling into the right suburb for your circumstances.</p>
+        </div>
+        <div class="scard">
+          <svg class="sicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M8 11h8M8 15h5"/></svg>
+          <h4>Finding Work</h4>
+          <p>Support connecting with employment so you can build momentum from your very first weeks here.</p>
+        </div>
+        <div class="scard">
+          <svg class="sicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 17l10-12 4 5 6-2-3 9z"/><path d="M2 17h20v3H2z"/></svg>
+          <h4>Airport Pickup</h4>
+          <p>A friendly arrival arrangement so your first moments in Australia feel welcomed, not lost.</p>
+        </div>
+        <div class="scard">
+          <svg class="sicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg>
+          <h4>Getting Settled</h4>
+          <p>Steady, practical advice as you find your feet, with a familiar office to return to whenever you need it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="booking" id="booking">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="book-grid">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:18px">
+          <span class="sec-num">No. 05</span>
+          <div>
+            <div class="sec-kicker">Book a Consultation</div>
+          </div>
+        </div>
+        <h2>Speak with a <em>registered agent</em> in Parramatta.</h2>
+        <p class="blede">Bring your questions and your timeline. We will tell you honestly where you stand and what your strongest pathway looks like.</p>
+
+        <div class="contact-line">
+          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <div class="ctxt"><small>Call the office</small><a class="big" href="tel:+61296331561">+61 2 9633 1561</a></div>
+        </div>
+        <div class="contact-line">
+          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="ctxt"><small>Visit us</small><span class="big">Level 2, 146 Marsden Street, Parramatta NSW 2150</span></div>
+        </div>
+      </div>
+
+      <form class="consult reveal" id="consultForm" novalidate>
+        <div class="frow">
+          <label for="cname">Full name</label>
+          <input id="cname" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="frow frow-2">
+          <div>
+            <label for="cphone">Phone</label>
+            <input id="cphone" name="phone" type="tel" placeholder="04xx xxx xxx" required>
+          </div>
+          <div>
+            <label for="cemail">Email</label>
+            <input id="cemail" name="email" type="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="frow">
+          <label for="cvisa">Visa of interest</label>
+          <select id="cvisa" name="visa">
+            <option>Skilled migration (189, 190, 491)</option>
+            <option>Family visa (partner, parent)</option>
+            <option>Employer sponsored visa</option>
+            <option>Student visa (500)</option>
+            <option>Working holiday or temporary</option>
+            <option>Not sure yet, please advise</option>
+          </select>
+        </div>
+        <div class="frow">
+          <label for="cmsg">A little about your situation</label>
+          <textarea id="cmsg" name="message" placeholder="Where you are now and what you are hoping to achieve"></textarea>
+        </div>
+        <button type="submit" id="submitBtn">Request a Consultation</button>
+        <p class="formnote">A demonstration form. Your details are not transmitted anywhere.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="mark">AMG<em>.</em>Visas</div>
+        <p>AMG Visas Pty Ltd, a registered migration agency serving Parramatta and greater Sydney since 2006. Principal Agent: Anthony Takchi, Registered Migration Agent.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Practice</h5>
+        <a href="#practice">The Practice</a>
+        <a href="#pathways">Visa Pathways</a>
+        <a href="#journey">Our Journey</a>
+        <a href="#settlement">Settlement Support</a>
+      </div>
+      <div class="foot-col">
+        <h5>Visit &amp; Contact</h5>
+        <p>Level 2, 146 Marsden Street<br>Parramatta NSW 2150</p>
+        <a href="tel:+61296331561">+61 2 9633 1561</a>
+        <p>4.8 stars &middot; 106 Google reviews</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="legal">&copy; <span id="yr"></span> AMG Visas Pty Ltd. All rights reserved.</span>
+      <span class="concept">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var doc=document;
+
+  // Year
+  doc.getElementById("yr").textContent=new Date().getFullYear();
+
+  // Nav scrolled state
+  var nav=doc.getElementById("nav");
+  function onScroll(){ if(window.scrollY>20){nav.classList.add("scrolled")}else{nav.classList.remove("scrolled")} }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  // Mobile menu
+  var burger=doc.getElementById("burger"), links=doc.getElementById("navLinks");
+  burger.addEventListener("click",function(){
+    links.classList.toggle("open"); burger.classList.toggle("active");
+  });
+  Array.prototype.forEach.call(links.querySelectorAll("a"),function(a){
+    a.addEventListener("click",function(){links.classList.remove("open");burger.classList.remove("active");});
+  });
+
+  // Duplicate marquee track for seamless loop
+  var mq=doc.getElementById("marquee");
+  if(mq){ mq.innerHTML=mq.innerHTML+mq.innerHTML; }
+
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Form demo
+  var form=doc.getElementById("consultForm");
+  if(form){
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      var btn=doc.getElementById("submitBtn");
+      btn.textContent="Thank you, we will be in touch";
+      btn.style.background="#5c1a24";
+      setTimeout(function(){ btn.textContent="Request a Consultation"; btn.style.background=""; form.reset(); },2600);
+    });
+  }
+
+  if(reduced){ return; }
+
+  // GSAP reveals + line draws
+  if(window.gsap && window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+
+    // generic reveal
+    gsap.utils.toArray(".reveal").forEach(function(el){
+      ScrollTrigger.create({
+        trigger:el, start:"top 86%", once:true,
+        onEnter:function(){ el.classList.add("in"); }
+      });
+    });
+
+    // animated drawn rules
+    gsap.utils.toArray("[data-rule]").forEach(function(el){
+      gsap.fromTo(el,{scaleX:0},{scaleX:1,duration:1.3,ease:"power3.out",
+        scrollTrigger:{trigger:el,start:"top 92%"}});
+    });
+
+    // hero count up
+    var counter=doc.querySelector("[data-count]");
+    if(counter){
+      var target=parseInt(counter.getAttribute("data-count"),10);
+      var obj={v:0};
+      ScrollTrigger.create({trigger:counter,start:"top 90%",once:true,onEnter:function(){
+        gsap.to(obj,{v:target,duration:1.6,ease:"power2.out",onUpdate:function(){
+          counter.textContent=Math.round(obj.v);
+        }});
+      }});
+    }
+
+    // timeline fill
+    var fill=doc.getElementById("tlFill");
+    if(fill){
+      gsap.to(fill,{scaleX:1,transformOrigin:"left",ease:"none",
+        scrollTrigger:{trigger:".timeline",start:"top 70%",end:"bottom 60%",scrub:true},
+        onStart:function(){fill.style.width="100%";fill.style.transform="scaleX(0)";}});
+      // use width animation on desktop track
+      gsap.fromTo(fill,{width:"0%"},{width:"100%",ease:"none",
+        scrollTrigger:{trigger:".timeline",start:"top 72%",end:"bottom 55%",scrub:.6}});
+    }
+  } else {
+    // fallback if libs blocked
+    Array.prototype.forEach.call(doc.querySelectorAll(".reveal"),function(el){el.classList.add("in");});
+  }
+})();
+</script>
+</body>
+</html>

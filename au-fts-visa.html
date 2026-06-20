@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FTS Education and Visa Services | MARA Registered Migration and Study in Australia</title>
+<meta name="description" content="FTS Education and Visa Services is a MARA registered migration agency and education placement specialist in Parramatta, Newcastle and Werribee. Student visas, skilled migration, family visas and university placement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#11a6a0;
+    --teal-deep:#0c827d;
+    --coral:#ff6b5e;
+    --coral-soft:#ffe4e0;
+    --ink:#102a43;
+    --ink-soft:#486581;
+    --cloud:#f4faf9;
+    --cloud-2:#eef6fb;
+    --white:#ffffff;
+    --line:#e3eef0;
+    --shadow-soft:0 18px 50px -24px rgba(16,42,67,.28);
+    --shadow-lift:0 30px 70px -30px rgba(17,166,160,.45);
+    --r-lg:28px;
+    --r-md:20px;
+    --r-sm:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.08;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal-deep);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--coral)}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;
+    padding:15px 26px;border-radius:100px;cursor:pointer;border:none;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s;
+  }
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 14px 30px -12px rgba(255,107,94,.7)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(255,107,94,.8)}
+  .btn-ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+  .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--teal);transform:translateY(-3px)}
+  .btn-teal{background:var(--teal);color:#fff;box-shadow:0 14px 30px -12px rgba(17,166,160,.6)}
+  .btn-teal:hover{transform:translateY(-3px);background:var(--teal-deep)}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    transition:background .3s,box-shadow .3s,padding .3s;
+    padding:18px 0;
+  }
+  header.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:11px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.18rem}
+  .brand .mark{
+    width:42px;height:42px;border-radius:13px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--teal),#3fd1cb);
+    display:grid;place-items:center;color:#fff;position:relative;
+    box-shadow:0 10px 22px -8px rgba(17,166,160,.7);
+  }
+  .brand .mark span{font-size:1.05rem;font-weight:800}
+  .brand small{display:block;font-family:'Inter';font-weight:500;font-size:.66rem;color:var(--ink-soft);letter-spacing:.04em;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-weight:600;font-size:.92rem;color:var(--ink-soft);position:relative;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--coral);border-radius:2px;transition:width .25s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-phone{font-family:'Plus Jakarta Sans';font-weight:700;font-size:.92rem;color:var(--teal-deep);display:flex;align-items:center;gap:7px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:140px 0 90px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:-1}
+  .blob{position:absolute;filter:blur(2px);opacity:.9}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);font-weight:800;margin:22px 0 20px}
+  .hero h1 .hl{position:relative;color:var(--teal-deep);white-space:nowrap}
+  .hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:14px;background:var(--coral-soft);z-index:-1;border-radius:8px}
+  .hero p.lede{font-size:1.16rem;color:var(--ink-soft);max-width:30em;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-trust{display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap}
+  .stars{display:flex;gap:3px}
+  .stars svg{width:18px;height:18px}
+  .hero-trust .rt{font-weight:700;font-family:'Plus Jakarta Sans'}
+  .hero-trust .rt small{font-weight:500;color:var(--ink-soft);font-family:'Inter'}
+  .mara-pill{
+    display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);
+    padding:8px 14px;border-radius:100px;font-size:.8rem;font-weight:600;box-shadow:var(--shadow-soft);
+  }
+  .mara-pill b{color:var(--teal-deep)}
+
+  /* Hero art */
+  .hero-art{position:relative;height:480px}
+  .art-card{position:absolute;background:#fff;border-radius:var(--r-md);box-shadow:var(--shadow-soft);padding:18px}
+  .ac-main{
+    inset:30px 0 30px 30px;left:6%;width:74%;top:8%;height:auto;padding:0;overflow:hidden;border-radius:var(--r-lg);
+    background:linear-gradient(160deg,#0c827d,#11a6a0 55%,#2bc0bb);box-shadow:var(--shadow-lift);
+  }
+  .ac-main .ac-inner{padding:26px 26px 24px;color:#fff;position:relative;z-index:2}
+  .ac-main .ac-inner .country{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.85}
+  .ac-main .ac-inner h3{font-size:1.7rem;margin:10px 0 16px;font-weight:800}
+  .ac-route{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600}
+  .ac-route .dot{width:9px;height:9px;border-radius:50%;background:#fff}
+  .ac-route .ln{flex:1;height:2px;background:repeating-linear-gradient(90deg,#fff 0 6px,transparent 6px 12px);opacity:.7}
+  .ac-prog{margin-top:22px}
+  .ac-prog .lbl{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600;opacity:.92;margin-bottom:7px}
+  .ac-prog .bar{height:8px;border-radius:6px;background:rgba(255,255,255,.25);overflow:hidden}
+  .ac-prog .bar i{display:block;height:100%;width:0;background:#fff;border-radius:6px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .ac-float-1{top:0;right:0;width:200px;border-radius:var(--r-md);display:flex;gap:12px;align-items:center}
+  .ac-float-1 .ico{width:42px;height:42px;border-radius:12px;background:var(--coral-soft);display:grid;place-items:center;flex:0 0 auto}
+  .ac-float-1 .ico svg{width:22px;height:22px;stroke:var(--coral)}
+  .ac-float-1 b{display:block;font-family:'Plus Jakarta Sans';font-size:.95rem}
+  .ac-float-1 span{font-size:.75rem;color:var(--ink-soft)}
+  .ac-float-2{bottom:6%;right:2%;width:230px;border-radius:var(--r-md)}
+  .ac-float-2 .av-row{display:flex;align-items:center;margin-bottom:10px}
+  .ac-float-2 .av{width:32px;height:32px;border-radius:50%;margin-left:-9px;border:2.5px solid #fff;font-size:.7rem;font-weight:700;display:grid;place-items:center;color:#fff}
+  .ac-float-2 .av:first-child{margin-left:0}
+  .ac-float-2 p{font-size:.82rem;font-weight:600;line-height:1.4}
+  .ac-float-2 p b{color:var(--teal-deep)}
+  .float-anim{animation:floaty 6s ease-in-out infinite}
+  .float-anim.d{animation-delay:1.5s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+
+  /* ---------- LOGO / OFFICE STRIP ---------- */
+  .strip{background:var(--cloud);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+  .strip-in{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .strip-label{font-weight:700;font-family:'Plus Jakarta Sans';font-size:.82rem;color:var(--ink-soft)}
+  .office-chips{display:flex;gap:12px;flex-wrap:wrap}
+  .office-chip{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:100px;font-weight:600;font-size:.88rem}
+  .office-chip svg{width:16px;height:16px;stroke:var(--teal)}
+
+  /* ---------- SECTION COMMON ---------- */
+  section{position:relative}
+  .sec{padding:96px 0}
+  .sec-head{max-width:620px;margin-bottom:48px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.85rem);font-weight:800;margin:16px 0 16px}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
+
+  /* ---------- BENTO SERVICES ---------- */
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(160px,auto);gap:18px}
+  .tile{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:26px;
+    position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s;
+  }
+  .tile:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:transparent}
+  .tile .ti{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;transition:transform .3s}
+  .tile:hover .ti{transform:scale(1.08) rotate(-4deg)}
+  .tile .ti svg{width:24px;height:24px}
+  .tile h3{font-size:1.18rem;font-weight:700;margin-bottom:8px}
+  .tile p{font-size:.93rem;color:var(--ink-soft)}
+  .tile .codes{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+  .tile .codes span{font-size:.72rem;font-weight:700;font-family:'Plus Jakarta Sans';padding:4px 10px;border-radius:100px;background:var(--cloud);color:var(--ink-soft)}
+  .t-wide{grid-column:span 3}
+  .t-std{grid-column:span 2}
+  .t-feature{
+    grid-column:span 3;color:#fff;border:none;
+    background:linear-gradient(150deg,#102a43,#16385a 60%,#1d4e75);
+  }
+  .t-feature h3{font-size:1.45rem}
+  .t-feature p{color:rgba(255,255,255,.8)}
+  .t-feature .ti{background:rgba(255,255,255,.12)}
+  .t-feature .ti svg{stroke:#fff}
+  .t-feature .glow{position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(17,166,160,.6),transparent 70%);right:-60px;bottom:-80px}
+  .ti-teal{background:#e2f6f5}.ti-teal svg{stroke:var(--teal-deep)}
+  .ti-coral{background:var(--coral-soft)}.ti-coral svg{stroke:var(--coral)}
+  .ti-ink{background:#e7eef6}.ti-ink svg{stroke:var(--ink)}
+  .feature-cta{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-family:'Plus Jakarta Sans';color:#fff}
+  .feature-cta svg{width:16px;height:16px;transition:transform .25s}
+  .t-feature:hover .feature-cta svg{transform:translateX(5px)}
+
+  /* ---------- JOURNEY STEPPER ---------- */
+  .journey{background:linear-gradient(180deg,#fff,var(--cloud));overflow:hidden}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;margin-top:20px}
+  .steps::before{content:"";position:absolute;top:34px;left:8%;right:8%;height:2px;background:repeating-linear-gradient(90deg,var(--teal) 0 8px,transparent 8px 16px);opacity:.45;z-index:0}
+  .step{position:relative;z-index:1;text-align:center}
+  .step .num{
+    width:68px;height:68px;border-radius:22px;margin:0 auto 18px;display:grid;place-items:center;
+    font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.5rem;color:#fff;
+    background:linear-gradient(135deg,var(--teal),#3fd1cb);box-shadow:0 16px 30px -12px rgba(17,166,160,.7);
+    position:relative;transition:transform .35s;
+  }
+  .step:nth-child(2) .num{background:linear-gradient(135deg,#ff8a7e,var(--coral))}
+  .step:nth-child(3) .num{background:linear-gradient(135deg,#1d4e75,var(--ink))}
+  .step:nth-child(4) .num{background:linear-gradient(135deg,var(--teal-deep),#11a6a0)}
+  .step:hover .num{transform:translateY(-6px) scale(1.05)}
+  .step h3{font-size:1.16rem;font-weight:700;margin-bottom:8px}
+  .step p{font-size:.92rem;color:var(--ink-soft);max-width:24ch;margin:0 auto}
+
+  /* ---------- STATS BAND ---------- */
+  .stats{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  .stats .glow{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(20px)}
+  .stats .g1{background:radial-gradient(circle,rgba(17,166,160,.4),transparent 65%);top:-200px;left:-120px}
+  .stats .g2{background:radial-gradient(circle,rgba(255,107,94,.3),transparent 65%);bottom:-220px;right:-120px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative;z-index:1;text-align:center}
+  .stat .v{font-family:'Plus Jakarta Sans';font-weight:800;font-size:clamp(2.6rem,4.5vw,3.6rem);background:linear-gradient(180deg,#fff,#bfe9e7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .v .suf{-webkit-text-fill-color:var(--coral);font-size:.6em}
+  .stat .lbl{margin-top:6px;color:rgba(255,255,255,.72);font-weight:500;font-size:.96rem}
+  .stat:not(:last-child){position:relative}
+  .stat:not(:last-child)::after{content:"";position:absolute;right:-15px;top:20%;height:60%;width:1px;background:rgba(255,255,255,.14)}
+
+  /* ---------- PARTNERS ---------- */
+  .partners-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .chip-cloud{display:flex;flex-wrap:wrap;gap:12px}
+  .pchip{
+    display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+    padding:12px 18px;border-radius:100px;font-weight:600;font-size:.92rem;box-shadow:0 6px 18px -14px rgba(16,42,67,.3);
+    transition:transform .25s,border-color .25s,box-shadow .25s;cursor:default;
+  }
+  .pchip:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:var(--shadow-soft)}
+  .pchip .badge{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:.72rem;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans'}
+  .partner-note{background:var(--cloud-2);border:1px solid var(--line);border-radius:var(--r-md);padding:30px}
+  .partner-note h3{font-size:1.4rem;margin-bottom:12px}
+  .partner-note p{color:var(--ink-soft);margin-bottom:18px}
+  .pn-list{list-style:none;display:grid;gap:12px}
+  .pn-list li{display:flex;gap:12px;align-items:flex-start;font-weight:500;font-size:.95rem}
+  .pn-list li svg{width:22px;height:22px;flex:0 0 auto;margin-top:1px}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:28px;display:flex;flex-direction:column;gap:14px;transition:transform .3s,box-shadow .3s}
+  .quote:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft)}
+  .quote .stars svg{width:16px;height:16px}
+  .quote p{font-size:.98rem;color:var(--ink);line-height:1.65}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .quote .who .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-family:'Plus Jakarta Sans';font-size:.9rem}
+  .quote .who b{font-size:.92rem;font-family:'Plus Jakarta Sans'}
+  .quote .who span{font-size:.8rem;color:var(--ink-soft);display:block}
+
+  /* ---------- FAQ ---------- */
+  .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+  .faq-list{display:grid;gap:12px}
+  .fitem{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;transition:box-shadow .3s,border-color .3s}
+  .fitem.open{box-shadow:var(--shadow-soft);border-color:transparent}
+  .fq{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px;font-family:'Plus Jakarta Sans';font-weight:700;font-size:1.02rem;color:var(--ink)}
+  .fq .pm{width:30px;height:30px;flex:0 0 auto;border-radius:50%;background:var(--cloud);display:grid;place-items:center;transition:.3s;position:relative}
+  .fq .pm::before,.fq .pm::after{content:"";position:absolute;background:var(--teal-deep);border-radius:2px}
+  .fq .pm::before{width:13px;height:2.4px}
+  .fq .pm::after{width:2.4px;height:13px;transition:transform .3s}
+  .fitem.open .pm{background:var(--teal)}
+  .fitem.open .pm::before,.fitem.open .pm::after{background:#fff}
+  .fitem.open .pm::after{transform:rotate(90deg);opacity:0}
+  .fa{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .fa-in{padding:0 22px 22px;color:var(--ink-soft);font-size:.96rem}
+  .faq-aside{background:linear-gradient(160deg,var(--teal-deep),var(--teal) 60%,#2bc0bb);border-radius:var(--r-lg);padding:34px;color:#fff;position:relative;overflow:hidden}
+  .faq-aside h3{font-size:1.55rem;margin-bottom:12px}
+  .faq-aside p{color:rgba(255,255,255,.9);margin-bottom:22px}
+  .faq-aside .blob-s{position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.1);right:-60px;top:-50px}
+  .faq-aside .ph{display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.3rem;margin-bottom:6px}
+  .faq-aside .ph svg{width:22px;height:22px}
+
+  /* ---------- CONTACT / BOOK ---------- */
+  .contact{background:var(--cloud);overflow:hidden}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .contact-info h2{font-size:clamp(2rem,3.5vw,2.7rem);font-weight:800;margin:16px 0 18px}
+  .contact-info p.intro{color:var(--ink-soft);font-size:1.06rem;margin-bottom:30px;max-width:34ch}
+  .info-cards{display:grid;gap:14px}
+  .info-card{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:18px 20px;transition:transform .25s,box-shadow .25s}
+  .info-card:hover{transform:translateX(5px);box-shadow:var(--shadow-soft)}
+  .info-card .ico{width:46px;height:46px;border-radius:13px;background:#e2f6f5;display:grid;place-items:center;flex:0 0 auto}
+  .info-card .ico svg{width:22px;height:22px;stroke:var(--teal-deep)}
+  .info-card h4{font-family:'Plus Jakarta Sans';font-size:1rem;margin-bottom:3px}
+  .info-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+  .info-card a{color:var(--teal-deep);font-weight:600}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;box-shadow:var(--shadow-soft)}
+  .form-card h3{font-size:1.4rem;margin-bottom:6px}
+  .form-card .fc-sub{color:var(--ink-soft);font-size:.94rem;margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:600;font-size:.84rem;margin-bottom:7px;font-family:'Plus Jakarta Sans'}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:'Inter';font-size:.95rem;color:var(--ink);
+    background:var(--cloud);transition:border-color .2s,background .2s,box-shadow .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(17,166,160,.12)}
+  .field textarea{resize:vertical;min-height:90px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-card .btn{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.78rem;color:var(--ink-soft);text-align:center;margin-top:14px}
+  .form-sent{display:none;text-align:center;padding:18px;background:#e2f6f5;border-radius:14px;color:var(--teal-deep);font-weight:600;margin-top:14px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#fff;padding:64px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px;margin-bottom:44px}
+  .foot-brand .brand{color:#fff;margin-bottom:16px}
+  .foot-brand .brand small{color:rgba(255,255,255,.6)}
+  .foot-brand p{color:rgba(255,255,255,.66);font-size:.92rem;max-width:30ch}
+  .foot-col h4{font-family:'Plus Jakarta Sans';font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px}
+  .foot-col ul{list-style:none;display:grid;gap:10px}
+  .foot-col a,.foot-col li{color:rgba(255,255,255,.78);font-size:.92rem;transition:color .2s}
+  .foot-col a:hover{color:var(--coral)}
+  .foot-col .addr{font-style:normal;color:rgba(255,255,255,.78);font-size:.92rem;line-height:1.7}
+  .foot-col .addr b{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot-bottom p{color:rgba(255,255,255,.55);font-size:.84rem}
+  .foot-bottom .credit{color:rgba(255,255,255,.4);font-size:.8rem}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .hero-art{height:380px;max-width:440px}
+    .partners-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:34px}
+    .steps{grid-template-columns:1fr 1fr;gap:34px}
+    .steps::before{display:none}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:36px}
+    .stat:nth-child(2)::after{display:none}
+    .quotes{grid-template-columns:1fr}
+    .t-wide,.t-std,.t-feature{grid-column:span 6}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  }
+  @media(max-width:680px){
+    .nav-links,.nav-phone{display:none}
+    .burger{display:flex}
+    .mobile-menu{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:#fff;z-index:70;transform:translateX(100%);transition:transform .35s;box-shadow:-20px 0 60px -30px rgba(16,42,67,.5);padding:90px 30px 30px;display:flex;flex-direction:column;gap:6px}
+    .mobile-menu.open{transform:none}
+    .mobile-menu a{font-family:'Plus Jakarta Sans';font-weight:700;font-size:1.1rem;padding:13px 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:18px;justify-content:center}
+    .overlay{position:fixed;inset:0;background:rgba(16,42,67,.4);z-index:65;opacity:0;pointer-events:none;transition:.3s}
+    .overlay.on{opacity:1;pointer-events:auto}
+    .burger.x span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .burger.x span:nth-child(2){opacity:0}
+    .burger.x span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+    .sec{padding:70px 0}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .form-row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .hero{padding:120px 0 60px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="mark"><span>F</span></span>
+      <span>FTS Education and Visa<small>MARA registered migration agency</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#journey">Your Journey</a>
+      <a href="#partners">Study Partners</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+61402988882" class="nav-phone">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +61 402 988 882
+      </a>
+      <a href="#contact" class="btn btn-primary">Book Consultation</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#journey">Your Journey</a>
+  <a href="#partners">Study Partners</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+61402988882" class="btn btn-teal">Call +61 402 988 882</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <svg class="blob" style="top:-120px;right:-100px;width:560px" viewBox="0 0 200 200"><path fill="#e2f6f5" d="M44.5,-58.3C56,-49.7,62.9,-35,65.7,-20.1C68.5,-5.2,67.2,9.9,61.4,23C55.6,36.1,45.3,47.2,32.8,55.1C20.3,63,5.6,67.7,-9.4,67.4C-24.4,67.1,-39.7,61.8,-51.6,51.3C-63.5,40.8,-72,25.1,-73.8,8.6C-75.6,-7.9,-70.7,-25.2,-60.3,-37.7C-49.9,-50.2,-34,-57.9,-18.7,-62.6C-3.4,-67.3,11.3,-69,25.9,-66.4C40.5,-63.8,55,-56.9,44.5,-58.3Z" transform="translate(100 100)"/></svg>
+    <svg class="blob" style="bottom:-160px;left:-120px;width:480px" viewBox="0 0 200 200"><path fill="#fff0ee" d="M38.6,-49.9C50.7,-41.7,61.5,-30.9,65.8,-17.7C70.1,-4.5,67.9,11.1,61.3,24.4C54.7,37.7,43.6,48.7,30.6,55.8C17.6,62.9,2.7,66.1,-12.8,64.9C-28.3,63.7,-44.4,58.1,-54.9,47C-65.4,35.9,-70.3,19.3,-70.5,2.6C-70.7,-14.1,-66.2,-30.9,-56.2,-43.2C-46.2,-55.5,-30.7,-63.3,-15.1,-65.9C0.5,-68.5,16.2,-65.9,38.6,-49.9Z" transform="translate(100 100)"/></svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Your future in Australia starts here</span>
+      <h1 class="reveal d1">From classroom to <span class="hl">permanent residency</span>, we guide every step.</h1>
+      <p class="lede reveal d2">FTS Education and Visa Services is a MARA registered migration agency and education placement specialist helping students, skilled workers and families build a confident path to Australia.</p>
+      <div class="hero-actions reveal d3">
+        <a href="#contact" class="btn btn-primary">Start your free assessment
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">Explore visa options</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <div class="stars" id="heroStars"></div>
+        <span class="rt">4.9<small> / 5 across 327 Google reviews</small></span>
+        <span class="mara-pill"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0c827d" stroke-width="2.2" stroke-linecap="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> <b>MARA</b> registered agent</span>
+      </div>
+    </div>
+
+    <div class="hero-art reveal d2">
+      <div class="art-card ac-main float-anim">
+        <div class="ac-inner">
+          <span class="country">Destination</span>
+          <h3>Australia</h3>
+          <div class="ac-route">
+            <span class="dot"></span><span>Apply</span>
+            <span class="ln"></span>
+            <span class="dot"></span><span>Study</span>
+            <span class="ln"></span>
+            <span class="dot"></span><span>Stay</span>
+          </div>
+          <div class="ac-prog">
+            <div class="lbl"><span>Application progress</span><span>92%</span></div>
+            <div class="bar"><i id="heroBar"></i></div>
+          </div>
+          <div class="ac-prog">
+            <div class="lbl"><span>Visa readiness</span><span>Strong</span></div>
+            <div class="bar"><i id="heroBar2"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="art-card ac-float-1 float-anim d">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
+        <div><b>Visa granted</b><span>Subclass 500 approved</span></div>
+      </div>
+      <div class="art-card ac-float-2 float-anim">
+        <div class="av-row">
+          <span class="av" style="background:#11a6a0">PS</span>
+          <span class="av" style="background:#ff6b5e">AK</span>
+          <span class="av" style="background:#1d4e75">RM</span>
+          <span class="av" style="background:#0c827d">+</span>
+        </div>
+        <p>Joining <b>thousands</b> who started their Australian story with FTS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFICE STRIP ============ -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <span class="strip-label">Three offices, one trusted team:</span>
+    <div class="office-chips">
+      <span class="office-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Parramatta NSW</span>
+      <span class="office-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Newcastle</span>
+      <span class="office-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Werribee VIC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES BENTO ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Every visa pathway, handled with care.</h2>
+      <p>Whether you are arriving to study, building a skilled migration case, or bringing your family together, our registered agents match you to the right subclass and manage the detail.</p>
+    </div>
+
+    <div class="bento">
+      <div class="tile t-feature reveal">
+        <div class="glow"></div>
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Student visas, subclass 500 and 590</h3>
+        <p>From your offer letter to GTE and your visa grant, we prepare a strong, genuine application and place you with the right college or university.</p>
+        <span class="feature-cta">Start studying in Australia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+
+      <div class="tile t-wide reveal d1">
+        <div class="ti ti-teal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Skilled migration</h3>
+        <p>Points tested permanent residency for in demand occupations, with a clear strategy built around your skills assessment and state nomination.</p>
+        <div class="codes"><span>189 Independent</span><span>190 Nominated</span><span>491 Regional</span></div>
+      </div>
+
+      <div class="tile t-std reveal d2">
+        <div class="ti ti-coral"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Family and partner</h3>
+        <p>Partner, parent and child visas prepared with the evidence that matters.</p>
+      </div>
+
+      <div class="tile t-std reveal d3">
+        <div class="ti ti-ink"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Employer sponsored, 482</h3>
+        <p>TSS and skills in demand sponsorship matched to genuine roles.</p>
+      </div>
+
+      <div class="tile t-std reveal d1">
+        <div class="ti ti-teal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Graduate visa, 485</h3>
+        <p>Stay and work after you finish studying, and keep your options open.</p>
+      </div>
+
+      <div class="tile t-std reveal d2">
+        <div class="ti ti-coral"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Business and investor</h3>
+        <p>Subclass 188 and 132 pathways for founders and investors.</p>
+      </div>
+
+      <div class="tile t-std reveal d3">
+        <div class="ti ti-ink"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+        <h3>Visitor visas</h3>
+        <p>Tourist and visitor subclass applications for short stays and family visits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="sec journey" id="journey">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">A simple, honest process</span>
+      <h2>Your journey to Australia, in four clear steps.</h2>
+      <p>No jargon, no surprises. You always know where you stand and what comes next.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1">
+        <div class="num">1</div>
+        <h3>Free assessment</h3>
+        <p>We listen to your goals and review your eligibility across study and visa pathways.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="num">2</div>
+        <h3>Your plan</h3>
+        <p>You receive a tailored strategy with the right subclass, timeline and document checklist.</p>
+      </div>
+      <div class="step reveal d3">
+        <div class="num">3</div>
+        <h3>We lodge</h3>
+        <p>Our registered agents prepare and submit a strong application, then liaise with the department.</p>
+      </div>
+      <div class="step reveal d4">
+        <div class="num">4</div>
+        <h3>You arrive</h3>
+        <p>Visa granted. We support your landing, enrolment and the next chapter of your Australian life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="sec stats">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="v" data-target="4.9" data-dec="1">0</div><div class="lbl">Average Google rating</div></div>
+      <div class="stat reveal d1"><div class="v" data-target="327" data-suf="+">0</div><div class="lbl">Verified client reviews</div></div>
+      <div class="stat reveal d2"><div class="v" data-target="12" data-suf=" yrs">0</div><div class="lbl">Guiding migrants to Australia</div></div>
+      <div class="stat reveal d3"><div class="v" data-target="3000" data-suf="+">0</div><div class="lbl">Students and families placed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="sec" id="partners">
+  <div class="wrap partners-grid">
+    <div class="reveal">
+      <span class="eyebrow">Education placement</span>
+      <h2 style="font-size:clamp(2rem,3.5vw,2.7rem);font-weight:800;margin:16px 0 16px;font-family:'Plus Jakarta Sans'">Placed with partner colleges and universities you can trust.</h2>
+      <p style="color:var(--ink-soft);font-size:1.06rem;margin-bottom:26px">As education placement specialists we match your goals, budget and chosen city with accredited institutions across Australia, then handle the enrolment alongside your student visa.</p>
+      <div class="chip-cloud">
+        <span class="pchip"><span class="badge" style="background:#11a6a0">U</span> Universities</span>
+        <span class="pchip"><span class="badge" style="background:#ff6b5e">V</span> Vocational colleges</span>
+        <span class="pchip"><span class="badge" style="background:#1d4e75">E</span> English language</span>
+        <span class="pchip"><span class="badge" style="background:#0c827d">D</span> Diploma pathways</span>
+        <span class="pchip"><span class="badge" style="background:#102a43">P</span> Postgraduate</span>
+        <span class="pchip"><span class="badge" style="background:#ff6b5e">T</span> Trade and TAFE</span>
+      </div>
+    </div>
+    <div class="partner-note reveal d2">
+      <h3>One team for study and stay</h3>
+      <p>Most agencies do one or the other. We connect your course choice with your long term visa strategy from day one, so nothing works against your future.</p>
+      <ul class="pn-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#11a6a0" stroke-width="2.2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Course selection aligned to graduate and PR pathways</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#11a6a0" stroke-width="2.2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Genuine, compliant student visa applications</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#11a6a0" stroke-width="2.2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Support with enrolment, OSHC and arrival</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="sec" style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Why families choose FTS</span>
+      <h2>Real outcomes, in their words.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal d1">
+        <div class="stars sm"></div>
+        <p>"I came on a student visa with no idea about the future. FTS mapped my whole journey to the 485 graduate visa and then skilled migration. Honest advice every single time."</p>
+        <div class="who"><span class="av" style="background:#11a6a0">PS</span><div><b>Priya S.</b><span>Subclass 500 then 485, Sydney</span></div></div>
+      </div>
+      <div class="quote reveal d2">
+        <div class="stars sm"></div>
+        <p>"Their team handled my 190 state nomination and skills assessment perfectly. They explained the points test so clearly. We got our permanent residency without stress."</p>
+        <div class="who"><span class="av" style="background:#ff6b5e">AK</span><div><b>Arman K.</b><span>Subclass 190 skilled migration</span></div></div>
+      </div>
+      <div class="quote reveal d3">
+        <div class="stars sm"></div>
+        <p>"After two refused partner applications elsewhere, FTS rebuilt our case from scratch. The evidence and care they put in changed everything. Forever grateful to the Parramatta office."</p>
+        <div class="who"><span class="av" style="background:#1d4e75">RM</span><div><b>Rachel M.</b><span>Partner visa, granted</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <span class="eyebrow">Good to know</span>
+      <h2 style="font-size:clamp(2rem,3.3vw,2.5rem);font-weight:800;margin:16px 0 16px;font-family:'Plus Jakarta Sans'">Questions, answered plainly.</h2>
+      <p style="color:var(--ink-soft);margin-bottom:26px">Still unsure about something? A short call usually clears it up.</p>
+      <div class="faq-aside">
+        <div class="blob-s"></div>
+        <h3>Talk to a registered agent</h3>
+        <p>Free, no obligation. We will tell you honestly whether we can help.</p>
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +61 402 988 882</div>
+        <a href="#contact" class="btn btn-ghost" style="margin-top:18px">Book your consultation</a>
+      </div>
+    </div>
+    <div class="faq-list reveal d1">
+      <div class="fitem">
+        <button class="fq">Are you a registered migration agency? <span class="pm"></span></button>
+        <div class="fa"><div class="fa-in">Yes. FTS Education and Visa Services is a MARA registered migration agency. That means your visa advice and lodgement are handled by an agent bound by a professional code of conduct, not by unregistered consultants.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq">Can you help with both study and migration? <span class="pm"></span></button>
+        <div class="fa"><div class="fa-in">Absolutely. We are an education placement specialist as well as a migration agency. We place you with partner colleges and universities and align your course with graduate and permanent residency pathways from the very start.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq">Which visa subclasses do you handle? <span class="pm"></span></button>
+        <div class="fa"><div class="fa-in">Student visas 500 and 590, skilled migration 189, 190 and 491, business and investor 188 and 132, family and partner visas, graduate visa 485, employer sponsored 482 and visitor visas. If you are unsure which fits you, that is exactly what your free assessment is for.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq">Where are your offices? <span class="pm"></span></button>
+        <div class="fa"><div class="fa-in">Our head office is in Parramatta, at Suite 102, Level 1, 22 Hunter Street, Parramatta NSW 2150. We also serve clients from offices in Newcastle and Werribee in Victoria, and offer online consultations across Australia and overseas.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq">How do I get started? <span class="pm"></span></button>
+        <div class="fa"><div class="fa-in">Book a free assessment using the form below or call us. We review your situation, explain your realistic options and only move forward when you are confident in the plan.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Let us begin</span>
+      <h2>Book your free consultation.</h2>
+      <p class="intro">Tell us where you are now and where you want to be. We will reply within one business day with clear next steps.</p>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><h4>Call us</h4><p><a href="tel:+61402988882">+61 402 988 882</a><br>Monday to Saturday</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Head office</h4><p>Suite 102, Level 1, 22 Hunter Street, Parramatta NSW 2150</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Also in</h4><p>Newcastle, New South Wales and Werribee, Victoria</p></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-card reveal d2" id="leadForm" novalidate>
+      <h3>Request your assessment</h3>
+      <p class="fc-sub">Free and confidential. A registered agent will be in touch.</p>
+      <div class="form-row">
+        <div class="field"><label for="fn">Full name</label><input id="fn" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="Best contact number" required></div>
+      </div>
+      <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com" required></div>
+      <div class="field">
+        <label for="sv">I am interested in</label>
+        <select id="sv">
+          <option>Student visa and study placement</option>
+          <option>Skilled migration, 189 / 190 / 491</option>
+          <option>Graduate visa, 485</option>
+          <option>Family or partner visa</option>
+          <option>Employer sponsored, 482</option>
+          <option>Business or investor, 188 / 132</option>
+          <option>Visitor visa</option>
+          <option>Not sure yet, please advise</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">Tell us a little about your situation</label><textarea id="msg" placeholder="Current visa, location, goals..."></textarea></div>
+      <button type="submit" class="btn btn-primary">Send my request
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
+      <p class="form-note">By submitting you agree to be contacted by FTS Education and Visa Services about your enquiry.</p>
+      <div class="form-sent" id="formSent">Thank you. Your request has been received. A registered agent will contact you within one business day.</div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><span class="mark"><span>F</span></span><span>FTS Education and Visa<small>MARA registered migration agency</small></span></div>
+        <p>Bright, honest guidance from study placement to permanent residency, for students, skilled workers and families building their life in Australia.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visa services</h4>
+        <ul>
+          <li><a href="#services">Student visas 500, 590</a></li>
+          <li><a href="#services">Skilled migration</a></li>
+          <li><a href="#services">Graduate visa 485</a></li>
+          <li><a href="#services">Family and partner</a></li>
+          <li><a href="#services">Employer sponsored 482</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#journey">Your journey</a></li>
+          <li><a href="#partners">Study partners</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Book consultation</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Visit us</h4>
+        <address class="addr">
+          <b>FTS Education and Visa Services</b><br>
+          Suite 102, Level 1, 22 Hunter Street,<br>
+          Parramatta NSW 2150<br>
+          Also Newcastle and Werribee VIC<br><br>
+          <a href="tel:+61402988882" style="color:#fff;font-weight:700">+61 402 988 882</a>
+        </address>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Copyright 2026 FTS Education and Visa Services. MARA registered migration agency. All rights reserved.</p>
+      <p class="credit">Concept site by WebCraft Global</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // ----- sticky nav -----
+  var hdr=document.getElementById('hdr');
+  function onScroll(){ hdr.classList.toggle('scrolled', window.scrollY>20); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // ----- mobile menu -----
+  var burger=document.getElementById('burger'),
+      menu=document.getElementById('mobileMenu'),
+      overlay=document.getElementById('overlay');
+  function toggleMenu(open){
+    menu.classList.toggle('open',open);
+    overlay.classList.toggle('on',open);
+    burger.classList.toggle('x',open);
+  }
+  burger.addEventListener('click',function(){toggleMenu(!menu.classList.contains('open'));});
+  overlay.addEventListener('click',function(){toggleMenu(false);});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
+
+  // ----- star builder -----
+  function starSVG(){
+    return '<svg viewBox="0 0 24 24" fill="#ffb02e" stroke="none"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.6 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>';
+  }
+  function fillStars(el,n){ var s=''; for(var i=0;i<n;i++)s+=starSVG(); el.innerHTML=s; }
+  fillStars(document.getElementById('heroStars'),5);
+  document.querySelectorAll('.stars.sm').forEach(function(e){fillStars(e,5);});
+
+  // ----- reveal on scroll -----
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // ----- hero progress bars -----
+  setTimeout(function(){
+    var b1=document.getElementById('heroBar'),b2=document.getElementById('heroBar2');
+    if(b1)b1.style.width='92%'; if(b2)b2.style.width='78%';
+  },500);
+
+  // ----- animated counters -----
+  function animateCount(el){
+    var target=parseFloat(el.getAttribute('data-target')),
+        dec=parseInt(el.getAttribute('data-dec')||'0',10),
+        suf=el.getAttribute('data-suf')||'',
+        dur=1600, start=null;
+    function tick(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1),
+          eased=1-Math.pow(1-p,3),
+          val=target*eased;
+      el.innerHTML=val.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',')+'<span class="suf">'+suf+'</span>';
+      if(p<1)requestAnimationFrame(tick);
+      else el.innerHTML=target.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',')+'<span class="suf">'+suf+'</span>';
+    }
+    requestAnimationFrame(tick);
+  }
+  var counted=false;
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting && !counted){
+        counted=true;
+        document.querySelectorAll('.stat .v').forEach(animateCount);
+      }
+    });
+  },{threshold:.4});
+  var statBand=document.querySelector('.stats'); if(statBand)cio.observe(statBand);
+
+  // ----- FAQ accordion -----
+  document.querySelectorAll('.fq').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement, body=btn.nextElementSibling, isOpen=item.classList.contains('open');
+      document.querySelectorAll('.fitem.open').forEach(function(o){
+        o.classList.remove('open'); o.querySelector('.fa').style.maxHeight=null;
+      });
+      if(!isOpen){ item.classList.add('open'); body.style.maxHeight=body.scrollHeight+'px'; }
+    });
+  });
+
+  // ----- form -----
+  var form=document.getElementById('leadForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true;
+    ['fn','ph','em'].forEach(function(id){
+      var f=document.getElementById(id);
+      if(!f.value.trim()){ f.style.borderColor='#ff6b5e'; ok=false; }
+      else f.style.borderColor='';
+    });
+    if(!ok)return;
+    document.getElementById('formSent').style.display='block';
+    form.querySelector('button[type=submit]').style.display='none';
+    setTimeout(function(){document.getElementById('formSent').scrollIntoView({behavior:'smooth',block:'center'});},80);
+  });
+})();
+</script>
+</body>
+</html>
