@@ -167,7 +167,6 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 <body>
 <div class="grain"></div><div class="vig"></div><div class="prog" id="prog"></div>
 <div class="cur" id="cur"></div><div class="cur-r" id="curR"></div>
-<div id="preview"><div class="pi" id="pi"></div></div>
 
 <div id="loader"><div class="bk serif" id="lbk">WebCraft Global</div><div class="ln" id="lln"></div><div class="pc" id="lpc">00</div></div>
 
@@ -323,11 +322,7 @@ addEventListener('scroll',function(){hdr.classList.toggle('sc',scrollY>60);var h
 /* reveals */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.16});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-/* work preview */
-(function(){var pv=document.getElementById('preview'),pi=document.getElementById('pi'),tx=0,ty=0,cx=0,cy=0,on=false;
-  document.querySelectorAll('.row').forEach(function(row){row.addEventListener('mouseenter',function(){pi.style.background=row.dataset.c;on=true;pv.style.opacity=1;pv.style.transform='translate(-50%,-50%) scale(1)';});row.addEventListener('mouseleave',function(){on=false;pv.style.opacity=0;pv.style.transform='translate(-50%,-50%) scale(.9)';});});
-  addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;});
-  (function loop(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;if(on){pv.style.left=cx+'px';pv.style.top=cy+'px';}requestAnimationFrame(loop);})();})();
+/* work preview removed */
 /* before/after */
 (function(){var w=document.getElementById('bawrap'),a=document.getElementById('baAfter'),h=document.getElementById('bahandle'),r=document.getElementById('curR');if(!w)return;var bf=w.querySelector('.before');var drag=false;
   function set(x){var rect=w.getBoundingClientRect();var p=Math.max(4,Math.min(96,(x-rect.left)/rect.width*100));a.style.clipPath='inset(0 0 0 '+p+'%)';if(bf)bf.style.clipPath='inset(0 '+(100-p)+'% 0 0)';h.style.left=p+'%';}
@@ -412,3 +407,4 @@ miniParticles('gv3','rgba(127,169,184,.85)');
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
