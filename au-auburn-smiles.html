@@ -1,838 +1,473 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Auburn Smiles | Family Dental Practice in Auburn NSW</title>
-<meta name="description" content="Auburn Smiles is a family dental practice on Auburn Road with a multilingual team. Check-ups, children's dentistry, clear aligners, whitening, implants and more. Rated 4.9 from 167 Google reviews." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auburn Smiles - Family Dental Practice in Auburn NSW</title>
+<meta name="description" content="Auburn Smiles is a friendly family dental practice in Auburn NSW. Multilingual team speaking English, Farsi, Arabic and Dari. Book on +61 2 8957 4096.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --mint: #0fbfa0;
-    --mint-deep: #0a9c83;
-    --navy: #0b2540;
-    --navy-soft: #2c4a66;
-    --tint: #e8faf5;
-    --tint-2: #d6f4ec;
-    --white: #ffffff;
-    --line: #dceee9;
-    --shadow-1: 0 4px 18px rgba(11,37,64,0.06);
-    --shadow-2: 0 18px 48px rgba(11,37,64,0.12);
-    --shadow-mint: 0 16px 40px rgba(15,191,160,0.28);
-    --r-lg: 26px;
-    --r-md: 18px;
-    --r-sm: 12px;
-    --maxw: 1180px;
-    --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  }
+:root{
+  --mint:#19c39a;
+  --mint-dark:#129a79;
+  --coral:#ff6b5e;
+  --coral-dark:#e9534a;
+  --navy:#1f2a44;
+  --navy-soft:#5b6478;
+  --cream:#fff8f3;
+  --mint-tint:#e8faf4;
+  --coral-tint:#fff0ee;
+  --white:#ffffff;
+  --shadow:0 18px 40px rgba(31,42,68,.10);
+  --radius:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--navy);background:var(--white);line-height:1.65;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+section{position:relative}
+h1,h2,h3{line-height:1.15;font-weight:800}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
+.eyebrow{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mint-dark);background:var(--mint-tint);padding:7px 16px;border-radius:30px;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:1rem;padding:15px 28px;border-radius:40px;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 26px rgba(255,107,94,.35)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(255,107,94,.45)}
+.btn-mint{background:var(--mint);color:#fff;box-shadow:0 12px 26px rgba(25,195,154,.32)}
+.btn-mint:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(25,195,154,.42)}
+.btn-ghost{background:#fff;color:var(--navy);border:2px solid #e7ecf2}
+.btn-ghost:hover{border-color:var(--mint);color:var(--mint-dark);transform:translateY(-3px)}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #eef1f5}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.28rem}
+.logo .mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--mint),var(--coral));display:grid;place-items:center;color:#fff;box-shadow:0 8px 18px rgba(25,195,154,.3)}
+.logo b{color:var(--mint-dark)}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{font-weight:600;font-size:.95rem;color:var(--navy-soft);transition:color .2s}
+.navlinks a:hover{color:var(--mint-dark)}
+.nav .btn{padding:11px 22px;font-size:.92rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:26px;height:3px;background:var(--navy);border-radius:3px;transition:.3s}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero{background:radial-gradient(circle at 80% 10%,var(--mint-tint),transparent 55%),radial-gradient(circle at 5% 90%,var(--coral-tint),transparent 50%),var(--white);padding:64px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+.hero h1 .hl{color:var(--coral)}
+.hero p.lead{font-size:1.12rem;color:var(--navy-soft);margin:20px 0 28px;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-trust{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.hero-trust div{font-size:.9rem;color:var(--navy-soft)}
+.hero-trust b{display:block;font-size:1.5rem;color:var(--navy);font-weight:800}
+.hero-art{position:relative;display:grid;place-items:center}
+.blob{position:absolute;width:380px;height:380px;background:linear-gradient(135deg,var(--mint),#3fd9b3);border-radius:46% 54% 58% 42%/52% 48% 52% 48%;animation:morph 9s ease-in-out infinite;box-shadow:0 30px 60px rgba(25,195,154,.3)}
+@keyframes morph{0%,100%{border-radius:46% 54% 58% 42%/52% 48% 52% 48%}50%{border-radius:58% 42% 44% 56%/46% 56% 44% 54%}}
+.tooth-svg{position:relative;width:240px;z-index:2}
+.tooth-svg .face{transform-origin:center;animation:bob 3s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.sparkle{position:absolute;font-size:1.6rem;animation:tw 2.4s ease-in-out infinite}
+.sparkle.s1{top:6%;right:14%;animation-delay:.2s}
+.sparkle.s2{bottom:14%;left:8%;animation-delay:.9s}
+.sparkle.s3{top:42%;right:0;animation-delay:1.5s}
+@keyframes tw{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+.rating-chip{position:absolute;bottom:6%;left:0;background:#fff;border-radius:18px;padding:12px 17px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;z-index:3}
+.rating-chip .num{font-size:1.5rem;font-weight:800;color:var(--coral)}
+.rating-chip .stars{color:#ffc24b;font-size:.85rem;letter-spacing:1px}
+.rating-chip small{display:block;color:var(--navy-soft);font-size:.72rem}
 
-  body {
-    font-family: 'Manrope', system-ui, sans-serif;
-    color: var(--navy);
-    background: var(--white);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+/* MARQUEE BAND */
+.band{background:var(--navy);color:#fff;padding:16px 0;overflow:hidden}
+.band-track{display:flex;gap:42px;white-space:nowrap;animation:scroll 22s linear infinite;font-weight:600}
+.band-track span{display:inline-flex;align-items:center;gap:10px;opacity:.92}
+.band-track i{color:var(--mint)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  h1, h2, h3, .display { font-family: 'Sora', 'Manrope', sans-serif; line-height: 1.08; letter-spacing: -0.02em; }
+/* SERVICES */
+.sec{padding:78px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 46px}
+.sec-head p{color:var(--navy-soft);margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid #eef1f5;border-radius:var(--radius);padding:28px 24px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:transparent}
+.card .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:16px}
+.card h3{font-size:1.18rem;margin-bottom:7px}
+.card p{font-size:.93rem;color:var(--navy-soft)}
+.c1 .ic{background:var(--mint-tint)}.c2 .ic{background:var(--coral-tint)}.c3 .ic{background:#fff3d6}
+.c4 .ic{background:#e9f0ff}.c5 .ic{background:var(--mint-tint)}.c6 .ic{background:var(--coral-tint)}
+.c7 .ic{background:#fff3d6}.c8 .ic{background:#e9f0ff}.c9 .ic{background:var(--mint-tint)}
 
-  a { color: inherit; text-decoration: none; }
+/* MULTILINGUAL */
+.lang{background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:#fff;border-radius:34px;padding:54px 40px;text-align:center;position:relative;overflow:hidden}
+.lang:before{content:"";position:absolute;width:300px;height:300px;background:rgba(255,255,255,.08);border-radius:50%;top:-120px;right:-80px}
+.lang:after{content:"";position:absolute;width:220px;height:220px;background:rgba(255,255,255,.08);border-radius:50%;bottom:-100px;left:-60px}
+.lang h2{color:#fff;position:relative}
+.lang>p{position:relative;max-width:560px;margin:14px auto 34px;opacity:.95}
+.hellos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.hello{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:24px 16px;transition:transform .25s,background .25s}
+.hello:hover{transform:translateY(-6px) scale(1.03);background:rgba(255,255,255,.26)}
+.hello .word{font-size:1.7rem;font-weight:800;margin-bottom:4px}
+.hello .name{font-size:.9rem;opacity:.9}
 
-  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+/* KIDS */
+.kids-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.kids-art{background:linear-gradient(135deg,var(--coral-tint),var(--mint-tint));border-radius:34px;padding:40px;position:relative}
+.kid-row{display:flex;gap:14px;flex-wrap:wrap}
+.kid-pill{background:#fff;border-radius:18px;padding:18px 20px;flex:1 1 130px;box-shadow:0 8px 20px rgba(31,42,68,.06);text-align:center}
+.kid-pill .e{font-size:2rem}
+.kid-pill b{display:block;margin-top:6px;font-size:.95rem}
+.kids-list{list-style:none;margin-top:22px;display:grid;gap:13px}
+.kids-list li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.kids-list .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--mint);color:#fff;display:grid;place-items:center;font-size:.8rem;margin-top:3px}
+.medi{margin-top:24px;background:var(--coral-tint);border:1px dashed var(--coral);border-radius:18px;padding:18px 20px;font-weight:600;color:var(--coral-dark)}
 
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--mint-deep);
-  }
-  .eyebrow::before {
-    content: ""; width: 26px; height: 2px; border-radius: 2px;
-    background: linear-gradient(90deg, var(--mint), transparent);
-  }
+/* HIGHLIGHT (aligners/whitening) */
+.high-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.high-card{border-radius:30px;padding:42px 36px;color:#fff;position:relative;overflow:hidden}
+.high-card h3{font-size:1.7rem;margin-bottom:10px}
+.high-card p{opacity:.95;margin-bottom:20px}
+.high-card .emoji{position:absolute;font-size:7rem;right:-10px;bottom:-22px;opacity:.18}
+.hc-align{background:linear-gradient(135deg,var(--mint),#0fb089)}
+.hc-white{background:linear-gradient(135deg,var(--coral),var(--coral-dark))}
+.high-card .btn{background:#fff;color:var(--navy)}
+.high-card .btn:hover{transform:translateY(-3px)}
 
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    font-weight: 700; font-size: 0.96rem; border: none; cursor: pointer;
-    padding: 15px 26px; border-radius: 999px; transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s;
-  }
-  .btn-primary { background: var(--mint); color: var(--white); box-shadow: var(--shadow-mint); }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 22px 48px rgba(15,191,160,0.4); background: var(--mint-deep); }
-  .btn-ghost { background: var(--white); color: var(--navy); border: 1.5px solid var(--line); }
-  .btn-ghost:hover { border-color: var(--mint); color: var(--mint-deep); transform: translateY(-3px); }
+/* INSURANCE */
+.insure{background:var(--cream);text-align:center;border-radius:30px;padding:46px 30px}
+.ins-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.ins-pill{background:#fff;border:1px solid #eef1f5;border-radius:40px;padding:13px 26px;font-weight:700;color:var(--navy);box-shadow:0 6px 16px rgba(31,42,68,.05)}
 
-  /* ============ NAV ============ */
-  header.nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    transition: background .4s var(--ease), box-shadow .4s var(--ease), padding .4s var(--ease);
-    padding: 18px 0;
-  }
-  header.nav.scrolled {
-    background: rgba(255,255,255,0.86); backdrop-filter: blur(14px);
-    box-shadow: 0 1px 0 var(--line); padding: 11px 0;
-  }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-  .brand { display: flex; align-items: center; gap: 11px; font-family: 'Sora'; font-weight: 800; font-size: 1.18rem; }
-  .brand .mark { width: 38px; height: 38px; flex: none; }
-  .nav-links { display: flex; align-items: center; gap: 30px; }
-  .nav-links a.lnk { font-weight: 600; font-size: 0.93rem; color: var(--navy-soft); position: relative; transition: color .25s; }
-  .nav-links a.lnk::after {
-    content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px;
-    background: var(--mint); border-radius: 2px; transition: width .3s var(--ease);
-  }
-  .nav-links a.lnk:hover { color: var(--navy); }
-  .nav-links a.lnk:hover::after { width: 100%; }
-  .nav-call { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; }
-  .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
-  .burger span { width: 24px; height: 2.4px; background: var(--navy); border-radius: 3px; transition: .3s; }
+/* REVIEW MOMENT */
+.review{background:var(--navy);color:#fff;border-radius:34px;padding:58px 40px;text-align:center;position:relative;overflow:hidden}
+.review .big{font-size:clamp(3.4rem,9vw,6rem);font-weight:800;line-height:1;color:var(--coral)}
+.review .stars{color:#ffc24b;font-size:1.8rem;letter-spacing:5px;margin:10px 0}
+.review p.sub{opacity:.85;max-width:520px;margin:8px auto 0}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px;text-align:left}
+.quote{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px}
+.quote .qs{color:#ffc24b;font-size:.85rem;letter-spacing:1px}
+.quote p{font-size:.92rem;margin:9px 0;opacity:.95}
+.quote b{font-size:.85rem;opacity:.7;font-weight:600}
 
-  /* ============ HERO ============ */
-  .hero { position: relative; padding: 150px 0 90px; overflow: hidden; }
-  .hero-bg {
-    position: absolute; inset: 0; z-index: -2;
-    background:
-      radial-gradient(900px 540px at 78% 8%, var(--tint) 0%, transparent 60%),
-      radial-gradient(700px 500px at 0% 80%, #f0fcf8 0%, transparent 55%),
-      var(--white);
-  }
-  .hero-grid {
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: center;
-  }
-  .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4.1rem); font-weight: 800; margin: 20px 0 0; }
-  .hero h1 .accent { color: var(--mint-deep); position: relative; white-space: nowrap; }
-  .hero h1 .accent svg { position: absolute; left: 0; bottom: -10px; width: 100%; height: 14px; }
-  .hero p.lead { font-size: 1.13rem; color: var(--navy-soft); margin: 22px 0 30px; max-width: 500px; }
-  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-  .hero-trust { display: flex; align-items: center; gap: 16px; margin-top: 30px; flex-wrap: wrap; }
-  .stars { display: inline-flex; gap: 3px; }
-  .stars svg { width: 18px; height: 18px; }
-  .trust-text { font-size: 0.9rem; color: var(--navy-soft); }
-  .trust-text b { color: var(--navy); }
+/* BOOKING */
+.book{background:linear-gradient(135deg,var(--mint-tint),var(--coral-tint));border-radius:36px;padding:54px 44px}
+.book-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.book h2 .hl{color:var(--coral)}
+.book p{color:var(--navy-soft);margin:14px 0 24px}
+.book-info{display:grid;gap:16px}
+.bi{display:flex;gap:14px;align-items:flex-start}
+.bi .ic{flex:none;width:46px;height:46px;border-radius:14px;background:#fff;display:grid;place-items:center;font-size:1.3rem;box-shadow:0 6px 14px rgba(31,42,68,.07)}
+.bi b{display:block}
+.bi span{color:var(--navy-soft);font-size:.92rem}
+.bform{background:#fff;border-radius:26px;padding:30px;box-shadow:var(--shadow)}
+.bform h3{margin-bottom:16px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--navy-soft)}
+.field input,.field select{width:100%;padding:13px 15px;border:2px solid #e7ecf2;border-radius:13px;font-family:inherit;font-size:.95rem;transition:border-color .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--mint)}
+.bform .btn{width:100%;justify-content:center;margin-top:6px}
+.bphone{display:block;text-align:center;margin-top:14px;font-weight:700;color:var(--mint-dark)}
+.ok{display:none;background:var(--mint-tint);color:var(--mint-dark);border-radius:13px;padding:14px;text-align:center;font-weight:600;margin-top:14px}
 
-  /* hero visual */
-  .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; min-height: 440px; }
-  .smile-card {
-    position: relative; width: 100%; max-width: 420px; aspect-ratio: 1/1.04;
-    background: linear-gradient(160deg, #ffffff, var(--tint));
-    border-radius: 34px; box-shadow: var(--shadow-2);
-    border: 1px solid var(--line);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .smile-card::before {
-    content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(15,191,160,0.16), transparent 68%);
-    top: -60px; right: -50px;
-  }
-  .float-chip {
-    position: absolute; background: var(--white); border-radius: 16px; padding: 12px 16px;
-    box-shadow: var(--shadow-1); display: flex; align-items: center; gap: 11px;
-    font-weight: 700; font-size: 0.86rem; border: 1px solid var(--line);
-    animation: bob 5.5s ease-in-out infinite;
-  }
-  .float-chip .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--tint); color: var(--mint-deep); flex: none; }
-  .float-chip small { display: block; font-weight: 500; font-size: 0.72rem; color: var(--navy-soft); }
-  .fc-1 { top: 24px; left: -14px; animation-delay: .2s; }
-  .fc-2 { bottom: 38px; right: -18px; animation-delay: 1.4s; }
-  .fc-3 { bottom: -10px; left: 30px; animation-delay: .8s; }
-  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+/* FOOTER */
+footer{background:var(--navy);color:#fff;padding:56px 0 26px;margin-top:78px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-grid .logo{color:#fff}
+.foot-grid p{color:#aeb6c6;font-size:.92rem;margin-top:14px;max-width:300px}
+.foot-col h4{font-size:1rem;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;color:#aeb6c6;font-size:.92rem;margin-bottom:9px;transition:color .2s}
+.foot-col a:hover{color:var(--mint)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.foot-bottom p{color:#8b93a6;font-size:.85rem}
+.concept{color:#6b7488 !important;font-size:.8rem !important}
 
-  /* marquee strip */
-  .strip { background: var(--navy); color: #cfe9e2; padding: 0; overflow: hidden; }
-  .strip-track { display: flex; gap: 0; white-space: nowrap; animation: scroll 26s linear infinite; }
-  .strip-track span { display: inline-flex; align-items: center; gap: 14px; padding: 16px 0; font-weight: 600; font-size: 0.92rem; }
-  .strip-track span::after { content: "✶"; color: var(--mint); margin: 0 26px; }
-  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  /* ============ SECTION SHELL ============ */
-  section { position: relative; }
-  .sec-pad { padding: 92px 0; }
-  .sec-head { max-width: 640px; margin-bottom: 48px; }
-  .sec-head h2 { font-size: clamp(2rem, 3.8vw, 2.9rem); font-weight: 800; margin: 14px 0 0; }
-  .sec-head p { color: var(--navy-soft); margin-top: 16px; font-size: 1.05rem; }
-
-  /* ============ SERVICES ============ */
-  .services { background: var(--white); }
-  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .svc {
-    background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md);
-    padding: 26px; transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s;
-    position: relative; overflow: hidden;
-  }
-  .svc::after {
-    content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 0;
-    background: linear-gradient(90deg, var(--mint), var(--mint-deep)); transition: width .4s var(--ease);
-  }
-  .svc:hover { transform: translateY(-6px); box-shadow: var(--shadow-2); border-color: transparent; }
-  .svc:hover::after { width: 100%; }
-  .svc-ic { width: 50px; height: 50px; border-radius: 14px; background: var(--tint); display: grid; place-items: center; color: var(--mint-deep); margin-bottom: 18px; transition: background .4s, color .4s; }
-  .svc:hover .svc-ic { background: var(--mint); color: #fff; }
-  .svc h3 { font-size: 1.16rem; font-weight: 700; margin-bottom: 8px; }
-  .svc p { font-size: 0.92rem; color: var(--navy-soft); }
-
-  /* ============ MULTILINGUAL BAND ============ */
-  .lang-band { background: linear-gradient(150deg, var(--tint), var(--tint-2)); }
-  .lang-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 54px; align-items: center; }
-  .lang-chips { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
-  .chip {
-    background: var(--white); border: 1px solid var(--line); border-radius: 999px;
-    padding: 11px 18px; font-weight: 700; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 9px;
-    box-shadow: var(--shadow-1); transition: transform .3s var(--ease), box-shadow .3s;
-  }
-  .chip:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
-  .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); }
-  .lang-visual {
-    background: var(--white); border-radius: var(--r-lg); padding: 36px; box-shadow: var(--shadow-2);
-    border: 1px solid var(--line);
-  }
-  .hello-cycle { font-family: 'Sora'; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--navy); min-height: 1.2em; }
-  .hello-cycle .lang-name { display: block; font-size: 0.95rem; font-family: 'Manrope'; font-weight: 600; color: var(--mint-deep); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
-  .lang-visual p.note { color: var(--navy-soft); margin-top: 24px; font-size: 0.98rem; }
-
-  /* ============ FEATURE (aligners + whitening) ============ */
-  .feature { background: var(--navy); color: #e7f3ef; overflow: hidden; }
-  .feature .sec-head h2 { color: #fff; }
-  .feature .eyebrow { color: var(--mint); }
-  .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .feat-card {
-    border-radius: var(--r-lg); padding: 36px; position: relative; overflow: hidden;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-    transition: transform .4s var(--ease), background .4s;
-  }
-  .feat-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.07); }
-  .feat-card.tall { background: linear-gradient(160deg, rgba(15,191,160,0.22), rgba(15,191,160,0.05)); }
-  .feat-card h3 { color: #fff; font-size: 1.55rem; font-weight: 700; margin-bottom: 12px; }
-  .feat-card p { color: #b9d4cd; font-size: 0.98rem; }
-  .feat-num { font-family: 'Sora'; font-size: 2.6rem; font-weight: 800; color: var(--mint); }
-  .feat-bullets { list-style: none; margin-top: 18px; display: grid; gap: 11px; }
-  .feat-bullets li { display: flex; gap: 11px; align-items: flex-start; font-size: 0.95rem; color: #cfe2dc; }
-  .feat-bullets li svg { flex: none; margin-top: 3px; color: var(--mint); }
-  .smile-anim { display: grid; place-items: center; padding: 6px 0; }
-
-  /* ============ STATS / REVIEWS ============ */
-  .reviews { background: var(--white); }
-  .rev-top { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: center; margin-bottom: 44px; }
-  .score-box { text-align: center; background: linear-gradient(160deg, #fff, var(--tint)); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 40px 30px; box-shadow: var(--shadow-1); }
-  .score-num { font-family: 'Sora'; font-size: 4.6rem; font-weight: 800; line-height: 1; color: var(--navy); }
-  .score-box .stars { margin: 12px 0; justify-content: center; }
-  .score-box .stars svg { width: 24px; height: 24px; }
-  .score-box .meta { color: var(--navy-soft); font-weight: 600; }
-  .rev-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .rev {
-    background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md); padding: 24px;
-    transition: transform .4s var(--ease), box-shadow .4s;
-  }
-  .rev:hover { transform: translateY(-5px); box-shadow: var(--shadow-2); }
-  .rev .stars { margin-bottom: 12px; }
-  .rev .stars svg { width: 15px; height: 15px; }
-  .rev p { font-size: 0.96rem; color: var(--navy); }
-  .rev .who { margin-top: 16px; display: flex; align-items: center; gap: 11px; }
-  .rev .av { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #fff; font-size: 0.9rem; }
-  .rev .who b { font-size: 0.9rem; }
-  .rev .who small { display: block; color: var(--navy-soft); font-size: 0.78rem; }
-
-  /* ============ VISIT / FAMILY ============ */
-  .visit { background: var(--tint); }
-  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-  .steps { display: grid; gap: 14px; margin-top: 8px; }
-  .step { display: flex; gap: 18px; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px 22px; transition: transform .35s var(--ease), box-shadow .35s; }
-  .step:hover { transform: translateX(6px); box-shadow: var(--shadow-1); }
-  .step .no { font-family: 'Sora'; font-weight: 800; font-size: 1.3rem; color: var(--mint-deep); flex: none; width: 34px; }
-  .step h4 { font-size: 1.05rem; margin-bottom: 4px; }
-  .step p { font-size: 0.9rem; color: var(--navy-soft); }
-  .hours-card { background: var(--white); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-2); border: 1px solid var(--line); }
-  .hours-card h3 { font-size: 1.35rem; margin-bottom: 20px; }
-  .hours-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px dashed var(--line); font-size: 0.95rem; }
-  .hours-row:last-child { border-bottom: none; }
-  .hours-row span:first-child { color: var(--navy-soft); font-weight: 600; }
-  .hours-row span:last-child { font-weight: 700; }
-  .hours-row.closed span:last-child { color: #c2554f; }
-
-  /* ============ BOOKING ============ */
-  .booking { background: linear-gradient(155deg, var(--mint), var(--mint-deep)); color: #fff; overflow: hidden; position: relative; }
-  .booking::before { content: ""; position: absolute; inset: 0; background: radial-gradient(700px 400px at 88% 0%, rgba(255,255,255,0.18), transparent 60%); }
-  .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; }
-  .booking .eyebrow { color: #d4fff5; }
-  .booking .eyebrow::before { background: linear-gradient(90deg, #fff, transparent); }
-  .booking h2 { font-size: clamp(2rem, 3.8vw, 2.9rem); font-weight: 800; margin: 14px 0 18px; }
-  .booking p.bsub { color: #e3fff9; font-size: 1.06rem; margin-bottom: 26px; max-width: 460px; }
-  .call-card { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); border-radius: var(--r-md); padding: 22px 24px; display: flex; align-items: center; gap: 18px; backdrop-filter: blur(6px); }
-  .call-card .pic { width: 54px; height: 54px; border-radius: 14px; background: rgba(255,255,255,0.2); display: grid; place-items: center; flex: none; }
-  .call-card small { display: block; color: #e3fff9; font-size: 0.82rem; }
-  .call-card .num { font-family: 'Sora'; font-weight: 800; font-size: 1.5rem; color: #fff; }
-  .book-form { background: var(--white); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-2); color: var(--navy); }
-  .book-form h3 { font-size: 1.3rem; margin-bottom: 6px; }
-  .book-form .fhint { color: var(--navy-soft); font-size: 0.9rem; margin-bottom: 20px; }
-  .field { margin-bottom: 15px; }
-  .field label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; color: var(--navy-soft); }
-  .field input, .field select {
-    width: 100%; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: var(--r-sm);
-    font-family: inherit; font-size: 0.95rem; color: var(--navy); background: #fbfffe; transition: border .25s, box-shadow .25s;
-  }
-  .field input:focus, .field select:focus { outline: none; border-color: var(--mint); box-shadow: 0 0 0 4px rgba(15,191,160,0.14); }
-  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .form-ok { display: none; text-align: center; padding: 14px 0; }
-  .form-ok.show { display: block; }
-  .form-ok .tick { width: 60px; height: 60px; border-radius: 50%; background: var(--tint); color: var(--mint-deep); display: grid; place-items: center; margin: 0 auto 14px; }
-
-  /* ============ FOOTER ============ */
-  footer { background: var(--navy); color: #aac3bd; padding: 64px 0 28px; }
-  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .foot-brand { display: flex; align-items: center; gap: 11px; color: #fff; font-family: 'Sora'; font-weight: 800; font-size: 1.25rem; margin-bottom: 16px; }
-  footer p.fdesc { font-size: 0.95rem; max-width: 320px; color: #9fbab4; }
-  .foot-col h5 { color: #fff; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; }
-  .foot-col a, .foot-col p { display: block; color: #aac3bd; font-size: 0.94rem; margin-bottom: 10px; transition: color .25s; }
-  .foot-col a:hover { color: var(--mint); }
-  .foot-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 0.84rem; }
-  .foot-bottom .credit { color: #6f8c86; }
-
-  /* reveal */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
-  .reveal.in { opacity: 1; transform: none; }
-  .reveal.d1 { transition-delay: .08s; }
-  .reveal.d2 { transition-delay: .16s; }
-  .reveal.d3 { transition-delay: .24s; }
-  .reveal.d4 { transition-delay: .32s; }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 960px) {
-    .hero-grid, .lang-grid, .feat-grid, .rev-top, .visit-grid, .book-grid { grid-template-columns: 1fr; }
-    .svc-grid, .rev-cards { grid-template-columns: repeat(2, 1fr); }
-    .foot-grid { grid-template-columns: 1fr 1fr; }
-    .hero-visual { min-height: 360px; }
-    .rev-top { gap: 28px; }
-  }
-  @media (max-width: 680px) {
-    .nav-links { display: none; }
-    .burger { display: flex; }
-    .nav-links.open {
-      display: flex; flex-direction: column; position: absolute; top: 64px; left: 16px; right: 16px;
-      background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 18px; gap: 16px;
-      box-shadow: var(--shadow-2); align-items: flex-start;
-    }
-    .svc-grid, .rev-cards { grid-template-columns: 1fr; }
-    .foot-grid { grid-template-columns: 1fr; }
-    .row2 { grid-template-columns: 1fr; }
-    .sec-pad { padding: 64px 0; }
-    .hero { padding: 124px 0 60px; }
-    .foot-bottom { flex-direction: column; align-items: flex-start; }
-  }
+@media(max-width:900px){
+  .hero-grid,.kids-grid,.book-grid{grid-template-columns:1fr}
+  .hero-art{order:-1;min-height:340px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hellos{grid-template-columns:repeat(2,1fr)}
+  .high-grid,.quotes,.foot-grid{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .navlinks.open{display:flex;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:20px 22px;gap:16px;border-bottom:1px solid #eef1f5;box-shadow:var(--shadow)}
+  .burger{display:flex}
+  .nav .btn-mint{display:none}
+}
+@media(max-width:540px){
+  .grid{grid-template-columns:1fr}
+  .hellos{grid-template-columns:1fr 1fr}
+  .lang,.review,.book,.insure{padding:36px 22px}
+}
 </style>
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <div class="wrap nav-inner">
-    <a href="#top" class="brand" aria-label="Auburn Smiles home">
-      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <rect width="48" height="48" rx="13" fill="#0fbfa0"/>
-        <path d="M14 18c0-2 3-4 10-4s10 2 10 4c0 4-2 5-3 8-1 2-1 6-3 6-1.6 0-1.8-3-4-3s-2.4 3-4 3c-2 0-2-4-3-6-1-3-3-4-3-8z" fill="#fff"/>
-        <path d="M19 22c2-1 8-1 10 0" stroke="#0fbfa0" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      <span>Auburn Smiles</span>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a class="lnk" href="#services">Services</a>
-      <a class="lnk" href="#languages">Our Team</a>
-      <a class="lnk" href="#smiles">Smile Care</a>
-      <a class="lnk" href="#reviews">Reviews</a>
-      <a class="lnk nav-call" href="tel:+61289574096">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="#0fbfa0" stroke-width="2" stroke-linejoin="round"/></svg>
-        02 8957 4096
-      </a>
-      <a class="btn btn-primary" href="#book" style="padding:11px 20px;">Book a visit</a>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C8 2 6 4 4 4S1 7 2 11c1 4 1 11 3 11s2-5 4-5 2 5 4 5 1-2 1-5c0-2 1-1 1 0 0 3 0 5 2 5s2-7 3-11c1-4-1-7-2-7s-4-2-6-2z"/></svg>
+    </span>Auburn<b>Smiles</b></a>
+    <nav class="navlinks" id="menu">
+      <a href="#services">Services</a>
+      <a href="#languages">Languages</a>
+      <a href="#kids">For Kids</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#book">Contact</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="#book" class="btn btn-mint">Book a Visit</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow reveal">Family dental on Auburn Road</span>
-      <h1 class="reveal d1">Bright, gentle dental care for the
-        <span class="accent">whole family
-          <svg viewBox="0 0 240 14" preserveAspectRatio="none" fill="none"><path d="M2 9C44 3 120 2 238 6" stroke="#0fbfa0" stroke-width="4" stroke-linecap="round"/></svg>
-        </span>
-      </h1>
-      <p class="lead reveal d2">Auburn Smiles is a welcoming family practice with a multilingual team. From a child's first check-up to clear aligners and cosmetic work, we keep your visit calm, clear and easy.</p>
-      <div class="hero-cta reveal d3">
-        <a class="btn btn-primary" href="#book">Book an appointment</a>
-        <a class="btn btn-ghost" href="#services">See our services</a>
+    <div>
+      <span class="eyebrow">Family Dental - Auburn NSW</span>
+      <h1>Smiles for the <span class="hl">whole family</span>, in your language</h1>
+      <p class="lead">A warm, welcoming dental home for every age. Our multilingual team speaks English, Farsi, Arabic and Dari, so you always feel right at home.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-primary">Book an Appointment</a>
+        <a href="tel:+61289574096" class="btn btn-ghost">Call +61 2 8957 4096</a>
       </div>
-      <div class="hero-trust reveal d4">
-        <span class="stars" aria-label="4.9 star rating">
-          <span class="starset"></span>
-        </span>
-        <span class="trust-text"><b>4.9 out of 5</b> from <b>167</b> Google reviews</span>
+      <div class="hero-trust">
+        <div><b>4.9</b>167 Google reviews</div>
+        <div><b>4</b>Languages spoken</div>
+        <div><b>$1000</b>Child dental benefit</div>
       </div>
     </div>
-
-    <div class="hero-visual reveal d2">
-      <div class="smile-card">
-        <!-- animated tooth + smile motif -->
-        <svg id="heroTooth" viewBox="0 0 240 250" width="260" aria-hidden="true">
-          <defs>
-            <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#ffffff"/>
-              <stop offset="1" stop-color="#e8faf5"/>
-            </linearGradient>
-            <linearGradient id="sparkleG" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#0fbfa0"/>
-              <stop offset="1" stop-color="#0a9c83"/>
-            </linearGradient>
-          </defs>
-          <!-- ring -->
-          <circle cx="120" cy="125" r="96" fill="none" stroke="#0fbfa0" stroke-width="2" stroke-dasharray="6 10" opacity="0.5">
-            <animateTransform attributeName="transform" type="rotate" from="0 120 125" to="360 120 125" dur="40s" repeatCount="indefinite"/>
-          </circle>
-          <!-- tooth body -->
-          <path d="M120 50c34 0 56 16 56 40 0 28-12 36-18 60-6 22-8 48-22 48-12 0-12-28-16-28s-4 28-16 28c-14 0-16-26-22-48-6-24-18-32-18-60 0-24 22-40 56-40z" fill="url(#tg)" stroke="#0fbfa0" stroke-width="3"/>
-          <path d="M92 96c18-8 38-8 56 0" stroke="#0fbfa0" stroke-width="3.4" stroke-linecap="round" fill="none"/>
-          <!-- sparkle -->
-          <g class="sparkle" transform="translate(150 78)">
-            <path d="M0 -16 L4 -4 L16 0 L4 4 L0 16 L-4 4 L-16 0 L-4 -4 Z" fill="url(#sparkleG)">
-              <animateTransform attributeName="transform" type="scale" values="0.8;1.15;0.8" dur="2.6s" repeatCount="indefinite"/>
-            </path>
-          </g>
-          <g class="sparkle2" transform="translate(86 152)">
-            <path d="M0 -9 L2.4 -2.4 L9 0 L2.4 2.4 L0 9 L-2.4 2.4 L-9 0 L-2.4 -2.4 Z" fill="#0fbfa0" opacity="0.8">
-              <animateTransform attributeName="transform" type="scale" values="1;1.4;1" dur="3.2s" repeatCount="indefinite"/>
-            </path>
-          </g>
-        </svg>
-
-        <div class="float-chip fc-1">
-          <span class="ic">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          </span>
-          <span>Gentle care<small>kids welcome</small></span>
-        </div>
-        <div class="float-chip fc-2">
-          <span class="ic">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span>Same-day care<small>for emergencies</small></span>
-        </div>
-        <div class="float-chip fc-3">
-          <span class="ic">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </span>
-          <span>Multilingual team<small>5+ languages</small></span>
-        </div>
+    <div class="hero-art">
+      <div class="blob"></div>
+      <span class="sparkle s1">✨</span>
+      <span class="sparkle s2">⭐</span>
+      <span class="sparkle s3">💫</span>
+      <svg class="tooth-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+        <g class="face">
+          <path d="M100 14C70 14 52 24 36 24S14 40 18 70c5 36 8 110 26 110s14-44 30-44 16 44 26 44 16 44 26 44 12-8 12-44c0-16 8-8 8 4 0 36 6 36 16-4 8-32 12-100 16-110 4-30-12-46-18-46s-30-10-44-10z" fill="#fff" stroke="#e3ece9" stroke-width="3"/>
+          <circle cx="74" cy="92" r="9" fill="#1f2a44"/>
+          <circle cx="126" cy="92" r="9" fill="#1f2a44"/>
+          <circle cx="77" cy="89" r="3" fill="#fff"/>
+          <circle cx="129" cy="89" r="3" fill="#fff"/>
+          <ellipse cx="58" cy="116" rx="11" ry="7" fill="#ffb3a8" opacity=".75"/>
+          <ellipse cx="142" cy="116" rx="11" ry="7" fill="#ffb3a8" opacity=".75"/>
+          <path d="M70 120 Q100 150 130 120" fill="none" stroke="#ff6b5e" stroke-width="7" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div class="rating-chip">
+        <span class="num">4.9</span>
+        <div><span class="stars">★★★★★</span><small>167 reviews</small></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- marquee strip -->
-<div class="strip" aria-hidden="true">
-  <div class="strip-track">
-    <span>Check-ups and cleans</span><span>Children's dentistry</span><span>Clear aligners</span><span>Teeth whitening</span><span>Veneers</span><span>Dental implants</span><span>Root canal therapy</span><span>Wisdom teeth removal</span>
-    <span>Check-ups and cleans</span><span>Children's dentistry</span><span>Clear aligners</span><span>Teeth whitening</span><span>Veneers</span><span>Dental implants</span><span>Root canal therapy</span><span>Wisdom teeth removal</span>
+<div class="band">
+  <div class="band-track">
+    <span><i>●</i> Check-ups and Cleans</span><span><i>●</i> Children's Dentistry</span><span><i>●</i> Cosmetic Dentistry</span><span><i>●</i> Teeth Whitening</span><span><i>●</i> Clear Aligners</span><span><i>●</i> Dental Implants</span><span><i>●</i> HICAPS On The Spot</span>
+    <span><i>●</i> Check-ups and Cleans</span><span><i>●</i> Children's Dentistry</span><span><i>●</i> Cosmetic Dentistry</span><span><i>●</i> Teeth Whitening</span><span><i>●</i> Clear Aligners</span><span><i>●</i> Dental Implants</span><span><i>●</i> HICAPS On The Spot</span>
   </div>
 </div>
 
-<!-- ============ SERVICES ============ -->
-<section class="services sec-pad" id="services">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What we do</span>
-      <h2>One practice for every stage of your smile</h2>
-      <p>From routine care to cosmetic transformations, our Auburn team handles it all under one roof, with clear pricing explained before we begin.</p>
+    <div class="sec-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Gentle, complete care under one roof</h2>
+      <p>From a child's first check-up to a brand new smile, our family practice has every treatment you need close to home.</p>
     </div>
-    <div class="svc-grid">
-      <article class="svc reveal">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg></div>
-        <h3>Check-ups and cleans</h3>
-        <p>Thorough exams, professional scale and clean, plus tailored advice to keep problems away before they start.</p>
-      </article>
-      <article class="svc reveal d1">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="14" r="2.2" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-3 3-4 5-4M13 20c0-2 2-3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Children's dentistry</h3>
-        <p>Friendly, unhurried visits that help little ones feel safe and build healthy habits from their very first tooth.</p>
-      </article>
-      <article class="svc reveal d2">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>Cosmetic dentistry</h3>
-        <p>Subtle, natural enhancements designed around your face, so your smile looks like the best version of you.</p>
-      </article>
-      <article class="svc reveal">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4c4 0 7 2 7 5 0 4-2 5-3 8-1 2-1 3-4 3s-3-1-4-3c-1-3-3-4-3-8 0-3 3-5 7-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 5l1.5-1.5M18 8l1.8-.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <h3>Teeth whitening</h3>
-        <p>Safe, dentist-supervised whitening in-chair or take-home, for a brighter shade without the sensitivity surprises.</p>
-      </article>
-      <article class="svc reveal d1">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="8" width="16" height="8" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 8v8M12 8v8M16 8v8" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <h3>Clear aligners</h3>
-        <p>Discreet, removable aligners that straighten teeth gradually, mapped out with a digital plan from day one.</p>
-      </article>
-      <article class="svc reveal d2">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="5" height="16" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="5" height="16" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
-        <h3>Veneers</h3>
-        <p>Hand-finished porcelain veneers to reshape, brighten and restore chipped or worn front teeth.</p>
-      </article>
-      <article class="svc reveal">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v8M12 11l-3 7M12 11l3 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="3.5" r="1.6" stroke="currentColor" stroke-width="2"/></svg></div>
-        <h3>Dental implants</h3>
-        <p>Long-lasting replacements for missing teeth that look, feel and function like the real thing.</p>
-      </article>
-      <article class="svc reveal d1">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4c4 0 6 2 6 5 0 4-2 5-3 8-1 2-1 3-3 3s-2-1-3-3c-1-3-3-4-3-8 0-3 2-5 6-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2" fill="currentColor"/></svg></div>
-        <h3>Root canal therapy</h3>
-        <p>Comfortable, modern treatment that relieves pain and saves a tooth that would otherwise be lost.</p>
-      </article>
-      <article class="svc reveal d2">
-        <div class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 4c3 0 4 2 4 4s1 4-1 5-4-1-4-4-2-5 1-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 20l6-6M16 14l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Wisdom teeth removal</h3>
-        <p>Carefully planned extractions with clear aftercare, keeping you comfortable before, during and after.</p>
-      </article>
+    <div class="grid">
+      <div class="card c1"><div class="ic">🪥</div><h3>Check-ups and Cleans</h3><p>Regular exams and professional cleans to keep every smile fresh and healthy.</p></div>
+      <div class="card c2"><div class="ic">🧒</div><h3>Children's Dentistry</h3><p>Friendly, no-pressure visits that help little ones love the dentist.</p></div>
+      <div class="card c3"><div class="ic">✨</div><h3>Cosmetic Dentistry</h3><p>Subtle, natural enhancements designed around your unique smile.</p></div>
+      <div class="card c4"><div class="ic">💎</div><h3>Teeth Whitening</h3><p>Safe, professional whitening for a brighter, more confident grin.</p></div>
+      <div class="card c5"><div class="ic">😁</div><h3>Clear Aligners</h3><p>Discreet, removable aligners that straighten teeth on your schedule.</p></div>
+      <div class="card c6"><div class="ic">🦷</div><h3>Veneers</h3><p>Custom porcelain veneers to reshape, brighten and perfect your look.</p></div>
+      <div class="card c7"><div class="ic">🔩</div><h3>Dental Implants</h3><p>Strong, natural-looking replacements for missing teeth.</p></div>
+      <div class="card c8"><div class="ic">🩹</div><h3>Root Canal Therapy</h3><p>Comfortable treatment to save and protect a damaged tooth.</p></div>
+      <div class="card c9"><div class="ic">🦴</div><h3>Wisdom Teeth Removal</h3><p>Careful, gentle removal with calm aftercare you can rely on.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ MULTILINGUAL BAND ============ -->
-<section class="lang-band sec-pad" id="languages">
-  <div class="wrap lang-grid">
-    <div class="reveal">
-      <span class="eyebrow">A team that speaks your language</span>
-      <h2 style="font-size:clamp(2rem,3.8vw,2.9rem);font-weight:800;margin-top:14px;">Care feels easier in your own words</h2>
-      <p style="color:var(--navy-soft);margin-top:16px;font-size:1.05rem;">Auburn is one of Sydney's most multicultural neighbourhoods, and our team reflects it. From the front desk to the chair, you can talk through your treatment in a language that feels natural to you and your family.</p>
-      <div class="lang-chips">
-        <span class="chip"><span class="dot"></span>English</span>
-        <span class="chip"><span class="dot"></span>Arabic</span>
-        <span class="chip"><span class="dot"></span>Mandarin</span>
-        <span class="chip"><span class="dot"></span>Turkish</span>
-        <span class="chip"><span class="dot"></span>Hindi</span>
-        <span class="chip"><span class="dot"></span>Urdu</span>
-        <span class="chip"><span class="dot"></span>Cantonese</span>
-      </div>
-    </div>
-    <div class="lang-visual reveal d1">
-      <div class="hello-cycle">
-        <span id="helloWord">Hello</span>
-        <span class="lang-name" id="helloLang">English</span>
-      </div>
-      <p class="note">However you say hello, you will be greeted warmly. Let us know your preferred language when you book and we will pair you with the right team member.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FEATURE: ALIGNERS + WHITENING ============ -->
-<section class="feature sec-pad" id="smiles">
+<section class="sec" id="languages" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Straighten and brighten</span>
-      <h2>Two of the most loved treatments at Auburn Smiles</h2>
-      <p style="color:#b9d4cd;">Whether you want straighter teeth without metal braces or a brighter shade for a big day, we plan it properly and keep it comfortable.</p>
-    </div>
-    <div class="feat-grid">
-      <article class="feat-card tall reveal">
-        <div class="smile-anim">
-          <svg viewBox="0 0 200 90" width="180" aria-hidden="true">
-            <!-- aligner row of teeth -->
-            <g>
-              <rect x="10" y="30" width="20" height="30" rx="6" fill="#fff"/>
-              <rect x="34" y="26" width="22" height="34" rx="6" fill="#fff"/>
-              <rect x="60" y="24" width="24" height="36" rx="7" fill="#fff"/>
-              <rect x="88" y="24" width="24" height="36" rx="7" fill="#fff"/>
-              <rect x="116" y="26" width="22" height="34" rx="6" fill="#fff"/>
-              <rect x="142" y="30" width="20" height="30" rx="6" fill="#fff"/>
-              <rect x="166" y="34" width="18" height="26" rx="6" fill="#fff"/>
-            </g>
-            <rect x="6" y="20" width="186" height="52" rx="22" fill="none" stroke="#0fbfa0" stroke-width="3" opacity="0.85">
-              <animate attributeName="opacity" values="0.4;0.95;0.4" dur="2.8s" repeatCount="indefinite"/>
-            </rect>
-          </svg>
-        </div>
-        <h3>Clear aligners</h3>
-        <p>A modern path to straighter teeth, planned with a digital scan so you can preview your result before you start.</p>
-        <ul class="feat-bullets">
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Removable for eating and cleaning</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Nearly invisible day to day</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Fewer visits than traditional braces</li>
-        </ul>
-      </article>
-      <article class="feat-card reveal d1">
-        <span class="feat-num" data-count="3">3</span>
-        <h3>Whitening, done safely</h3>
-        <p>Lighten your smile by several shades with dentist-supervised whitening, in-chair for speed or take-home at your pace. We protect your gums and manage sensitivity the whole way.</p>
-        <ul class="feat-bullets">
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>In-chair results in a single visit</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom take-home trays available</li>
-        </ul>
-      </article>
+    <div class="lang">
+      <span class="eyebrow" style="background:rgba(255,255,255,.2);color:#fff">Hello In Your Language</span>
+      <h2>Care that speaks your language</h2>
+      <p>No need to explain through a translator. Our team helps you feel understood and comfortable in English, Farsi, Arabic and Dari.</p>
+      <div class="hellos">
+        <div class="hello"><div class="word">Hello</div><div class="name">English</div></div>
+        <div class="hello"><div class="word">سلام</div><div class="name">Farsi</div></div>
+        <div class="hello"><div class="word">مرحبا</div><div class="name">Arabic</div></div>
+        <div class="hello"><div class="word">روغ بخیر</div><div class="name">Dari</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ REVIEWS ============ -->
-<section class="reviews sec-pad" id="reviews">
+<section class="sec" id="kids" style="padding-top:0">
+  <div class="wrap kids-grid">
+    <div class="kids-art">
+      <div class="kid-row">
+        <div class="kid-pill"><div class="e">🪥</div><b>Free toothbrush</b></div>
+        <div class="kid-pill"><div class="e">🌈</div><b>Free stickers</b></div>
+        <div class="kid-pill"><div class="e">🎈</div><b>Happy visits</b></div>
+      </div>
+      <div class="medi">💙 Up to $1000 Medicare Child Dental Benefit for eligible kids - bulk billed where it applies.</div>
+    </div>
+    <div>
+      <span class="eyebrow">Made For Little Smiles</span>
+      <h2>Where kids actually look forward to the dentist</h2>
+      <ul class="kids-list">
+        <li><span class="tick">✓</span>A calm, colourful space designed to put children at ease.</li>
+        <li><span class="tick">✓</span>Gentle dentists who explain every step in simple, friendly words.</li>
+        <li><span class="tick">✓</span>Free stickers and a toothbrush to take home after every visit.</li>
+        <li><span class="tick">✓</span>Healthy habits started early to protect those growing teeth.</li>
+      </ul>
+      <a href="#book" class="btn btn-primary" style="margin-top:26px">Book Your Child's Check-up</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap high-grid">
+    <div class="high-card hc-align">
+      <span class="emoji">😁</span>
+      <h3>Clear Aligners</h3>
+      <p>Straighten your teeth without anyone noticing. Removable, comfortable aligners that fit neatly into family life.</p>
+      <a href="#book" class="btn">Ask About Aligners</a>
+    </div>
+    <div class="high-card hc-white">
+      <span class="emoji">✨</span>
+      <h3>Teeth Whitening</h3>
+      <p>A brighter smile in time for the moments that matter. Professional whitening tailored to your enamel and shade.</p>
+      <a href="#book" class="btn">Brighten My Smile</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="rev-top">
-      <div class="score-box reveal">
-        <div class="score-num" id="scoreNum">4.9</div>
-        <div class="stars"><span class="starset"></span></div>
-        <div class="meta">Rated by <b style="color:var(--navy)" id="revCount">167</b> patients on Google</div>
+    <div class="insure">
+      <span class="eyebrow">Easy Payments</span>
+      <h2>Claim your health fund on the spot</h2>
+      <p style="color:var(--navy-soft);margin-top:12px">Swipe your card and claim instantly with HICAPS. We welcome all major funds.</p>
+      <div class="ins-row">
+        <span class="ins-pill">HICAPS</span>
+        <span class="ins-pill">Bupa</span>
+        <span class="ins-pill">Medibank</span>
+        <span class="ins-pill">HCF</span>
+        <span class="ins-pill">Medicare</span>
       </div>
-      <div class="reveal d1">
-        <span class="eyebrow">In our patients' words</span>
-        <h2 style="font-size:clamp(2rem,3.8vw,2.9rem);font-weight:800;margin-top:14px;">Trusted by Auburn families, year after year</h2>
-        <p style="color:var(--navy-soft);margin-top:16px;font-size:1.05rem;">Real reviews from people who walked in nervous and left smiling. We are proud of the relationships we build, one appointment at a time.</p>
-      </div>
-    </div>
-    <div class="rev-cards">
-      <article class="rev reveal">
-        <div class="stars"><span class="starset"></span></div>
-        <p>"Took my two kids here and the team was so patient with them. My youngest actually asked when we can go back to the dentist. Never thought I'd hear that."</p>
-        <div class="who"><span class="av" style="background:#0fbfa0;">SH</span><div><b>Sara H.</b><small>Auburn</small></div></div>
-      </article>
-      <article class="rev reveal d1">
-        <div class="stars"><span class="starset"></span></div>
-        <p>"Got my clear aligners through Auburn Smiles. They explained every step and the digital scan let me see the end result first. Six months in and my smile looks great."</p>
-        <div class="who"><span class="av" style="background:#0b2540;">MT</span><div><b>Mehmet T.</b><small>Lidcombe</small></div></div>
-      </article>
-      <article class="rev reveal d2">
-        <div class="stars"><span class="starset"></span></div>
-        <p>"Being able to talk through my treatment in Arabic made such a difference for my mum. Kind, professional and never rushed. Highly recommend this practice."</p>
-        <div class="who"><span class="av" style="background:#0a9c83;">AK</span><div><b>Amira K.</b><small>Berala</small></div></div>
-      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ VISIT / FAMILY ============ -->
-<section class="visit sec-pad">
-  <div class="wrap visit-grid">
-    <div class="reveal">
-      <span class="eyebrow">Your first visit</span>
-      <h2 style="font-size:clamp(2rem,3.8vw,2.9rem);font-weight:800;margin:14px 0 8px;">Simple, calm and clear from the start</h2>
-      <p style="color:var(--navy-soft);margin-bottom:24px;font-size:1.05rem;">No confusing jargon and no surprise bills. Here is how an appointment usually runs at Auburn Smiles.</p>
-      <div class="steps">
-        <div class="step"><span class="no">1</span><div><h4>Get in touch</h4><p>Call us or book online and tell us your preferred language and any concerns.</p></div></div>
-        <div class="step"><span class="no">2</span><div><h4>Friendly examination</h4><p>We check your teeth and gums, listen to what matters to you, and answer every question.</p></div></div>
-        <div class="step"><span class="no">3</span><div><h4>A clear plan</h4><p>You receive a written plan with options and costs, so you decide what is right for you.</p></div></div>
+<section class="sec" id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="review">
+      <span class="eyebrow" style="background:rgba(255,255,255,.16);color:#fff">Loved By Auburn Families</span>
+      <div class="big">4.9</div>
+      <div class="stars">★★★★★</div>
+      <p class="sub">Rated 4.9 out of 5 from 167 Google reviews by the families of Auburn and beyond.</p>
+      <div class="quotes">
+        <div class="quote"><div class="qs">★★★★★</div><p>"So gentle with my kids and they explained everything in Arabic for my mum. We finally found our family dentist."</p><b>- Local family</b></div>
+        <div class="quote"><div class="qs">★★★★★</div><p>"Clean, friendly and never rushed. My whitening results were better than I expected. Highly recommend."</p><b>- Verified patient</b></div>
+        <div class="quote"><div class="qs">★★★★★</div><p>"Being able to speak Farsi made the whole visit relaxed. Honest advice and zero pressure every time."</p><b>- Auburn local</b></div>
       </div>
-    </div>
-    <div class="hours-card reveal d1">
-      <h3>Opening hours</h3>
-      <div class="hours-row"><span>Monday</span><span>9:00 to 6:00</span></div>
-      <div class="hours-row"><span>Tuesday</span><span>9:00 to 6:00</span></div>
-      <div class="hours-row"><span>Wednesday</span><span>9:00 to 6:00</span></div>
-      <div class="hours-row"><span>Thursday</span><span>9:00 to 7:00</span></div>
-      <div class="hours-row"><span>Friday</span><span>9:00 to 6:00</span></div>
-      <div class="hours-row"><span>Saturday</span><span>9:00 to 2:00</span></div>
-      <div class="hours-row closed"><span>Sunday</span><span>Closed</span></div>
-      <a class="btn btn-primary" href="#book" style="width:100%;margin-top:22px;">Reserve your time</a>
     </div>
   </div>
 </section>
 
-<!-- ============ BOOKING ============ -->
-<section class="booking sec-pad" id="book">
-  <div class="wrap book-grid">
-    <div class="reveal">
-      <span class="eyebrow">Book your visit</span>
-      <h2>Ready when you are</h2>
-      <p class="bsub">Pick a time that suits your family and we will take care of the rest. Prefer to talk first? Give us a call and our friendly reception will help you choose.</p>
-      <a class="call-card" href="tel:+61289574096">
-        <span class="pic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></span>
-        <span><small>Call the practice</small><span class="num">+61 2 8957 4096</span></span>
-      </a>
-      <p style="margin-top:20px;color:#e3fff9;font-size:0.95rem;display:flex;align-items:center;gap:10px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="#fff" stroke-width="2"/></svg>
-        26 Auburn Road, Auburn NSW 2144
-      </p>
-    </div>
-
-    <div class="book-form reveal d1">
-      <form id="bookForm" novalidate>
-        <h3>Request an appointment</h3>
-        <p class="fhint">We will confirm your booking within one business day.</p>
-        <div class="field">
-          <label for="bname">Full name</label>
-          <input id="bname" name="name" type="text" placeholder="Your name" required />
-        </div>
-        <div class="row2">
-          <div class="field">
-            <label for="bphone">Phone</label>
-            <input id="bphone" name="phone" type="tel" placeholder="04xx xxx xxx" required />
-          </div>
-          <div class="field">
-            <label for="bservice">Service</label>
-            <select id="bservice" name="service">
-              <option>Check-up and clean</option>
-              <option>Children's dentistry</option>
-              <option>Teeth whitening</option>
-              <option>Clear aligners</option>
-              <option>Cosmetic or veneers</option>
-              <option>Dental implants</option>
-              <option>Root canal therapy</option>
-              <option>Wisdom teeth removal</option>
-              <option>Something else</option>
-            </select>
+<section class="sec" id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="book">
+      <div class="book-grid">
+        <div>
+          <span class="eyebrow">Book Your Visit</span>
+          <h2>Let's get your family <span class="hl">smiling</span></h2>
+          <p>Pop in your details and we will call you back to confirm a time that suits. Prefer to chat now? Give us a ring.</p>
+          <div class="book-info">
+            <div class="bi"><div class="ic">📍</div><div><b>26 Auburn Road</b><span>Auburn NSW 2144</span></div></div>
+            <div class="bi"><div class="ic">📞</div><div><b><a href="tel:+61289574096">+61 2 8957 4096</a></b><span>Call or text to book</span></div></div>
+            <div class="bi"><div class="ic">🌏</div><div><b>English, Farsi, Arabic, Dari</b><span>Multilingual team on site</span></div></div>
+            <div class="bi"><div class="ic">💳</div><div><b>HICAPS and major funds</b><span>Claim on the spot</span></div></div>
           </div>
         </div>
-        <div class="field">
-          <label for="blang">Preferred language (optional)</label>
-          <input id="blang" name="lang" type="text" placeholder="e.g. Arabic, Mandarin, Turkish" />
+        <div class="bform">
+          <h3>Request an appointment</h3>
+          <form id="bookForm">
+            <div class="field"><label>Your name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
+            <div class="field"><label>Phone number</label><input type="tel" name="phone" placeholder="04xx xxx xxx" required></div>
+            <div class="field"><label>Service</label>
+              <select name="service">
+                <option>Check-up and Clean</option>
+                <option>Children's Dentistry</option>
+                <option>Teeth Whitening</option>
+                <option>Clear Aligners</option>
+                <option>Cosmetic / Veneers</option>
+                <option>Dental Implants</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field"><label>Preferred language</label>
+              <select name="lang">
+                <option>English</option><option>Farsi</option><option>Arabic</option><option>Dari</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Request My Appointment</button>
+            <a href="tel:+61289574096" class="bphone">or call +61 2 8957 4096</a>
+            <div class="ok" id="okMsg">Thank you! We will call you shortly to confirm your visit. 😊</div>
+          </form>
         </div>
-        <button class="btn btn-primary" type="submit" style="width:100%;margin-top:8px;">Send request</button>
-      </form>
-      <div class="form-ok" id="formOk">
-        <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Thank you, request received</h3>
-        <p style="color:var(--navy-soft);margin-top:6px;">Our team will call you shortly to confirm. For anything urgent, please ring 02 8957 4096.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-brand">
-          <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="13" fill="#0fbfa0"/><path d="M14 18c0-2 3-4 10-4s10 2 10 4c0 4-2 5-3 8-1 2-1 6-3 6-1.6 0-1.8-3-4-3s-2.4 3-4 3c-2 0-2-4-3-6-1-3-3-4-3-8z" fill="#fff"/></svg>
-          Auburn Smiles
-        </div>
-        <p class="fdesc">A family dental practice on Auburn Road with a warm, multilingual team. Caring for the smiles of Auburn and the surrounding suburbs.</p>
-        <div class="stars" style="margin-top:16px;"><span class="starset"></span></div>
-        <p style="font-size:0.86rem;margin-top:8px;color:#9fbab4;">4.9 stars from 167 Google reviews</p>
+        <a href="#top" class="logo"><span class="mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C8 2 6 4 4 4S1 7 2 11c1 4 1 11 3 11s2-5 4-5 2 5 4 5 1-2 1-5c0-2 1-1 1 0 0 3 0 5 2 5s2-7 3-11c1-4-1-7-2-7s-4-2-6-2z"/></svg>
+        </span>Auburn<b style="color:var(--mint)">Smiles</b></a>
+        <p>A friendly family dental practice in the heart of Auburn, caring for smiles of every age and language.</p>
       </div>
       <div class="foot-col">
-        <h5>Practice</h5>
+        <h4>Visit Us</h4>
+        <p>26 Auburn Road<br>Auburn NSW 2144</p>
+        <p><a href="tel:+61289574096">+61 2 8957 4096</a></p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
         <a href="#services">Services</a>
-        <a href="#languages">Our team</a>
-        <a href="#smiles">Smile care</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#book">Book a visit</a>
-      </div>
-      <div class="foot-col">
-        <h5>Visit us</h5>
-        <p>26 Auburn Road<br/>Auburn NSW 2144</p>
-        <a href="tel:+61289574096">+61 2 8957 4096</a>
-        <p>Mon to Fri 9:00 to 6:00<br/>Sat 9:00 to 2:00</p>
+        <a href="#languages">Languages</a>
+        <a href="#kids">For Kids</a>
+        <a href="#book">Book a Visit</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; <span id="year"></span> Auburn Smiles. All rights reserved.</span>
-      <span class="credit">Concept site by WebCraft Global</span>
+      <p>© 2026 Auburn Smiles - 26 Auburn Road, Auburn NSW 2144 - +61 2 8957 4096</p>
+      <p class="concept">Concept site by WebCraft Global</p>
     </div>
   </div>
 </footer>
 
 <script>
-(function () {
-  // ----- year -----
-  document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  var burger=document.getElementById('burger');
+  var menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
 
-  // ----- star sets (render 5 mint stars) -----
-  var starSVG = '<svg viewBox="0 0 24 24" fill="#ffb43a"><path d="M12 2l2.9 6 6.6.6-5 4.3 1.6 6.5L12 16.5 5.9 19.9l1.6-6.5-5-4.3 6.6-.6z"/></svg>';
-  document.querySelectorAll('.starset').forEach(function (el) {
-    el.innerHTML = starSVG.repeat(5);
-  });
-
-  // ----- sticky nav -----
-  var nav = document.getElementById('nav');
-  function onScroll() {
-    if (window.scrollY > 24) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // ----- mobile menu -----
-  var burger = document.getElementById('burger');
-  var navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', function () { navLinks.classList.toggle('open'); });
-  navLinks.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { navLinks.classList.remove('open'); });
-  });
-
-  // ----- scroll reveal -----
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-
-  // ----- multilingual hello cycle -----
-  var hellos = [
-    { word: 'Hello', lang: 'English' },
-    { word: 'مرحبا', lang: 'Arabic' },
-    { word: '你好', lang: 'Mandarin' },
-    { word: 'Merhaba', lang: 'Turkish' },
-    { word: 'नमस्ते', lang: 'Hindi' },
-    { word: 'آداب', lang: 'Urdu' }
-  ];
-  var hi = 0;
-  var hWord = document.getElementById('helloWord');
-  var hLang = document.getElementById('helloLang');
-  setInterval(function () {
-    hi = (hi + 1) % hellos.length;
-    hWord.style.opacity = 0; hLang.style.opacity = 0;
-    setTimeout(function () {
-      hWord.textContent = hellos[hi].word;
-      hLang.textContent = hellos[hi].lang;
-      hWord.style.transition = 'opacity .4s'; hLang.style.transition = 'opacity .4s';
-      hWord.style.opacity = 1; hLang.style.opacity = 1;
-    }, 350);
-  }, 2400);
-
-  // ----- count up for score + review count -----
-  function countUp(el, target, dur, decimals) {
-    var start = 0, t0 = null;
-    function step(ts) {
-      if (!t0) t0 = ts;
-      var p = Math.min((ts - t0) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      var val = start + (target - start) * eased;
-      el.textContent = decimals ? val.toFixed(1) : Math.round(val);
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  var scoreFired = false;
-  var scoreEl = document.getElementById('scoreNum');
-  var revEl = document.getElementById('revCount');
-  var sObs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting && !scoreFired) {
-        scoreFired = true;
-        countUp(scoreEl, 4.9, 1200, true);
-        countUp(revEl, 167, 1400, false);
-      }
-    });
-  }, { threshold: 0.5 });
-  if (scoreEl) sObs.observe(scoreEl);
-
-  // ----- booking form -----
-  var form = document.getElementById('bookForm');
-  var ok = document.getElementById('formOk');
-  form.addEventListener('submit', function (e) {
+  var form=document.getElementById('bookForm');
+  form.addEventListener('submit',function(e){
     e.preventDefault();
-    var name = form.querySelector('#bname');
-    var phone = form.querySelector('#bphone');
-    var bad = false;
-    [name, phone].forEach(function (f) {
-      if (!f.value.trim()) { f.style.borderColor = '#e08a84'; bad = true; }
-      else { f.style.borderColor = ''; }
-    });
-    if (bad) return;
-    form.style.display = 'none';
-    ok.classList.add('show');
+    document.getElementById('okMsg').style.display='block';
+    form.querySelector('button[type=submit]').textContent='Request Sent!';
+    setTimeout(function(){form.reset();},400);
   });
 })();
 </script>

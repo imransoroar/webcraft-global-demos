@@ -1,1211 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CCL Interior Design | Creative Circle Lifestyle, Dhaka</title>
-<meta name="description" content="CCL Interior Design (Creative Circle Lifestyle) is a bold interior design and architecture studio in Dhaka. Residential, corporate, restaurant, retail and more." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCL Interior Design - Creative Circle Lifestyle | Dhaka</title>
+<meta name="description" content="CCL Interior Design (Creative Circle Lifestyle) - an art-directed interior design and turnkey execution studio in Dhaka, Bangladesh. Residential, corporate, restaurant, retail, hospitality and healthcare interiors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Archivo:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #111111;
-    --ink-soft: #1a1a1a;
-    --paper: #f4f1ea;
-    --paper-2: #ece7dc;
-    --coral: #ff5a3c;
-    --coral-deep: #e8441f;
-    --muted: #6b6660;
-    --line: rgba(17,17,17,0.14);
-    --maxw: 1280px;
-  }
+:root{
+  --ink:#121110;
+  --paper:#f4f0e8;
+  --paper2:#ebe5d8;
+  --ochre:#c9742d;
+  --ochre-deep:#a85d1f;
+  --rule:#1c1b19;
+  --mute:#6c655a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Archivo',sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:'Fraunces',serif;}
+.mono{font-family:'Space Mono',monospace;}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* ---------- masthead ---------- */
+.masthead{
+  position:sticky;top:0;z-index:60;
+  background:var(--ink);color:var(--paper);
+  border-bottom:1px solid var(--ink);
+}
+.masthead-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.55rem clamp(1rem,4vw,2.6rem);
+  gap:1rem;
+}
+.brand{display:flex;align-items:baseline;gap:.6rem;letter-spacing:.02em}
+.brand .mark{
+  font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;
+  letter-spacing:-.02em;line-height:1;
+}
+.brand .mark b{color:var(--ochre)}
+.brand .tag{
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.32em;
+  text-transform:uppercase;color:#b9b2a4;display:none;
+}
+.nav{display:none;gap:1.7rem;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase}
+.nav a{position:relative;padding:.2rem 0;color:#cfc8ba;transition:color .25s}
+.nav a:hover{color:var(--ochre)}
+.nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--ochre);transition:width .3s}
+.nav a:hover::after{width:100%}
+.iss{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--ochre);text-transform:uppercase;white-space:nowrap}
+@media(min-width:680px){.brand .tag{display:block}}
+@media(min-width:1040px){.nav{display:flex}}
 
-  html { scroll-behavior: smooth; }
+/* ---------- cover ---------- */
+.cover{
+  position:relative;
+  padding:clamp(1.2rem,4vw,2.6rem);
+  border-bottom:3px solid var(--ink);
+  overflow:hidden;
+}
+.cover-grid{
+  display:grid;grid-template-columns:1fr;gap:1.4rem;
+  position:relative;z-index:2;
+}
+.cover-tagrow{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:center;
+  font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mute);
+  border-bottom:1px solid var(--rule);padding-bottom:.9rem;
+}
+.cover-tagrow b{color:var(--ochre)}
+.cover-head{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(3.2rem,15vw,12rem);
+  line-height:.86;letter-spacing:-.035em;
+  margin:.2rem 0 .1rem;
+}
+.cover-head .it{font-style:italic;font-weight:400;color:var(--ochre)}
+.cover-sub{
+  display:grid;grid-template-columns:1fr;gap:1.3rem;
+  align-items:end;margin-top:.4rem;
+}
+.cover-lede{
+  font-family:'Fraunces',serif;font-size:clamp(1.15rem,2.6vw,1.7rem);
+  line-height:1.32;max-width:34ch;font-weight:400;
+}
+.cover-lede b{font-weight:600}
+.cover-meta{
+  font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.13em;
+  line-height:2;color:var(--ink);text-transform:uppercase;
+}
+.cover-meta span{color:var(--ochre)}
+.cover-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.3rem}
+.btn{
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;padding:.85rem 1.5rem;border:1.5px solid var(--ink);
+  display:inline-flex;align-items:center;gap:.5rem;transition:.25s;
+  background:var(--ink);color:var(--paper);cursor:pointer;
+}
+.btn:hover{background:var(--ochre);border-color:var(--ochre);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
 
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+/* cover vignette art */
+.cover-art{
+  position:relative;height:clamp(220px,42vw,420px);
+  border:2px solid var(--ink);overflow:hidden;
+  background:var(--paper2);
+}
+.cover-art svg{display:block;width:100%;height:100%}
+.cover-cap{
+  position:absolute;left:0;bottom:0;
+  background:var(--ink);color:var(--paper);
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;
+  text-transform:uppercase;padding:.4rem .7rem;z-index:3;
+}
+@media(min-width:900px){
+  .cover-sub{grid-template-columns:1.4fr 1fr;}
+  .cover-grid{gap:1.8rem}
+}
 
-  ::selection { background: var(--coral); color: #fff; }
+/* marquee ticker */
+.ticker{
+  background:var(--ochre);color:var(--ink);
+  border-bottom:3px solid var(--ink);overflow:hidden;white-space:nowrap;
+  padding:.55rem 0;
+}
+.ticker-track{display:inline-block;animation:scroll 34s linear infinite}
+.ticker span{
+  font-family:'Fraunces',serif;font-weight:900;font-style:italic;
+  font-size:1.05rem;letter-spacing:-.01em;margin:0 .2rem;
+}
+.ticker .dot{color:var(--paper);font-style:normal;margin:0 .9rem}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  a { color: inherit; text-decoration: none; }
+/* section frame */
+.sec{padding:clamp(2.4rem,7vw,5rem) clamp(1.2rem,4vw,2.6rem)}
+.sec-rule{border-bottom:3px solid var(--ink)}
+.kicker{
+  font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ochre);
+  display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--ochre)}
+.sec-title{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(2rem,6vw,4.2rem);line-height:.95;letter-spacing:-.03em;
+  margin-bottom:1.2rem;
+}
+.sec-title .it{font-style:italic;font-weight:400}
 
-  .wrap {
-    width: 100%;
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+/* ---------- portfolio spreads ---------- */
+.spread{
+  display:grid;grid-template-columns:1fr;gap:0;
+  border-top:2px solid var(--ink);
+}
+.spread:last-child{border-bottom:2px solid var(--ink)}
+.spread-row{
+  display:grid;grid-template-columns:1fr;
+  border-bottom:1px solid var(--rule);
+}
+.spread-row:last-child{border-bottom:none}
+.spread-art{position:relative;min-height:240px;border-bottom:1px solid var(--rule);overflow:hidden;background:var(--paper2)}
+.spread-art svg{width:100%;height:100%;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.spread-row:hover .spread-art svg{transform:scale(1.05)}
+.spread-folio{
+  position:absolute;top:.7rem;left:.7rem;z-index:3;
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;
+  background:var(--ink);color:var(--paper);padding:.3rem .6rem;text-transform:uppercase;
+}
+.spread-txt{padding:clamp(1.4rem,4vw,2.6rem);display:flex;flex-direction:column;justify-content:center}
+.spread-sector{
+  font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--ochre);margin-bottom:.7rem;
+}
+.spread-name{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(1.7rem,4.5vw,3rem);line-height:.98;letter-spacing:-.02em;
+  margin-bottom:.7rem;
+}
+.spread-name .it{font-style:italic;font-weight:400;color:var(--ochre)}
+.spread-body{max-width:46ch;color:#34302a;margin-bottom:1rem}
+.spread-feats{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.1em;
+  text-transform:uppercase;border:1px solid var(--rule);padding:.35rem .65rem;
+  transition:.2s;
+}
+.spread-txt:hover .chip{border-color:var(--ochre)}
+@media(min-width:860px){
+  .spread-row{grid-template-columns:1.1fr 1fr}
+  .spread-row.flip .spread-art{order:2}
+  .spread-art{border-bottom:none;border-right:1px solid var(--rule)}
+  .spread-row.flip .spread-art{border-right:none;border-left:1px solid var(--rule)}
+}
 
-  .display {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-  }
+/* ---------- sector list ---------- */
+.sectors{background:var(--ink);color:var(--paper)}
+.sectors .kicker{color:var(--ochre)}
+.sectors .sec-title{color:var(--paper)}
+.sector-list{border-top:1px solid #3a352d;margin-top:1.6rem}
+.sec-item{
+  display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid #3a352d;padding:1.1rem 0;
+  cursor:default;transition:.3s;position:relative;
+}
+.sec-item .num{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--ochre);letter-spacing:.1em;min-width:2.4rem}
+.sec-item .nm{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(1.5rem,4.5vw,2.8rem);line-height:1;letter-spacing:-.02em;
+  transition:.3s;flex:1;min-width:60%;
+}
+.sec-item .ds{font-size:.82rem;color:#b3ac9e;max-width:30ch;flex:1;min-width:200px}
+.sec-item:hover{padding-left:1rem}
+.sec-item:hover .nm{color:var(--ochre);font-style:italic;font-weight:400}
+.sec-item:hover .ds{color:var(--paper)}
 
-  .eyebrow {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--coral-deep);
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .eyebrow::before {
-    content: "";
-    width: 26px;
-    height: 2px;
-    background: var(--coral);
-  }
+/* ---------- founder ---------- */
+.founder{background:var(--paper2)}
+.founder-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:start}
+.founder-portrait{
+  position:relative;border:2px solid var(--ink);background:var(--ink);
+  aspect-ratio:4/5;overflow:hidden;max-width:360px;
+}
+.founder-portrait svg{width:100%;height:100%;display:block}
+.founder-portrait .cap{
+  position:absolute;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:.5rem .7rem;
+}
+.founder-quote{
+  font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+  font-size:clamp(1.4rem,3.6vw,2.4rem);line-height:1.25;letter-spacing:-.01em;
+  margin:.4rem 0 1.4rem;
+}
+.founder-quote b{font-style:normal;font-weight:900;color:var(--ochre)}
+.founder-body{max-width:52ch;color:#34302a;margin-bottom:1.4rem}
+.founder-sig{font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;font-weight:600}
+.founder-role{font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:.3rem}
+.roles{display:grid;grid-template-columns:1fr;gap:0;margin-top:1.6rem;border-top:1px solid var(--rule)}
+.role{border-bottom:1px solid var(--rule);padding:.85rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.role .t{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem}
+.role .o{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--mute);text-align:right;text-transform:uppercase;max-width:18ch}
+@media(min-width:860px){
+  .founder-grid{grid-template-columns:360px 1fr;gap:3rem}
+  .roles{grid-template-columns:1fr 1fr;column-gap:2.2rem}
+}
 
-  /* ---------- NAV ---------- */
-  header.nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 80;
-    transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
-    padding: 22px 0;
-  }
-  header.nav.scrolled {
-    background: rgba(244,241,234,0.86);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 1px 0 var(--line);
-    padding: 14px 0;
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    font-size: 19px;
-  }
-  .brand .mark {
-    width: 34px; height: 34px;
-    flex: 0 0 34px;
-  }
-  .brand small {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 34px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .nav-links a.nlink {
-    position: relative;
-    padding: 4px 0;
-  }
-  .nav-links a.nlink::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 0; height: 2px;
-    background: var(--coral);
-    transition: width 0.3s ease;
-  }
-  .nav-links a.nlink:hover::after { width: 100%; }
-  .nav-cta {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 11px 20px;
-    border-radius: 100px;
-    font-weight: 600;
-    transition: transform 0.25s ease, background 0.25s ease;
-  }
-  .nav-cta:hover { background: var(--coral); transform: translateY(-2px); }
-  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: 0; }
-  .burger span { width: 26px; height: 2px; background: var(--ink); transition: 0.3s; }
+/* ---------- process ---------- */
+.process .step{
+  display:grid;grid-template-columns:1fr;gap:.6rem;
+  border-top:2px solid var(--ink);padding:1.6rem 0;
+  transition:.3s;
+}
+.process .step:last-child{border-bottom:2px solid var(--ink)}
+.step-no{
+  font-family:'Fraunces',serif;font-weight:900;font-style:italic;
+  font-size:clamp(2.4rem,7vw,4rem);line-height:.8;color:var(--ochre);
+}
+.step-name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.3rem,3.5vw,2rem);letter-spacing:-.02em;line-height:1.05}
+.step-body{max-width:54ch;color:#34302a}
+.step-pts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+.step:hover{padding-left:.8rem;background:var(--paper2)}
+@media(min-width:780px){
+  .process .step{grid-template-columns:auto 1fr;gap:2rem;align-items:start}
+  .step-no{min-width:5rem}
+}
 
-  /* ---------- HERO ---------- */
-  .hero {
-    position: relative;
-    padding: 168px 0 70px;
-    overflow: hidden;
-  }
-  .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(circle at 70% 30%, #000 0%, transparent 72%);
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  .hero .wrap { position: relative; z-index: 2; }
-  .hero-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 26px;
-  }
-  .hero-top .meta {
-    text-align: right;
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.5;
-    max-width: 260px;
-  }
-  .hero-top .meta b { color: var(--ink); font-weight: 600; }
-  h1.hero-title {
-    font-size: clamp(48px, 11vw, 152px);
-    text-transform: uppercase;
-  }
-  h1.hero-title .accent { color: var(--coral); }
-  h1.hero-title .outline {
-    color: transparent;
-    -webkit-text-stroke: 2px var(--ink);
-  }
-  .hero-foot {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-    align-items: end;
-  }
-  .hero-lead {
-    font-size: clamp(18px, 2.2vw, 23px);
-    max-width: 520px;
-    color: var(--ink-soft);
-  }
-  .hero-lead strong { font-weight: 600; }
-  .hero-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  .btn {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 16px 28px;
-    border-radius: 100px;
-    cursor: pointer;
-    border: 2px solid var(--ink);
-    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .btn.fill { background: var(--ink); color: var(--paper); }
-  .btn.fill:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-3px); }
-  .btn.ghost:hover { background: var(--ink); color: var(--paper); transform: translateY(-3px); }
+/* ---------- stats strip ---------- */
+.stats{background:var(--ochre);color:var(--ink);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.stat{padding:clamp(1.4rem,4vw,2.4rem) clamp(1rem,3vw,2rem);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.stat:nth-child(2n){border-right:none}
+.stat .v{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.4rem,8vw,4.2rem);line-height:.85;letter-spacing:-.03em}
+.stat .v .it{font-style:italic;font-weight:400}
+.stat .l{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;margin-top:.6rem}
+@media(min-width:760px){
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
+  .stat{border-bottom:none}
+  .stat:nth-child(2n){border-right:1px solid var(--ink)}
+  .stat:last-child{border-right:none}
+}
 
-  /* ticker */
-  .ticker {
-    margin-top: 70px;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    z-index: 2;
-  }
-  .ticker-track {
-    display: inline-flex;
-    gap: 0;
-    animation: slide 28s linear infinite;
-    will-change: transform;
-  }
-  .ticker:hover .ticker-track { animation-play-state: paused; }
-  .ticker-track span {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: clamp(20px, 3vw, 34px);
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    padding: 18px 36px;
-    display: inline-flex;
-    align-items: center;
-    gap: 36px;
-  }
-  .ticker-track span i {
-    font-style: normal;
-    color: var(--coral);
-    font-size: 0.7em;
-  }
-  @keyframes slide {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--paper)}
+.contact .kicker{color:var(--ochre)}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+.contact-head{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(2.2rem,7vw,4.6rem);line-height:.92;letter-spacing:-.03em;
+}
+.contact-head .it{font-style:italic;font-weight:400;color:var(--ochre)}
+.contact-lede{font-family:'Fraunces',serif;font-size:1.2rem;line-height:1.4;max-width:40ch;margin:1.2rem 0;color:#ddd6c8}
+.cards{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid #3a352d}
+.cc{border-bottom:1px solid #3a352d;padding:1.1rem 0;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;transition:.25s}
+.cc:hover{padding-left:.6rem}
+.cc .k{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#9b9486}
+.cc .v{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.1rem,3vw,1.6rem);text-align:right}
+.cc a.v:hover{color:var(--ochre)}
+.contact-cta{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.btn.lite{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn.lite:hover{background:var(--ochre);border-color:var(--ochre);color:var(--ink)}
+@media(min-width:880px){
+  .contact-grid{grid-template-columns:1.1fr 1fr;gap:3.2rem;align-items:start}
+}
 
-  /* ---------- SECTION SHELL ---------- */
-  section { position: relative; }
-  .pad { padding: 110px 0; }
-  .sec-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 56px;
-  }
-  .sec-head h2 {
-    font-size: clamp(34px, 5.6vw, 76px);
-    text-transform: uppercase;
-    max-width: 720px;
-  }
-  .sec-head h2 em { color: var(--coral); font-style: normal; }
-  .sec-head .idx {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    color: var(--muted);
-    letter-spacing: 0.18em;
-  }
+/* ---------- footer ---------- */
+.foot{background:var(--paper);border-top:3px solid var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1.2rem,4vw,2.6rem)}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.4rem;align-items:flex-start;border-bottom:1px solid var(--rule);padding-bottom:1.6rem}
+.foot-brand .mark{font-family:'Fraunces',serif;font-weight:900;font-size:1.8rem;letter-spacing:-.02em;line-height:1}
+.foot-brand .mark b{color:var(--ochre)}
+.foot-brand p{font-size:.86rem;color:var(--mute);max-width:34ch;margin-top:.6rem}
+.foot-cols{display:flex;flex-wrap:wrap;gap:2.4rem}
+.foot-col h4{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);margin-bottom:.7rem}
+.foot-col a,.foot-col p{display:block;font-size:.86rem;color:#34302a;padding:.18rem 0;transition:.2s}
+.foot-col a:hover{color:var(--ochre)}
+.foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem;padding-top:1.4rem;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:var(--mute);text-transform:uppercase}
+.foot-bot .wc{color:var(--mute);opacity:.7}
 
-  /* ---------- POV STATEMENT ---------- */
-  .pov { background: var(--ink); color: var(--paper); }
-  .pov .eyebrow { color: var(--coral); }
-  .pov-statement {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: clamp(26px, 4.4vw, 58px);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    max-width: 1000px;
-    margin-top: 30px;
-  }
-  .pov-statement .hl { color: var(--coral); }
-  .pov-statement .stroke {
-    color: transparent;
-    -webkit-text-stroke: 1.4px var(--paper);
-  }
-  .pov-stats {
-    margin-top: 70px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    border-top: 1px solid rgba(244,241,234,0.18);
-    padding-top: 40px;
-  }
-  .pov-stats .stat .num {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(34px, 5vw, 58px);
-    line-height: 1;
-    color: var(--coral);
-  }
-  .pov-stats .stat p {
-    font-size: 14px;
-    color: rgba(244,241,234,0.72);
-    margin-top: 10px;
-  }
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ticker-track{animation:none}
+}
 
-  /* ---------- PORTFOLIO ---------- */
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 22px;
-    grid-auto-rows: 230px;
-  }
-  .work-card {
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    background: var(--paper-2);
-    border: 1px solid var(--line);
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s ease;
-  }
-  .work-card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -22px rgba(17,17,17,0.45); }
-  .work-card svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-  .work-card .tag {
-    position: absolute;
-    left: 18px; bottom: 18px;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .work-card .tag .sector {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 19px;
-    color: #fff;
-    text-shadow: 0 2px 14px rgba(0,0,0,0.4);
-  }
-  .work-card .tag .place {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-  }
-  .work-card .num-chip {
-    position: absolute;
-    top: 16px; right: 16px;
-    z-index: 3;
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.92);
-    color: var(--ink);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s, color 0.3s;
-  }
-  .work-card:hover .num-chip { background: var(--coral); color: #fff; }
-  .c-wide { grid-column: span 3; }
-  .c-tall { grid-column: span 3; grid-row: span 2; }
-  .c-sm   { grid-column: span 2; }
-  .c-med  { grid-column: span 4; }
-
-  /* ---------- SERVICES ---------- */
-  .services { background: var(--paper-2); }
-  .svc-list { border-top: 1px solid var(--line); }
-  .svc-row {
-    display: grid;
-    grid-template-columns: 70px 1.3fr 1.7fr 40px;
-    align-items: center;
-    gap: 24px;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--line);
-    cursor: default;
-    position: relative;
-    transition: padding 0.3s ease;
-  }
-  .svc-row::before {
-    content: "";
-    position: absolute;
-    left: -28px; right: -28px; top: 0; bottom: 0;
-    background: var(--ink);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.35s cubic-bezier(.2,.7,.2,1);
-    z-index: 0;
-  }
-  .svc-row:hover::before { transform: scaleY(1); }
-  .svc-row > * { position: relative; z-index: 1; transition: color 0.35s ease; }
-  .svc-row:hover * { color: var(--paper); }
-  .svc-row:hover .svc-name { color: #fff; }
-  .svc-num {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .svc-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: clamp(22px, 3vw, 34px);
-    letter-spacing: -0.01em;
-  }
-  .svc-desc { color: var(--muted); font-size: 15px; }
-  .svc-arrow {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    border: 1.6px solid var(--line);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.35s ease, border-color 0.35s ease;
-  }
-  .svc-row:hover .svc-arrow { transform: rotate(45deg); border-color: var(--coral); }
-  .svc-arrow svg { width: 15px; height: 15px; }
-
-  /* ---------- FOUNDER ---------- */
-  .founder-grid {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .founder-visual {
-    position: relative;
-    aspect-ratio: 4/5;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: var(--ink);
-  }
-  .founder-visual svg { width: 100%; height: 100%; display: block; }
-  .founder-badge {
-    position: absolute;
-    left: 18px; bottom: 18px;
-    background: var(--coral);
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 12px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-  }
-  .founder-quote {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: clamp(24px, 3.4vw, 42px);
-    line-height: 1.18;
-    letter-spacing: -0.02em;
-  }
-  .founder-quote .q { color: var(--coral); }
-  .founder-sign {
-    margin-top: 34px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .founder-sign .line { width: 50px; height: 2px; background: var(--coral); }
-  .founder-sign b {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    display: block;
-  }
-  .founder-sign span { font-size: 13px; color: var(--muted); letter-spacing: 0.06em; }
-
-  /* ---------- PROCESS ---------- */
-  .process { background: var(--ink); color: var(--paper); }
-  .process .eyebrow { color: var(--coral); }
-  .process .sec-head h2 { color: var(--paper); }
-  .process .sec-head .idx { color: rgba(244,241,234,0.6); }
-  .proc-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
-  }
-  .proc-step {
-    border-top: 2px solid rgba(244,241,234,0.22);
-    padding-top: 24px;
-    transition: border-color 0.35s ease;
-  }
-  .proc-step:hover { border-color: var(--coral); }
-  .proc-step .pnum {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--coral);
-    letter-spacing: 0.1em;
-  }
-  .proc-step h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    margin: 16px 0 12px;
-    letter-spacing: -0.01em;
-  }
-  .proc-step p { font-size: 15px; color: rgba(244,241,234,0.74); }
-
-  /* ---------- CONTACT ---------- */
-  .contact { padding: 120px 0; }
-  .contact-card {
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 28px;
-    padding: clamp(40px, 6vw, 80px);
-    position: relative;
-    overflow: hidden;
-  }
-  .contact-card .blob {
-    position: absolute;
-    width: 460px; height: 460px;
-    right: -120px; top: -120px;
-    background: radial-gradient(circle, var(--coral) 0%, transparent 70%);
-    opacity: 0.55;
-    filter: blur(6px);
-    pointer-events: none;
-  }
-  .contact-card .inner { position: relative; z-index: 2; }
-  .contact-card .eyebrow { color: var(--coral); }
-  .contact-card h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(36px, 6vw, 84px);
-    line-height: 0.96;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    margin: 22px 0 40px;
-  }
-  .contact-card h2 .outline {
-    color: transparent;
-    -webkit-text-stroke: 2px var(--paper);
-  }
-  .contact-rows {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-    max-width: 760px;
-  }
-  .crow {
-    display: block;
-    border: 1px solid rgba(244,241,234,0.2);
-    border-radius: 16px;
-    padding: 22px 24px;
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  }
-  .crow:hover { background: rgba(255,90,60,0.14); border-color: var(--coral); transform: translateY(-3px); }
-  .crow .label {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(244,241,234,0.6);
-  }
-  .crow .val {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: clamp(19px, 2.4vw, 26px);
-    margin-top: 8px;
-    word-break: break-word;
-  }
-  .crow .val.coral { color: var(--coral); }
-
-  /* ---------- FOOTER ---------- */
-  footer.site {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 60px 0 36px;
-    border-top: 1px solid rgba(244,241,234,0.12);
-  }
-  .foot-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(244,241,234,0.14);
-  }
-  .foot-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(30px, 5vw, 54px);
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-  .foot-brand span { color: var(--coral); }
-  .foot-brand small {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    text-transform: none;
-    color: rgba(244,241,234,0.7);
-    margin-top: 14px;
-    max-width: 340px;
-  }
-  .foot-cols {
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
-  }
-  .foot-col h4 {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--coral);
-    margin-bottom: 16px;
-    font-weight: 600;
-  }
-  .foot-col a, .foot-col p {
-    display: block;
-    font-size: 15px;
-    color: rgba(244,241,234,0.82);
-    margin-bottom: 9px;
-    transition: color 0.25s ease;
-  }
-  .foot-col a:hover { color: var(--coral); }
-  .foot-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-    font-size: 13px;
-    color: rgba(244,241,234,0.6);
-  }
-  .foot-bottom .credit { color: rgba(244,241,234,0.42); }
-
-  /* reveal */
-  .reveal { opacity: 0; transform: translateY(34px); transition: opacity 0.8s cubic-bezier(.2,.7,.2,1), transform 0.8s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
-
-  /* mobile menu panel */
-  .m-menu {
-    position: fixed;
-    inset: 0;
-    z-index: 90;
-    background: var(--ink);
-    color: var(--paper);
-    transform: translateY(-100%);
-    transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 28px;
-  }
-  .m-menu.open { transform: translateY(0); }
-  .m-menu a {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(244,241,234,0.16);
-  }
-  .m-menu .close { position: absolute; top: 24px; right: 28px; background: none; border: 0; color: var(--paper); font-size: 34px; cursor: pointer; }
-  .m-menu .mphone { margin-top: 34px; color: var(--coral); font-family: 'Space Grotesk'; font-weight: 600; font-size: 22px; }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 980px) {
-    .hero-foot { grid-template-columns: 1fr; }
-    .hero-actions { justify-content: flex-start; }
-    .pov-stats { grid-template-columns: repeat(2, 1fr); }
-    .proc-grid { grid-template-columns: repeat(2, 1fr); }
-    .founder-grid { grid-template-columns: 1fr; gap: 36px; }
-    .work-grid { grid-auto-rows: 200px; }
-    .c-wide, .c-med { grid-column: span 6; }
-    .c-tall { grid-column: span 6; grid-row: span 1; }
-    .c-sm { grid-column: span 3; }
-  }
-  @media (max-width: 720px) {
-    body { font-size: 16px; }
-    .nav-links { display: none; }
-    .burger { display: flex; }
-    .hero { padding: 130px 0 50px; }
-    .svc-row { grid-template-columns: 40px 1fr; gap: 14px; }
-    .svc-desc, .svc-arrow { display: none; }
-    .pov-stats { grid-template-columns: 1fr 1fr; gap: 18px; }
-    .contact-rows { grid-template-columns: 1fr; }
-    .work-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
-    .c-wide, .c-med, .c-tall, .c-sm { grid-column: span 2; }
-    .ticker-track span { font-size: 22px; }
-  }
-  @media (max-width: 420px) {
-    .work-grid { grid-template-columns: 1fr; }
-    .c-wide, .c-med, .c-tall, .c-sm { grid-column: span 1; }
-  }
+::selection{background:var(--ochre);color:var(--ink)}
 </style>
 </head>
 <body>
 
-<!-- ================= NAV ================= -->
-<header class="nav" id="nav">
-  <div class="wrap nav-inner">
-    <a href="#top" class="brand" aria-label="CCL Interior Design home">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="1.5" y="1.5" width="37" height="37" rx="8" stroke="#111111" stroke-width="2.4"/>
-        <circle cx="20" cy="20" r="9.5" stroke="#ff5a3c" stroke-width="2.4"/>
-        <path d="M24 14 L14 26" stroke="#111111" stroke-width="2.4" stroke-linecap="round"/>
-      </svg>
-      <span>CCL Interior
-        <small>Creative Circle Lifestyle</small>
-      </span>
-    </a>
-    <nav class="nav-links">
-      <a class="nlink" href="#pov">Studio</a>
-      <a class="nlink" href="#work">Work</a>
-      <a class="nlink" href="#services">What we design</a>
-      <a class="nlink" href="#founder">Founder</a>
-      <a class="nav-cta" href="#contact">Start a project</a>
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="mark">CCL<b>.</b></span>
+      <span class="tag">Creative Circle Lifestyle</span>
+    </div>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#design">What We Design</a>
+      <a href="#founder">Founder</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <span class="iss">Vol. 25 / Dhaka</span>
   </div>
 </header>
 
-<!-- mobile menu -->
-<div class="m-menu" id="mMenu">
-  <button class="close" id="mClose" aria-label="Close menu">&times;</button>
-  <a href="#pov" data-mlink>Studio</a>
-  <a href="#work" data-mlink>Work</a>
-  <a href="#services" data-mlink>What we design</a>
-  <a href="#founder" data-mlink>Founder</a>
-  <a href="#contact" data-mlink>Start a project</a>
-  <a class="mphone" href="tel:+8801712254936">+880 1712-254936</a>
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-grid">
+    <div class="cover-tagrow">
+      <span>The Interiors Quarterly</span>
+      <span><b>Est. 2001</b></span>
+      <span>2,800+ Spaces Realised</span>
+      <span>Residential / Commercial / Turnkey</span>
+    </div>
+    <h1 class="cover-head">Rooms<br>that <span class="it">read</span><br>like a story.</h1>
+    <div class="cover-sub">
+      <p class="cover-lede">CCL Interior Design is a Dhaka studio that <b>draws, builds and hands over</b> complete interiors - from the first laser measurement to the final reveal, through our own factory and craftsmen.</p>
+      <div>
+        <div class="cover-meta">
+          Studio / <span>Mogbazar, Dhaka 1217</span><br>
+          Principal / <span>Md. Saiful Islam Saron</span><br>
+          Practice / <span>25+ Years, End to End</span>
+        </div>
+        <div class="cover-cta">
+          <a href="#work" class="btn">Open the Issue <span class="arr">-&gt;</span></a>
+          <a href="#contact" class="btn ghost">Free Consultation</a>
+        </div>
+      </div>
+    </div>
+    <div class="cover-art">
+      <span class="cover-cap">Cover / Living Room Vignette, Gulshan</span>
+      <svg viewBox="0 0 800 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-label="Stylised interior vignette">
+        <defs>
+          <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ebe5d8"/><stop offset="1" stop-color="#ddd5c4"/>
+          </linearGradient>
+          <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#caa06e"/><stop offset="1" stop-color="#a8763f"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="420" fill="url(#wall)"/>
+        <rect x="0" y="300" width="800" height="120" fill="url(#floor)"/>
+        <rect x="500" y="40" width="250" height="210" fill="#121110"/>
+        <rect x="512" y="52" width="110" height="186" fill="#c9742d"/>
+        <rect x="630" y="52" width="108" height="186" fill="#e8d9bf"/>
+        <line x1="500" y1="145" x2="750" y2="145" stroke="#121110" stroke-width="6"/>
+        <path d="M70 250 A90 90 0 0 1 250 250 Z" fill="#121110"/>
+        <circle cx="160" cy="250" r="54" fill="#c9742d"/>
+        <rect x="120" y="262" width="270" height="58" rx="14" fill="#121110"/>
+        <rect x="120" y="240" width="270" height="36" rx="12" fill="#3a352d"/>
+        <rect x="150" y="246" width="60" height="40" rx="8" fill="#c9742d"/>
+        <rect x="230" y="246" width="60" height="40" rx="8" fill="#e8d9bf"/>
+        <line x1="430" y1="120" x2="430" y2="300" stroke="#121110" stroke-width="5"/>
+        <circle cx="430" cy="120" r="22" fill="#c9742d"/>
+        <rect x="690" y="270" width="34" height="40" fill="#121110"/>
+        <path d="M707 270 C690 220 720 210 707 180 C730 215 740 250 707 270" fill="#3a352d"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="tk">
+    <span>Residential</span><span class="dot">/</span><span>Corporate &amp; Office</span><span class="dot">/</span><span>Restaurant</span><span class="dot">/</span><span>Retail</span><span class="dot">/</span><span>Kitchen</span><span class="dot">/</span><span>Hospitality</span><span class="dot">/</span><span>Healthcare</span><span class="dot">/</span><span>Landscape</span><span class="dot">/</span><span>Architecture</span><span class="dot">/</span><span>Renovation</span><span class="dot">/</span>
+    <span>Residential</span><span class="dot">/</span><span>Corporate &amp; Office</span><span class="dot">/</span><span>Restaurant</span><span class="dot">/</span><span>Retail</span><span class="dot">/</span><span>Kitchen</span><span class="dot">/</span><span>Hospitality</span><span class="dot">/</span><span>Healthcare</span><span class="dot">/</span><span>Landscape</span><span class="dot">/</span><span>Architecture</span><span class="dot">/</span><span>Renovation</span><span class="dot">/</span>
+  </div>
 </div>
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="top">
-  <div class="hero-grid-bg"></div>
-  <div class="wrap">
-    <div class="hero-top reveal">
-      <span class="eyebrow">Interior design and architecture studio</span>
-      <div class="meta">
-        <b>Based in Dhaka, Bangladesh</b><br>
-        Designing spaces with point of view since the first sketch.
+<!-- WORK / PORTFOLIO SPREADS -->
+<section class="sec sec-rule" id="work">
+  <div class="kicker rv">Portfolio / Selected Spreads</div>
+  <h2 class="sec-title rv">The work, laid out<br>like a <span class="it">magazine.</span></h2>
+  <p class="rv" style="max-width:52ch;color:#34302a;margin-bottom:2rem">A selection from across the practice - showrooms, healthcare floors and homes in old and new Dhaka. Each project moves from drawing to delivery under one roof.</p>
+
+  <div class="spread">
+
+    <div class="spread-row rv">
+      <div class="spread-art">
+        <span class="spread-folio">Spread 01 / Retail</span>
+        <svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="480" fill="#ebe5d8"/>
+          <rect x="0" y="340" width="600" height="140" fill="#b88a52"/>
+          <rect x="40" y="80" width="150" height="260" fill="#121110"/>
+          <rect x="56" y="100" width="118" height="70" fill="#c9742d"/>
+          <rect x="56" y="184" width="118" height="70" fill="#e8d9bf"/>
+          <rect x="56" y="268" width="118" height="54" fill="#3a352d"/>
+          <rect x="230" y="120" width="150" height="220" fill="#121110"/>
+          <circle cx="305" cy="190" r="44" fill="#c9742d"/>
+          <rect x="255" y="250" width="100" height="74" fill="#e8d9bf"/>
+          <rect x="420" y="60" width="140" height="280" fill="#3a352d"/>
+          <rect x="436" y="80" width="108" height="240" fill="#c9742d" opacity=".25"/>
+          <line x1="0" y1="345" x2="600" y2="345" stroke="#121110" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="spread-txt">
+        <div class="spread-sector">Retail Shop Interior</div>
+        <h3 class="spread-name">CCL <span class="it">Showroom</span> Interior</h3>
+        <p class="spread-body">A flagship retail fit-out built to captivate and convert - sightlines, display rhythm and lighting tuned so the eye lands exactly where the product does. A repeatable showroom language CCL has refined across multiple builds.</p>
+        <div class="spread-feats"><span class="chip">Display Joinery</span><span class="chip">Lighting Plan</span><span class="chip">Brand Surfaces</span></div>
       </div>
     </div>
 
-    <h1 class="hero-title display reveal">
-      We design<br>
-      <span class="accent">space</span> with<br>
-      <span class="outline">attitude</span>
-    </h1>
-
-    <div class="hero-foot">
-      <p class="hero-lead reveal">
-        CCL Interior Design, the work of <strong>Creative Circle Lifestyle</strong>, is a Dhaka studio that treats every room as an argument. We shape homes, offices, restaurants and retail that feel deliberate, not decorated.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#work" class="btn fill">See the work
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contact" class="btn ghost">Brief us</a>
+    <div class="spread-row flip rv">
+      <div class="spread-art">
+        <span class="spread-folio">Spread 02 / Healthcare</span>
+        <svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="480" fill="#f0ece2"/>
+          <rect x="0" y="360" width="600" height="120" fill="#cdbfa6"/>
+          <rect x="60" y="120" width="220" height="240" fill="#121110"/>
+          <rect x="78" y="138" width="184" height="120" fill="#e8d9bf"/>
+          <rect x="78" y="270" width="184" height="74" fill="#c9742d"/>
+          <rect x="330" y="90" width="200" height="270" fill="#3a352d"/>
+          <path d="M430 150 h30 v30 h30 v30 h-30 v30 h-30 v-30 h-30 v-30 h30 z" fill="#c9742d"/>
+          <circle cx="430" cy="300" r="30" fill="#e8d9bf"/>
+          <line x1="0" y1="362" x2="600" y2="362" stroke="#121110" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="spread-txt">
+        <div class="spread-sector">Health Care Interior</div>
+        <h3 class="spread-name">Hospital <span class="it">Interior</span></h3>
+        <p class="spread-body">A healthcare environment designed to promote healing, comfort and efficiency. Calm wayfinding, hygienic finishes and warm light replace the clinical chill - a space where patients and staff both move with ease.</p>
+        <div class="spread-feats"><span class="chip">Wayfinding</span><span class="chip">Hygienic Finishes</span><span class="chip">Patient Comfort</span></div>
       </div>
     </div>
-  </div>
 
-  <!-- ticker -->
-  <div class="ticker reveal">
-    <div class="ticker-track" id="ticker">
-      <span>Residential <i>&#9670;</i> Corporate <i>&#9670;</i> Restaurant <i>&#9670;</i> Retail <i>&#9670;</i> Hospitality <i>&#9670;</i> Healthcare <i>&#9670;</i> Landscape <i>&#9670;</i> Architecture <i>&#9670;</i></span>
-      <span>Residential <i>&#9670;</i> Corporate <i>&#9670;</i> Restaurant <i>&#9670;</i> Retail <i>&#9670;</i> Hospitality <i>&#9670;</i> Healthcare <i>&#9670;</i> Landscape <i>&#9670;</i> Architecture <i>&#9670;</i></span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= POV STATEMENT ================= -->
-<section class="pov pad" id="pov">
-  <div class="wrap">
-    <div class="sec-head reveal" style="margin-bottom:0">
-      <span class="eyebrow">Our point of view</span>
-      <span class="idx">01 / Studio</span>
-    </div>
-    <p class="pov-statement reveal">
-      Good interiors are not about <span class="stroke">trends</span>. They are about how a space makes you <span class="hl">move, work and feel</span>. We design for the life that happens inside the walls, then make it look unforgettable.
-    </p>
-
-    <div class="pov-stats reveal">
-      <div class="stat"><div class="num" data-count="10">10</div><p>Sectors we design across, from homes to healthcare.</p></div>
-      <div class="stat"><div class="num" data-count="100" data-suffix="+">100+</div><p>Spaces conceived, drawn and delivered in Dhaka and beyond.</p></div>
-      <div class="stat"><div class="num" data-count="1">1</div><p>Principal designer guiding every project: Md. Saiful Islam Saron.</p></div>
-      <div class="stat"><div class="num" data-count="100" data-suffix="%">100%</div><p>Of work is bespoke. No template rooms, ever.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WORK / PORTFOLIO ================= -->
-<section class="pad" id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2 class="display">Selected <em>work</em></h2>
-      <span class="idx">02 / Portfolio</span>
-    </div>
-
-    <div class="work-grid">
-      <!-- Card 1: tall, residential -->
-      <article class="work-card c-tall reveal">
-        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#222"/><stop offset="1" stop-color="#3a342c"/></linearGradient></defs>
-          <rect width="400" height="500" fill="url(#g1)"/>
-          <rect x="40" y="60" width="320" height="300" fill="none" stroke="#ff5a3c" stroke-width="2" opacity="0.5"/>
-          <rect x="70" y="250" width="130" height="110" rx="6" fill="#4a423a"/>
-          <rect x="70" y="232" width="130" height="20" rx="6" fill="#5b5247"/>
-          <rect x="230" y="280" width="90" height="80" rx="6" fill="#5b5247"/>
-          <circle cx="275" cy="150" r="34" fill="none" stroke="#ff5a3c" stroke-width="3"/>
-          <line x1="275" y1="116" x2="275" y2="60" stroke="#ff5a3c" stroke-width="2"/>
-          <rect x="120" y="100" width="60" height="90" rx="4" fill="#ff5a3c" opacity="0.85"/>
-          <line x1="40" y1="360" x2="360" y2="360" stroke="#6b6157" stroke-width="2"/>
+    <div class="spread-row rv">
+      <div class="spread-art">
+        <span class="spread-folio">Spread 03 / Residential</span>
+        <svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="480" fill="#ebe5d8"/>
+          <rect x="0" y="330" width="600" height="150" fill="#b88a52"/>
+          <path d="M80 330 V150 H300 V330 Z" fill="#121110"/>
+          <rect x="100" y="170" width="80" height="80" fill="#c9742d"/>
+          <rect x="200" y="170" width="80" height="80" fill="#e8d9bf"/>
+          <rect x="120" y="270" width="160" height="60" rx="10" fill="#3a352d"/>
+          <rect x="360" y="200" width="180" height="130" rx="14" fill="#121110"/>
+          <rect x="378" y="180" width="144" height="36" rx="10" fill="#3a352d"/>
+          <circle cx="450" cy="120" r="26" fill="#c9742d"/>
+          <line x1="450" y1="120" x2="450" y2="200" stroke="#121110" stroke-width="4"/>
+          <line x1="0" y1="333" x2="600" y2="333" stroke="#121110" stroke-width="4"/>
         </svg>
-        <div class="num-chip">01</div>
-        <div class="tag"><span class="sector">Gulshan Residence</span><span class="place">Residential &middot; Dhaka</span></div>
-      </article>
-
-      <!-- Card 2: wide, restaurant -->
-      <article class="work-card c-wide reveal">
-        <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5a3c"/><stop offset="1" stop-color="#e8441f"/></linearGradient></defs>
-          <rect width="600" height="240" fill="url(#g2)"/>
-          <circle cx="120" cy="80" r="44" fill="#fff" opacity="0.16"/>
-          <circle cx="120" cy="80" r="22" fill="#fff" opacity="0.3"/>
-          <rect x="220" y="40" width="320" height="160" fill="none" stroke="#fff" stroke-width="2" opacity="0.45"/>
-          <rect x="260" y="120" width="80" height="60" rx="4" fill="#111" opacity="0.25"/>
-          <rect x="380" y="120" width="80" height="60" rx="4" fill="#111" opacity="0.25"/>
-          <line x1="300" y1="40" x2="300" y2="180" stroke="#fff" stroke-width="1.4" opacity="0.4"/>
-        </svg>
-        <div class="num-chip">02</div>
-        <div class="tag"><span class="sector">Banani Bistro</span><span class="place">Restaurant &middot; Dhaka</span></div>
-      </article>
-
-      <!-- Card 3: small, retail -->
-      <article class="work-card c-sm reveal">
-        <svg viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="300" height="240" fill="#1c1a17"/>
-          <rect x="40" y="50" width="60" height="140" rx="4" fill="#2e2a24"/>
-          <rect x="120" y="80" width="60" height="110" rx="4" fill="#3a342c"/>
-          <rect x="200" y="40" width="60" height="150" rx="4" fill="#ff5a3c" opacity="0.8"/>
-          <line x1="20" y1="190" x2="280" y2="190" stroke="#5b5247" stroke-width="2"/>
-        </svg>
-        <div class="num-chip">03</div>
-        <div class="tag"><span class="sector">Concept Store</span><span class="place">Retail</span></div>
-      </article>
-
-      <!-- Card 4: small, office -->
-      <article class="work-card c-sm reveal">
-        <svg viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2620"/><stop offset="1" stop-color="#191713"/></linearGradient></defs>
-          <rect width="300" height="240" fill="url(#g4)"/>
-          <rect x="40" y="120" width="220" height="14" rx="4" fill="#4a423a"/>
-          <rect x="60" y="134" width="10" height="50" fill="#5b5247"/>
-          <rect x="230" y="134" width="10" height="50" fill="#5b5247"/>
-          <circle cx="90" cy="80" r="20" fill="none" stroke="#ff5a3c" stroke-width="3"/>
-          <circle cx="150" cy="80" r="20" fill="none" stroke="#ff5a3c" stroke-width="3"/>
-          <circle cx="210" cy="80" r="20" fill="none" stroke="#ff5a3c" stroke-width="3"/>
-        </svg>
-        <div class="num-chip">04</div>
-        <div class="tag"><span class="sector">Agency HQ</span><span class="place">Corporate</span></div>
-      </article>
-
-      <!-- Card 5: med, hospitality -->
-      <article class="work-card c-med reveal">
-        <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a342c"/><stop offset="1" stop-color="#211e19"/></linearGradient></defs>
-          <rect width="600" height="240" fill="url(#g5)"/>
-          <rect x="60" y="60" width="160" height="130" rx="8" fill="#4a423a"/>
-          <rect x="60" y="60" width="160" height="36" rx="8" fill="#ff5a3c" opacity="0.85"/>
-          <circle cx="420" cy="120" r="62" fill="none" stroke="#ff5a3c" stroke-width="2.4" opacity="0.7"/>
-          <circle cx="420" cy="120" r="30" fill="#4a423a"/>
-          <line x1="280" y1="190" x2="560" y2="190" stroke="#6b6157" stroke-width="2"/>
-          <rect x="500" y="60" width="40" height="100" rx="4" fill="#2e2a24"/>
-        </svg>
-        <div class="num-chip">05</div>
-        <div class="tag"><span class="sector">Boutique Suites</span><span class="place">Hospitality</span></div>
-      </article>
-
-      <!-- Card 6: med, kitchen -->
-      <article class="work-card c-med reveal">
-        <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="600" height="240" fill="#15130f"/>
-          <rect x="40" y="70" width="520" height="20" rx="6" fill="#3a342c"/>
-          <rect x="40" y="150" width="240" height="60" rx="6" fill="#2e2a24"/>
-          <rect x="300" y="150" width="120" height="60" rx="6" fill="#ff5a3c" opacity="0.82"/>
-          <rect x="440" y="150" width="120" height="60" rx="6" fill="#2e2a24"/>
-          <circle cx="120" cy="120" r="8" fill="#ff5a3c"/>
-          <circle cx="180" cy="120" r="8" fill="#5b5247"/>
-        </svg>
-        <div class="num-chip">06</div>
-        <div class="tag"><span class="sector">Open Kitchen</span><span class="place">Kitchen design</span></div>
-      </article>
-
-      <!-- Card 7: small healthcare -->
-      <article class="work-card c-sm reveal">
-        <svg viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="300" height="240" fill="#f4f1ea"/>
-          <rect x="120" y="80" width="60" height="20" rx="4" fill="#ff5a3c"/>
-          <rect x="140" y="60" width="20" height="60" rx="4" fill="#ff5a3c"/>
-          <line x1="40" y1="160" x2="260" y2="160" stroke="#cfc8ba" stroke-width="2"/>
-          <rect x="40" y="170" width="80" height="40" rx="6" fill="#e0d9cb"/>
-        </svg>
-        <div class="num-chip">07</div>
-        <div class="tag"><span class="sector" style="color:#111;text-shadow:none">Care Clinic</span><span class="place" style="color:#6b6660;text-shadow:none">Healthcare</span></div>
-      </article>
-
-      <!-- Card 8: small landscape -->
-      <article class="work-card c-sm reveal">
-        <svg viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><linearGradient id="g8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3326"/><stop offset="1" stop-color="#181d14"/></linearGradient></defs>
-          <rect width="300" height="240" fill="url(#g8)"/>
-          <circle cx="80" cy="150" r="40" fill="#3e4a33"/>
-          <circle cx="200" cy="130" r="55" fill="#46553a"/>
-          <rect x="190" y="150" width="14" height="60" fill="#5b5247"/>
-          <rect x="74" y="170" width="12" height="50" fill="#5b5247"/>
-          <path d="M0 210 Q150 180 300 210 L300 240 L0 240 Z" fill="#ff5a3c" opacity="0.55"/>
-        </svg>
-        <div class="num-chip">08</div>
-        <div class="tag"><span class="sector">Roof Garden</span><span class="place">Landscape</span></div>
-      </article>
-
-      <!-- Card 9: med renovation -->
-      <article class="work-card c-med reveal">
-        <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="600" height="240" fill="#1c1a17"/>
-          <rect x="0" y="0" width="300" height="240" fill="#2e2a24"/>
-          <line x1="300" y1="0" x2="300" y2="240" stroke="#ff5a3c" stroke-width="3" stroke-dasharray="10 8"/>
-          <rect x="60" y="80" width="160" height="100" fill="none" stroke="#6b6157" stroke-width="2"/>
-          <rect x="360" y="70" width="180" height="120" rx="8" fill="#3a342c"/>
-          <rect x="360" y="70" width="180" height="30" rx="8" fill="#ff5a3c" opacity="0.85"/>
-          <text x="80" y="220" fill="#6b6157" font-family="Space Grotesk" font-size="22" font-weight="700">BEFORE</text>
-          <text x="380" y="220" fill="#ff5a3c" font-family="Space Grotesk" font-size="22" font-weight="700">AFTER</text>
-        </svg>
-        <div class="num-chip">09</div>
-        <div class="tag"><span class="sector">Apartment Revival</span><span class="place">Renovation</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section class="services pad" id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2 class="display">What we <em>design</em></h2>
-      <span class="idx">03 / Capabilities</span>
-    </div>
-
-    <div class="svc-list reveal" id="svcList">
-      <!-- rows -->
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOUNDER ================= -->
-<section class="pad" id="founder">
-  <div class="wrap">
-    <div class="founder-grid">
-      <div class="founder-visual reveal">
-        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs><linearGradient id="gf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#26221c"/><stop offset="1" stop-color="#100f0c"/></linearGradient></defs>
-          <rect width="400" height="500" fill="url(#gf)"/>
-          <circle cx="200" cy="175" r="78" fill="#ff5a3c" opacity="0.9"/>
-          <path d="M90 440 Q200 280 310 440 Z" fill="#ff5a3c" opacity="0.9"/>
-          <circle cx="200" cy="175" r="78" fill="none" stroke="#f4f1ea" stroke-width="2" opacity="0.4"/>
-          <rect x="40" y="40" width="320" height="420" fill="none" stroke="#f4f1ea" stroke-width="1.6" opacity="0.25"/>
-          <line x1="40" y1="440" x2="360" y2="440" stroke="#f4f1ea" stroke-width="1.6" opacity="0.25"/>
-        </svg>
-        <div class="founder-badge">Founder &amp; Principal Designer</div>
       </div>
-      <div>
-        <span class="eyebrow reveal">From the founder</span>
-        <blockquote class="founder-quote reveal" style="margin-top:24px">
-          <span class="q">&ldquo;</span>A great space should carry the spirit of the people who use it. At CCL we draw, question and refine until a room earns its place. That is the only standard I work to.<span class="q">&rdquo;</span>
-        </blockquote>
-        <div class="founder-sign reveal">
-          <span class="line"></span>
-          <div>
-            <b>Md. Saiful Islam Saron</b>
-            <span>Founder and CEO, Creative Circle Lifestyle</span>
-          </div>
-        </div>
-        <p class="reveal" style="margin-top:30px; color:var(--muted); max-width:520px;">
-          Saron leads CCL Interior Design as Principal Designer, shaping the studio's voice across residential, commercial and hospitality work throughout Dhaka. Every brief lands on his desk before a single line is drawn.
-        </p>
+      <div class="spread-txt">
+        <div class="spread-sector">Residential Interior / Narayanganj</div>
+        <h3 class="spread-name">Siddhirganj <span class="it">Residence</span></h3>
+        <p class="spread-body">A family home in Siddhirganj, Narayanganj, planned around how the household actually lives - praying, entertaining, studying and resting. Natural wood, breathable materials and a neutral palette keep the rooms cool and calm in Dhaka's heat.</p>
+        <div class="spread-feats"><span class="chip">Space Planning</span><span class="chip">Custom Furniture</span><span class="chip">Natural Palette</span></div>
+      </div>
+    </div>
+
+    <div class="spread-row flip rv">
+      <div class="spread-art">
+        <span class="spread-folio">Spread 04 / Heritage</span>
+        <svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="480" fill="#f0ece2"/>
+          <rect x="0" y="350" width="600" height="130" fill="#a8763f"/>
+          <path d="M70 350 V160 a80 80 0 0 1 160 0 V350 Z" fill="#121110"/>
+          <path d="M86 200 a64 64 0 0 1 128 0 V250 H86 Z" fill="#c9742d"/>
+          <rect x="120" y="270" width="60" height="80" fill="#e8d9bf"/>
+          <path d="M310 350 V190 a70 70 0 0 1 140 0 V350 Z" fill="#3a352d"/>
+          <circle cx="380" cy="220" r="40" fill="#c9742d" opacity=".5"/>
+          <rect x="480" y="240" width="80" height="110" fill="#121110"/>
+          <line x1="0" y1="352" x2="600" y2="352" stroke="#121110" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="spread-txt">
+        <div class="spread-sector">Renovation / Old Dhaka</div>
+        <h3 class="spread-name">Wari, Old <span class="it">Dhaka</span></h3>
+        <p class="spread-body">A renovation in the old quarter of Wari - working with the bones of an older building, reconfiguring layout and finishes to bring modern function to a heritage footprint while respecting the character of Puran Dhaka.</p>
+        <div class="spread-feats"><span class="chip">Renovation</span><span class="chip">Layout Reconfig</span><span class="chip">Heritage Context</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat rv"><div class="v" data-target="2800" data-suffix="+">0</div><div class="l">Clients Served</div></div>
+    <div class="stat rv"><div class="v" data-target="25" data-suffix="+">0</div><div class="l">Years of Practice</div></div>
+    <div class="stat rv"><div class="v" data-target="100" data-suffix="+">0</div><div class="l">In-House Experts</div></div>
+    <div class="stat rv"><div class="v"><span class="it">End</span> to End</div><div class="l">Drawing to Handover</div></div>
+  </div>
+</section>
+
+<!-- WHAT WE DESIGN -->
+<section class="sec sectors" id="design">
+  <div class="kicker rv">The Index / What We Design</div>
+  <h2 class="sec-title rv">A studio for every<br>kind of <span class="it">room.</span></h2>
+  <p class="rv" style="max-width:54ch;color:#b3ac9e;margin-bottom:.4rem">Ten disciplines, one practice. From a single kitchen to a full commercial floor, CCL plans the space, reads the architecture and sees the build through.</p>
+
+  <div class="sector-list">
+    <div class="sec-item rv"><span class="num">01</span><span class="nm">Residential</span><span class="ds">Luxurious, functional homes that reflect your lifestyle and taste.</span></div>
+    <div class="sec-item rv"><span class="num">02</span><span class="nm">Corporate &amp; Office</span><span class="ds">High-performing workspaces that inspire creativity and productivity.</span></div>
+    <div class="sec-item rv"><span class="num">03</span><span class="nm">Restaurant</span><span class="ds">Immersive dining environments that elevate the guest experience.</span></div>
+    <div class="sec-item rv"><span class="num">04</span><span class="nm">Retail Shop</span><span class="ds">Compelling retail spaces that captivate customers and drive sales.</span></div>
+    <div class="sec-item rv"><span class="num">05</span><span class="nm">Kitchen</span><span class="ds">Elegant, high-performance kitchens where style meets function.</span></div>
+    <div class="sec-item rv"><span class="num">06</span><span class="nm">Hospitality</span><span class="ds">Refined spaces that deliver comfort, luxury and memorable stays.</span></div>
+    <div class="sec-item rv"><span class="num">07</span><span class="nm">Health Care</span><span class="ds">Thoughtful environments that promote healing and efficiency.</span></div>
+    <div class="sec-item rv"><span class="num">08</span><span class="nm">Landscape</span><span class="ds">Harmonious outdoor spaces that blend nature with purposeful living.</span></div>
+    <div class="sec-item rv"><span class="num">09</span><span class="nm">Architecture</span><span class="ds">Architectural solutions uniting vision, precision and timeless design.</span></div>
+    <div class="sec-item rv"><span class="num">10</span><span class="nm">Renovation</span><span class="ds">Existing spaces transformed into modern environments with new purpose.</span></div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="sec founder" id="founder">
+  <div class="kicker rv">The Founder / In His Words</div>
+  <div class="founder-grid">
+    <div class="founder-portrait rv">
+      <span class="cap">Md. Saiful Islam Saron / Principal Designer &amp; CEO</span>
+      <svg viewBox="0 0 360 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="360" height="450" fill="#1c1b19"/>
+        <rect x="40" y="40" width="280" height="330" fill="#c9742d" opacity=".16"/>
+        <circle cx="180" cy="170" r="78" fill="#2a2722"/>
+        <circle cx="180" cy="160" r="60" fill="#c9742d"/>
+        <path d="M100 380 a80 90 0 0 1 160 0 Z" fill="#2a2722"/>
+        <path d="M120 380 a60 70 0 0 1 120 0 Z" fill="#c9742d"/>
+        <line x1="40" y1="408" x2="320" y2="408" stroke="#c9742d" stroke-width="2"/>
+        <text x="40" y="436" fill="#f4f0e8" font-family="Space Mono, monospace" font-size="13" letter-spacing="2">SINCE 2001</text>
+      </svg>
+    </div>
+    <div>
+      <p class="founder-quote rv">"We do not just decorate a space. We read how a family or a business will <b>live and work</b> in it, then draw, build and hand over the whole thing - down to the last detail."</p>
+      <p class="founder-body rv">With more than 25 years in practice, Md. Saiful Islam Saron has led CCL Interior Design (Creative Circle Lifestyle) to become a trusted name in residential, commercial and hospitality interiors across Bangladesh. He keeps the budget conversation honest from day one and measures success by spaces that are handed over on time, exactly as drawn.</p>
+      <p class="founder-sig rv">Md. Saiful Islam Saron</p>
+      <p class="founder-role rv">Founder, Principal Designer &amp; CEO</p>
+
+      <div class="roles">
+        <div class="role rv"><span class="t">Chairman</span><span class="o">CCL Interior Design</span></div>
+        <div class="role rv"><span class="t">Senior Vice President</span><span class="o">IDAB Bangladesh</span></div>
+        <div class="role rv"><span class="t">Managing Partner</span><span class="o">CCLIT &amp; Design Chamber</span></div>
+        <div class="role rv"><span class="t">Co-Chairman</span><span class="o">BASIS Standing Committee</span></div>
+        <div class="role rv"><span class="t">Mentor</span><span class="o">BYEAH</span></div>
+        <div class="role rv"><span class="t">Vice President</span><span class="o">Chandpur Youth Club</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= PROCESS ================= -->
-<section class="process pad" id="process">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2 class="display" style="color:var(--paper)">How we <em>build it</em></h2>
-      <span class="idx">04 / Process</span>
+<!-- PROCESS -->
+<section class="sec sec-rule process" id="process">
+  <div class="kicker rv">The Method / Four Movements</div>
+  <h2 class="sec-title rv">From first call<br>to <span class="it">final reveal.</span></h2>
+  <p class="rv" style="max-width:50ch;color:#34302a;margin-bottom:2rem">A seamless journey, guided by expertise at every step - and carried out through our own factory and skilled craftsmen.</p>
+
+  <div class="step rv">
+    <div class="step-no">01</div>
+    <div>
+      <div class="step-name">Consultation &amp; Site Survey</div>
+      <p class="step-body">It starts with a phone call. Our team visits your space directly, analyses your needs and budget, and measures the area precisely with laser equipment to plan for maximum use of every inch.</p>
+      <div class="step-pts"><span class="chip">Initial Meeting</span><span class="chip">Laser Measurement</span><span class="chip">Requirement Analysis</span></div>
     </div>
-    <div class="proc-grid">
-      <div class="proc-step reveal">
-        <div class="pnum">STEP 01</div>
-        <h3>Listen and frame</h3>
-        <p>We sit with you, walk the site and understand how the space needs to perform before any concept appears.</p>
-      </div>
-      <div class="proc-step reveal">
-        <div class="pnum">STEP 02</div>
-        <h3>Concept and 3D</h3>
-        <p>Layouts, mood, materials and lighting come together in clear visuals so you can see the room before it exists.</p>
-      </div>
-      <div class="proc-step reveal">
-        <div class="pnum">STEP 03</div>
-        <h3>Detail and source</h3>
-        <p>Working drawings, finishes and trusted Dhaka vendors are locked so nothing is left to chance on site.</p>
-      </div>
-      <div class="proc-step reveal">
-        <div class="pnum">STEP 04</div>
-        <h3>Deliver and hand over</h3>
-        <p>We supervise execution to the final coat, then hand over a space that matches the drawing exactly.</p>
-      </div>
+  </div>
+
+  <div class="step rv">
+    <div class="step-no">02</div>
+    <div>
+      <div class="step-name">Conceptual Planning, 2D &amp; 3D</div>
+      <p class="step-body">From the measurements we draw a modern 2D layout, then convert it into a realistic 3D rendering. We revise collaboratively against your feedback until the design matches exactly how you want to live.</p>
+      <div class="step-pts"><span class="chip">2D Layout</span><span class="chip">3D Rendering</span><span class="chip">Collaborative Edits</span></div>
+    </div>
+  </div>
+
+  <div class="step rv">
+    <div class="step-no">03</div>
+    <div>
+      <div class="step-name">Quotation &amp; Material Selection</div>
+      <p class="step-body">Once you are 100% satisfied with the design, we provide a detailed, transparent quotation with separate costing for each section, a clear technical solution and a timeline - approved before a single thing is built.</p>
+      <div class="step-pts"><span class="chip">Transparent Costing</span><span class="chip">Solution Briefing</span><span class="chip">Final Approval</span></div>
+    </div>
+  </div>
+
+  <div class="step rv">
+    <div class="step-no">04</div>
+    <div>
+      <div class="step-name">Execution &amp; Flawless Handover</div>
+      <p class="step-body">Work begins in our own factory setup with skilled craftsmen, supervised by experienced engineers and designers. Uncompromising quality control on finishing and detailing, then your dream space, handed over on time.</p>
+      <div class="step-pts"><span class="chip">Expert Execution</span><span class="chip">Quality Control</span><span class="chip">Project Handover</span></div>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="contact-card reveal">
-      <div class="blob"></div>
-      <div class="inner">
-        <span class="eyebrow">Start a project</span>
-        <h2>Let's design<br><span class="outline">your space</span></h2>
-        <div class="contact-rows">
-          <a class="crow" href="tel:+8801712254936">
-            <div class="label">Call the studio</div>
-            <div class="val coral">+880 1712-254936</div>
-          </a>
-          <a class="crow" href="mailto:admin@cclinterior.com">
-            <div class="label">Email us</div>
-            <div class="val">admin@cclinterior.com</div>
-          </a>
-          <div class="crow">
-            <div class="label">Studio location</div>
-            <div class="val">Dhaka, Bangladesh</div>
-          </div>
-          <div class="crow">
-            <div class="label">Principal designer</div>
-            <div class="val">Md. Saiful Islam Saron</div>
-          </div>
-        </div>
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="kicker rv">Back Cover / Get In Touch</div>
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-head rv">Tell us about<br>your <span class="it">space.</span></h2>
+      <p class="contact-lede rv">Residential home or commercial floor - one of our designers will walk you through the options and book a free consultation. We discuss budget early, so there are no surprises.</p>
+      <div class="contact-cta rv">
+        <a href="tel:+8801712254936" class="btn lite">Call the Studio <span class="arr">-&gt;</span></a>
+        <a href="mailto:admin@cclinterior.com" class="btn">Email Us</a>
       </div>
+    </div>
+    <div class="cards rv">
+      <div class="cc"><span class="k">Studio</span><span class="v">New Eskaton, Rain Razzak Plaza,<br>3rd Floor (4-B), Mogbazar, Dhaka 1217</span></div>
+      <div class="cc"><span class="k">Phone</span><a class="v" href="tel:+8801712254936">+880 1712-254936</a></div>
+      <div class="cc"><span class="k">Phone Alt</span><a class="v" href="tel:+8801612254936">+880 1612-254936</a></div>
+      <div class="cc"><span class="k">Email</span><a class="v" href="mailto:admin@cclinterior.com">admin@cclinterior.com</a></div>
+      <div class="cc"><span class="k">WhatsApp</span><a class="v" href="https://wa.me/8801712254936">+880 1712-254936</a></div>
+      <div class="cc"><span class="k">Social</span><span class="v">Facebook / YouTube / LinkedIn</span></div>
     </div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site">
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        CCL <span>Interior</span>
-        <small>Creative Circle Lifestyle. A bold interior design and architecture studio shaping spaces across Dhaka, Bangladesh.</small>
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="mark">CCL Interior Design<b>.</b></div>
+      <p>Creative Circle Lifestyle - a benchmark in Bangladesh's interior industry. World-class factory setup, 100+ experts, spaces designed to last a lifetime.</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Design</h4>
+        <a href="#design">Residential</a>
+        <a href="#design">Corporate &amp; Office</a>
+        <a href="#design">Restaurant</a>
+        <a href="#design">Hospitality</a>
+        <a href="#design">Healthcare</a>
       </div>
-      <div class="foot-cols">
-        <div class="foot-col">
-          <h4>Navigate</h4>
-          <a href="#pov">Studio</a>
-          <a href="#work">Work</a>
-          <a href="#services">What we design</a>
-          <a href="#founder">Founder</a>
-        </div>
-        <div class="foot-col">
-          <h4>Contact</h4>
-          <a href="tel:+8801712254936">+880 1712-254936</a>
-          <a href="mailto:admin@cclinterior.com">admin@cclinterior.com</a>
-          <p>Dhaka, Bangladesh</p>
-        </div>
+      <div class="foot-col">
+        <h4>Studio</h4>
+        <a href="#work">Portfolio</a>
+        <a href="#founder">Founder</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach</h4>
+        <a href="tel:+8801712254936">+880 1712-254936</a>
+        <a href="mailto:admin@cclinterior.com">admin@cclinterior.com</a>
+        <p>Mogbazar, Dhaka</p>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>&copy; <span id="yr"></span> CCL Interior Design (Creative Circle Lifestyle), Dhaka. All rights reserved.</span>
-      <span class="credit">Concept site by WebCraft Global</span>
-    </div>
+  </div>
+  <div class="foot-bot">
+    <span>CCL Interior Design (Creative Circle Lifestyle) / Dhaka, Bangladesh / +880 1712-254936</span>
+    <span>(c) 2026 All Rights Reserved</span>
+    <span class="wc">Concept site by WebCraft Global</span>
   </div>
 </footer>
 
 <script>
-(function () {
-  "use strict";
-
-  /* ---- year ---- */
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  /* ---- nav scrolled state ---- */
-  var nav = document.getElementById('nav');
-  function onScroll() {
-    if (window.scrollY > 30) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ---- mobile menu ---- */
-  var burger = document.getElementById('burger');
-  var mMenu = document.getElementById('mMenu');
-  var mClose = document.getElementById('mClose');
-  function closeMenu() { mMenu.classList.remove('open'); document.body.style.overflow = ''; }
-  burger.addEventListener('click', function () { mMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
-  mClose.addEventListener('click', closeMenu);
-  document.querySelectorAll('[data-mlink]').forEach(function (a) { a.addEventListener('click', closeMenu); });
-
-  /* ---- services data + render ---- */
-  var services = [
-    ['Residential', 'Homes and apartments designed around how you really live.'],
-    ['Corporate and office', 'Workspaces that hold a brand and keep teams moving.'],
-    ['Restaurant', 'Dining rooms with atmosphere built into every surface.'],
-    ['Retail', 'Stores that guide the eye and turn footfall into sales.'],
-    ['Kitchen', 'Functional, beautiful kitchens planned to the centimetre.'],
-    ['Hospitality', 'Hotels and suites that make a guest feel chosen.'],
-    ['Healthcare', 'Calm, hygienic clinical spaces that put people at ease.'],
-    ['Landscape', 'Terraces, gardens and rooftops that breathe in the city.'],
-    ['Architecture', 'Form and structure shaped from the first concept line.'],
-    ['Renovation', 'Tired spaces reimagined and brought fully back to life.']
-  ];
-  var list = document.getElementById('svcList');
-  var arrow = '<div class="svc-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
-  services.forEach(function (s, i) {
-    var num = String(i + 1).padStart(2, '0');
-    var row = document.createElement('div');
-    row.className = 'svc-row';
-    row.innerHTML =
-      '<span class="svc-num">' + num + '</span>' +
-      '<span class="svc-name">' + s[0] + '</span>' +
-      '<span class="svc-desc">' + s[1] + '</span>' +
-      arrow;
-    list.appendChild(row);
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){
+    el.style.transitionDelay=(Math.min(i%6,6)*60)+'ms';
+    io.observe(el);
   });
+})();
 
-  /* ---- scroll reveal ---- */
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function (el, i) {
-      el.style.transitionDelay = (Math.min(i % 6, 5) * 0.05) + 's';
-      io.observe(el);
-    });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('in'); });
+(function(){
+  var done=new WeakSet();
+  function run(el){
+    var t=parseInt(el.getAttribute('data-target'),10);
+    var suf=el.getAttribute('data-suffix')||'';
+    var start=null,dur=1500;
+    function step(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var e=1-Math.pow(1-p,3);
+      var v=Math.floor(e*t);
+      el.textContent=v.toLocaleString('en-US')+suf;
+      if(p<1)requestAnimationFrame(step); else el.textContent=t.toLocaleString('en-US')+suf;
+    }
+    requestAnimationFrame(step);
   }
-
-  /* ---- count up stats ---- */
-  var counted = false;
-  function runCount() {
-    if (counted) return;
-    counted = true;
-    document.querySelectorAll('[data-count]').forEach(function (el) {
-      var target = parseInt(el.getAttribute('data-count'), 10);
-      var suffix = el.getAttribute('data-suffix') || '';
-      var start = 0, dur = 1300, t0 = null;
-      function step(ts) {
-        if (!t0) t0 = ts;
-        var p = Math.min((ts - t0) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(start + (target - start) * eased) + suffix;
-        if (p < 1) requestAnimationFrame(step);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting && e.target.hasAttribute('data-target') && !done.has(e.target)){
+        done.add(e.target); run(e.target);
       }
-      requestAnimationFrame(step);
     });
-  }
-  var povSec = document.getElementById('pov');
-  if ('IntersectionObserver' in window && povSec) {
-    var io2 = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { runCount(); io2.disconnect(); } });
-    }, { threshold: 0.3 });
-    io2.observe(povSec);
-  } else { runCount(); }
+  },{threshold:.5});
+  document.querySelectorAll('.v[data-target]').forEach(function(el){io.observe(el);});
+})();
 
-  /* ---- subtle hero parallax on grid ---- */
-  var grid = document.querySelector('.hero-grid-bg');
-  if (grid) {
-    window.addEventListener('scroll', function () {
-      var y = window.scrollY;
-      if (y < 900) grid.style.transform = 'translateY(' + (y * 0.12) + 'px)';
-    }, { passive: true });
-  }
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var art=document.querySelector('.cover-art svg');
+  if(!art)return;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(y<700) art.style.transform='translateY('+(y*0.06)+'px) scale(1.02)';
+  },{passive:true});
 })();
 </script>
 </body>
