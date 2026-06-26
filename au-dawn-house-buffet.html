@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dawn House Buffet | All You Can Eat Korean BBQ Feast in Auburn</title>
+<meta name="description" content="Dawn House Buffet in Auburn NSW. An abundant all-you-can-eat halal-friendly Korean BBQ buffet. Sizzling grill, sushi, hot pot, desserts and more. Book +61 421 099 286.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --saffron:#ff9e1b; --amber:#ffc83d; --red:#d6262b; --deepred:#9c1d23;
+    --green:#3fa34d; --leaf:#2e7d3a; --cream:#fff8ec; --paper:#fffdf8;
+    --ink:#2a1d12; --soft:#6b5847; --line:#f0e2c9;
+    --shadow:0 14px 40px rgba(156,29,35,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;overflow-x:hidden}
+  h1,h2,h3,.disp{font-family:'Baloo 2',cursive}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  section{padding:84px 0}
+  .eyebrow{display:inline-block;font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem;color:var(--red);background:#fff0d6;padding:7px 16px;border-radius:30px;margin-bottom:16px}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Baloo 2';font-weight:800;font-size:1.25rem;color:var(--deepred)}
+  .logo{width:40px;height:40px;flex:none}
+  .navlinks{display:flex;gap:28px;align-items:center}
+  .navlinks a{font-weight:700;font-size:.95rem;color:var(--soft);transition:color .2s}
+  .navlinks a:hover{color:var(--red)}
+  .navcall{background:var(--red);color:#fff!important;padding:11px 20px;border-radius:30px;font-weight:800;box-shadow:0 6px 16px rgba(214,38,43,.32);transition:transform .2s,box-shadow .2s}
+  .navcall:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(214,38,43,.42)}
+  .burger{display:none;font-size:1.7rem;background:none;border:0;color:var(--deepred);cursor:pointer}
+  @media(max-width:860px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--paper);padding:18px 22px;gap:16px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.burger{display:block}}
+
+  /* HERO */
+  .hero{position:relative;background:linear-gradient(135deg,#fff3da 0%,#ffe6c2 55%,#ffd9b0 100%);overflow:hidden;padding:96px 0 110px}
+  .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,158,27,.35),transparent 45%),radial-gradient(circle at 12% 78%,rgba(63,163,77,.2),transparent 42%)}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.3rem);line-height:1.02;color:var(--deepred);margin:8px 0 18px}
+  .hero h1 span{color:var(--saffron);display:inline-block}
+  .hero p.lead{font-size:1.18rem;color:var(--ink);max-width:520px;margin-bottom:28px;font-weight:600}
+  .heroctas{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:800;padding:15px 28px;border-radius:34px;font-size:1.02rem;transition:transform .2s,box-shadow .2s;cursor:pointer;border:0}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 10px 24px rgba(214,38,43,.32)}
+  .btn-red:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(214,38,43,.45)}
+  .btn-ghost{background:#fff;color:var(--deepred);border:2px solid var(--saffron)}
+  .btn-ghost:hover{background:var(--amber);transform:translateY(-3px)}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .badge{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:30px;font-weight:800;font-size:.85rem;color:var(--leaf)}
+  .badge.r{color:var(--red)}.badge.o{color:var(--saffron)}
+
+  /* hero plate */
+  .plate{position:relative;width:330px;height:330px;margin:0 auto;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .plate svg{width:100%;height:100%;filter:drop-shadow(0 20px 30px rgba(156,29,35,.25))}
+  .floatchip{position:absolute;background:#fff;border-radius:18px;padding:10px 15px;box-shadow:var(--shadow);font-weight:800;font-size:.9rem;display:flex;align-items:center;gap:8px;z-index:3}
+  .fc1{top:6%;right:-4%;color:var(--red)}
+  .fc2{bottom:8%;left:-8%;color:var(--leaf)}
+  .fc3{top:48%;right:-12%;color:var(--saffron)}
+  .heroart{position:relative}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;text-align:center}.heroctas{justify-content:center}.badges{justify-content:center}.hero p.lead{margin-left:auto;margin-right:auto}.plate{width:250px;height:250px;margin-top:30px}.fc1{right:2%}.fc2{left:0}.fc3{right:0}}
+
+  /* MARQUEE */
+  .strip{background:var(--deepred);color:#ffe6c2;padding:15px 0;overflow:hidden;white-space:nowrap}
+  .strip .run{display:inline-block;animation:slide 26s linear infinite;font-family:'Baloo 2';font-weight:700;font-size:1.1rem}
+  .strip .run span{margin:0 26px;opacity:.95}
+  .strip .run b{color:var(--amber)}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* SECTION HEAD */
+  .shead{text-align:center;max-width:680px;margin:0 auto 52px}
+  .shead h2{font-size:clamp(2rem,4.5vw,2.9rem);color:var(--deepred);line-height:1.08}
+  .shead p{color:var(--soft);font-size:1.08rem;margin-top:12px;font-weight:600}
+
+  /* BUFFET CATEGORIES */
+  .cats{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .cat{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:30px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .cat:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .cat:before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;opacity:.16}
+  .cat.c1:before{background:var(--saffron)}.cat.c2:before{background:var(--red)}
+  .cat.c3:before{background:var(--leaf)}.cat.c4:before{background:var(--amber)}
+  .caticon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;position:relative;z-index:2}
+  .cat.c1 .caticon{background:#fff0d6}.cat.c2 .caticon{background:#fbdcdd}
+  .cat.c3 .caticon{background:#dcefdf}.cat.c4 .caticon{background:#fff2cc}
+  .cat h3{font-size:1.5rem;color:var(--deepred);margin-bottom:4px;position:relative;z-index:2}
+  .cat .ct{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--saffron);margin-bottom:14px;position:relative;z-index:2}
+  .cat ul{list-style:none;position:relative;z-index:2}
+  .cat li{padding:7px 0 7px 26px;position:relative;font-weight:600;color:var(--ink);border-bottom:1px dashed var(--line)}
+  .cat li:last-child{border-bottom:0}
+  .cat li:before{content:"";position:absolute;left:0;top:14px;width:12px;height:12px;border-radius:50%;background:var(--green)}
+  .cat.c2 li:before{background:var(--red)}.cat.c1 li:before{background:var(--saffron)}.cat.c4 li:before{background:var(--amber)}
+  @media(max-width:760px){.cats{grid-template-columns:1fr}}
+
+  /* PRICING BAND */
+  .pricing{background:linear-gradient(140deg,var(--red),var(--deepred));color:#fff;position:relative;overflow:hidden}
+  .pricing:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(255,200,61,.25),transparent 40%)}
+  .pricing .wrap{position:relative;z-index:2}
+  .pricing .shead h2{color:#fff}.pricing .eyebrow{background:rgba(255,255,255,.16);color:var(--amber)}
+  .pricing .shead p{color:#ffe6c2}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:34px}
+  .pcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:30px 24px;text-align:center;backdrop-filter:blur(4px);transition:transform .25s,background .25s}
+  .pcard:hover{transform:translateY(-6px);background:rgba(255,255,255,.16)}
+  .pcard.feat{background:var(--amber);color:var(--deepred);border-color:var(--amber)}
+  .pcard h3{font-size:1.3rem;margin-bottom:6px}
+  .price{font-family:'Baloo 2';font-size:3rem;font-weight:800;line-height:1}
+  .price small{font-size:1rem;font-weight:700;opacity:.85}
+  .pcard .sub{font-size:.9rem;margin-top:8px;font-weight:700;opacity:.9}
+  .ptag{display:inline-block;background:var(--green);color:#fff;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+  .pcard.feat .ptag{background:var(--deepred)}
+  .hours{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .hcard{background:rgba(255,255,255,.1);border-radius:18px;padding:20px 22px}
+  .hcard h4{font-size:1.05rem;color:var(--amber);margin-bottom:4px}
+  .hcard p{font-weight:700;font-size:.96rem}
+  .hcard small{display:block;opacity:.82;font-weight:600;font-size:.82rem;margin-top:3px}
+  @media(max-width:760px){.pgrid{grid-template-columns:1fr}.hours{grid-template-columns:1fr}}
+
+  /* GROUPS */
+  .groups .wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+  .glist{display:grid;gap:16px;margin-top:22px}
+  .gitem{display:flex;gap:15px;align-items:flex-start;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:18px 20px;transition:transform .2s,box-shadow .2s}
+  .gitem:hover{transform:translateX(6px);box-shadow:var(--shadow)}
+  .gico{flex:none;width:46px;height:46px;border-radius:13px;background:#fff0d6;display:flex;align-items:center;justify-content:center}
+  .gitem h4{font-size:1.12rem;color:var(--deepred);margin-bottom:2px}
+  .gitem p{font-size:.92rem;color:var(--soft);font-weight:600}
+  .gfeast{background:linear-gradient(150deg,var(--amber),var(--saffron));border-radius:28px;padding:38px;color:var(--deepred);box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .gfeast:before{content:"";position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.25)}
+  .gfeast h3{font-size:1.9rem;line-height:1.1;margin-bottom:12px;position:relative;z-index:2}
+  .gfeast p{font-weight:700;position:relative;z-index:2;margin-bottom:20px}
+  .gstat{display:flex;gap:24px;position:relative;z-index:2}
+  .gstat div{text-align:center}
+  .gstat b{display:block;font-family:'Baloo 2';font-size:2.1rem;line-height:1}
+  .gstat span{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+  @media(max-width:860px){.groups .wrap{grid-template-columns:1fr}}
+
+  /* BOOK */
+  .book{background:var(--cream)}
+  .bookcard{background:var(--paper);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+  .bookinfo{padding:46px;background:linear-gradient(160deg,var(--deepred),var(--red));color:#fff}
+  .bookinfo h2{font-size:2.2rem;line-height:1.08;margin-bottom:14px}
+  .bookinfo p{color:#ffe6c2;font-weight:600;margin-bottom:26px}
+  .binfo{display:grid;gap:16px}
+  .biline{display:flex;gap:13px;align-items:flex-start}
+  .biline .bi{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+  .biline b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
+  .biline span{font-weight:700}
+  .bigphone{display:inline-flex;align-items:center;gap:11px;margin-top:28px;background:var(--amber);color:var(--deepred);padding:16px 26px;border-radius:34px;font-family:'Baloo 2';font-weight:800;font-size:1.35rem;transition:transform .2s,box-shadow .2s}
+  .bigphone:hover{transform:scale(1.04);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+  .bookform{padding:46px}
+  .bookform h3{font-size:1.5rem;color:var(--deepred);margin-bottom:6px}
+  .bookform>p{color:var(--soft);font-weight:600;margin-bottom:22px;font-size:.95rem}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-weight:800;font-size:.82rem;color:var(--ink);margin-bottom:6px}
+  .field input,.field select{width:100%;padding:12px 14px;border:2px solid var(--line);border-radius:13px;font-family:inherit;font-size:.95rem;font-weight:600;background:#fff;transition:border-color .2s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--saffron)}
+  .formnote{font-size:.84rem;color:var(--soft);margin-top:6px;font-weight:600}
+  .okmsg{display:none;background:#dcefdf;border:1px solid var(--green);color:var(--leaf);padding:14px 18px;border-radius:14px;font-weight:700;margin-top:14px}
+  .okmsg.show{display:block}
+  @media(max-width:860px){.bookcard{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#f3e6d2;padding:56px 0 26px}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;margin-bottom:34px}
+  .footer .brand{color:#fff;margin-bottom:14px}
+  footer p{color:#c9b39a;font-weight:600;font-size:.95rem;margin-bottom:8px}
+  footer h4{font-family:'Baloo 2';color:var(--amber);font-size:1.05rem;margin-bottom:14px}
+  footer a{color:#e8d6bf;font-weight:600;display:block;padding:4px 0;transition:color .2s}
+  footer a:hover{color:var(--amber)}
+  .fbar{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center}
+  .fbar p{font-size:.86rem;margin:0}
+  .credit{color:#7c6a55;font-size:.8rem;font-weight:600}
+  @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:24px}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#d6262b"/><path d="M6 22a14 14 0 0 1 28 0Z" fill="#ffc83d"/><circle cx="20" cy="13" r="4.5" fill="#fff8ec"/><path d="M9 27h22a2 2 0 0 1-2 2.5H11A2 2 0 0 1 9 27Z" fill="#fff8ec"/></svg>
+      Dawn House Buffet
+    </a>
+    <div class="navlinks" id="nav">
+      <a href="#buffet">The Buffet</a>
+      <a href="#pricing">Prices &amp; Hours</a>
+      <a href="#groups">Groups</a>
+      <a href="#book">Book</a>
+      <a href="tel:+61421099286" class="navcall">Call to Book</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+  </nav>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">All You Can Eat &middot; Auburn NSW</span>
+      <h1>One ticket. <span>Endless</span> Korean BBQ feast.</h1>
+      <p class="lead">Fire up your own sizzling grill, then pile your plate from a colourful spread of sushi, hot pot, fresh sides and sweet treats. Halal-friendly meats, refilled all night, all under one happy roof.</p>
+      <div class="heroctas">
+        <a href="#book" class="btn btn-red">Reserve a Table</a>
+        <a href="#buffet" class="btn btn-ghost">See the Spread</a>
+      </div>
+      <div class="badges">
+        <span class="badge">&#10004; Halal-certified meats</span>
+        <span class="badge r">&#9825; Family &amp; group friendly</span>
+        <span class="badge o">&#9733; Live BBQ grills</span>
+      </div>
+    </div>
+    <div class="heroart">
+      <div class="floatchip fc1">&#127836; Sushi rolls</div>
+      <div class="floatchip fc2">&#127857; Soy ribs</div>
+      <div class="floatchip fc3">&#127862; Tiramisu</div>
+      <div class="plate" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="96" fill="#fff"/>
+          <circle cx="100" cy="100" r="96" fill="none" stroke="#ffc83d" stroke-width="6" stroke-dasharray="10 6"/>
+          <circle cx="100" cy="100" r="74" fill="#fff8ec"/>
+          <circle cx="100" cy="100" r="74" fill="none" stroke="#f0e2c9" stroke-width="2"/>
+          <path d="M62 70 q38 -26 76 0 q-38 18 -76 0Z" fill="#d6262b"/>
+          <ellipse cx="80" cy="118" rx="20" ry="13" fill="#3fa34d"/>
+          <ellipse cx="124" cy="120" rx="18" ry="12" fill="#ff9e1b"/>
+          <circle cx="100" cy="92" r="11" fill="#9c1d23"/>
+          <circle cx="118" cy="98" r="6" fill="#ffc83d"/>
+          <circle cx="84" cy="96" r="5" fill="#ffc83d"/>
+          <rect x="92" y="128" width="16" height="16" rx="4" fill="#ffd9b0"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="run">
+    <span>&#128293; Live Korean BBQ grills</span><span>&bull;</span><span><b>Soy-marinated ribs</b></span><span>&bull;</span><span>Sushi &amp; inari</span><span>&bull;</span><span><b>Japchae</b></span><span>&bull;</span><span>Hot pot</span><span>&bull;</span><span><b>Steak cubes &amp; lobster</b></span><span>&bull;</span><span>Fresh mocktails</span><span>&bull;</span><span><b>Chestnut tiramisu</b></span><span>&bull;</span>
+    <span>&#128293; Live Korean BBQ grills</span><span>&bull;</span><span><b>Soy-marinated ribs</b></span><span>&bull;</span><span>Sushi &amp; inari</span><span>&bull;</span><span><b>Japchae</b></span><span>&bull;</span><span>Hot pot</span><span>&bull;</span><span><b>Steak cubes &amp; lobster</b></span><span>&bull;</span><span>Fresh mocktails</span><span>&bull;</span><span><b>Chestnut tiramisu</b></span><span>&bull;</span>
+  </div>
+</div>
+
+<section id="buffet">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">What's on the buffet</span>
+      <h2>Four corners of flavour, refilled all night</h2>
+      <p>Walk the line, fill your plate, come back as many times as you like. Here is a taste of what is waiting at the station.</p>
+    </div>
+    <div class="cats">
+      <div class="cat c1">
+        <div class="caticon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 11h16M6 11v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7" stroke="#ff9e1b" stroke-width="2" stroke-linecap="round"/><path d="M9 7c0-1.5 1-2 1.5-3M13 7c0-1.5 1-2 1.5-3" stroke="#d6262b" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="ct">Entrees &amp; Bites</span>
+        <h3>Starters &amp; Sushi</h3>
+        <ul>
+          <li>Tuna, teriyaki chicken &amp; crab sushi rolls</li>
+          <li>Three varieties of inari sushi</li>
+          <li>Sweet &amp; sour spicy octopus dumplings</li>
+          <li>Crispy pizza tart bites</li>
+          <li>Fresh salad &amp; pickle bar</li>
+        </ul>
+      </div>
+      <div class="cat c2">
+        <div class="caticon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 19l3-9 4 2 4-2 3 9" stroke="#d6262b" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="6" r="3" stroke="#9c1d23" stroke-width="2"/></svg></div>
+        <span class="ct">Hearty Mains</span>
+        <h3>Korean Favourites</h3>
+        <ul>
+          <li>Japchae glass noodles, sweet &amp; savoury</li>
+          <li>Bubbling hot pot, made your way</li>
+          <li>Steamed rice &amp; warming soups</li>
+          <li>Stir-fried seasonal vegetables</li>
+          <li>Spicy &amp; mild side dishes (banchan)</li>
+        </ul>
+      </div>
+      <div class="cat c3">
+        <div class="caticon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 18h16M6 18c0-4 2-6 6-6s6 2 6 6" stroke="#3fa34d" stroke-width="2" stroke-linecap="round"/><path d="M9 9V6M12 9V5M15 9V6" stroke="#d6262b" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="ct">The Grill</span>
+        <h3>Live Korean BBQ</h3>
+        <ul>
+          <li>Tender soy-marinated ribs</li>
+          <li>Premium steak cubes</li>
+          <li>Marinated halal-certified meats</li>
+          <li>Lobster &amp; seafood (premium spread)</li>
+          <li>Grill it fresh at your own table</li>
+        </ul>
+      </div>
+      <div class="cat c4">
+        <div class="caticon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M6 10h12l-1.5 9a2 2 0 0 1-2 1.7H9.5a2 2 0 0 1-2-1.7L6 10Z" stroke="#ff9e1b" stroke-width="2" stroke-linejoin="round"/><path d="M12 10V6a2 2 0 0 1 2-2" stroke="#d6262b" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="ct">Sweet Endings</span>
+        <h3>Desserts &amp; Drinks</h3>
+        <ul>
+          <li>Smooth chestnut tiramisu</li>
+          <li>Seasonal cupcakes &amp; cakes</li>
+          <li>Blueberry &amp; pomegranate mocktails</li>
+          <li>Refreshing blue lemonade</li>
+          <li>Soft serve &amp; fruit station</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Prices &amp; Hours</span>
+      <h2>One price, unlimited plates</h2>
+      <p>All-you-can-eat dining for every appetite. Kids and little ones eat for less, every single day.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard">
+        <span class="ptag">Adult</span>
+        <h3>Standard Buffet</h3>
+        <div class="price">$40<small> /person</small></div>
+        <p class="sub">Full buffet &amp; live BBQ grill</p>
+      </div>
+      <div class="pcard feat">
+        <span class="ptag">Most Loved</span>
+        <h3>Premium Buffet</h3>
+        <div class="price">$54<small> /person</small></div>
+        <p class="sub">Adds lobster, steak cubes &amp; premium cuts</p>
+      </div>
+      <div class="pcard">
+        <span class="ptag">Little Guests</span>
+        <h3>Kids &amp; Infants</h3>
+        <div class="price">$29<small> /child</small></div>
+        <p class="sub">Ages 4-10 &middot; Infants 0-3 just $6</p>
+      </div>
+    </div>
+    <div class="hours">
+      <div class="hcard">
+        <h4>Dinner Buffet</h4>
+        <p>Daily from 5:30 PM - 10:00 PM</p>
+        <small>The full feast, every evening of the week</small>
+      </div>
+      <div class="hcard">
+        <h4>Early Dinner Special</h4>
+        <p>5:30 PM - 6:00 PM</p>
+        <small>Standard $36 &middot; Premium $54 &middot; Fri to Sun &amp; Wed to Thu</small>
+      </div>
+      <div class="hcard">
+        <h4>Good to Know</h4>
+        <p>Bookings recommended</p>
+        <small>Halal-friendly &middot; Park on Adderley St E, Lidcombe</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="groups" class="groups">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Perfect for groups &amp; events</span>
+      <h2 style="font-family:'Baloo 2';font-size:clamp(2rem,4.5vw,2.8rem);color:var(--deepred);line-height:1.1">Bring everyone. There is room at the grill.</h2>
+      <div class="glist">
+        <div class="gitem">
+          <div class="gico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#d6262b" stroke-width="2"/><circle cx="16" cy="9" r="2.4" stroke="#3fa34d" stroke-width="2"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5M15 19c0-2 1-3.5 3-3.5s3 1.5 3 3.5" stroke="#ff9e1b" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><h4>Family catch-ups</h4><p>Long tables, shared grills and a menu that keeps everyone happy, picky eaters included.</p></div>
+        </div>
+        <div class="gitem">
+          <div class="gico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l2 5 5 .4-3.8 3.3L16.5 17 12 14l-4.5 3 1.3-5.3L5 8.4 10 8l2-5Z" stroke="#ff9e1b" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><h4>Birthdays &amp; celebrations</h4><p>Turn any occasion into a feast. Festive openings on Christmas, Easter, Mother's Day &amp; ANZAC Day too.</p></div>
+        </div>
+        <div class="gitem">
+          <div class="gico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="13" rx="2" stroke="#3fa34d" stroke-width="2"/><path d="M8 6V4M16 6V4M4 10h16" stroke="#d6262b" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><h4>Work &amp; team dinners</h4><p>An easy, fixed-price plan for the whole crew. No splitting menus, just one great spread.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="gfeast">
+      <h3>Big appetites welcome</h3>
+      <p>From a table for two to a party that fills the room, our all-you-can-eat format makes group dining simple, generous and fun.</p>
+      <div class="gstat">
+        <div><b>30 min</b><span>Early bird window</span></div>
+        <div><b>4.5h</b><span>Open every night</span></div>
+        <div><b>100%</b><span>Halal-friendly meats</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="book">
+  <div class="wrap">
+    <div class="bookcard">
+      <div class="bookinfo">
+        <h2>Reserve your feast</h2>
+        <p>Seats fill up fast, especially on weekends. The quickest way to lock in your table is a quick call.</p>
+        <div class="binfo">
+          <div class="biline">
+            <div class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z" stroke="#ffc83d" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#ffc83d" stroke-width="2"/></svg></div>
+            <div><b>Find us</b><span>17 Silverwater Road, Auburn NSW 2144</span></div>
+          </div>
+          <div class="biline">
+            <div class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#ffc83d" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#ffc83d" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><b>Open</b><span>Every night, 5:30 PM - 10:00 PM</span></div>
+          </div>
+          <div class="biline">
+            <div class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 4l2 4-2 2c1 3 3 5 6 6l2-2 4 2-1 3c-9 1-16-6-15-15l3-1Z" stroke="#ffc83d" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <div><b>Parking</b><span>Adderley St E, Lidcombe (no Silverwater Rd parking)</span></div>
+          </div>
+        </div>
+        <a href="tel:+61421099286" class="bigphone">&#9742; +61 421 099 286</a>
+      </div>
+      <div class="bookform">
+        <h3>Request a table</h3>
+        <p>Send us your details and our team will confirm by phone.</p>
+        <form id="resform" novalidate>
+          <div class="field"><label for="name">Your name</label><input id="name" type="text" required placeholder="e.g. Sara Ahmed"></div>
+          <div class="frow">
+            <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" required placeholder="04xx xxx xxx"></div>
+            <div class="field"><label for="guests">Guests</label>
+              <select id="guests">
+                <option>1-2 guests</option><option>3-4 guests</option><option>5-8 guests</option><option>9+ (large group)</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="date">Date</label><input id="date" type="date"></div>
+            <div class="field"><label for="time">Time</label>
+              <select id="time">
+                <option>5:30 PM (Early Special)</option><option>6:30 PM</option><option>7:30 PM</option><option>8:30 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-red" style="width:100%;justify-content:center">Send Booking Request</button>
+          <p class="formnote">Prefer to talk? Call +61 421 099 286 for instant confirmation.</p>
+          <div class="okmsg" id="okmsg">Thank you! Your request is noted. Please call +61 421 099 286 to confirm your table.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="brand">
+          <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#d6262b"/><path d="M6 22a14 14 0 0 1 28 0Z" fill="#ffc83d"/><circle cx="20" cy="13" r="4.5" fill="#fff8ec"/><path d="M9 27h22a2 2 0 0 1-2 2.5H11A2 2 0 0 1 9 27Z" fill="#fff8ec"/></svg>
+          Dawn House Buffet
+        </a>
+        <p>An abundant, halal-friendly all-you-can-eat Korean BBQ buffet in the heart of Auburn. Endless variety, fresh grills and a warm welcome for every table.</p>
+        <p style="color:#ffc83d;font-weight:800">17 Silverwater Road, Auburn NSW 2144</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#buffet">The Buffet</a>
+        <a href="#pricing">Prices &amp; Hours</a>
+        <a href="#groups">Groups &amp; Events</a>
+        <a href="#book">Book a Table</a>
+      </div>
+      <div>
+        <h4>Visit &amp; Book</h4>
+        <a href="tel:+61421099286">&#9742; +61 421 099 286</a>
+        <a href="#book">Daily 5:30 PM - 10:00 PM</a>
+        <a href="#pricing">Early Dinner Special</a>
+        <p style="margin-top:8px">Halal-certified meats</p>
+      </div>
+    </div>
+    <div class="fbar">
+      <p>&copy; 2026 Dawn House Buffet &middot; Auburn NSW &middot; +61 421 099 286</p>
+      <p class="credit">Concept site by WebCraft Global</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+
+  var form=document.getElementById('resform'),ok=document.getElementById('okmsg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('name'),phone=document.getElementById('phone');
+    if(!name.value.trim()||!phone.value.trim()){
+      if(!name.value.trim())name.style.borderColor='#d6262b';
+      if(!phone.value.trim())phone.style.borderColor='#d6262b';
+      return;
+    }
+    ok.classList.add('show');
+    form.querySelector('button[type=submit]').textContent='Request Sent';
+    setTimeout(function(){form.reset();},400);
+  });
+
+  // subtle scroll-in for cards
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.style.opacity=1;en.target.style.transform='translateY(0)';}});},{threshold:.12});
+  document.querySelectorAll('.cat,.pcard,.gitem,.hcard').forEach(function(el){el.style.opacity=0;el.style.transform='translateY(22px)';el.style.transition='opacity .5s ease,transform .5s ease';io.observe(el);});
+</script>
+</body>
+</html>

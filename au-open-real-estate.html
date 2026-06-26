@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Real Estate Sydney | Parramatta Property Agents - Buy, Sell, Rent, Manage</title>
+<meta name="description" content="Open Real Estate (Open RE) - your trusted real estate agents in Parramatta NSW. Full-service buying, selling, renting and property management. Free appraisal. Call 02 9893 7788.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb; --blue-dark:#1d4ed8; --blue-deep:#1e3a8a;
+  --warm:#f59e0b; --warm-soft:#fef3c7;
+  --ink:#0f172a; --slate:#475569; --mist:#64748b;
+  --line:#e2e8f0; --bg:#ffffff; --bg-soft:#f1f5f9; --bg-blue:#eff6ff;
+  --radius:18px; --shadow:0 14px 40px -18px rgba(30,58,138,.32);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.12;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;padding:14px 26px;border-radius:999px;cursor:pointer;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 26px -10px rgba(37,99,235,.65)}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-3px);box-shadow:0 16px 34px -12px rgba(37,99,235,.7)}
+.btn-ghost{background:#fff;color:var(--blue);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--blue);transform:translateY(-3px)}
+.btn-warm{background:var(--warm);color:#3b2a05}
+.btn-warm:hover{background:#e8920a;transform:translateY(-3px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--warm);border-radius:2px}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo{width:40px;height:40px;border-radius:11px;background:linear-gradient(140deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand b{color:var(--blue)}
+.brand small{display:block;font-size:10.5px;letter-spacing:.16em;color:var(--mist);font-weight:600;text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:14.5px;font-weight:600;color:var(--slate);position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--blue);transition:width .25s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-phone{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ink);display:flex;align-items:center;gap:7px}
+.nav-phone svg{color:var(--blue)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(170deg,#f8fbff 0%,#eef4ff 55%,#e7f0ff 100%)}
+.hero::before{content:"";position:absolute;top:-120px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(37,99,235,.14),transparent 70%);border-radius:50%}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;padding:70px 0 84px;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.3rem,5vw,3.5rem);font-weight:800}
+.hero h1 span{color:var(--blue)}
+.hero p.lead{font-size:18px;color:var(--slate);margin:20px 0 30px;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.trust{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.stars{color:var(--warm);font-size:18px;letter-spacing:2px}
+.trust small{color:var(--mist);font-size:13.5px;font-weight:500}
+.trust b{color:var(--ink);font-weight:700}
+
+/* search card */
+.search-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line);padding:22px;position:relative;z-index:3}
+.search-card h3{font-size:17px;margin-bottom:4px}
+.search-card p{font-size:13px;color:var(--mist);margin-bottom:16px}
+.tabs{display:flex;gap:6px;background:var(--bg-soft);padding:5px;border-radius:12px;margin-bottom:16px}
+.tab{flex:1;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13.5px;padding:9px 6px;border-radius:9px;cursor:pointer;color:var(--mist);transition:.2s}
+.tab.active{background:#fff;color:var(--blue);box-shadow:0 3px 10px -4px rgba(15,23,42,.2)}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-bottom:5px;font-family:'Plus Jakarta Sans',sans-serif}
+.field input,.field select{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit;font-size:14px;color:var(--ink);background:#fff;transition:border .2s,box-shadow .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.13)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.search-card .btn{width:100%;justify-content:center;margin-top:4px}
+.scene{position:absolute;inset:auto 0 -2px 0;z-index:1;opacity:.9}
+
+/* SERVICES */
+.section{padding:84px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800;margin:14px 0 12px}
+.sec-head p{color:var(--slate);font-size:16.5px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
+.svc::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:transparent}
+.svc:hover::after{transform:scaleX(1)}
+.svc-ico{width:54px;height:54px;border-radius:14px;background:var(--bg-blue);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:18px}
+.svc:nth-child(2) .svc-ico{background:var(--warm-soft);color:#b97608}
+.svc:nth-child(2)::after{background:var(--warm)}
+.svc h3{font-size:19px;margin-bottom:9px}
+.svc p{font-size:14.5px;color:var(--slate);margin-bottom:16px}
+.svc a.more{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13.5px;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.svc a.more svg{transition:transform .2s}
+.svc:hover a.more svg{transform:translateX(4px)}
+
+/* SUBURBS BAND */
+.suburbs{background:var(--blue-deep);color:#fff;position:relative;overflow:hidden}
+.suburbs::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(37,99,235,.5),transparent 55%)}
+.suburbs .wrap{position:relative;z-index:2}
+.suburbs .sec-head h2{color:#fff}
+.suburbs .sec-head p{color:#bfd2f5}
+.suburbs .eyebrow{color:#93c5fd}
+.suburb-list{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:880px;margin:0 auto}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:11px 19px;border-radius:999px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14.5px;transition:.22s;cursor:default}
+.chip:hover{background:var(--warm);color:#3b2a05;border-color:var(--warm);transform:translateY(-3px)}
+.chip svg{color:#93c5fd;transition:color .2s}
+.chip:hover svg{color:#3b2a05}
+
+/* WHY / STATS */
+.why{background:var(--bg-soft)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.why-grid ul{list-style:none;margin-top:24px}
+.why-grid li{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.why-grid li:last-child{border-bottom:0}
+.tick{width:30px;height:30px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.why-grid li b{font-family:'Plus Jakarta Sans',sans-serif;font-size:15.5px;display:block;margin-bottom:2px}
+.why-grid li span{font-size:14px;color:var(--slate)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;text-align:center;transition:transform .25s,box-shadow .25s}
+.stat:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.stat .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.5rem;color:var(--blue);letter-spacing:-.03em}
+.stat:nth-child(2) .num,.stat:nth-child(3) .num{color:var(--warm)}
+.stat .lbl{font-size:13.5px;color:var(--mist);font-weight:600;margin-top:4px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;border-radius:26px;padding:54px 50px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cta::before{content:"";position:absolute;bottom:-80px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(245,158,11,.32),transparent 70%);border-radius:50%}
+.cta-txt{position:relative;z-index:2}
+.cta h2{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:800;color:#fff}
+.cta p{color:#dbe6fb;font-size:16.5px;margin:14px 0 26px;max-width:480px}
+.cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+.cta-card{position:relative;z-index:2;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:26px;backdrop-filter:blur(6px)}
+.cta-card .ph-lbl{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#bfd2f5;font-weight:700}
+.cta-card .ph{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.9rem;margin:4px 0 14px;display:flex;align-items:center;gap:10px}
+.cta-card .ph svg{color:var(--warm)}
+.cta-card .row{display:flex;gap:10px;font-size:14px;color:#dbe6fb;margin-top:9px;align-items:flex-start}
+.cta-card .row svg{color:var(--warm);flex-shrink:0;margin-top:3px}
+
+/* FOOTER */
+footer{background:var(--ink);color:#cbd5e1;padding:60px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand .brand{color:#fff}
+.foot-brand .brand small{color:#7b8aa3}
+.foot-brand p{font-size:14px;color:#94a3b8;margin-top:16px;max-width:300px}
+.foot-col h4{font-family:'Plus Jakarta Sans',sans-serif;color:#fff;font-size:15px;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:14px;color:#94a3b8;margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:var(--warm)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:13px;color:#7b8aa3}
+.foot-bottom .concept{color:#5b6981;font-style:italic}
+.foot-bottom a{color:#7b8aa3}
+.foot-bottom a:hover{color:#cbd5e1}
+
+@media(max-width:920px){
+  .hero-grid,.why-grid,.cta{grid-template-columns:1fr}
+  .hero-grid{gap:36px;padding:50px 0 64px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .cta{padding:42px 32px}
+}
+@media(max-width:680px){
+  .nav-links,.nav-phone{display:none}
+  .burger{display:flex}
+  .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:#fff;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .svc-grid,.stats,.foot-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .cta-card .ph{font-size:1.55rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9h14v-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19v-5h4v5" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>Open<b>RE</b><small>Parramatta NSW</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#buy">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#rent">Rent</a>
+      <a href="#manage">Manage</a>
+      <a href="#suburbs">Suburbs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+61298937788" class="nav-phone">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 5c0 9 7 16 16 16l2.5-3.5L17 16l-2 1.5c-2.2-1.3-4.2-3.3-5.5-5.5L11 10 8.5 5.5 5 3 3 5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        02 9893 7788
+      </a>
+      <a href="#contact" class="btn btn-primary">Free Appraisal</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <svg class="scene" viewBox="0 0 1440 200" preserveAspectRatio="none" fill="none" aria-hidden="true">
+    <path d="M0 200V120l60-30v40l40-50v50l50-35v55l70-45v40l55-30v55l80-50v45l60-30v55l90-55v50l70-40v50l85-55v60l60-35v55l95-60v55l70-40v50l80-50v60l65-35V200z" fill="#dbeafe" opacity=".7"/>
+    <path d="M0 200v-40l90-22v30l60-30v45l80-30v40l70-25v45l100-40v40l80-30v55l90-40v45l110-50v55l90-40v45l100-45v60l90-40v45l110-50V200z" fill="#bfdbfe" opacity=".6"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Trusted Parramatta Agents Since 2009</span>
+      <h1>Open the door to your next <span>move in Parramatta</span></h1>
+      <p class="lead">Open Real Estate is a full-service agency in North Parramatta - guiding you to buy, sell, rent and manage property across Sydney's west with honest, local expertise.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get a Free Appraisal
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#buy" class="btn btn-ghost">Browse Listings</a>
+      </div>
+      <div class="trust">
+        <div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br><small><b>5-Star rated</b> across Google reviews</small></div>
+        <div><small><b>2,000+</b> local families helped<br>across Parramatta &amp; greater west Sydney</small></div>
+      </div>
+    </div>
+    <div class="search-card">
+      <h3>Find your place</h3>
+      <p>Search homes for sale or rent across Sydney's west.</p>
+      <div class="tabs" id="tabs">
+        <div class="tab active" data-t="buy">Buy</div>
+        <div class="tab" data-t="rent">Rent</div>
+        <div class="tab" data-t="sold">Sold</div>
+      </div>
+      <form id="searchForm">
+        <div class="field">
+          <label>Suburb or postcode</label>
+          <input type="text" placeholder="e.g. North Parramatta, 2151" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Property type</label>
+            <select><option>Any type</option><option>House</option><option>Apartment</option><option>Townhouse</option><option>Land</option></select>
+          </div>
+          <div class="field">
+            <label>Bedrooms</label>
+            <select><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          Search Properties
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="buy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Full-service property, one local team</h2>
+      <p>From your first inspection to long-term management, Open RE handles every side of real estate in Parramatta.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc" id="rent-anchor">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 11 12 4l9 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9h14v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14" r="1.6" fill="currentColor"/></svg></div>
+        <h3>Buy</h3>
+        <p>Browse residential sales, register for open inspections and set up a property alert so you never miss the right home.</p>
+        <a class="more" href="#contact">Browse listings <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc" id="sell">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 19V9l5-4 5 4v10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 13l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="9" r="2.4" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Sell</h3>
+        <p>Get a free market appraisal and a tailored campaign that puts your home in front of the right buyers, fast.</p>
+        <a class="more" href="#contact">Free market appraisal <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc" id="rent">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M8 9V6a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="14" r="1.6" fill="currentColor"/></svg></div>
+        <h3>Rent</h3>
+        <p>Find residential rentals, inspect open homes and apply online in minutes through our easy tenant portal.</p>
+        <a class="more" href="#contact">Apply online <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="svc" id="manage">
+        <div class="svc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 7v6c0 4.5 3.4 7.5 8 8.5 4.6-1 8-4 8-8.5V7l-8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Manage</h3>
+        <p>Protect your investment with proactive property management, plus 24/7 owner and tenant portals.</p>
+        <a class="more" href="#contact">Owner portal <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="suburbs section" id="suburbs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Local knowledge</span>
+      <h2>Suburbs we know inside out</h2>
+      <p>Based at 68A Sorrell Street, North Parramatta - we live and work across Sydney's west.</p>
+    </div>
+    <div class="suburb-list">
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="2"/></svg>North Parramatta</span>
+      <span class="chip">Parramatta</span>
+      <span class="chip">Westmead</span>
+      <span class="chip">Harris Park</span>
+      <span class="chip">Northmead</span>
+      <span class="chip">Rydalmere</span>
+      <span class="chip">Carlingford</span>
+      <span class="chip">Telopea</span>
+      <span class="chip">Oatlands</span>
+      <span class="chip">Dundas</span>
+      <span class="chip">Wentworthville</span>
+      <span class="chip">Toongabbie</span>
+      <span class="chip">Granville</span>
+      <span class="chip">Merrylands</span>
+      <span class="chip">Greystanes</span>
+      <span class="chip">Constitution Hill</span>
+    </div>
+  </div>
+</section>
+
+<section class="why section">
+  <div class="wrap why-grid">
+    <div>
+      <span class="eyebrow">Why Open RE</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem);margin:14px 0 8px">Real estate done the open, honest way</h2>
+      <p style="color:var(--slate);font-size:16px">We named ourselves Open for a reason - clear communication, transparent advice and no surprises, whether you are buying your first home or building a portfolio.</p>
+      <ul>
+        <li><span class="tick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Free, no-obligation appraisals</b><span>Know what your home is really worth before you decide.</span></div></li>
+        <li><span class="tick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Smart digital portals</b><span>Owner, tenant and supplier portals keep everyone in the loop.</span></div></li>
+        <li><span class="tick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-11" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Genuinely local team</b><span>Parramatta specialists who know the streets, schools and value.</span></div></li>
+      </ul>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">15+</div><div class="lbl">Years serving Parramatta</div></div>
+      <div class="stat"><div class="num">5.0</div><div class="lbl">Average Google rating</div></div>
+      <div class="stat"><div class="num">2k+</div><div class="lbl">Buyers &amp; sellers helped</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Local, full-service team</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <div class="cta-txt">
+        <h2>Curious what your property is worth?</h2>
+        <p>Book a free market appraisal with the Open RE team. We will give you honest local advice and a clear plan - no pressure, no obligation.</p>
+        <div class="cta-actions">
+          <a href="tel:+61298937788" class="btn btn-warm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 5c0 9 7 16 16 16l2.5-3.5L17 16l-2 1.5c-2.2-1.3-4.2-3.3-5.5-5.5L11 10 8.5 5.5 5 3 3 5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Call 02 9893 7788
+          </a>
+          <a href="mailto:info@open-re.com.au" class="btn btn-ghost">Email Us</a>
+        </div>
+      </div>
+      <div class="cta-card">
+        <div class="ph-lbl">Talk to us today</div>
+        <div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 5c0 9 7 16 16 16l2.5-3.5L17 16l-2 1.5c-2.2-1.3-4.2-3.3-5.5-5.5L11 10 8.5 5.5 5 3 3 5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>02 9893 7788</div>
+        <div class="row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="2"/></svg><span>68A Sorrell Street,<br>North Parramatta NSW 2151</span></div>
+        <div class="row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/></svg><span>info@open-re.com.au</span></div>
+        <div class="row"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Mon - Sat by appointment</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand">
+          <span class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9h14v-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19v-5h4v5" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="color:#fff">Open<b style="color:#60a5fa">RE</b><small>Parramatta NSW</small></span>
+        </span>
+        <p>Open Real Estate - your trusted full-service agents for buying, selling, renting and property management across Parramatta and Sydney's west.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#buy">Residential Sales</a>
+        <a href="#sell">Market Appraisal</a>
+        <a href="#rent">Residential Rentals</a>
+        <a href="#manage">Property Management</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#suburbs">Suburbs We Serve</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#top">Testimonials</a>
+        <a href="#top">Privacy Policy</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="tel:+61298937788">02 9893 7788</a>
+        <a href="mailto:info@open-re.com.au">info@open-re.com.au</a>
+        <p>68A Sorrell Street,<br>North Parramatta NSW 2151</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Open Real Estate Sydney - North Parramatta NSW - 02 9893 7788</span>
+      <span class="concept">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // mobile menu
+  var burger=document.getElementById('burger'),nav=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+  // search tabs
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('active');});t.classList.add('active');});});
+  // search form (demo)
+  document.getElementById('searchForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var active=document.querySelector('.tab.active').dataset.t;
+    var loc=this.querySelector('input').value||'Parramatta';
+    var btn=this.querySelector('button');
+    var old=btn.innerHTML;
+    btn.innerHTML='Searching '+loc+'...';
+    setTimeout(function(){btn.innerHTML=old;alert('This is a concept demo. In the live site this would show '+active+' listings in '+loc+'. Call Open RE on 02 9893 7788 to chat now.');},700);
+  });
+  // animate stats on scroll
+  var nums=document.querySelectorAll('.stat .num');
+  var seen=false;
+  function check(){
+    if(seen)return;
+    var s=document.querySelector('.stats');
+    if(!s)return;
+    if(s.getBoundingClientRect().top<window.innerHeight-80){seen=true;nums.forEach(function(n){n.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:600,fill:'forwards'});});}
+  }
+  window.addEventListener('scroll',check);check();
+})();
+</script>
+</body>
+</html>

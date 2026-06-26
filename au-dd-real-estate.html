@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D and D Real Estate | Parramatta and Western Sydney Property Experts</title>
+<meta name="description" content="D and D Real Estate. 27 years selling, leasing and managing property across Parramatta and Western Sydney. Local experts. Call 02 9687 6555.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#d31920;
+  --red-dark:#a8131a;
+  --charcoal:#1c1d22;
+  --charcoal-2:#27282f;
+  --ink:#2a2b30;
+  --off:#f6f3ee;
+  --off-2:#ece7df;
+  --line:#dcd6cc;
+  --muted:#6f6e6b;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--off);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.dsp{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-0.02em;line-height:1.02}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--red)}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:rgba(28,29,34,.96);backdrop-filter:blur(8px);border-bottom:3px solid var(--red)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:11px;color:#fff}
+.logo .mark{width:42px;height:42px;background:var(--red);display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:1.05rem;color:#fff;border-radius:7px;letter-spacing:-.04em}
+.logo b{font-family:'Archivo';font-weight:800;font-size:1.06rem;letter-spacing:-.01em}
+.logo span{display:block;font-family:'Inter';font-weight:500;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#b9b8b5;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{color:#e6e4e0;font-weight:600;font-size:.92rem}
+.nav-links a:hover{color:var(--red)}
+.nav-call{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff!important;padding:11px 20px;border-radius:7px;font-family:'Archivo';font-weight:700;font-size:.9rem;transition:background .2s,transform .2s}
+.nav-call:hover{background:#fff;color:var(--red)!important;transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:26px;height:3px;background:#fff;border-radius:2px}
+
+/* HERO */
+.hero{position:relative;background:var(--charcoal);color:#fff;overflow:hidden}
+.hero-grid{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:54px 54px}
+.hero-skyline{position:absolute;right:0;bottom:0;width:min(640px,52%);opacity:.9;pointer-events:none}
+.hero-inner{position:relative;padding:84px 0 96px;max-width:760px}
+.hero .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.25);border-radius:40px;padding:7px 16px;font-size:.78rem;font-weight:600;color:#e9e7e3;margin-bottom:26px}
+.hero .badge i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(211,25,32,.25)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);color:#fff}
+.hero h1 em{font-style:normal;color:var(--red);position:relative}
+.hero h1 em:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:var(--red);border-radius:3px;transform:scaleX(0);transform-origin:left;animation:line 1s .4s forwards cubic-bezier(.2,.8,.2,1)}
+@keyframes line{to{transform:scaleX(1)}}
+.hero p.lead{font-size:1.2rem;color:#cfcdc9;margin:24px 0 0;max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Archivo';font-weight:700;padding:15px 26px;border-radius:8px;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:transform .2s,background .2s,color .2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.32);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--charcoal);transform:translateY(-2px)}
+.hero-strip{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin-top:46px;font-size:.82rem;color:#bdbbb7}
+.hero-strip span{display:inline-flex;align-items:center;gap:7px}
+.hero-strip span:before{content:"";width:6px;height:6px;background:var(--red);transform:rotate(45deg)}
+
+/* SERVICES */
+.section{padding:84px 0}
+.sec-head{max-width:640px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin:14px 0 0;color:var(--charcoal)}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 30px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(28,29,34,.4);border-color:transparent}
+.card:hover:before{transform:scaleX(1)}
+.card .ic{width:56px;height:56px;border-radius:12px;background:var(--off-2);display:grid;place-items:center;margin-bottom:22px;color:var(--red)}
+.card:hover .ic{background:var(--red);color:#fff}
+.card .ic svg{width:28px;height:28px}
+.card h3{font-size:1.35rem;color:var(--charcoal)}
+.card p{color:var(--muted);margin-top:11px;font-size:.96rem}
+.card .more{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-family:'Archivo';font-weight:700;font-size:.86rem;color:var(--red)}
+.card .more svg{width:15px;height:15px;transition:transform .2s}
+.card:hover .more svg{transform:translateX(4px)}
+
+/* HOME TURF */
+.turf{background:var(--charcoal);color:#fff}
+.turf-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.turf h2{font-size:clamp(2rem,4vw,2.9rem);color:#fff;margin-top:14px}
+.turf p{color:#cfcdc9;margin-top:18px;font-size:1.05rem}
+.turf .eyebrow{color:#ff6b70}
+.suburbs{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chip{border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:8px 15px;font-size:.84rem;font-weight:600;color:#e6e4e0;transition:background .2s,color .2s,border-color .2s;cursor:default}
+.chip:hover{background:var(--red);border-color:var(--red);color:#fff}
+.turf-map{background:var(--charcoal-2);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px;position:relative;overflow:hidden}
+.turf-map svg{width:100%;height:auto;display:block}
+.map-tag{position:absolute;top:18px;left:18px;background:var(--red);color:#fff;font-family:'Archivo';font-weight:700;font-size:.74rem;padding:6px 12px;border-radius:6px;letter-spacing:.04em}
+
+/* STATS */
+.stats{background:var(--red);color:#fff;padding:62px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat .n{font-family:'Archivo';font-weight:900;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;letter-spacing:-.03em}
+.stat .l{font-weight:600;font-size:.9rem;margin-top:10px;color:#ffe1e2;text-transform:uppercase;letter-spacing:.08em}
+.stats .divline{height:1px;background:rgba(255,255,255,.25);margin:42px 0 0;grid-column:1/-1}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prop{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.prop:hover{transform:translateY(-6px);box-shadow:0 22px 44px -22px rgba(28,29,34,.42)}
+.prop-img{position:relative;height:170px;background:linear-gradient(135deg,#34353d,#1f2026);overflow:hidden}
+.prop-img svg{position:absolute;inset:0;width:100%;height:100%}
+.prop-tag{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-family:'Archivo';font-weight:700;font-size:.7rem;padding:5px 11px;border-radius:5px;letter-spacing:.05em;z-index:2}
+.prop-body{padding:20px}
+.prop .sub{font-family:'Archivo';font-weight:800;font-size:.78rem;letter-spacing:.12em;color:var(--red)}
+.prop .addr{font-weight:600;color:var(--charcoal);margin-top:5px;font-size:1.02rem}
+.prop .price{font-family:'Archivo';font-weight:900;font-size:1.25rem;color:var(--charcoal);margin-top:12px}
+.prop .feat{display:flex;gap:16px;margin-top:13px;padding-top:13px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;font-weight:600}
+.prop .feat span{display:inline-flex;align-items:center;gap:6px}
+.prop .feat svg{width:16px;height:16px;color:var(--red)}
+
+/* TESTIMONIAL */
+.quote-band{background:var(--off-2);padding:74px 0}
+.quote-wrap{max-width:840px;margin:0 auto;text-align:center}
+.quote-mark{font-family:'Archivo';font-weight:900;font-size:4.5rem;color:var(--red);line-height:.6;height:38px}
+.quote-wrap blockquote{font-family:'Archivo';font-weight:600;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--charcoal);line-height:1.3;letter-spacing:-.01em}
+.quote-wrap cite{display:block;margin-top:22px;font-style:normal;font-weight:700;color:var(--red);font-size:.95rem;letter-spacing:.04em}
+.quote-wrap .role{color:var(--muted);font-weight:500;font-size:.86rem;margin-top:3px}
+
+/* CONTACT */
+.contact{background:var(--charcoal);color:#fff;padding:0}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr}
+.contact-left{padding:78px 56px 78px 0}
+.contact-left .eyebrow{color:#ff6b70}
+.contact-left h2{font-size:clamp(2.1rem,4.5vw,3.2rem);color:#fff;margin-top:14px}
+.contact-left p{color:#cfcdc9;margin-top:18px;font-size:1.06rem;max-width:440px}
+.phone-cta{display:inline-flex;align-items:center;gap:16px;margin-top:34px;background:var(--red);color:#fff;padding:20px 30px;border-radius:12px;transition:background .2s,transform .2s}
+.phone-cta:hover{background:#fff;color:var(--red);transform:translateY(-2px)}
+.phone-cta .ico{width:46px;height:46px;border-radius:10px;background:rgba(255,255,255,.16);display:grid;place-items:center;flex:0 0 auto}
+.phone-cta:hover .ico{background:var(--red);color:#fff}
+.phone-cta .ico svg{width:24px;height:24px}
+.phone-cta small{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;opacity:.85;font-weight:600}
+.phone-cta b{font-family:'Archivo';font-weight:900;font-size:1.7rem;letter-spacing:-.01em;line-height:1.1}
+.contact-meta{display:flex;flex-wrap:wrap;gap:30px;margin-top:38px}
+.contact-meta div .k{font-family:'Archivo';font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#ff6b70}
+.contact-meta div .v{margin-top:5px;color:#e6e4e0;font-weight:500}
+.contact-right{background:var(--charcoal-2);padding:54px 48px;border-left:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center}
+.contact-right h3{font-size:1.4rem;color:#fff;margin-bottom:8px}
+.contact-right p{color:#aaa9a6;font-size:.92rem;margin-bottom:22px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.78rem;font-weight:600;color:#cfcdc9;margin-bottom:6px}
+.field input,.field textarea{width:100%;background:#15161a;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:12px 14px;color:#fff;font-family:inherit;font-size:.95rem;transition:border-color .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+.field textarea{resize:vertical;min-height:80px}
+.form-btn{width:100%;background:var(--red);color:#fff;border:0;padding:15px;border-radius:8px;font-family:'Archivo';font-weight:700;font-size:1rem;cursor:pointer;transition:background .2s}
+.form-btn:hover{background:var(--red-dark)}
+.form-note{font-size:.8rem;color:#88877f;margin-top:12px;text-align:center}
+
+/* FOOTER */
+footer{background:#141519;color:#9b9a96;padding:54px 0 30px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand .logo{margin-bottom:16px}
+.foot-brand p{font-size:.9rem;max-width:330px}
+.foot-col h4{font-family:'Archivo';font-weight:800;color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.foot-col a{display:block;color:#9b9a96;font-size:.92rem;margin-bottom:9px;transition:color .2s}
+.foot-col a:hover{color:var(--red)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:26px;font-size:.82rem}
+.foot-bottom .line{color:#cfcdc9;font-weight:500}
+.foot-bottom .line b{color:#fff;font-family:'Archivo';font-weight:700}
+.credit{color:#5b5a55}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--charcoal);padding:18px 24px;gap:18px;border-bottom:3px solid var(--red)}
+  .burger{display:flex}
+  .trio,.results-grid,.stats-grid{grid-template-columns:1fr 1fr}
+  .turf-grid,.contact-grid,.foot-top{grid-template-columns:1fr}
+  .contact-left{padding:64px 0 30px}
+  .contact-right{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
+  .hero-skyline{opacity:.32}
+}
+@media(max-width:560px){
+  .trio,.results-grid,.stats-grid{grid-template-columns:1fr}
+  .stats-grid{gap:34px}
+  .wrap{padding:0 18px}
+  .hero-inner{padding:60px 0 70px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <span class="mark">D&amp;D</span>
+      <span><b>D and D Real Estate</b><span>Parramatta . Western Sydney</span></span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="#services">Services</a>
+      <a href="#turf">Our Patch</a>
+      <a href="#results">Results</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+61296876555" class="nav-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        02 9687 6555
+      </a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <svg class="hero-skyline" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
+    <g fill="#2a2b32">
+      <rect x="40" y="180" width="60" height="180"/>
+      <rect x="110" y="120" width="74" height="240"/>
+      <rect x="196" y="200" width="52" height="160"/>
+      <rect x="470" y="150" width="66" height="210"/>
+      <rect x="548" y="210" width="54" height="150"/>
+    </g>
+    <g fill="#34353d">
+      <rect x="260" y="60" width="86" height="300"/>
+      <rect x="358" y="100" width="100" height="260"/>
+    </g>
+    <polygon points="303,60 303,28 311,28 311,60" fill="#34353d"/>
+    <g fill="#d31920" opacity=".9">
+      <rect x="276" y="92" width="11" height="11"/><rect x="296" y="92" width="11" height="11"/><rect x="316" y="92" width="11" height="11"/>
+      <rect x="276" y="124" width="11" height="11"/><rect x="316" y="124" width="11" height="11"/>
+      <rect x="376" y="130" width="12" height="12"/><rect x="400" y="130" width="12" height="12"/><rect x="424" y="130" width="12" height="12"/>
+      <rect x="376" y="166" width="12" height="12"/><rect x="424" y="166" width="12" height="12"/>
+    </g>
+    <g fill="#43444c">
+      <rect x="126" y="150" width="9" height="9"/><rect x="142" y="150" width="9" height="9"/><rect x="158" y="150" width="9" height="9"/>
+      <rect x="126" y="180" width="9" height="9"/><rect x="158" y="180" width="9" height="9"/>
+      <rect x="486" y="180" width="9" height="9"/><rect x="502" y="180" width="9" height="9"/><rect x="518" y="180" width="9" height="9"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="badge"><i></i>Independent . Family run since 1997</span>
+    <h1>Western Sydney property is <em>our home turf.</em></h1>
+    <p class="lead">For 27 years D and D Real Estate has sold, leased and managed homes across Parramatta and the suburbs we actually live in. Local knowledge you can not fake, and an answer at the end of every phone call.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-red">Request an appraisal</a>
+      <a href="tel:+61296876555" class="btn btn-ghost">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        02 9687 6555
+      </a>
+    </div>
+    <div class="hero-strip">
+      <span>Residential Sales</span>
+      <span>Leasing</span>
+      <span>Property Management</span>
+      <span>Commercial</span>
+      <span>Member REINSW</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Three things, done properly.</h2>
+      <p>No call centre, no revolving door of agents. The same local team handles your sale, your lease or your investment, start to finish.</p>
+    </div>
+    <div class="trio">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Residential Sales</h3>
+        <p>Apartments, townhouses and family homes across Parramatta and the west. Sharp pricing, a real campaign and a result you will tell your neighbours about.</p>
+        <a href="#contact" class="more">Sell with us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div>
+        <h3>Leasing</h3>
+        <p>Quality tenants, fast. We market your rental, run the inspections and screen carefully so your property is filled with the right people, not just anyone.</p>
+        <a href="#contact" class="more">Lease your place <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Property Management</h3>
+        <p>Hands-on management from a team landlords stay with for years. Rent on time, repairs sorted and a manager who knows your property by name.</p>
+        <a href="#contact" class="more">Manage my property <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME TURF -->
+<section class="section turf" id="turf">
+  <div class="wrap turf-grid">
+    <div>
+      <span class="eyebrow">The area is our home turf</span>
+      <h2>We know these streets, because we are on them.</h2>
+      <p>From the Parramatta CBD towers to the quiet duplexes of Wentworthville, the riverside apartments at Morton Street to family homes in Winston Hills, we have sold and leased right across Western Sydney. We know the schools, the stations, the blocks that hold their value, and what a property here is really worth.</p>
+      <div class="suburbs">
+        <span class="chip">Parramatta</span>
+        <span class="chip">North Parramatta</span>
+        <span class="chip">Harris Park</span>
+        <span class="chip">Granville</span>
+        <span class="chip">Merrylands</span>
+        <span class="chip">Holroyd</span>
+        <span class="chip">Rosehill</span>
+        <span class="chip">Homebush West</span>
+        <span class="chip">Villawood</span>
+        <span class="chip">Quakers Hill</span>
+        <span class="chip">Bankstown</span>
+        <span class="chip">Strathfield</span>
+      </div>
+    </div>
+    <div class="turf-map">
+      <span class="map-tag">OUR PATCH</span>
+      <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="320" rx="10" fill="#1c1d22"/>
+        <g stroke="#3a3b43" stroke-width="2">
+          <path d="M0 90 L400 70"/><path d="M0 170 L400 150"/><path d="M0 250 L400 235"/>
+          <path d="M90 0 L70 320"/><path d="M210 0 L200 320"/><path d="M320 0 L330 320"/>
+        </g>
+        <path d="M-10 200 Q90 150 180 185 T410 150" stroke="#2f5d7a" stroke-width="10" fill="none" opacity=".8"/>
+        <text x="150" y="160" fill="#5a87a3" font-family="Inter,sans-serif" font-size="11" font-weight="600" opacity=".9">Parramatta River</text>
+        <g>
+          <circle cx="205" cy="172" r="13" fill="#d31920"/>
+          <circle cx="205" cy="172" r="22" fill="none" stroke="#d31920" stroke-width="2" opacity=".5"/>
+          <circle cx="205" cy="172" r="6" fill="#fff"/>
+          <text x="205" y="208" fill="#fff" font-family="Archivo,sans-serif" font-size="13" font-weight="800" text-anchor="middle">PARRAMATTA</text>
+        </g>
+        <g fill="#ffb3b5" font-family="Inter,sans-serif" font-size="10" font-weight="600">
+          <circle cx="96" cy="90" r="4" fill="#d31920"/><text x="106" y="94">Merrylands</text>
+          <circle cx="300" cy="110" r="4" fill="#d31920"/><text x="244" y="106">Harris Park</text>
+          <circle cx="120" cy="240" r="4" fill="#d31920"/><text x="130" y="244">Granville</text>
+          <circle cx="312" cy="232" r="4" fill="#d31920"/><text x="250" y="252">Rosehill</text>
+          <circle cx="150" cy="52" r="4" fill="#d31920"/><text x="160" y="56">Holroyd</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="n">27</div><div class="l">Years local</div></div>
+    <div class="stat"><div class="n">12+</div><div class="l">Suburbs covered</div></div>
+    <div class="stat"><div class="n">$1.55M</div><div class="l">Recent top sale</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Independent and family run</div></div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Recent results</span>
+      <h2>Sold and settled, right around here.</h2>
+      <p>A snapshot of recent sales across our patch. Real homes, real prices, real local outcomes.</p>
+    </div>
+    <div class="results-grid">
+
+      <article class="prop">
+        <div class="prop-img">
+          <span class="prop-tag">SOLD</span>
+          <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice"><rect width="320" height="170" fill="#23242b"/><rect x="60" y="60" width="200" height="110" fill="#2e2f37"/><polygon points="40,62 160,18 280,62" fill="#3a3b44"/><rect x="100" y="92" width="34" height="34" fill="#d31920" opacity=".85"/><rect x="186" y="92" width="34" height="34" fill="#43444c"/><rect x="143" y="118" width="34" height="52" fill="#43444c"/></svg>
+        </div>
+        <div class="prop-body">
+          <div class="sub">LIVERPOOL</div>
+          <div class="addr">13 Ferrington Crescent</div>
+          <div class="price">$1,500,000</div>
+          <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12h18M3 12v6M21 12v6"/></svg>5</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V6a2 2 0 012-2 2 2 0 012 2M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l1.5-5h11L19 11M5 11h14v6H5zM7 17v2M17 17v2"/></svg>4</span></div>
+        </div>
+      </article>
+
+      <article class="prop">
+        <div class="prop-img">
+          <span class="prop-tag">SOLD</span>
+          <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice"><rect width="320" height="170" fill="#23242b"/><rect x="46" y="34" width="100" height="136" fill="#2e2f37"/><rect x="174" y="20" width="100" height="150" fill="#33343d"/><g fill="#d31920" opacity=".8"><rect x="60" y="50" width="14" height="14"/><rect x="86" y="50" width="14" height="14"/><rect x="60" y="78" width="14" height="14"/></g><g fill="#43444c"><rect x="112" y="50" width="14" height="14"/><rect x="190" y="40" width="16" height="16"/><rect x="218" y="40" width="16" height="16"/><rect x="246" y="40" width="16" height="16"/><rect x="190" y="74" width="16" height="16"/><rect x="246" y="74" width="16" height="16"/></g></svg>
+        </div>
+        <div class="prop-body">
+          <div class="sub">BANKSTOWN</div>
+          <div class="addr">12 Saurine Street</div>
+          <div class="price">$1,550,000</div>
+          <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12h18M3 12v6M21 12v6"/></svg>5</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V6a2 2 0 012-2 2 2 0 012 2M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg>3</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l1.5-5h11L19 11M5 11h14v6H5zM7 17v2M17 17v2"/></svg>3</span></div>
+        </div>
+      </article>
+
+      <article class="prop">
+        <div class="prop-img">
+          <span class="prop-tag">SOLD</span>
+          <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice"><rect width="320" height="170" fill="#23242b"/><rect x="118" y="14" width="84" height="156" fill="#33343d"/><g fill="#d31920" opacity=".8"><rect x="130" y="30" width="13" height="18"/><rect x="153" y="30" width="13" height="18"/><rect x="176" y="30" width="13" height="18"/></g><g fill="#43444c"><rect x="130" y="62" width="13" height="18"/><rect x="176" y="62" width="13" height="18"/><rect x="130" y="94" width="13" height="18"/><rect x="153" y="94" width="13" height="18"/><rect x="176" y="94" width="13" height="18"/></g><rect x="64" y="120" width="192" height="6" fill="#2f5d7a" opacity=".7"/></svg>
+        </div>
+        <div class="prop-body">
+          <div class="sub">PARRAMATTA</div>
+          <div class="addr">H107/2 Morton Street</div>
+          <div class="price">$680,000</div>
+          <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12h18M3 12v6M21 12v6"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V6a2 2 0 012-2 2 2 0 012 2M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l1.5-5h11L19 11M5 11h14v6H5zM7 17v2M17 17v2"/></svg>1</span></div>
+        </div>
+      </article>
+
+      <article class="prop">
+        <div class="prop-img">
+          <span class="prop-tag">SOLD</span>
+          <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice"><rect width="320" height="170" fill="#23242b"/><rect x="70" y="56" width="180" height="114" fill="#2e2f37"/><polygon points="54,58 160,22 266,58" fill="#3a3b44"/><rect x="96" y="86" width="36" height="36" fill="#43444c"/><rect x="188" y="86" width="36" height="36" fill="#d31920" opacity=".85"/><rect x="142" y="116" width="36" height="54" fill="#43444c"/></svg>
+        </div>
+        <div class="prop-body">
+          <div class="sub">NORTH PARRAMATTA</div>
+          <div class="addr">24/47-49 Gladstone Street</div>
+          <div class="price">$920,000</div>
+          <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12h18M3 12v6M21 12v6"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V6a2 2 0 012-2 2 2 0 012 2M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l1.5-5h11L19 11M5 11h14v6H5zM7 17v2M17 17v2"/></svg>1</span></div>
+        </div>
+      </article>
+
+      <article class="prop">
+        <div class="prop-img">
+          <span class="prop-tag">SOLD</span>
+          <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice"><rect width="320" height="170" fill="#23242b"/><rect x="100" y="26" width="120" height="144" fill="#33343d"/><g fill="#d31920" opacity=".8"><rect x="116" y="44" width="16" height="20"/><rect x="146" y="44" width="16" height="20"/><rect x="176" y="44" width="16" height="20"/></g><g fill="#43444c"><rect x="116" y="80" width="16" height="20"/><rect x="176" y="80" width="16" height="20"/><rect x="146" y="116" width="16" height="20"/></g></svg>
+        </div>
+        <div class="prop-body">
+          <div class="sub">SOUTH WENTWORTHVILLE</div>
+          <div class="addr">1/107 Chelmsford Road</div>
+          <div class="price">$920,000</div>
+          <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12h18M3 12v6M21 12v6"/></svg>3</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V6a2 2 0 012-2 2 2 0 012 2M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg>3</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l1.5-5h11L19 11M5 11h14v6H5zM7 17v2M17 17v2"/></svg>3</span></div>
+        </div>
+      </article>
+
+      <article class="prop">
+        <div class="prop-img">
+          <span class="prop-tag">SOLD</span>
+          <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice"><rect width="320" height="170" fill="#23242b"/><rect x="56" y="44" width="84" height="126" fill="#2e2f37"/><rect x="180" y="30" width="84" height="140" fill="#33343d"/><g fill="#43444c"><rect x="70" y="60" width="14" height="14"/><rect x="94" y="60" width="14" height="14"/><rect x="70" y="86" width="14" height="14"/></g><g fill="#d31920" opacity=".8"><rect x="196" y="48" width="15" height="15"/><rect x="224" y="48" width="15" height="15"/><rect x="196" y="80" width="15" height="15"/></g></svg>
+        </div>
+        <div class="prop-body">
+          <div class="sub">PARRAMATTA</div>
+          <div class="addr">8/7 Pitt Street</div>
+          <div class="price">$610,000</div>
+          <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5M3 12h18M3 12v6M21 12v6"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V6a2 2 0 012-2 2 2 0 012 2M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg>2</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l1.5-5h11L19 11M5 11h14v6H5zM7 17v2M17 17v2"/></svg>1</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="quote-band">
+  <div class="wrap quote-wrap">
+    <div class="quote-mark">&ldquo;</div>
+    <blockquote>They were incredibly knowledgeable about the local market, provided valuable insights, and helped me navigate every step of the buying process.</blockquote>
+    <cite>Fatina Elabd</cite>
+    <div class="role">Buyer, via D and D Real Estate reviews</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-left">
+      <span class="eyebrow">Talk to a local</span>
+      <h2>One call. A straight answer.</h2>
+      <p>Thinking of selling, leasing or switching managing agents? Speak to the team that has worked these suburbs for 27 years. No pressure, just honest local advice.</p>
+      <a href="tel:+61296876555" class="phone-cta">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg></span>
+        <span><small>Call the office direct</small><b>02 9687 6555</b></span>
+      </a>
+      <div class="contact-meta">
+        <div><div class="k">Sales</div><div class="v">Azzam &amp; Kareem Derbas</div></div>
+        <div><div class="k">Rentals</div><div class="v">rentals@ddrealestate.com.au</div></div>
+        <div><div class="k">Area</div><div class="v">Parramatta &amp; Western Sydney, NSW</div></div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Request an appraisal</h3>
+      <p>Tell us about your property and we will be in touch.</p>
+      <form id="enq" novalidate>
+        <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="Mobile number" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@email.com" required></div>
+        <div class="field"><label for="msg">How can we help?</label><textarea id="msg" placeholder="Sell, lease, manage or just a question..."></textarea></div>
+        <button type="submit" class="form-btn">Send enquiry</button>
+        <div class="form-note" id="note">We reply within one business day. Or call 02 9687 6555.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <span class="mark">D&amp;D</span>
+          <span><b>D and D Real Estate</b><span>Parramatta . Western Sydney</span></span>
+        </a>
+        <p>Independent, family-run real estate in Parramatta and Western Sydney since 1997. Sales, leasing and property management with a genuinely local team. Member REINSW.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Residential Sales</a>
+        <a href="#services">Leasing</a>
+        <a href="#services">Property Management</a>
+        <a href="#contact">Request an Appraisal</a>
+      </div>
+      <div class="foot-col">
+        <h4>Our Patch</h4>
+        <a href="#turf">Parramatta</a>
+        <a href="#turf">Harris Park &amp; Granville</a>
+        <a href="#turf">Merrylands &amp; Holroyd</a>
+        <a href="#results">Recent Results</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="line"><b>D and D Real Estate</b> &nbsp;.&nbsp; Parramatta, NSW &nbsp;.&nbsp; <a href="tel:+61296876555" style="color:#fff">02 9687 6555</a></div>
+      <div class="credit">Concept site by WebCraft Global</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+
+  var form=document.getElementById('enq'),note=document.getElementById('note');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('name').value.trim(),
+        p=document.getElementById('phone').value.trim(),
+        em=document.getElementById('email').value.trim();
+    if(!n||!p||!em){note.textContent='Please add your name, phone and email so we can reach you.';note.style.color='#ff8a8e';return;}
+    note.textContent='Thanks '+n+'. Your enquiry is in. We will be in touch within one business day.';
+    note.style.color='#7fd18a';
+    form.querySelector('.form-btn').textContent='Sent';
+  });
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){en.target.style.opacity=1;en.target.style.transform='none';io.unobserve(en.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.card,.prop,.stat').forEach(function(el){
+    el.style.opacity=0;el.style.transform='translateY(18px)';el.style.transition='opacity .5s ease,transform .5s ease';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Star Kebab Family Restaurant | Charcoal Grill House, Auburn NSW</title>
+<meta name="description" content="New Star Kebab Family Restaurant in Auburn NSW. Halal Turkish and Middle Eastern charcoal grilled kebabs, mixed grills, wraps and plates. Family dining. Call +61 2 9643 8433.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --char:#1a1614; --char2:#241e1a; --ember:#e2451a; --ember2:#f47a21;
+    --cream:#f4ead7; --cream2:#e7d6b8; --ash:#9a8c7a; --gold:#f0b429;
+    --glow:rgba(226,69,26,.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Barlow',sans-serif;background:var(--char);color:var(--cream);line-height:1.65;overflow-x:hidden}
+  h1,h2,h3,.cond{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-weight:600;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  section{position:relative}
+  .eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.32em;font-size:.74rem;color:var(--ember2);font-weight:600}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(20,17,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(244,122,33,.22)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.12rem}
+  .star{width:30px;height:30px;flex:none}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.82rem;letter-spacing:.1em;color:var(--cream2);font-weight:500;transition:color .2s}
+  .navlinks a:hover{color:var(--ember2)}
+  .callbtn{background:var(--ember);color:#fff!important;padding:10px 20px;border-radius:3px;font-weight:600;transition:background .2s,transform .2s;box-shadow:0 4px 14px rgba(226,69,26,.35)}
+  .callbtn:hover{background:var(--ember2);transform:translateY(-2px)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
+  .burger span{width:26px;height:3px;background:var(--cream);border-radius:2px;transition:.3s}
+
+  /* hero */
+  .hero{padding:84px 0 96px;text-align:center;position:relative;overflow:hidden;
+    background:radial-gradient(120% 90% at 50% 0%,#3a2114 0%,#231a15 42%,#181311 100%)}
+  .embers span{position:absolute;bottom:-12px;width:6px;height:6px;border-radius:50%;background:var(--ember2);
+    box-shadow:0 0 10px 2px var(--glow);opacity:0;animation:rise linear infinite}
+  @keyframes rise{0%{opacity:0;transform:translateY(0) scale(1)}15%{opacity:.9}100%{opacity:0;transform:translateY(-380px) scale(.3)}}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-size:clamp(2.7rem,7vw,5.3rem);font-weight:700;color:var(--cream);text-shadow:0 3px 30px rgba(226,69,26,.3)}
+  .hero h1 .hl{color:var(--ember2);display:block}
+  .hero p.lead{max-width:640px;margin:22px auto 0;font-size:1.18rem;color:var(--cream2)}
+  .heat{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:7px 16px;border:1px solid rgba(244,122,33,.4);border-radius:40px;font-family:'Oswald',sans-serif;letter-spacing:.16em;font-size:.74rem;text-transform:uppercase;color:var(--ember2)}
+  .flamebadge{width:18px;height:22px}
+  .herocta{margin-top:34px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-weight:600;padding:14px 28px;border-radius:4px;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;border:2px solid transparent;font-size:.95rem}
+  .btn-fire{background:var(--ember);color:#fff;box-shadow:0 6px 22px rgba(226,69,26,.4)}
+  .btn-fire:hover{background:var(--ember2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(244,122,33,.5)}
+  .btn-ghost{border-color:var(--cream2);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--ember2);color:var(--ember2);transform:translateY(-3px)}
+
+  .grillstrip{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:54px;border-top:1px solid rgba(244,122,33,.2);border-bottom:1px solid rgba(244,122,33,.2)}
+  .grillstrip div{flex:1;min-width:150px;padding:20px 14px;border-left:1px solid rgba(244,122,33,.13)}
+  .grillstrip div:first-child{border-left:0}
+  .grillstrip b{display:block;font-family:'Oswald',sans-serif;font-size:1.5rem;color:var(--ember2);font-weight:700}
+  .grillstrip small{text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;color:var(--ash)}
+
+  /* section heads */
+  .shead{text-align:center;margin-bottom:44px}
+  .shead h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--cream);margin-top:9px}
+  .shead .rule{width:64px;height:4px;background:var(--ember);margin:16px auto 0;border-radius:3px}
+
+  /* charcoal feature */
+  .charcoal{padding:90px 0;background:linear-gradient(180deg,#181311,#221a15)}
+  .cfgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .cfgrid h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--cream);margin:10px 0 18px}
+  .cfgrid p{color:var(--cream2);margin-bottom:16px}
+  .cflist{list-style:none;margin-top:24px}
+  .cflist li{display:flex;gap:13px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed rgba(154,140,122,.25)}
+  .cflist svg{flex:none;margin-top:3px}
+  .cflist b{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:var(--cream);display:block;font-size:1rem}
+  .cflist span{color:var(--ash);font-size:.92rem}
+  .grillart{aspect-ratio:1/1;border-radius:8px;background:radial-gradient(120% 120% at 50% 18%,#3a2113,#1d1512);border:1px solid rgba(244,122,33,.25);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;box-shadow:inset 0 0 60px rgba(226,69,26,.18)}
+  .grillart .grate{position:absolute;bottom:0;width:100%;height:46%}
+  .grillart .flames{position:absolute;bottom:34%;width:100%;height:50%}
+  .gflame{transform-origin:bottom center;animation:flick 1.6s ease-in-out infinite}
+  .gflame.b{animation-delay:.4s}.gflame.c{animation-delay:.8s}.gflame.d{animation-delay:1.2s}
+  @keyframes flick{0%,100%{transform:scaleY(1) translateX(0)}50%{transform:scaleY(1.18) translateX(3px)}}
+  .skewer{position:absolute;top:0;left:0;width:100%;height:54%;display:flex;align-items:center;justify-content:center;gap:18px}
+  .meatchunk{animation:sizzle 2.4s ease-in-out infinite}
+  .meatchunk.x{animation-delay:.6s}.meatchunk.y{animation-delay:1.2s}
+  @keyframes sizzle{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+  /* menu */
+  .menu{padding:90px 0;background:var(--char)}
+  .mtabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+  .mtab{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;font-weight:600;padding:10px 20px;border:1px solid rgba(244,122,33,.35);border-radius:40px;background:transparent;color:var(--cream2);cursor:pointer;transition:.2s}
+  .mtab:hover{border-color:var(--ember2);color:var(--ember2)}
+  .mtab.active{background:var(--ember);color:#fff;border-color:var(--ember)}
+  .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+  .mpanel{display:none}.mpanel.show{display:grid}
+  .mitem{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px dotted rgba(154,140,122,.3)}
+  .mitem .info{flex:1}
+  .mitem h3{font-size:1.08rem;color:var(--cream);font-weight:500;letter-spacing:.02em}
+  .mitem .tag{display:inline-block;margin-left:8px;font-family:'Barlow',sans-serif;text-transform:uppercase;font-size:.6rem;letter-spacing:.1em;background:rgba(240,180,41,.16);color:var(--gold);padding:2px 7px;border-radius:3px;vertical-align:middle;font-weight:600}
+  .mitem p{font-size:.86rem;color:var(--ash);margin-top:3px;line-height:1.4}
+  .mitem .price{font-family:'Oswald',sans-serif;font-weight:600;color:var(--ember2);font-size:1.12rem;white-space:nowrap}
+  .mitem:hover h3{color:var(--ember2)}
+  .menunote{text-align:center;margin-top:34px;color:var(--ash);font-size:.9rem}
+  .menunote b{color:var(--gold)}
+
+  /* off the charcoal feature band */
+  .feat{padding:84px 0;background:radial-gradient(120% 120% at 50% 0%,#3a2013,#1a1311);text-align:center}
+  .feat .eyebrow{letter-spacing:.4em}
+  .feat h2{font-size:clamp(2rem,5vw,3.4rem);margin:12px 0 14px;color:var(--cream)}
+  .feat h2 em{color:var(--ember2);font-style:normal}
+  .feat p{max-width:620px;margin:0 auto;color:var(--cream2);font-size:1.1rem}
+  .featcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+  .fcard{background:rgba(36,30,26,.7);border:1px solid rgba(244,122,33,.2);border-radius:8px;padding:30px 22px;transition:transform .25s,border-color .25s}
+  .fcard:hover{transform:translateY(-6px);border-color:var(--ember2)}
+  .fcard .ic{width:50px;height:50px;margin:0 auto 16px}
+  .fcard h3{font-size:1.18rem;color:var(--cream);margin-bottom:8px}
+  .fcard p{font-size:.92rem;color:var(--ash)}
+
+  /* family */
+  .family{padding:90px 0;background:var(--char2)}
+  .famgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+  .famart{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(160deg,#2c211a,#1a1311);border:1px solid rgba(244,122,33,.22);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .famgrid h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--cream);margin:10px 0 16px}
+  .famgrid p{color:var(--cream2);margin-bottom:14px}
+  .famstats{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+  .famstats div b{font-family:'Oswald',sans-serif;font-size:1.9rem;color:var(--ember2);display:block}
+  .famstats div small{text-transform:uppercase;letter-spacing:.1em;font-size:.68rem;color:var(--ash)}
+
+  /* visit */
+  .visit{padding:90px 0;background:linear-gradient(180deg,#1a1311,#241a14)}
+  .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  .vcard{background:rgba(36,30,26,.65);border:1px solid rgba(244,122,33,.22);border-radius:10px;padding:36px}
+  .vcard h3{font-size:1.4rem;color:var(--ember2);margin-bottom:20px}
+  .vrow{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(154,140,122,.18)}
+  .vrow:last-child{border-bottom:0}
+  .vrow svg{flex:none;margin-top:2px}
+  .vrow b{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:var(--cream);display:block;font-size:.92rem}
+  .vrow span{color:var(--cream2);font-size:.95rem}
+  .vrow a{color:var(--ember2)}
+  .vrow a:hover{text-decoration:underline}
+  .hours{list-style:none}
+  .hours li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dotted rgba(154,140,122,.25);font-size:.94rem}
+  .hours li:last-child{border-bottom:0}
+  .hours span:first-child{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--cream2)}
+  .hours span:last-child{color:var(--ember2);font-weight:600}
+  .bigcall{margin-top:24px;text-align:center;background:radial-gradient(120% 120% at 50% 0%,#3a2013,#1d1411);border:1px solid rgba(244,122,33,.3);border-radius:10px;padding:30px}
+  .bigcall small{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--ash)}
+  .bigcall .num{font-family:'Oswald',sans-serif;font-size:2.1rem;font-weight:700;color:var(--cream);margin:6px 0 16px;display:block}
+  .bigcall .num:hover{color:var(--ember2)}
+
+  /* footer */
+  footer{background:#120e0c;padding:54px 0 30px;border-top:1px solid rgba(244,122,33,.2);text-align:center}
+  .fbrand{display:inline-flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.3rem;margin-bottom:14px}
+  footer .finfo{color:var(--cream2);font-size:.96rem;line-height:1.9}
+  footer .finfo a{color:var(--ember2)}
+  footer .finfo a:hover{text-decoration:underline}
+  .fdiv{width:60px;height:3px;background:var(--ember);margin:22px auto;border-radius:2px}
+  .credit{color:#5a4f44;font-size:.78rem;letter-spacing:.06em;margin-top:10px}
+
+  @media(max-width:860px){
+    .navlinks{display:none}
+    .navlinks.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:#15110f;padding:22px;gap:18px;border-bottom:1px solid rgba(244,122,33,.25)}
+    .burger{display:flex}
+    .cfgrid,.famgrid,.vgrid{grid-template-columns:1fr;gap:34px}
+    .mgrid{grid-template-columns:1fr}
+    .featcards{grid-template-columns:1fr}
+    .grillart{max-width:340px;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="brand">
+        <svg class="star" viewBox="0 0 24 24" fill="none"><path d="M12 1.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.7 6.1 19.8l1.2-6.6L2.5 8.5l6.6-.9L12 1.5z" fill="#f47a21" stroke="#e2451a" stroke-width="1"/></svg>
+        New Star Kebab
+      </a>
+      <div class="navlinks" id="nav">
+        <a href="#charcoal">Charcoal</a>
+        <a href="#menu">Menu</a>
+        <a href="#feature">Off The Grill</a>
+        <a href="#family">Family</a>
+        <a href="#visit">Visit</a>
+        <a href="tel:+61296438433" class="callbtn">Call to Order</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="embers" id="embers"></div>
+  <div class="wrap">
+    <span class="eyebrow">Auburn NSW &middot; 100% Halal</span>
+    <h1>Charcoal Grilled<span class="hl">Kebabs Done Right</span></h1>
+    <p class="lead">Marinated overnight, fired over real charcoal, and brought straight to your table. New Star is the family grill house Auburn has trusted for a proper feed.</p>
+    <div class="heat">
+      <svg class="flamebadge" viewBox="0 0 18 22"><path d="M9 0c1 4 5 5 5 10a5 5 0 11-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-2-5-1-9z" fill="#f47a21"/></svg>
+      Real charcoal heat
+    </div>
+    <div class="herocta">
+      <a href="tel:+61296438433" class="btn btn-fire">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        +61 2 9643 8433
+      </a>
+      <a href="#menu" class="btn btn-ghost">See The Menu</a>
+    </div>
+    <div class="grillstrip">
+      <div><b>Charcoal</b><small>Grilled fresh</small></div>
+      <div><b>Halal</b><small>Certified meat</small></div>
+      <div><b>Family</b><small>Sit down &amp; takeaway</small></div>
+      <div><b>Auburn</b><small>Local since day one</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="charcoal" id="charcoal">
+  <div class="wrap cfgrid">
+    <div>
+      <span class="eyebrow">The Charcoal Difference</span>
+      <h2>Fire, Smoke &amp; Patience</h2>
+      <p>There is no shortcut to a great kebab. We start with fresh halal meat, hand it our house marinade of garlic, paprika and Mediterranean spice, then leave it to rest overnight so every skewer carries real flavour.</p>
+      <p>When the order lands, it goes over glowing charcoal, not a flat grill. That open flame is where the smoke, the char and the honest grill-house taste come from.</p>
+      <ul class="cflist">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="#f47a21"><path d="M12 2c1 4 5 5 5 10a5 5 0 11-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-2-5-1-9z"/></svg><div><b>Real Charcoal Heat</b><span>Open flame char on every skewer and chop</span></div></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="#f0b429"><path d="M12 2l3 6 6 .8-4.5 4.4 1.1 6.1L12 17l-5.6 2.3 1.1-6.1L3 8.8 9 8z"/></svg><div><b>Overnight Marinade</b><span>Garlic, paprika and spice soaked in deep</span></div></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="#e2451a"><path d="M3 6h18v3H3zm0 5h18v3H3zm0 5h18v3H3z"/></svg><div><b>Made To Order</b><span>Nothing sits under a heat lamp, ever</span></div></li>
+      </ul>
+    </div>
+    <div class="grillart">
+      <svg class="skewer" viewBox="0 0 200 100" width="100%" height="100%" preserveAspectRatio="none">
+        <line x1="20" y1="50" x2="180" y2="50" stroke="#b9a07f" stroke-width="3"/>
+        <ellipse class="meatchunk" cx="55" cy="50" rx="16" ry="13" fill="#7a3b22"/>
+        <ellipse class="meatchunk x" cx="100" cy="50" rx="16" ry="13" fill="#8a4426"/>
+        <ellipse class="meatchunk y" cx="145" cy="50" rx="16" ry="13" fill="#6e3520"/>
+      </svg>
+      <svg class="flames" viewBox="0 0 200 100" width="100%" preserveAspectRatio="none">
+        <path class="gflame" d="M40 100c-6-14 8-20 4-34 8 6 12 14 11 24 5-6 4-14 2-20 9 8 11 22 4 30z" fill="#e2451a"/>
+        <path class="gflame b" d="M85 100c-6-16 9-22 5-38 9 7 13 16 12 27 5-7 4-16 2-23 10 9 12 25 5 34z" fill="#f47a21"/>
+        <path class="gflame c" d="M130 100c-6-14 8-20 4-34 8 6 12 14 11 24 5-6 4-14 2-20 9 8 11 22 4 30z" fill="#e2451a"/>
+        <path class="gflame d" d="M165 100c-5-12 7-17 3-29 7 5 10 12 9 20 4-5 3-12 2-17 8 7 9 19 3 26z" fill="#f0b429"/>
+      </svg>
+      <svg class="grate" viewBox="0 0 200 46" width="100%" preserveAspectRatio="none">
+        <rect y="2" width="200" height="42" fill="#0e0a08"/>
+        <line x1="0" y1="10" x2="200" y2="10" stroke="#3a302a" stroke-width="2"/>
+        <line x1="0" y1="22" x2="200" y2="22" stroke="#3a302a" stroke-width="2"/>
+        <line x1="0" y1="34" x2="200" y2="34" stroke="#3a302a" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Off The Charcoal</span>
+      <h2>The Menu</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="mtabs" id="mtabs">
+      <button class="mtab active" data-p="kebabs">Charcoal Kebabs</button>
+      <button class="mtab" data-p="plates">Mixed Grills &amp; Plates</button>
+      <button class="mtab" data-p="wraps">Wraps &amp; Rolls</button>
+      <button class="mtab" data-p="sides">Sides &amp; Extras</button>
+    </div>
+
+    <div class="mgrid mpanel show" data-panel="kebabs">
+      <div class="mitem"><div class="info"><h3>Adana Kebab</h3><p>Hand minced lamb, capsicum and spice, charcoal grilled on the skewer</p></div><div class="price">$19.90</div></div>
+      <div class="mitem"><div class="info"><h3>Shish Kebab <span class="tag">Lamb</span></h3><p>Tender marinated lamb cubes flame grilled with onion and tomato</p></div><div class="price">$22.90</div></div>
+      <div class="mitem"><div class="info"><h3>Chicken Shish</h3><p>Marinated chicken thigh, smoky and juicy off the charcoal</p></div><div class="price">$20.90</div></div>
+      <div class="mitem"><div class="info"><h3>Iskender Kebab <span class="tag">House</span></h3><p>Sliced doner over bread with tomato sauce, yoghurt and butter</p></div><div class="price">$23.90</div></div>
+      <div class="mitem"><div class="info"><h3>Lamb Chops</h3><p>Three charcoal grilled chops, seasoned simple and done right</p></div><div class="price">$26.90</div></div>
+      <div class="mitem"><div class="info"><h3>Chicken Wings</h3><p>Six marinated wings grilled crisp over the coals</p></div><div class="price">$17.90</div></div>
+      <div class="mitem"><div class="info"><h3>Kofta Kebab</h3><p>Seasoned lamb kofta, grilled and served with bread and salad</p></div><div class="price">$19.90</div></div>
+      <div class="mitem"><div class="info"><h3>Mixed Shish</h3><p>Lamb and chicken shish together on the one skewer</p></div><div class="price">$23.90</div></div>
+    </div>
+
+    <div class="mgrid mpanel" data-panel="plates">
+      <div class="mitem"><div class="info"><h3>New Star Mixed Grill <span class="tag">For 2</span></h3><p>Adana, shish, kofta, chops and wings with rice, bread and salad</p></div><div class="price">$54.90</div></div>
+      <div class="mitem"><div class="info"><h3>Lamb Shish Plate</h3><p>Charcoal lamb shish with rice, salad and warm bread</p></div><div class="price">$25.90</div></div>
+      <div class="mitem"><div class="info"><h3>Chicken Shish Plate</h3><p>Grilled chicken shish, rice, garden salad and bread</p></div><div class="price">$23.90</div></div>
+      <div class="mitem"><div class="info"><h3>Adana Plate</h3><p>Spiced lamb adana with rice, salad and house sauce</p></div><div class="price">$23.90</div></div>
+      <div class="mitem"><div class="info"><h3>Iskender Plate</h3><p>Classic iskender served full size with extra yoghurt</p></div><div class="price">$25.90</div></div>
+      <div class="mitem"><div class="info"><h3>Lamb Chops Plate</h3><p>Four charcoal chops, rice, salad and grilled vegetables</p></div><div class="price">$29.90</div></div>
+      <div class="mitem"><div class="info"><h3>Kofta Plate</h3><p>Grilled lamb kofta with rice, salad and bread</p></div><div class="price">$22.90</div></div>
+      <div class="mitem"><div class="info"><h3>Falafel Plate <span class="tag">Veg</span></h3><p>Crisp falafel, hummus, salad, pickles and warm bread</p></div><div class="price">$18.90</div></div>
+    </div>
+
+    <div class="mgrid mpanel" data-panel="wraps">
+      <div class="mitem"><div class="info"><h3>Lamb Doner Wrap</h3><p>Shaved lamb doner, salad and garlic sauce rolled in bread</p></div><div class="price">$14.90</div></div>
+      <div class="mitem"><div class="info"><h3>Chicken Doner Wrap</h3><p>Shaved chicken, fresh salad, sauce of your choice</p></div><div class="price">$14.90</div></div>
+      <div class="mitem"><div class="info"><h3>Mixed Doner Wrap</h3><p>Lamb and chicken doner together, the people pleaser</p></div><div class="price">$15.90</div></div>
+      <div class="mitem"><div class="info"><h3>Adana Wrap</h3><p>Charcoal adana, salad and sumac onion in warm bread</p></div><div class="price">$15.90</div></div>
+      <div class="mitem"><div class="info"><h3>Shish Wrap</h3><p>Lamb or chicken shish straight off the skewer, wrapped up</p></div><div class="price">$16.90</div></div>
+      <div class="mitem"><div class="info"><h3>Falafel Wrap <span class="tag">Veg</span></h3><p>Falafel, hummus, salad and pickles in fresh bread</p></div><div class="price">$13.90</div></div>
+      <div class="mitem"><div class="info"><h3>HSP Snack Pack <span class="tag">Auburn fave</span></h3><p>Chips, doner meat and sauces, the classic done loaded</p></div><div class="price">$16.90</div></div>
+      <div class="mitem"><div class="info"><h3>Large HSP</h3><p>Bigger box, more meat, more chips, more sauce</p></div><div class="price">$21.90</div></div>
+    </div>
+
+    <div class="mgrid mpanel" data-panel="sides">
+      <div class="mitem"><div class="info"><h3>Hummus</h3><p>Smooth chickpea dip with olive oil and warm bread</p></div><div class="price">$8.90</div></div>
+      <div class="mitem"><div class="info"><h3>Chips</h3><p>Golden chips with chicken salt or plain</p></div><div class="price">$7.90</div></div>
+      <div class="mitem"><div class="info"><h3>Garden Salad</h3><p>Fresh tomato, cucumber, onion, lemon and parsley</p></div><div class="price">$8.90</div></div>
+      <div class="mitem"><div class="info"><h3>Tabbouleh</h3><p>Parsley, bulgur, tomato and lemon, made fresh daily</p></div><div class="price">$9.90</div></div>
+      <div class="mitem"><div class="info"><h3>Rice Pilaf</h3><p>Buttery seasoned rice, the perfect plate companion</p></div><div class="price">$5.90</div></div>
+      <div class="mitem"><div class="info"><h3>Grilled Bread</h3><p>Warm bread fresh off the grill</p></div><div class="price">$3.90</div></div>
+      <div class="mitem"><div class="info"><h3>Baklava <span class="tag">Sweet</span></h3><p>Layered pastry, pistachio and honey syrup</p></div><div class="price">$6.90</div></div>
+      <div class="mitem"><div class="info"><h3>Ayran &amp; Soft Drinks</h3><p>Traditional yoghurt drink or canned soft drink</p></div><div class="price">$3.50</div></div>
+    </div>
+
+    <p class="menunote">All meats are <b>100% halal certified</b>. Prices in AUD. Dine in, takeaway or call ahead to order. Menu may vary, please call to confirm availability.</p>
+  </div>
+</section>
+
+<section class="feat" id="feature">
+  <div class="wrap">
+    <span class="eyebrow">Straight Off The Charcoal</span>
+    <h2>From The <em>Coals</em> To Your Table</h2>
+    <p>No microwaves, no shortcuts. Every order is fired when you ask for it, so it lands hot, smoky and bursting with flavour.</p>
+    <div class="featcards">
+      <div class="fcard">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 2c1.5 5 6 6 6 12a6 6 0 11-12 0c0-3 1.5-4.5 3-6 0 2.5 1.5 4 3 4 0-4-3-6-1.5-10z" fill="#f47a21"/><path d="M12 9c.6 2 2.5 2.5 2.5 5a2.5 2.5 0 11-5 0c0-1.2.6-1.8 1.2-2.4 0 1 .6 1.6 1.3 1.6 0-1.6-1.3-2.5-.5-4.2z" fill="#f0b429"/></svg>
+        <h3>Open Flame</h3>
+        <p>Real charcoal gives the char and smoke a flat grill never can.</p>
+      </div>
+      <div class="fcard">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#f47a21" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#f0b429" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Made Fresh</h3>
+        <p>Grilled to order, never sitting under a lamp losing its life.</p>
+      </div>
+      <div class="fcard">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M4 11h16M6 11l1 8a2 2 0 002 2h6a2 2 0 002-2l1-8" stroke="#f47a21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 7c0-1.5 1-2.5 1.5-3M14 7c0-1.5-1-2.5-1.5-3" stroke="#f0b429" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Hearty Portions</h3>
+        <p>Generous plates built to fill the whole family up properly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="family" id="family">
+  <div class="wrap famgrid">
+    <div class="famart">
+      <svg viewBox="0 0 220 170" width="86%">
+        <rect x="20" y="120" width="180" height="10" rx="3" fill="#3a2c22"/>
+        <ellipse cx="70" cy="118" rx="34" ry="10" fill="#241a15"/>
+        <ellipse cx="150" cy="118" rx="34" ry="10" fill="#241a15"/>
+        <circle cx="70" cy="100" r="22" fill="#e2451a"/>
+        <circle cx="70" cy="100" r="14" fill="#7a3b22"/>
+        <circle cx="150" cy="100" r="22" fill="#f47a21"/>
+        <circle cx="150" cy="100" r="14" fill="#8a4426"/>
+        <circle cx="110" cy="60" r="26" fill="#f0b429"/>
+        <circle cx="110" cy="60" r="16" fill="#a85f1f"/>
+        <path d="M110 28c.8 3 3 3.5 3 6.5a3 3 0 11-6 0c0-1.5.7-2.2 1.5-3 0 1.2.7 1.8 1.5 1.8 0-2-1.5-3-1.5-5.3z" fill="#e2451a"/>
+        <path d="M70 80c.6 2 2 2.4 2 4.4a2 2 0 11-4 0c0-1 .5-1.5 1-2 0 .8.5 1.2 1 1.2 0-1.3-1-2-1-3.6z" fill="#f47a21"/>
+        <path d="M150 80c.6 2 2 2.4 2 4.4a2 2 0 11-4 0c0-1 .5-1.5 1-2 0 .8.5 1.2 1 1.2 0-1.3-1-2-1-3.6z" fill="#f47a21"/>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow">A Family Restaurant</span>
+      <h2>Pull Up A Chair, You're Family Here</h2>
+      <p>New Star Kebab is more than a takeaway. It is a warm, welcoming family restaurant in the heart of Auburn where neighbours, friends and families gather over a proper charcoal feed.</p>
+      <p>Kids are welcome, portions are generous and the kitchen treats every order like it is feeding their own. Whether it is a quick wrap or a mixed grill to share, you will be looked after.</p>
+      <div class="famstats">
+        <div><b>Halal</b><small>Always certified</small></div>
+        <div><b>Dine In</b><small>Or takeaway</small></div>
+        <div><b>Groups</b><small>Welcome anytime</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Order &amp; Visit</span>
+      <h2>Come In Hungry</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="vgrid">
+      <div class="vcard">
+        <h3>Find Us</h3>
+        <div class="vrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#f47a21"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <div><b>Address</b><span>Auburn, NSW 2144 Australia</span></div>
+        </div>
+        <div class="vrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#f47a21"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          <div><b>Phone</b><span><a href="tel:+61296438433">+61 2 9643 8433</a></span></div>
+        </div>
+        <div class="vrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#f47a21"><path d="M12 2c1 4 5 5 5 10a5 5 0 11-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-2-5-1-9z"/></svg>
+          <div><b>Dining</b><span>Dine in, takeaway and call ahead orders</span></div>
+        </div>
+        <div class="bigcall">
+          <small>Call To Order</small>
+          <a href="tel:+61296438433" class="num">+61 2 9643 8433</a>
+          <a href="tel:+61296438433" class="btn btn-fire" style="width:100%;justify-content:center">Tap To Call New Star</a>
+        </div>
+      </div>
+      <div class="vcard">
+        <h3>Opening Hours</h3>
+        <ul class="hours">
+          <li><span>Monday</span><span>11:00am - 10:00pm</span></li>
+          <li><span>Tuesday</span><span>11:00am - 10:00pm</span></li>
+          <li><span>Wednesday</span><span>11:00am - 10:00pm</span></li>
+          <li><span>Thursday</span><span>11:00am - 10:00pm</span></li>
+          <li><span>Friday</span><span>11:00am - 11:00pm</span></li>
+          <li><span>Saturday</span><span>11:00am - 11:00pm</span></li>
+          <li><span>Sunday</span><span>11:00am - 10:00pm</span></li>
+        </ul>
+        <p style="margin-top:18px;color:var(--ash);font-size:.88rem">Hours can change on public holidays. Please call ahead to confirm before you head over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">
+      <svg class="star" viewBox="0 0 24 24" fill="none"><path d="M12 1.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.7 6.1 19.8l1.2-6.6L2.5 8.5l6.6-.9L12 1.5z" fill="#f47a21" stroke="#e2451a" stroke-width="1"/></svg>
+      New Star Kebab Family Restaurant
+    </div>
+    <div class="finfo">
+      Halal Charcoal Grill House &middot; Auburn, NSW 2144<br>
+      Call us: <a href="tel:+61296438433">+61 2 9643 8433</a>
+    </div>
+    <div class="fdiv"></div>
+    <p class="credit">Concept site by WebCraft Global</p>
+  </div>
+</footer>
+
+<script>
+  // ember particles
+  (function(){
+    var box=document.getElementById('embers');
+    for(var i=0;i<22;i++){
+      var s=document.createElement('span');
+      s.style.left=Math.random()*100+'%';
+      var d=4+Math.random()*5;
+      s.style.animationDuration=d+'s';
+      s.style.animationDelay=(Math.random()*5)+'s';
+      var sc=.5+Math.random()*1.2;
+      s.style.transform='scale('+sc+')';
+      s.style.background=Math.random()>.5?'#f47a21':'#f0b429';
+      box.appendChild(s);
+    }
+  })();
+
+  // menu tabs
+  var tabs=document.querySelectorAll('.mtab'),panels=document.querySelectorAll('.mpanel');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');
+      panels.forEach(function(p){
+        p.classList.toggle('show',p.getAttribute('data-panel')===t.getAttribute('data-p'));
+      });
+    });
+  });
+
+  // mobile nav
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open')});
+  });
+</script>
+</body>
+</html>

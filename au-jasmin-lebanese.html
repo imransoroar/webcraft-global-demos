@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasmin1 Lebanese Restaurant Auburn | Mezze, Charcoal Grills and Lebanese Hospitality</title>
+<meta name="description" content="Family-run Lebanese restaurant in Auburn NSW. Hot and cold mezze, charcoal grills, banquets and warm Lebanese hospitality. 22 Civic Rd, Auburn. Call +61 2 9643 8426.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --olive:#5a6b32;
+  --olive-deep:#3f4d22;
+  --terracotta:#c45a2c;
+  --terracotta-deep:#a8431d;
+  --cream:#f7efe1;
+  --cream-deep:#efe3cd;
+  --charcoal:#2b2723;
+  --muted:#7a7167;
+  --gold:#d9a441;
+  --white:#fffaf2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  color:var(--charcoal);
+  background:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.12}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:'Manrope';font-weight:700;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--terracotta);display:inline-block;
+}
+
+/* Mediterranean tile pattern */
+.tile-band{
+  height:14px;
+  background:
+    repeating-linear-gradient(135deg,var(--terracotta) 0 10px,var(--olive) 10px 20px,var(--gold) 20px 30px,var(--olive-deep) 30px 40px);
+  opacity:.85;
+}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(247,239,225,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--cream-deep)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand b{font-family:'Fraunces';font-weight:600;font-size:1.25rem;letter-spacing:.01em}
+.brand span{display:block;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--olive);font-weight:700;font-family:'Manrope'}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{font-weight:600;font-size:.92rem;color:var(--charcoal);position:relative;transition:color .2s}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--terracotta);transition:width .25s}
+.navlinks a:hover{color:var(--terracotta)}
+.navlinks a:hover::after{width:100%}
+.callbtn{
+  background:var(--olive);color:var(--white);padding:11px 20px;border-radius:30px;
+  font-weight:700;font-size:.88rem;transition:transform .2s,background .2s;
+}
+.callbtn:hover{background:var(--terracotta);transform:translateY(-2px)}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px}
+.burger span{width:24px;height:2px;background:var(--charcoal);display:block}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:var(--olive-deep);color:var(--cream)}
+.hero-bg{position:absolute;inset:0;opacity:.16}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:84px 24px 92px;max-width:1140px;margin:0 auto}
+.hero h1{font-size:clamp(2.6rem,6vw,4.5rem);color:var(--white);margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{font-size:1.12rem;max-width:34ch;color:#e9dcc4;margin-bottom:30px}
+.hero .eyebrow{color:var(--gold)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--terracotta);color:var(--white);padding:14px 28px;border-radius:30px;font-weight:700;transition:transform .2s,background .2s}
+.btn-primary:hover{background:var(--gold);color:var(--charcoal);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(247,239,225,.5);color:var(--cream);padding:14px 26px;border-radius:30px;font-weight:600;transition:background .2s,border-color .2s}
+.btn-ghost:hover{background:rgba(247,239,225,.12);border-color:var(--gold)}
+.hero-card{
+  background:var(--cream);color:var(--charcoal);border-radius:20px;padding:28px;
+  box-shadow:0 24px 60px rgba(0,0,0,.28);
+}
+.hero-card h3{font-size:1.35rem;margin-bottom:6px}
+.hero-card .hours-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--cream-deep);font-size:.95rem}
+.hero-card .hours-row:last-of-type{border:0}
+.hero-card .hours-row b{color:var(--olive)}
+.hero-plate{display:flex;justify-content:center;margin-top:8px}
+
+/* SECTION shells */
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin:14px 0 14px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+
+/* WELCOME / values */
+.welcome{background:var(--cream)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:10px}
+.val{background:var(--white);border-radius:16px;padding:30px 26px;border:1px solid var(--cream-deep);transition:transform .25s,box-shadow .25s}
+.val:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(90,107,50,.16)}
+.val .ic{width:54px;height:54px;margin-bottom:16px}
+.val h3{font-size:1.25rem;margin-bottom:8px}
+.val p{color:var(--muted);font-size:.96rem}
+
+/* MENU */
+.menu{background:var(--olive-deep);color:var(--cream);position:relative;overflow:hidden}
+.menu .menu-bg{position:absolute;inset:0;opacity:.1}
+.menu .sec-head h2{color:var(--white)}
+.menu .sec-head p{color:#d9cdb6}
+.menu .eyebrow{color:var(--gold)}
+.menu-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:38px 56px;max-width:980px;margin:0 auto}
+.menu-cat>h3{font-size:1.5rem;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(217,164,65,.3)}
+.menu-cat>h3 svg{flex:none}
+.item{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:12px 0;border-bottom:1px dotted rgba(247,239,225,.18)}
+.item:last-child{border-bottom:0}
+.item .nm{font-weight:700;font-size:1.02rem;color:var(--white)}
+.item .pr{font-family:'Fraunces';font-weight:600;color:var(--gold);white-space:nowrap;font-size:1.05rem}
+.item .ds{grid-column:1/2;color:#cdc1aa;font-size:.86rem;line-height:1.5}
+.tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(217,164,65,.18);color:var(--gold);padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.menu-note{text-align:center;margin-top:46px;color:#d9cdb6;font-size:.92rem}
+
+/* CHARCOAL FEATURE */
+.charcoal{background:var(--charcoal);color:var(--cream);position:relative;overflow:hidden}
+.charcoal-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center;position:relative;z-index:2}
+.charcoal .eyebrow{color:var(--terracotta)}
+.charcoal h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--white);margin:14px 0 18px}
+.charcoal p{color:#cfc6b8;margin-bottom:16px}
+.grill-art{display:flex;justify-content:center}
+.skewer-list{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.skewer{display:flex;align-items:center;gap:14px;background:rgba(247,239,225,.05);border:1px solid rgba(247,239,225,.1);border-radius:12px;padding:14px 18px;transition:background .2s,transform .2s}
+.skewer:hover{background:rgba(196,90,44,.16);transform:translateX(4px)}
+.skewer .sk-ic{flex:none;width:38px;height:38px}
+.skewer b{display:block;color:var(--white);font-size:1rem}
+.skewer span{font-size:.85rem;color:#bdb4a5}
+
+/* STORY */
+.story{background:var(--terracotta);color:var(--cream);position:relative;overflow:hidden}
+.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:2}
+.story .eyebrow{color:var(--cream);opacity:.85}
+.story h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--white);margin:14px 0 20px}
+.story p{color:#fbe9d8;margin-bottom:16px;font-size:1.04rem}
+.story-stats{display:flex;gap:34px;margin-top:28px;flex-wrap:wrap}
+.story-stats div b{font-family:'Fraunces';font-size:2.2rem;color:var(--white);display:block;line-height:1}
+.story-stats div span{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#fbe9d8}
+.family-art{display:flex;justify-content:center}
+
+/* VISIT */
+.visit{background:var(--cream)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:stretch}
+.visit-card{background:var(--white);border:1px solid var(--cream-deep);border-radius:18px;padding:38px}
+.visit-card h3{font-size:1.6rem;margin-bottom:20px}
+.info-row{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--cream-deep)}
+.info-row:last-child{border-bottom:0}
+.info-row .ri{flex:none;width:40px;height:40px;border-radius:10px;background:var(--olive);display:flex;align-items:center;justify-content:center}
+.info-row b{display:block;font-size:1rem}
+.info-row a{color:var(--terracotta);font-weight:700}
+.info-row a:hover{text-decoration:underline}
+.info-row span{color:var(--muted);font-size:.94rem}
+.book-card{background:var(--olive-deep);color:var(--cream);border-radius:18px;padding:38px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.book-card h3{color:var(--white);font-size:1.7rem;margin-bottom:12px}
+.book-card p{color:#d9cdb6;margin-bottom:26px}
+.book-card .phone-big{font-family:'Fraunces';font-size:2rem;color:var(--gold);margin-bottom:8px;display:block;transition:color .2s}
+.book-card .phone-big:hover{color:var(--white)}
+.book-card .btn-primary{margin-top:18px;align-self:center}
+
+/* map mock */
+.map-mock{margin-top:24px;border-radius:14px;overflow:hidden;border:1px solid var(--cream-deep);height:170px}
+
+/* FOOTER */
+footer{background:var(--charcoal);color:#cfc6b8;padding:54px 0 30px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand b{font-family:'Fraunces';color:var(--white);font-size:1.4rem;display:block;margin-bottom:8px}
+.foot-grid a:hover{color:var(--gold)}
+.foot-col h4{color:var(--white);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;font-family:'Manrope'}
+.foot-col p,.foot-col a{display:block;font-size:.92rem;margin-bottom:7px}
+.foot-bottom{border-top:1px solid rgba(247,239,225,.1);margin-top:38px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.foot-bottom .concept{opacity:.6}
+
+@media(max-width:880px){
+  .hero-inner,.charcoal-inner,.story-inner,.visit-grid{grid-template-columns:1fr;gap:40px}
+  .menu-grid{grid-template-columns:1fr;gap:34px}
+  .vals{grid-template-columns:1fr}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;padding:18px 24px;gap:16px;border-bottom:1px solid var(--cream-deep)}
+  .navlinks.open{display:flex}
+  .burger{display:flex}
+  .story-stats{gap:26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="#top" aria-label="Jasmin1 home">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#5a6b32"/>
+        <circle cx="24" cy="24" r="18" fill="none" stroke="#d9a441" stroke-width="1.5"/>
+        <path d="M24 9c5 6 5 11 0 15-5-4-5-9 0-15z" fill="#c45a2c"/>
+        <path d="M24 39c-5-6-5-11 0-15 5 4 5 9 0 15z" fill="#d9a441"/>
+        <circle cx="24" cy="24" r="3" fill="#f7efe1"/>
+      </svg>
+      <span class="bt"><b>Jasmin1</b><span>Lebanese . Auburn</span></span>
+    </a>
+    <div class="navlinks" id="nav">
+      <a href="#menu">Menu</a>
+      <a href="#charcoal">Charcoal Grill</a>
+      <a href="#story">Our Story</a>
+      <a href="#visit">Visit</a>
+      <a class="callbtn" href="tel:+61296438426">Call +61 2 9643 8426</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-bg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="medtile" width="20" height="20" patternUnits="userSpaceOnUse">
+        <rect width="20" height="20" fill="none"/>
+        <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="#d9a441" stroke-width="1"/>
+        <circle cx="10" cy="10" r="2.5" fill="#c45a2c"/>
+        <path d="M0 0 L4 4 M20 0 L16 4 M0 20 L4 16 M20 20 L16 16" stroke="#f7efe1" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="100" height="100" fill="url(#medtile)"/>
+  </svg>
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Family run . Auburn NSW . 100% Halal</span>
+      <h1>Where every table feels like <em>family</em>.</h1>
+      <p class="lead">Hot and cold mezze, charcoal grills and the generous hospitality of Lebanon, served fresh on Civic Road since the neighbourhood found us.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#menu">Explore the menu</a>
+        <a class="btn-ghost" href="tel:+61296438426">Book a table</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-plate">
+        <svg width="150" height="120" viewBox="0 0 150 120" aria-hidden="true">
+          <ellipse cx="75" cy="62" rx="62" ry="52" fill="#efe3cd"/>
+          <ellipse cx="75" cy="62" rx="62" ry="52" fill="none" stroke="#c45a2c" stroke-width="2"/>
+          <ellipse cx="75" cy="60" rx="50" ry="41" fill="#fffaf2"/>
+          <circle cx="55" cy="52" r="13" fill="#e8d9a8"/>
+          <circle cx="55" cy="52" r="13" fill="none" stroke="#d9a441" stroke-width="1.5"/>
+          <circle cx="55" cy="52" r="3" fill="#5a6b32"/>
+          <ellipse cx="93" cy="50" rx="14" ry="11" fill="#7a5a3a"/>
+          <ellipse cx="93" cy="48" rx="14" ry="11" fill="#8a6a44"/>
+          <path d="M62 75 q13 9 26 0" stroke="#5a6b32" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="58" cy="74" r="3" fill="#c45a2c"/>
+          <circle cx="88" cy="74" r="3" fill="#c45a2c"/>
+          <path d="M75 30 l3 6 -6 0 z" fill="#5a6b32"/>
+        </svg>
+      </div>
+      <h3 class="serif">Open daily for you</h3>
+      <div class="hours-row"><span>Monday - Sunday</span><b>8am - 11pm</b></div>
+      <div class="hours-row"><span>Breakfast served from</span><b>8am</b></div>
+      <div class="hours-row"><span>Walk-ins &amp; large groups</span><b>Welcome</b></div>
+    </div>
+  </div>
+  <div class="tile-band"></div>
+</section>
+
+<!-- WELCOME -->
+<section class="welcome" id="welcome">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ahla wa sahla</span>
+      <h2>A warm welcome, the Lebanese way</h2>
+      <p>Locally owned and family run, we have spent years mastering the dishes Lebanon is loved for - especially our renowned hot and cold mezza. Come hungry, leave like one of ours.</p>
+    </div>
+    <div class="vals">
+      <div class="val">
+        <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#efe3cd"/><path d="M24 14c5 5 5 10 0 14-5-4-5-9 0-14z" fill="#5a6b32"/><path d="M16 26c4 0 7 3 8 8-5 0-8-3-8-8z" fill="#c45a2c"/><path d="M32 26c-4 0-7 3-8 8 5 0 8-3 8-8z" fill="#d9a441"/></svg>
+        <h3 class="serif">Fresh mezza, made daily</h3>
+        <p>Hummus, baba ghannouj, labneh, tabouli and fattoush prepared in house from recipes carried across generations.</p>
+      </div>
+      <div class="val">
+        <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#efe3cd"/><rect x="22" y="10" width="4" height="28" rx="2" fill="#7a5a3a"/><circle cx="24" cy="16" r="5" fill="#c45a2c"/><circle cx="24" cy="24" r="5" fill="#a8431d"/><circle cx="24" cy="32" r="5" fill="#c45a2c"/><path d="M14 40q10-5 20 0" stroke="#d9a441" stroke-width="2" fill="none"/></svg>
+        <h3 class="serif">Charcoal grilled skewers</h3>
+        <p>Lamb, kafta and shish tawook marinated and seared over real charcoal for that smoky, tender finish.</p>
+      </div>
+      <div class="val">
+        <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#efe3cd"/><path d="M24 12c6 0 11 4 11 9 0 6-6 11-11 15-5-4-11-9-11-15 0-5 5-9 11-9z" fill="#c45a2c"/><circle cx="24" cy="21" r="4" fill="#f7efe1"/></svg>
+        <h3 class="serif">Made for sharing</h3>
+        <p>Banquets and mixed platters built for families, friends and big tables - the way a Lebanese meal is meant to be.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <svg class="menu-bg" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><pattern id="arabesque" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M15 0 Q30 15 15 30 Q0 15 15 0" fill="none" stroke="#d9a441" stroke-width="1"/>
+      <circle cx="15" cy="15" r="2" fill="#c45a2c"/>
+    </pattern></defs>
+    <rect width="60" height="60" fill="url(#arabesque)"/>
+  </svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">From the kitchen</span>
+      <h2>Mezze, grills &amp; Lebanese favourites</h2>
+      <p>A taste of our table. Every dish is 100% halal and prepared fresh to order.</p>
+    </div>
+    <div class="menu-grid">
+
+      <div class="menu-cat">
+        <h3><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#5a6b32"/><circle cx="11" cy="11" r="4" fill="#d9a441"/></svg>Cold Mezza &amp; Starters</h3>
+        <div class="item"><span class="nm">Mohamara</span><span class="pr">$12</span><span class="ds">Arabic capsicum and walnut paste with pomegranate and warm spices, served with pastry bread.</span></div>
+        <div class="item"><span class="nm">Kibbeh Nayeh <span class="tag">House favourite</span></span><span class="pr">$18</span><span class="ds">Lean raw minced lamb blended with crushed wheat and herbs, dressed in olive oil.</span></div>
+        <div class="item"><span class="nm">Sujuk</span><span class="pr">$18</span><span class="ds">Spicy sausages coated with herbs and Lebanese spices.</span></div>
+        <div class="item"><span class="nm">Grilled Halloumi</span><span class="pr">$15</span><span class="ds">Five pieces of grilled halloumi cheese, golden at the edges.</span></div>
+      </div>
+
+      <div class="menu-cat">
+        <h3><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#c45a2c"/><path d="M11 5 L16 11 L11 17 L6 11 Z" fill="#f7efe1"/></svg>Salads</h3>
+        <div class="item"><span class="nm">Fattoush</span><span class="pr">$14 / $20</span><span class="ds">Fresh lettuce, tomato, cucumber, onion, capsicum, radish, parsley and pomegranate dressing.</span></div>
+        <div class="item"><span class="nm">Chicken Salad</span><span class="pr">$18</span><span class="ds">Crisp greens dressed in lemon and olive oil, topped with marinated chicken tenderloin.</span></div>
+        <div class="item"><span class="nm">Coleslaw</span><span class="pr">$12</span><span class="ds">Crushed white cabbage and carrot in a light, creamy dressing.</span></div>
+      </div>
+
+      <div class="menu-cat">
+        <h3><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#5a6b32"/><rect x="9" y="4" width="4" height="14" rx="2" fill="#d9a441"/></svg>Grills &amp; Mains</h3>
+        <div class="item"><span class="nm">Mashawi Mixed Grill <span class="tag">For the table</span></span><span class="pr">$42</span><span class="ds">Two lamb, two kofta and two shish tawook skewers, served with garlic dip.</span></div>
+        <div class="item"><span class="nm">Lamb Shawarma</span><span class="pr">$25</span><span class="ds">Grilled marinated shredded lamb with spices, served with tahini sauce.</span></div>
+        <div class="item"><span class="nm">Shishbarak</span><span class="pr">$27</span><span class="ds">Little dumplings of minced meat and onion, simmered in warm yogurt.</span></div>
+      </div>
+
+      <div class="menu-cat">
+        <h3><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#c45a2c"/><path d="M6 13 Q11 6 16 13" stroke="#f7efe1" stroke-width="2" fill="none"/></svg>Breakfast</h3>
+        <div class="item"><span class="nm">Jasmine Breakfast Plate <span class="tag">Hearty</span></span><span class="pr">$30</span><span class="ds">Eggs your way, foul, hommous, labneh, shanklish, sujuk, sausage, hash brown, falafel and zaatar salad.</span></div>
+        <div class="item"><span class="nm">Fatteh</span><span class="pr">$14</span><span class="ds">Chickpeas, tahini and toasted bread topped with yogurt, nuts, parsley and butter, with pickles.</span></div>
+      </div>
+
+    </div>
+    <p class="menu-note">Prices in AUD. Hot mezza, seafood, wraps, kids menu and Lebanese desserts also available in store. Banquets for groups served daily.</p>
+  </div>
+  <div class="tile-band"></div>
+</section>
+
+<!-- CHARCOAL -->
+<section class="charcoal" id="charcoal">
+  <div class="wrap">
+    <div class="charcoal-inner">
+      <div class="grill-art">
+        <svg width="260" height="300" viewBox="0 0 260 300" aria-hidden="true">
+          <!-- glow -->
+          <ellipse cx="130" cy="250" rx="120" ry="26" fill="#c45a2c" opacity="0.28"/>
+          <!-- grill base -->
+          <rect x="40" y="232" width="180" height="20" rx="6" fill="#3a342d"/>
+          <rect x="34" y="244" width="14" height="46" rx="3" fill="#3a342d"/>
+          <rect x="212" y="244" width="14" height="46" rx="3" fill="#3a342d"/>
+          <!-- coals -->
+          <g>
+            <circle cx="70" cy="228" r="9" fill="#a8431d"><animate attributeName="fill" values="#a8431d;#d9a441;#a8431d" dur="2.4s" repeatCount="indefinite"/></circle>
+            <circle cx="100" cy="230" r="10" fill="#c45a2c"><animate attributeName="fill" values="#c45a2c;#e9a23a;#c45a2c" dur="2s" repeatCount="indefinite"/></circle>
+            <circle cx="135" cy="228" r="9" fill="#d9a441"><animate attributeName="fill" values="#d9a441;#a8431d;#d9a441" dur="2.7s" repeatCount="indefinite"/></circle>
+            <circle cx="168" cy="230" r="10" fill="#c45a2c"><animate attributeName="fill" values="#c45a2c;#e9a23a;#c45a2c" dur="2.2s" repeatCount="indefinite"/></circle>
+            <circle cx="198" cy="228" r="8" fill="#a8431d"><animate attributeName="fill" values="#a8431d;#d9a441;#a8431d" dur="2.5s" repeatCount="indefinite"/></circle>
+          </g>
+          <!-- skewers -->
+          <g stroke="#cfc6b8" stroke-width="3" stroke-linecap="round">
+            <line x1="60" y1="60" x2="60" y2="210"/>
+            <line x1="110" y1="50" x2="110" y2="210"/>
+            <line x1="160" y1="50" x2="160" y2="210"/>
+            <line x1="205" y1="60" x2="205" y2="210"/>
+          </g>
+          <!-- meat chunks -->
+          <g>
+            <rect x="50" y="90" width="20" height="26" rx="6" fill="#8a4a2a"/>
+            <rect x="50" y="124" width="20" height="26" rx="6" fill="#a0562f"/>
+            <rect x="50" y="158" width="20" height="26" rx="6" fill="#8a4a2a"/>
+            <rect x="100" y="78" width="20" height="26" rx="6" fill="#a0562f"/>
+            <rect x="100" y="112" width="20" height="26" rx="6" fill="#7a5a3a"/>
+            <rect x="100" y="146" width="20" height="26" rx="6" fill="#a0562f"/>
+            <rect x="100" y="180" width="20" height="20" rx="6" fill="#8a4a2a"/>
+            <rect x="150" y="78" width="20" height="26" rx="6" fill="#8a4a2a"/>
+            <rect x="150" y="112" width="20" height="26" rx="6" fill="#a0562f"/>
+            <rect x="150" y="146" width="20" height="26" rx="6" fill="#7a5a3a"/>
+            <rect x="150" y="180" width="20" height="20" rx="6" fill="#a0562f"/>
+            <rect x="195" y="90" width="20" height="26" rx="6" fill="#a0562f"/>
+            <rect x="195" y="124" width="20" height="26" rx="6" fill="#8a4a2a"/>
+            <rect x="195" y="158" width="20" height="26" rx="6" fill="#a0562f"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">From our charcoal grill</span>
+        <h2>Smoke, fire and the heart of every Lebanese feast</h2>
+        <p>Nothing says Jasmin1 like the smell of skewers over glowing charcoal. Our meats are marinated overnight in garlic, lemon and Lebanese spice, then grilled to order so each one arrives charred outside and juicy within.</p>
+        <div class="skewer-list">
+          <div class="skewer">
+            <svg class="sk-ic" viewBox="0 0 38 38" aria-hidden="true"><rect x="17" y="4" width="4" height="30" rx="2" fill="#7a5a3a"/><rect x="11" y="9" width="16" height="9" rx="4" fill="#a0562f"/><rect x="11" y="20" width="16" height="9" rx="4" fill="#8a4a2a"/></svg>
+            <div><b>Lamb Skewer</b><span>Tender cubes of marinated lamb, charcoal seared.</span></div>
+          </div>
+          <div class="skewer">
+            <svg class="sk-ic" viewBox="0 0 38 38" aria-hidden="true"><rect x="17" y="4" width="4" height="30" rx="2" fill="#7a5a3a"/><rect x="12" y="9" width="14" height="20" rx="7" fill="#a8431d"/></svg>
+            <div><b>Kafta Skewer</b><span>Hand minced lamb with parsley, onion and spice.</span></div>
+          </div>
+          <div class="skewer">
+            <svg class="sk-ic" viewBox="0 0 38 38" aria-hidden="true"><rect x="17" y="4" width="4" height="30" rx="2" fill="#7a5a3a"/><rect x="11" y="9" width="16" height="9" rx="4" fill="#d9a441"/><rect x="11" y="20" width="16" height="9" rx="4" fill="#e8c878"/></svg>
+            <div><b>Shish Tawook</b><span>Garlic marinated chicken, smoky and succulent.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <svg class="hero-bg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="opacity:.1">
+    <rect width="100" height="100" fill="url(#medtile)"/>
+  </svg>
+  <div class="wrap">
+    <div class="story-inner">
+      <div>
+        <span class="eyebrow">Our family . Our story</span>
+        <h2>A family kitchen on Civic Road</h2>
+        <p>Jasmin1 is locally owned and family run, born from a simple wish: to bring the vibrant flavours of authentic Lebanese cuisine to the Auburn neighbourhood we call home.</p>
+        <p>Our chefs have mastered the dishes Lebanon is loved for, especially the hot and cold mezza that fill our tables. From breakfast to a late charcoal feast, we cook the way we cook for our own family - generously, and with heart.</p>
+        <div class="story-stats">
+          <div><b>15hrs</b><span>Open every day</span></div>
+          <div><b>100%</b><span>Halal kitchen</span></div>
+          <div><b>4</b><span>Banquet feasts</span></div>
+        </div>
+      </div>
+      <div class="family-art">
+        <svg width="300" height="260" viewBox="0 0 300 260" aria-hidden="true">
+          <!-- round table -->
+          <ellipse cx="150" cy="150" rx="130" ry="90" fill="#a8431d"/>
+          <ellipse cx="150" cy="142" rx="130" ry="90" fill="#d9a441"/>
+          <ellipse cx="150" cy="138" rx="110" ry="74" fill="#f7efe1"/>
+          <!-- shared dishes -->
+          <circle cx="110" cy="120" r="20" fill="#efe3cd" stroke="#c45a2c" stroke-width="2"/>
+          <circle cx="110" cy="120" r="7" fill="#5a6b32"/>
+          <circle cx="190" cy="120" r="20" fill="#efe3cd" stroke="#5a6b32" stroke-width="2"/>
+          <path d="M180 124 q10 8 20 0" stroke="#c45a2c" stroke-width="3" fill="none"/>
+          <ellipse cx="150" cy="160" rx="26" ry="16" fill="#efe3cd" stroke="#d9a441" stroke-width="2"/>
+          <rect x="138" y="152" width="8" height="14" rx="3" fill="#a0562f"/>
+          <rect x="150" y="152" width="8" height="14" rx="3" fill="#8a4a2a"/>
+          <!-- bread -->
+          <circle cx="150" cy="115" r="14" fill="#e8d9a8" stroke="#d9a441" stroke-width="1.5"/>
+          <!-- little hearts above = warmth -->
+          <path d="M150 40 c-4-6-14-4-14 4 0 6 14 14 14 14s14-8 14-14c0-8-10-10-14-4z" fill="#c45a2c" opacity="0.85"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Come and see us</span>
+      <h2>Reservations &amp; visit</h2>
+      <p>Book a table for the family or call ahead for a banquet. We would love to host you.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3 class="serif">Find us in Auburn</h3>
+        <div class="info-row">
+          <div class="ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="#f7efe1"/><circle cx="12" cy="9" r="2.5" fill="#5a6b32"/></svg></div>
+          <div><b>22 Civic Road</b><span>Auburn NSW 2144, Australia</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ri"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M6 3h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C12 21 3 12 3 5c0-1 1-2 2-2z" fill="#f7efe1"/></svg></div>
+          <div><b><a href="tel:+61296438426">+61 2 9643 8426</a></b><span>Call to book or order ahead</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ri"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#f7efe1" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#f7efe1" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <div><b>Open 7 days, 8am - 11pm</b><span>Breakfast, lunch, dinner and late grills</span></div>
+        </div>
+        <div class="map-mock">
+          <svg width="100%" height="100%" viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="170" fill="#e7ddc8"/>
+            <path d="M0 60 H400 M0 120 H400 M120 0 V170 M260 0 V170" stroke="#d3c4a6" stroke-width="6"/>
+            <path d="M0 60 H400" stroke="#c9b894" stroke-width="2"/>
+            <rect x="40" y="70" width="60" height="40" fill="#cdbf9f"/>
+            <rect x="280" y="20" width="70" height="32" fill="#cdbf9f"/>
+            <circle cx="200" cy="90" r="13" fill="#c45a2c"/>
+            <path d="M200 78 C193 78 188 83 188 89 c0 8 12 18 12 18 s12-10 12-18 c0-6-5-11-12-11z" fill="#a8431d"/>
+            <circle cx="200" cy="89" r="4" fill="#f7efe1"/>
+          </svg>
+        </div>
+      </div>
+      <div class="book-card">
+        <h3 class="serif">Reserve your table</h3>
+        <p>Walk-ins are always welcome, but for big groups and banquets, a quick call secures your spot.</p>
+        <a class="phone-big" href="tel:+61296438426">+61 2 9643 8426</a>
+        <span style="font-size:.85rem;color:#d9cdb6">22 Civic Rd, Auburn NSW 2144</span>
+        <a class="btn-primary" href="tel:+61296438426">Call to book now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand foot-col">
+        <b>Jasmin1 Lebanese Restaurant</b>
+        <p>Authentic, halal Lebanese mezze and charcoal grills, family run in the heart of Auburn.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>22 Civic Road</p>
+        <p>Auburn NSW 2144</p>
+        <a href="tel:+61296438426">+61 2 9643 8426</a>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <p>Monday - Sunday</p>
+        <p>8:00am - 11:00pm</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#menu">Menu</a>
+        <a href="#charcoal">Charcoal Grill</a>
+        <a href="#story">Our Story</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Jasmin1 Lebanese Restaurant Auburn. All rights reserved.</span>
+      <span class="concept">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open');});
+  });
+})();
+</script>
+</body>
+</html>

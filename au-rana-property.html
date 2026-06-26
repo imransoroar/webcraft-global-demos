@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rana Property Group | Real Estate in Parramatta &amp; Western Sydney</title>
+<meta name="description" content="Rana Property Group (RPG Real Estate) is a trusted community agency serving Parramatta, Granville, Westmead, Harris Park and Western Sydney. Sales, leasing and property management with a team that speaks your language.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#1f8a70;
+    --teal-deep:#13624f;
+    --teal-soft:#e3f1ec;
+    --cream:#fbf6ee;
+    --cream-2:#f4ead8;
+    --char:#2c2a26;
+    --char-soft:#5a564e;
+    --amber:#e9a13b;
+    --line:#e6ddcd;
+    --white:#ffffff;
+    --shadow:0 16px 40px rgba(19,98,79,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;color:var(--char);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,92%);margin:0 auto}
+  section{padding:84px 0}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:700;font-size:1.35rem;color:var(--teal-deep)}
+  .mark{width:42px;height:42px;border-radius:50%;background:var(--teal);display:grid;place-items:center;flex-shrink:0;box-shadow:0 6px 16px rgba(31,138,112,.35)}
+  .mark span{color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem}
+  .brand small{display:block;font-family:'Nunito',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.16em;color:var(--char-soft);text-transform:uppercase}
+  .nav-links{display:flex;align-items:center;gap:30px;font-weight:600;font-size:.95rem}
+  .nav-links a{position:relative;transition:color .2s}
+  .nav-links a:not(.callbtn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--teal);transition:width .25s}
+  .nav-links a:not(.callbtn):hover{color:var(--teal-deep)}
+  .nav-links a:not(.callbtn):hover::after{width:100%}
+  .callbtn{background:var(--teal);color:#fff!important;padding:11px 20px;border-radius:40px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s,background .2s}
+  .callbtn:hover{background:var(--teal-deep);transform:translateY(-2px);box-shadow:0 10px 22px rgba(31,138,112,.4)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:3px;background:var(--teal-deep);border-radius:3px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);padding:90px 0 100px}
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5;z-index:0}
+  .b1{width:340px;height:340px;background:radial-gradient(circle,#cfe9df,transparent 70%);top:-80px;right:-60px}
+  .b2{width:260px;height:260px;background:radial-gradient(circle,#f6e2bf,transparent 70%);bottom:-70px;left:-50px}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:var(--teal-soft);color:var(--teal-deep);font-weight:700;font-size:.78rem;letter-spacing:.04em;padding:7px 15px;border-radius:30px;margin-bottom:22px}
+  .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.4}}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4rem);color:var(--char);letter-spacing:-.01em}
+  .hero h1 em{font-style:italic;color:var(--teal)}
+  .hero p.lead{font-size:1.16rem;color:var(--char-soft);margin:22px 0 32px;max-width:42ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;padding:15px 26px;border-radius:44px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;font-size:1rem;border:0}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 12px 26px rgba(31,138,112,.32)}
+  .btn-primary:hover{background:var(--teal-deep);transform:translateY(-3px);box-shadow:0 16px 32px rgba(31,138,112,.42)}
+  .btn-ghost{background:#fff;color:var(--teal-deep);border:2px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--teal);transform:translateY(-3px)}
+  .trust-row{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap}
+  .trust-row div{display:flex;flex-direction:column}
+  .trust-row b{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--teal-deep);line-height:1}
+  .trust-row span{font-size:.82rem;color:var(--char-soft);font-weight:600;margin-top:4px}
+
+  /* HERO CARD */
+  .home-card{background:#fff;border-radius:26px;padding:26px;box-shadow:var(--shadow);position:relative}
+  .home-art{height:180px;border-radius:18px;background:linear-gradient(165deg,#1f8a70,#13624f);position:relative;overflow:hidden;margin-bottom:20px}
+  .home-art svg{position:absolute;inset:0;width:100%;height:100%}
+  .badge-float{position:absolute;top:14px;right:14px;background:#fff;color:var(--teal-deep);font-weight:800;font-size:.74rem;padding:6px 12px;border-radius:20px;box-shadow:0 6px 14px rgba(0,0,0,.12);z-index:3}
+  .home-card h3{font-size:1.25rem;margin-bottom:4px}
+  .home-card .addr{color:var(--char-soft);font-weight:600;font-size:.92rem;margin-bottom:14px}
+  .feat{display:flex;gap:18px;padding-top:14px;border-top:1px solid var(--line);font-weight:700;font-size:.86rem;color:var(--char-soft)}
+  .feat span{display:flex;align-items:center;gap:6px}
+
+  /* SECTION HEADINGS */
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:800;color:var(--teal);margin-bottom:12px}
+  .sec-head{max-width:60ch}
+  .sec-head h2{font-size:clamp(2rem,3.8vw,2.85rem);color:var(--char)}
+  .sec-head p{color:var(--char-soft);font-size:1.08rem;margin-top:14px}
+  .center{text-align:center;margin:0 auto}
+
+  /* SERVICES */
+  .services{background:#fff}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px}
+  .svc{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:34px 30px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .svc:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--teal-soft)}
+  .ico{width:62px;height:62px;border-radius:18px;background:var(--teal-soft);display:grid;place-items:center;margin-bottom:20px;transition:background .25s}
+  .svc:hover .ico{background:var(--teal)}
+  .svc:hover .ico svg{stroke:#fff}
+  .ico svg{stroke:var(--teal-deep);transition:stroke .25s}
+  .svc h3{font-size:1.4rem;margin-bottom:10px}
+  .svc p{color:var(--char-soft);font-size:.97rem}
+  .svc a.more{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-weight:700;color:var(--teal-deep);font-size:.92rem}
+  .svc a.more svg{transition:transform .2s}
+  .svc a.more:hover svg{transform:translateX(5px)}
+
+  /* LANGUAGE BAND */
+  .lang{background:linear-gradient(150deg,var(--teal-deep),var(--teal));color:#fff;position:relative;overflow:hidden}
+  .lang::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.06);top:-140px;right:-120px}
+  .lang .wrap{position:relative;z-index:2}
+  .lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .lang h2{font-size:clamp(2rem,4vw,2.9rem);color:#fff}
+  .lang p{color:rgba(255,255,255,.86);font-size:1.1rem;margin-top:16px}
+  .lang .eyebrow{color:var(--amber)}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  .chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#fff;font-weight:700;padding:11px 18px;border-radius:40px;font-size:.95rem;transition:background .2s,transform .2s}
+  .chip:hover{background:#fff;color:var(--teal-deep);transform:translateY(-3px)}
+  .chip span{font-size:.78rem;opacity:.8;font-weight:600;margin-left:6px}
+
+  /* SUBURBS */
+  .suburbs{background:var(--cream)}
+  .sub-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .sub-grid a{background:#fff;border:1px solid var(--line);padding:11px 19px;border-radius:30px;font-weight:700;color:var(--char-soft);font-size:.92rem;transition:.2s}
+  .sub-grid a:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-2px)}
+
+  /* TEAM */
+  .team{background:#fff}
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px}
+  .person{text-align:center;padding:28px 16px;border-radius:20px;background:var(--cream);border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+  .person:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .avatar{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:#fff}
+  .a1{background:linear-gradient(140deg,#1f8a70,#13624f)}
+  .a2{background:linear-gradient(140deg,#e9a13b,#cf8424)}
+  .a3{background:linear-gradient(140deg,#3a8fb7,#256d8f)}
+  .a4{background:linear-gradient(140deg,#9d6fb0,#7a5191)}
+  .person h4{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600}
+  .person p{font-size:.84rem;color:var(--char-soft);font-weight:600;margin-top:3px}
+
+  /* TESTIMONIALS */
+  .testi{background:var(--cream-2)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}
+  .quote{background:#fff;border-radius:22px;padding:32px 28px;box-shadow:0 8px 22px rgba(19,98,79,.07);position:relative;transition:transform .25s}
+  .quote:hover{transform:translateY(-6px)}
+  .stars{color:var(--amber);font-size:1.05rem;letter-spacing:2px;margin-bottom:12px}
+  .quote p{font-size:1rem;color:var(--char-soft);font-style:italic}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .quote .who .av{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-family:'Fraunces',serif}
+  .quote .who b{font-family:'Fraunces',serif;font-size:1rem}
+  .quote .who small{display:block;color:var(--teal);font-weight:700;font-size:.78rem}
+
+  /* CTA */
+  .cta{background:#fff}
+  .cta-card{background:linear-gradient(150deg,var(--teal),var(--teal-deep));border-radius:32px;padding:60px;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .cta-card::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07);top:-100px;left:-80px}
+  .cta-card h2{font-size:clamp(2rem,4vw,2.9rem);color:#fff;position:relative}
+  .cta-card p{color:rgba(255,255,255,.88);font-size:1.12rem;margin:16px auto 30px;max-width:50ch;position:relative}
+  .cta-phone{position:relative;display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--teal-deep);font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);padding:16px 34px;border-radius:50px;box-shadow:0 14px 32px rgba(0,0,0,.2);transition:transform .25s,box-shadow .25s}
+  .cta-phone:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.28)}
+  .cta-sub{position:relative;margin-top:22px;color:rgba(255,255,255,.82);font-weight:600;font-size:.95rem}
+  .cta-offices{position:relative;display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:34px;text-align:left}
+  .cta-offices div{max-width:240px}
+  .cta-offices b{display:block;font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:4px;color:#fff}
+  .cta-offices span{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:600}
+
+  /* FOOTER */
+  footer{background:var(--char);color:rgba(255,255,255,.72);padding:56px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  .foot-grid .brand{color:#fff;margin-bottom:14px}
+  .foot-grid .brand small{color:rgba(255,255,255,.5)}
+  footer p{font-size:.92rem;max-width:34ch}
+  footer h5{color:#fff;font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:14px;font-weight:600}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:9px;font-size:.92rem}
+  footer ul a{transition:color .2s}
+  footer ul a:hover{color:var(--amber)}
+  .foot-phone{color:#fff;font-weight:800;font-size:1.1rem}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:42px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem}
+  .credit{color:rgba(255,255,255,.4)}
+  .socials{display:flex;gap:12px;margin-top:16px}
+  .socials a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:.2s}
+  .socials a:hover{background:var(--teal);transform:translateY(-3px)}
+
+  @media(max-width:900px){
+    .nav-links{position:fixed;inset:69px 0 auto 0;background:var(--cream);flex-direction:column;gap:0;padding:0;max-height:0;overflow:hidden;transition:max-height .35s;border-bottom:1px solid var(--line)}
+    .nav-links.open{max-height:420px;padding:14px 0}
+    .nav-links a{padding:13px 6%;width:100%}
+    .nav-links .callbtn{margin:10px 6%;justify-content:center}
+    .burger{display:flex}
+    .hero-grid,.lang-grid,.foot-grid{grid-template-columns:1fr;gap:40px}
+    .svc-grid,.testi-grid{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:repeat(2,1fr)}
+    .cta-card{padding:40px 26px}
+    section{padding:60px 0}
+  }
+  @media(max-width:480px){
+    .team-grid{grid-template-columns:1fr 1fr}
+    .trust-row{gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="mark"><span>R</span></span>
+      <span>Rana Property Group<small>RPG Real Estate &middot; Parramatta</small></span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="#services">Services</a>
+      <a href="#community">Community</a>
+      <a href="#team">Our People</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="tel:+61296309999" class="callbtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        02 9630 9999
+      </a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">Your local Western Sydney agency</span>
+      <h1>Let us help you <em>realise your dream</em> in Western Sydney.</h1>
+      <p class="lead">From Parramatta and Harris Park to Westmead and Granville, our family-run team helps you buy, sell, lease and manage property with care, honesty and a friendly face you can trust.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get a free appraisal
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">How we help</a>
+      </div>
+      <div class="trust-row">
+        <div><b>11+</b><span>suburbs served</span></div>
+        <div><b>2</b><span>local offices</span></div>
+        <div><b>Many</b><span>languages spoken</span></div>
+      </div>
+    </div>
+
+    <div class="home-card">
+      <div class="home-art">
+        <span class="badge-float">Just Listed</span>
+        <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2aa285"/><stop offset="1" stop-color="#13624f"/></linearGradient></defs>
+          <rect width="400" height="200" fill="url(#sky)"/>
+          <circle cx="330" cy="44" r="26" fill="#f4ead8" opacity=".7"/>
+          <path d="M0 150 L70 110 L140 150 Z" fill="rgba(255,255,255,.08)"/>
+          <path d="M250 160 L330 105 L400 160 Z" fill="rgba(255,255,255,.08)"/>
+          <g>
+            <rect x="150" y="118" width="100" height="62" rx="4" fill="#fbf6ee"/>
+            <path d="M142 120 L200 78 L258 120 Z" fill="#e9a13b"/>
+            <rect x="168" y="138" width="22" height="22" rx="2" fill="#1f8a70"/>
+            <rect x="210" y="138" width="22" height="42" rx="2" fill="#13624f"/>
+            <rect x="194" y="92" width="12" height="12" fill="#fbf6ee"/>
+          </g>
+          <rect y="178" width="400" height="22" fill="#0f5040"/>
+        </svg>
+      </div>
+      <h3>A Home Like Few Others</h3>
+      <p class="addr">Harris Park &middot; Parramatta, NSW 2150</p>
+      <div class="feat">
+        <span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M2 12v6M22 12v6"/></svg>4 Beds</span>
+        <span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2M2 12h20v3a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/></svg>2 Baths</span>
+        <span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M5 8V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2"/></svg>2 Car</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow">What we do</p>
+      <h2>One friendly team for your whole property journey</h2>
+      <p>Whether you are buying your first home, selling the family house or renting out an investment, we are here with honest advice and local know-how.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></div>
+        <h3>Buying &amp; Selling</h3>
+        <p>Residential, commercial and project sales across Western Sydney. We market your property to the right buyers and guide you to the best possible result.</p>
+        <a href="#contact" class="more">Book a sales appraisal
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4m18 0v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8m18 0H3M8 14h.01M12 14h4"/></svg></div>
+        <h3>Leasing</h3>
+        <p>Finding quality tenants for your home or commercial space, with thorough screening and clear communication so you can lease with confidence.</p>
+        <a href="#contact" class="more">Request a rental appraisal
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Property Management</h3>
+        <p>Hands-on care for your investment, from rent collection and inspections to maintenance and tenant relations, led by our experienced management team.</p>
+        <a href="#contact" class="more">Talk to a manager
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lang" id="community">
+  <div class="wrap lang-grid">
+    <div>
+      <p class="eyebrow">We speak your language</p>
+      <h2>A community agency, for our community.</h2>
+      <p>Western Sydney is one of the most diverse places in the country, and so is our team. We are proud to help families across many cultures feel understood, respected and right at home, in their own words.</p>
+      <p style="margin-top:14px;font-weight:600;color:#fff">Tell us the language you are most comfortable in and we will do our best to connect you with someone on our team who speaks it.</p>
+    </div>
+    <div>
+      <div class="chips">
+        <span class="chip">English</span>
+        <span class="chip">Hindi <span>हिन्दी</span></span>
+        <span class="chip">Urdu <span>اردو</span></span>
+        <span class="chip">Punjabi <span>ਪੰਜਾਬੀ</span></span>
+        <span class="chip">Nepali <span>नेपाली</span></span>
+        <span class="chip">Greek <span>Ελληνικά</span></span>
+        <span class="chip">Portuguese</span>
+        <span class="chip">Arabic <span>العربية</span></span>
+        <span class="chip">Maltese</span>
+        <span class="chip">&amp; more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="suburbs">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where we work</p>
+      <h2>Proudly local, across Western Sydney</h2>
+      <p>Real estate agents and property managers serving Parramatta and the surrounding suburbs we call home.</p>
+    </div>
+    <div class="sub-grid">
+      <a href="#contact">Parramatta</a>
+      <a href="#contact">Harris Park</a>
+      <a href="#contact">Westmead</a>
+      <a href="#contact">Granville</a>
+      <a href="#contact">South Granville</a>
+      <a href="#contact">Wentworthville</a>
+      <a href="#contact">Toongabbie</a>
+      <a href="#contact">Greystanes</a>
+      <a href="#contact">Guildford</a>
+      <a href="#contact">Old Guildford</a>
+      <a href="#contact">Rouse Hill</a>
+      <a href="#contact">&amp; surrounds</a>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow">Our people</p>
+      <h2>Friendly faces who know your area</h2>
+      <p>A close-knit, family-led team you will actually get to know, from your first appraisal to handing over the keys.</p>
+    </div>
+    <div class="team-grid">
+      <div class="person"><div class="avatar a1">IR</div><h4>Iftikhar Rana</h4><p>Principal</p></div>
+      <div class="person"><div class="avatar a2">AR</div><h4>Auz Rana</h4><p>General Manager</p></div>
+      <div class="person"><div class="avatar a3">SS</div><h4>Sarju Sahu</h4><p>Head of Property Management</p></div>
+      <div class="person"><div class="avatar a4">SS</div><h4>Sam Sumaktas</h4><p>Sales Agent</p></div>
+      <div class="person"><div class="avatar a2">AD</div><h4>Alfredo De Assis</h4><p>Licensed Real Estate Agent</p></div>
+      <div class="person"><div class="avatar a3">MM</div><h4>Magdalene Mitsis</h4><p>Licensed Estate Agent</p></div>
+      <div class="person"><div class="avatar a4">DB</div><h4>David Borg</h4><p>Licensed Real Estate Agent</p></div>
+      <div class="person"><div class="avatar a1">RPG</div><h4>Your local team</h4><p>Here to help, in your language</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow">Kind words</p>
+      <h2>What our community says</h2>
+      <p>Real reviews from people who trusted us with one of life's biggest decisions.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="quote">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Rana Property Group is the real deal. My agent was a total pro and made buying my first home a breeze. Highly recommend!"</p>
+        <div class="who"><div class="av">N</div><div><b>Nina B.</b><small>Highly Recommend</small></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"My agent was knowledgeable, supportive and always had my best interests in mind. They made the home-buying process a breeze and I could not be happier."</p>
+        <div class="who"><div class="av">G</div><div><b>Gabrielle G.</b><small>Amazing Service</small></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Professional, friendly and always available to answer my questions. They listened to my needs and helped me find the perfect home in no time."</p>
+        <div class="who"><div class="av">G</div><div><b>Grant Downs</b><small>Professional and friendly</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>Let's have a friendly chat</h2>
+      <p>No pressure, no jargon. Call us today for a free appraisal or a simple conversation about your property goals. We would love to help.</p>
+      <a href="tel:+61296309999" class="cta-phone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        02 9630 9999
+      </a>
+      <div class="cta-sub">Or email us at office@ranapropertygroup.com.au</div>
+      <div class="cta-offices">
+        <div><b>Parramatta Office</b><span>Shop 1 &amp; 2, 382 Church Street, Parramatta NSW 2150</span></div>
+        <div><b>Norwest Office</b><span>Level 5, 4 Columbia Court, Norwest NSW 2153</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="mark"><span>R</span></span>
+          <span>Rana Property Group<small>RPG Real Estate</small></span>
+        </a>
+        <p>A trusted, family-run community agency helping Western Sydney buy, sell, lease and manage property, in the languages you speak at home.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/ranapropertygroup" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5v1.8h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/rana.property.group/" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/company/rana-property-group/" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
+          <a href="https://www.youtube.com/@RanaPropertyGroup" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Our Services</h5>
+        <ul>
+          <li><a href="#services">Buying &amp; Selling</a></li>
+          <li><a href="#services">Leasing</a></li>
+          <li><a href="#services">Property Management</a></li>
+          <li><a href="#contact">Free Appraisal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Visit or Call Us</h5>
+        <ul>
+          <li>Shop 1 &amp; 2, 382 Church Street,<br>Parramatta NSW 2150</li>
+          <li><a href="tel:+61296309999" class="foot-phone">02 9630 9999</a></li>
+          <li><a href="mailto:office@ranapropertygroup.com.au">office@ranapropertygroup.com.au</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Rana Property Group &middot; RPG Real Estate &middot; Parramatta NSW &middot; 02 9630 9999</span>
+      <span class="credit">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+  document.addEventListener('click',function(e){
+    if(!menu.contains(e.target)&&!burger.contains(e.target)){menu.classList.remove('open');}
+  });
+</script>
+</body>
+</html>
