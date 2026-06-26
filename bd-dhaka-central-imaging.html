@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCIMCH Imaging and Diagnostics - Advanced Imaging Technology, Dhaka</title>
+<meta name="description" content="Radiology and imaging at Dhaka Central International Medical College Hospital. 3 Tesla MRI, 256 slice CT, digital X-ray, ultrasound and a full diagnostic laboratory in Shyamoli, Dhaka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#143a6b;
+  --blue-deep:#0d2848;
+  --cyan:#1fb6d6;
+  --cyan-soft:#e3f6fb;
+  --ink:#0f2138;
+  --grey:#5a6b7e;
+  --line:#dce4ee;
+  --bg:#f4f8fc;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;line-height:1.12}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Space Grotesk';font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.logomark{width:40px;height:40px;flex:none;position:relative}
+.logomark svg{display:block}
+.brand b{font-family:'Space Grotesk';font-weight:700;font-size:1.12rem;color:var(--blue);letter-spacing:-.01em;line-height:1}
+.brand span{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-top:3px}
+nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+nav a{font-size:.9rem;font-weight:500;color:var(--ink);position:relative;padding:4px 0;transition:color .2s}
+nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--cyan);transition:width .25s}
+nav a:hover{color:var(--blue)}
+nav a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:#04222b;font-family:'Space Grotesk';font-weight:600;font-size:.9rem;padding:11px 22px;border-radius:7px;transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer}
+.btn:hover{background:#16a0bd;transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(31,182,214,.7)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:var(--cyan);box-shadow:none}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+.menu-toggle span{width:24px;height:2px;background:var(--blue);display:block;border-radius:2px}
+
+/* HERO */
+.hero{position:relative;background:radial-gradient(120% 130% at 80% 0%,#1b4a86 0%,var(--blue) 42%,var(--blue-deep) 100%);color:#fff;overflow:hidden}
+.grid-lines{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(31,182,214,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(31,182,214,.09) 1px,transparent 1px);background-size:54px 54px}
+.scan{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 18px 2px rgba(31,182,214,.6);animation:scan 6s linear infinite}
+@keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(620px)}}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:84px 0 96px}
+.hero h1{font-size:3.35rem;font-weight:700;margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero p.lead{font-size:1.12rem;color:#cbdcf0;max-width:520px;margin-bottom:30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:30px;margin-top:42px;flex-wrap:wrap}
+.hero-stats div b{font-family:'Space Grotesk';font-size:1.7rem;color:#fff;display:block;line-height:1}
+.hero-stats div span{font-size:.78rem;color:#9fbada;letter-spacing:.04em}
+/* scanner visual */
+.scanner{position:relative;aspect-ratio:1/1;border:1px solid rgba(31,182,214,.35);border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(13,40,72,.4));padding:26px;display:flex;align-items:center;justify-content:center}
+.scanner .ring{position:absolute;border-radius:50%}
+.r1{inset:26px;border:1px solid rgba(255,255,255,.12)}
+.r2{inset:62px;border:1px dashed rgba(31,182,214,.4);animation:spin 22s linear infinite}
+.r3{inset:96px;border:1px solid rgba(255,255,255,.1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scanner .core{position:relative;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#2fd0ef,#1fb6d6 55%,#0d6f87);box-shadow:0 0 50px -6px rgba(31,182,214,.7),inset 0 0 30px rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center}
+.scanner .core svg{width:62px;height:62px}
+.tag-float{position:absolute;background:rgba(255,255,255,.95);color:var(--blue);font-family:'Space Grotesk';font-weight:600;font-size:.74rem;padding:7px 13px;border-radius:20px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.tf1{top:14px;left:-10px}
+.tf2{bottom:30px;right:-12px}
+.tf3{bottom:-8px;left:30px}
+
+/* generic section */
+section{padding:88px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head h2{font-size:2.3rem;font-weight:700;color:var(--blue);margin:14px 0 14px}
+.sec-head p{color:var(--grey);font-size:1.04rem}
+.center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* MODALITIES */
+#modalities{background:var(--bg)}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mod{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px 26px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.mod::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--cyan);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.mod:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(20,58,107,.45);border-color:transparent}
+.mod:hover::before{transform:scaleY(1)}
+.mod .ic{width:50px;height:50px;border-radius:11px;background:var(--cyan-soft);display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background .25s}
+.mod:hover .ic{background:var(--blue)}
+.mod .ic svg{width:26px;height:26px;stroke:var(--blue);transition:stroke .25s}
+.mod:hover .ic svg{stroke:var(--cyan)}
+.mod h3{font-size:1.18rem;color:var(--ink);margin-bottom:8px}
+.mod p{font-size:.92rem;color:var(--grey);margin-bottom:14px}
+.mod .spec{font-family:'Space Grotesk';font-size:.78rem;font-weight:600;color:var(--cyan);letter-spacing:.04em}
+
+/* TECH credibility */
+#tech{background:var(--blue-deep);color:#fff;position:relative;overflow:hidden}
+#tech .grid-lines{opacity:.35}
+.tech-inner{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+#tech h2{color:#fff;font-size:2.3rem;font-weight:700;margin:14px 0 18px}
+#tech p.body{color:#bcd0e8;margin-bottom:28px}
+.tech-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tech-item{display:flex;gap:12px;align-items:flex-start}
+.tech-item .dot{flex:none;width:30px;height:30px;border-radius:8px;background:rgba(31,182,214,.16);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.tech-item .dot svg{width:16px;height:16px;stroke:var(--cyan)}
+.tech-item b{font-family:'Space Grotesk';font-size:.96rem;display:block}
+.tech-item span{font-size:.82rem;color:#9fbada}
+.tech-panel{border:1px solid rgba(31,182,214,.3);border-radius:18px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(13,40,72,.3));padding:34px}
+.gauge{display:flex;align-items:center;gap:20px;margin-bottom:24px}
+.gauge:last-child{margin-bottom:0}
+.gauge .num{font-family:'Space Grotesk';font-weight:700;font-size:2.2rem;color:var(--cyan);min-width:96px;line-height:1}
+.gauge .num small{display:block;font-size:.66rem;letter-spacing:.14em;color:#8fb0d0;font-weight:600;text-transform:uppercase;margin-top:6px}
+.gauge .bar{flex:1}
+.gauge .bar p{font-size:.86rem;color:#cfe0f2;margin-bottom:7px;font-weight:500}
+.gauge .track{height:7px;background:rgba(255,255,255,.12);border-radius:6px;overflow:hidden}
+.gauge .fill{height:100%;background:linear-gradient(90deg,var(--cyan),#7fe6ff);border-radius:6px;width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+
+/* LAB */
+#lab .lab-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chip{font-family:'Space Grotesk';font-size:.82rem;font-weight:500;color:var(--blue);background:var(--cyan-soft);border:1px solid #c6e9f2;padding:9px 15px;border-radius:8px;transition:background .2s,color .2s,transform .2s}
+.chip:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.lab-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 26px 50px -30px rgba(20,58,107,.5)}
+.lab-card .row{display:flex;align-items:center;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.lab-card .row:last-child{border-bottom:none}
+.lab-card .row .ic{width:40px;height:40px;flex:none;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center}
+.lab-card .row .ic svg{width:21px;height:21px;stroke:var(--cyan)}
+.lab-card .row b{font-family:'Space Grotesk';font-size:.96rem;display:block;color:var(--ink)}
+.lab-card .row span{font-size:.8rem;color:var(--grey)}
+.lab-card .row em{margin-left:auto;font-style:normal;font-family:'Space Grotesk';font-size:.74rem;font-weight:600;color:#1a9e4b;background:#e4f7ec;padding:5px 11px;border-radius:20px;white-space:nowrap}
+
+/* DEPARTMENTS */
+#depts{background:var(--bg)}
+.dept-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dept{background:var(--white);border:1px solid var(--line);border-radius:11px;padding:18px 18px;display:flex;align-items:center;gap:11px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.dept:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(20,58,107,.45)}
+.dept i{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none}
+.dept span{font-size:.9rem;font-weight:500;color:var(--ink)}
+
+/* APPOINTMENT */
+#book{background:linear-gradient(150deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;position:relative;overflow:hidden}
+#book .grid-lines{opacity:.4}
+.book-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+#book h2{color:#fff;font-size:2.4rem;font-weight:700;margin:14px 0 16px}
+#book p.body{color:#c2d6ee;margin-bottom:28px;max-width:440px}
+.contact-line{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.contact-line .ic{width:46px;height:46px;flex:none;border-radius:11px;background:rgba(31,182,214,.16);display:flex;align-items:center;justify-content:center}
+.contact-line .ic svg{width:22px;height:22px;stroke:var(--cyan)}
+.contact-line b{font-family:'Space Grotesk';font-size:1.12rem;display:block}
+.contact-line span{font-size:.84rem;color:#9fbada}
+.phone-big{font-family:'Space Grotesk';font-weight:700;font-size:1.5rem;color:#fff}
+.form-card{background:var(--white);border-radius:18px;padding:32px;color:var(--ink);box-shadow:0 30px 60px -28px rgba(0,0,0,.6)}
+.form-card h3{font-size:1.3rem;color:var(--blue);margin-bottom:6px}
+.form-card>p{font-size:.86rem;color:var(--grey);margin-bottom:20px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;font-family:'Space Grotesk'}
+.field input,.field select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-family:'Inter';font-size:.92rem;color:var(--ink);background:#fbfdff;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(31,182,214,.18)}
+.form-card .btn{width:100%;justify-content:center;margin-top:6px}
+.form-note{font-size:.78rem;color:var(--grey);text-align:center;margin-top:13px}
+.ok-msg{display:none;background:#e4f7ec;border:1px solid #b6e6c8;color:#1a7e44;border-radius:8px;padding:12px;font-size:.88rem;text-align:center;margin-top:14px}
+
+/* FOOTER */
+footer{background:#0a1f3a;color:#9fbada;padding:60px 0 28px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid .brand b{color:#fff}
+.foot-grid .brand span{color:#7896b8}
+footer p.about{margin-top:16px;max-width:330px;color:#8fb0d0}
+footer h4{font-family:'Space Grotesk';color:#fff;font-size:.96rem;margin-bottom:16px}
+footer ul{list-style:none}
+footer ul li{margin-bottom:9px}
+footer ul a{transition:color .2s}
+footer ul a:hover{color:var(--cyan)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#7896b8}
+.foot-bottom a:hover{color:var(--cyan)}
+.credit{color:#5f7ba0}
+
+@media(max-width:920px){
+  .hero-inner,.tech-inner,.lab-wrap,#lab .lab-wrap,.book-inner{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:2.6rem}
+  .scanner{max-width:360px;margin:0 auto}
+  .mod-grid{grid-template-columns:1fr 1fr}
+  .dept-grid{grid-template-columns:1fr 1fr}
+  .tech-list{grid-template-columns:1fr}
+  nav ul{display:none}
+  nav ul.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:18px 24px;gap:16px;box-shadow:0 18px 30px -20px rgba(0,0,0,.3)}
+  .menu-toggle{display:flex}
+  .nav .btn.head-btn{display:none}
+}
+@media(max-width:560px){
+  .hero h1{font-size:2.1rem}
+  .mod-grid,.dept-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  section{padding:62px 0}
+  .gauge .num{font-size:1.7rem;min-width:78px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="logomark" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="1" y="1" width="38" height="38" rx="9" fill="#143a6b"/>
+          <circle cx="20" cy="20" r="11" fill="none" stroke="#1fb6d6" stroke-width="2"/>
+          <circle cx="20" cy="20" r="4.5" fill="#1fb6d6"/>
+          <path d="M20 3v6M20 31v6M3 20h6M31 20h6" stroke="#1fb6d6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>
+        <b>DCIMCH Imaging</b>
+        <span>Radiology &amp; Diagnostics</span>
+      </span>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#modalities">Imaging</a></li>
+        <li><a href="#tech">Technology</a></li>
+        <li><a href="#lab">Laboratory</a></li>
+        <li><a href="#depts">Specialities</a></li>
+        <li><a href="#book">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#book" class="btn head-btn">Book a Scan</a>
+    <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero" style="padding:0">
+  <div class="grid-lines"></div>
+  <div class="scan"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Centre of Excellence &middot; Shyamoli, Dhaka</span>
+      <h1>Advanced imaging for <em>accurate diagnosis</em>, the first time.</h1>
+      <p class="lead">The Radiology and Imaging department at Dhaka Central International Medical College Hospital pairs 3 Tesla MRI, 256 slice CT and a full diagnostic laboratory with board certified radiologists, so your clinician gets a clear answer fast.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn">Book a Scan</a>
+        <a href="#modalities" class="btn btn-ghost">Explore Modalities</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>3T</b><span>MRI field strength</span></div>
+        <div><b>256</b><span>slice CT, real time</span></div>
+        <div><b>500</b><span>bed teaching hospital</span></div>
+      </div>
+    </div>
+    <div class="scanner" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="core">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a4 4 0 0 0-4 4v1.5"/><path d="M12 2a4 4 0 0 1 4 4v1.5"/>
+          <path d="M8 7.5a4 4 0 0 0 8 0"/><path d="M12 11.5v4"/>
+          <circle cx="12" cy="18.5" r="3"/><path d="M12 21.5v.5"/>
+        </svg>
+      </div>
+      <div class="tag-float tf1">3 Tesla MRI</div>
+      <div class="tag-float tf2">Real time CT</div>
+      <div class="tag-float tf3">Digital X-Ray</div>
+    </div>
+  </div>
+</section>
+
+<section id="modalities">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Imaging Modalities</span>
+      <h2>A full range of world-class imaging under one roof.</h2>
+      <p>Staffed by a board certified radiologist and credentialed technical staff, our department delivers the complete line of specialty imaging the community relies on.</p>
+    </div>
+    <div class="mod-grid">
+
+      <div class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+        <h3>3 Tesla MRI</h3>
+        <p>High field magnetic resonance imaging for fine soft tissue, neuro, spine and musculoskeletal detail without radiation.</p>
+        <div class="spec">3T &middot; High resolution</div>
+      </div>
+
+      <div class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>256 Slice CT Scan</h3>
+        <p>Multi slice real time computed tomography for fast, low dose cross sectional studies including angiography.</p>
+        <div class="spec">256 slice &middot; Real time</div>
+      </div>
+
+      <div class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a8 8 0 0 1 16 0"/><path d="M7 14a5 5 0 0 1 10 0"/><path d="M10 14a2 2 0 0 1 4 0"/><path d="M3 18h18"/></svg></div>
+        <h3>Ultrasound &amp; Doppler</h3>
+        <p>USG 2D and 4D, Echo Color Doppler, echocardiogram and duplex study for vascular, cardiac and obstetric imaging.</p>
+        <div class="spec">USG 2D / 4D &middot; Color Doppler</div>
+      </div>
+
+      <div class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <h3>Digital X-Ray &amp; CR</h3>
+        <p>1000 MA digital X-ray with computed radiography, plain dental X-ray and OPG for crisp, instantly available films.</p>
+        <div class="spec">1000 MA &middot; OPG / Dental</div>
+      </div>
+
+      <div class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c5-3 8-6 8-11a8 8 0 0 0-16 0c0 5 3 8 8 11Z"/><path d="M12 9v4M10 11h4"/></svg></div>
+        <h3>Mammography &amp; BMD</h3>
+        <p>Dedicated mammography for breast screening and bone mineral density scanning for osteoporosis assessment.</p>
+        <div class="spec">Mammography &middot; BMD</div>
+      </div>
+
+      <div class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-5 3 10 3-12 2 7h5"/></svg></div>
+        <h3>Cardiac &amp; Neuro Studies</h3>
+        <p>12 channel ECG, ETT, Holter monitor, digital EEG and NCV/EMG for complete cardiac and neurophysiology workups.</p>
+        <div class="spec">ECG &middot; EEG &middot; NCV/EMG</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="grid-lines"></div>
+  <div class="wrap tech-inner">
+    <div>
+      <span class="eyebrow">Equipment &amp; Technology</span>
+      <h2>Equipment at par with industry standards.</h2>
+      <p class="body">We ensure our imaging suite stays current with the technology that quality care demands, so every study is acquired with precision and read by qualified specialists. The result is faster, more confident reporting for the clinicians who refer to us.</p>
+      <div class="tech-list">
+        <div class="tech-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></div><div><b>Board certified radiologists</b><span>Specialist reporting on every scan</span></div></div>
+        <div class="tech-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></div><div><b>Low dose protocols</b><span>Real time CT keeps exposure minimal</span></div></div>
+        <div class="tech-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></div><div><b>Digital report delivery</b><span>Online medical records and report pickup</span></div></div>
+        <div class="tech-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></div><div><b>Molecular &amp; PCR lab</b><span>Advanced diagnostics on site</span></div></div>
+      </div>
+    </div>
+    <div class="tech-panel">
+      <div class="gauge"><div class="num">3T<small>MRI Field</small></div><div class="bar"><p>Magnetic field strength</p><div class="track"><div class="fill" data-w="100%"></div></div></div></div>
+      <div class="gauge"><div class="num">256<small>CT Slices</small></div><div class="bar"><p>Multi slice CT coverage</p><div class="track"><div class="fill" data-w="92%"></div></div></div></div>
+      <div class="gauge"><div class="num">1000<small>MA X-Ray</small></div><div class="bar"><p>Digital radiography output</p><div class="track"><div class="fill" data-w="80%"></div></div></div></div>
+      <div class="gauge"><div class="num">24/7<small>Emergency</small></div><div class="bar"><p>Accident &amp; emergency imaging</p><div class="track"><div class="fill" data-w="100%"></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="wrap lab-wrap">
+    <div>
+      <span class="eyebrow">Diagnostic Laboratory</span>
+      <div class="sec-head" style="margin-bottom:22px">
+        <h2 style="font-size:2.1rem">Imaging backed by a complete pathology lab.</h2>
+        <p>DCIMCH Laboratory Services is an accredited grade medical laboratory delivering quality results across every major discipline, so imaging and pathology come together in one report.</p>
+      </div>
+      <div class="chips">
+        <span class="chip">Haematology</span>
+        <span class="chip">Microbiology</span>
+        <span class="chip">Biochemistry</span>
+        <span class="chip">Clinical Pathology</span>
+        <span class="chip">Immunology</span>
+        <span class="chip">Cytopathology</span>
+        <span class="chip">Serology</span>
+        <span class="chip">Histopathology</span>
+        <span class="chip">Molecular / PCR</span>
+      </div>
+    </div>
+    <div class="lab-card">
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/><path d="M8 3h8"/></svg></div><div><b>Clinical Pathology</b><span>Routine and specialised testing</span></div><em>Same day</em></div>
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div><div><b>Molecular Lab / PCR</b><span>Advanced molecular diagnostics</span></div><em>On site</em></div>
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c5-3 8-6 8-11a8 8 0 0 0-16 0c0 5 3 8 8 11Z"/></svg></div><div><b>Blood Bank</b><span>Screened, safe blood supply</span></div><em>24/7</em></div>
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><div><b>Histopathology</b><span>Tissue and cytology analysis</span></div><em>Reported</em></div>
+    </div>
+  </div>
+</section>
+
+<section id="depts">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Clinical Specialities</span>
+      <h2>Imaging that supports every department.</h2>
+      <p style="margin-left:auto;margin-right:auto">Our radiology suite serves more than thirty specialist departments across the 500 bed teaching hospital, from emergency to oncology.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept"><i></i><span>Accident &amp; Emergency</span></div>
+      <div class="dept"><i></i><span>Cardiology</span></div>
+      <div class="dept"><i></i><span>Neurology</span></div>
+      <div class="dept"><i></i><span>Neurosurgery</span></div>
+      <div class="dept"><i></i><span>Orthopedics</span></div>
+      <div class="dept"><i></i><span>Oncology</span></div>
+      <div class="dept"><i></i><span>Gastroenterology</span></div>
+      <div class="dept"><i></i><span>Nephrology</span></div>
+      <div class="dept"><i></i><span>Urology</span></div>
+      <div class="dept"><i></i><span>Chest Medicine</span></div>
+      <div class="dept"><i></i><span>Obstetrics &amp; Gynaecology</span></div>
+      <div class="dept"><i></i><span>Pediatrics &amp; Neonatology</span></div>
+      <div class="dept"><i></i><span>ENT &amp; Head Neck</span></div>
+      <div class="dept"><i></i><span>Vascular Surgery</span></div>
+      <div class="dept"><i></i><span>Diabetes &amp; Endocrinology</span></div>
+      <div class="dept"><i></i><span>Critical Care</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="grid-lines"></div>
+  <div class="wrap book-inner">
+    <div>
+      <span class="eyebrow">Appointments &amp; Contact</span>
+      <h2>Book your scan or diagnostic test.</h2>
+      <p class="body">Call our hotline or request an appointment below. Our team will confirm your slot, share preparation instructions and let you know about report delivery.</p>
+
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg></div>
+        <div><span>Direct line, imaging desk</span><b class="phone-big"><a href="tel:+88025815753">+880 2-58157533</a></b></div>
+      </div>
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg></div>
+        <div><span>Hotline</span><b>10651 &middot; 09610-910651</b></div>
+      </div>
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <div><span>Email</span><b><a href="mailto:info@dcimch.com">info@dcimch.com</a></b></div>
+      </div>
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div><span>Location</span><b>2/1 Ring Road, Shyamoli, Dhaka 1207</b></div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Request an appointment</h3>
+      <p>We will call back to confirm your imaging slot.</p>
+      <form id="bookForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" placeholder="+880 1XXX XXXXXX" required>
+        </div>
+        <div class="field">
+          <label for="service">Imaging or test</label>
+          <select id="service" required>
+            <option value="">Select a service</option>
+            <option>3 Tesla MRI</option>
+            <option>256 Slice CT Scan</option>
+            <option>Ultrasound / Doppler</option>
+            <option>Digital X-Ray</option>
+            <option>Mammography / BMD</option>
+            <option>ECG / Echo / ETT</option>
+            <option>EEG / NCV / EMG</option>
+            <option>Laboratory test</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Preferred date</label>
+          <input id="date" type="date">
+        </div>
+        <button type="submit" class="btn">Request Appointment</button>
+        <p class="form-note">Or call <a href="tel:+88025815753" style="color:var(--blue);font-weight:600">+880 2-58157533</a> for urgent bookings.</p>
+        <div class="ok-msg" id="okMsg">Thank you. Our imaging desk will call you shortly to confirm.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <span class="logomark">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="1" y="1" width="38" height="38" rx="9" fill="#1fb6d6"/>
+              <circle cx="20" cy="20" r="11" fill="none" stroke="#0a1f3a" stroke-width="2"/>
+              <circle cx="20" cy="20" r="4.5" fill="#0a1f3a"/>
+              <path d="M20 3v6M20 31v6M3 20h6M31 20h6" stroke="#0a1f3a" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span><b>DCIMCH Imaging</b><span>Radiology &amp; Diagnostics</span></span>
+        </div>
+        <p class="about">The Radiology and Imaging department of Dhaka Central International Medical College Hospital, a 500 bed teaching hospital in Shyamoli, Dhaka, delivering advanced imaging and accurate diagnosis.</p>
+      </div>
+      <div>
+        <h4>Imaging</h4>
+        <ul>
+          <li><a href="#modalities">3 Tesla MRI</a></li>
+          <li><a href="#modalities">256 Slice CT</a></li>
+          <li><a href="#modalities">Ultrasound &amp; Doppler</a></li>
+          <li><a href="#modalities">Digital X-Ray</a></li>
+          <li><a href="#lab">Laboratory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+88025815753">+880 2-58157533</a></li>
+          <li>Hotline 10651</li>
+          <li><a href="mailto:info@dcimch.com">info@dcimch.com</a></li>
+          <li>2/1 Ring Road, Shyamoli</li>
+          <li>Dhaka 1207, Bangladesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Dhaka Central International Medical College &amp; Hospital &middot; Dhaka &middot; +880 2-58157533</span>
+      <span class="credit">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// mobile menu
+var toggle=document.getElementById('toggle'),menu=document.getElementById('menu');
+toggle.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open');});
+
+// animate gauges on view
+var fills=document.querySelectorAll('.fill');
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){en.target.style.width=en.target.getAttribute('data-w');obs.unobserve(en.target);}
+  });
+},{threshold:.4});
+fills.forEach(function(f){obs.observe(f);});
+
+// form
+var form=document.getElementById('bookForm'),ok=document.getElementById('okMsg');
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('name').value.trim(),
+      p=document.getElementById('phone').value.trim(),
+      s=document.getElementById('service').value;
+  if(!n||!p||!s){
+    [['name',n],['phone',p],['service',s]].forEach(function(pair){
+      var el=document.getElementById(pair[0]);
+      el.style.borderColor=pair[1]?'':'#e0556a';
+    });
+    return;
+  }
+  ok.style.display='block';
+  form.querySelector('button').textContent='Request Sent';
+  setTimeout(function(){form.reset();ok.style.display='none';form.querySelector('button').textContent='Request Appointment';},4500);
+});
+</script>
+</body>
+</html>

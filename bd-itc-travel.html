@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Travel Corporation Ltd - IATA Travel House, Hajj and Umrah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#10284a;
+  --navy-deep:#0a1c36;
+  --gold:#c5a14e;
+  --gold-soft:#d9c089;
+  --ivory:#f6f1e7;
+  --ivory-2:#efe7d5;
+  --ink:#1f2a3a;
+  --muted:#6a7689;
+  --line:rgba(197,161,78,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Spectral',serif;font-weight:600;line-height:1.18;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 30px}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:500;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.eyebrow.ctr{justify-content:center}
+
+/* Top bar */
+.topbar{background:var(--navy-deep);color:#c4cfdf;font-size:12.5px;letter-spacing:.06em}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;flex-wrap:wrap;gap:8px}
+.topbar a{color:#c4cfdf;transition:color .25s}
+.topbar a:hover{color:var(--gold-soft)}
+.topbar .tb-r{display:flex;gap:24px;align-items:center}
+.topbar .tb-r span{display:flex;align-items:center;gap:7px}
+
+/* Nav */
+header{position:sticky;top:0;z-index:60;background:rgba(16,40,74,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(197,161,78,.22)}
+nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:14px}
+.crest{width:46px;height:46px;flex:none;position:relative}
+.brand-tx b{font-family:'Spectral',serif;color:#fff;font-size:18px;font-weight:600;letter-spacing:.02em;display:block;line-height:1.1}
+.brand-tx small{color:var(--gold-soft);font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:400}
+.navlinks{display:flex;gap:34px;align-items:center}
+.navlinks a{color:#dbe4f1;font-size:14px;letter-spacing:.04em;position:relative;padding:4px 0;transition:color .25s}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .3s}
+.navlinks a:hover{color:#fff}
+.navlinks a:hover::after{width:100%}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:500;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 26px;border-radius:1px;transition:all .3s;cursor:pointer;border:1px solid var(--gold)}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn-ghost:hover{background:var(--gold);color:var(--navy-deep)}
+.btn-nav{padding:11px 22px}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.burger span{width:25px;height:2px;background:var(--gold)}
+
+/* Hero */
+.hero{position:relative;background:var(--navy);color:#eaf0f8;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 80% 20%,rgba(197,161,78,.16),transparent 45%),
+  linear-gradient(160deg,var(--navy-deep),var(--navy) 60%);}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding:88px 0 96px}
+.hero h1{color:#fff;font-size:55px;letter-spacing:-.01em;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero p.lead{font-size:18px;color:#c4cfdf;max-width:520px;margin-bottom:34px;font-weight:300}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:30px;border-top:1px solid rgba(197,161,78,.25)}
+.hero-stats .n{font-family:'Spectral',serif;font-size:34px;color:var(--gold);font-weight:600}
+.hero-stats .l{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9fb0c8}
+/* Passport-style emblem panel */
+.emblem{position:relative;aspect-ratio:1/1.18;border:1px solid rgba(197,161,78,.4);border-radius:2px;background:linear-gradient(150deg,rgba(255,255,255,.04),rgba(197,161,78,.06));display:flex;align-items:center;justify-content:center;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.emblem::before{content:"";position:absolute;inset:14px;border:1px solid rgba(197,161,78,.25);border-radius:2px}
+.emblem-inner{text-align:center;padding:30px}
+.emblem-ring{width:128px;height:128px;margin:0 auto 22px;position:relative}
+.emblem-stamp{font-family:'Spectral',serif;color:var(--gold-soft);font-size:13px;letter-spacing:.34em;text-transform:uppercase}
+.emblem-yr{font-family:'Spectral',serif;color:#fff;font-size:48px;font-weight:700;line-height:1}
+.emblem-sub{color:#9fb0c8;font-size:11px;letter-spacing:.26em;text-transform:uppercase;margin-top:10px}
+
+/* Marquee trust strip */
+.strip{background:var(--navy-deep);border-top:1px solid rgba(197,161,78,.18);border-bottom:1px solid rgba(197,161,78,.18);overflow:hidden}
+.strip .wrap{display:flex;align-items:center;gap:46px;height:64px;flex-wrap:wrap;justify-content:center}
+.strip span{color:#9fb0c8;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:12px;white-space:nowrap}
+.strip span::before{content:"";width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+
+/* Section base */
+section{padding:96px 0}
+.sec-head{max-width:680px;margin-bottom:54px}
+.sec-head.ctr{margin:0 auto 54px;text-align:center}
+.sec-head h2{font-size:40px;margin-bottom:18px}
+.sec-head p{color:var(--muted);font-size:17px}
+
+/* About / heritage */
+.heritage{background:var(--ivory)}
+.her-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.her-panel{position:relative;background:var(--navy);border-radius:2px;padding:48px 42px;color:#eaf0f8;overflow:hidden}
+.her-panel::after{content:"";position:absolute;top:-30px;right:-30px;width:160px;height:160px;border:1px solid rgba(197,161,78,.3);border-radius:50%}
+.her-panel h3{color:#fff;font-size:26px;margin-bottom:16px;position:relative}
+.her-panel p{color:#c4cfdf;font-size:15px;position:relative}
+.her-list{list-style:none;margin-top:26px;position:relative}
+.her-list li{display:flex;gap:14px;padding:11px 0;border-top:1px solid rgba(197,161,78,.18);font-size:14.5px;color:#dbe4f1}
+.her-list li:first-child{border-top:none}
+.her-list .ck{color:var(--gold);flex:none;font-family:'Spectral',serif}
+.her-text h2{font-size:38px;margin-bottom:22px}
+.her-text p{color:#46546a;font-size:16.5px;margin-bottom:18px}
+.her-sign{margin-top:28px;font-family:'Spectral',serif;font-style:italic;font-size:20px;color:var(--navy)}
+.her-sign small{display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+
+/* Services register */
+.services{background:var(--navy);color:#eaf0f8}
+.services .sec-head h2,.services .eyebrow{color:#fff}
+.services .eyebrow{color:var(--gold)}
+.services .sec-head p{color:#9fb0c8}
+.reg{border-top:1px solid rgba(197,161,78,.2)}
+.reg-row{display:grid;grid-template-columns:80px 1fr 1.3fr auto;gap:30px;align-items:center;padding:30px 12px;border-bottom:1px solid rgba(197,161,78,.2);transition:background .3s,padding-left .3s;cursor:default}
+.reg-row:hover{background:rgba(197,161,78,.06);padding-left:26px}
+.reg-no{font-family:'Spectral',serif;font-size:18px;color:var(--gold)}
+.reg-ttl{font-family:'Spectral',serif;font-size:23px;color:#fff;font-weight:600}
+.reg-desc{color:#9fb0c8;font-size:14.5px}
+.reg-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(197,161,78,.4);padding:6px 14px;border-radius:1px;white-space:nowrap}
+
+/* Hajj section */
+.hajj{position:relative;background:linear-gradient(165deg,var(--navy-deep),var(--navy));color:#eaf0f8;overflow:hidden}
+.hajj::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 80%,rgba(197,161,78,.14),transparent 40%)}
+.hajj-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hajj-art{position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.hajj h2{color:#fff;font-size:42px;margin-bottom:20px}
+.hajj h2 em{font-style:italic;color:var(--gold-soft)}
+.hajj p{color:#c4cfdf;font-size:16.5px;margin-bottom:18px}
+.hajj-pts{list-style:none;margin:28px 0 34px}
+.hajj-pts li{display:flex;gap:16px;padding:14px 0;border-top:1px solid rgba(197,161,78,.18)}
+.hajj-pts li:first-child{border-top:none}
+.hajj-pts .num{font-family:'Spectral',serif;color:var(--gold);font-size:15px;flex:none;width:30px}
+.hajj-pts b{color:#fff;font-family:'Spectral',serif;font-weight:600;font-size:16px;display:block;margin-bottom:3px}
+.hajj-pts span{color:#9fb0c8;font-size:14px}
+
+/* Visa countries */
+.visa{background:var(--ivory-2)}
+.visa-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.vcard{background:#fff;border:1px solid var(--line);border-radius:2px;padding:36px 30px;transition:transform .3s,box-shadow .3s,border-color .3s;text-align:center}
+.vcard:hover{transform:translateY(-6px);box-shadow:0 24px 44px -26px rgba(16,40,74,.4);border-color:var(--gold)}
+.vcard .flag{width:64px;height:64px;margin:0 auto 20px}
+.vcard h3{font-size:22px;margin-bottom:8px}
+.vcard p{color:var(--muted);font-size:14px}
+.visa-note{text-align:center;margin-top:40px;color:var(--muted);font-size:14px;letter-spacing:.04em}
+
+/* Accreditation band */
+.accred{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.accred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.acc{text-align:center;padding:20px}
+.acc .ico{width:58px;height:58px;margin:0 auto 16px}
+.acc b{font-family:'Spectral',serif;font-size:18px;color:var(--navy);display:block;margin-bottom:5px}
+.acc span{font-size:12.5px;color:var(--muted);letter-spacing:.06em}
+
+/* Corporate */
+.corp{background:var(--ivory)}
+.corp-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.corp-feats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:6px}
+.cf{background:#fff;border:1px solid var(--line);border-radius:2px;padding:26px;transition:border-color .3s,transform .3s}
+.cf:hover{border-color:var(--gold);transform:translateY(-4px)}
+.cf .ci{width:40px;height:40px;margin-bottom:14px;color:var(--gold)}
+.cf b{font-family:'Spectral',serif;font-size:17px;color:var(--navy);display:block;margin-bottom:6px}
+.cf p{font-size:13.5px;color:var(--muted)}
+.corp-quote{background:var(--navy);color:#eaf0f8;padding:46px 40px;border-radius:2px;position:relative}
+.corp-quote .qm{font-family:'Spectral',serif;font-size:80px;color:var(--gold);line-height:.6;opacity:.55}
+.corp-quote p{font-family:'Spectral',serif;font-style:italic;font-size:21px;color:#fff;margin:14px 0 24px;line-height:1.5}
+.corp-quote .who{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+
+/* Contact */
+.contact{background:var(--navy-deep);color:#eaf0f8}
+.contact .sec-head h2{color:#fff}
+.contact .sec-head p{color:#9fb0c8}
+.contact .eyebrow{color:var(--gold)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+.ct-info{list-style:none}
+.ct-info li{display:flex;gap:18px;padding:22px 0;border-top:1px solid rgba(197,161,78,.18)}
+.ct-info li:first-child{border-top:none}
+.ct-ic{width:42px;height:42px;flex:none;border:1px solid rgba(197,161,78,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.ct-info .lab{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.ct-info .val{color:#dbe4f1;font-size:15.5px}
+.ct-info .val a{color:#fff;transition:color .25s}
+.ct-info .val a:hover{color:var(--gold-soft)}
+.form{background:rgba(255,255,255,.03);border:1px solid rgba(197,161,78,.22);border-radius:3px;padding:38px 34px}
+.form label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 8px}
+.form .fg{margin-bottom:20px}
+.form input,.form select,.form textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(197,161,78,.3);border-radius:2px;padding:13px 15px;color:#fff;font-family:'Jost',sans-serif;font-size:14.5px;transition:border-color .3s}
+.form input:focus,.form select,.form textarea:focus{outline:none;border-color:var(--gold)}
+.form select{appearance:none}
+.form textarea{resize:vertical;min-height:90px}
+.form .btn-gold{width:100%;border:none;margin-top:6px}
+.form-note{font-size:12px;color:#7d8da6;margin-top:14px;text-align:center}
+
+/* Footer */
+footer{background:#07142a;color:#9fb0c8;padding:64px 0 30px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(197,161,78,.15)}
+.foot-brand b{font-family:'Spectral',serif;color:#fff;font-size:19px;display:block;margin-bottom:14px}
+.foot-brand p{font-size:13.5px;max-width:280px;line-height:1.7}
+.foot-col h4{color:var(--gold-soft);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px;font-family:'Jost',sans-serif;font-weight:500}
+.foot-col a{display:block;color:#9fb0c8;padding:6px 0;font-size:14px;transition:color .25s}
+.foot-col a:hover{color:var(--gold-soft)}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;font-size:12.5px;color:#5e6f88}
+.concept{color:#46566f;font-style:italic}
+
+@media(max-width:980px){
+  .hero-grid,.her-grid,.hajj-grid,.corp-grid,.ct-grid{grid-template-columns:1fr;gap:44px}
+  .emblem{max-width:360px;margin:0 auto}
+  .hero h1{font-size:44px}
+  .reg-row{grid-template-columns:50px 1fr;gap:14px}
+  .reg-desc,.reg-tag{grid-column:1/-1;margin-left:64px}
+  .reg-tag{justify-self:start;margin-top:-8px}
+  .visa-cards,.accred-grid,.corp-feats{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .navlinks{display:none}
+  .burger{display:flex}
+  .navlinks.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:var(--navy-deep);padding:24px 30px;gap:18px;border-bottom:1px solid var(--line)}
+  .hero h1{font-size:36px}
+  .sec-head h2,.her-text h2,.hajj h2{font-size:30px}
+  .hero-stats{flex-wrap:wrap;gap:26px}
+  .visa-cards,.accred-grid,.corp-feats,.foot-grid{grid-template-columns:1fr}
+  section{padding:68px 0}
+  .topbar .tb-r{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Member IATA - HAAB - ATAB - TOAB - PATA Accredited Travel House</span>
+    <div class="tb-r">
+      <span>Sun - Thu 09:00 - 18:00</span>
+      <a href="tel:+8801766194500">Call +880 1766-194500</a>
+      <a href="mailto:info@itc-bd.com">info@itc-bd.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="brand">
+        <span class="crest">
+          <svg viewBox="0 0 46 46" width="46" height="46" aria-hidden="true">
+            <circle cx="23" cy="23" r="22" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <circle cx="23" cy="23" r="17" fill="none" stroke="#c5a14e" stroke-width=".7" opacity=".6"/>
+            <path d="M23 9 L26.5 19 L37 19 L28.5 25 L32 35 L23 29 L14 35 L17.5 25 L9 19 L19.5 19 Z" fill="#c5a14e" opacity=".18"/>
+            <path d="M11 23 Q23 13 35 23" fill="none" stroke="#c5a14e" stroke-width="1.2"/>
+            <path d="M11 23 Q23 33 35 23" fill="none" stroke="#c5a14e" stroke-width="1.2" opacity=".5"/>
+            <circle cx="23" cy="23" r="2.4" fill="#c5a14e"/>
+          </svg>
+        </span>
+        <span class="brand-tx"><b>ITC</b><small>Travel Corporation</small></span>
+      </a>
+      <div class="navlinks" id="nav">
+        <a href="#heritage">Heritage</a>
+        <a href="#services">Services</a>
+        <a href="#hajj">Hajj &amp; Umrah</a>
+        <a href="#visa">Visa</a>
+        <a href="#corporate">Corporate</a>
+        <a href="#contact" class="btn btn-gold btn-nav">Enquire</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top" style="padding:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">A Trusted IATA Travel House</div>
+        <h1>Journeys booked with the <em>weight of a name</em> behind them.</h1>
+        <p class="lead">For decades, International Travel Corporation Ltd has guided corporate travellers, holiday-makers and Hajj and Umrah pilgrims across the world from our office in Gulshan, Dhaka. Considered counsel. Honest fares. Care that does not end at the boarding gate.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-gold">Speak With Our Desk</a>
+          <a href="#services" class="btn btn-ghost">Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="n">IATA</div><div class="l">Accredited Agent</div></div>
+          <div><div class="n">5</div><div class="l">Core Travel Services</div></div>
+          <div><div class="n">Gulshan</div><div class="l">Dhaka Head Office</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="emblem">
+          <div class="emblem-inner">
+            <div class="emblem-ring">
+              <svg viewBox="0 0 128 128" width="128" height="128" aria-hidden="true">
+                <circle cx="64" cy="64" r="62" fill="none" stroke="#c5a14e" stroke-width="1" opacity=".5"/>
+                <circle cx="64" cy="64" r="50" fill="none" stroke="#d9c089" stroke-width="1.4"/>
+                <g fill="none" stroke="#c5a14e" stroke-width="1.1" opacity=".8">
+                  <path d="M22 64 Q64 26 106 64"/>
+                  <path d="M22 64 Q64 102 106 64"/>
+                  <line x1="64" y1="14" x2="64" y2="114"/>
+                  <line x1="14" y1="64" x2="114" y2="64"/>
+                </g>
+                <path d="M64 30 L70 50 L91 50 L74 62 L80 82 L64 70 L48 82 L54 62 L37 50 L58 50 Z" fill="#c5a14e" opacity=".22" stroke="#d9c089" stroke-width=".8"/>
+                <circle cx="64" cy="64" r="4" fill="#d9c089"/>
+              </svg>
+            </div>
+            <div class="emblem-stamp">Established Travel House</div>
+            <div class="emblem-yr">ITC</div>
+            <div class="emblem-sub">Gulshan - Dhaka - Bangladesh</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="strip">
+  <div class="wrap">
+    <span>Air Ticketing</span>
+    <span>Hajj &amp; Umrah</span>
+    <span>Visa Processing</span>
+    <span>Corporate Travel</span>
+    <span>Holiday Packages</span>
+    <span>Logistic Support</span>
+  </div>
+</div>
+
+<!-- Heritage -->
+<section class="heritage" id="heritage">
+  <div class="wrap">
+    <div class="her-grid">
+      <div class="her-panel">
+        <h3>Why travellers stay with us</h3>
+        <p>There are a number of choices, decisions and details involved in each and every trip you make. We carry them for you.</p>
+        <ul class="her-list">
+          <li><span class="ck">&#10003;</span> Best sourced fares from worldwide suppliers and partners</li>
+          <li><span class="ck">&#10003;</span> Thousands of flight options, fully ticketed and confirmed</li>
+          <li><span class="ck">&#10003;</span> Card, mobile banking and bank account payment accepted</li>
+          <li><span class="ck">&#10003;</span> Dedicated corporate and implant service desks</li>
+          <li><span class="ck">&#10003;</span> Pilgrim-first Hajj and Umrah handling, end to end</li>
+        </ul>
+      </div>
+      <div class="her-text">
+        <div class="eyebrow">Our Standing</div>
+        <h2>A travel house built on trust, not on traffic.</h2>
+        <p>International Travel Corporation Ltd is an IATA-accredited agency operating from 12-14 Gulshan North C/A, Gulshan-2, Dhaka. We are members of the recognised industry bodies that hold travel agents to account, and we have built our reputation the slow way - one well-handled journey at a time.</p>
+        <p>Whether the destination is a boardroom abroad, a long-awaited holiday or the holy cities of Makkah and Madinah, every booking passes through the same standard of diligence. That is what decades of trusted travel actually mean.</p>
+        <div class="her-sign">International Travel Corporation Ltd
+          <small>An Established IATA Travel House</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services register -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What We Offer</div>
+      <h2>A complete register of travel services.</h2>
+      <p>Five disciplines, one accountable desk. Each handled by people who do this every working day of the year.</p>
+    </div>
+    <div class="reg">
+      <div class="reg-row">
+        <div class="reg-no">01</div>
+        <div class="reg-ttl">Air Ticketing</div>
+        <div class="reg-desc">We find the best sources and suppliers for airfare and accommodation worldwide, and partner with them to secure your best deal.</div>
+        <div class="reg-tag">Domestic &amp; International</div>
+      </div>
+      <div class="reg-row">
+        <div class="reg-no">02</div>
+        <div class="reg-ttl">Hajj &amp; Umrah</div>
+        <div class="reg-desc">Pilgrimage handled with care - guided counsel, ticketing, accommodation and logistics for the holy journey to Makkah and Madinah.</div>
+        <div class="reg-tag">Pilgrim First</div>
+      </div>
+      <div class="reg-row">
+        <div class="reg-no">03</div>
+        <div class="reg-ttl">Visa &amp; Logistic Support</div>
+        <div class="reg-desc">Authorised visa agent for Thailand, Malaysia and Singapore, with documentation and logistic support handled correctly the first time.</div>
+        <div class="reg-tag">Authorised Agent</div>
+      </div>
+      <div class="reg-row">
+        <div class="reg-no">04</div>
+        <div class="reg-ttl">Corporate &amp; Implant Services</div>
+        <div class="reg-desc">Dedicated travel management for companies, including on-site implant desks, negotiated fares and account-managed itineraries.</div>
+        <div class="reg-tag">Managed Accounts</div>
+      </div>
+      <div class="reg-row">
+        <div class="reg-no">05</div>
+        <div class="reg-ttl">Holiday Packages</div>
+        <div class="reg-desc">Select and book your preferred holiday from thousands of options, arranged and supported by a desk that knows the routes.</div>
+        <div class="reg-tag">Curated Trips</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hajj & Umrah -->
+<section class="hajj" id="hajj">
+  <div class="wrap">
+    <div class="hajj-grid">
+      <div class="hajj-art">
+        <svg viewBox="0 0 360 360" width="100%" style="max-width:380px" aria-hidden="true">
+          <circle cx="180" cy="180" r="176" fill="none" stroke="#c5a14e" stroke-width="1" opacity=".35"/>
+          <circle cx="180" cy="180" r="150" fill="none" stroke="#c5a14e" stroke-width="1.4" opacity=".55"/>
+          <!-- arch -->
+          <path d="M120 250 L120 150 Q180 92 240 150 L240 250" fill="none" stroke="#d9c089" stroke-width="2"/>
+          <path d="M132 250 L132 156 Q180 108 228 156 L228 250" fill="none" stroke="#c5a14e" stroke-width="1" opacity=".6"/>
+          <!-- Kaaba cube -->
+          <rect x="156" y="196" width="48" height="48" fill="#c5a14e" opacity=".2" stroke="#d9c089" stroke-width="1.4"/>
+          <rect x="156" y="208" width="48" height="6" fill="#d9c089" opacity=".7"/>
+          <!-- crescent star -->
+          <path d="M180 122 a18 18 0 1 0 13 30 a14 14 0 1 1 -13 -30 Z" fill="#d9c089" opacity=".9"/>
+          <path d="M205 132 l3 7 l7 0 l-5.5 4.5 l2 7 l-6.5-4 l-6.5 4 l2-7 l-5.5-4.5 l7 0 Z" fill="#c5a14e"/>
+          <!-- ground -->
+          <line x1="100" y1="252" x2="260" y2="252" stroke="#c5a14e" stroke-width="1.4" opacity=".5"/>
+          <text x="180" y="300" text-anchor="middle" fill="#9fb0c8" font-family="Spectral,serif" font-size="13" letter-spacing="6">MAKKAH &amp; MADINAH</text>
+        </svg>
+      </div>
+      <div>
+        <div class="eyebrow">A Sacred Responsibility</div>
+        <h2>Hajj and Umrah, carried with <em>care and reverence</em>.</h2>
+        <p>For the pilgrim, the journey to the holy cities is unlike any other booking. We treat it that way. From the first consultation to the return home, our desk handles the details so that you and your family can keep your hearts on the worship that matters.</p>
+        <ul class="hajj-pts">
+          <li><span class="num">01</span><div><b>Considered Counsel</b><span>Honest guidance on timing, packages and what each pilgrimage truly involves.</span></div></li>
+          <li><span class="num">02</span><div><b>Ticketing &amp; Accommodation</b><span>Flights and stays near the Haramain arranged through trusted partners.</span></div></li>
+          <li><span class="num">03</span><div><b>Documentation Handled</b><span>Visa and travel paperwork prepared correctly, with no last-minute alarm.</span></div></li>
+          <li><span class="num">04</span><div><b>Support That Travels</b><span>A point of contact who remains reachable through the whole journey.</span></div></li>
+        </ul>
+        <a href="#contact" class="btn btn-gold">Plan Your Pilgrimage</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visa -->
+<section class="visa" id="visa">
+  <div class="wrap">
+    <div class="sec-head ctr">
+      <div class="eyebrow ctr">Authorised Visa Agent</div>
+      <h2>Visa processing, done correctly the first time.</h2>
+      <p>We are an authorised visa agent for these destinations, with documentation and logistic support handled in-house.</p>
+    </div>
+    <div class="visa-cards">
+      <div class="vcard">
+        <span class="flag">
+          <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <path d="M16 24 h32 v4 h-32 z M16 36 h32 v4 h-32 z" fill="#c5a14e" opacity=".25"/>
+            <path d="M32 12 l4 9 l10 0 l-8 6.5 l3 9.5 l-9-6 l-9 6 l3-9.5 l-8-6.5 l10 0 z" fill="#c5a14e" opacity=".4"/>
+          </svg>
+        </span>
+        <h3>Thailand</h3>
+        <p>Tourist and business visa processing with full document handling.</p>
+      </div>
+      <div class="vcard">
+        <span class="flag">
+          <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <path d="M40 22 a13 13 0 1 0 9 22 a10 10 0 1 1 -9 -22 z" fill="#c5a14e" opacity=".35"/>
+            <path d="M28 30 l2 5 l5 0 l-4 3 l1.5 5 l-4.5-3 l-4.5 3 l1.5-5 l-4-3 l5 0 z" fill="#c5a14e" opacity=".55"/>
+          </svg>
+        </span>
+        <h3>Malaysia</h3>
+        <p>Visa and logistic support for travel and corporate visits.</p>
+      </div>
+      <div class="vcard">
+        <span class="flag">
+          <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <path d="M14 26 q18 -10 36 0" fill="none" stroke="#c5a14e" stroke-width="1.6"/>
+            <g fill="#c5a14e" opacity=".5">
+              <circle cx="24" cy="38" r="2"/><circle cx="32" cy="40" r="2"/><circle cx="40" cy="38" r="2"/>
+              <circle cx="28" cy="44" r="2"/><circle cx="36" cy="44" r="2"/>
+            </g>
+          </svg>
+        </span>
+        <h3>Singapore</h3>
+        <p>Documentation and appointment support for the Lion City.</p>
+      </div>
+    </div>
+    <p class="visa-note">Travelling elsewhere? Our desk advises on requirements for most destinations worldwide.</p>
+  </div>
+</section>
+
+<!-- Accreditation band -->
+<section class="accred">
+  <div class="wrap">
+    <div class="sec-head ctr">
+      <div class="eyebrow ctr">Members &amp; Associations</div>
+      <h2>Held to account by the industry that matters.</h2>
+    </div>
+    <div class="accred-grid">
+      <div class="acc">
+        <span class="ico">
+          <svg viewBox="0 0 58 58" width="58" height="58" aria-hidden="true">
+            <circle cx="29" cy="29" r="27" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <path d="M14 34 q15 -16 30 0" fill="none" stroke="#c5a14e" stroke-width="1.6"/>
+            <path d="M29 18 l18 8 l-18 -2 l-18 2 z" fill="#c5a14e" opacity=".4"/>
+          </svg>
+        </span>
+        <b>IATA</b><span>Accredited Travel Agent</span>
+      </div>
+      <div class="acc">
+        <span class="ico">
+          <svg viewBox="0 0 58 58" width="58" height="58" aria-hidden="true">
+            <circle cx="29" cy="29" r="27" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <path d="M29 14 l4 10 l11 0 l-9 7 l3 11 l-9 -6.5 l-9 6.5 l3 -11 l-9 -7 l11 0 z" fill="#c5a14e" opacity=".35"/>
+          </svg>
+        </span>
+        <b>HAAB</b><span>Hajj Agencies Association</span>
+      </div>
+      <div class="acc">
+        <span class="ico">
+          <svg viewBox="0 0 58 58" width="58" height="58" aria-hidden="true">
+            <circle cx="29" cy="29" r="27" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <rect x="18" y="20" width="22" height="18" rx="2" fill="none" stroke="#c5a14e" stroke-width="1.6"/>
+            <line x1="18" y1="27" x2="40" y2="27" stroke="#c5a14e" stroke-width="1.4" opacity=".6"/>
+          </svg>
+        </span>
+        <b>ATAB</b><span>Travel Agents Association</span>
+      </div>
+      <div class="acc">
+        <span class="ico">
+          <svg viewBox="0 0 58 58" width="58" height="58" aria-hidden="true">
+            <circle cx="29" cy="29" r="27" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <path d="M20 22 q9 -6 18 0 l0 14 q-9 6 -18 0 z" fill="none" stroke="#c5a14e" stroke-width="1.4"/>
+            <circle cx="29" cy="29" r="3" fill="#c5a14e" opacity=".5"/>
+          </svg>
+        </span>
+        <b>TOAB / PATA</b><span>Tour Operators &amp; PATA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Corporate -->
+<section class="corp" id="corporate">
+  <div class="wrap">
+    <div class="corp-grid">
+      <div>
+        <div class="eyebrow">Corporate &amp; Implant Services</div>
+        <h2 style="font-size:38px;margin-bottom:18px">Travel management your finance team can trust.</h2>
+        <p style="color:#46546a;font-size:16px;margin-bottom:26px">Companies across Dhaka rely on ITC to keep their people moving without keeping their accounts up at night. Negotiated fares, on-site implant desks and a single accountable point of contact.</p>
+        <div class="corp-feats">
+          <div class="cf">
+            <span class="ci"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 30 L8 14 L20 8 L32 14 L32 30" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="14" y1="30" x2="14" y2="20" stroke="currentColor" stroke-width="1.4"/><line x1="20" y1="30" x2="20" y2="18" stroke="currentColor" stroke-width="1.4"/><line x1="26" y1="30" x2="26" y2="20" stroke="currentColor" stroke-width="1.4"/></svg></span>
+            <b>Implant Desks</b><p>Our staff inside your office, handling travel where the work happens.</p>
+          </div>
+          <div class="cf">
+            <span class="ci"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 12 v8 l6 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <b>Best Rates</b><p>Sourced and negotiated fares from worldwide suppliers and partners.</p>
+          </div>
+          <div class="cf">
+            <span class="ci"><svg viewBox="0 0 40 40" width="40" height="40"><rect x="9" y="11" width="22" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="9" y1="17" x2="31" y2="17" stroke="currentColor" stroke-width="1.4"/><circle cx="14" cy="23" r="1.6" fill="currentColor"/></svg></span>
+            <b>Flexible Payment</b><p>Card, mobile banking and bank account - settled the way that suits you.</p>
+          </div>
+          <div class="cf">
+            <span class="ci"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 7 l11 5 v8 c0 8 -6 11 -11 13 c-5 -2 -11 -5 -11 -13 v-8 z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15 20 l4 4 l7 -8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <b>Account Managed</b><p>One contact who knows your travel policy and your people.</p>
+          </div>
+        </div>
+      </div>
+      <div class="corp-quote">
+        <div class="qm">&#8220;</div>
+        <p>There are a number of choices, decisions and details involved in each and every trip you make. We exist so that you never have to face them alone.</p>
+        <div class="who">The ITC Travel Desk - Gulshan, Dhaka</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head ctr">
+      <div class="eyebrow ctr">Speak With Our Desk</div>
+      <h2>Begin your next journey with a conversation.</h2>
+      <p>Tell us where you are headed. A member of our team will respond personally.</p>
+    </div>
+    <div class="ct-grid">
+      <ul class="ct-info">
+        <li>
+          <span class="ct-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 4 h4 l2 5 l-2.5 1.5 a11 11 0 0 0 5 5 l1.5 -2.5 l5 2 v4 a2 2 0 0 1 -2 2 A16 16 0 0 1 3 6 a2 2 0 0 1 2 -2 z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <div><div class="lab">Call Us</div><div class="val"><a href="tel:+8801766194500">+880 1766-194500</a><br>(02) 222 264445 - (02) 222 282645</div></div>
+        </li>
+        <li>
+          <span class="ct-ic"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 7 l9 6 l9 -6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <div><div class="lab">Mail Us</div><div class="val"><a href="mailto:info@itc-bd.com">info@itc-bd.com</a></div></div>
+        </li>
+        <li>
+          <span class="ct-ic"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2 C7 2 4 6 4 10 c0 6 8 12 8 12 s8 -6 8 -12 c0 -4 -3 -8 -8 -8 z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <div><div class="lab">Visit Us</div><div class="val">12-14 Gulshan North C/A,<br>Gulshan-2, Dhaka, Bangladesh</div></div>
+        </li>
+        <li>
+          <span class="ct-ic"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7 v5 l3.5 2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <div><div class="lab">Working Schedule</div><div class="val">Sunday - Thursday 09:00 - 18:00<br>Saturday 09:00 - 14:00 - Friday closed</div></div>
+        </li>
+      </ul>
+      <form class="form" id="enq" novalidate>
+        <div class="fg"><label for="nm">Full Name</label><input id="nm" type="text" placeholder="Your name" required></div>
+        <div class="fg"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="Mobile number" required></div>
+        <div class="fg"><label for="sv">Service</label>
+          <select id="sv">
+            <option>Air Ticketing</option>
+            <option>Hajj &amp; Umrah</option>
+            <option>Visa Processing</option>
+            <option>Corporate Travel</option>
+            <option>Holiday Package</option>
+          </select>
+        </div>
+        <div class="fg"><label for="ms">Message</label><textarea id="ms" placeholder="Where would you like to go?"></textarea></div>
+        <button type="submit" class="btn btn-gold">Send Enquiry</button>
+        <p class="form-note" id="fn">We respond within one business day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>International Travel Corporation Ltd</b>
+        <p>An established IATA-accredited travel house in Gulshan, Dhaka - serving corporate travellers, holiday-makers and Hajj and Umrah pilgrims with care.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#heritage">Heritage</a>
+        <a href="#services">Services</a>
+        <a href="#hajj">Hajj &amp; Umrah</a>
+        <a href="#visa">Visa Support</a>
+        <a href="#corporate">Corporate</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Air Ticketing</a>
+        <a href="#services">Holiday Packages</a>
+        <a href="#visa">Visa &amp; Logistics</a>
+        <a href="#corporate">Implant Services</a>
+        <a href="#contact">Member &amp; Association</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+8801766194500">+880 1766-194500</a>
+        <a href="mailto:info@itc-bd.com">info@itc-bd.com</a>
+        <a href="#contact">12-14 Gulshan North C/A, Dhaka</a>
+        <a href="#top">Gulshan-2, Dhaka, Bangladesh</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; 2026 International Travel Corporation Ltd - Gulshan, Dhaka - +880 1766-194500</span>
+      <span class="concept">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+
+  var form=document.getElementById('enq'),fn=document.getElementById('fn');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim();
+    if(!nm||!ph){fn.textContent='Please enter your name and phone number.';fn.style.color='#d9c089';return;}
+    fn.textContent='Thank you, '+nm.split(' ')[0]+'. Our desk will call you shortly.';
+    fn.style.color='#c5a14e';
+    form.reset();
+  });
+
+  // subtle reveal
+  var els=document.querySelectorAll('.reg-row,.vcard,.acc,.cf,.hajj-pts li');
+  if('IntersectionObserver' in window){
+    els.forEach(function(el){el.style.opacity=0;el.style.transform='translateY(16px)';el.style.transition='opacity .6s ease,transform .6s ease';});
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.style.opacity=1;x.target.style.transform='none';io.unobserve(x.target);}});},{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>

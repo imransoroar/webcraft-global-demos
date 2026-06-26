@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sencillo | Minimal Furniture, Banani Dhaka</title>
+<meta name="description" content="Sencillo crafts calm, design-led furniture for the modern Dhaka home. Sofas, beds, dining and accent pieces in warm, honest materials. Visit our Banani showroom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#f3efe8;
+    --oat:#e7e0d3;
+    --oat-soft:#eee8dd;
+    --paper:#faf8f3;
+    --charcoal:#2a2824;
+    --ink:#3c3a35;
+    --muted:#8a8479;
+    --line:#ddd5c6;
+    --rust:#a3593c;
+    --rust-soft:#b87a5e;
+    --sage:#7e8a72;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bone);
+    color:var(--ink);
+    line-height:1.65;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;color:var(--charcoal);line-height:1.12;letter-spacing:-0.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+  .eyebrow{font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);font-weight:400}
+
+  /* nav */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:26px 0}
+  header.scrolled{background:rgba(243,239,232,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:16px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Fraunces',serif;font-size:25px;letter-spacing:.16em;color:var(--charcoal);font-weight:400}
+  .logo span{color:var(--rust)}
+  .nav-links{display:flex;gap:38px;align-items:center}
+  .nav-links a{font-size:13px;letter-spacing:.06em;color:var(--ink);position:relative;transition:color .3s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--rust);transition:width .35s}
+  .nav-links a:hover{color:var(--rust)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{border:1px solid var(--charcoal);padding:9px 20px;border-radius:40px;transition:background .35s,color .35s,border-color .35s}
+  .nav-cta:hover{background:var(--charcoal);color:var(--bone)}
+  .nav-cta::after{display:none}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+  .burger span{width:24px;height:1.5px;background:var(--charcoal);transition:.3s}
+
+  /* hero */
+  .hero{padding:190px 0 110px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(46px,6.4vw,84px);font-weight:300;margin-bottom:30px}
+  .hero h1 em{font-style:italic;color:var(--rust)}
+  .hero p{font-size:18px;max-width:430px;color:var(--ink);margin-bottom:38px}
+  .hero-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.06em;padding:14px 28px;border-radius:40px;transition:.35s;cursor:pointer;border:1px solid transparent}
+  .btn-fill{background:var(--charcoal);color:var(--bone)}
+  .btn-fill:hover{background:var(--rust)}
+  .btn-line{border-color:var(--charcoal);color:var(--charcoal)}
+  .btn-line:hover{background:var(--charcoal);color:var(--bone)}
+  .hero-tag{display:flex;gap:30px;margin-top:50px;flex-wrap:wrap}
+  .hero-tag div{font-size:12.5px;color:var(--muted)}
+  .hero-tag b{display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--charcoal);font-weight:400}
+
+  /* hero illustration */
+  .hero-art{position:relative}
+  .art-stage{background:var(--paper);border-radius:8px;padding:46px;position:relative;overflow:hidden}
+  .art-stage::before{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:var(--oat);opacity:.55}
+  .hero-art svg{position:relative;width:100%;height:auto;display:block}
+  .float-note{position:absolute;background:var(--bone);border:1px solid var(--line);border-radius:6px;padding:11px 16px;font-size:11.5px;letter-spacing:.04em;color:var(--ink);box-shadow:0 14px 30px rgba(42,40,36,.08)}
+  .float-note span{display:block;font-family:'Fraunces',serif;color:var(--rust);font-size:14px}
+  .fn-1{top:30px;right:-14px}
+  .fn-2{bottom:34px;left:-18px}
+
+  /* generic section */
+  section{position:relative}
+  .sec-head{max-width:620px;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(30px,4vw,46px);margin:16px 0 16px;font-weight:300}
+  .sec-head p{color:var(--muted);font-size:16px}
+
+  /* collection grid */
+  .collection{padding:100px 0;background:var(--paper)}
+  .col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .tile{background:var(--bone);border-radius:8px;overflow:hidden;border:1px solid transparent;transition:transform .45s,box-shadow .45s,border-color .45s;cursor:pointer}
+  .tile:hover{transform:translateY(-6px);box-shadow:0 28px 50px rgba(42,40,36,.10);border-color:var(--line)}
+  .tile-art{aspect-ratio:1/.84;display:flex;align-items:center;justify-content:center;padding:34px;position:relative;background:linear-gradient(160deg,#f6f2eb,#ece4d6)}
+  .tile:nth-child(2) .tile-art{background:linear-gradient(160deg,#f1ece2,#e6ddcc)}
+  .tile:nth-child(3) .tile-art{background:linear-gradient(160deg,#f4efe6,#e9e1d0)}
+  .tile:nth-child(4) .tile-art{background:linear-gradient(160deg,#f2ede4,#e7decd)}
+  .tile:nth-child(5) .tile-art{background:linear-gradient(160deg,#f5f0e7,#ebe2d2)}
+  .tile:nth-child(6) .tile-art{background:linear-gradient(160deg,#f1ebe1,#e5dccb)}
+  .tile-art svg{width:78%;height:auto;transition:transform .55s}
+  .tile:hover .tile-art svg{transform:scale(1.04) translateY(-3px)}
+  .tile-body{padding:22px 24px 26px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+  .tile-body h3{font-size:21px;font-weight:400;margin-bottom:5px}
+  .tile-body p{font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+  .tile-arrow{font-size:18px;color:var(--rust);transition:transform .4s}
+  .tile:hover .tile-arrow{transform:translate(4px,-4px)}
+
+  /* materials */
+  .craft{padding:110px 0}
+  .craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .craft-art{background:var(--paper);border-radius:8px;padding:50px;position:relative;overflow:hidden}
+  .craft-art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(163,89,60,.06),transparent 60%)}
+  .craft-art svg{width:100%;height:auto;position:relative}
+  .craft h2{font-size:clamp(30px,4vw,46px);font-weight:300;margin:16px 0 26px}
+  .mat-list{margin-top:34px;border-top:1px solid var(--line)}
+  .mat-item{padding:22px 0;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:flex-start}
+  .mat-dot{width:26px;height:26px;border-radius:50%;flex:none;margin-top:3px;border:1px solid var(--line)}
+  .m-oak{background:#d8c6a4}
+  .m-walnut{background:#7d5a3c}
+  .m-linen{background:#e4ddcc}
+  .m-rust{background:var(--rust)}
+  .mat-item h3{font-size:17px;font-weight:500;font-family:'Inter',sans-serif;color:var(--charcoal);margin-bottom:3px}
+  .mat-item p{font-size:13.5px;color:var(--muted)}
+
+  /* categories */
+  .cats{padding:100px 0;background:var(--oat-soft)}
+  .cat-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:46px}
+  .cat-col h3{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal);font-weight:500;padding-bottom:16px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+  .cat-col ul{list-style:none}
+  .cat-col li a{display:block;padding:9px 0;font-size:14.5px;color:var(--ink);transition:color .3s,padding-left .3s;position:relative}
+  .cat-col li a:hover{color:var(--rust);padding-left:10px}
+  .cat-col li a::before{content:"";position:absolute;left:0;top:50%;width:0;height:1px;background:var(--rust);transition:width .3s;transform:translateY(-50%)}
+  .cat-col li a:hover::before{width:5px}
+
+  /* quote strip */
+  .quote{padding:120px 0;text-align:center}
+  .quote blockquote{font-family:'Fraunces',serif;font-size:clamp(26px,3.6vw,42px);font-weight:300;font-style:italic;color:var(--charcoal);max-width:880px;margin:0 auto;line-height:1.32}
+  .quote cite{display:block;font-style:normal;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:34px}
+
+  /* showroom / enquire */
+  .visit{padding:0 0 120px}
+  .visit-inner{background:var(--charcoal);color:var(--bone);border-radius:12px;padding:74px 70px;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;position:relative;overflow:hidden}
+  .visit-inner::before{content:"";position:absolute;top:-80px;right:-60px;width:320px;height:320px;border-radius:50%;background:rgba(163,89,60,.16)}
+  .visit h2{color:var(--bone);font-size:clamp(30px,3.8vw,44px);font-weight:300;margin:16px 0 22px}
+  .visit .eyebrow{color:var(--rust-soft)}
+  .visit p{color:#cfc8ba;font-size:15.5px;max-width:380px;margin-bottom:32px}
+  .visit-info{position:relative;z-index:2}
+  .info-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .info-row:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+  .info-row .ic{color:var(--rust-soft);flex:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;width:90px;padding-top:2px}
+  .info-row div p{margin:0;color:var(--bone);font-size:14.5px}
+  .info-row a{color:var(--bone)}
+  .info-row a:hover{color:var(--rust-soft)}
+  .visit-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .btn-bone{background:var(--bone);color:var(--charcoal)}
+  .btn-bone:hover{background:var(--rust);color:var(--bone)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:var(--bone)}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--bone)}
+
+  /* form */
+  .enquire-form{display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
+  .enquire-form label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust-soft);margin-bottom:-6px}
+  .enquire-form input,.enquire-form select,.enquire-form textarea{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);color:var(--bone);
+    padding:13px 16px;border-radius:6px;font-family:'Inter',sans-serif;font-size:14px;font-weight:300;transition:border-color .3s,background .3s}
+  .enquire-form input::placeholder,.enquire-form textarea::placeholder{color:#9a9286}
+  .enquire-form input:focus,.enquire-form select:focus,.enquire-form textarea:focus{outline:none;border-color:var(--rust-soft);background:rgba(255,255,255,.08)}
+  .enquire-form select{appearance:none;cursor:pointer}
+  .enquire-form select option{background:var(--charcoal)}
+  .form-note{font-size:12px;color:#a39a8c;margin-top:2px}
+
+  /* footer */
+  footer{background:var(--paper);padding:70px 0 40px;border-top:1px solid var(--line)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid var(--line)}
+  .foot-brand .logo{font-size:28px;margin-bottom:18px;display:inline-block}
+  .foot-brand p{font-size:14px;color:var(--muted);max-width:320px}
+  .foot-col h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal);margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:500}
+  .foot-col a{display:block;font-size:14px;color:var(--ink);padding:5px 0;transition:color .3s}
+  .foot-col a:hover{color:var(--rust)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:14px}
+  .foot-bottom p{font-size:12.5px;color:var(--muted)}
+  .concept{font-size:11.5px;color:#b3aa9b;letter-spacing:.04em}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .wrap{padding:0 24px}
+    .hero-grid,.craft-grid,.visit-inner{grid-template-columns:1fr;gap:44px}
+    .visit-inner{padding:48px 32px}
+    .col-grid{grid-template-columns:repeat(2,1fr)}
+    .cat-cols{grid-template-columns:repeat(2,1fr);gap:34px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:74%;max-width:320px;background:var(--paper);flex-direction:column;justify-content:center;gap:30px;transition:right .4s;box-shadow:-10px 0 40px rgba(0,0,0,.08);z-index:60}
+    .nav-links.open{right:0}
+    .burger{display:flex;z-index:70}
+    .hero{padding:150px 0 80px}
+  }
+  @media(max-width:560px){
+    .col-grid{grid-template-columns:1fr}
+    .cat-cols{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+    .hero-tag{gap:22px}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo">SENCILL<span>O</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#collection">Collection</a>
+      <a href="#craft">Materials</a>
+      <a href="#cats">Rooms</a>
+      <a href="#visit">Visit</a>
+      <a href="#visit" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Furniture &middot; Banani, Dhaka</p>
+      <h1>Quiet pieces for the <em>considered</em> home.</h1>
+      <p>Sencillo means simple. We design calm, honest furniture in warm woods and soft textiles, made to live with for years rather than seasons.</p>
+      <div class="hero-actions">
+        <a href="#collection" class="btn btn-fill">Explore the collection &rarr;</a>
+        <a href="#visit" class="btn btn-line">Visit the showroom</a>
+      </div>
+      <div class="hero-tag">
+        <div><b>11&ndash;8</b>Open every day</div>
+        <div><b>Banani</b>Block F showroom</div>
+        <div><b>Bespoke</b>Custom design service</div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="art-stage">
+        <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-label="Minimal sofa illustration">
+          <!-- floor shadow -->
+          <ellipse cx="210" cy="280" rx="170" ry="14" fill="#2a2824" opacity="0.06"/>
+          <!-- sofa back -->
+          <rect x="70" y="118" width="280" height="70" rx="14" fill="#c9b79a"/>
+          <!-- cushions -->
+          <rect x="86" y="150" width="110" height="62" rx="12" fill="#ddccae"/>
+          <rect x="206" y="150" width="120" height="62" rx="12" fill="#d6c4a4"/>
+          <!-- arms -->
+          <rect x="60" y="140" width="34" height="100" rx="14" fill="#bfa988"/>
+          <rect x="326" y="140" width="34" height="100" rx="14" fill="#bfa988"/>
+          <!-- seat base -->
+          <rect x="78" y="206" width="264" height="34" rx="10" fill="#a3593c"/>
+          <!-- legs -->
+          <rect x="96" y="240" width="9" height="34" rx="3" fill="#7d5a3c"/>
+          <rect x="315" y="240" width="9" height="34" rx="3" fill="#7d5a3c"/>
+          <!-- accent pillow -->
+          <rect x="250" y="158" width="48" height="48" rx="10" fill="#7e8a72" transform="rotate(8 274 182)"/>
+        </svg>
+      </div>
+      <div class="float-note fn-1">Featured<span>The Oslo Sofa</span></div>
+      <div class="float-note fn-2">Solid oak frame<span>Hand finished</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Collection</p>
+      <h2>Pieces designed to do less, beautifully.</h2>
+      <p>A small, carefully edited range. Every item earns its place through line, proportion and the feel of real material.</p>
+    </div>
+    <div class="col-grid">
+
+      <div class="tile reveal">
+        <div class="tile-art">
+          <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" aria-label="Sofa">
+            <rect x="34" y="64" width="172" height="44" rx="10" fill="#c9b79a"/>
+            <rect x="44" y="86" width="68" height="42" rx="9" fill="#ddccae"/>
+            <rect x="120" y="86" width="76" height="42" rx="9" fill="#d6c4a4"/>
+            <rect x="26" y="80" width="22" height="60" rx="10" fill="#bfa988"/>
+            <rect x="192" y="80" width="22" height="60" rx="10" fill="#bfa988"/>
+            <rect x="40" y="124" width="160" height="18" rx="6" fill="#a3593c"/>
+            <rect x="52" y="142" width="7" height="20" rx="2" fill="#7d5a3c"/>
+            <rect x="182" y="142" width="7" height="20" rx="2" fill="#7d5a3c"/>
+          </svg>
+        </div>
+        <div class="tile-body"><div><h3>Sofas</h3><p>Low, soft and unhurried</p></div><span class="tile-arrow">&#8599;</span></div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="tile-art">
+          <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" aria-label="Bed">
+            <rect x="30" y="58" width="46" height="74" rx="10" fill="#c9b79a"/>
+            <rect x="40" y="92" width="170" height="44" rx="8" fill="#ddccae"/>
+            <rect x="46" y="78" width="58" height="26" rx="9" fill="#e7d9bd"/>
+            <rect x="40" y="128" width="170" height="14" rx="5" fill="#a3593c"/>
+            <rect x="50" y="142" width="7" height="18" rx="2" fill="#7d5a3c"/>
+            <rect x="196" y="142" width="7" height="18" rx="2" fill="#7d5a3c"/>
+          </svg>
+        </div>
+        <div class="tile-body"><div><h3>Beds</h3><p>Calm headboards, low frames</p></div><span class="tile-arrow">&#8599;</span></div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="tile-art">
+          <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" aria-label="Dining table">
+            <rect x="38" y="78" width="164" height="12" rx="4" fill="#a3593c"/>
+            <rect x="50" y="90" width="8" height="48" rx="2" fill="#7d5a3c"/>
+            <rect x="182" y="90" width="8" height="48" rx="2" fill="#7d5a3c"/>
+            <rect x="70" y="100" width="30" height="30" rx="6" fill="#c9b79a"/>
+            <rect x="140" y="100" width="30" height="30" rx="6" fill="#c9b79a"/>
+            <rect x="70" y="74" width="30" height="34" rx="6" fill="#ddccae"/>
+            <rect x="140" y="74" width="30" height="34" rx="6" fill="#ddccae"/>
+          </svg>
+        </div>
+        <div class="tile-body"><div><h3>Dining</h3><p>Tables, chairs and benches</p></div><span class="tile-arrow">&#8599;</span></div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="tile-art">
+          <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" aria-label="Accent chair">
+            <path d="M86 60 q-22 6 -22 44 l0 30 q0 8 8 8 l66 0 q8 0 8 -8 l0 -6 -58 0 0 -24 q0 -30 14 -40 z" fill="#c9b79a"/>
+            <rect x="84" y="96" width="62" height="22" rx="8" fill="#7e8a72"/>
+            <rect x="92" y="136" width="8" height="22" rx="2" fill="#7d5a3c"/>
+            <rect x="138" y="136" width="8" height="22" rx="2" fill="#7d5a3c"/>
+          </svg>
+        </div>
+        <div class="tile-body"><div><h3>Accent Chairs</h3><p>A quiet corner of comfort</p></div><span class="tile-arrow">&#8599;</span></div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="tile-art">
+          <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" aria-label="Coffee table">
+            <ellipse cx="120" cy="92" rx="74" ry="18" fill="#c9b79a"/>
+            <ellipse cx="120" cy="88" rx="74" ry="18" fill="#ddccae"/>
+            <rect x="72" y="100" width="8" height="42" rx="2" fill="#7d5a3c" transform="rotate(8 76 121)"/>
+            <rect x="160" y="100" width="8" height="42" rx="2" fill="#7d5a3c" transform="rotate(-8 164 121)"/>
+            <rect x="116" y="104" width="8" height="42" rx="2" fill="#a3593c"/>
+          </svg>
+        </div>
+        <div class="tile-body"><div><h3>Tables</h3><p>Coffee, side and console</p></div><span class="tile-arrow">&#8599;</span></div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="tile-art">
+          <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" aria-label="Storage">
+            <rect x="58" y="56" width="124" height="78" rx="8" fill="#c9b79a"/>
+            <rect x="66" y="64" width="52" height="62" rx="5" fill="#ddccae"/>
+            <rect x="122" y="64" width="52" height="62" rx="5" fill="#d6c4a4"/>
+            <circle cx="112" cy="95" r="4" fill="#a3593c"/>
+            <circle cx="128" cy="95" r="4" fill="#a3593c"/>
+            <rect x="68" y="134" width="9" height="20" rx="2" fill="#7d5a3c"/>
+            <rect x="163" y="134" width="9" height="20" rx="2" fill="#7d5a3c"/>
+          </svg>
+        </div>
+        <div class="tile-body"><div><h3>Storage</h3><p>Consoles, dressers, media</p></div><span class="tile-arrow">&#8599;</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CRAFT / MATERIALS -->
+<section class="craft" id="craft">
+  <div class="wrap craft-grid">
+    <div class="craft-art reveal">
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" aria-label="Material study">
+        <rect x="40" y="40" width="150" height="120" rx="10" fill="#d8c6a4"/>
+        <path d="M40 60 q75 -16 150 0 M40 90 q75 -14 150 0 M40 120 q75 -12 150 0" stroke="#bfa988" stroke-width="2" fill="none" opacity=".7"/>
+        <rect x="210" y="40" width="150" height="120" rx="10" fill="#7d5a3c"/>
+        <path d="M210 70 q75 -12 150 0 M210 105 q75 -10 150 0" stroke="#5e4329" stroke-width="2" fill="none" opacity=".6"/>
+        <rect x="40" y="180" width="150" height="120" rx="10" fill="#e4ddcc"/>
+        <g stroke="#cfc6b1" stroke-width="1.5" opacity=".8">
+          <line x1="55" y1="195" x2="55" y2="285"/><line x1="75" y1="195" x2="75" y2="285"/>
+          <line x1="95" y1="195" x2="95" y2="285"/><line x1="115" y1="195" x2="115" y2="285"/>
+          <line x1="135" y1="195" x2="135" y2="285"/><line x1="155" y1="195" x2="155" y2="285"/>
+          <line x1="175" y1="195" x2="175" y2="285"/>
+          <line x1="48" y1="205" x2="182" y2="205"/><line x1="48" y1="225" x2="182" y2="225"/>
+          <line x1="48" y1="245" x2="182" y2="245"/><line x1="48" y1="265" x2="182" y2="265"/>
+        </g>
+        <rect x="210" y="180" width="150" height="120" rx="10" fill="#a3593c"/>
+        <circle cx="285" cy="240" r="34" fill="#b87a5e" opacity=".5"/>
+      </svg>
+    </div>
+    <div class="craft-copy reveal">
+      <p class="eyebrow">Materials &amp; Craft</p>
+      <h2>Honest materials, finished by hand.</h2>
+      <p style="color:var(--muted);font-size:16px">We work close to the wood. Each piece is built to be touched, leaned on and lived with, then quietly repaired rather than replaced.</p>
+      <div class="mat-list">
+        <div class="mat-item"><span class="mat-dot m-oak"></span><div><h3>Solid &amp; veneered oak</h3><p>Pale, open grain with a soft matte oil finish.</p></div></div>
+        <div class="mat-item"><span class="mat-dot m-walnut"></span><div><h3>Walnut detailing</h3><p>Warm, deep tones used for legs, edges and pulls.</p></div></div>
+        <div class="mat-item"><span class="mat-dot m-linen"></span><div><h3>Natural linen &amp; weave</h3><p>Breathable upholstery in undyed, earthy textiles.</p></div></div>
+        <div class="mat-item"><span class="mat-dot m-rust"></span><div><h3>Muted accents</h3><p>One considered colour per piece, never more.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES / ROOMS -->
+<section class="cats" id="cats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Shop by Room</p>
+      <h2>Everything for the home, edited.</h2>
+    </div>
+    <div class="cat-cols">
+      <div class="cat-col reveal">
+        <h3>Living Room</h3>
+        <ul>
+          <li><a href="#collection">Sofas</a></li>
+          <li><a href="#collection">Sectionals</a></li>
+          <li><a href="#collection">Accent Chairs</a></li>
+          <li><a href="#collection">Coffee Tables</a></li>
+          <li><a href="#collection">Side Tables</a></li>
+          <li><a href="#collection">Ottomans</a></li>
+        </ul>
+      </div>
+      <div class="cat-col reveal">
+        <h3>Bedroom</h3>
+        <ul>
+          <li><a href="#collection">Beds</a></li>
+          <li><a href="#collection">Nightstands</a></li>
+          <li><a href="#collection">Dressers</a></li>
+          <li><a href="#collection">Benches</a></li>
+          <li><a href="#collection">Accent Chairs</a></li>
+        </ul>
+      </div>
+      <div class="cat-col reveal">
+        <h3>Dining</h3>
+        <ul>
+          <li><a href="#collection">Dining Tables</a></li>
+          <li><a href="#collection">Dining Chairs</a></li>
+          <li><a href="#collection">Buffet Consoles</a></li>
+          <li><a href="#collection">Bar Stools</a></li>
+          <li><a href="#collection">Bar Cabinets</a></li>
+        </ul>
+      </div>
+      <div class="cat-col reveal">
+        <h3>Decor &amp; Accents</h3>
+        <ul>
+          <li><a href="#collection">Lighting</a></li>
+          <li><a href="#collection">Mirrors</a></li>
+          <li><a href="#collection">Wall Art</a></li>
+          <li><a href="#collection">Rugs</a></li>
+          <li><a href="#collection">Pillows</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="wrap reveal">
+    <blockquote>"Simple is not the absence of design. It is the result of removing everything that does not belong."</blockquote>
+    <cite>The Sencillo Approach</cite>
+  </div>
+</section>
+
+<!-- VISIT / ENQUIRE -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="visit-inner reveal">
+      <div class="visit-info">
+        <p class="eyebrow">Visit &amp; Enquire</p>
+        <h2>Come sit with the pieces.</h2>
+        <p>Photographs only say so much. Visit our Banani showroom to feel the weight, the grain and the give, or send an enquiry and we will reply with prices and guidance.</p>
+        <div class="info-row">
+          <span class="ic">Showroom</span>
+          <div><p>Park Stone, Ground Floor, House 32, Road 7, Block F, Banani, Dhaka 1213</p></div>
+        </div>
+        <div class="info-row">
+          <span class="ic">Hours</span>
+          <div><p>Open every day, 11 am to 8 pm</p></div>
+        </div>
+        <div class="info-row">
+          <span class="ic">Phone</span>
+          <div><p><a href="tel:+8801711763218">+880 1711-763218</a></p></div>
+        </div>
+        <div class="info-row">
+          <span class="ic">Email</span>
+          <div><p><a href="mailto:hello@sencillo.com.bd">hello@sencillo.com.bd</a></p></div>
+        </div>
+        <div class="visit-actions">
+          <a href="tel:+8801711763218" class="btn btn-bone">Call the showroom</a>
+          <a href="https://wa.me/8801711763218" class="btn btn-ghost">WhatsApp us</a>
+        </div>
+      </div>
+      <form class="enquire-form" id="enqForm" onsubmit="return submitEnq(event)">
+        <label for="nm">Your name</label>
+        <input id="nm" type="text" placeholder="e.g. Ayesha Rahman" required>
+        <label for="ph">Phone or WhatsApp</label>
+        <input id="ph" type="tel" placeholder="+880 1XXX-XXXXXX" required>
+        <label for="ints">I am interested in</label>
+        <select id="ints">
+          <option>A sofa or seating</option>
+          <option>A bed or bedroom set</option>
+          <option>Dining furniture</option>
+          <option>Tables or storage</option>
+          <option>Custom design service</option>
+          <option>Something else</option>
+        </select>
+        <label for="msg">A few details</label>
+        <textarea id="msg" rows="3" placeholder="Room, size, timeline, anything helpful."></textarea>
+        <button type="submit" class="btn btn-fill" style="justify-content:center;background:var(--rust)">Send enquiry &rarr;</button>
+        <p class="form-note" id="enqNote">We usually reply within one working day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo">SENCILL<span>O</span></a>
+        <p>Calm, design-led furniture for the considered Dhaka home. Simple by name, simple by intention.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#collection">Collection</a>
+        <a href="#craft">Materials</a>
+        <a href="#cats">Shop by Room</a>
+        <a href="#visit">Custom Design</a>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <a href="#visit">Park Stone, Block F, Banani</a>
+        <a href="#visit">Open 11 am to 8 pm</a>
+        <a href="tel:+8801711763218">+880 1711-763218</a>
+        <a href="mailto:hello@sencillo.com.bd">hello@sencillo.com.bd</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Sencillo &middot; Banani, Dhaka, Bangladesh &middot; +880 1711-763218</p>
+      <p class="concept">Concept site by WebCraft Global</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>40){hdr.classList.add('scrolled');}else{hdr.classList.remove('scrolled');}
+  });
+
+  // mobile menu
+  var burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+  burger.addEventListener('click',function(){links.classList.toggle('open');});
+  Array.prototype.forEach.call(links.querySelectorAll('a'),function(a){
+    a.addEventListener('click',function(){links.classList.remove('open');});
+  });
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:0.12});
+  Array.prototype.forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el);});
+
+  // enquiry form
+  function submitEnq(e){
+    e.preventDefault();
+    var nm=document.getElementById('nm').value.trim();
+    var note=document.getElementById('enqNote');
+    note.style.color='var(--rust-soft)';
+    note.textContent='Thank you'+(nm?', '+nm.split(' ')[0]:'')+'. We have your enquiry and will be in touch shortly.';
+    document.getElementById('enqForm').reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cosmos Holiday - Your Holiday Manager | Dhaka</title>
+<meta name="description" content="Cosmos Holiday, Dhaka. Curated holidays, signature tours, visa assistance and air ticketing. Your gateway to unforgettable travel experiences across Bangladesh and beyond." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0b2b30;
+    --twilight:#0d3b40;
+    --teal:#11585e;
+    --teal-2:#1c6a70;
+    --sand:#caa65a;
+    --gold:#d8b878;
+    --cream:#f4ede0;
+    --cream-2:#efe6d4;
+    --paper:#fbf7ee;
+    --mist:rgba(244,237,224,.72);
+    --line:rgba(202,166,90,.34);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:'Jost',sans-serif;font-weight:500;
+    letter-spacing:.42em;text-transform:uppercase;
+    font-size:.62rem;color:var(--sand);
+  }
+  .btn{
+    display:inline-block;font-family:'Jost',sans-serif;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;font-size:.7rem;
+    padding:15px 32px;border:1px solid var(--gold);color:var(--cream);
+    background:transparent;cursor:pointer;transition:.4s ease;border-radius:2px;
+  }
+  .btn:hover{background:var(--gold);color:var(--ink);letter-spacing:.22em}
+  .btn-dark{border-color:var(--teal);color:var(--ink)}
+  .btn-dark:hover{background:var(--teal);color:var(--cream)}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s ease}
+  header.scrolled{background:rgba(11,43,48,.94);backdrop-filter:blur(8px);box-shadow:0 8px 40px rgba(0,0,0,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;max-width:1180px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:13px;color:var(--cream)}
+  .mark{width:40px;height:40px;flex:none}
+  .brand b{font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;letter-spacing:.5px;display:block;line-height:1}
+  .brand span{font-size:.56rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gold)}
+  .links{display:flex;gap:34px;align-items:center}
+  .links a{color:var(--cream);font-size:.8rem;letter-spacing:.08em;position:relative;opacity:.86;transition:.3s}
+  .links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:.35s}
+  .links a:hover{opacity:1}
+  .links a:hover::after{width:100%}
+  .nav-cta{padding:10px 22px;border:1px solid var(--gold);color:var(--gold)!important;border-radius:2px}
+  .nav-cta:hover{background:var(--gold);color:var(--ink)!important}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .burger span{width:26px;height:2px;background:var(--cream)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(180deg,#0b2b30 0%,#0d3b40 55%,#11585e 100%)}
+  .hero svg.sky{position:absolute;inset:0;width:100%;height:100%}
+  .hero-content{position:relative;z-index:3;padding-top:90px}
+  .hero h1{color:var(--cream);font-size:clamp(2.8rem,7vw,5.6rem);letter-spacing:-.5px;margin:18px 0 22px}
+  .hero h1 i{font-style:italic;color:var(--gold)}
+  .hero p{color:var(--mist);max-width:560px;font-size:1.08rem;font-weight:300}
+  .hero-meta{display:flex;gap:38px;margin-top:46px;flex-wrap:wrap}
+  .hero-meta div span{display:block;font-family:'Fraunces',serif;font-size:2rem;color:var(--gold)}
+  .hero-meta div small{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mist)}
+  .hero-actions{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;z-index:3;text-align:center;opacity:.8}
+  .scroll-hint i{display:block;width:1px;height:34px;background:var(--gold);margin:10px auto 0;animation:drop 2s infinite}
+  @keyframes drop{0%{opacity:0;transform:scaleY(0);transform-origin:top}40%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
+
+  /* INTRO / OPENER */
+  .opener{padding:120px 0 90px;background:var(--paper);position:relative}
+  .opener .lead{max-width:840px;margin:0 auto;text-align:center}
+  .opener h2{font-size:clamp(1.9rem,4.4vw,3.3rem);margin:18px 0 26px;color:var(--ink)}
+  .opener h2 i{font-style:italic;color:var(--teal)}
+  .opener p{font-size:1.12rem;color:#3a5256;font-weight:300}
+  .rule{width:60px;height:1px;background:var(--sand);margin:34px auto}
+
+  /* DESTINATIONS */
+  .dest{padding:30px 0 110px;background:var(--paper)}
+  .sec-head{text-align:center;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem);margin-top:14px;color:var(--ink)}
+  .sec-head h2 i{font-style:italic;color:var(--teal)}
+  .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .dcard{position:relative;border-radius:4px;overflow:hidden;background:var(--twilight);min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;box-shadow:0 18px 40px rgba(11,43,48,.16);transition:.5s}
+  .dcard:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(11,43,48,.32)}
+  .dcard svg.scene{position:absolute;inset:0;width:100%;height:100%}
+  .dcard .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,43,48,0) 30%,rgba(11,43,48,.82) 100%)}
+  .dcard .meta{position:relative;z-index:2;padding:26px}
+  .dcard .meta small{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .dcard .meta h3{color:var(--cream);font-size:1.7rem;margin:6px 0 6px}
+  .dcard .meta p{color:var(--mist);font-size:.85rem;font-weight:300}
+  .dcard .tag{position:absolute;top:18px;right:18px;z-index:2;background:rgba(244,237,224,.92);color:var(--ink);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:2px;font-weight:500}
+
+  /* PACKAGES */
+  .pkg{padding:110px 0;background:linear-gradient(180deg,#0d3b40,#0b2b30)}
+  .pkg .sec-head h2{color:var(--cream)}
+  .pkg .sec-head h2 i{color:var(--gold)}
+  .pkg .sec-head p{color:var(--mist);max-width:620px;margin:14px auto 0;font-weight:300}
+  .plist{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px}
+  .pitem{display:flex;gap:20px;align-items:flex-start;padding:28px;border:1px solid rgba(202,166,90,.22);border-radius:4px;background:rgba(244,237,224,.03);transition:.4s}
+  .pitem:hover{background:rgba(202,166,90,.08);border-color:var(--gold);transform:translateX(6px)}
+  .pitem .ico{width:54px;height:54px;flex:none;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .pitem h3{color:var(--cream);font-size:1.35rem;margin-bottom:5px}
+  .pitem .route{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+  .pitem p{color:var(--mist);font-size:.86rem;font-weight:300}
+  .pitem .price{margin-top:12px;font-family:'Fraunces',serif;color:var(--gold);font-size:1.05rem}
+  .pitem .price small{font-family:'Jost';font-size:.62rem;color:var(--mist);letter-spacing:.1em}
+
+  /* CRAFT */
+  .craft{padding:115px 0;background:var(--cream)}
+  .craft .sec-head h2{color:var(--ink)}
+  .craft .sec-head h2 i{font-style:italic;color:var(--teal)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+  .step{text-align:center;padding:14px}
+  .step .num{font-family:'Fraunces',serif;font-style:italic;font-size:2.6rem;color:var(--sand);line-height:1}
+  .step .bar{width:30px;height:1px;background:var(--sand);margin:16px auto}
+  .step h3{font-size:1.3rem;margin-bottom:10px;color:var(--ink)}
+  .step p{font-size:.88rem;color:#46595c;font-weight:300}
+
+  /* SERVICES STRIP */
+  .strip{background:var(--ink);padding:40px 0}
+  .strip .wrap{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px;text-align:center}
+  .strip .s{color:var(--cream)}
+  .strip .s b{font-family:'Fraunces',serif;color:var(--gold);font-weight:500;font-size:1.15rem;display:block}
+  .strip .s span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
+
+  /* ENQUIRY */
+  .enq{padding:115px 0;background:var(--paper);position:relative;overflow:hidden}
+  .enq svg.deco{position:absolute;right:-40px;bottom:-30px;width:420px;opacity:.5;z-index:0}
+  .enq .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+  .enq h2{font-size:clamp(2rem,4.5vw,3.1rem);color:var(--ink);margin:16px 0 20px}
+  .enq h2 i{font-style:italic;color:var(--teal)}
+  .enq p{color:#3a5256;font-weight:300;margin-bottom:30px}
+  .contact-line{display:flex;align-items:center;gap:16px;margin:18px 0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .contact-line .ci{width:44px;height:44px;flex:none;border:1px solid var(--sand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal)}
+  .contact-line small{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sand)}
+  .contact-line a,.contact-line span{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--ink)}
+  .contact-line a:hover{color:var(--teal)}
+  form{background:#fff;padding:38px;border-radius:5px;box-shadow:0 24px 60px rgba(11,43,48,.12);border:1px solid var(--line)}
+  form h3{font-size:1.4rem;margin-bottom:20px;color:var(--ink)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;
+    font-family:'Jost',sans-serif;font-size:.92rem;background:var(--paper);color:var(--ink);transition:.3s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+  form .btn{width:100%;margin-top:8px}
+  .ok{display:none;text-align:center;padding:30px 0;color:var(--teal)}
+  .ok.show{display:block}
+  .ok b{font-family:'Fraunces',serif;font-size:1.5rem;display:block;margin-bottom:6px}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--mist);padding:70px 0 30px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:46px}
+  footer .brand b{font-size:1.6rem}
+  footer .fcol h4{color:var(--gold);font-family:'Jost';font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:18px}
+  footer .fcol a,footer .fcol p{display:block;color:var(--mist);font-size:.86rem;font-weight:300;margin-bottom:10px;transition:.3s}
+  footer .fcol a:hover{color:var(--gold);padding-left:4px}
+  .fbtm{border-top:1px solid rgba(202,166,90,.2);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.74rem}
+  .credit{opacity:.5}
+
+  @media(max-width:880px){
+    .links{display:none}
+    .burger{display:flex}
+    .links.open{display:flex;position:absolute;top:74px;right:18px;flex-direction:column;background:rgba(11,43,48,.97);padding:22px 28px;border-radius:5px;gap:18px;border:1px solid var(--line)}
+    .dgrid{grid-template-columns:1fr 1fr}
+    .plist{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .enq .grid{grid-template-columns:1fr;gap:34px}
+    .fgrid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .dgrid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr}
+    .hero-meta{gap:24px}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="nav">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18.5" stroke="#d8b878" stroke-width="1.2"/>
+        <path d="M20 6 L23 17 L34 20 L23 23 L20 34 L17 23 L6 20 L17 17 Z" fill="#d8b878"/>
+        <circle cx="20" cy="20" r="3" fill="#0b2b30"/>
+      </svg>
+      <span class="t"><b>Cosmos Holiday</b><span>Your Holiday Manager</span></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Holidays</a>
+      <a href="#craft">How We Craft</a>
+      <a href="#enquiry">Enquiry</a>
+      <a href="#enquiry" class="nav-cta">Plan a Journey</a>
+    </nav>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="sky" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="sun" cx="78%" cy="30%" r="40%">
+        <stop offset="0%" stop-color="#e7c98a" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#e7c98a" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#11585e"/>
+        <stop offset="100%" stop-color="#0b2b30"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="900" fill="url(#sun)"/>
+    <circle cx="1120" cy="250" r="78" fill="#e7c98a" opacity=".22"/>
+    <circle cx="1120" cy="250" r="50" fill="#e7c98a" opacity=".3"/>
+    <g opacity=".5" fill="#caa65a">
+      <circle cx="200" cy="140" r="1.5"/><circle cx="420" cy="90" r="1"/><circle cx="640" cy="170" r="1.5"/>
+      <circle cx="880" cy="120" r="1"/><circle cx="320" cy="220" r="1"/><circle cx="540" cy="60" r="1.2"/>
+      <circle cx="980" cy="200" r="1.4"/><circle cx="120" cy="300" r="1"/>
+    </g>
+    <!-- mountain range -->
+    <path d="M0 720 L240 470 L380 600 L560 400 L720 610 L900 430 L1080 600 L1260 470 L1440 660 L1440 900 L0 900 Z" fill="#0d3b40" opacity=".85"/>
+    <path d="M0 780 L200 600 L420 730 L620 560 L820 720 L1040 580 L1240 730 L1440 620 L1440 900 L0 900 Z" fill="#0b2b30"/>
+    <!-- snow caps -->
+    <path d="M560 400 L600 460 L585 458 L575 472 L555 455 L520 460 Z" fill="#f4ede0" opacity=".5"/>
+    <path d="M900 430 L935 480 L922 478 L912 490 L896 476 L868 482 Z" fill="#f4ede0" opacity=".45"/>
+    <!-- birds -->
+    <path d="M300 260 q12 -10 24 0 q12 -10 24 0" stroke="#caa65a" stroke-width="1.5" fill="none" opacity=".6"/>
+    <path d="M360 300 q9 -7 18 0 q9 -7 18 0" stroke="#caa65a" stroke-width="1.3" fill="none" opacity=".5"/>
+  </svg>
+  <div class="wrap hero-content">
+    <p class="eyebrow">Curated Holidays from Dhaka</p>
+    <h1>Some places change you.<br/>We help you <i>find them.</i></h1>
+    <p>For travellers who want more than a brochure, Cosmos Holiday designs journeys with intention - the right valley at the right hour, the quiet beach before the crowd, the city that lingers long after you return home.</p>
+    <div class="hero-actions">
+      <a href="#destinations" class="btn">Explore Destinations</a>
+      <a href="#enquiry" class="btn" style="border-color:var(--cream)">Speak to a Planner</a>
+    </div>
+    <div class="hero-meta">
+      <div><span>40+</span><small>Destinations Crafted</small></div>
+      <div><span>12yr</span><small>Journeys From Dhaka</small></div>
+      <div><span>24/7</span><small>On-Trip Support</small></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll<i></i></div>
+</section>
+
+<!-- OPENER -->
+<section class="opener">
+  <div class="wrap lead">
+    <p class="eyebrow">A Different Way to Travel</p>
+    <h2>We do not sell tickets. We compose <i>journeys</i> worth remembering.</h2>
+    <div class="rule"></div>
+    <p>A holiday should feel personal, not packaged. From the tea hills of Sreemangal to the lantern nights of Bangkok and the white peaks beyond Pokhara, every Cosmos itinerary begins with a conversation and ends with a story you will tell for years. Visa support, air ticketing and on-ground care are handled quietly in the background - so all you carry is anticipation.</p>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="dest" id="destinations">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Featured Destinations</p>
+      <h2>Where this season's travellers are <i>going</i></h2>
+    </div>
+    <div class="dgrid">
+
+      <!-- Card: Nepal -->
+      <article class="dcard">
+        <span class="tag">Himalaya</span>
+        <svg class="scene" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#1c6a70"/>
+          <rect width="400" height="240" fill="#13525a"/>
+          <circle cx="310" cy="90" r="42" fill="#e7c98a" opacity=".35"/>
+          <path d="M0 300 L90 150 L150 240 L210 110 L280 250 L340 170 L400 280 L400 400 L0 400Z" fill="#0d3b40"/>
+          <path d="M210 110 L240 175 L222 170 L210 188 L196 168 L172 176 Z" fill="#f4ede0" opacity=".8"/>
+          <path d="M90 150 L118 205 L104 200 L92 215 L80 198 L62 206 Z" fill="#f4ede0" opacity=".7"/>
+          <path d="M0 340 L120 280 L260 330 L400 270 L400 400 L0 400Z" fill="#0b2b30"/>
+        </svg>
+        <div class="veil"></div>
+        <div class="meta">
+          <small>Nepal</small>
+          <h3>Kathmandu & Pokhara</h3>
+          <p>Temple mornings, mountain flights and lakeside calm beneath the Annapurnas.</p>
+        </div>
+      </article>
+
+      <!-- Card: Maldives -->
+      <article class="dcard">
+        <span class="tag">Honeymoon</span>
+        <svg class="scene" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#2a8a90"/>
+          <rect width="400" height="200" fill="#7fc3c6"/>
+          <circle cx="90" cy="80" r="34" fill="#e7c98a" opacity=".5"/>
+          <rect y="200" width="400" height="200" fill="#1c6a70"/>
+          <path d="M0 240 Q200 215 400 240 L400 270 Q200 250 0 270Z" fill="#0d3b40" opacity=".5"/>
+          <rect x="150" y="186" width="100" height="14" fill="#0b2b30"/>
+          <rect x="158" y="160" width="84" height="30" rx="4" fill="#caa65a"/>
+          <path d="M150 160 L200 138 L250 160Z" fill="#0b2b30"/>
+          <rect x="172" y="186" width="4" height="40" fill="#0b2b30"/>
+          <rect x="224" y="186" width="4" height="40" fill="#0b2b30"/>
+        </svg>
+        <div class="veil"></div>
+        <div class="meta">
+          <small>Maldives</small>
+          <h3>Overwater Escapes</h3>
+          <p>Glass-clear lagoons, private villas and sunsets meant for two.</p>
+        </div>
+      </article>
+
+      <!-- Card: Bandarban -->
+      <article class="dcard">
+        <span class="tag">Bangladesh</span>
+        <svg class="scene" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#246b62"/>
+          <rect width="400" height="220" fill="#e9c98f" opacity=".4"/>
+          <rect width="400" height="220" fill="#1c6a70"/>
+          <path d="M0 230 Q100 140 200 230 T400 230 L400 400 L0 400Z" fill="#16564f"/>
+          <path d="M0 290 Q120 210 240 290 T400 270 L400 400 L0 400Z" fill="#0d3b40"/>
+          <path d="M0 230 Q100 140 200 230" fill="none" stroke="#caa65a" stroke-width="2" opacity=".3"/>
+          <g fill="#0b2b30" opacity=".55"><ellipse cx="60" cy="250" rx="22" ry="8"/><ellipse cx="320" cy="240" rx="26" ry="9"/></g>
+        </svg>
+        <div class="veil"></div>
+        <div class="meta">
+          <small>Bandarban</small>
+          <h3>Hills & Cloud Trails</h3>
+          <p>Nilgiri sunrises and winding ridges in Bangladesh's own highlands.</p>
+        </div>
+      </article>
+
+      <!-- Card: Thailand -->
+      <article class="dcard">
+        <span class="tag">City + Beach</span>
+        <svg class="scene" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#143f44"/>
+          <rect width="400" height="260" fill="#1c5a60"/>
+          <circle cx="320" cy="70" r="30" fill="#e7c98a" opacity=".45"/>
+          <g fill="#0d3b40">
+            <rect x="40" y="150" width="34" height="170"/><rect x="86" y="110" width="40" height="210"/>
+            <rect x="140" y="180" width="30" height="140"/><rect x="184" y="90" width="46" height="230"/>
+            <rect x="244" y="150" width="36" height="170"/><rect x="292" y="120" width="42" height="200"/>
+            <rect x="346" y="170" width="34" height="150"/>
+          </g>
+          <g fill="#e7c98a" opacity=".55"><rect x="96" y="130" width="6" height="6"/><rect x="110" y="150" width="6" height="6"/><rect x="196" y="120" width="6" height="6"/><rect x="210" y="150" width="6" height="6"/><rect x="302" y="140" width="6" height="6"/></g>
+          <rect y="320" width="400" height="80" fill="#0b2b30"/>
+        </svg>
+        <div class="veil"></div>
+        <div class="meta">
+          <small>Thailand</small>
+          <h3>Bangkok & Phuket</h3>
+          <p>Street-food nights, gilded temples and the warm Andaman Sea.</p>
+        </div>
+      </article>
+
+      <!-- Card: Dubai -->
+      <article class="dcard">
+        <span class="tag">Family</span>
+        <svg class="scene" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#b98f4e"/>
+          <rect width="400" height="250" fill="#caa65a" opacity=".55"/>
+          <rect width="400" height="250" fill="#1c5a60"/>
+          <path d="M195 60 L205 60 L212 320 L188 320 Z" fill="#0d3b40"/>
+          <path d="M200 40 L200 90" stroke="#e7c98a" stroke-width="3"/>
+          <g fill="#0b2b30"><rect x="60" y="180" width="34" height="140"/><rect x="110" y="150" width="30" height="170"/><rect x="270" y="160" width="32" height="160"/><rect x="318" y="190" width="34" height="130"/></g>
+          <path d="M0 320 Q200 290 400 320 L400 400 L0 400Z" fill="#caa65a" opacity=".7"/>
+          <path d="M0 350 Q200 325 400 350 L400 400 L0 400Z" fill="#a07d3e"/>
+        </svg>
+        <div class="veil"></div>
+        <div class="meta">
+          <small>UAE</small>
+          <h3>Dubai Discovery</h3>
+          <p>Desert dunes, soaring towers and theme-park days for the whole family.</p>
+        </div>
+      </article>
+
+      <!-- Card: Sreemangal -->
+      <article class="dcard">
+        <span class="tag">Weekend</span>
+        <svg class="scene" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="400" fill="#1f6e54"/>
+          <rect width="400" height="180" fill="#d9e3c4" opacity=".5"/>
+          <rect width="400" height="180" fill="#2a7e5f"/>
+          <circle cx="320" cy="60" r="26" fill="#e7c98a" opacity=".5"/>
+          <path d="M0 200 Q100 170 200 200 T400 200 L400 260 Q200 230 0 260Z" fill="#1f6e54"/>
+          <path d="M0 250 Q100 220 200 250 T400 250 L400 320 Q200 290 0 320Z" fill="#175840"/>
+          <path d="M0 310 Q100 285 200 310 T400 310 L400 400 L0 400Z" fill="#0d3b40"/>
+          <g stroke="#caa65a" stroke-width="1" opacity=".35"><path d="M0 230 Q200 205 400 230"/><path d="M0 280 Q200 255 400 280"/></g>
+        </svg>
+        <div class="veil"></div>
+        <div class="meta">
+          <small>Sreemangal</small>
+          <h3>Tea Garden Trails</h3>
+          <p>Misty mornings among endless green - the perfect short escape from Dhaka.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="pkg" id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Signature Holidays</p>
+      <h2>Itineraries we are <i>known for</i></h2>
+      <p>A selection of our most-loved Cosmos packages. Every price is a starting point - tell us your dates and we will tailor the rest.</p>
+    </div>
+    <div class="plist">
+
+      <div class="pitem">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8b878" stroke-width="1.4"><path d="M3 20 L9 6 L15 18 L21 4"/><path d="M9 6 l1.5 3"/></svg></div>
+        <div>
+          <span class="route">Dhaka - Kathmandu - Pokhara</span>
+          <h3>Nepal in Bloom</h3>
+          <p>5 nights of Himalayan vistas, a sunrise mountain flight and serene Phewa Lake.</p>
+          <div class="price">from BDT 49,900 <small>/ person</small></div>
+        </div>
+      </div>
+
+      <div class="pitem">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8b878" stroke-width="1.4"><path d="M3 16 q9 -6 18 0"/><path d="M12 4 v8"/><path d="M12 4 q4 2 4 6"/></svg></div>
+        <div>
+          <span class="route">Dhaka - Male - Maafushi</span>
+          <h3>Maldives Honeymoon</h3>
+          <p>4 nights of overwater living, snorkelling reefs and candle-lit beach dinners.</p>
+          <div class="price">from BDT 1,12,000 <small>/ couple</small></div>
+        </div>
+      </div>
+
+      <div class="pitem">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8b878" stroke-width="1.4"><rect x="5" y="8" width="14" height="12"/><path d="M9 8 V5 h6 v3"/><path d="M9 20 V14 h6 v6"/></svg></div>
+        <div>
+          <span class="route">Dhaka - Bangkok - Phuket</span>
+          <h3>Thailand Twin City</h3>
+          <p>6 nights blending Bangkok's buzz with Phuket's islands and the Phi Phi tour.</p>
+          <div class="price">from BDT 74,500 <small>/ person</small></div>
+        </div>
+      </div>
+
+      <div class="pitem">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8b878" stroke-width="1.4"><path d="M12 3 v18"/><path d="M7 21 h10"/><path d="M9 9 h6"/><path d="M10 14 h4"/></svg></div>
+        <div>
+          <span class="route">Dhaka - Dubai - Abu Dhabi</span>
+          <h3>Dubai Family Discovery</h3>
+          <p>5 nights of desert safari, Burj Khalifa heights and a day at the theme parks.</p>
+          <div class="price">from BDT 89,900 <small>/ person</small></div>
+        </div>
+      </div>
+
+      <div class="pitem">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8b878" stroke-width="1.4"><path d="M4 18 q8 -10 16 0"/><path d="M12 8 v-4"/><circle cx="12" cy="14" r="2"/></svg></div>
+        <div>
+          <span class="route">Dhaka - Bandarban - Nilgiri</span>
+          <h3>Hills of Bandarban</h3>
+          <p>3 nights chasing clouds across Nilgiri, Chimbuk and the Sangu river bends.</p>
+          <div class="price">from BDT 18,500 <small>/ person</small></div>
+        </div>
+      </div>
+
+      <div class="pitem">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d8b878" stroke-width="1.4"><path d="M5 19 q7 -5 14 0"/><path d="M5 14 q7 -5 14 0"/><circle cx="12" cy="7" r="2.4"/></svg></div>
+        <div>
+          <span class="route">Dhaka - Sreemangal - Lawachara</span>
+          <h3>Tea Country Weekend</h3>
+          <p>2 nights among tea estates, the rainforest trail and seven-layer tea.</p>
+          <div class="price">from BDT 9,900 <small>/ person</small></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<section class="strip">
+  <div class="wrap">
+    <div class="s"><b>Holiday Packages</b><span>Domestic & International</span></div>
+    <div class="s"><b>Visa Assistance</b><span>Documentation & Guidance</span></div>
+    <div class="s"><b>Air Ticketing</b><span>Best-Fare Sourcing</span></div>
+    <div class="s"><b>Group & Corporate</b><span>Custom Itineraries</span></div>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section class="craft" id="craft">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How We Craft Your Journey</p>
+      <h2>Four quiet steps to a <i>perfect</i> trip</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div><div class="bar"></div>
+        <h3>Listen</h3>
+        <p>We start with your story - who is travelling, what you love and what you would rather avoid.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div><div class="bar"></div>
+        <h3>Design</h3>
+        <p>Our planners shape a day-by-day itinerary, balancing the famous with the quietly special.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div><div class="bar"></div>
+        <h3>Arrange</h3>
+        <p>Visas, flights, stays and transfers are confirmed and double-checked before you pack.</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div><div class="bar"></div>
+        <h3>Accompany</h3>
+        <p>From departure to return, our team is one message away - day or night, wherever you are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="enq" id="enquiry">
+  <svg class="deco" viewBox="0 0 400 300" aria-hidden="true">
+    <path d="M0 230 L80 120 L140 200 L210 90 L280 210 L340 140 L400 230" fill="none" stroke="#caa65a" stroke-width="2"/>
+    <circle cx="320" cy="70" r="40" fill="none" stroke="#11585e" stroke-width="2"/>
+  </svg>
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Start Your Journey</p>
+      <h2>Tell us where you <i>dream</i> of going</h2>
+      <p>Share a little about your trip and a Cosmos planner from our Dhanmondi head office will reach out with ideas and a tailored quote - usually within the same day.</p>
+
+      <div class="contact-line">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5 c0 9 6 15 15 15 l0 -3 -4 -1 -2 2 c-3 -1.5 -5.5 -4 -7 -7 l2 -2 -1 -4 Z"/></svg></div>
+        <div><small>Call or WhatsApp</small><a href="tel:+8809678343434">+880 9678-343434</a></div>
+      </div>
+      <div class="contact-line">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7 l9 6 9 -6"/></svg></div>
+        <div><small>Email</small><a href="mailto:info@cosmosholiday.com">info@cosmosholiday.com</a></div>
+      </div>
+      <div class="contact-line" style="border-bottom:none">
+        <div class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21 c5 -5 8 -9 8 -12 a8 8 0 0 0 -16 0 c0 3 3 7 8 12 Z"/><circle cx="12" cy="9" r="2.6"/></svg></div>
+        <div><small>Head Office</small><span>Dhanmondi, Dhaka, Bangladesh</span></div>
+      </div>
+    </div>
+
+    <form id="enqForm">
+      <h3>Plan a Journey</h3>
+      <div class="ok" id="ok"><b>Thank you.</b>Your enquiry has reached our planners. We will call you shortly.</div>
+      <div id="fields">
+        <div class="field"><label>Full Name</label><input type="text" required placeholder="Your name" /></div>
+        <div class="field"><label>Phone</label><input type="tel" required placeholder="+880" /></div>
+        <div class="field"><label>Destination of Interest</label>
+          <select required>
+            <option value="">Select a destination</option>
+            <option>Nepal</option><option>Maldives</option><option>Thailand</option>
+            <option>Dubai / UAE</option><option>Bandarban</option><option>Sreemangal</option>
+            <option>Somewhere else - surprise me</option>
+          </select>
+        </div>
+        <div class="field"><label>Tell us about your trip</label><textarea rows="3" placeholder="Dates, travellers, budget..."></textarea></div>
+        <button type="submit" class="btn btn-dark">Send Enquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <a class="brand" href="#top" style="margin-bottom:16px">
+          <svg class="mark" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18.5" stroke="#d8b878" stroke-width="1.2"/>
+            <path d="M20 6 L23 17 L34 20 L23 23 L20 34 L17 23 L6 20 L17 17 Z" fill="#d8b878"/>
+            <circle cx="20" cy="20" r="3" fill="#0b2b30"/>
+          </svg>
+          <span class="t"><b style="color:var(--cream)">Cosmos Holiday</b><span>Your Holiday Manager</span></span>
+        </a>
+        <p style="max-width:300px">Your gateway to unforgettable travel experiences in Dhaka, Bangladesh and beyond. Curated holidays, visa assistance and air ticketing - all under one roof.</p>
+      </div>
+      <div class="fcol">
+        <h4>Explore</h4>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Signature Holidays</a>
+        <a href="#craft">How We Craft</a>
+        <a href="#enquiry">Plan a Journey</a>
+      </div>
+      <div class="fcol">
+        <h4>Reach Us</h4>
+        <a href="tel:+8809678343434">+880 9678-343434</a>
+        <a href="mailto:info@cosmosholiday.com">info@cosmosholiday.com</a>
+        <p>Dhanmondi Head Office<br/>Dhaka, Bangladesh</p>
+      </div>
+    </div>
+    <div class="fbtm">
+      <span>&copy; 2026 Cosmos Holiday, Dhaka. All rights reserved.</span>
+      <span class="credit">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky header
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>40){hdr.classList.add('scrolled')}else{hdr.classList.remove('scrolled')}
+  });
+  // mobile menu
+  var burger=document.getElementById('burger'),links=document.getElementById('links');
+  burger.addEventListener('click',function(){links.classList.toggle('open')});
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open')})});
+  // form
+  document.getElementById('enqForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('fields').style.display='none';
+    document.getElementById('ok').classList.add('show');
+  });
+</script>
+</body>
+</html>

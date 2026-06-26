@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>goFLY Limited - Flights, Visas and Tours in Dhaka</title>
+<meta name="description" content="goFLY Limited is an IATA-certified travel agency in Dhaka. Book flights, process visas and plan tours and Umrah. Trusted by 10,000+ travelers since 2017.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#2f7bf6;--sky-dark:#1c5ed1;--sky-soft:#eaf2ff;--sky-tint:#f4f8ff;
+  --warm:#ff9d3c;--warm-dark:#f2851a;
+  --ink:#0f1b34;--slate:#5a6781;--line:#e3e9f4;--white:#fff;
+  --shadow:0 14px 40px rgba(20,60,140,.12);--shadow-sm:0 6px 18px rgba(20,60,140,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.dh{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-family:'Plus Jakarta Sans';border-radius:50px;padding:14px 26px;font-size:15px;cursor:pointer;border:0;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-pri{background:var(--sky);color:#fff;box-shadow:0 8px 22px rgba(47,123,246,.35)}
+.btn-pri:hover{background:var(--sky-dark);transform:translateY(-3px);box-shadow:0 14px 30px rgba(47,123,246,.42)}
+.btn-warm{background:var(--warm);color:#3a2200;box-shadow:0 8px 22px rgba(255,157,60,.4)}
+.btn-warm:hover{background:var(--warm-dark);transform:translateY(-3px)}
+.btn-ghost{background:#fff;color:var(--sky);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--sky);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans';font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);background:var(--sky-soft);padding:7px 15px;border-radius:50px}
+
+/* ---- Topbar ---- */
+.topbar{background:var(--ink);color:#cdd8ee;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:14px}
+.topbar a{color:#cdd8ee;transition:color .2s}
+.topbar a:hover{color:#fff}
+.topbar .tb-r{display:flex;gap:18px;align-items:center}
+@media(max-width:680px){.topbar .tb-l{display:none}}
+
+/* ---- Header ---- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:23px;letter-spacing:-.03em}
+.logo .mk{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--sky),#5fa0ff);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(47,123,246,.4)}
+.logo b{color:var(--sky)}
+nav.main{display:flex;gap:30px;align-items:center}
+nav.main a{font-weight:600;font-size:15px;color:var(--ink);position:relative;padding:4px 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--sky);transition:width .25s}
+nav.main a:hover{color:var(--sky)}
+nav.main a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.hamb{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.hamb span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+@media(max-width:940px){
+  nav.main{position:fixed;top:112px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px;box-shadow:var(--shadow);transform:translateY(-160%);transition:transform .35s;border-bottom:1px solid var(--line)}
+  nav.main.open{transform:translateY(0)}
+  nav.main a{width:100%;padding:14px 0;border-bottom:1px solid var(--line)}
+  .hamb{display:flex}
+  .nav-cta .btn{display:none}
+}
+
+/* ---- Hero ---- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky-tint),#fff)}
+.hero::before{content:"";position:absolute;top:-180px;right:-160px;width:560px;height:560px;background:radial-gradient(circle,rgba(47,123,246,.16),transparent 65%);border-radius:50%}
+.hero::after{content:"";position:absolute;bottom:-120px;left:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,157,60,.13),transparent 65%);border-radius:50%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:70px 24px 84px}
+.hero h1{font-size:54px;font-weight:800;margin:20px 0 18px}
+.hero h1 .grad{background:linear-gradient(120deg,var(--sky),#6aa6ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.lead{font-size:18px;color:var(--slate);max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+.trust-row{display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:13.5px;color:var(--slate);font-weight:600}
+.trust-row span{display:flex;align-items:center;gap:7px}
+.trust-row .dot{color:var(--sky);font-size:17px}
+
+/* booking card */
+.bookcard{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:8px;border:1px solid var(--line)}
+.bk-tabs{display:flex;gap:4px;background:var(--sky-tint);border-radius:16px;padding:5px;margin-bottom:14px}
+.bk-tab{flex:1;text-align:center;font-family:'Plus Jakarta Sans';font-weight:700;font-size:13.5px;padding:11px 6px;border-radius:12px;cursor:pointer;color:var(--slate);transition:.2s}
+.bk-tab.active{background:#fff;color:var(--sky);box-shadow:var(--shadow-sm)}
+.bk-body{padding:6px 16px 16px}
+.bk-pane{display:none}
+.bk-pane.active{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:12px;font-weight:700;color:var(--slate);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.fld input,.fld select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit;font-size:14.5px;color:var(--ink);background:var(--sky-tint);transition:.2s}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--sky);background:#fff;box-shadow:0 0 0 3px rgba(47,123,246,.12)}
+.fld-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bk-body .btn{width:100%;justify-content:center;margin-top:6px}
+@media(max-width:940px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px;padding:48px 24px 60px}
+  .hero h1{font-size:40px}
+}
+@media(max-width:480px){.hero h1{font-size:33px}.fld-2{grid-template-columns:1fr}}
+
+/* ---- Section base ---- */
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head h2{font-size:38px;font-weight:800;margin:14px 0 12px}
+.sec-head p{color:var(--slate);font-size:17px}
+@media(max-width:560px){.sec-head h2{font-size:29px}section{padding:60px 0}}
+
+/* ---- Services ---- */
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.serv{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 28px;transition:.3s;position:relative;overflow:hidden}
+.serv::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--sky),#6aa6ff);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.serv:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.serv:hover::before{transform:scaleX(1)}
+.serv .ic{width:60px;height:60px;border-radius:16px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--sky)}
+.serv:nth-child(2) .ic{background:#fff2e3;color:var(--warm-dark)}
+.serv h3{font-size:21px;font-weight:700;margin-bottom:10px}
+.serv p{color:var(--slate);font-size:15px;margin-bottom:16px}
+.serv .lnk{font-family:'Plus Jakarta Sans';font-weight:700;font-size:14.5px;color:var(--sky);display:inline-flex;gap:6px;transition:gap .2s}
+.serv:hover .lnk{gap:11px}
+.serv .price{font-size:13px;font-weight:600;color:var(--warm-dark);background:#fff2e3;padding:4px 11px;border-radius:50px;display:inline-block;margin-bottom:14px}
+@media(max-width:880px){.serv-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+
+/* ---- Destinations ---- */
+.dest-sec{background:var(--sky-tint)}
+.dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.dest{border-radius:18px;overflow:hidden;cursor:pointer;position:relative;height:240px;box-shadow:var(--shadow-sm);transition:.35s;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.dest:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.dest .sky-bg{position:absolute;inset:0;z-index:0}
+.dest .info{position:relative;z-index:2;padding:18px 18px 20px;background:linear-gradient(transparent,rgba(8,18,40,.78))}
+.dest .flag{font-size:24px;line-height:1}
+.dest h4{font-size:19px;font-weight:700;margin:6px 0 2px}
+.dest .from{font-size:13px;opacity:.92}
+.dest .from b{font-size:16px;color:#ffd9a8}
+.dest .go{position:absolute;z-index:2;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(-6px);transition:.3s}
+.dest:hover .go{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.dest-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.dest-grid{grid-template-columns:1fr}}
+
+/* ---- Trust strip ---- */
+.trust-sec{background:linear-gradient(135deg,var(--ink),#16294f);color:#fff;position:relative;overflow:hidden}
+.trust-sec::before{content:"";position:absolute;top:-100px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(47,123,246,.3),transparent 65%);border-radius:50%}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative;text-align:center}
+.trust-grid .num{font-family:'Plus Jakarta Sans';font-weight:800;font-size:44px;background:linear-gradient(120deg,#7db1ff,#fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.trust-grid .lbl{color:#aab9d8;font-size:14.5px;font-weight:500;margin-top:4px}
+.why-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;position:relative}
+.why{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:26px;transition:.3s}
+.why:hover{background:rgba(255,255,255,.09);transform:translateY(-5px)}
+.why .wi{width:46px;height:46px;border-radius:12px;background:rgba(47,123,246,.25);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:#9ec3ff}
+.why h4{font-size:17.5px;font-weight:700;margin-bottom:7px}
+.why p{color:#aebbd8;font-size:14px}
+.partners{margin-top:56px;position:relative;text-align:center}
+.partners .pl{color:#8ea0c6;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:22px}
+.partner-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.plogo{padding:11px 22px;border:1px solid rgba(255,255,255,.14);border-radius:50px;font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;color:#cdd8ee;background:rgba(255,255,255,.04);transition:.25s}
+.plogo:hover{border-color:#7db1ff;color:#fff;background:rgba(47,123,246,.18)}
+@media(max-width:820px){.trust-grid{grid-template-columns:1fr 1fr;gap:34px}.why-row{grid-template-columns:1fr}}
+
+/* ---- Reviews ---- */
+.rev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;transition:.3s}
+.rev:hover{box-shadow:var(--shadow);transform:translateY(-5px);border-color:transparent}
+.rev .stars{color:var(--warm);font-size:15px;letter-spacing:2px;margin-bottom:12px}
+.rev p{font-size:14.5px;color:var(--slate);margin-bottom:16px}
+.rev .who{font-family:'Plus Jakarta Sans';font-weight:700;font-size:15px}
+.rev .role{font-size:13px;color:var(--sky)}
+@media(max-width:900px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.rev-grid{grid-template-columns:1fr}}
+
+/* ---- Enquiry ---- */
+.enq{background:var(--sky-tint)}
+.enq-card{background:#fff;border-radius:26px;box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.enq-left{background:linear-gradient(150deg,var(--sky),var(--sky-dark));color:#fff;padding:48px 42px;position:relative;overflow:hidden}
+.enq-left::after{content:"✈";position:absolute;bottom:-30px;right:-10px;font-size:170px;opacity:.12;transform:rotate(-18deg)}
+.enq-left h3{font-size:30px;font-weight:800;margin-bottom:14px;position:relative}
+.enq-left p{color:#dbe8ff;margin-bottom:28px;position:relative}
+.enq-contact{position:relative;display:flex;flex-direction:column;gap:18px}
+.enq-contact a{display:flex;gap:14px;align-items:center;color:#fff;transition:.2s}
+.enq-contact a:hover{transform:translateX(4px)}
+.enq-contact .eic{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.enq-contact .et{font-size:12px;color:#cfe0ff;text-transform:uppercase;letter-spacing:.07em}
+.enq-contact .ev{font-family:'Plus Jakarta Sans';font-weight:700;font-size:16px}
+.enq-right{padding:44px 40px}
+.enq-right h4{font-size:22px;font-weight:700;margin-bottom:6px}
+.enq-right>p{color:var(--slate);font-size:14.5px;margin-bottom:22px}
+.enq-right .btn{width:100%;justify-content:center;margin-top:8px}
+.note{font-size:12.5px;color:var(--slate);text-align:center;margin-top:12px}
+.formok{display:none;background:#e8f9ee;border:1px solid #b6e6c6;color:#19794a;padding:14px;border-radius:12px;font-weight:600;font-size:14px;text-align:center;margin-top:14px}
+@media(max-width:820px){.enq-card{grid-template-columns:1fr}.enq-left::after{display:none}}
+
+/* ---- Footer ---- */
+footer{background:var(--ink);color:#aebbd8;padding:64px 0 28px;font-size:14.5px}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}
+.f-grid h5{color:#fff;font-family:'Plus Jakarta Sans';font-weight:700;font-size:16px;margin-bottom:16px}
+.f-logo{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:22px;color:#fff;margin-bottom:14px}
+.f-logo .mk{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--sky),#5fa0ff);display:flex;align-items:center;justify-content:center}
+.f-col p{color:#92a2c6;margin-bottom:14px;font-size:14px}
+.f-cert{display:flex;gap:8px;flex-wrap:wrap}
+.f-cert span{font-size:11.5px;background:rgba(255,255,255,.07);padding:5px 10px;border-radius:6px;color:#cdd8ee}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:10px}
+.f-col a{color:#aebbd8;transition:color .2s}
+.f-col a:hover{color:var(--sky)}
+.f-contact div{margin-bottom:12px;display:flex;gap:9px;font-size:14px;color:#aebbd8}
+.f-socials{display:flex;gap:10px;margin-top:16px}
+.f-socials a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:.25s;color:#cdd8ee}
+.f-socials a:hover{background:var(--sky);color:#fff;transform:translateY(-3px)}
+.f-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#8294b8}
+.f-bot .credit{color:#6b7ca0}
+@media(max-width:820px){.f-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:480px){.f-grid{grid-template-columns:1fr}}
+svg{display:block}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-l">IATA-certified travel agency in Dhaka, serving 10,000+ travelers since 2017</div>
+    <div class="tb-r">
+      <a href="mailto:support@goflybd.com">support@goflybd.com</a>
+      <a href="tel:+8801713289171">+880 1713-289171</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <span class="mk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3.5 13.5l17-7-4 17-4-6-9-4z" fill="#fff"/></svg></span>
+      go<b>FLY</b>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#services">Services</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#why">Why goFLY</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#enquiry">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+8801713289171" class="btn btn-pri">Call Now</a>
+      <button class="hamb" id="hamb" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top" style="padding:0">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">✈ IATA Certified - Since 2017</span>
+      <h1>Your complete <span class="grad">travel solution</span>, all under one roof.</h1>
+      <p class="lead">Air tickets, visa processing and curated tour packages handled by real experts in Dhaka. Most quotes delivered within 30 minutes, with honest pricing and no hidden charges.</p>
+      <div class="hero-cta">
+        <a href="#enquiry" class="btn btn-pri">Plan My Trip</a>
+        <a href="tel:+8801713289171" class="btn btn-ghost">📞 +880 1713-289171</a>
+      </div>
+      <div class="trust-row">
+        <span><span class="dot">●</span> 4.8★ Google Rating</span>
+        <span><span class="dot">●</span> 90%+ Visa Success</span>
+        <span><span class="dot">●</span> 30+ Airlines</span>
+      </div>
+    </div>
+
+    <!-- Booking card -->
+    <div class="bookcard">
+      <div class="bk-tabs">
+        <div class="bk-tab active" data-t="flight">Air Tickets</div>
+        <div class="bk-tab" data-t="visa">Visa</div>
+        <div class="bk-tab" data-t="tour">Tours</div>
+      </div>
+      <div class="bk-body">
+        <form class="bk-pane active" data-p="flight" onsubmit="return bkSubmit(this)">
+          <div class="fld-2">
+            <div class="fld"><label>From</label><input type="text" placeholder="Dhaka (DAC)" required></div>
+            <div class="fld"><label>To</label><input type="text" placeholder="Dubai (DXB)" required></div>
+          </div>
+          <div class="fld-2">
+            <div class="fld"><label>Departure</label><input type="date" required></div>
+            <div class="fld"><label>Return (optional)</label><input type="date"></div>
+          </div>
+          <div class="fld"><label>Mobile / WhatsApp</label><input type="tel" placeholder="01XXXXXXXXX" required></div>
+          <button class="btn btn-pri" type="submit">Find Best Flight Deals</button>
+        </form>
+        <form class="bk-pane" data-p="visa" onsubmit="return bkSubmit(this)">
+          <div class="fld"><label>Destination Country</label>
+            <select required><option value="">Where do you want to go?</option><option>Malaysia</option><option>Singapore</option><option>Thailand</option><option>United Kingdom</option><option>Canada</option><option>Schengen</option><option>USA</option><option>Umrah (Saudi Arabia)</option><option>United Arab Emirates</option></select>
+          </div>
+          <div class="fld"><label>Visa Type</label>
+            <select><option>Tourist</option><option>Business</option><option>Student</option><option>Umrah</option></select>
+          </div>
+          <div class="fld"><label>Mobile / WhatsApp</label><input type="tel" placeholder="01XXXXXXXXX" required></div>
+          <button class="btn btn-pri" type="submit">Check My Eligibility</button>
+        </form>
+        <form class="bk-pane" data-p="tour" onsubmit="return bkSubmit(this)">
+          <div class="fld"><label>Destination</label>
+            <select required><option value="">Pick a destination</option><option>Maldives</option><option>Thailand</option><option>Dubai</option><option>Singapore</option><option>Nepal</option><option>Malaysia</option><option>Vietnam</option><option>Indonesia</option></select>
+          </div>
+          <div class="fld-2">
+            <div class="fld"><label>Travel Date</label><input type="date" required></div>
+            <div class="fld"><label>Travelers</label><input type="number" min="1" value="2" required></div>
+          </div>
+          <div class="fld"><label>Mobile / WhatsApp</label><input type="tel" placeholder="01XXXXXXXXX" required></div>
+          <button class="btn btn-pri" type="submit">Get Package Quote</button>
+        </form>
+        <div class="formok" id="bkok">Thank you. Our team will reach you within 30 minutes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Everything you need for your trip</h2>
+      <p>Three core services, one trusted team. Flight, visa, hotel and transfers - tell us where you want to go and we handle the rest.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z" fill="currentColor"/></svg></div>
+        <span class="price">Domestic from ৳3,500</span>
+        <h3>Air Tickets</h3>
+        <p>Domestic and international flights with 30+ airlines. IATA direct access means airline-direct pricing and instant e-ticket delivery. International from ৳22,000.</p>
+        <a class="lnk" href="#enquiry">Check flight prices →</a>
+      </div>
+      <div class="serv">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 3h11l3 3v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <span class="price">90%+ success rate</span>
+        <h3>Visa Processing</h3>
+        <p>Visa support for 40+ countries: Malaysia, Singapore, Thailand, UK, Canada, USA, Schengen and more. Honest assessment, expert document review and interview prep.</p>
+        <a class="lnk" href="#enquiry">Apply for visa →</a>
+      </div>
+      <div class="serv">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <span class="price">Packages from ৳54,999</span>
+        <h3>Tour Packages</h3>
+        <p>Customized packages to Maldives, Thailand, Dubai, Singapore, Nepal and more. Flight, hotel and sightseeing included, with all-inclusive options. We also arrange Umrah.</p>
+        <a class="lnk" href="#enquiry">View packages →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Destinations -->
+<section class="dest-sec" id="destinations">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Popular Destinations</span>
+      <h2>Explore the world with goFLY</h2>
+      <p>Hand-picked getaways our travelers love most, with transparent starting prices.</p>
+    </div>
+    <div class="dest-grid" id="destGrid"></div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="trust-sec" id="why">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div><div class="num">8+</div><div class="lbl">Years of Experience</div></div>
+      <div><div class="num">10K+</div><div class="lbl">Happy Customers</div></div>
+      <div><div class="num">4.8★</div><div class="lbl">Google Rating</div></div>
+      <div><div class="num">70%</div><div class="lbl">Repeat Customers</div></div>
+    </div>
+
+    <div class="why-row">
+      <div class="why">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h4>Airline-Direct Pricing</h4>
+        <p>Tickets issued straight from airline systems through our IATA access (#42337956). You pay the airline fare, not a reseller markup. No hidden charges.</p>
+      </div>
+      <div class="why">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Honest Visa Experts</h4>
+        <p>We decline weak applications to protect your money and passport. That honesty is why our accepted cases succeed 90%+ of the time. Free consultation first.</p>
+      </div>
+      <div class="why">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h4>Support When It Matters</h4>
+        <p>One call sorts flight, visa, hotel and transfers. Most quotes within 30 minutes, and our team answers during emergencies - not just office hours.</p>
+      </div>
+    </div>
+
+    <div class="partners">
+      <div class="pl">Trusted airline and industry partners</div>
+      <div class="partner-logos">
+        <span class="plogo">US-Bangla</span>
+        <span class="plogo">Novoair</span>
+        <span class="plogo">IndiGo</span>
+        <span class="plogo">AirAsia</span>
+        <span class="plogo">IATA</span>
+        <span class="plogo">ATAB</span>
+        <span class="plogo">Civil Aviation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Real Customer Reviews</span>
+      <h2>What our travelers say</h2>
+      <p>4.8★ on Google from 431+ verified reviews. Trust earned through delivery.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>US tourist visa approved on first attempt. Their attention to detail was exceptional and I was fully prepared for my interview. Highly recommend for USA visa.</p><div class="who">Ali Hossain</div><div class="role">Businessman</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>Booked Dhaka to Manchester ticket. Completely transparent with no hidden charges. Mr. Anik Hasan was professional and responsive. Great experience.</p><div class="who">Jahid Hasan</div><div class="role">Banker</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>First international trip and I had so many questions. They explained every step with patience, from visa to boarding. Never felt lost. Truly builds trust.</p><div class="who">Farjana</div><div class="role">Job Holder</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>Canada tourist visa without any delay. goFLY is truly reliable and trustworthy. They guided me through every step. Recommended.</p><div class="who">Tahbida Tahmim</div><div class="role">Professional</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Enquiry -->
+<section class="enq" id="enquiry">
+  <div class="wrap">
+    <div class="enq-card">
+      <div class="enq-left">
+        <h3>Ready to plan your trip?</h3>
+        <p>Get in touch with our travel experts. We reply within 30 minutes during business hours.</p>
+        <div class="enq-contact">
+          <a href="tel:+8801713289171">
+            <span class="eic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+            <span><span class="et">Call us</span><br><span class="ev">+880 1713-289171</span></span>
+          </a>
+          <a href="https://wa.me/8801713289178" target="_blank" rel="noopener">
+            <span class="eic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.6 4.8-1.3A10 10 0 1 0 12 2z" stroke="#fff" stroke-width="1.6"/><path d="M8.5 8c.3-.7.6-.7 1-.7.3 0 .7 0 .9.5.2.5.7 1.7.7 1.8.1.1.1.3 0 .5l-.5.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.8 1.8.8.5 1 .4 1.2.3.2-.2.6-.7.8-.9.1-.2.3-.2.5-.1.2.1 1.4.7 1.6.8.2.1.4.2.4.3 0 .2 0 .8-.3 1.3-.3.5-1.4.9-1.9.9-1.5 0-3.4-1-4.6-2.2-1.2-1.2-2.2-3-2.2-3.4 0-.5.4-1.1.5-1.4z" fill="#fff"/></svg></span>
+            <span><span class="et">WhatsApp</span><br><span class="ev">+880 1713-289178</span></span>
+          </a>
+          <a href="mailto:support@goflybd.com">
+            <span class="eic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <span><span class="et">Email</span><br><span class="ev">support@goflybd.com</span></span>
+          </a>
+          <a href="https://maps.app.goo.gl/GoFlyBDLocation" target="_blank" rel="noopener">
+            <span class="eic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 1 0-14 0c0 3.5 3 7 7 11z" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" stroke="#fff" stroke-width="1.6"/></svg></span>
+            <span><span class="et">Visit our office</span><br><span class="ev">Shukrabad Road, Dhaka 1207</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="enq-right">
+        <h4>Send us an enquiry</h4>
+        <p>Tell us where you want to go and we will get back fast with options and pricing.</p>
+        <form onsubmit="return enqSubmit(this)">
+          <div class="fld"><label>Your Name</label><input type="text" placeholder="Full name" required></div>
+          <div class="fld-2">
+            <div class="fld"><label>Mobile / WhatsApp</label><input type="tel" placeholder="01XXXXXXXXX" required></div>
+            <div class="fld"><label>Service</label><select><option>Air Ticket</option><option>Visa Processing</option><option>Tour Package</option><option>Umrah</option><option>Hotel Booking</option></select></div>
+          </div>
+          <div class="fld"><label>Message</label><input type="text" placeholder="Destination, dates, travelers..."></div>
+          <button class="btn btn-warm" type="submit">Request a Callback</button>
+          <div class="note">Or call directly: <a href="tel:+8801713289171" style="color:var(--sky);font-weight:700">+880 1713-289171</a></div>
+          <div class="formok" id="enqok">Thank you. A travel expert will call you back within 30 minutes.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="f-logo"><span class="mk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3.5 13.5l17-7-4 17-4-6-9-4z" fill="#fff"/></svg></span> goFLY Limited</div>
+        <p>An IATA-certified travel agency in Dhaka. Flights, visas, tours and Umrah since 2017. We do not just sell tickets, we solve problems.</p>
+        <div class="f-cert"><span>IATA: 42337956</span><span>ATAB: 4298</span><span>Civil Aviation: 0007726</span></div>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/goflybd/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-3.5H13V8c0-1 .3-1.7 1.8-1.7H17V3.2c-.4 0-1.5-.1-2.8-.1C11.5 3 10 4.6 10 7.6v2.9H7V14h3v8h3z"/></svg></a>
+          <a href="https://twitter.com/goflybd" target="_blank" rel="noopener" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 3h3l-6.6 7.6L22.5 21h-6l-4.7-6.1L6.3 21H3.3l7.1-8.1L2.8 3h6.2l4.3 5.6L18.2 3z"/></svg></a>
+          <a href="https://www.youtube.com/@goflybd" target="_blank" rel="noopener" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.5A2.5 2.5 0 0 0 2.4 7.3C2 8.8 2 12 2 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.5a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://bd.linkedin.com/company/goflybd" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5v11H3v-11h3.5zM4.7 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM21 19.5h-3.5v-5.8c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.9 1.4-.1.2-.1.6-.1.9v6H10s.1-10 0-11h3.5v1.6c.5-.7 1.3-1.8 3.2-1.8 2.3 0 4.1 1.5 4.1 4.8v6.4z"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Air Tickets</a></li>
+          <li><a href="#services">Visa Processing</a></li>
+          <li><a href="#services">Tour Packages</a></li>
+          <li><a href="#services">Umrah Packages</a></li>
+          <li><a href="#services">Travel Insurance</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#reviews">Testimonials</a></li>
+          <li><a href="#enquiry">Contact Us</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#enquiry">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="f-col f-contact">
+        <h5>Get In Touch</h5>
+        <div>📍 1 Shukrabad Road, Motiur Nibash, Dhaka-1207</div>
+        <div>📞 <a href="tel:+8801713289171">+880 1713-289171</a></div>
+        <div>✉ <a href="mailto:support@goflybd.com">support@goflybd.com</a></div>
+        <div>🕒 Sat - Thu: 10 AM - 6 PM (Fri closed)</div>
+      </div>
+    </div>
+    <div class="f-bot">
+      <div>© 2026 goFLY Limited - Dhaka, Bangladesh - +880 1713-289171. All rights reserved.</div>
+      <div class="credit">Concept site by WebCraft Global</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+var hamb=document.getElementById('hamb'),nav=document.getElementById('nav');
+hamb.addEventListener('click',function(){nav.classList.toggle('open');});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+
+// Booking tabs
+document.querySelectorAll('.bk-tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.bk-tab').forEach(function(x){x.classList.remove('active');});
+    document.querySelectorAll('.bk-pane').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active');
+    document.querySelector('.bk-pane[data-p="'+t.dataset.t+'"]').classList.add('active');
+  });
+});
+function bkSubmit(f){f.reset();var ok=document.getElementById('bkok');ok.style.display='block';setTimeout(function(){ok.style.display='none';},5000);return false;}
+function enqSubmit(f){f.reset();var ok=document.getElementById('enqok');ok.style.display='block';setTimeout(function(){ok.style.display='none';},5000);return false;}
+
+// Destination cards with CSS/SVG sky scenes
+var dests=[
+  {n:'Dubai',f:'🇦🇪',p:'৳91,000',c1:'#ff9d6c',c2:'#ffd6a0',scene:'city'},
+  {n:'Maldives',f:'🇲🇻',p:'৳62,999',c1:'#37b6c9',c2:'#9be8e0',scene:'beach'},
+  {n:'Thailand',f:'🇹🇭',p:'৳61,999',c1:'#2f7bf6',c2:'#8fc0ff',scene:'temple'},
+  {n:'Singapore',f:'🇸🇬',p:'৳79,499',c1:'#5b6fe0',c2:'#b3c2ff',scene:'city'},
+  {n:'Nepal',f:'🇳🇵',p:'৳54,999',c1:'#8a6fd4',c2:'#cfb6ff',scene:'mountain'},
+  {n:'Malaysia',f:'🇲🇾',p:'৳74,999',c1:'#1aa6a0',c2:'#86e3d6',scene:'city'},
+  {n:'Vietnam',f:'🇻🇳',p:'৳59,000',c1:'#e06b6b',c2:'#ffb6a0',scene:'mountain'},
+  {n:'Indonesia',f:'🇮🇩',p:'৳80,000',c1:'#3aa0e0',c2:'#9bd6ff',scene:'beach'}
+];
+function sceneSvg(s,c1,c2){
+  var sky='<defs><linearGradient id="g'+Math.random().toString(36).slice(2,7)+'"></linearGradient></defs>';
+  var base='<rect width="300" height="240" fill="'+c1+'"/><rect width="300" height="240" fill="url(#sg)"/>';
+  var grad='<defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c2+'"/><stop offset="1" stop-color="'+c1+'"/></linearGradient></defs>';
+  var sun='<circle cx="232" cy="58" r="26" fill="#fff" opacity="0.55"/>';
+  var content='';
+  if(s==='beach'){content='<path d="M0 175 Q150 150 300 178 L300 240 L0 240Z" fill="#0f4f6b" opacity="0.55"/><path d="M0 200 Q150 182 300 205 L300 240 L0 240Z" fill="#0a3a52" opacity="0.6"/><path d="M60 200 q-4 -30 -2 -52" stroke="#1a5a3a" stroke-width="4" fill="none"/><path d="M58 150 q-22 -6 -30 4 M58 150 q22 -8 32 2 M58 150 q-10 -20 -2 -30 M58 150 q12 -16 22 -10" stroke="#2a8a55" stroke-width="5" fill="none" stroke-linecap="round"/>';}
+  else if(s==='mountain'){content='<path d="M0 240 L80 110 L150 190 L210 95 L300 240Z" fill="#3a4f7a" opacity="0.7"/><path d="M210 95 L230 130 L190 130Z" fill="#fff" opacity="0.8"/><path d="M80 110 L97 145 L63 145Z" fill="#fff" opacity="0.8"/>';}
+  else if(s==='temple'){content='<rect x="118" y="120" width="64" height="100" fill="#1f3a6b" opacity="0.7"/><path d="M118 120 L150 80 L182 120Z" fill="#16294f" opacity="0.8"/><path d="M138 80 L150 58 L162 80Z" fill="#16294f"/><rect x="142" y="160" width="16" height="60" fill="#0e1f44"/>';}
+  else{content='<rect x="40" y="120" width="30" height="100" fill="#1f3a6b" opacity="0.65"/><rect x="78" y="90" width="34" height="130" fill="#16294f" opacity="0.7"/><rect x="120" y="60" width="28" height="160" fill="#1f3a6b" opacity="0.75"/><rect x="156" y="105" width="32" height="115" fill="#16294f" opacity="0.7"/><rect x="196" y="80" width="30" height="140" fill="#1f3a6b" opacity="0.65"/><rect x="234" y="120" width="30" height="100" fill="#16294f" opacity="0.7"/>';}
+  var plane='<g opacity="0.85"><path d="M55 50 l18 -7 -4 8 14 5 -16 3 -2 9 -6 -8 -10 2 8 -7 -4 -9z" fill="#fff" transform="rotate(8 60 52)"/></g>';
+  return '<svg class="sky-bg" viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">'+grad+base+sun+content+plane+'</svg>';
+}
+var html='';
+dests.forEach(function(d){
+  html+='<div class="dest" onclick="document.getElementById(\'enquiry\').scrollIntoView({behavior:\'smooth\'})">'+
+    sceneSvg(d.scene,d.c1,d.c2)+
+    '<div class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'+
+    '<div class="info"><div class="flag">'+d.f+'</div><h4>'+d.n+'</h4><div class="from">From <b>'+d.p+'</b></div></div></div>';
+});
+document.getElementById('destGrid').innerHTML=html;
+</script>
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FurnitureBari - Furnish Your Home for Less | Dhaka</title>
+<meta name="description" content="FurnitureBari - Bangladesh's first and largest online furniture shop. Sofas, beds, dining, wardrobes and more. Up to 50% off, cash on delivery, returns in 3 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#ff6f4d;
+    --coral-dark:#e85535;
+    --teal:#1ec6b6;
+    --teal-dark:#13a99b;
+    --amber:#ffb648;
+    --ink:#2f3338;
+    --ink-soft:#5d646c;
+    --cream:#fff7f2;
+    --mint:#eefbf9;
+    --line:#f0e6df;
+    --white:#ffffff;
+    --shadow:0 14px 34px rgba(255,111,77,.16);
+    --shadow-soft:0 8px 22px rgba(47,51,56,.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.poppins{font-family:'Poppins',sans-serif}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  section{padding:74px 0}
+  .eyebrow{display:inline-block;font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);background:var(--cream);padding:7px 15px;border-radius:30px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.96rem;padding:14px 26px;border-radius:40px;cursor:pointer;border:none;transition:transform .18s,box-shadow .18s,background .18s}
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{background:var(--coral-dark);transform:translateY(-3px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-3px)}
+
+  /* TOP BAR */
+  .topbar{background:var(--ink);color:#fff;font-size:.82rem;font-weight:600}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+  .topbar span{display:inline-flex;align-items:center;gap:7px}
+  .topbar .dot{color:var(--amber)}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.32rem;color:var(--ink)}
+  .logo .mark{width:40px;height:40px;border-radius:12px;background:var(--coral);display:grid;place-items:center;box-shadow:var(--shadow)}
+  .logo .mark svg{width:23px;height:23px}
+  .logo b{color:var(--coral)}
+  nav.links{display:flex;gap:28px;align-items:center}
+  nav.links a{font-weight:700;font-size:.95rem;color:var(--ink-soft);transition:color .15s}
+  nav.links a:hover{color:var(--coral)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+  .menu-btn span{width:26px;height:3px;background:var(--ink);border-radius:3px}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--cream) 0%,var(--mint) 100%);position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{font-size:3.15rem;line-height:1.08;font-weight:800;margin:18px 0 16px}
+  .hero h1 em{font-style:normal;color:var(--coral)}
+  .hero p.lead{font-size:1.14rem;color:var(--ink-soft);max-width:480px;margin-bottom:26px}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+  .hero-stats div b{font-family:'Poppins',sans-serif;font-size:1.55rem;display:block;color:var(--ink)}
+  .hero-stats div span{font-size:.82rem;color:var(--ink-soft);font-weight:600}
+  /* hero illustration */
+  .hero-art{position:relative}
+  .room{background:#fff;border-radius:28px;padding:26px;box-shadow:var(--shadow);position:relative;border:1px solid var(--line)}
+  .room svg{width:100%;height:auto;display:block}
+  .price-tag{position:absolute;font-family:'Poppins',sans-serif;font-weight:700;background:#fff;border-radius:16px;padding:10px 15px;box-shadow:var(--shadow-soft);font-size:.86rem;display:flex;align-items:center;gap:8px}
+  .price-tag .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff}
+  .price-tag small{display:block;color:var(--ink-soft);font-weight:600;font-size:.7rem}
+  .pt1{top:-14px;left:-16px;animation:float 4s ease-in-out infinite}
+  .pt2{bottom:-16px;right:-12px;animation:float 4s ease-in-out infinite .8s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5;z-index:0}
+  .blob1{width:240px;height:240px;background:#ffd9cd;top:-60px;right:-50px}
+  .blob2{width:180px;height:180px;background:#c8f3ee;bottom:-50px;left:-40px}
+  .hero .wrap{position:relative;z-index:1}
+
+  /* TRUST STRIP */
+  .trust{background:var(--ink);color:#fff;padding:0}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:30px;padding-bottom:30px}
+  .trust-item{display:flex;align-items:center;gap:13px}
+  .trust-item .ic{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0}
+  .trust-item .ic svg{width:24px;height:24px}
+  .trust-item b{font-family:'Poppins',sans-serif;font-size:1rem;display:block}
+  .trust-item span{font-size:.8rem;color:#b9bfc6}
+
+  /* SECTION HEAD */
+  .shead{text-align:center;max-width:620px;margin:0 auto 46px}
+  .shead h2{font-size:2.3rem;font-weight:800;margin:14px 0 10px}
+  .shead p{color:var(--ink-soft);font-size:1.05rem}
+
+  /* CATEGORIES */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .cat{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 22px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer}
+  .cat:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:transparent}
+  .cat .icon{width:74px;height:74px;margin:0 auto 16px;border-radius:20px;display:grid;place-items:center;transition:transform .2s}
+  .cat:hover .icon{transform:scale(1.08) rotate(-3deg)}
+  .cat .icon svg{width:40px;height:40px}
+  .cat h3{font-size:1.08rem;font-weight:700;margin-bottom:5px}
+  .cat p{font-size:.84rem;color:var(--ink-soft)}
+  .c-coral{background:#fff0eb}.c-coral svg{color:var(--coral)}
+  .c-teal{background:#e3faf6}.c-teal svg{color:var(--teal-dark)}
+  .c-amber{background:#fff4e2}.c-amber svg{color:#e89a2b}
+  .c-ink{background:#eef0f2}.c-ink svg{color:var(--ink)}
+
+  /* PRODUCTS */
+  .products{background:var(--cream)}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+  .card .thumb{height:178px;display:grid;place-items:center;position:relative;background:var(--mint)}
+  .card:nth-child(2) .thumb{background:#fff1ec}
+  .card:nth-child(3) .thumb{background:#fff6e6}
+  .card:nth-child(4) .thumb{background:#fff6e6}
+  .card:nth-child(5) .thumb{background:var(--mint)}
+  .card:nth-child(6) .thumb{background:#fff1ec}
+  .card .thumb svg{width:130px;height:130px}
+  .badge{position:absolute;top:13px;left:13px;background:var(--coral);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:.72rem;padding:5px 11px;border-radius:30px}
+  .card .body{padding:18px 20px 22px}
+  .card .body .tag{font-size:.74rem;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em}
+  .card .body h3{font-family:'Poppins',sans-serif;font-size:1.02rem;font-weight:600;margin:6px 0 12px;line-height:1.35}
+  .price{display:flex;align-items:baseline;gap:9px}
+  .price .now{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.25rem;color:var(--coral)}
+  .price .was{font-size:.9rem;color:#aab;text-decoration:line-through}
+  .card .body .buy{margin-top:14px;width:100%;justify-content:center;padding:11px}
+  .center-cta{text-align:center;margin-top:42px}
+
+  /* EMI / VALUE BANNER */
+  .emi{background:linear-gradient(120deg,var(--coral) 0%,var(--coral-dark) 100%);color:#fff;border-radius:28px;padding:46px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .emi:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.1);top:-90px;right:-40px}
+  .emi h2{font-size:2rem;font-weight:800;margin-bottom:10px;position:relative}
+  .emi p{opacity:.95;max-width:420px;position:relative}
+  .emi .pills{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+  .pill{background:rgba(255,255,255,.16);border-radius:16px;padding:16px 18px;backdrop-filter:blur(4px)}
+  .pill b{font-family:'Poppins',sans-serif;font-size:1.4rem;display:block}
+  .pill span{font-size:.78rem;opacity:.9}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .why{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;transition:transform .2s,box-shadow .2s}
+  .why:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft)}
+  .why .ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:16px;background:var(--mint)}
+  .why:nth-child(2) .ic{background:#fff0eb}
+  .why:nth-child(3) .ic{background:#fff4e2}
+  .why .ic svg{width:28px;height:28px}
+  .why h3{font-size:1.12rem;font-weight:700;margin-bottom:7px}
+  .why p{color:var(--ink-soft);font-size:.95rem}
+
+  /* CONTACT */
+  .contact{background:var(--mint)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .contact h2{font-size:2.3rem;font-weight:800;margin:14px 0 14px}
+  .contact p.lead{color:var(--ink-soft);font-size:1.05rem;margin-bottom:26px}
+  .ci{display:flex;gap:15px;align-items:flex-start;margin-bottom:18px}
+  .ci .ic{width:48px;height:48px;border-radius:14px;background:#fff;display:grid;place-items:center;flex-shrink:0;box-shadow:var(--shadow-soft)}
+  .ci .ic svg{width:24px;height:24px;color:var(--coral)}
+  .ci b{font-family:'Poppins',sans-serif;display:block;font-size:1.05rem}
+  .ci span{color:var(--ink-soft);font-size:.95rem}
+  .ci a{color:var(--coral);font-weight:700}
+  .contact-card{background:#fff;border-radius:26px;padding:34px;box-shadow:var(--shadow)}
+  .contact-card h3{font-size:1.3rem;font-weight:700;margin-bottom:6px}
+  .contact-card p{color:var(--ink-soft);font-size:.92rem;margin-bottom:20px}
+  .field{margin-bottom:15px}
+  .field label{font-weight:700;font-size:.85rem;display:block;margin-bottom:6px}
+  .field input,.field textarea,.field select{width:100%;padding:13px 15px;border:2px solid var(--line);border-radius:13px;font-family:'Mulish',sans-serif;font-size:.95rem;transition:border-color .15s}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--coral)}
+  .form-note{font-size:.82rem;color:var(--ink-soft);margin-top:12px;text-align:center}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#cfd5db;padding:54px 0 26px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;margin-bottom:36px}
+  .foot-logo{display:flex;align-items:center;gap:11px;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:14px}
+  .foot-logo .mark{width:38px;height:38px;border-radius:11px;background:var(--coral);display:grid;place-items:center}
+  .foot-logo .mark svg{width:22px;height:22px}
+  footer p.about{font-size:.9rem;line-height:1.7}
+  footer h4{font-family:'Poppins',sans-serif;color:#fff;font-size:1rem;margin-bottom:15px}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:9px}
+  footer ul li a{font-size:.9rem;transition:color .15s}
+  footer ul li a:hover{color:var(--coral)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:.84rem}
+  .credit{color:#8c939b}
+  .credit b{color:#aeb4bb;font-weight:700}
+
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px}
+    .hero h1{font-size:2.5rem}
+    .trust .wrap{grid-template-columns:1fr 1fr}
+    .cat-grid{grid-template-columns:1fr 1fr}
+    .prod-grid{grid-template-columns:1fr 1fr}
+    .why-grid{grid-template-columns:1fr}
+    .emi{grid-template-columns:1fr}
+    .contact .wrap{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px 22px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-soft)}
+    nav.links.open{display:flex}
+    .menu-btn{display:flex}
+  }
+  @media(max-width:560px){
+    section{padding:54px 0}
+    .hero h1{font-size:2.1rem}
+    .cat-grid,.prod-grid{grid-template-columns:1fr}
+    .trust .wrap{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .shead h2,.contact h2{font-size:1.9rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="dot">&#9679;</span> Up to 50% off across the store - cash on delivery available</span>
+    <span>&#9742; Hotline +880 1710-244787 &nbsp;|&nbsp; 24 hours open</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11h18M5 11V8a3 3 0 013-3h8a3 3 0 013 3v3M4 11h16v6M6 17v2M18 17v2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      Furniture<b>Bari</b>
+    </a>
+    <nav class="links" id="navlinks">
+      <a href="#categories">Shop</a>
+      <a href="#popular">Popular</a>
+      <a href="#offers">Offers</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Visit Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Bangladesh's largest furniture shop</span>
+      <h1>Furnish your <em>home</em> for less, the friendly way.</h1>
+      <p class="lead">From cosy sofas to sturdy beds and family dining sets, FurnitureBari brings quality wooden furniture to your door at honest prices. Shop online, pay on delivery, and make every room feel like home.</p>
+      <div class="hero-btns">
+        <a href="#categories" class="btn btn-primary">Shop by Room
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#offers" class="btn btn-ghost">See offers</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>50%</b><span>Up to off</span></div>
+        <div><b>3 days</b><span>Easy returns</span></div>
+        <div><b>24/7</b><span>We are open</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="room">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="420" height="300" rx="18" fill="#eefbf9"/>
+          <!-- wall art -->
+          <rect x="40" y="36" width="70" height="52" rx="6" fill="#fff" stroke="#ffd9cd" stroke-width="3"/>
+          <circle cx="68" cy="58" r="10" fill="#ffb648"/>
+          <path d="M50 80l16-16 14 12 12-8 12 12" stroke="#1ec6b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- plant -->
+          <rect x="330" y="150" width="34" height="40" rx="5" fill="#ff6f4d"/>
+          <path d="M347 150c-14-10-18-34-4-50M347 150c12-8 18-28 6-44M347 150c0-22 0-36 0-48" stroke="#13a99b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- sofa -->
+          <rect x="60" y="150" width="220" height="70" rx="16" fill="#ff6f4d"/>
+          <rect x="60" y="128" width="220" height="44" rx="14" fill="#ff8568"/>
+          <rect x="82" y="140" width="74" height="40" rx="9" fill="#ffd9cd"/>
+          <rect x="184" y="140" width="74" height="40" rx="9" fill="#ffd9cd"/>
+          <rect x="64" y="214" width="16" height="26" rx="5" fill="#2f3338"/>
+          <rect x="260" y="214" width="16" height="26" rx="5" fill="#2f3338"/>
+          <!-- coffee table -->
+          <rect x="120" y="244" width="110" height="14" rx="6" fill="#ffb648"/>
+          <rect x="130" y="256" width="9" height="20" rx="3" fill="#e89a2b"/>
+          <rect x="211" y="256" width="9" height="20" rx="3" fill="#e89a2b"/>
+          <!-- rug -->
+          <ellipse cx="180" cy="280" rx="150" ry="14" fill="#c8f3ee"/>
+        </svg>
+      </div>
+      <div class="price-tag pt1">
+        <span class="ic" style="background:var(--teal)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Free home delivery<small>inside Dhaka</small></span>
+      </div>
+      <div class="price-tag pt2">
+        <span class="ic" style="background:var(--coral)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.5H21l-5.3 4 2 6.5L12 15l-5.7 4 2-6.5L3 8.5h6.6L12 2z" fill="#fff"/></svg></span>
+        <span>Sofa from &#2547;25,550<small>was &#2547;35,000</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7zM7 18a2 2 0 100-4 2 2 0 000 4zM18 18a2 2 0 100-4 2 2 0 000 4z" stroke="var(--amber)" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <div><b>Free Delivery</b><span>Inside Dhaka city</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-5 9 5-9 5-9-5z" stroke="var(--teal)" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 9v6l9 5 9-5V9" stroke="var(--teal)" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <div><b>Cash on Delivery</b><span>Pay when it arrives</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 14l-4 4v-4M5 18l4-4M12 3a9 9 0 11-8.5 6" stroke="var(--coral)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 4v5h5" stroke="var(--coral)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div><b>3 Day Returns</b><span>Hassle free swap</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--amber)" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="var(--amber)" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <div><b>24 Hours Open</b><span>Order any time</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Shop by room</span>
+      <h2>Everything to fill your home</h2>
+      <p>Browse our real collections - from living room comfort to the kids' corner, all crafted in solid wood and built to last.</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat" href="#popular">
+        <div class="icon c-coral"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12V9a2 2 0 012-2h12a2 2 0 012 2v3M3 12h18v6M6 18v2M18 18v2M4 12a2 2 0 012 2v1h12v-1a2 2 0 012-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Living Room</h3><p>Sofas, TV trolleys, shoe racks</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-teal"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18V8a2 2 0 012-2h14a2 2 0 012 2v10M3 14h18M5 18v2M19 18v2M7 8v-2h10v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Bedroom</h3><p>Beds, almirah, wardrobes</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-amber"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="3" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M6 12v8M18 12v8M9 4v5M15 4v5M9 4h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Dining</h3><p>Tables, chair sets, showcases</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-ink"><svg viewBox="0 0 24 24" fill="none"><path d="M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4M4 11h16v6M6 17v2M18 17v2M8 11V9h8v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Sofas</h3><p>Sofa cum bed, divan, coffee table</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-teal"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M12 4v16M9 9h.5M15 9h-.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Wardrobes</h3><p>Almirah, dressing tables</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-coral"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20v-6a3 3 0 013-3h6a3 3 0 013 3v6M9 11V7a3 3 0 016 0v4M5 20h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Office</h3><p>Desks, chairs, workstations</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-amber"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V9a2 2 0 012-2h3l1-2h4l1 2h3a2 2 0 012 2v9M4 14h16M7 18v2M17 18v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Kids</h3><p>Bunk beds, study tables</p>
+      </a>
+      <a class="cat" href="#popular">
+        <div class="icon c-ink"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="9" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M3 13h18M6 17v2M18 17v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Mattress</h3><p>Orthopedic and spring</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR PRODUCTS -->
+<section class="products" id="popular">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Customer favourites</span>
+      <h2>Popular right now</h2>
+      <p>Real best sellers from our store - quality wooden furniture at prices that make sense for every Dhaka home.</p>
+    </div>
+    <div class="prod-grid">
+
+      <div class="card">
+        <div class="thumb">
+          <span class="badge">-13%</span>
+          <svg viewBox="0 0 120 120" fill="none"><rect x="18" y="46" width="84" height="34" rx="9" fill="#1ec6b6"/><rect x="18" y="34" width="84" height="22" rx="8" fill="#3ad4c5"/><rect x="28" y="40" width="30" height="20" rx="5" fill="#c8f3ee"/><rect x="62" y="40" width="30" height="20" rx="5" fill="#c8f3ee"/><rect x="20" y="78" width="9" height="16" rx="3" fill="#2f3338"/><rect x="91" y="78" width="9" height="16" rx="3" fill="#2f3338"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag">Sofa Cum Bed</span>
+          <h3>Three Seater Wooden Sofa Cum Bed SCB022</h3>
+          <div class="price"><span class="now">&#2547;43,000</span><span class="was">&#2547;49,000</span></div>
+          <a href="#contact" class="btn btn-primary buy">Enquire now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <span class="badge">-13%</span>
+          <svg viewBox="0 0 120 120" fill="none"><rect x="20" y="50" width="80" height="40" rx="6" fill="#ff8568"/><rect x="20" y="36" width="80" height="20" rx="6" fill="#ff6f4d"/><rect x="28" y="42" width="64" height="10" rx="4" fill="#ffd9cd"/><rect x="22" y="88" width="9" height="14" rx="3" fill="#2f3338"/><rect x="89" y="88" width="9" height="14" rx="3" fill="#2f3338"/><rect x="40" y="60" width="40" height="22" rx="4" fill="#ffd9cd"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag">Bedroom Set</span>
+          <h3>Wooden Bedroom Set P325 (Bed, Side, Dressing, Almira)</h3>
+          <div class="price"><span class="now">&#2547;65,000</span><span class="was">&#2547;75,000</span></div>
+          <a href="#contact" class="btn btn-primary buy">Enquire now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <span class="badge">-13%</span>
+          <svg viewBox="0 0 120 120" fill="none"><rect x="22" y="28" width="76" height="64" rx="6" fill="#ffb648"/><path d="M60 28v64" stroke="#e89a2b" stroke-width="4"/><rect x="32" y="40" width="18" height="14" rx="3" fill="#fff4e2"/><rect x="70" y="40" width="18" height="14" rx="3" fill="#fff4e2"/><rect x="32" y="62" width="18" height="22" rx="3" fill="#fff4e2"/><rect x="70" y="62" width="18" height="22" rx="3" fill="#fff4e2"/><circle cx="56" cy="60" r="2.4" fill="#e89a2b"/><circle cx="64" cy="60" r="2.4" fill="#e89a2b"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag">Wardrobe</span>
+          <h3>Wooden Wardrobe W203 - spacious 2 door</h3>
+          <div class="price"><span class="now">&#2547;17,000</span><span class="was">&#2547;25,000</span></div>
+          <a href="#contact" class="btn btn-primary buy">Enquire now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <span class="badge">-24%</span>
+          <svg viewBox="0 0 120 120" fill="none"><rect x="22" y="40" width="76" height="8" rx="4" fill="#ffb648"/><rect x="22" y="72" width="76" height="8" rx="4" fill="#ffb648"/><rect x="24" y="48" width="9" height="24" rx="3" fill="#e89a2b"/><rect x="87" y="48" width="9" height="24" rx="3" fill="#e89a2b"/><rect x="24" y="80" width="9" height="14" rx="3" fill="#e89a2b"/><rect x="87" y="80" width="9" height="14" rx="3" fill="#e89a2b"/><rect x="38" y="50" width="44" height="20" rx="4" fill="#fff4e2"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag">Kids Bunk Bed</span>
+          <h3>Wooden Bunk Bed BB007 (without mattress)</h3>
+          <div class="price"><span class="now">&#2547;44,080</span><span class="was">&#2547;58,000</span></div>
+          <a href="#contact" class="btn btn-primary buy">Enquire now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <span class="badge">Premium</span>
+          <svg viewBox="0 0 120 120" fill="none"><rect x="18" y="50" width="84" height="8" rx="4" fill="#1ec6b6"/><rect x="22" y="58" width="8" height="30" rx="3" fill="#13a99b"/><rect x="90" y="58" width="8" height="30" rx="3" fill="#13a99b"/><rect x="30" y="64" width="14" height="12" rx="3" fill="#c8f3ee"/><rect x="53" y="64" width="14" height="12" rx="3" fill="#c8f3ee"/><rect x="76" y="64" width="14" height="12" rx="3" fill="#c8f3ee"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag">Dining</span>
+          <h3>Legacy Dining Table DT665, Marble Top (6+1)</h3>
+          <div class="price"><span class="now">&#2547;1,05,000</span><span class="was">&#2547;1,20,000</span></div>
+          <a href="#contact" class="btn btn-primary buy">Enquire now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <span class="badge">-23%</span>
+          <svg viewBox="0 0 120 120" fill="none"><rect x="20" y="54" width="80" height="34" rx="6" fill="#ff8568"/><rect x="20" y="44" width="80" height="14" rx="6" fill="#ff6f4d"/><rect x="28" y="62" width="64" height="14" rx="4" fill="#ffd9cd"/><rect x="24" y="86" width="9" height="14" rx="3" fill="#2f3338"/><rect x="87" y="86" width="9" height="14" rx="3" fill="#2f3338"/></svg>
+        </div>
+        <div class="body">
+          <span class="tag">Pull Out Bed</span>
+          <h3>Wooden Pull Out Bed SCB005 (without mattress)</h3>
+          <div class="price"><span class="now">&#2547;26,800</span><span class="was">&#2547;35,000</span></div>
+          <a href="#contact" class="btn btn-primary buy">Enquire now</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="center-cta"><a href="#contact" class="btn btn-ghost">Ask about any product</a></div>
+  </div>
+</section>
+
+<!-- OFFERS / VALUE BANNER -->
+<section id="offers">
+  <div class="wrap">
+    <div class="emi">
+      <div>
+        <h2>Big savings on every room</h2>
+        <p>Enjoy up to 50% off across the store, free delivery inside Dhaka, and the comfort of paying cash when your furniture reaches your door. Furnishing your home has never felt this easy.</p>
+      </div>
+      <div class="pills">
+        <div class="pill"><b>50%</b><span>Up to off</span></div>
+        <div class="pill"><b>&#2547;0</b><span>Delivery in Dhaka</span></div>
+        <div class="pill"><b>3 day</b><span>Easy returns</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Why FurnitureBari</span>
+      <h2>The friendly home furniture shop</h2>
+      <p>Bari means home - and we treat every order like we are furnishing our own.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v9h5v-6h4v6h5v-9" stroke="var(--teal-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Made for real homes</h3>
+        <p>Solid wood pieces sized and priced for everyday Bangladeshi families, not just showrooms.</p>
+      </div>
+      <div class="why">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.5H21l-5.3 4 2 6.5L12 15l-5.7 4 2-6.5L3 8.5h6.6L12 2z" stroke="var(--coral)" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Honest, low prices</h3>
+        <p>The largest online furniture catalogue in Bangladesh with up to 50% off, all year round.</p>
+      </div>
+      <div class="why">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 11-4.5-7.5" stroke="#e89a2b" stroke-width="1.8" stroke-linecap="round"/><path d="M9 12l2.5 2.5L21 5" stroke="#e89a2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>We are always here</h3>
+        <p>Open 24 hours with returns in 3 working days. Order any time and our team will help you choose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Visit or call us</span>
+      <h2>Let's furnish your home</h2>
+      <p class="lead">Tell us which room you are working on and we will recommend the right pieces, share prices, and arrange delivery. Friendly help, every day of the week.</p>
+      <div class="ci">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l1.5-3.5-4-1.5-2 2c-2.5-1.2-4.8-3.5-6-6l2-2L9 5 5.5 3.5 4 5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <div><b>Call our hotline</b><span><a href="tel:+8801710244787">+880 1710-244787</a> - for any query, 24 hours</span></div>
+      </div>
+      <div class="ci">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <div><b>Find us in Dhaka</b><span>Serving homes across Dhaka, Bangladesh with free city delivery</span></div>
+      </div>
+      <div class="ci">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <div><b>Office hours</b><span>Open 24 hours - returns accepted within 3 working days</span></div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>Request a quote</h3>
+      <p>Share a few details and our team will get back with prices and availability.</p>
+      <form id="quoteForm">
+        <div class="field"><label for="nm">Your name</label><input id="nm" type="text" placeholder="e.g. Rahim Ahmed" required></div>
+        <div class="field"><label for="ph">Phone number</label><input id="ph" type="tel" placeholder="01XXX-XXXXXX" required></div>
+        <div class="field"><label for="rm">Which room?</label>
+          <select id="rm">
+            <option>Living Room</option><option>Bedroom</option><option>Dining</option>
+            <option>Sofas</option><option>Wardrobe</option><option>Office</option>
+            <option>Kids</option><option>Mattress</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">What are you looking for?</label><textarea id="msg" rows="3" placeholder="Tell us about the furniture you need"></textarea></div>
+        <button type="submit" class="btn btn-primary buy" style="width:100%;justify-content:center">Send my request</button>
+        <p class="form-note" id="formNote">We reply within a few hours, every day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11h18M5 11V8a3 3 0 013-3h8a3 3 0 013 3v3M4 11h16v6M6 17v2M18 17v2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          FurnitureBari
+        </div>
+        <p class="about">The first and largest online furniture shop in Bangladesh. Quality wooden sofas, beds, dining sets and more - delivered to your home in Dhaka at honest prices.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#categories">Living Room</a></li>
+          <li><a href="#categories">Bedroom</a></li>
+          <li><a href="#categories">Dining</a></li>
+          <li><a href="#categories">Sofas</a></li>
+          <li><a href="#categories">Kids and Office</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#why">Why us</a></li>
+          <li><a href="#contact">Returns</a></li>
+          <li><a href="#contact">Delivery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+8801710244787">+880 1710-244787</a></li>
+          <li>Dhaka, Bangladesh</li>
+          <li>Open 24 hours</li>
+          <li>Cash on delivery</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>FurnitureBari - Dhaka, Bangladesh - +880 1710-244787</span>
+      <span class="credit">Concept site by <b>WebCraft Global</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
+  mb.addEventListener('click',function(){nl.classList.toggle('open');});
+  nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');});});
+
+  // form
+  document.getElementById('quoteForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var nm=document.getElementById('nm').value.trim();
+    var note=document.getElementById('formNote');
+    note.textContent=(nm?nm.split(' ')[0]+', ':'')+'thanks! We will call you shortly on +880 1710-244787.';
+    note.style.color='#13a99b';
+    this.reset();
+  });
+
+  // header shadow on scroll
+  var hd=document.querySelector('header');
+  window.addEventListener('scroll',function(){
+    hd.style.boxShadow=window.scrollY>20?'0 6px 20px rgba(47,51,56,.07)':'none';
+  });
+</script>
+</body>
+</html>

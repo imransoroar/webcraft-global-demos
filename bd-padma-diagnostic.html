@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padma Diagnostic Centre Ltd - Accurate, Accessible Diagnostics in Dhaka</title>
+<meta name="description" content="Padma Diagnostic Centre, Malibagh, Dhaka. Over 35 years of accurate, accessible diagnostics - laboratory, radiology, MRI, CT, ultrasound, fibroscan and more. Book a test or download reports online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#ffffff;
+  --paper:#f4f8f8;
+  --mist:#e7f1f1;
+  --teal:#0e8a8a;
+  --teal-deep:#0a6c6c;
+  --teal-dark:#074f4f;
+  --sec:#e7b455;
+  --sec-soft:#fbf1dc;
+  --slate:#1d2b30;
+  --slate-2:#41555b;
+  --slate-3:#6c8086;
+  --line:#dbe8e8;
+  --radius:16px;
+  --shadow:0 14px 40px -22px rgba(7,79,79,.5);
+  --shadow-sm:0 6px 20px -14px rgba(7,79,79,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  color:var(--slate);background:var(--white);
+  line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{line-height:1.16;letter-spacing:-.02em;font-weight:700}
+.serif{font-family:'Newsreader',Georgia,serif;font-weight:400;font-style:italic}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 22px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--sec);border-radius:2px}
+
+/* ---------- top utility ---------- */
+.util{background:var(--teal-dark);color:#cfe7e7;font-size:.82rem}
+.util .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;justify-content:center;padding:8px 22px}
+.util a{color:#eafafa;font-weight:600}
+.util a:hover{color:var(--sec)}
+.util .dot{width:5px;height:5px;border-radius:50%;background:var(--teal);display:inline-block}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:11px}
+.mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(150deg,var(--teal),var(--teal-deep));position:relative;flex:none;box-shadow:var(--shadow-sm)}
+.mark::before,.mark::after{content:"";position:absolute;background:#fff;border-radius:2px}
+.mark::before{width:18px;height:4px;top:19px;left:12px}
+.mark::after{width:4px;height:18px;top:12px;left:19px}
+.brand b{font-size:1.06rem;font-weight:800;display:block;letter-spacing:-.02em}
+.brand span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-deep);font-weight:700}
+.menu{display:none;gap:28px;align-items:center}
+.menu a{font-size:.92rem;font-weight:600;color:var(--slate-2);position:relative}
+.menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--teal);transition:width .25s}
+.menu a:hover{color:var(--teal-deep)}
+.menu a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;
+  font-family:inherit;font-weight:700;font-size:.92rem;border-radius:999px;
+  padding:12px 22px;transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 24px -12px rgba(14,138,138,.85)}
+.btn-primary:hover{background:var(--teal-deep);transform:translateY(-2px)}
+.btn-ghost{background:var(--mist);color:var(--teal-dark)}
+.btn-ghost:hover{background:#d6eaea;transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--teal-deep)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.burger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2.4px;background:var(--slate);border-radius:2px;transition:.3s}
+.burger.x span:nth-child(1){transform:translateY(7.4px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-7.4px) rotate(-45deg)}
+.mobile{display:none;flex-direction:column;gap:4px;padding:8px 22px 18px;border-bottom:1px solid var(--line);background:#fff}
+.mobile.open{display:flex}
+.mobile a{padding:11px 8px;font-weight:600;color:var(--slate-2);border-radius:10px}
+.mobile a:hover{background:var(--paper);color:var(--teal-deep)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 88% -10%,#e7f1f1 0,transparent 55%),
+  linear-gradient(180deg,#fff 0,#fbfdfd 100%)}
+.hero .wrap{display:grid;gap:40px;padding:62px 22px 64px;align-items:center}
+.hero h1{font-size:2.45rem;color:var(--slate)}
+.hero h1 .serif{color:var(--teal-deep);display:block;font-size:2.55rem}
+.hero p.lead{font-size:1.08rem;color:var(--slate-2);max-width:30em;margin:20px 0 28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.hero-meta div b{font-size:1.5rem;font-weight:800;color:var(--teal-deep);display:block;line-height:1}
+.hero-meta div span{font-size:.82rem;color:var(--slate-3);font-weight:600}
+
+/* hero visual card */
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;
+  box-shadow:var(--shadow);position:relative;
+}
+.hero-card .pulse{position:absolute;top:-14px;right:22px;background:var(--sec);color:#5a3d0a;font-size:.72rem;font-weight:800;padding:7px 14px;border-radius:999px;letter-spacing:.04em}
+.hero-card h3{font-size:1.05rem;margin-bottom:4px}
+.hero-card .sub{font-size:.84rem;color:var(--slate-3);margin-bottom:16px}
+.report-row{display:flex;align-items:center;gap:13px;padding:13px;border-radius:14px;background:var(--paper);margin-bottom:10px;transition:background .2s}
+.report-row:hover{background:var(--mist)}
+.report-row .ic{width:38px;height:38px;border-radius:11px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--teal);flex:none}
+.report-row .ic svg{width:20px;height:20px}
+.report-row b{font-size:.9rem;display:block}
+.report-row small{font-size:.78rem;color:var(--slate-3)}
+.report-row .stat{margin-left:auto;font-size:.74rem;font-weight:700;color:var(--teal-deep);background:var(--mist);padding:4px 10px;border-radius:999px}
+.report-row .stat.ok{color:#0a6c6c}
+
+/* ---------- quick actions strip ---------- */
+.quick{background:var(--teal-dark);color:#fff}
+.quick .wrap{display:grid;gap:1px;padding:0;background:rgba(255,255,255,.1)}
+.qcell{background:var(--teal-dark);padding:24px 26px;transition:background .25s}
+.qcell:hover{background:var(--teal-deep)}
+.qcell .qic{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:var(--sec);margin-bottom:12px}
+.qcell .qic svg{width:21px;height:21px}
+.qcell h4{font-size:1rem;margin-bottom:3px}
+.qcell p{font-size:.85rem;color:#bcdcdc;margin-bottom:10px}
+.qcell a{font-size:.84rem;font-weight:700;color:var(--sec)}
+.qcell a:hover{text-decoration:underline}
+
+/* ---------- section base ---------- */
+section{padding:70px 0}
+.sec-head{max-width:34em;margin-bottom:40px}
+.sec-head h2{font-size:2rem;margin:14px 0 12px}
+.sec-head p{color:var(--slate-2);font-size:1.02rem}
+
+/* ---------- services grid ---------- */
+.svc-grid{display:grid;gap:18px}
+.svc{
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;
+  transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden;
+}
+.svc::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.svc:hover::before{transform:scaleY(1)}
+.svc .sic{width:48px;height:48px;border-radius:13px;background:var(--mist);display:grid;place-items:center;color:var(--teal-deep);margin-bottom:16px;transition:background .25s}
+.svc:hover .sic{background:var(--teal);color:#fff}
+.svc .sic svg{width:24px;height:24px}
+.svc h3{font-size:1.12rem;margin-bottom:7px}
+.svc p{font-size:.9rem;color:var(--slate-2);margin-bottom:14px}
+.svc .tags{display:flex;flex-wrap:wrap;gap:6px}
+.svc .tags span{font-size:.74rem;font-weight:600;color:var(--teal-deep);background:var(--paper);padding:4px 10px;border-radius:999px}
+
+/* ---------- trust band ---------- */
+.trust{background:linear-gradient(160deg,var(--teal-deep),var(--teal-dark));color:#fff;border-radius:26px;padding:46px 36px;position:relative;overflow:hidden}
+.trust::after{content:"";position:absolute;right:-60px;bottom:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.05)}
+.trust .eyebrow{color:var(--sec)}
+.trust .eyebrow::before{background:var(--sec)}
+.trust h2{font-size:1.85rem;margin:14px 0 10px}
+.trust > .wrap > p{color:#cfe7e7;max-width:38em}
+.tgrid{display:grid;gap:22px;margin-top:34px}
+.tcard .tnum{font-family:'Newsreader',serif;font-size:2.6rem;color:var(--sec);line-height:1;font-style:italic}
+.tcard h4{font-size:1.02rem;margin:10px 0 5px}
+.tcard p{font-size:.86rem;color:#bcdcdc}
+
+/* ---------- packages ---------- */
+.pkg-grid{display:grid;gap:18px}
+.pkg{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.pkg:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.pkg.featured{border-color:var(--teal);box-shadow:var(--shadow-sm);position:relative}
+.pkg.featured .ribbon{position:absolute;top:18px;right:18px;background:var(--sec);color:#5a3d0a;font-size:.7rem;font-weight:800;padding:5px 11px;border-radius:999px;letter-spacing:.04em}
+.pkg .pname{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.pkg .pdesc{font-size:.87rem;color:var(--slate-2);margin-bottom:18px;flex:1}
+.pkg .price{font-size:1.7rem;font-weight:800;color:var(--teal-deep);letter-spacing:-.02em}
+.pkg .price small{font-size:.8rem;font-weight:600;color:var(--slate-3)}
+.pkg .pbtn{margin-top:16px;width:100%;justify-content:center;background:var(--mist);color:var(--teal-dark)}
+.pkg .pbtn:hover{background:var(--teal);color:#fff}
+.pkg.featured .pbtn{background:var(--teal);color:#fff}
+.pkg.featured .pbtn:hover{background:var(--teal-deep)}
+
+/* ---------- appointment ---------- */
+.appt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.appt-grid{display:grid;gap:36px;align-items:start}
+.appt-info h2{font-size:2rem;margin:14px 0 14px}
+.appt-info p{color:var(--slate-2);margin-bottom:24px}
+.contact-line{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.contact-line .cic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--teal);flex:none}
+.contact-line .cic svg{width:21px;height:21px}
+.contact-line b{display:block;font-size:1.02rem}
+.contact-line span{font-size:.85rem;color:var(--slate-3)}
+.contact-line a{font-weight:700;color:var(--teal-deep)}
+.contact-line a:hover{text-decoration:underline}
+.form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow-sm)}
+.form h3{font-size:1.2rem;margin-bottom:4px}
+.form .fsub{font-size:.86rem;color:var(--slate-3);margin-bottom:20px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.8rem;font-weight:700;color:var(--slate-2);margin-bottom:6px}
+.field input,.field select{
+  width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:11px;
+  font-family:inherit;font-size:.92rem;color:var(--slate);background:var(--paper);transition:border .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(14,138,138,.14);background:#fff}
+.form .btn{width:100%;justify-content:center;margin-top:6px}
+.form-note{font-size:.78rem;color:var(--slate-3);text-align:center;margin-top:12px}
+.form-ok{display:none;text-align:center;padding:20px;background:var(--mist);border-radius:14px;color:var(--teal-dark);font-weight:600;margin-top:10px}
+.form-ok.show{display:block}
+
+/* ---------- footer ---------- */
+footer{background:var(--slate);color:#b9c8cd;padding:56px 0 26px}
+.foot-grid{display:grid;gap:34px;margin-bottom:36px}
+.foot-brand .brand b{color:#fff}
+.foot-brand p{font-size:.88rem;margin-top:14px;max-width:26em;line-height:1.7}
+.foot-tag{font-family:'Newsreader',serif;font-style:italic;color:var(--sec);margin-top:14px;font-size:1.05rem}
+.foot-col h5{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:.88rem;padding:5px 0;color:#b9c8cd}
+.foot-col a:hover{color:var(--sec)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;font-size:.82rem}
+.foot-bottom .credit{color:#6f8389;font-size:.78rem}
+.foot-bottom a{color:var(--sec);font-weight:600}
+
+@media(min-width:760px){
+  .hero .wrap{grid-template-columns:1.05fr .95fr;padding:78px 22px 80px}
+  .hero h1{font-size:3.1rem}
+  .hero h1 .serif{font-size:3.2rem}
+  .quick .wrap{grid-template-columns:repeat(4,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(3,1fr)}
+  .appt-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:2fr 1fr 1fr}
+}
+@media(min-width:1000px){
+  .menu{display:flex}
+  .burger{display:none}
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+  .pkg-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- utility bar -->
+<div class="util">
+  <div class="wrap">
+    <span>Open 7am to 11pm, Sat to Thu</span>
+    <span class="dot"></span>
+    <span>Malibagh, Dhaka</span>
+    <span class="dot"></span>
+    <a href="tel:+8809611113355">Hotline +880 9611-113355</a>
+    <span class="dot"></span>
+    <a href="mailto:info@padma-bd.com">info@padma-bd.com</a>
+  </div>
+</div>
+
+<!-- header -->
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="Padma Diagnostic Centre">
+      <span class="mark"></span>
+      <span><b>Padma Diagnostic</b><span>Centre Ltd</span></span>
+    </a>
+    <nav class="menu">
+      <a href="#services">Services</a>
+      <a href="#reports">Online Reports</a>
+      <a href="#trust">Why Padma</a>
+      <a href="#packages">Packages</a>
+      <a href="#appointment">Appointment</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#reports">Reports</a>
+      <a class="btn btn-primary" href="#appointment">Book a Test</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile" id="mobile">
+    <a href="#services">Services</a>
+    <a href="#reports">Online Reports</a>
+    <a href="#trust">Why Padma</a>
+    <a href="#packages">Packages</a>
+    <a href="#appointment">Appointment</a>
+    <a href="tel:+8809611113355">Call +880 9611-113355</a>
+  </div>
+</header>
+
+<!-- hero -->
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Trusted in Dhaka for 35+ years</span>
+      <h1>Accurate diagnostics, <span class="serif">made calm and accessible.</span></h1>
+      <p class="lead">From laboratory tests to MRI, CT and ultrasound, Padma brings precise, one-stop diagnostic care under one trusted roof in Malibagh, Dhaka. Book in minutes, collect results online.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#appointment">Book a Test
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="17"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#reports">Download Reports</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>35+</b><span>Years of care</span></div>
+        <div><b>9</b><span>Specialist departments</span></div>
+        <div><b>7am-11pm</b><span>Open daily</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="pulse">Online Reports</span>
+      <h3>Your results, ready when you are</h3>
+      <p class="sub">Track and download reports securely from home.</p>
+      <div class="report-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+        <div><b>Complete Blood Count</b><small>Clinical Laboratory</small></div>
+        <span class="stat ok">Ready</span>
+      </div>
+      <div class="report-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <div><b>MRI Brain Scan</b><small>Radiology and Imaging</small></div>
+        <span class="stat ok">Ready</span>
+      </div>
+      <div class="report-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+        <div><b>Lipid Profile</b><small>Clinical Laboratory</small></div>
+        <span class="stat">In process</span>
+      </div>
+      <a class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" href="#reports">Open report portal</a>
+    </div>
+  </div>
+</section>
+
+<!-- quick actions -->
+<div class="quick">
+  <div class="wrap">
+    <div class="qcell">
+      <div class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+      <h4>Find a Doctor</h4>
+      <p>Meet our specialist consultants.</p>
+      <a href="#trust">Find here</a>
+    </div>
+    <div class="qcell">
+      <div class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <h4>Book a Test</h4>
+      <p>Request an appointment online.</p>
+      <a href="#appointment">Book here</a>
+    </div>
+    <div class="qcell">
+      <div class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-4 3 3 4-6"/></svg></div>
+      <h4>Health Packages</h4>
+      <p>Bundled checkups at fair prices.</p>
+      <a href="#packages">Browse packages</a>
+    </div>
+    <div class="qcell">
+      <div class="qic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h4>Have a Question?</h4>
+      <p>Send us your query any time.</p>
+      <a href="#appointment">Send query</a>
+    </div>
+  </div>
+</div>
+
+<!-- services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Departments</span>
+      <h2>One roof, every diagnostic you need</h2>
+      <p>Nine specialist departments work together so you can complete your tests, scans and consultations in a single calm visit.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 3v6.5L4.5 17a3 3 0 0 0 2.6 4.5h9.8A3 3 0 0 0 19.5 17L15 9.5V3"/><path d="M8 3h8M9.5 14h5"/></svg></span>
+        <h3>Clinical Laboratory</h3>
+        <p>Accurate pathology and biochemistry with quality-controlled, fast turnaround testing.</p>
+        <div class="tags"><span>CBC</span><span>Biochemistry</span><span>Hormone</span><span>Serology</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+        <h3>Radiology and Imaging</h3>
+        <p>MRI, CT scan, digital X-ray and ultrasonogram on the latest imaging instruments.</p>
+        <div class="tags"><span>MRI</span><span>CT Scan</span><span>X-ray</span><span>Ultrasound</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></span>
+        <h3>Cardiac Imaging</h3>
+        <p>ECG, echocardiography and cardiac evaluation read by experienced consultants.</p>
+        <div class="tags"><span>ECG</span><span>Echo</span><span>ETT</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 2v6a4 4 0 0 0 8 0V2"/><path d="M12 12v6a3 3 0 0 1-3 3"/></svg></span>
+        <h3>Gastroenterology</h3>
+        <p>Endoscopy and digestive diagnostics in a comfortable, well-equipped suite.</p>
+        <div class="tags"><span>Endoscopy</span><span>Colonoscopy</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 2a4 4 0 0 0-4 4c0 4 4 5 4 9a3 3 0 0 0 6 0c0-4 4-5 4-9a4 4 0 0 0-4-4"/></svg></span>
+        <h3>Clinical Neuro Physiology</h3>
+        <p>EEG, EMG and nerve conduction studies for precise neurological assessment.</p>
+        <div class="tags"><span>EEG</span><span>EMG</span><span>NCS</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2c-3 4-5 6-5 9a5 5 0 0 0 10 0c0-3-2-5-5-9z"/></svg></span>
+        <h3>Pulmonology</h3>
+        <p>Spirometry and lung function testing to support respiratory diagnosis.</p>
+        <div class="tags"><span>Spirometry</span><span>PFT</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2v6M9 8h6M7 14a5 5 0 0 0 10 0c0-3-2-4-5-6-3 2-5 3-5 6z"/></svg></span>
+        <h3>Urology</h3>
+        <p>Uroflowmetry and urological diagnostics with discreet, dignified care.</p>
+        <div class="tags"><span>Uroflowmetry</span><span>USG KUB</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 14c2-3 3-3 5 0s3 3 5 0"/></svg></span>
+        <h3>Fibroscan</h3>
+        <p>Non-invasive liver stiffness assessment for early, accurate liver health insight.</p>
+        <div class="tags"><span>Liver Elastography</span></div>
+      </div>
+      <div class="svc">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+        <h3>Health Packages</h3>
+        <p>Curated routine and major checkups that bundle the right tests for you.</p>
+        <div class="tags"><span>Routine</span><span>Major</span><span>Liver</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- online reports feature -->
+<section id="reports" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap appt-grid">
+    <div class="appt-info">
+      <span class="eyebrow">Online Reports and Email</span>
+      <h2 style="margin:14px 0 14px">Collect results from the comfort of home</h2>
+      <p>No need to travel back for a printout. Track the status of every test and download your verified reports through the secure patient portal, or request them straight to your inbox.</p>
+      <div class="contact-line">
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M21 12a9 9 0 1 1-5-8"/></svg></span>
+        <div><b>Verified, signed reports</b><span>Reviewed by reporting consultants</span></div>
+      </div>
+      <div class="contact-line">
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+        <div><b>Results via email</b><span>Request delivery to your inbox</span></div>
+      </div>
+      <div class="contact-line" style="border-bottom:1px solid var(--line)">
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg></span>
+        <div><b>Live chat support</b><span>Reach us on Facebook Messenger</span></div>
+      </div>
+      <a class="btn btn-primary" style="margin-top:24px" href="#appointment">Get started
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="17"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-card" style="box-shadow:var(--shadow)">
+      <h3>Report Portal</h3>
+      <p class="sub">Enter your patient ID to view results.</p>
+      <div class="field"><label>Patient ID</label><input type="text" placeholder="PDCL-000000" aria-label="Patient ID"></div>
+      <div class="field"><label>Mobile Number</label><input type="tel" placeholder="01XXXXXXXXX" aria-label="Mobile number"></div>
+      <a class="btn btn-primary" style="width:100%;justify-content:center" href="#appointment">View my reports</a>
+      <p class="form-note" style="margin-top:14px">Reports are protected and visible only to you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- trust band -->
+<section id="trust">
+  <div class="wrap">
+    <div class="trust">
+      <div class="wrap" style="padding:0;max-width:none">
+        <span class="eyebrow">Why patients trust Padma</span>
+        <h2>Three and a half decades of careful, reliable diagnostics</h2>
+        <p>Accurate. Innovative. Reliable. A one-stop centre built around quality control, modern instruments and consultants who read every report with care.</p>
+        <div class="tgrid">
+          <div class="tcard">
+            <div class="tnum">35+</div>
+            <h4>Years of service</h4>
+            <p>A trusted name in Dhaka diagnostics since the late 1980s.</p>
+          </div>
+          <div class="tcard">
+            <div class="tnum">QC</div>
+            <h4>Quality controlled</h4>
+            <p>Internal quality assurance on the latest laboratory and imaging instruments.</p>
+          </div>
+          <div class="tcard">
+            <div class="tnum">30+</div>
+            <h4>Corporate partners</h4>
+            <p>Banks, insurers and groups across Bangladesh rely on Padma for staff diagnostics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- packages -->
+<section id="packages" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Popular Health Packages</span>
+      <h2>Plan your checkup with confidence</h2>
+      <p>Carefully bundled tests that make routine and preventive care simple and affordable.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pname">Routine Checkup with FBS</div>
+        <div class="pdesc">A routine checkup including fasting blood sugar to screen your everyday health.</div>
+        <div class="price">2,700 <small>BDT</small></div>
+        <a class="btn pbtn" href="#appointment">Book package</a>
+      </div>
+      <div class="pkg featured">
+        <span class="ribbon">Most chosen</span>
+        <div class="pname">Major Health Checkup (Male)</div>
+        <div class="pdesc">A thorough six to twelve month checkup keeping a close eye on overall wellbeing.</div>
+        <div class="price">14,900 <small>BDT</small></div>
+        <a class="btn pbtn" href="#appointment">Book package</a>
+      </div>
+      <div class="pkg">
+        <div class="pname">Special Liver Checkup</div>
+        <div class="pdesc">Focused liver function panel to assess filtering, enzymes and overall liver health.</div>
+        <div class="price">9,000 <small>BDT</small></div>
+        <a class="btn pbtn" href="#appointment">Book package</a>
+      </div>
+      <div class="pkg">
+        <div class="pname">Routine Checkup with RBS</div>
+        <div class="pdesc">A routine checkup with random blood sugar for a quick, convenient screen.</div>
+        <div class="price">2,700 <small>BDT</small></div>
+        <a class="btn pbtn" href="#appointment">Book package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- appointment -->
+<section id="appointment" class="appt">
+  <div class="wrap appt-grid">
+    <div class="appt-info">
+      <span class="eyebrow">Book an appointment</span>
+      <h2>Reserve your test in a few simple steps</h2>
+      <p>Tell us what you need and a preferred time. Our team will confirm your appointment and guide you on any patient preparation.</p>
+      <div class="contact-line">
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <div><b><a href="tel:+8809611113355">+880 9611-113355</a></b><span>24 hour hotline</span></div>
+      </div>
+      <div class="contact-line">
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><b>245/2 New Circular Road</b><span>Malibagh, Dhaka 1217</span></div>
+      </div>
+      <div class="contact-line" style="border-bottom:1px solid var(--line)">
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><b>Sat to Thu, 7am to 11pm</b><span>Friday: 7am-12pm and 3pm-10pm</span></div>
+      </div>
+    </div>
+    <div class="form">
+      <h3>Request an appointment</h3>
+      <p class="fsub">We will call to confirm your slot.</p>
+      <form id="apptForm">
+        <div class="field"><label for="nm">Full name</label><input id="nm" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="ph">Mobile number</label><input id="ph" type="tel" placeholder="01XXXXXXXXX" required></div>
+        <div class="field"><label for="dept">Department</label>
+          <select id="dept">
+            <option>Clinical Laboratory</option>
+            <option>Radiology and Imaging</option>
+            <option>Cardiac Imaging</option>
+            <option>Gastroenterology</option>
+            <option>Clinical Neuro Physiology</option>
+            <option>Pulmonology</option>
+            <option>Urology</option>
+            <option>Fibroscan</option>
+            <option>Health Package</option>
+          </select>
+        </div>
+        <div class="field"><label for="dt">Preferred date</label><input id="dt" type="date"></div>
+        <button class="btn btn-primary" type="submit">Request appointment</button>
+        <p class="form-note">Or call the hotline at +880 9611-113355.</p>
+      </form>
+      <div class="form-ok" id="formOk">Thank you. Your request has been noted - our team will call you shortly to confirm.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark"></span>
+          <span><b style="color:#fff">Padma Diagnostic</b><span>Centre Ltd</span></span>
+        </div>
+        <p>A trusted one-stop diagnostic centre in Malibagh, Dhaka, providing accurate laboratory, radiology and imaging services for over 35 years.</p>
+        <p class="foot-tag">Accurate, innovative, reliable.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services">Clinical Laboratory</a>
+        <a href="#services">Radiology and Imaging</a>
+        <a href="#services">Cardiac Imaging</a>
+        <a href="#services">Gastroenterology</a>
+        <a href="#services">Fibroscan</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get in touch</h5>
+        <a href="tel:+8809611113355">Hotline: +880 9611-113355</a>
+        <a href="mailto:info@padma-bd.com">info@padma-bd.com</a>
+        <p>245/2 New Circular Road,<br>Malibagh, Dhaka 1217</p>
+        <p>Sat-Thu: 7am-11pm</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Padma Diagnostic Centre Ltd - Dhaka, Bangladesh - +880 9611-113355</span>
+      <span class="credit">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),mobile=document.getElementById('mobile');
+  burger.addEventListener('click',function(){
+    burger.classList.toggle('x');
+    mobile.classList.toggle('open');
+  });
+  mobile.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){burger.classList.remove('x');mobile.classList.remove('open');});
+  });
+  var form=document.getElementById('apptForm'),ok=document.getElementById('formOk');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    form.style.display='none';
+    ok.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>

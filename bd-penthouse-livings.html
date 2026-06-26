@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penthouse Livings Limited - Luxe Modern Living in Dhaka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17150f;
+  --ink2:#221f17;
+  --brass:#c2a04e;
+  --brass-lt:#d9bd76;
+  --cream:#f4eee0;
+  --cream2:#e9e0cc;
+  --muted:#8a8470;
+  --line:rgba(194,160,78,0.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  letter-spacing:.2px;
+  overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.3px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-family:'Jost',sans-serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:4px;font-size:11px;
+  color:var(--brass);
+}
+.btn{
+  display:inline-block;font-family:'Jost',sans-serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:2.5px;font-size:12px;
+  padding:15px 34px;border:1px solid var(--brass);color:var(--brass);
+  background:transparent;cursor:pointer;transition:.4s ease;position:relative;overflow:hidden;
+}
+.btn span{position:relative;z-index:2}
+.btn::before{content:"";position:absolute;inset:0;background:var(--brass);
+  transform:translateY(101%);transition:transform .4s ease;z-index:1}
+.btn:hover{color:var(--ink)}
+.btn:hover::before{transform:translateY(0)}
+.btn.solid{background:var(--brass);color:var(--ink)}
+.btn.solid::before{background:var(--cream)}
+.btn.solid:hover{color:var(--ink)}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s ease;
+  border-bottom:1px solid transparent;background:transparent}
+header.scrolled{background:rgba(18,16,11,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .mark{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;
+  letter-spacing:3px;color:var(--cream)}
+.brand .sub{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--brass);margin-top:4px}
+.menu{display:flex;gap:34px;align-items:center}
+.menu a{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--cream2);
+  position:relative;padding:4px 0;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+  background:var(--brass);transition:width .35s ease}
+.menu a:hover{color:var(--brass)}
+.menu a:hover::after{width:100%}
+.menu .navcall{border:1px solid var(--brass);padding:10px 18px;color:var(--brass)}
+.menu .navcall:hover{background:var(--brass);color:var(--ink)}
+.menu .navcall::after{display:none}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.burger span{width:26px;height:2px;background:var(--brass);display:block}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;
+  background:radial-gradient(120% 90% at 78% 12%,#2a2517 0%,#1a1710 45%,#100e0a 100%);
+  overflow:hidden}
+.hero-grain{position:absolute;inset:0;opacity:.5;
+  background-image:radial-gradient(circle at 20% 30%,rgba(194,160,78,.10),transparent 40%),
+    radial-gradient(circle at 85% 70%,rgba(194,160,78,.08),transparent 45%)}
+.hero-rings{position:absolute;right:-160px;top:50%;transform:translateY(-50%);width:760px;
+  height:760px;opacity:.5;pointer-events:none}
+.hero-inner{position:relative;z-index:3;padding-top:90px;max-width:760px}
+.hero h1{font-size:clamp(46px,8vw,104px);line-height:.98;font-weight:500;margin:18px 0 8px}
+.hero h1 em{font-style:italic;color:var(--brass);font-weight:400}
+.hero .lead{font-size:clamp(16px,2vw,19px);color:var(--cream2);max-width:540px;margin:24px 0 38px;font-weight:300}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.hero-meta{position:absolute;bottom:42px;left:28px;right:28px;z-index:3;
+  display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;
+  max-width:1124px;margin:0 auto}
+.hero-meta .mi{display:flex;flex-direction:column}
+.hero-meta .mi b{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--brass);font-weight:600;line-height:1}
+.hero-meta .mi span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+/* SVG armchair vignette in hero */
+.hero-art{position:absolute;right:4%;top:50%;transform:translateY(-50%);z-index:2;width:min(46vw,560px);opacity:.96}
+
+/* SECTION shared */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{max-width:680px;margin-bottom:54px}
+.sec-head h2{font-size:clamp(34px,5vw,58px);line-height:1.04;margin:14px 0 16px}
+.sec-head h2 em{font-style:italic;color:var(--brass)}
+.sec-head p{color:var(--cream2);font-weight:300}
+
+/* COLLECTIONS */
+.collections{background:linear-gradient(180deg,#100e0a,#171510)}
+.coll-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:linear-gradient(165deg,#211d14,#191610);border:1px solid var(--line);
+  padding:30px 28px 32px;position:relative;overflow:hidden;transition:.45s ease;cursor:default}
+.card::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--brass);transition:width .5s ease}
+.card:hover{transform:translateY(-8px);border-color:rgba(194,160,78,.6);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.card:hover::after{width:100%}
+.card .vig{height:170px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:22px}
+.card .vig svg{width:100%;height:100%}
+.card h3{font-size:27px;margin-bottom:8px}
+.card .tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+.card p{font-size:14px;color:var(--cream2)}
+.coll-note{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:13px}
+.coll-note b{color:var(--brass);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600}
+
+/* CRAFT */
+.craft{background:var(--ink)}
+.craft-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.craft-art{position:relative;aspect-ratio:1/1;border:1px solid var(--line);
+  background:radial-gradient(120% 120% at 30% 20%,#26210f,#15130d);display:flex;align-items:center;justify-content:center}
+.craft-art svg{width:78%}
+.mat-list{margin-top:26px;display:grid;gap:0}
+.mat{display:flex;gap:20px;padding:20px 0;border-top:1px solid var(--line);align-items:baseline}
+.mat:last-child{border-bottom:1px solid var(--line)}
+.mat .no{font-family:'Cormorant Garamond',serif;color:var(--brass);font-size:22px;min-width:42px}
+.mat h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:3px}
+.mat p{font-size:13.5px;color:var(--cream2)}
+
+/* LIFESTYLE */
+.life{background:linear-gradient(180deg,#171510,#0f0d09)}
+.life-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.life-tile{border:1px solid var(--line);position:relative;overflow:hidden;min-height:230px;
+  display:flex;align-items:flex-end;padding:26px;transition:.45s ease;
+  background:linear-gradient(160deg,#1d1a11,#13110c)}
+.life-tile:hover{border-color:rgba(194,160,78,.55);transform:translateY(-6px)}
+.life-tile .lt-art{position:absolute;inset:0;opacity:.5;transition:.5s}
+.life-tile:hover .lt-art{opacity:.85;transform:scale(1.04)}
+.life-tile .lt-txt{position:relative;z-index:2}
+.life-tile h3{font-size:25px}
+.life-tile span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brass)}
+.t-a{grid-column:span 7}
+.t-b{grid-column:span 5}
+.t-c{grid-column:span 5}
+.t-d{grid-column:span 7}
+
+/* QUOTE strip */
+.quote{padding:90px 0;text-align:center;background:var(--ink)}
+.quote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,4vw,42px);
+  line-height:1.3;max-width:900px;margin:0 auto;color:var(--cream)}
+.quote p em{color:var(--brass)}
+.quote .who{margin-top:26px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+
+/* SHOWROOM / CONTACT */
+.show{background:radial-gradient(120% 100% at 80% 0%,#262011,#15120c 60%);border-top:1px solid var(--line)}
+.show-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.show h2{font-size:clamp(36px,5vw,58px);line-height:1.05;margin:14px 0 18px}
+.show h2 em{font-style:italic;color:var(--brass)}
+.show p.intro{color:var(--cream2);max-width:480px;margin-bottom:30px}
+.contact-rows{display:grid;gap:2px;margin-bottom:32px}
+.crow{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.crow .ic{color:var(--brass);font-size:20px;margin-top:2px}
+.crow b{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:block;font-weight:600}
+.crow a,.crow span{font-size:16px;color:var(--cream)}
+.crow a:hover{color:var(--brass)}
+.phone-big{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);color:var(--brass);font-weight:600}
+.map{aspect-ratio:4/3.4;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#1c1810,#100e09)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .pin-label{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  background:rgba(18,16,11,.9);border:1px solid var(--brass);padding:12px 20px;text-align:center;
+  font-size:12px;letter-spacing:1px;color:var(--cream);white-space:nowrap}
+.map .pin-label b{color:var(--brass);font-family:'Cormorant Garamond',serif;font-size:15px}
+
+/* FOOTER */
+footer{background:#0c0a07;border-top:1px solid var(--line);padding:64px 0 30px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:42px;border-bottom:1px solid var(--line)}
+.foot-brand .mark{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:3px;color:var(--cream)}
+.foot-brand .sub{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--brass);margin:6px 0 16px}
+.foot-brand p{font-size:14px;color:var(--muted);max-width:300px}
+.foot-col h5{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--brass);margin-bottom:16px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:14px;color:var(--cream2);margin-bottom:10px}
+.foot-col a:hover{color:var(--brass)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12px;color:var(--muted)}
+.foot-bottom .credit{opacity:.55}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .menu{display:none}
+  .burger{display:flex}
+  .menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:rgba(14,12,8,.98);border-top:1px solid var(--line);padding:24px 28px;gap:20px}
+  .hero-art{opacity:.18;width:80vw}
+  .coll-grid{grid-template-columns:1fr}
+  .craft-grid,.show-grid{grid-template-columns:1fr;gap:38px}
+  .life-grid>div{grid-column:span 12 !important}
+  .foot-top{grid-template-columns:1fr;gap:30px}
+  .hero-meta{position:static;margin-top:40px}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="mark">PENTHOUSE</span>
+      <span class="sub">Livings Limited</span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#collections">Collections</a>
+      <a href="#craft">Craftsmanship</a>
+      <a href="#life">Interiors</a>
+      <a href="#showroom">Showroom</a>
+      <a href="tel:+8801313404804" class="navcall">+880 1313-404804</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grain"></div>
+  <svg class="hero-rings" viewBox="0 0 760 760" fill="none" aria-hidden="true">
+    <circle cx="380" cy="380" r="378" stroke="#c2a04e" stroke-opacity="0.18"/>
+    <circle cx="380" cy="380" r="300" stroke="#c2a04e" stroke-opacity="0.13"/>
+    <circle cx="380" cy="380" r="220" stroke="#c2a04e" stroke-opacity="0.10"/>
+  </svg>
+
+  <!-- Hero armchair vignette -->
+  <svg class="hero-art" viewBox="0 0 460 460" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="vel" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#3a3220"/><stop offset="1" stop-color="#1f1b11"/>
+      </linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#d9bd76"/><stop offset="1" stop-color="#9c7e34"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="230" cy="412" rx="160" ry="22" fill="#000" opacity="0.35"/>
+    <!-- wingback chair -->
+    <path d="M120 150 C120 95 150 70 230 70 C310 70 340 95 340 150 L340 300 L120 300 Z" fill="url(#vel)" stroke="#c2a04e" stroke-opacity="0.5"/>
+    <path d="M120 150 C120 110 140 92 175 88 L175 300 L120 300 Z" fill="#241f13" stroke="#c2a04e" stroke-opacity="0.35"/>
+    <path d="M340 150 C340 110 320 92 285 88 L285 300 L340 300 Z" fill="#241f13" stroke="#c2a04e" stroke-opacity="0.35"/>
+    <rect x="150" y="240" width="160" height="80" rx="14" fill="#2b2515" stroke="#c2a04e" stroke-opacity="0.4"/>
+    <path d="M155 300 L150 360 M305 300 L310 360" stroke="url(#gold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M150 195 C190 170 270 170 310 195" stroke="#c2a04e" stroke-opacity="0.45" fill="none"/>
+    <circle cx="230" cy="150" r="4" fill="#d9bd76"/>
+  </svg>
+
+  <div class="wrap hero-inner reveal">
+    <p class="eyebrow">Luxe modern living | Banani, Dhaka</p>
+    <h1>Elevate the<br><em>art of living.</em></h1>
+    <p class="lead">Bangladesh's address for the world's most coveted furniture houses. A curated sanctuary of sofas, beds, dining and interiors where global craft meets the rhythm of Dhaka living.</p>
+    <div class="hero-cta">
+      <a href="#collections" class="btn solid"><span>Explore Collections</span></a>
+      <a href="#showroom" class="btn"><span>Visit The Showroom</span></a>
+    </div>
+  </div>
+
+  <div class="hero-meta wrap reveal">
+    <div class="mi"><b>50+</b><span>Global Maisons</span></div>
+    <div class="mi"><b>Est. 2019</b><span>Banani, Dhaka</span></div>
+    <div class="mi"><b>Two Floors</b><span>Of Curated Living</span></div>
+    <div class="mi"><b>Complimentary</b><span>Interior Design</span></div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="sec collections" id="collections">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Collections</p>
+      <h2>Rooms composed like <em>compositions.</em></h2>
+      <p>Each range is hand-selected from the ateliers of Christopher Guy, Caracole, Eichholtz, Michael Aram and more, then arranged across two floors as living, breathing interiors you can step into.</p>
+    </div>
+
+    <div class="coll-grid">
+      <!-- SOFAS -->
+      <div class="card reveal">
+        <div class="vig">
+          <svg viewBox="0 0 260 170" fill="none" aria-hidden="true">
+            <ellipse cx="130" cy="150" rx="100" ry="12" fill="#000" opacity="0.3"/>
+            <rect x="30" y="70" width="200" height="56" rx="14" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.45"/>
+            <rect x="40" y="40" width="60" height="48" rx="10" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="100" y="40" width="60" height="48" rx="10" fill="#332c1a" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="160" y="40" width="60" height="48" rx="10" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="20" y="64" width="22" height="50" rx="9" fill="#241f13" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="218" y="64" width="22" height="50" rx="9" fill="#241f13" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <line x1="44" y1="126" x2="40" y2="150" stroke="#c2a04e" stroke-width="4" stroke-linecap="round"/>
+            <line x1="216" y1="126" x2="220" y2="150" stroke="#c2a04e" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="tag">Living Room</span>
+        <h3>Sofas &amp; Divans</h3>
+        <p>Sculptural seating in velvet, boucle and leather. Statement divans and modular lounges that anchor a room with quiet confidence.</p>
+      </div>
+
+      <!-- BEDS -->
+      <div class="card reveal">
+        <div class="vig">
+          <svg viewBox="0 0 260 170" fill="none" aria-hidden="true">
+            <ellipse cx="130" cy="152" rx="105" ry="11" fill="#000" opacity="0.3"/>
+            <rect x="34" y="46" width="36" height="80" rx="6" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.45"/>
+            <path d="M40 50 H64 V72 H40 Z" fill="#241f13"/>
+            <rect x="40" y="92" width="180" height="34" rx="8" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.45"/>
+            <rect x="50" y="78" width="50" height="22" rx="8" fill="#473d25"/>
+            <rect x="104" y="78" width="50" height="22" rx="8" fill="#3f3621"/>
+            <line x1="46" y1="126" x2="44" y2="146" stroke="#c2a04e" stroke-width="4" stroke-linecap="round"/>
+            <line x1="214" y1="126" x2="216" y2="146" stroke="#c2a04e" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="tag">Private Quarters</span>
+        <h3>Beds &amp; Bedroom</h3>
+        <p>Upholstered headboards, mirrored chests and dressing pieces. The bedroom reimagined as a personal suite of calm and indulgence.</p>
+      </div>
+
+      <!-- DINING -->
+      <div class="card reveal">
+        <div class="vig">
+          <svg viewBox="0 0 260 170" fill="none" aria-hidden="true">
+            <ellipse cx="130" cy="152" rx="100" ry="11" fill="#000" opacity="0.3"/>
+            <ellipse cx="130" cy="74" rx="86" ry="18" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.5"/>
+            <path d="M60 78 L66 140 M200 78 L194 140 M130 92 L130 142" stroke="#c2a04e" stroke-width="4" stroke-linecap="round"/>
+            <rect x="78" y="40" width="22" height="40" rx="6" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="160" y="40" width="22" height="40" rx="6" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <circle cx="130" cy="64" r="6" fill="#d9bd76"/>
+          </svg>
+        </div>
+        <span class="tag">Gathering</span>
+        <h3>Dining &amp; Tables</h3>
+        <p>Foldable and extending dining tables, dressed chairs and consoles built for the long Dhaka dinner and every gathering after.</p>
+      </div>
+
+      <!-- ACCENT -->
+      <div class="card reveal">
+        <div class="vig">
+          <svg viewBox="0 0 260 170" fill="none" aria-hidden="true">
+            <ellipse cx="130" cy="150" rx="70" ry="10" fill="#000" opacity="0.3"/>
+            <path d="M110 60 Q130 30 150 60 L156 110 Q130 124 104 110 Z" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.5"/>
+            <rect x="116" y="110" width="28" height="34" rx="4" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <path d="M108 96 Q130 108 152 96" stroke="#c2a04e" stroke-opacity="0.5" fill="none"/>
+            <circle cx="130" cy="50" r="5" fill="#d9bd76"/>
+          </svg>
+        </div>
+        <span class="tag">Accent</span>
+        <h3>Armchairs &amp; Seating</h3>
+        <p>Wingbacks, occasional chairs and chaises from Christopher Guy and Caracole. The finishing flourish of every elevated room.</p>
+      </div>
+
+      <!-- LIGHTING / DECOR -->
+      <div class="card reveal">
+        <div class="vig">
+          <svg viewBox="0 0 260 170" fill="none" aria-hidden="true">
+            <line x1="130" y1="10" x2="130" y2="54" stroke="#c2a04e" stroke-opacity="0.5"/>
+            <path d="M92 54 H168 L150 96 H110 Z" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.5"/>
+            <path d="M110 96 Q130 116 150 96" fill="#473d25"/>
+            <circle cx="130" cy="108" r="7" fill="#d9bd76"/>
+            <ellipse cx="130" cy="150" rx="50" ry="9" fill="#000" opacity="0.25"/>
+            <path d="M104 150 Q130 130 156 150" stroke="#c2a04e" stroke-opacity="0.4" fill="none"/>
+          </svg>
+        </div>
+        <span class="tag">Atmosphere</span>
+        <h3>Lighting &amp; Objet</h3>
+        <p>Sculptural lighting, mirrors and Michael Aram objet d'art. The details that turn furniture into a curated world.</p>
+      </div>
+
+      <!-- INTERIOR -->
+      <div class="card reveal">
+        <div class="vig">
+          <svg viewBox="0 0 260 170" fill="none" aria-hidden="true">
+            <rect x="60" y="28" width="140" height="100" rx="6" fill="none" stroke="#c2a04e" stroke-opacity="0.45"/>
+            <path d="M76 128 L76 70 L120 70 L120 128" stroke="#c2a04e" stroke-opacity="0.4" fill="#2c2615"/>
+            <path d="M140 128 L140 56 L184 56 L184 128" stroke="#c2a04e" stroke-opacity="0.4" fill="#332c1a"/>
+            <circle cx="98" cy="50" r="6" fill="#d9bd76"/>
+            <ellipse cx="130" cy="150" rx="80" ry="9" fill="#000" opacity="0.25"/>
+          </svg>
+        </div>
+        <span class="tag">Bespoke Service</span>
+        <h3>Interior Design</h3>
+        <p>Complimentary interior design with every project. Our consultants compose whole residences, room by room, in your style.</p>
+      </div>
+    </div>
+
+    <div class="coll-note reveal">
+      <b>Featured houses:</b>
+      <span>Christopher Guy | Caracole | Eichholtz | Jonathan Adler | Michael Aram | Cornelio Cappellini</span>
+    </div>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section class="sec craft" id="craft">
+  <div class="wrap craft-grid">
+    <div class="reveal">
+      <div class="craft-art">
+        <svg viewBox="0 0 360 360" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d9bd76"/><stop offset="1" stop-color="#8e7230"/>
+            </linearGradient>
+          </defs>
+          <circle cx="180" cy="180" r="150" stroke="#c2a04e" stroke-opacity="0.3"/>
+          <circle cx="180" cy="180" r="110" stroke="#c2a04e" stroke-opacity="0.22"/>
+          <!-- chair silhouette -->
+          <path d="M120 120 C120 96 138 84 180 84 C222 84 240 96 240 120 L240 210 L120 210 Z" fill="#241f13" stroke="url(#g2)"/>
+          <rect x="138" y="178" width="84" height="48" rx="10" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.5"/>
+          <path d="M138 226 L132 270 M222 226 L228 270" stroke="url(#g2)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M140 150 Q180 132 220 150" stroke="#c2a04e" stroke-opacity="0.6" fill="none"/>
+          <circle cx="180" cy="120" r="5" fill="#d9bd76"/>
+        </svg>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Craftsmanship &amp; Materials</p>
+      <h2 style="font-size:clamp(32px,4.5vw,52px);line-height:1.05;margin:14px 0 14px" class="serif">Made to be <em style="color:var(--brass);font-style:italic">lived with</em> for generations.</h2>
+      <p style="color:var(--cream2)">We do not sell furniture by the piece. We curate houses whose obsession with material, joinery and finish has endured for decades. Every line on our floor is chosen for how it feels under the hand and how it ages in the light.</p>
+      <div class="mat-list">
+        <div class="mat"><span class="no">01</span><div><h4>Hand-finished timber &amp; veneer</h4><p>Solid hardwood frames and book-matched veneers, finished by hand for depth no machine can imitate.</p></div></div>
+        <div class="mat"><span class="no">02</span><div><h4>Velvet, boucle &amp; full-grain leather</h4><p>Upholstery in performance velvets, textured boucle and aniline leathers selected for both feel and longevity.</p></div></div>
+        <div class="mat"><span class="no">03</span><div><h4>Brass, marble &amp; mirror</h4><p>Polished brass detailing, honed stone tops and antiqued mirror that catch and hold the light.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="wrap reveal">
+    <p>"A home is the most personal portrait we ever compose. <em>We simply help you sign it</em> with the finest furniture in the world."</p>
+    <div class="who">Penthouse Livings | Banani, Dhaka</div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="sec life" id="life">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Lifestyle &amp; Interiors</p>
+      <h2>Living rooms that feel like <em>destinations.</em></h2>
+      <p>Step onto two floors styled as complete interiors. The ground floor opens with sofas, beds and dining; the upper floor is a Christopher Guy salon of pure design. Walk in, sit down, imagine home.</p>
+    </div>
+    <div class="life-grid">
+      <div class="life-tile t-a reveal">
+        <div class="lt-art">
+          <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+            <rect width="600" height="240" fill="#191610"/>
+            <rect x="60" y="120" width="240" height="70" rx="14" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="70" y="86" width="70" height="50" rx="8" fill="#3a3220"/>
+            <rect x="220" y="86" width="70" height="50" rx="8" fill="#332c1a"/>
+            <circle cx="430" cy="70" r="6" fill="#d9bd76"/>
+            <line x1="430" y1="20" x2="430" y2="64" stroke="#c2a04e" stroke-opacity="0.5"/>
+            <path d="M400 76 H460 L444 110 H416 Z" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <ellipse cx="490" cy="170" rx="60" ry="40" fill="none" stroke="#c2a04e" stroke-opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="lt-txt"><span>Ground Floor</span><h3 class="serif">The Living Gallery</h3></div>
+      </div>
+      <div class="life-tile t-b reveal">
+        <div class="lt-art">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+            <rect width="400" height="240" fill="#15130d"/>
+            <rect x="120" y="120" width="160" height="40" rx="8" fill="#2c2615" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <rect x="110" y="60" width="44" height="64" rx="6" fill="#3a3220"/>
+            <rect x="130" y="100" width="44" height="24" rx="6" fill="#473d25"/>
+            <circle cx="320" cy="80" r="5" fill="#d9bd76"/>
+          </svg>
+        </div>
+        <div class="lt-txt"><span>Private Quarters</span><h3 class="serif">Bedroom Suites</h3></div>
+      </div>
+      <div class="life-tile t-c reveal">
+        <div class="lt-art">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+            <rect width="400" height="240" fill="#191610"/>
+            <ellipse cx="200" cy="120" rx="130" ry="26" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.4"/>
+            <line x1="120" y1="124" x2="130" y2="190" stroke="#c2a04e" stroke-width="5"/>
+            <line x1="280" y1="124" x2="270" y2="190" stroke="#c2a04e" stroke-width="5"/>
+            <circle cx="200" cy="100" r="6" fill="#d9bd76"/>
+          </svg>
+        </div>
+        <div class="lt-txt"><span>Gathering</span><h3 class="serif">Dining Salon</h3></div>
+      </div>
+      <div class="life-tile t-d reveal">
+        <div class="lt-art">
+          <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+            <rect width="600" height="240" fill="#15130d"/>
+            <path d="M180 120 C180 96 200 84 260 84 C320 84 340 96 340 120 L340 190 L180 190 Z" fill="#241f13" stroke="#c2a04e" stroke-opacity="0.5"/>
+            <rect x="200" y="158" width="120" height="40" rx="10" fill="#2c2615"/>
+            <circle cx="450" cy="80" r="6" fill="#d9bd76"/>
+            <path d="M420 90 H480 L464 124 H436 Z" fill="#3a3220" stroke="#c2a04e" stroke-opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="lt-txt"><span>Upper Floor</span><h3 class="serif">The Christopher Guy Salon</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOM / CONTACT -->
+<section class="sec show" id="showroom">
+  <div class="wrap show-grid">
+    <div class="reveal">
+      <p class="eyebrow">An Invitation</p>
+      <h2 class="serif">Visit the <em>showroom</em> in Banani.</h2>
+      <p class="intro">Step into Dhaka's most considered furniture experience. Two floors of curated living, a complimentary cup of coffee, and a design consultant ready to compose your next room. Walk-ins welcome; appointments cherished.</p>
+
+      <div class="contact-rows">
+        <div class="crow">
+          <span class="ic">&#9788;</span>
+          <div><b>Showroom</b><span>Suvastu Suraiya Trade Center, 57 Kemal Ataturk Avenue, Block B, Banani, Dhaka 1213</span></div>
+        </div>
+        <div class="crow">
+          <span class="ic">&#9742;</span>
+          <div><b>Call or WhatsApp</b><a href="tel:+8801313404804" class="phone-big">+880 1313-404804</a></div>
+        </div>
+        <div class="crow">
+          <span class="ic">&#9993;</span>
+          <div><b>Email</b><a href="mailto:info@penthouselivings.com">info@penthouselivings.com</a></div>
+        </div>
+        <div class="crow">
+          <span class="ic">&#9201;</span>
+          <div><b>Opening Hours</b><span>Saturday to Thursday, 10:00 - 20:00 | Friday by appointment</span></div>
+        </div>
+      </div>
+
+      <a href="tel:+8801313404804" class="btn solid"><span>Book A Private Viewing</span></a>
+    </div>
+
+    <div class="reveal">
+      <div class="map">
+        <svg viewBox="0 0 400 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="360" fill="#131009"/>
+          <path d="M0 120 H400 M0 240 H400 M120 0 V360 M270 0 V360" stroke="#c2a04e" stroke-opacity="0.16" stroke-width="2"/>
+          <path d="M-20 40 L420 220" stroke="#c2a04e" stroke-opacity="0.22" stroke-width="6"/>
+          <path d="M60 -20 L320 380" stroke="#c2a04e" stroke-opacity="0.14" stroke-width="3"/>
+          <rect x="30" y="40" width="60" height="50" fill="#1d1a11" stroke="#c2a04e" stroke-opacity="0.15"/>
+          <rect x="300" y="260" width="70" height="60" fill="#1d1a11" stroke="#c2a04e" stroke-opacity="0.15"/>
+          <rect x="150" y="150" width="80" height="70" fill="#26210f" stroke="#c2a04e" stroke-opacity="0.4"/>
+          <circle cx="200" cy="160" r="34" fill="none" stroke="#c2a04e" stroke-opacity="0.5"/>
+          <circle cx="200" cy="160" r="9" fill="#d9bd76"/>
+          <path d="M200 169 L200 196" stroke="#d9bd76" stroke-width="3"/>
+        </svg>
+        <div class="pin-label"><b>Penthouse Livings</b><br>Kemal Ataturk Ave, Banani</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="mark">PENTHOUSE</div>
+        <div class="sub">Livings Limited</div>
+        <p>Bangladesh's home for the world's finest furniture. Luxe modern living, curated across two floors in Banani, Dhaka.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#collections">Collections</a>
+        <a href="#craft">Craftsmanship</a>
+        <a href="#life">Interiors</a>
+        <a href="#showroom">Showroom</a>
+      </div>
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <p>57 Kemal Ataturk Avenue<br>Block B, Banani, Dhaka 1213</p>
+        <a href="tel:+8801313404804">+880 1313-404804</a>
+        <a href="mailto:info@penthouselivings.com">info@penthouselivings.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Penthouse Livings Limited | Dhaka, Bangladesh | +880 1313-404804</span>
+      <span class="credit">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>40){hdr.classList.add('scrolled');}else{hdr.classList.remove('scrolled');}
+  });
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

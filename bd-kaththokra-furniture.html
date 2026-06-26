@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaththokra Studio - Hand-Crafted Wood Furniture, Dhaka</title>
+<meta name="description" content="Kaththokra Studio is a maker-led woodcraft studio in Dhaka. Since 2016 we have hand-built sofas, chairs, tables and signature pieces from honest wood. Commission a piece made for your home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wood:#6b4a2e;
+    --wood-deep:#4a3019;
+    --honey:#c98a3f;
+    --amber:#e0a44f;
+    --cream:#f4ece0;
+    --cream-2:#ece0cf;
+    --paper:#faf5ec;
+    --ink:#241a12;
+    --ink-soft:#4a3c2f;
+    --grain:#3a281a;
+    --line:rgba(74,48,25,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--honey);display:inline-block;margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";display:inline-block;width:26px;height:1px;background:var(--honey);vertical-align:middle;margin-right:12px}
+
+  /* grain texture overlay */
+  .grain{
+    background-image:repeating-linear-gradient(92deg,rgba(58,40,26,.05) 0px,rgba(58,40,26,.05) 1px,transparent 1px,transparent 7px),
+                     repeating-linear-gradient(88deg,rgba(58,40,26,.03) 0px,rgba(58,40,26,.03) 1px,transparent 1px,transparent 11px);
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(250,245,236,.82);backdrop-filter:blur(9px);
+    border-bottom:1px solid transparent;transition:.4s;
+  }
+  header.scrolled{border-bottom:1px solid var(--line);box-shadow:0 6px 26px rgba(74,48,25,.07)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:var(--wood-deep)}
+  .brand .pecker{width:30px;height:30px;flex:none}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a{font-size:14px;font-weight:500;color:var(--ink-soft);position:relative;padding:4px 0;transition:.25s}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--honey);transition:.3s}
+  .navlinks a:hover{color:var(--wood-deep)}
+  .navlinks a:hover::after{width:100%}
+  .callbtn{
+    background:var(--wood);color:var(--cream);padding:10px 19px;border-radius:30px;font-size:13.5px;
+    font-weight:600;transition:.3s;border:1px solid var(--wood);
+  }
+  .callbtn:hover{background:var(--wood-deep);transform:translateY(-2px);box-shadow:0 8px 20px rgba(74,48,25,.25)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--wood-deep);border-radius:2px;transition:.3s}
+  .mobnav{display:none;flex-direction:column;gap:4px;padding:8px 26px 22px;background:var(--paper);border-bottom:1px solid var(--line)}
+  .mobnav a{padding:11px 0;font-weight:500;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;padding:148px 0 90px;
+    background:
+      radial-gradient(1100px 540px at 78% -8%,rgba(201,138,63,.20),transparent 60%),
+      linear-gradient(170deg,#f7efe3 0%,#efe2cf 100%);
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:9px;background:rgba(107,74,46,.08);
+    border:1px solid var(--line);border-radius:30px;padding:7px 15px;font-size:12.5px;
+    font-weight:600;color:var(--wood);margin-bottom:26px;
+  }
+  .hero h1{font-size:clamp(2.7rem,6.2vw,4.5rem);color:var(--ink);margin-bottom:22px}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--honey);position:relative}
+  .hero p.lead{font-size:18px;color:var(--ink-soft);max-width:480px;margin-bottom:34px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn-primary{
+    background:var(--wood);color:var(--cream);padding:15px 30px;border-radius:32px;font-weight:600;font-size:15px;
+    transition:.3s;border:1px solid var(--wood);display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn-primary:hover{background:var(--wood-deep);transform:translateY(-2px);box-shadow:0 12px 28px rgba(74,48,25,.28)}
+  .btn-ghost{
+    padding:15px 26px;border-radius:32px;font-weight:600;font-size:15px;border:1px solid var(--wood);
+    color:var(--wood-deep);transition:.3s;
+  }
+  .btn-ghost:hover{background:var(--wood);color:var(--cream)}
+  .hero-meta{display:flex;gap:34px;margin-top:42px;flex-wrap:wrap}
+  .hero-meta .m b{font-family:'Fraunces',serif;font-size:30px;color:var(--wood-deep);display:block}
+  .hero-meta .m span{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+
+  /* hero illustration - workbench */
+  .hero-art{position:relative}
+  .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(74,48,25,.20))}
+  .float-card{
+    position:absolute;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:13px 17px;box-shadow:0 16px 36px rgba(74,48,25,.16);display:flex;align-items:center;gap:11px;
+  }
+  .float-card .dot{width:34px;height:34px;border-radius:9px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;flex:none}
+  .float-card b{font-family:'Fraunces',serif;font-size:14px;color:var(--wood-deep);display:block;line-height:1.2}
+  .float-card span{font-size:11px;color:var(--ink-soft)}
+  .fc1{top:8%;left:-14px;animation:bob 5s ease-in-out infinite}
+  .fc2{bottom:9%;right:-10px;animation:bob 6s ease-in-out infinite .8s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{background:var(--wood-deep);color:var(--cream);overflow:hidden;padding:15px 0;border-top:3px solid var(--honey)}
+  .strip-track{display:flex;gap:46px;white-space:nowrap;animation:slide 26s linear infinite;width:max-content}
+  .strip-track span{font-family:'Fraunces',serif;font-size:18px;font-style:italic;opacity:.92;display:flex;align-items:center;gap:46px}
+  .strip-track span::after{content:"\25C8";color:var(--honey);font-style:normal}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section.pad{padding:96px 0}
+  .sec-head{max-width:680px;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(2rem,4.2vw,3rem);color:var(--ink);margin-bottom:16px}
+  .sec-head p{font-size:17px;color:var(--ink-soft)}
+
+  /* ---------- MADE BY HAND ---------- */
+  .craft{background:var(--cream)}
+  .craft-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .craft-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px 24px;transition:.35s;position:relative;overflow:hidden;
+  }
+  .craft-card::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--honey);transform:scaleX(0);transform-origin:left;transition:.4s}
+  .craft-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(74,48,25,.13);border-color:transparent}
+  .craft-card:hover::before{transform:scaleX(1)}
+  .craft-ico{width:52px;height:52px;border-radius:13px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .craft-ico svg{width:28px;height:28px}
+  .craft-card h3{font-size:19px;color:var(--wood-deep);margin-bottom:10px}
+  .craft-card p{font-size:14.5px;color:var(--ink-soft)}
+  .craft-num{position:absolute;top:18px;right:22px;font-family:'Fraunces',serif;font-size:15px;color:var(--line)}
+
+  /* ---------- PORTFOLIO ---------- */
+  .folio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .piece{
+    background:var(--cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.4s;cursor:pointer;
+  }
+  .piece:hover{transform:translateY(-7px);box-shadow:0 26px 50px rgba(74,48,25,.16)}
+  .piece-art{
+    aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#efe3d1,#e4d3bb);
+  }
+  .piece:nth-child(2) .piece-art{background:linear-gradient(160deg,#ecdcc4,#dcc6a6)}
+  .piece:nth-child(3) .piece-art{background:linear-gradient(160deg,#f0e6d6,#e2d0b5)}
+  .piece:nth-child(4) .piece-art{background:linear-gradient(160deg,#e9dac2,#d8c3a2)}
+  .piece:nth-child(5) .piece-art{background:linear-gradient(160deg,#f1e7d7,#e3d2b8)}
+  .piece:nth-child(6) .piece-art{background:linear-gradient(160deg,#ecdfc9,#dcc9aa)}
+  .piece-art svg{width:78%;height:78%;transition:.5s}
+  .piece:hover .piece-art svg{transform:scale(1.06) rotate(-1deg)}
+  .piece-body{padding:22px 24px}
+  .piece-body .tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--honey)}
+  .piece-body h3{font-size:21px;color:var(--wood-deep);margin:7px 0 8px}
+  .piece-body p{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
+  .piece-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:13px}
+  .piece-foot .price{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:17px}
+  .piece-foot .arrow{font-size:13px;font-weight:600;color:var(--wood);transition:.3s}
+  .piece:hover .piece-foot .arrow{transform:translateX(5px)}
+
+  /* ---------- MATERIALS ---------- */
+  .mat{background:linear-gradient(165deg,#352414,#241a12);color:var(--cream)}
+  .mat .eyebrow{color:var(--amber)}
+  .mat .eyebrow::before{background:var(--amber)}
+  .mat-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .mat h2{color:var(--cream);font-size:clamp(2rem,4vw,2.9rem);margin-bottom:18px}
+  .mat p.intro{color:rgba(244,236,224,.78);font-size:17px;margin-bottom:32px}
+  .wood-list{display:flex;flex-direction:column;gap:6px}
+  .wood-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(244,236,224,.13);transition:.3s}
+  .wood-row:hover{padding-left:8px}
+  .swatch{width:54px;height:54px;border-radius:11px;flex:none;border:2px solid rgba(244,236,224,.22);position:relative;overflow:hidden}
+  .swatch::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(96deg,rgba(0,0,0,.13) 0,rgba(0,0,0,.13) 1px,transparent 1px,transparent 6px)}
+  .sw1{background:#8a5a32}.sw2{background:#3f2a18}.sw3{background:#c9a36b}.sw4{background:#6b4a2e}
+  .wood-row b{font-family:'Fraunces',serif;font-size:18px;display:block}
+  .wood-row span{font-size:13.5px;color:rgba(244,236,224,.65)}
+  .mat-panel{
+    background:rgba(244,236,224,.06);border:1px solid rgba(244,236,224,.16);border-radius:20px;padding:38px 34px;
+  }
+  .mat-panel h3{color:var(--amber);font-size:22px;margin-bottom:18px}
+  .mat-panel ul{list-style:none;display:flex;flex-direction:column;gap:15px}
+  .mat-panel li{display:flex;gap:13px;font-size:15px;color:rgba(244,236,224,.86)}
+  .mat-panel li svg{width:21px;height:21px;flex:none;margin-top:2px}
+
+  /* ---------- COMMISSION ---------- */
+  .comm{background:var(--cream)}
+  .comm-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center}
+  .steps{display:flex;flex-direction:column;gap:26px;margin-top:28px}
+  .step{display:flex;gap:20px}
+  .step-no{
+    width:46px;height:46px;border-radius:50%;flex:none;background:var(--wood);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:19px;font-weight:600;
+  }
+  .step h4{font-size:18px;color:var(--wood-deep);margin-bottom:5px}
+  .step p{font-size:14.5px;color:var(--ink-soft)}
+  .comm-form{
+    background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:36px 34px;box-shadow:0 20px 46px rgba(74,48,25,.1);
+  }
+  .comm-form h3{font-size:24px;color:var(--wood-deep);margin-bottom:6px}
+  .comm-form p.sub{font-size:14px;color:var(--ink-soft);margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;letter-spacing:.03em}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--cream);
+    font-family:inherit;font-size:14.5px;color:var(--ink);transition:.25s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--honey);box-shadow:0 0 0 3px rgba(201,138,63,.15);background:#fff}
+  .field textarea{resize:vertical;min-height:84px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;text-align:center}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:
+      radial-gradient(900px 460px at 15% 0%,rgba(201,138,63,.16),transparent 60%),
+      linear-gradient(170deg,#efe2cf,#e6d6bf);
+  }
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .contact h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--ink);margin-bottom:18px}
+  .contact h2 em{font-style:italic;color:var(--honey);font-weight:500}
+  .contact p.lead{font-size:17px;color:var(--ink-soft);max-width:430px;margin-bottom:30px}
+  .ci-list{display:flex;flex-direction:column;gap:18px}
+  .ci{display:flex;gap:16px;align-items:center}
+  .ci-ic{width:50px;height:50px;border-radius:13px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+  .ci-ic svg{width:23px;height:23px}
+  .ci b{display:block;font-family:'Fraunces',serif;font-size:18px;color:var(--wood-deep)}
+  .ci span{font-size:14px;color:var(--ink-soft)}
+  .ci a{color:var(--ink-soft);transition:.25s}
+  .ci a:hover{color:var(--wood)}
+  .phone-card{
+    background:var(--wood-deep);color:var(--cream);border-radius:24px;padding:46px 40px;text-align:center;position:relative;overflow:hidden;
+    box-shadow:0 26px 56px rgba(74,48,25,.3);
+  }
+  .phone-card .pecker{width:48px;height:48px;margin:0 auto 20px;display:block}
+  .phone-card h3{font-size:25px;color:var(--cream);margin-bottom:10px}
+  .phone-card p{color:rgba(244,236,224,.78);font-size:15px;margin-bottom:26px}
+  .phone-big{
+    display:inline-flex;align-items:center;gap:12px;background:var(--honey);color:var(--ink);
+    padding:16px 30px;border-radius:34px;font-family:'Fraunces',serif;font-size:22px;font-weight:600;transition:.3s;
+  }
+  .phone-big:hover{background:var(--amber);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+  .phone-card .hours{margin-top:22px;font-size:13px;color:rgba(244,236,224,.6)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:rgba(244,236,224,.72);padding:64px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:46px}
+  .foot-brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:22px;color:var(--cream);margin-bottom:16px}
+  .foot-brand .pecker{width:32px;height:32px}
+  .foot-col p{font-size:14px;max-width:300px}
+  .foot-col h4{font-family:'Inter',sans-serif;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--honey);margin-bottom:16px;font-weight:600}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{font-size:14px;transition:.25s}
+  .foot-col a:hover{color:var(--amber)}
+  .foot-bot{border-top:1px solid rgba(244,236,224,.13);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+  .foot-bot .credit{color:rgba(244,236,224,.4)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:920px){
+    .hero-grid,.mat-grid,.comm-grid,.contact-grid{grid-template-columns:1fr;gap:42px}
+    .craft-grid{grid-template-columns:1fr 1fr}
+    .folio-grid{grid-template-columns:1fr 1fr}
+    .hero-art{max-width:480px;margin:0 auto}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .navlinks{display:none}
+    .burger{display:flex}
+    .craft-grid,.folio-grid,.form-row,.foot-grid{grid-template-columns:1fr}
+    .hero-meta{gap:24px}
+    section.pad{padding:70px 0}
+    .float-card{display:none}
+  }
+</style>
+</head>
+<body class="grain">
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <svg class="pecker" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M40 12c-9 0-16 6.5-16 16 0 4.5-2 7-6 9-3 1.5-5 4-5 7 0 5 5 9 12 9 11 0 21-8 21-21V24l8-4-8-3c0-3-2-5-6-5z" fill="#6b4a2e"/>
+        <path d="M40 12c-2 0-4 .4-5.7 1.1C37 14 39 17 39 21v9c0 11-8 18-17 18-1.4 0-2.7-.1-3.9-.4 2.3 1.5 5.4 2.4 9 2.4 11 0 21-8 21-21V24l8-4-8-3c0-3-2-5-6-5z" fill="#4a3019"/>
+        <circle cx="36" cy="25" r="2.4" fill="#faf5ec"/>
+        <path d="M9 44c-3 1.5-5 4-5 7 0 1.4.4 2.6 1.1 3.7C6 51 9 48 13 46c-1.6-.7-2.9-1.3-4-2z" fill="#c98a3f"/>
+      </svg>
+      Kaththokra <span style="font-weight:400;font-size:14px;color:var(--honey);align-self:flex-end;margin-bottom:3px">Studio</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#craft">Our Craft</a>
+      <a href="#folio">Signature Pieces</a>
+      <a href="#wood">Wood &amp; Materials</a>
+      <a href="#commission">Commission</a>
+      <a href="#contact" class="callbtn">Visit the Studio</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobnav" id="mobnav">
+    <a href="#craft">Our Craft</a>
+    <a href="#folio">Signature Pieces</a>
+    <a href="#wood">Wood &amp; Materials</a>
+    <a href="#commission">Commission a Piece</a>
+    <a href="#contact">Visit the Studio</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="hero-tag">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.5L21 9l-5 4.3L17.5 21 12 17.2 6.5 21 8 13.3 3 9l6.6-.5z" fill="#c98a3f"/></svg>
+        Maker-led studio in Dhaka since 2016
+      </span>
+      <h1>Furniture built <em>by hand,</em> grain by grain.</h1>
+      <p class="lead">Kaththokra means woodpecker, the patient bird that knows wood by ear. We carry that name into every joint we cut. No assembly lines, just makers, honest timber, and pieces shaped for the way you actually live.</p>
+      <div class="hero-cta">
+        <a href="#commission" class="btn-primary">
+          Commission a piece
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#f4ece0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#folio" class="btn-ghost">See our work</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m"><b>9 yrs</b><span>Of hand-built work</span></div>
+        <div class="m"><b>140+</b><span>Pieces in studio</span></div>
+        <div class="m"><b>100%</b><span>Made-to-order</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <!-- workbench + chair illustration -->
+      <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hand-crafted lounge chair on a maker's workbench">
+        <defs>
+          <linearGradient id="wood1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8a5a32"/><stop offset="1" stop-color="#6b4a2e"/>
+          </linearGradient>
+          <linearGradient id="wood2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7a4f2c"/><stop offset="1" stop-color="#5a3c22"/>
+          </linearGradient>
+          <linearGradient id="seat" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d8a45c"/><stop offset="1" stop-color="#c98a3f"/>
+          </linearGradient>
+        </defs>
+        <!-- backdrop panel -->
+        <rect x="20" y="20" width="420" height="300" rx="18" fill="#f3e8d6"/>
+        <rect x="20" y="20" width="420" height="300" rx="18" fill="none" stroke="#d9c3a3" stroke-width="2"/>
+        <!-- wood grain lines on panel -->
+        <path d="M40 70c80-14 300-14 380 0M40 110c80-12 300-12 380 0M40 250c80 10 300 10 380 0" stroke="#e3cfae" stroke-width="2" fill="none" opacity=".7"/>
+        <!-- lounge chair -->
+        <!-- back legs -->
+        <rect x="150" y="120" width="13" height="180" rx="5" fill="url(#wood2)" transform="rotate(6 156 210)"/>
+        <!-- backrest -->
+        <path d="M158 122c0-10 8-16 20-16h70c12 0 20 7 20 17v60c0 9-8 16-18 16h-74c-10 0-18-7-18-16z" fill="url(#wood1)"/>
+        <path d="M176 124h66M176 140h66M176 156h66M176 172h66" stroke="#5a3c22" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+        <!-- seat cushion -->
+        <path d="M150 205c0-10 8-17 19-17h120c11 0 19 8 19 18 0 7-4 13-11 16l-12 5H172l-12-5c-6-3-10-9-10-17z" fill="url(#seat)"/>
+        <path d="M168 196c8 8 116 8 124 0" stroke="#a86d2b" stroke-width="2.5" fill="none" opacity=".5"/>
+        <!-- arm -->
+        <rect x="282" y="150" width="14" height="60" rx="6" fill="url(#wood2)"/>
+        <path d="M270 150h36c6 0 10 4 10 9s-4 9-10 9h-36z" fill="url(#wood1)"/>
+        <!-- front legs -->
+        <rect x="170" y="232" width="14" height="78" rx="6" fill="url(#wood1)"/>
+        <rect x="278" y="232" width="14" height="78" rx="6" fill="url(#wood1)"/>
+        <!-- workbench top -->
+        <rect x="10" y="318" width="440" height="26" rx="8" fill="#5a3c22"/>
+        <rect x="10" y="318" width="440" height="9" rx="4" fill="#6b4a2e"/>
+        <!-- bench legs -->
+        <rect x="44" y="344" width="20" height="58" rx="4" fill="#4a3019"/>
+        <rect x="396" y="344" width="20" height="58" rx="4" fill="#4a3019"/>
+        <!-- chisel + shavings -->
+        <rect x="60" y="300" width="58" height="9" rx="4" fill="#3a281a" transform="rotate(-8 89 304)"/>
+        <rect x="104" y="298" width="20" height="13" rx="3" fill="#c0c0c0" transform="rotate(-8 114 304)"/>
+        <path d="M340 312c10-6 18-2 22 4-8 2-16 1-22-4z" fill="#e3cfae"/>
+        <path d="M360 308c10-4 18 1 21 7-8 1-16-1-21-7z" fill="#d9c3a3"/>
+      </svg>
+      <div class="float-card fc1">
+        <div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4z" fill="#6b4a2e"/><path d="M4 7v10l8 4V11z" fill="#8a5a32"/><path d="M20 7v10l-8 4V11z" fill="#5a3c22"/></svg></div>
+        <div><b>Solid timber</b><span>No veneer shortcuts</span></div>
+      </div>
+      <div class="float-card fc2">
+        <div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.5L21 9l-5 4.3L17.5 21 12 17.2 6.5 21 8 13.3 3 9l6.6-.5z" fill="#c98a3f"/></svg></div>
+        <div><b>Hand-finished</b><span>Oiled, never sprayed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="strip">
+  <div class="strip-track">
+    <span>Hand-cut joinery<span>Honest timber</span><span>Made to order</span><span>Oil-rubbed finish</span><span>One studio, one bench</span><span>Built to outlive trends</span></span>
+    <span>Hand-cut joinery<span>Honest timber</span><span>Made to order</span><span>Oil-rubbed finish</span><span>One studio, one bench</span><span>Built to outlive trends</span></span>
+  </div>
+</div>
+
+<!-- MADE BY HAND -->
+<section class="pad craft" id="craft">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Made by hand</span>
+      <h2>A bird that listens to wood. A studio that does the same.</h2>
+      <p>Since 2016 we have grown from a single bench into a small studio of makers in Dhaka. We still cut, fit and finish each piece by hand, the slow way, because that is the only way to make furniture that feels alive in a room.</p>
+    </div>
+    <div class="craft-grid">
+      <div class="craft-card">
+        <span class="craft-num">01</span>
+        <div class="craft-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21l4-1 11-11-3-3L4 17z" fill="#6b4a2e"/><path d="M14 7l3 3 2-2a2 2 0 000-3l0 0a2 2 0 00-3 0z" fill="#c98a3f"/></svg></div>
+        <h3>Drawn before it is cut</h3>
+        <p>Every piece starts as a sketch and a full-scale story board, sized to your room and the way you sit, eat and rest.</p>
+      </div>
+      <div class="craft-card">
+        <span class="craft-num">02</span>
+        <div class="craft-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="18" height="5" rx="2" fill="#6b4a2e"/><path d="M5 10V7a2 2 0 012-2h2v5M15 10V5h2a2 2 0 012 2v3" fill="#c98a3f"/></svg></div>
+        <h3>Joined, not just glued</h3>
+        <p>Mortise and tenon, dowel and dovetail. We choose joints that hold for decades, then reinforce by hand.</p>
+      </div>
+      <div class="craft-card">
+        <span class="craft-num">03</span>
+        <div class="craft-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14c4-3 12-3 16 0v3c-4 3-12 3-16 0z" fill="#c98a3f"/><path d="M6 10l3-6h6l3 6z" fill="#6b4a2e"/></svg></div>
+        <h3>Upholstered in-house</h3>
+        <p>Our sofas and lounge chairs are cushioned and stitched on site so the comfort matches the frame underneath.</p>
+      </div>
+      <div class="craft-card">
+        <span class="craft-num">04</span>
+        <div class="craft-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#6b4a2e"/><path d="M12 6v6l4 2" stroke="#f4ece0" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Oiled, then rested</h3>
+        <p>We finish with rubbed oils that deepen the grain, then let each piece rest before it ever leaves the studio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="pad" id="folio">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Signature pieces</span>
+      <h2>Work that has carried our name across Dhaka.</h2>
+      <p>A few of the pieces our makers are known for. Each is built to order, so the wood, finish and dimensions can be shaped to your home.</p>
+    </div>
+    <div class="folio-grid">
+
+      <div class="piece">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 150" fill="none"><rect x="34" y="60" width="132" height="46" rx="14" fill="#c98a3f"/><rect x="30" y="44" width="40" height="50" rx="12" fill="#d8a45c"/><rect x="130" y="44" width="40" height="50" rx="12" fill="#d8a45c"/><rect x="44" y="100" width="11" height="26" rx="4" fill="#6b4a2e"/><rect x="145" y="100" width="11" height="26" rx="4" fill="#6b4a2e"/><path d="M70 70h60" stroke="#a86d2b" stroke-width="3" stroke-linecap="round" opacity=".5"/></svg>
+        </div>
+        <div class="piece-body">
+          <span class="tag">Sofas &amp; Upholstery</span>
+          <h3>Plush Perch (Armon Couch)</h3>
+          <p>Our flagship couch. A deep, hand-stitched seat on a solid hardwood frame, named for the perch a woodpecker earns.</p>
+          <div class="piece-foot"><span class="price">89,000 BDT</span><span class="arrow">Made to order &rarr;</span></div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 150" fill="none"><path d="M70 40h60c8 0 12 5 12 12v34c0 6-5 10-11 10H69c-6 0-11-4-11-10V52c0-7 4-12 12-12z" fill="#8a5a32"/><path d="M78 46h44M78 60h44M78 74h44" stroke="#5a3c22" stroke-width="3" stroke-linecap="round" opacity=".55"/><rect x="64" y="96" width="11" height="30" rx="4" fill="#6b4a2e"/><rect x="125" y="96" width="11" height="30" rx="4" fill="#6b4a2e"/><rect x="76" y="88" width="48" height="12" rx="5" fill="#c98a3f"/></svg>
+        </div>
+        <div class="piece-body">
+          <span class="tag">Designer Furniture</span>
+          <h3>Magpie Wood Chair</h3>
+          <p>A sculpted lounge chair with a slatted back, cut from a single run of timber so the grain flows unbroken.</p>
+          <div class="piece-foot"><span class="price">49,500 BDT</span><span class="arrow">Made to order &rarr;</span></div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 150" fill="none"><rect x="40" y="58" width="120" height="13" rx="5" fill="#8a5a32"/><rect x="48" y="71" width="11" height="48" rx="4" fill="#6b4a2e"/><rect x="141" y="71" width="11" height="48" rx="4" fill="#6b4a2e"/><rect x="62" y="92" width="76" height="8" rx="3" fill="#5a3c22"/><ellipse cx="100" cy="56" rx="50" ry="7" fill="#c98a3f"/></svg>
+        </div>
+        <div class="piece-body">
+          <span class="tag">Tables</span>
+          <h3>Studio Dining Table</h3>
+          <p>A broad hardwood top on hand-shaped legs, finished to show every ring. Sized for the family that gathers.</p>
+          <div class="piece-foot"><span class="price">From 62,000 BDT</span><span class="arrow">Made to order &rarr;</span></div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 150" fill="none"><rect x="44" y="86" width="112" height="34" rx="12" fill="#c98a3f"/><rect x="40" y="70" width="34" height="40" rx="10" fill="#d8a45c"/><rect x="126" y="70" width="34" height="40" rx="10" fill="#d8a45c"/><rect x="74" y="64" width="52" height="34" rx="10" fill="#d8a45c"/><rect x="54" y="116" width="10" height="20" rx="4" fill="#6b4a2e"/><rect x="136" y="116" width="10" height="20" rx="4" fill="#6b4a2e"/></svg>
+        </div>
+        <div class="piece-body">
+          <span class="tag">Sofas &amp; Upholstery</span>
+          <h3>Modern Cozy Sofa (Armon)</h3>
+          <p>A two-seat sofa built for small Dhaka apartments, soft to fall into yet framed in joinery that will not sag.</p>
+          <div class="piece-foot"><span class="price">69,000 BDT</span><span class="arrow">Made to order &rarr;</span></div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 150" fill="none"><rect x="94" y="40" width="12" height="78" rx="5" fill="#6b4a2e"/><ellipse cx="100" cy="40" rx="26" ry="14" fill="#c98a3f"/><path d="M74 40c0-8 12-14 26-14s26 6 26 14" stroke="#a86d2b" stroke-width="2" fill="none" opacity=".6"/><rect x="78" y="116" width="44" height="9" rx="4" fill="#5a3c22"/><circle cx="100" cy="40" r="5" fill="#f4ece0"/></svg>
+        </div>
+        <div class="piece-body">
+          <span class="tag">Light</span>
+          <h3>Modern Pole Lamp</h3>
+          <p>A slender floor lamp on a turned wood column, its head tilting to throw a warm pool of light where you read.</p>
+          <div class="piece-foot"><span class="price">38,000 BDT</span><span class="arrow">Made to order &rarr;</span></div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="piece-art">
+          <svg viewBox="0 0 200 150" fill="none"><path d="M82 44c0-6 36-6 36 0l6 60c0 6-48 6-48 0z" fill="#c98a3f"/><path d="M88 50c0-3 24-3 24 0" stroke="#a86d2b" stroke-width="2" fill="none" opacity=".6"/><ellipse cx="100" cy="44" rx="18" ry="6" fill="#d8a45c"/><rect x="78" y="118" width="44" height="9" rx="4" fill="#6b4a2e"/></svg>
+        </div>
+        <div class="piece-body">
+          <span class="tag">Decor</span>
+          <h3>Royel Vase</h3>
+          <p>A turned wooden vase for stems or dried grasses, each one shaped on the lathe so no two are quite the same.</p>
+          <div class="piece-foot"><span class="price">10,000 - 14,000 BDT</span><span class="arrow">Made to order &rarr;</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="pad mat" id="wood">
+  <div class="wrap mat-grid">
+    <div>
+      <span class="eyebrow">Wood &amp; materials</span>
+      <h2>We start by choosing the tree, not the trend.</h2>
+      <p class="intro">A woodpecker can tell a sound branch from a hollow one. We do the same with our timber, sourcing seasoned hardwood and reading each board for grain, weight and honesty before it ever meets a chisel.</p>
+      <div class="wood-list">
+        <div class="wood-row"><span class="swatch sw1"></span><div><b>Teak (Segun)</b><span>Warm, water-resistant, ages to a deep gold</span></div></div>
+        <div class="wood-row"><span class="swatch sw2"></span><div><b>Mahogany</b><span>Rich red-brown with a tight, even grain</span></div></div>
+        <div class="wood-row"><span class="swatch sw3"></span><div><b>Oak</b><span>Pale, strong, with an open expressive figure</span></div></div>
+        <div class="wood-row"><span class="swatch sw4"></span><div><b>Reclaimed hardwood</b><span>Old beams given a second, longer life</span></div></div>
+      </div>
+    </div>
+    <div class="mat-panel">
+      <h3>What honest making means here</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5 9-11" stroke="#e0a44f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Solid timber frames, no chipboard or hidden fillers</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5 9-11" stroke="#e0a44f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Hand-rubbed natural oils and waxes, low odour</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5 9-11" stroke="#e0a44f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Seasoned wood, dried to survive Dhaka humidity</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5 9-11" stroke="#e0a44f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Off-cuts turned into decor, vases and small pieces</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5 9-11" stroke="#e0a44f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>A maker you can speak to, from sketch to delivery</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMMISSION -->
+<section class="pad comm" id="commission">
+  <div class="wrap comm-grid">
+    <div>
+      <span class="eyebrow">Commission a piece</span>
+      <h2>Tell us about your room. We will build for it.</h2>
+      <p class="sub" style="color:var(--ink-soft);font-size:16px;margin-top:8px">Standard furniture rarely fits a real home. A bespoke commission lets you choose the wood, the size, the finish and the comfort, all made by the same hands from start to finish.</p>
+      <div class="steps">
+        <div class="step"><div class="step-no">1</div><div><h4>Talk it through</h4><p>Call or visit the studio. We listen to how the piece will be used and the space it has to live in.</p></div></div>
+        <div class="step"><div class="step-no">2</div><div><h4>Sketch &amp; quote</h4><p>We draw it to scale, pick the timber together and give you an honest price and timeline.</p></div></div>
+        <div class="step"><div class="step-no">3</div><div><h4>Built &amp; delivered</h4><p>Your piece is made by hand at our bench, finished, rested and delivered across Dhaka.</p></div></div>
+      </div>
+    </div>
+
+    <form class="comm-form" id="commForm" novalidate>
+      <h3>Start your commission</h3>
+      <p class="sub">No cost, no obligation. We reply within a day.</p>
+      <div class="field">
+        <label for="cname">Your name</label>
+        <input id="cname" type="text" placeholder="e.g. Anika Rahman" required>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="cphone">Phone</label>
+          <input id="cphone" type="tel" placeholder="01XXX-XXXXXX" required>
+        </div>
+        <div class="field">
+          <label for="ctype">Piece</label>
+          <select id="ctype">
+            <option>Sofa or couch</option>
+            <option>Lounge or dining chair</option>
+            <option>Table</option>
+            <option>Bed</option>
+            <option>Lamp or decor</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cwood">Preferred wood (optional)</label>
+        <select id="cwood">
+          <option>Help me choose</option>
+          <option>Teak (Segun)</option>
+          <option>Mahogany</option>
+          <option>Oak</option>
+          <option>Reclaimed hardwood</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cmsg">Tell us about the piece</label>
+        <textarea id="cmsg" placeholder="Room, rough size, how you will use it, any look you love..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send to the studio</button>
+      <p class="form-note" id="formNote">Prefer to talk? Call <a href="tel:+8801312123012" style="color:var(--wood);font-weight:600">+880 1312-123012</a></p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Visit the studio</span>
+      <h2>Come hear the <em>wood</em> for yourself.</h2>
+      <p class="lead">Pull up a chair at our Dhaka studio, run your hand along a finished piece, and meet the makers. Tea is usually on.</p>
+      <div class="ci-list">
+        <div class="ci">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 3h3l2 5-2.5 1.5a12 12 0 005.5 5.5L18 15l2 5v3c0 .6-.5 1-1 1A17 17 0 013 6c0-.6.4-1 1-1z" fill="#6b4a2e"/></svg></div>
+          <div><b>Phone</b><span><a href="tel:+8801312123012">+880 1312-123012</a></span></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6l9 6 9-6" stroke="#6b4a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#6b4a2e" stroke-width="2"/></svg></div>
+          <div><b>Email</b><span><a href="mailto:hello@kaththokrastudio.com">hello@kaththokrastudio.com</a></span></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22c5-5 8-9 8-12a8 8 0 10-16 0c0 3 3 7 8 12z" fill="#6b4a2e"/><circle cx="12" cy="10" r="3" fill="#f4ece0"/></svg></div>
+          <div><b>Studio &amp; showroom</b><span>Dhaka, Bangladesh</span></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6b4a2e" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#6b4a2e" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><b>Open hours</b><span>Saturday to Thursday, 10am - 8pm</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-card">
+      <svg class="pecker" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M40 12c-9 0-16 6.5-16 16 0 4.5-2 7-6 9-3 1.5-5 4-5 7 0 5 5 9 12 9 11 0 21-8 21-21V24l8-4-8-3c0-3-2-5-6-5z" fill="#c98a3f"/>
+        <circle cx="36" cy="25" r="2.4" fill="#241a12"/>
+        <path d="M9 44c-3 1.5-5 4-5 7 0 1.4.4 2.6 1.1 3.7C6 51 9 48 13 46c-1.6-.7-2.9-1.3-4-2z" fill="#e0a44f"/>
+      </svg>
+      <h3>Ready to start a piece?</h3>
+      <p>Call the studio and talk straight to a maker. We will help you figure out what your room really needs.</p>
+      <a href="tel:+8801312123012" class="phone-big">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.5 3h3l2 5-2.5 1.5a12 12 0 005.5 5.5L18 15l2 5v3c0 .6-.5 1-1 1A17 17 0 013 6c0-.6.4-1 1-1z" fill="#241a12"/></svg>
+        +880 1312-123012
+      </a>
+      <p class="hours">Saturday to Thursday, 10am - 8pm</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <svg class="pecker" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M40 12c-9 0-16 6.5-16 16 0 4.5-2 7-6 9-3 1.5-5 4-5 7 0 5 5 9 12 9 11 0 21-8 21-21V24l8-4-8-3c0-3-2-5-6-5z" fill="#c98a3f"/>
+            <circle cx="36" cy="25" r="2.4" fill="#241a12"/>
+            <path d="M9 44c-3 1.5-5 4-5 7 0 1.4.4 2.6 1.1 3.7C6 51 9 48 13 46c-1.6-.7-2.9-1.3-4-2z" fill="#e0a44f"/>
+          </svg>
+          Kaththokra Studio
+        </div>
+        <p>A maker-led woodcraft studio in Dhaka. Since 2016 we have hand-built furniture from honest timber, the patient way, named for the woodpecker who knows wood best.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#craft">Our craft</a></li>
+          <li><a href="#folio">Signature pieces</a></li>
+          <li><a href="#wood">Wood &amp; materials</a></li>
+          <li><a href="#commission">Commission a piece</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="tel:+8801312123012">+880 1312-123012</a></li>
+          <li><a href="mailto:hello@kaththokrastudio.com">hello@kaththokrastudio.com</a></li>
+          <li><a href="#contact">Dhaka, Bangladesh</a></li>
+          <li><a href="#commission">Made to order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>Kaththokra Studio &middot; Dhaka, Bangladesh &middot; +880 1312-123012</div>
+      <div class="credit">Concept site by WebCraft Global</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>20){hdr.classList.add('scrolled')}else{hdr.classList.remove('scrolled')}
+  });
+  // mobile nav
+  var burger=document.getElementById('burger'),mob=document.getElementById('mobnav');
+  burger.addEventListener('click',function(){
+    var open=mob.style.display==='flex';
+    mob.style.display=open?'none':'flex';
+  });
+  Array.prototype.forEach.call(mob.querySelectorAll('a'),function(a){
+    a.addEventListener('click',function(){mob.style.display='none'});
+  });
+  // form
+  var form=document.getElementById('commForm'),note=document.getElementById('formNote');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('cname').value.trim();
+    var p=document.getElementById('cphone').value.trim();
+    if(!n||!p){
+      note.innerHTML='Please add your name and phone so we can reply.';
+      note.style.color='#b04a22';
+      return;
+    }
+    note.innerHTML='Thank you '+n.split(' ')[0]+', your request is noted. A maker will call you within a day.';
+    note.style.color='#6b4a2e';
+    form.reset();
+  });
+  // gentle reveal
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting){en.target.style.opacity=1;en.target.style.transform='none';io.unobserve(en.target)}
+    });
+  },{threshold:.12});
+  Array.prototype.forEach.call(document.querySelectorAll('.craft-card,.piece,.wood-row,.step'),function(el,i){
+    el.style.opacity=0;el.style.transform='translateY(22px)';
+    el.style.transition='opacity .6s ease '+(i%4*0.07)+'s, transform .6s ease '+(i%4*0.07)+'s';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
