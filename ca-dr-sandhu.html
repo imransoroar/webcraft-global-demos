@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Sashpal Sandhu | Family Dentist in Brampton, ON</title>
+<meta name="description" content="A personal, dentist-led family dental practice in Brampton, Ontario. Dr. Sashpal Sandhu and team welcome your whole family. Call 905-450-5600.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0f6f6c;
+  --teal-deep:#0a5552;
+  --teal-soft:#e3f0ee;
+  --cream:#fbf6ee;
+  --cream-2:#f4ecdf;
+  --charcoal:#2b2a28;
+  --ink:#403d39;
+  --gold:#c98a3a;
+  --line:#e4d9c6;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--charcoal);line-height:1.15;font-weight:600}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;background:var(--teal);color:#fff;padding:14px 28px;border-radius:40px;font-weight:800;font-size:15px;letter-spacing:.2px;transition:transform .2s ease,background .2s ease,box-shadow .2s ease;box-shadow:0 6px 18px rgba(15,111,108,.25)}
+.btn:hover{background:var(--teal-deep);transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,111,108,.32)}
+.btn.ghost{background:transparent;color:var(--teal);border:2px solid var(--teal);box-shadow:none}
+.btn.ghost:hover{background:var(--teal);color:#fff}
+.eyebrow{font-family:'Nunito Sans';font-weight:800;letter-spacing:2.5px;text-transform:uppercase;font-size:12px;color:var(--gold)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:42px;height:42px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Fraunces';color:#fff;font-weight:600;font-size:19px;flex-shrink:0}
+.brand b{font-family:'Fraunces';font-weight:600;font-size:19px;color:var(--charcoal);display:block;line-height:1.1}
+.brand span{font-size:12px;color:var(--teal);font-weight:700;letter-spacing:.5px}
+nav.main{display:flex;gap:30px;align-items:center}
+nav.main a{font-weight:700;font-size:15px;color:var(--ink);transition:color .2s}
+nav.main a:hover{color:var(--teal)}
+.callbtn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;padding:10px 20px;border-radius:40px;font-weight:800;font-size:14px;transition:background .2s,transform .2s}
+.callbtn:hover{background:var(--teal-deep);transform:translateY(-1px)}
+.menutog{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+.menutog span{width:24px;height:2.5px;background:var(--charcoal);border-radius:2px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%)}
+.hero .blob{position:absolute;top:-120px;right:-140px;width:520px;height:520px;background:radial-gradient(circle at 30% 30%,rgba(15,111,108,.13),rgba(15,111,108,0) 70%);border-radius:50%}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:78px 0 86px}
+.hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:-.5px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p.lead{font-size:19px;margin:22px 0 30px;max-width:480px;color:var(--ink)}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.trust div{display:flex;flex-direction:column}
+.trust b{font-family:'Fraunces';font-size:26px;color:var(--teal);font-weight:600}
+.trust small{font-size:13px;color:var(--ink);font-weight:600}
+/* portrait card */
+.portrait{position:relative;background:var(--white);border-radius:26px;padding:34px;box-shadow:0 30px 60px rgba(43,42,40,.12);border:1px solid var(--line)}
+.mono{width:170px;height:170px;margin:0 auto 22px;display:block}
+.portrait h3{text-align:center;font-size:24px;margin-bottom:4px}
+.portrait .role{text-align:center;color:var(--teal);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.portrait .quote{text-align:center;font-style:italic;font-family:'Fraunces';font-size:16px;color:var(--ink);border-top:1px solid var(--line);padding-top:16px}
+.ccp{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:18px;background:var(--teal-soft);color:var(--teal-deep);font-weight:700;font-size:13px;padding:10px 14px;border-radius:12px}
+
+/* section base */
+section{padding:80px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);margin:12px 0}
+.sec-head p{color:var(--ink);font-size:18px}
+
+/* meet */
+.meet{background:var(--teal);color:#fff}
+.meet h2,.meet h3{color:#fff}
+.meet-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+.meet .card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:40px;text-align:center}
+.meet .mono2{width:150px;height:150px;margin:0 auto 18px;display:block}
+.meet .card .name{font-family:'Fraunces';font-size:26px}
+.meet .card .deg{color:#bfe6e3;font-weight:700;font-size:14px;margin-top:6px}
+.meet-txt .eyebrow{color:#9fd9d5}
+.meet-txt h2{font-size:clamp(28px,4vw,38px);margin:12px 0 18px}
+.meet-txt p{color:#e7f3f1;margin-bottom:16px;font-size:17px}
+.meet-txt ul{list-style:none;margin-top:22px;display:grid;gap:12px}
+.meet-txt li{display:flex;gap:12px;align-items:flex-start;color:#eef7f6;font-weight:600}
+.meet-txt li svg{flex-shrink:0;margin-top:3px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(43,42,40,.1);border-color:var(--teal)}
+.svc .ic{width:50px;height:50px;border-radius:14px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.svc h3{font-size:20px;margin-bottom:8px}
+.svc p{font-size:15px;color:var(--ink)}
+
+/* community */
+.community{background:var(--cream-2)}
+.comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.langs{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.lang{background:var(--white);border:1px solid var(--line);border-radius:40px;padding:10px 20px;font-weight:700;font-size:14px;color:var(--teal-deep);transition:background .2s,color .2s}
+.lang:hover{background:var(--teal);color:#fff}
+.comm-card{background:var(--white);border-radius:24px;padding:36px;box-shadow:0 20px 50px rgba(43,42,40,.08);border:1px solid var(--line)}
+.comm-card h3{font-size:22px;margin-bottom:14px}
+.comm-card .row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.comm-card .row:last-child{border-bottom:none}
+.comm-card .row svg{flex-shrink:0;margin-top:2px}
+.comm-card .row b{display:block;color:var(--charcoal);font-family:'Fraunces';font-size:16px}
+.comm-card .row span{font-size:14px;color:var(--ink)}
+
+/* booking */
+.book{background:var(--teal-deep);color:#fff;position:relative;overflow:hidden}
+.book .blob2{position:absolute;left:-100px;bottom:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 70%);border-radius:50%}
+.book-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative}
+.book h2{color:#fff;font-size:clamp(28px,4vw,42px);margin-bottom:16px}
+.book p{color:#d7eceb;font-size:18px;margin-bottom:28px}
+.book .eyebrow{color:#9fd9d5}
+.phonebox{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:34px;text-align:center}
+.phonebox small{display:block;color:#bfe6e3;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+.phonebox .num{font-family:'Fraunces';font-size:34px;color:#fff;font-weight:600;display:block;margin-bottom:6px;transition:color .2s}
+.phonebox .num:hover{color:#9fd9d5}
+.phonebox .addr{color:#d7eceb;font-size:14px;margin:14px 0 22px;line-height:1.5}
+.phonebox .btn{background:#fff;color:var(--teal-deep);width:100%}
+.phonebox .btn:hover{background:var(--cream)}
+.hours{list-style:none;margin-top:10px}
+.book .hours li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.14);color:#e7f3f1;font-weight:600;font-size:15px}
+.book .hours li b{color:#fff;font-family:'Fraunces';font-weight:500}
+
+/* footer */
+footer{background:var(--charcoal);color:#d8d2c8;padding:54px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:34px}
+footer .brand b{color:#fff}
+footer .brand span{color:#9fd9d5}
+footer p{font-size:14px;color:#bcb6ab;margin-top:14px;max-width:300px}
+footer h4{font-family:'Fraunces';color:#fff;font-size:17px;margin-bottom:14px;font-weight:600}
+footer ul{list-style:none}
+footer ul li{margin-bottom:9px}
+footer ul a{font-size:14px;color:#bcb6ab;transition:color .2s}
+footer ul a:hover{color:#9fd9d5}
+.footline{border-top:1px solid #45433f;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#8f8a80}
+.footline .concept{color:#6f6b62;font-style:italic}
+
+@media(max-width:880px){
+  nav.main{display:none}
+  .menutog{display:flex}
+  nav.main.open{display:flex;position:absolute;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(0,0,0,.08)}
+  .hero-grid,.meet-grid,.comm-grid,.book-grid,.svc-grid,.foot-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .hero-grid{gap:36px;padding:54px 0 60px}
+  .meet-grid{gap:34px}
+  section{padding:60px 0}
+}
+@media(max-width:560px){
+  .svc-grid{grid-template-columns:1fr}
+  .trust{gap:18px}
+  .callbtn span{display:none}
+  .foot-grid{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="brand">
+      <div class="logo">SS</div>
+      <div><b>Dr. Sashpal Sandhu</b><span>FAMILY DENTISTRY &middot; BRAMPTON</span></div>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#meet">Meet Dr. Sandhu</a>
+      <a href="#services">Services</a>
+      <a href="#community">Our Community</a>
+      <a href="#book">Visit Us</a>
+    </nav>
+    <a class="callbtn" href="tel:+19054505600"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>905-450-5600</span></a>
+    <button class="menutog" id="tog" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="blob"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Your neighbourhood family dentist</span>
+      <h1>Gentle, <em>personal</em> dental care for your whole family.</h1>
+      <p class="lead">Led by Dr. Sashpal Sandhu, our Brampton practice treats every patient like a neighbour, not a number. From a child's first checkup to your parents' new dentures, we care for every smile under one roof.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book an appointment</a>
+        <a class="btn ghost" href="#meet">Meet Dr. Sandhu</a>
+      </div>
+      <div class="trust">
+        <div><b>7 days</b><small>Open every week</small></div>
+        <div><b>All ages</b><small>Children to seniors</small></div>
+        <div><b>CDCP</b><small>Patients welcome</small></div>
+      </div>
+    </div>
+    <div class="portrait">
+      <svg class="mono" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dr. Sandhu monogram">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0f6f6c"/><stop offset="1" stop-color="#0a5552"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="94" fill="none" stroke="#e4d9c6" stroke-width="3"/>
+        <circle cx="100" cy="100" r="80" fill="url(#g1)"/>
+        <text x="100" y="118" font-family="Fraunces,serif" font-size="62" font-weight="600" fill="#fff" text-anchor="middle">SS</text>
+        <path d="M52 150 Q100 168 148 150" fill="none" stroke="#c98a3a" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+      <h3>Dr. Sashpal Sandhu</h3>
+      <div class="role">Dentist &middot; Founder</div>
+      <p class="quote">"When you sit in my chair, you are family. My job is to make sure you leave smiling."</p>
+      <div class="ccp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a5552" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        We accept Canadian Dental Care Plan patients
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="meet" id="meet">
+  <div class="wrap meet-grid">
+    <div class="card">
+      <svg class="mono2" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dr. Sandhu emblem">
+        <circle cx="80" cy="80" r="74" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <circle cx="80" cy="80" r="60" fill="#fbf6ee"/>
+        <text x="80" y="96" font-family="Fraunces,serif" font-size="46" font-weight="600" fill="#0f6f6c" text-anchor="middle">SS</text>
+        <path d="M42 120 Q80 134 118 120" fill="none" stroke="#c98a3a" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="name">Dr. Sashpal Sandhu</div>
+      <div class="deg">Dentist, Family &amp; General Practice</div>
+    </div>
+    <div class="meet-txt">
+      <span class="eyebrow">A dentist who knows you by name</span>
+      <h2>Meet Dr. Sandhu</h2>
+      <p>For years, Dr. Sashpal Sandhu has built his Brampton practice on a simple idea: there is no one-size-fits-all approach to dental care. Every patient gets a treatment plan made just for them, explained in plain language, with no pressure and no rush.</p>
+      <p>Dr. Sandhu and his team work as one, dedicated to improving and maintaining your oral health for the long run. Whatever your dental needs, you will be in great hands.</p>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9fd9d5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Individualized care, never a rushed appointment</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9fd9d5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Comfortable, stress-free visits with modern tools</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9fd9d5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All your family's dental needs under one roof</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Caring for every part of your smile</h2>
+      <p>From routine cleanings to a full smile makeover, here is how we can help, explained simply.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 5 6 9c0 3 1 5 1.5 8 .3 2 1 4 2 4s1.2-2 1.5-4c.2-1.3.5-2 1-2s.8.7 1 2c.3 2 .5 4 1.5 4s1.7-2 2-4c.5-3 1.5-5 1.5-8 0-4-2-7-6-7z"/></svg></div>
+        <h3>Preventive &amp; Family Care</h3>
+        <p>Dental exams, cleanings, X-rays, sealants, night guards and TMJ care to keep every family member healthy.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 9l7-6 7 6"/><circle cx="12" cy="16" r="3"/></svg></div>
+        <h3>Dental Implants</h3>
+        <p>Single implants, bridges, implant-supported and removable dentures to restore missing teeth comfortably.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M8 8v8M16 8v8"/><rect x="3" y="9" width="18" height="6" rx="2"/></svg></div>
+        <h3>Orthodontics</h3>
+        <p>Traditional metal or clear braces, Invisalign, and early treatment for children to guide growing smiles.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.6-.5z"/></svg></div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Tooth-coloured fillings, teeth whitening, veneers, laminates and bonding for a brighter, confident smile.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div>
+        <h3>Crowns, Bridges &amp; Root Canal</h3>
+        <p>Custom-fitted crowns and bridges, plus gentle root canal therapy to save and protect your natural teeth.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>Emergency &amp; Same-Day Care</h3>
+        <p>Toothache, broken or knocked-out tooth, jaw injury? Reach us by phone 7 days a week for urgent attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap comm-grid">
+    <div>
+      <span class="eyebrow">Rooted in Brampton</span>
+      <h2 style="font-size:clamp(28px,4vw,38px);margin:12px 0 18px">A warm welcome for our whole community</h2>
+      <p>Brampton is one of Canada's most diverse cities, and our practice reflects it. We believe great dental care starts with understanding, so we work hard to make every patient and every family feel at home from the moment they walk in.</p>
+      <p style="margin-top:14px;font-weight:700;color:var(--charcoal)">Families across Brampton trust us with their smiles, and we welcome you to join them.</p>
+      <div class="langs">
+        <span class="lang">Warm welcome</span>
+        <span class="lang">All ages</span>
+        <span class="lang">New patients</span>
+        <span class="lang">CDCP patients</span>
+        <span class="lang">Insurance plans accepted</span>
+      </div>
+    </div>
+    <div class="comm-card">
+      <h3>Why neighbours choose us</h3>
+      <div class="row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div><b>A dentist who listens</b><span>Dr. Sandhu takes the time to explain every option in plain language.</span></div>
+      </div>
+      <div class="row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+        <div><b>Care for the whole family</b><span>One trusted practice for children, parents and grandparents alike.</span></div>
+      </div>
+      <div class="row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/></svg>
+        <div><b>Open 7 days a week</b><span>Appointments that fit around busy family and work schedules.</span></div>
+      </div>
+      <div class="row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f6f6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+        <div><b>Emergencies welcome</b><span>Call us any day of the week and we will do our best to see you same day.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="blob2"></div>
+  <div class="wrap book-grid">
+    <div>
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Let's get you smiling.</h2>
+      <p>Whether it is time for a checkup or you have been putting off that toothache, Dr. Sandhu and the team would love to see you. Call us and we will find a time that works for your family.</p>
+      <ul class="hours">
+        <li><span>Monday - Friday</span><b>By appointment</b></li>
+        <li><span>Saturday</span><b>By appointment</b></li>
+        <li><span>Sunday</span><b>Open for you</b></li>
+        <li><span>Emergencies</span><b>7 days a week</b></li>
+      </ul>
+    </div>
+    <div class="phonebox">
+      <small>Call to book</small>
+      <a class="num" href="tel:+19054505600">905-450-5600</a>
+      <div class="addr">811 Bovaird Dr W, Unit 17, Building E<br>Brampton, ON L6X 0T9</div>
+      <a class="btn" href="tel:+19054505600">Call now to book</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <div class="logo">SS</div>
+          <div><b>Dr. Sashpal Sandhu</b><span>FAMILY DENTISTRY</span></div>
+        </div>
+        <p>A personal, dentist-led family practice serving Brampton's diverse community with gentle, individualized care.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#meet">Meet Dr. Sandhu</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#community">Our Community</a></li>
+          <li><a href="#book">Visit Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+19054505600">905-450-5600</a></li>
+          <li>811 Bovaird Dr W, Unit 17</li>
+          <li>Brampton, ON L6X 0T9</li>
+          <li>Open 7 days a week</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footline">
+      <span>Dr. Sashpal Sandhu Family Dentistry &middot; Brampton, ON &middot; 905-450-5600</span>
+      <span class="concept">Concept site by WebCraft Global</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tog=document.getElementById('tog'),nav=document.getElementById('nav');
+  tog.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open');});
+  });
+})();
+</script>
+</body>
+</html>

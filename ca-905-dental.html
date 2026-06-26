@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>905 Dental | Modern Dentist in Brampton, ON</title>
+<meta name="description" content="905 Dental in Brampton, ON. Smarter dental technology, better patient care. CEREC same-day crowns, Invisalign, Pearl AI and sedation. Book with Dr. Samuel Schlesinger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+--off:#f4f3ee;--off2:#ebe9e2;--char:#16181d;--char2:#2c2f38;
+--blue:#1f4eff;--blue2:#0a32cc;--teal:#00d6c2;--mut:#6b6e78;--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--char);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.grotesk{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.acc{color:var(--blue)}
+section{position:relative}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(244,243,238,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--off2)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:1.45rem}
+.logo .badge{background:var(--char);color:var(--off);padding:3px 9px;border-radius:8px;letter-spacing:-.04em}
+.logo .badge b{color:var(--teal)}
+.nlinks{display:flex;gap:30px;align-items:center}
+.nlinks a{font-weight:500;font-size:.95rem;color:var(--char2);transition:color .2s}
+.nlinks a:hover{color:var(--blue)}
+.ncall{display:flex;align-items:center;gap:9px;background:var(--char);color:var(--off);padding:11px 20px;border-radius:30px;font-weight:600;font-size:.92rem;transition:transform .2s,background .2s}
+.ncall:hover{background:var(--blue);transform:translateY(-2px)}
+.burger{display:none;font-size:1.5rem;background:none;border:none;color:var(--char);cursor:pointer}
+
+/* HERO */
+.hero{padding:70px 0 50px;overflow:hidden}
+.htag{display:inline-flex;align-items:center;gap:8px;background:var(--off2);border:1px solid #ddd;padding:7px 16px;border-radius:30px;font-size:.82rem;font-weight:600;color:var(--char2);margin-bottom:26px}
+.htag .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(0,214,194,.25)}
+.bignum{font-family:'Space Grotesk';font-weight:700;font-size:clamp(7rem,26vw,20rem);line-height:.82;letter-spacing:-.05em;color:var(--char);position:relative;display:inline-block}
+.bignum span{color:var(--blue)}
+.hsub{font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.02;max-width:760px;margin:18px 0 0}
+.hsub em{font-style:normal;color:var(--blue)}
+.hlead{font-size:1.12rem;color:var(--mut);max-width:560px;margin:22px 0 32px}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;padding:15px 28px;border-radius:32px;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s,color .2s;cursor:pointer;border:none}
+.btn-p{background:var(--blue);color:#fff;box-shadow:0 10px 26px rgba(31,78,255,.32)}
+.btn-p:hover{background:var(--blue2);transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,78,255,.42)}
+.btn-o{background:transparent;color:var(--char);border:2px solid var(--char)}
+.btn-o:hover{background:var(--char);color:var(--off);transform:translateY(-3px)}
+.hgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hvis{position:relative;height:420px}
+.hcard{position:absolute;background:var(--white);border-radius:22px;padding:22px;box-shadow:0 22px 50px rgba(20,24,30,.12)}
+.hcard i{font-size:1.5rem;color:var(--blue);margin-bottom:10px;display:block}
+.hcard h4{font-size:1.05rem;font-weight:600}
+.hcard p{font-size:.82rem;color:var(--mut)}
+.hc1{top:10px;left:0;width:210px;animation:flo 6s ease-in-out infinite}
+.hc2{top:150px;right:0;width:215px;background:var(--char);color:var(--off);animation:flo 6s ease-in-out infinite .8s}
+.hc2 i{color:var(--teal)}.hc2 p{color:#b6b9c2}
+.hc3{bottom:0;left:40px;width:200px;animation:flo 6s ease-in-out infinite 1.6s}
+@keyframes flo{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.tooth{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:170px;opacity:.9}
+
+/* MARQUEE */
+.marq{background:var(--char);color:var(--off);padding:18px 0;overflow:hidden;white-space:nowrap}
+.mtrack{display:inline-block;animation:scrl 26s linear infinite}
+.mtrack span{font-family:'Space Grotesk';font-weight:600;font-size:1.1rem;margin:0 34px;color:var(--off)}
+.mtrack span i{color:var(--teal);margin-right:10px}
+@keyframes scrl{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SERVICES */
+.sec{padding:90px 0}
+.kicker{font-family:'Space Grotesk';font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.18em;color:var(--blue);margin-bottom:14px}
+.h2{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:700;line-height:1.04;max-width:680px}
+.lead2{color:var(--mut);font-size:1.08rem;max-width:560px;margin-top:18px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.scard{background:var(--white);border-radius:20px;padding:30px 26px;border:1px solid var(--off2);transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
+.scard:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(20,24,30,.1);border-color:var(--blue)}
+.scard .ic{width:54px;height:54px;border-radius:14px;background:var(--off);display:flex;align-items:center;justify-content:center;font-size:1.45rem;color:var(--blue);margin-bottom:20px;transition:background .25s,color .25s}
+.scard:hover .ic{background:var(--blue);color:#fff}
+.scard h3{font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.scard p{font-size:.92rem;color:var(--mut)}
+.scard .num{position:absolute;top:18px;right:22px;font-family:'Space Grotesk';font-weight:700;font-size:1rem;color:var(--off2)}
+
+/* TECH */
+.tech{background:var(--char);color:var(--off)}
+.tech .kicker{color:var(--teal)}
+.tgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.tech h2{color:var(--off)}
+.tech .lead2{color:#aab0bd}
+.tlist{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.titem{background:var(--char2);border-radius:16px;padding:24px;border:1px solid #353944;transition:border-color .25s,transform .25s}
+.titem:hover{border-color:var(--teal);transform:translateY(-4px)}
+.titem i{font-size:1.6rem;color:var(--teal);margin-bottom:14px;display:block}
+.titem h4{font-family:'Space Grotesk';font-weight:600;font-size:1.1rem;margin-bottom:6px}
+.titem p{font-size:.86rem;color:#aab0bd}
+.tvis{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px}
+.ring{position:absolute;border:2px solid rgba(0,214,194,.25);border-radius:50%}
+.r1{width:340px;height:340px;animation:spin 28s linear infinite}
+.r2{width:250px;height:250px;border-color:rgba(31,78,255,.4);animation:spin 20s linear infinite reverse}
+.r3{width:160px;height:160px;border-color:rgba(0,214,194,.5)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tcore{position:relative;z-index:2;text-align:center}
+.tcore .big{font-family:'Space Grotesk';font-weight:700;font-size:4rem;line-height:1;color:var(--off)}
+.tcore .big b{color:var(--teal)}
+.tcore small{display:block;font-size:.9rem;color:#aab0bd;margin-top:6px;letter-spacing:.04em}
+.tdot{position:absolute;width:14px;height:14px;background:var(--teal);border-radius:50%;box-shadow:0 0 0 6px rgba(0,214,194,.18)}
+
+/* STATS */
+.stats{background:var(--blue);color:#fff;padding:64px 0}
+.statg{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.stat .n{font-family:'Space Grotesk';font-weight:700;font-size:clamp(2.6rem,5vw,3.6rem);line-height:1}
+.stat .l{font-size:.92rem;margin-top:8px;color:#cfd9ff;font-weight:500}
+.stat+.stat{border-left:1px solid rgba(255,255,255,.18)}
+
+/* COMFORT */
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.ccard{background:var(--white);border-radius:18px;padding:28px 22px;border:1px solid var(--off2);transition:transform .25s,box-shadow .25s}
+.ccard:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(20,24,30,.08)}
+.ccard .ic{font-size:1.7rem;color:var(--teal);margin-bottom:14px}
+.ccard h4{font-family:'Space Grotesk';font-weight:600;font-size:1.06rem;margin-bottom:7px}
+.ccard p{font-size:.88rem;color:var(--mut)}
+
+/* DOCTOR */
+.doc{background:var(--off2)}
+.dgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+.dportrait{background:linear-gradient(150deg,var(--blue),var(--char));border-radius:24px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;position:relative;overflow:hidden}
+.dportrait .mono{font-family:'Space Grotesk';font-weight:700;font-size:6.5rem;line-height:1;opacity:.95}
+.dportrait .mono span{color:var(--teal)}
+.dportrait .role{margin-top:14px;font-size:.95rem;letter-spacing:.05em;color:#dfe4ff;z-index:2}
+.dportrait-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:34px 34px}
+.dcred{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 0}
+.dcred span{background:var(--white);border:1px solid #ddd;padding:8px 15px;border-radius:24px;font-size:.85rem;font-weight:500;color:var(--char2)}
+.doc .lead2{margin-top:18px}
+
+/* BOOK */
+.book{background:var(--char);color:var(--off);padding:96px 0}
+.book .kicker{color:var(--teal)}
+.bgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.book h2{color:var(--off);font-size:clamp(2.4rem,5.5vw,3.7rem)}
+.book .lead2{color:#aab0bd}
+.phonebox{display:inline-flex;align-items:center;gap:16px;background:var(--char2);border:1px solid #383c47;border-radius:18px;padding:20px 26px;margin-top:28px;transition:border-color .25s,transform .25s}
+.phonebox:hover{border-color:var(--teal);transform:translateY(-3px)}
+.phonebox .pi{width:50px;height:50px;border-radius:12px;background:var(--teal);color:var(--char);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.phonebox small{display:block;font-size:.78rem;color:#aab0bd;letter-spacing:.05em}
+.phonebox .pn{font-family:'Space Grotesk';font-weight:700;font-size:1.5rem;color:var(--off)}
+.bbtns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn-t{background:var(--teal);color:var(--char)}
+.btn-t:hover{background:#00bfae;transform:translateY(-3px)}
+.binfo{background:var(--char2);border-radius:22px;padding:36px;border:1px solid #353944}
+.binfo h3{font-family:'Space Grotesk';font-weight:600;font-size:1.3rem;margin-bottom:22px;color:var(--off)}
+.hrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #353944;font-size:.95rem}
+.hrow:last-child{border:none}
+.hrow span:first-child{color:#aab0bd}
+.hrow .open{color:var(--teal);font-weight:600}
+.hrow .cl{color:#7a7f8c}
+.binfo .addr{margin-top:22px;font-size:.95rem;color:#cfd2da;display:flex;gap:12px;align-items:flex-start}
+.binfo .addr i{color:var(--teal);margin-top:3px}
+
+/* FAQ */
+.faq{max-width:780px;margin:48px auto 0}
+.fitem{background:var(--white);border:1px solid var(--off2);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.fitem.act{border-color:var(--blue)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;font-family:'Space Grotesk';font-weight:600;font-size:1.05rem;gap:16px}
+.fq i{color:var(--blue);transition:transform .3s;flex-shrink:0}
+.fitem.act .fq i{transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--mut)}
+.fa p{padding:0 24px 22px;font-size:.95rem}
+
+/* FOOTER */
+footer{background:var(--off);border-top:1px solid var(--off2);padding:56px 0 28px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.flogo{font-family:'Space Grotesk';font-weight:700;font-size:1.5rem;display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.flogo .badge{background:var(--char);color:var(--off);padding:3px 9px;border-radius:8px}
+.flogo .badge b{color:var(--teal)}
+footer p{color:var(--mut);font-size:.92rem;max-width:340px}
+.fcol h5{font-family:'Space Grotesk';font-weight:600;font-size:1rem;margin-bottom:14px}
+.fcol a,.fcol div{display:block;color:var(--mut);font-size:.92rem;margin-bottom:9px;transition:color .2s}
+.fcol a:hover{color:var(--blue)}
+.fsoc{display:flex;gap:12px;margin-top:16px}
+.fsoc a{width:40px;height:40px;border-radius:50%;background:var(--off2);display:flex;align-items:center;justify-content:center;color:var(--char2);transition:background .2s,color .2s,transform .2s}
+.fsoc a:hover{background:var(--blue);color:#fff;transform:translateY(-3px)}
+.fbot{border-top:1px solid var(--off2);margin-top:40px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem;color:var(--mut)}
+.fbot .cred{color:#9a9da6}
+
+@media(max-width:920px){
+.nlinks{display:none}.burger{display:block}
+.nlinks.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--off);padding:24px;gap:18px;border-bottom:1px solid var(--off2)}
+.hgrid,.tgrid,.dgrid,.bgrid{grid-template-columns:1fr}
+.hvis{height:340px;margin-top:20px}
+.sgrid,.cgrid{grid-template-columns:1fr 1fr}
+.tlist{grid-template-columns:1fr 1fr}
+.statg{grid-template-columns:1fr 1fr;gap:30px 20px}
+.stat:nth-child(3){border-left:none}
+.fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+.sgrid,.cgrid,.tlist{grid-template-columns:1fr}
+.statg{grid-template-columns:1fr 1fr}
+.stat+.stat{border-left:none}
+.fgrid{grid-template-columns:1fr}
+.dportrait .mono{font-size:5rem}
+.hc2,.hc3{display:none}.hc1{position:relative;top:0}
+.hvis{height:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap nav">
+<a href="#" class="logo"><span class="badge">9<b>0</b>5</span> Dental</a>
+<nav class="nlinks" id="menu">
+<a href="#services">Services</a>
+<a href="#tech">Technology</a>
+<a href="#doctor">Our Dentist</a>
+<a href="#book">Book</a>
+<a href="tel:+12898017454" class="ncall"><i class="fa-solid fa-phone"></i> (289) 801-7454</a>
+</nav>
+<button class="burger" id="burger"><i class="fa-solid fa-bars"></i></button>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="wrap hgrid">
+<div>
+<span class="htag"><span class="dot"></span> Smarter dental technology. Better patient care.</span>
+<div class="bignum">9<span>0</span>5</div>
+<h2 class="hsub">A modern dentist for <em>Brampton</em>, built around your smile.</h2>
+<p class="hlead">Patient-focused, technology-driven dental care for children, adults and seniors. Calm, clear and comfortable from your first visit.</p>
+<div class="hbtns">
+<a href="#book" class="btn btn-p"><i class="fa-solid fa-calendar-check"></i> Request an Appointment</a>
+<a href="tel:+12898017454" class="btn btn-o"><i class="fa-solid fa-phone"></i> (289) 801-7454</a>
+</div>
+</div>
+<div class="hvis">
+<svg class="tooth" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M60 8C40 8 30 18 22 18 8 18 4 34 8 56c4 22 10 34 16 56 4 14 16 16 18-4 2-16 4-24 18-24s16 8 18 24c2 20 14 18 18 4 6-22 12-34 16-56 4-22 0-38-14-38-8 0-18-10-38-10Z" fill="none" stroke="#1f4eff" stroke-width="3"/>
+<path d="M44 44c4-6 14-8 22-4" fill="none" stroke="#00d6c2" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<div class="hcard hc1"><i class="fa-solid fa-bolt"></i><h4>CEREC Crowns</h4><p>Designed and placed in a single visit.</p></div>
+<div class="hcard hc2"><i class="fa-solid fa-microchip"></i><h4>Pearl AI</h4><p>Sharper, smarter imaging analysis.</p></div>
+<div class="hcard hc3"><i class="fa-solid fa-face-smile"></i><h4>Invisalign</h4><p>Clear aligners, discreet results.</p></div>
+</div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marq">
+<div class="mtrack">
+<span><i class="fa-solid fa-star"></i>Cosmetic Dentistry</span><span><i class="fa-solid fa-star"></i>Dental Implants</span><span><i class="fa-solid fa-star"></i>Invisalign</span><span><i class="fa-solid fa-star"></i>CEREC Same-Day Crowns</span><span><i class="fa-solid fa-star"></i>Sedation Options</span><span><i class="fa-solid fa-star"></i>Emergency Care</span>
+<span><i class="fa-solid fa-star"></i>Cosmetic Dentistry</span><span><i class="fa-solid fa-star"></i>Dental Implants</span><span><i class="fa-solid fa-star"></i>Invisalign</span><span><i class="fa-solid fa-star"></i>CEREC Same-Day Crowns</span><span><i class="fa-solid fa-star"></i>Sedation Options</span><span><i class="fa-solid fa-star"></i>Emergency Care</span>
+</div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+<div class="wrap">
+<div class="kicker">What we do</div>
+<h2 class="h2">Complete care, from routine to remarkable.</h2>
+<p class="lead2">Preventive, restorative and cosmetic dentistry for every age, all planned around your individual oral health.</p>
+<div class="sgrid">
+<div class="scard"><span class="num">01</span><div class="ic"><i class="fa-solid fa-shield-heart"></i></div><h3>Preventive Dentistry</h3><p>Checkups, cleanings, fluoride and patient education to keep small issues small.</p></div>
+<div class="scard"><span class="num">02</span><div class="ic"><i class="fa-solid fa-tooth"></i></div><h3>Cosmetic & Smile</h3><p>Teeth whitening, porcelain veneers and full smile makeovers tailored to you.</p></div>
+<div class="scard"><span class="num">03</span><div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Dental Implants</h3><p>Titanium and metal-free ceramic implants for stable, natural-looking replacements.</p></div>
+<div class="scard"><span class="num">04</span><div class="ic"><i class="fa-solid fa-align-center"></i></div><h3>Invisalign</h3><p>Clear, removable aligners that straighten teeth while you eat, brush and floss freely.</p></div>
+<div class="scard"><span class="num">05</span><div class="ic"><i class="fa-solid fa-crown"></i></div><h3>Crowns & Restoration</h3><p>CEREC same-day crowns, bridges, and full or partial dentures to rebuild function.</p></div>
+<div class="scard"><span class="num">06</span><div class="ic"><i class="fa-solid fa-kit-medical"></i></div><h3>Emergency & Surgery</h3><p>Same-region care for dental pain, extractions, wisdom teeth and oral surgery.</p></div>
+</div>
+</div>
+</section>
+
+<!-- TECH -->
+<section class="sec tech" id="tech">
+<div class="wrap tgrid">
+<div class="tvis">
+<div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+<div class="tdot" style="top:18%;left:50%"></div>
+<div class="tdot" style="top:50%;left:84%"></div>
+<div class="tdot" style="top:82%;left:34%"></div>
+<div class="tcore"><div class="big">9<b>0</b>5</div><small>MODERN DENTISTRY</small></div>
+</div>
+<div>
+<div class="kicker">Modern dentistry, modern comfort</div>
+<h2 class="h2">Advanced digital technology, a calmer experience.</h2>
+<p class="lead2">We pair careful treatment planning with the tools to back it up, so visits are faster, clearer and more comfortable.</p>
+<div class="tlist">
+<div class="titem"><i class="fa-solid fa-microchip"></i><h4>Pearl AI Imaging</h4><p>AI-assisted analysis that supports accurate, thorough examinations.</p></div>
+<div class="titem"><i class="fa-solid fa-bolt"></i><h4>CEREC Same-Day Crowns</h4><p>Digitally designed and placed in one appointment, no temporaries needed.</p></div>
+<div class="titem"><i class="fa-solid fa-wind"></i><h4>Sedation Options</h4><p>Laughing gas and moderate sedation for relaxed, anxiety-free care.</p></div>
+<div class="titem"><i class="fa-solid fa-spa"></i><h4>Spa-Like Comfort</h4><p>Thoughtful amenities that make every appointment feel calmer.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+<div class="wrap statg">
+<div class="stat"><div class="n">25+</div><div class="l">Treatments offered</div></div>
+<div class="stat"><div class="n">All</div><div class="l">Ages welcomed</div></div>
+<div class="stat"><div class="n">6</div><div class="l">Days open weekly</div></div>
+<div class="stat"><div class="n">CDCP</div><div class="l">Plan participating</div></div>
+</div>
+</section>
+
+<!-- COMFORT -->
+<section class="sec">
+<div class="wrap">
+<div class="kicker">Why patients choose us</div>
+<h2 class="h2">Care that feels clear, respectful and easy.</h2>
+<div class="cgrid">
+<div class="ccard"><div class="ic"><i class="fa-solid fa-spa"></i></div><h4>Spa-Like Experience</h4><p>Comfort amenities create a calm, relaxed environment at every visit.</p></div>
+<div class="ccard"><div class="ic"><i class="fa-solid fa-people-roof"></i></div><h4>Family-Friendly</h4><p>Preventive, restorative and cosmetic care for children, teens, adults and seniors.</p></div>
+<div class="ccard"><div class="ic"><i class="fa-solid fa-wallet"></i></div><h4>Flexible Financing</h4><p>Flexible payment options and insurance support to make care manageable.</p></div>
+<div class="ccard"><div class="ic"><i class="fa-solid fa-heart-pulse"></i></div><h4>Anxiety-Free Care</h4><p>Sedation options help you stay comfortable during longer procedures.</p></div>
+</div>
+</div>
+</section>
+
+<!-- DOCTOR -->
+<section class="sec doc" id="doctor">
+<div class="wrap dgrid">
+<div class="dportrait">
+<div class="dportrait-grid"></div>
+<div class="mono">9<span>0</span>5</div>
+<div class="role">Dr. Samuel Schlesinger, DDS</div>
+</div>
+<div>
+<div class="kicker">Meet your Brampton dentist</div>
+<h2 class="h2">Dr. Samuel Schlesinger</h2>
+<p class="lead2">Dr. Schlesinger earned his Honours Bachelor of Biomedical Sciences and Doctor of Dental Surgery at the University of Western Ontario. His strong educational background and patient-focused approach help patients feel confident about their care.</p>
+<p class="lead2">In dental school he served as President of the Western Alpha Omega Beta Delta Chapter and joined dental outreach teams that traveled to Nicaragua in 2014 and 2017 to provide free care to those in need.</p>
+<div class="dcred">
+<span><i class="fa-solid fa-graduation-cap acc"></i> University of Western Ontario</span>
+<span><i class="fa-solid fa-award acc"></i> DDS, Doctor of Dental Surgery</span>
+<span><i class="fa-solid fa-globe acc"></i> Dental outreach, Nicaragua</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BOOK -->
+<section class="sec book" id="book">
+<div class="wrap bgrid">
+<div>
+<div class="kicker">Book your visit</div>
+<h2 class="h2">Ready when you are. Call and we will help.</h2>
+<p class="lead2">Request an appointment with our team. Bookings are confirmed once you speak with one of our patient care coordinators.</p>
+<a href="tel:+12898017454" class="phonebox">
+<span class="pi"><i class="fa-solid fa-phone"></i></span>
+<span><small>CALL 905 DENTAL</small><span class="pn">(289) 801-7454</span></span>
+</a>
+<div class="bbtns">
+<a href="tel:+12898017454" class="btn btn-t"><i class="fa-solid fa-phone"></i> Call to Book</a>
+<a href="https://www.905dental.ca/request-an-appointment/" class="btn btn-o" style="color:#fff;border-color:#fff"><i class="fa-solid fa-calendar-check"></i> Request Online</a>
+</div>
+</div>
+<div class="binfo">
+<h3>Hours & Location</h3>
+<div class="hrow"><span>Monday</span><span class="open">8:00am - 5:00pm</span></div>
+<div class="hrow"><span>Tuesday</span><span class="open">8:00am - 5:00pm</span></div>
+<div class="hrow"><span>Wednesday</span><span class="open">8:30am - 5:00pm</span></div>
+<div class="hrow"><span>Thursday</span><span class="open">8:00am - 5:00pm</span></div>
+<div class="hrow"><span>Friday</span><span class="open">8:00am - 4:00pm</span></div>
+<div class="hrow"><span>Saturday</span><span class="open">8:00am - 3:00pm</span></div>
+<div class="hrow"><span>Sunday</span><span class="cl">Closed</span></div>
+<div class="addr"><i class="fa-solid fa-location-dot"></i><span>341 Main St N Unit 8, Brampton, ON L6X 3C7</span></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+<div class="wrap">
+<div class="kicker" style="text-align:center">Good to know</div>
+<h2 class="h2" style="text-align:center;margin:0 auto">Frequently asked questions</h2>
+<div class="faq">
+<div class="fitem"><div class="fq">Do I still need checkups if my teeth feel fine? <i class="fa-solid fa-plus"></i></div><div class="fa"><p>Yes. Regular checkups allow small problems to be detected early, before they escalate into larger ones.</p></div></div>
+<div class="fitem"><div class="fq">Can children get treatment at your clinic? <i class="fa-solid fa-plus"></i></div><div class="fa"><p>Yes. Children can receive checkups, cleanings and preventive care in a welcoming, family-friendly environment.</p></div></div>
+<div class="fitem"><div class="fq">Is sedation available for anxious patients? <i class="fa-solid fa-plus"></i></div><div class="fa"><p>Sedation options may help patients feel more comfortable during treatment. Your dentist will explain suitable options based on your needs.</p></div></div>
+<div class="fitem"><div class="fq">Do you participate in the Canadian Dental Care Plan? <i class="fa-solid fa-plus"></i></div><div class="fa"><p>Our office participates in the CDCP. We balance bill according to the current ODA fee guide, and patients are responsible for any portion not covered by the plan.</p></div></div>
+<div class="fitem"><div class="fq">What should I do during a dental emergency? <i class="fa-solid fa-plus"></i></div><div class="fa"><p>Contact us promptly so your condition can be evaluated as soon as possible. Early care may help prevent the problem from becoming more serious.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="wrap fgrid">
+<div>
+<div class="flogo"><span class="badge">9<b>0</b>5</span> Dental</div>
+<p>At 905 Dental, your smile is our priority. Led by Dr. Samuel Schlesinger, our caring team provides personalized, technology-driven dental care for all ages in Brampton, ON.</p>
+<div class="fsoc">
+<a href="https://www.facebook.com/905Dental/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/905dental/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.google.com/maps?cid=8177224549489807467" aria-label="Map"><i class="fa-solid fa-location-dot"></i></a>
+</div>
+</div>
+<div class="fcol">
+<h5>Services</h5>
+<a href="#services">Preventive Dentistry</a>
+<a href="#services">Invisalign</a>
+<a href="#services">Dental Implants</a>
+<a href="#services">CEREC Crowns</a>
+<a href="#services">Emergency Care</a>
+</div>
+<div class="fcol">
+<h5>Visit Us</h5>
+<div>341 Main St N Unit 8</div>
+<div>Brampton, ON L6X 3C7</div>
+<a href="tel:+12898017454">(289) 801-7454</a>
+<a href="#book">Book an Appointment</a>
+</div>
+</div>
+<div class="wrap fbot">
+<div>905 Dental &middot; Brampton, ON &middot; (289) 801-7454</div>
+<div class="cred">Concept site by WebCraft Global</div>
+</div>
+</footer>
+
+<script>
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){menu.classList.toggle('open')});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+document.querySelectorAll('.fitem').forEach(function(it){
+it.querySelector('.fq').addEventListener('click',function(){
+var open=it.classList.contains('act');
+document.querySelectorAll('.fitem').forEach(function(x){x.classList.remove('act');x.querySelector('.fa').style.maxHeight=null});
+if(!open){it.classList.add('act');var fa=it.querySelector('.fa');fa.style.maxHeight=fa.scrollHeight+'px'}
+});
+});
+</script>
+</body>
+</html>

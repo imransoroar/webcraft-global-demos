@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afghan Flame | Flame-Grilled Afghan Halal Kababs in Mississauga</title>
+<meta name="description" content="Afghan Flame brings the rich, aromatic flavours of Afghanistan to Mississauga. Halal kababs grilled over open fire, kabuli pulao, mantu and bolani. Your home away from home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--char:#1c1714;--char2:#262019;--ember:#d8551f;--ember2:#f08a2c;
+--terra:#9c4a2b;--sand:#e6d3b3;--sand2:#cdb288;--lapis:#2a5e86;
+--cream:#f6efe2;--ash:#7c6f5f;--line:rgba(230,211,179,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--char);color:var(--cream);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.mar{font-family:'Marcellus',serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Jost';font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--ember2)}
+.btn{display:inline-block;font-family:'Jost';font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;padding:15px 34px;border-radius:2px;transition:.3s;cursor:pointer;border:none}
+.btn-fill{background:linear-gradient(120deg,var(--ember),var(--ember2));color:#1c1714}
+.btn-fill:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 12px 30px rgba(216,85,31,.32)}
+.btn-out{border:1px solid var(--sand2);color:var(--sand)}
+.btn-out:hover{background:var(--sand);color:var(--char);transform:translateY(-2px)}
+
+/* geometric motif divider */
+.motif{display:block;margin:0 auto;width:140px;height:26px;opacity:.7}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:90;transition:.4s;padding:18px 0}
+header.scrolled{background:rgba(28,23,20,.94);backdrop-filter:blur(8px);padding:10px 0;box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:38px;height:38px}
+.logo-txt{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.5rem;letter-spacing:.04em;line-height:1}
+.logo-txt span{color:var(--ember2);display:block;font-size:.6rem;font-family:'Jost';font-weight:500;letter-spacing:.34em;text-transform:uppercase;margin-top:2px}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;position:relative;transition:.25s}
+.navlinks a:not(.btn):hover{color:var(--ember2)}
+.navlinks a:not(.btn)::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--ember2);transition:.3s}
+.navlinks a:not(.btn):hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.burger span{width:26px;height:2px;background:var(--cream);transition:.3s}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;
+background:radial-gradient(ellipse at 70% 30%,rgba(216,85,31,.22),transparent 55%),
+radial-gradient(ellipse at 20% 80%,rgba(42,94,134,.14),transparent 50%),
+linear-gradient(180deg,#15110e,#1c1714 60%,#211a14)}
+.ember-glow{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.spark{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--ember2);box-shadow:0 0 10px 2px var(--ember);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) scale(.4);opacity:0}15%{opacity:.9}100%{transform:translateY(-90vh) scale(1);opacity:0}}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(3rem,7vw,5.6rem);line-height:.98;font-weight:700;margin:20px 0 22px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--ember2);display:block}
+.hero p.lede{font-size:1.12rem;color:var(--sand);max-width:480px;margin-bottom:34px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-phone{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--cream)}
+.hero-phone span{display:block;font-family:'Jost';font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ash)}
+.hero-art{position:relative}
+.flame-disc{width:100%;max-width:380px;margin:0 auto;display:block;filter:drop-shadow(0 20px 50px rgba(216,85,31,.35))}
+.hero-tags{display:flex;gap:18px;margin-top:30px;flex-wrap:wrap}
+.tag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sand2);display:flex;align-items:center;gap:8px}
+.tag b{color:var(--ember2);font-size:1.1rem}
+
+/* SECTION base */
+section{position:relative}
+.band{padding:100px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:700;margin:14px 0 16px;line-height:1.05}
+.sec-head h2 em{font-style:italic;color:var(--ember2)}
+.sec-head p{color:var(--sand);font-size:1.05rem}
+
+/* STORY / flame feature */
+.flame-band{background:linear-gradient(180deg,#211a14,#1c1714)}
+.flame-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.flame-card{background:linear-gradient(160deg,var(--char2),#1d1813);border:1px solid var(--line);border-radius:6px;padding:46px 40px;position:relative;overflow:hidden}
+.flame-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(216,85,31,.3),transparent 70%)}
+.flame-card h3{font-size:2rem;margin-bottom:18px;color:var(--cream)}
+.flame-card p{color:var(--sand);margin-bottom:16px}
+.flame-feats{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+.ff{display:flex;gap:14px;align-items:flex-start}
+.ff svg{flex-shrink:0;margin-top:3px}
+.ff h4{font-family:'Cormorant Garamond';font-size:1.35rem;color:var(--ember2);font-weight:700;margin-bottom:2px}
+.ff p{font-size:.86rem;color:var(--sand2);margin:0}
+
+/* MENU */
+.menu-band{background:
+linear-gradient(180deg,#1c1714,#19140f);position:relative}
+.menu-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:46px;flex-wrap:wrap}
+.menu-tab{font-family:'Jost';font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem;padding:11px 22px;border:1px solid var(--line);border-radius:40px;background:transparent;color:var(--sand2);cursor:pointer;transition:.28s}
+.menu-tab:hover{border-color:var(--ember2);color:var(--cream)}
+.menu-tab.active{background:linear-gradient(120deg,var(--ember),var(--ember2));color:#1c1714;border-color:transparent}
+.menu-panel{display:none;animation:fade .5s ease}
+.menu-panel.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.menu-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 48px}
+.mi{padding:20px 0;border-bottom:1px dashed var(--line);transition:.25s;padding-left:14px;margin-left:-14px;border-radius:4px}
+.mi:hover{background:rgba(216,85,31,.06);padding-left:18px}
+.mi-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.mi-name{font-family:'Cormorant Garamond';font-weight:700;font-size:1.4rem;color:var(--cream);letter-spacing:.01em}
+.mi-price{font-family:'Cormorant Garamond';font-weight:700;font-size:1.3rem;color:var(--ember2);white-space:nowrap}
+.mi-desc{font-size:.85rem;color:var(--ash);margin-top:4px;max-width:46ch}
+.menu-note{text-align:center;margin-top:42px;color:var(--sand2);font-size:.92rem}
+.menu-note .btn{margin-top:18px}
+
+/* FEAST */
+.feast-band{background:linear-gradient(160deg,#23150e,#1c1714 70%);position:relative;overflow:hidden}
+.feast-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+.feast-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fc{background:rgba(28,23,20,.6);border:1px solid var(--line);border-radius:6px;padding:26px 22px;transition:.3s}
+.fc:hover{transform:translateY(-4px);border-color:var(--ember2);box-shadow:0 14px 36px rgba(0,0,0,.4)}
+.fc .pr{font-family:'Cormorant Garamond';color:var(--ember2);font-weight:700;font-size:1.6rem}
+.fc h4{font-family:'Cormorant Garamond';font-size:1.5rem;font-weight:700;margin:6px 0 8px;color:var(--cream)}
+.fc p{font-size:.82rem;color:var(--sand2)}
+.feast-intro h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:700;line-height:1.05;margin:14px 0 18px}
+.feast-intro h2 em{font-style:italic;color:var(--ember2)}
+.feast-intro p{color:var(--sand);margin-bottom:14px}
+
+/* VISIT */
+.visit-band{background:linear-gradient(180deg,#19140f,#15110d)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px}
+.visit-card{background:linear-gradient(160deg,var(--char2),#1a1510);border:1px solid var(--line);border-radius:8px;padding:42px 38px}
+.visit-card h3{font-size:1.8rem;font-weight:700;margin-bottom:6px}
+.vrow{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.vrow:last-child{border-bottom:none}
+.vrow svg{flex-shrink:0;margin-top:3px}
+.vrow .lbl{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ash)}
+.vrow .val{font-family:'Cormorant Garamond';font-size:1.3rem;color:var(--cream);font-weight:600;line-height:1.3}
+.vrow .val a:hover{color:var(--ember2)}
+.hours-row{display:flex;justify-content:space-between;font-size:.92rem;padding:7px 0;border-bottom:1px solid var(--line)}
+.hours-row:last-child{border:none}
+.hours-row span:first-child{color:var(--sand2)}
+.hours-row span:last-child{color:var(--cream);font-family:'Cormorant Garamond';font-weight:600}
+.hours-row.wknd span:last-child{color:var(--ember2)}
+.visit-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:#120e0b;padding:64px 0 30px;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.foot p{color:var(--ash);font-size:.9rem;max-width:340px}
+.foot h5{font-family:'Jost';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--ember2);margin-bottom:16px}
+.foot ul{list-style:none}
+.foot ul li{margin-bottom:10px}
+.foot ul a{color:var(--sand2);font-size:.92rem;transition:.2s}
+.foot ul a:hover{color:var(--ember2)}
+.foot-soc{display:flex;gap:12px;margin-top:14px}
+.foot-soc a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+.foot-soc a:hover{background:var(--ember2);border-color:var(--ember2)}
+.foot-soc a:hover svg path,.foot-soc a:hover svg circle{stroke:#1c1714}
+.foot-bot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center}
+.foot-bot p{font-size:.82rem;color:var(--ash)}
+.credit{font-size:.74rem;color:#564a3d;letter-spacing:.06em}
+
+@media(max-width:900px){
+.hero-grid,.flame-grid,.feast-grid,.visit-grid,.foot-grid{grid-template-columns:1fr}
+.menu-list{grid-template-columns:1fr}
+.hero-art{display:none}
+.flame-feats{grid-template-columns:1fr 1fr}
+.navlinks{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:#1a1510;flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:.4s;box-shadow:-10px 0 40px rgba(0,0,0,.5)}
+.navlinks.open{transform:none}
+.burger{display:flex;z-index:99}
+.foot-grid{gap:30px}
+}
+@media(max-width:560px){
+.feast-cards{grid-template-columns:1fr}
+.flame-feats{grid-template-columns:1fr}
+.band{padding:70px 0}
+.hero-cta{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+<div class="wrap nav">
+<a href="#top" class="logo">
+<svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+<path d="M20 3c4 6 8 9 8 16a8 8 0 1 1-16 0c0-3 1.4-5 3-7 .3 2 1.6 3.4 3 4 0-5-1.4-9 2-13z" fill="#f08a2c"/>
+<path d="M20 15c1.6 2.4 3 4 3 7a3 3 0 1 1-6 0c0-2 1.2-3.4 3-7z" fill="#d8551f"/>
+</svg>
+<div class="logo-txt">Afghan Flame<span>Mississauga</span></div>
+</a>
+<nav class="navlinks" id="navlinks">
+<a href="#flame">The Flame</a>
+<a href="#menu">Menu</a>
+<a href="#feast">Feasts</a>
+<a href="#visit">Visit</a>
+<a href="#visit" class="btn btn-fill">Reserve a Table</a>
+</nav>
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+<div class="ember-glow" id="glow"></div>
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<span class="eyebrow">Afghan Halal Kitchen &middot; Open Flame</span>
+<h1>Grilled over<em>an open fire.</em></h1>
+<p class="lede">At Afghan Flame, food is a symbol of life, culture and happiness. We bring the rich, aromatic flavours of Afghanistan to your table, kabab by kabab, the way our ancestors did, over a true open flame.</p>
+<div class="hero-cta">
+<a href="#menu" class="btn btn-fill">Explore the Menu</a>
+<a href="tel:+12898688555" class="hero-phone"><span>Reserve &middot; Call</span>+1 289-868-8555</a>
+</div>
+<div class="hero-tags">
+<div class="tag"><b>&#9679;</b> 100% Halal</div>
+<div class="tag"><b>&#9679;</b> Naan baked in-house</div>
+<div class="tag"><b>&#9679;</b> Two Mississauga locations</div>
+</div>
+</div>
+<div class="hero-art">
+<svg class="flame-disc" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="g1" cx="50%" cy="42%" r="60%">
+<stop offset="0%" stop-color="#f08a2c"/><stop offset="55%" stop-color="#d8551f"/><stop offset="100%" stop-color="#9c4a2b"/>
+</radialGradient>
+</defs>
+<circle cx="180" cy="180" r="172" fill="none" stroke="#2a5e86" stroke-width="1.4" opacity=".5"/>
+<circle cx="180" cy="180" r="160" fill="none" stroke="#e6d3b3" stroke-width="1" opacity=".25"/>
+<!-- 12-point central asian star -->
+<g transform="translate(180 180)" stroke="#e6d3b3" stroke-width="1.2" fill="none" opacity=".55">
+<g id="star12"></g>
+</g>
+<!-- flame in centre -->
+<path transform="translate(180 180) scale(2.1)" d="M0-44c10 15 20 22 20 40a20 20 0 1 1-40 0c0-8 3.5-12 7.5-17.5C-9-13-5-7 0-4c0-12-3.5-22 0-30z" fill="url(#g1)"/>
+<path transform="translate(180 180) scale(2.1)" d="M0-16c4 6 7.5 10 7.5 17.5a7.5 7.5 0 1 1-15 0c0-5 3-8.5 7.5-17.5z" fill="#f6efe2" opacity=".85"/>
+<!-- repeating petal border -->
+<g id="petals" fill="none" stroke="#f08a2c" stroke-width="1.4" opacity=".7"></g>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- FLAME FEATURE -->
+<section class="band flame-band" id="flame">
+<svg class="motif" viewBox="0 0 200 30"><g stroke="#d8551f" stroke-width="1.5" fill="none"><path d="M0 15h70"/><path d="M130 15h70"/><path d="M100 4l9 11-9 11-9-11z"/><circle cx="100" cy="15" r="3" fill="#f08a2c" stroke="none"/><path d="M82 15l9-7v14z" fill="#9c4a2b" stroke="none"/><path d="M118 15l-9-7v14z" fill="#9c4a2b" stroke="none"/></g></svg>
+<div class="wrap" style="margin-top:30px">
+<div class="flame-grid">
+<div class="flame-intro">
+<span class="eyebrow">From the Open Flame</span>
+<h2 class="serif" style="font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:700;line-height:1.05;margin:14px 0 18px">Smoke, char and<br><em style="font-style:italic;color:var(--ember2)">centuries of fire.</em></h2>
+<p style="color:var(--sand);margin-bottom:14px">Every kabob is grilled over a live charcoal fire, the heat catching the edges, the smoke folding into the marinade. Our chefs use centuries-old techniques carried from Kandahar to Mississauga, turning simple skewers into something you remember.</p>
+<p style="color:var(--sand2)">Naan is pulled fresh from the oven beside the grill, rice steamed and folded with whole spice. This is Afghan hospitality the way it was meant to be served, hot and generous.</p>
+</div>
+<div class="flame-card">
+<h3 class="serif">Why the fire matters</h3>
+<p>The open flame is not a gimmick, it is the heart of Afghan cooking. It seals the juices, lifts the spice and gives every plate its signature char.</p>
+<div class="flame-feats">
+<div class="ff"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2c3 4 5 6 5 10a5 5 0 1 1-10 0c0-2 1-3.5 2-5 0 2 1 3 2 3.5 0-4-1-6 1-8.5z" fill="#f08a2c"/></svg><div><h4>Live Charcoal</h4><p>Real fire, real smoke, never a flat-top.</p></div></div>
+<div class="ff"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#f08a2c" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="#f08a2c" stroke-width="1.6"/></svg><div><h4>Slow Marinades</h4><p>Spiced overnight for depth and tenderness.</p></div></div>
+<div class="ff"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 18c4-8 12-8 16 0" stroke="#f08a2c" stroke-width="1.6"/><circle cx="12" cy="7" r="3" stroke="#f08a2c" stroke-width="1.6"/></svg><div><h4>In-House Naan</h4><p>Baked fresh beside the grill, every order.</p></div></div>
+<div class="ff"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5 5.4.6-4 3.7 1.1 5.3L12 20l-4.9 2.6 1.1-5.3-4-3.7 5.4-.6z" stroke="#f08a2c" stroke-width="1.4"/></svg><div><h4>Certified Halal</h4><p>Every cut, every dish, no exceptions.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MENU -->
+<section class="band menu-band" id="menu">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow">Our Signature Menu</span>
+<h2 class="serif">Plates worth <em>gathering</em> for</h2>
+<p>Juicy kabobs grilled over open fire, every plate served with fresh in-house naan, rice and salad. Authentic starters, slow-cooked stews and the dishes Kandahar is known for.</p>
+</div>
+<div class="menu-tabs" id="tabs">
+<button class="menu-tab active" data-p="kabob">Kabob Plates</button>
+<button class="menu-tab" data-p="start">Starters</button>
+<button class="menu-tab" data-p="chef">Chef's Faves</button>
+<button class="menu-tab" data-p="more">Cravings &amp; Sides</button>
+</div>
+
+<div class="menu-panel show" data-panel="kabob">
+<div class="menu-list">
+<div class="mi"><div class="mi-top"><span class="mi-name">Sultani Kabob</span><span class="mi-price">$25</span></div><p class="mi-desc">One skewer of filet mignon steak chunks and one skewer of beef kofta.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Chaplee Kabob</span><span class="mi-price">$22</span></div><p class="mi-desc">Handmade patties of minced beef with fresh chillies, onions, coriander and tomatoes. Made with love.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Barg Kabob</span><span class="mi-price">$23</span></div><p class="mi-desc">A skewer of filet mignon steak, finely sliced into chunks.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Tandoori Chicken</span><span class="mi-price">$21</span></div><p class="mi-desc">Juicy boneless chicken thigh seasoned in spicy tandoori masala.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Kandahari Chargha</span><span class="mi-price">$21</span></div><p class="mi-desc">Half chicken with aromatic spices, steamed then fried crisp, juicy inside.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Lamb Tikka</span><span class="mi-price">$22</span></div><p class="mi-desc">Juicy chunks of boneless lamb, fire-grilled.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Lamb Chops</span><span class="mi-price">$29</span></div><p class="mi-desc">Four pieces of juicy bone-in lamb chops.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Grilled Paneer</span><span class="mi-price">$19</span></div><p class="mi-desc">Grilled paneer with fresh seasonal vegetables.</p></div>
+</div>
+</div>
+
+<div class="menu-panel" data-panel="start">
+<div class="menu-list">
+<div class="mi"><div class="mi-top"><span class="mi-name">Mantu</span><span class="mi-price">$11.5 / $18</span></div><p class="mi-desc">Hand-shaped dumplings steamed with spicy ground beef and onion, lentil gravy and house yogurt.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Kandahari Bolani</span><span class="mi-price">$10</span></div><p class="mi-desc">Grilled moon-shaped flatbread filled with potato, leek and fresh herbs, side of hot sauce.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Banjan</span><span class="mi-price">$12</span></div><p class="mi-desc">Pan-fried eggplant with tomato and garlic, drizzled with house yogurt and lemon.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Aush Soup</span><span class="mi-price">$6 / $18</span></div><p class="mi-desc">Rich comfort soup of broth, noodles and vegetables.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Lentil Soup</span><span class="mi-price">$5 / $15</span></div><p class="mi-desc">Healthy and flavourful, made with lentils and aromatic vegetable broth.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">House Special</span><span class="mi-price">$23</span></div><p class="mi-desc">Kandahari bolani, eggplant banjan and crisp fish bites together.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Garden Salad</span><span class="mi-price">$11</span></div><p class="mi-desc">Fresh seasonal vegetables with sumac, vinaigrette and lemon.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Fish Bites</span><span class="mi-price">$12</span></div><p class="mi-desc">Chef's favourite, boneless fish fried to a crisp finish.</p></div>
+</div>
+</div>
+
+<div class="menu-panel" data-panel="chef">
+<div class="menu-list">
+<div class="mi"><div class="mi-top"><span class="mi-name">Mixed Grill</span><span class="mi-price">$28</span></div><p class="mi-desc">Four chicken breast, four filet mignon and one beef kofta, with naan, salad and rice.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Lamb Sizzler</span><span class="mi-price">$35</span></div><p class="mi-desc">Four bone-in lamb chops and six chunks of lamb tikka.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Grilled Chicken</span><span class="mi-price">$25</span></div><p class="mi-desc">Half chicken on the bone in spicy tandoori masala. Choice of rice or fries.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Lamb Shank</span><span class="mi-price">$24</span></div><p class="mi-desc">Tender spiced lamb shank served over kabuli rice.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Lamb Shahi</span><span class="mi-price">$25</span></div><p class="mi-desc">One skewer of lamb tikka and one skewer of beef kofta.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Tandoori Waziri</span><span class="mi-price">$22</span></div><p class="mi-desc">One skewer spicy tandoori chicken thigh and one skewer chicken kofta.</p></div>
+</div>
+</div>
+
+<div class="menu-panel" data-panel="more">
+<div class="menu-list">
+<div class="mi"><div class="mi-top"><span class="mi-name">Afghan Sandwich</span><span class="mi-price">$18</span></div><p class="mi-desc">Chicken breast, fries, onions, garlic sauce and our special flame hot sauce, inside fresh naan.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Flame on Bun</span><span class="mi-price">$16</span></div><p class="mi-desc">Grilled chicken chunks, mozzarella and fresh grilled veggies.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Fish Sizzler</span><span class="mi-price">$27.5</span></div><p class="mi-desc">Bone-in fish of the day, crisp outside, juicy inside, with naan.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Kabuli Rice</span><span class="mi-price">$9.5</span></div><p class="mi-desc">Steamed long rice folded with whole spice, raisins and carrot.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Garlic Naan</span><span class="mi-price">$3.5</span></div><p class="mi-desc">Fresh in-house naan brushed with garlic.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Authentic Firni</span><span class="mi-price">$8</span></div><p class="mi-desc">Traditional Afghan creamy milk pudding, lightly perfumed.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Karak Chai</span><span class="mi-price">$4.5</span></div><p class="mi-desc">Spiced milk tea brewed strong and sweet.</p></div>
+<div class="mi"><div class="mi-top"><span class="mi-name">Doogh</span><span class="mi-price">$6</span></div><p class="mi-desc">Cooling savoury yogurt drink with mint.</p></div>
+</div>
+</div>
+
+<div class="menu-note">
+<p>Hungry for more? See the full menu, catering and family deals.</p>
+<a href="https://www.clover.com/online-ordering/afghan-flame-mississauga" target="_blank" rel="noopener" class="btn btn-out">Order Online</a>
+</div>
+</div>
+</section>
+
+<!-- FEAST -->
+<section class="band feast-band" id="feast">
+<div class="wrap">
+<div class="feast-grid">
+<div class="feast-intro">
+<span class="eyebrow">The Royal Experience</span>
+<h2 class="serif">Gather the family,<br><em>share the feast.</em></h2>
+<p style="color:var(--sand)">In Afghan culture, a guest is a blessing. Our shared platters are built for the table, piled with kababs, koftas, grilled veggies, fresh naan and rice, enough to pass around twice.</p>
+<p style="color:var(--sand2)">From a quiet dinner for two to a Royal Invite for eight, this is hospitality the Afghan way, your home away from home.</p>
+<a href="tel:+12898688555" class="btn btn-fill" style="margin-top:22px">Call to Plan a Feast</a>
+</div>
+<div class="feast-cards">
+<div class="fc"><span class="pr">$60</span><h4 class="serif">Meat Lovers</h4><p>Filet mignon, chicken breast, chapli, beef kofta, grilled veggies and fish bites. Naan, salad, fries, rice. For two.</p></div>
+<div class="fc"><span class="pr">$80</span><h4 class="serif">Family Platter</h4><p>Chicken breast, tandoori, koftas and half kandahari chargha, with rice, salad and three naans. For four.</p></div>
+<div class="fc"><span class="pr">$150</span><h4 class="serif">Mehman</h4><p>Lamb shanks, lamb tikka, koftas, chaplis, half chargha and grilled veggies. Naans, fries, rice. For five.</p></div>
+<div class="fc"><span class="pr">$210</span><h4 class="serif">The Royal Invite</h4><p>Skewers of breast, filet, chaplee, koftas and a whole tandoori chicken with grilled veggies. For eight.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VISIT -->
+<section class="band visit-band" id="visit">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow">Reservations &amp; Visit</span>
+<h2 class="serif">Find us at the <em>Tomken</em> table</h2>
+<p>Walk in, call ahead, or book a table for a feast. We would love to have you, smoke, spice and all.</p>
+</div>
+<div class="visit-grid">
+<div class="visit-card">
+<h3 class="serif">Afghan Flame &middot; Tomken</h3>
+<div class="vrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z" stroke="#f08a2c" stroke-width="1.5"/><circle cx="12" cy="10" r="2.4" stroke="#f08a2c" stroke-width="1.5"/></svg><div><div class="lbl">Address</div><div class="val"><a href="https://www.google.com/maps/place/Afghan+Flame+-+Tomken" target="_blank" rel="noopener">4910 Tomken Rd, Mississauga, ON L4W 1J8</a></div></div></div>
+<div class="vrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 1-2z" stroke="#f08a2c" stroke-width="1.5"/></svg><div><div class="lbl">Reserve &middot; Call</div><div class="val"><a href="tel:+12898688555">+1 289-868-8555</a></div></div></div>
+<div class="vrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M6 3v4M18 3v4" stroke="#f08a2c" stroke-width="1.5"/><rect x="4" y="7" width="16" height="14" rx="2" stroke="#f08a2c" stroke-width="1.5"/></svg><div><div class="lbl">Dine In, Take Out &amp; Catering</div><div class="val">48 hrs notice for catering trays &amp; whole-lamb rosht</div></div></div>
+<div class="visit-cta">
+<a href="tel:+12898688555" class="btn btn-fill">Call to Reserve</a>
+<a href="https://www.google.com/maps/place/Afghan+Flame+-+Tomken" target="_blank" rel="noopener" class="btn btn-out">Get Directions</a>
+</div>
+</div>
+<div class="visit-card">
+<h3 class="serif" style="margin-bottom:18px">Opening Hours</h3>
+<div class="hours-row"><span>Sunday</span><span>11:00 am - 10:00 pm</span></div>
+<div class="hours-row"><span>Monday</span><span>11:00 am - 10:00 pm</span></div>
+<div class="hours-row"><span>Tuesday</span><span>11:00 am - 10:00 pm</span></div>
+<div class="hours-row"><span>Wednesday</span><span>11:00 am - 10:00 pm</span></div>
+<div class="hours-row"><span>Thursday</span><span>11:00 am - 10:00 pm</span></div>
+<div class="hours-row wknd"><span>Friday</span><span>11:00 am - 11:00 pm</span></div>
+<div class="hours-row wknd"><span>Saturday</span><span>11:00 am - 11:00 pm</span></div>
+<p style="margin-top:18px;color:var(--sand2);font-size:.9rem">Also serving our Erin Centre, Mississauga location. Order ahead on DoorDash, Uber Eats and SkipTheDishes.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="foot-grid">
+<div class="foot">
+<div class="foot-logo">
+<svg class="logo-mark" viewBox="0 0 40 40" fill="none"><path d="M20 3c4 6 8 9 8 16a8 8 0 1 1-16 0c0-3 1.4-5 3-7 .3 2 1.6 3.4 3 4 0-5-1.4-9 2-13z" fill="#f08a2c"/><path d="M20 15c1.6 2.4 3 4 3 7a3 3 0 1 1-6 0c0-2 1.2-3.4 3-7z" fill="#d8551f"/></svg>
+<div class="logo-txt">Afghan Flame<span>Mississauga</span></div>
+</div>
+<p>Bringing the rich and aromatic flavours of Afghanistan to your table. Flame-grilled halal kababs, fresh naan and centuries-old recipes. Your home away from home.</p>
+<div class="foot-soc">
+<a href="https://www.facebook.com/Kandaharbazaar" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1z" stroke="#e6d3b3" stroke-width="1.4"/></svg></a>
+<a href="https://www.instagram.com/afghan_flame/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#e6d3b3" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="#e6d3b3" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="1" fill="#e6d3b3"/></svg></a>
+<a href="https://www.tiktok.com/@afghanflame" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 4v9a4 4 0 1 1-4-4M14 7a5 5 0 0 0 5 4" stroke="#e6d3b3" stroke-width="1.4"/></svg></a>
+</div>
+</div>
+<div class="foot">
+<h5>Explore</h5>
+<ul>
+<li><a href="#flame">The Open Flame</a></li>
+<li><a href="#menu">Signature Menu</a></li>
+<li><a href="#feast">Family Feasts</a></li>
+<li><a href="#visit">Visit &amp; Reserve</a></li>
+<li><a href="https://www.clover.com/online-ordering/afghan-flame-mississauga" target="_blank" rel="noopener">Order Online</a></li>
+</ul>
+</div>
+<div class="foot">
+<h5>Find Us</h5>
+<ul>
+<li><a href="https://www.google.com/maps/place/Afghan+Flame+-+Tomken" target="_blank" rel="noopener">4910 Tomken Rd</a></li>
+<li>Mississauga, ON L4W 1J8</li>
+<li><a href="tel:+12898688555">+1 289-868-8555</a></li>
+<li>Sun-Thu 11am &middot; Fri-Sat late</li>
+</ul>
+</div>
+</div>
+<div class="foot-bot">
+<p>&copy; 2026 Afghan Flame &middot; Mississauga, ON &middot; +1 289-868-8555</p>
+<p class="credit">Concept site by WebCraft Global</p>
+</div>
+</div>
+</footer>
+
+<script>
+// star + petal motif generation
+(function(){
+var star=document.getElementById('star12');
+if(star){var pts=[],n=12,R=150,r=78;
+for(var i=0;i<n*2;i++){var ang=Math.PI*i/n-Math.PI/2;var rad=i%2?r:R;pts.push((Math.cos(ang)*rad).toFixed(1)+','+(Math.sin(ang)*rad).toFixed(1));}
+var poly=document.createElementNS('http://www.w3.org/2000/svg','polygon');poly.setAttribute('points',pts.join(' '));star.appendChild(poly);
+var poly2=document.createElementNS('http://www.w3.org/2000/svg','polygon');poly2.setAttribute('points',pts.join(' '));poly2.setAttribute('transform','rotate(15)');poly2.setAttribute('opacity','.4');star.appendChild(poly2);}
+var pet=document.getElementById('petals');
+if(pet){for(var k=0;k<24;k++){var a=k*15*Math.PI/180;var x=180+Math.cos(a)*166;var y=180+Math.sin(a)*166;
+var c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));c.setAttribute('r','3.4');pet.appendChild(c);}}
+})();
+// sparks
+(function(){var g=document.getElementById('glow');if(!g)return;for(var i=0;i<22;i++){var s=document.createElement('div');s.className='spark';s.style.left=(Math.random()*100)+'%';s.style.bottom='-10px';var d=4+Math.random()*6;s.style.animationDuration=d+'s';s.style.animationDelay=(Math.random()*d)+'s';s.style.opacity=.5+Math.random()*.5;var sz=2+Math.random()*3;s.style.width=sz+'px';s.style.height=sz+'px';g.appendChild(s);}})();
+// header scroll
+var hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>40);});
+// burger
+var b=document.getElementById('burger'),nl=document.getElementById('navlinks');
+b.addEventListener('click',function(){nl.classList.toggle('open');});
+nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');});});
+// menu tabs
+var tabs=document.querySelectorAll('.menu-tab'),panels=document.querySelectorAll('.menu-panel');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+tabs.forEach(function(x){x.classList.remove('active');});t.classList.add('active');
+panels.forEach(function(p){p.classList.toggle('show',p.getAttribute('data-panel')===t.getAttribute('data-p'));});
+});});
+</script>
+</body>
+</html>

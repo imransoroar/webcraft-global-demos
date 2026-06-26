@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brampton Dental Arts | The Art of a Beautiful Smile, Brampton ON</title>
+<meta name="description" content="Refined cosmetic and family dentistry in Brampton, Ontario. Veneers, whitening, Invisalign and implants crafted with care by Dr. Azeem Sheikh. Call (905) 791-8768.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#23211d;
+  --ink-soft:#4a463f;
+  --cream:#f7f2ea;
+  --cream-2:#efe7da;
+  --paper:#fbf8f3;
+  --rose:#b9817c;
+  --rose-soft:#d7afa9;
+  --sage:#8a9683;
+  --sage-soft:#c3ccba;
+  --line:#e1d6c5;
+  --gold:#c9a86a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.12;letter-spacing:.2px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;color:var(--rose);font-weight:500}
+.eyebrow.sage{color:var(--sage)}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;padding:15px 34px;border-radius:40px;transition:.35s;cursor:pointer;border:1px solid transparent}
+.btn-fill{background:var(--ink);color:var(--cream)}
+.btn-fill:hover{background:var(--rose);transform:translateY(-2px)}
+.btn-out{border:1px solid var(--ink);color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--cream)}
+.btn-light{border:1px solid var(--cream);color:var(--cream)}
+.btn-light:hover{background:var(--cream);color:var(--ink)}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,248,243,.82);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:.4s}
+header.scrolled{border-bottom:1px solid var(--line);box-shadow:0 4px 30px rgba(35,33,29,.05)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .mk{width:40px;height:40px;flex:0 0 40px}
+.brand .nm{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:.5px;line-height:1.05}
+.brand .nm small{display:block;font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.36em;text-transform:uppercase;color:var(--rose);font-weight:500;margin-top:2px}
+.navlinks{display:flex;align-items:center;gap:34px}
+.navlinks a{font-size:.82rem;letter-spacing:.05em;color:var(--ink-soft);transition:.25s;position:relative}
+.navlinks a:not(.btn):after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--rose);transition:.3s}
+.navlinks a:not(.btn):hover{color:var(--ink)}
+.navlinks a:not(.btn):hover:after{width:100%}
+.navlinks .btn{padding:11px 24px}
+.menu-tog{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+.menu-tog span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* HERO */
+.hero{position:relative;padding:170px 0 110px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(circle at 78% 28%,var(--cream-2) 0,transparent 46%),
+  radial-gradient(circle at 12% 78%,#efe9dd 0,transparent 40%),
+  var(--paper);z-index:-2}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:4.4rem;margin:22px 0 24px}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:480px;font-weight:300}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.hero-meta{margin-top:42px;display:flex;gap:32px;flex-wrap:wrap}
+.hero-meta div{border-left:1px solid var(--line);padding-left:16px}
+.hero-meta b{font-family:'Cormorant Garamond',serif;font-size:1.9rem;display:block;font-weight:600;color:var(--ink)}
+.hero-meta span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* HERO ARTWORK */
+.art{position:relative;aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,#f0e6d6,#e6d9c4);overflow:hidden;box-shadow:0 40px 80px -30px rgba(35,33,29,.28)}
+.art .frame{position:absolute;inset:18px;border:1px solid rgba(185,129,124,.45);border-radius:185px 185px 14px 14px}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art .tag{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);background:rgba(251,248,243,.92);padding:11px 26px;border-radius:30px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);white-space:nowrap;box-shadow:0 10px 30px rgba(35,33,29,.12)}
+
+/* MARQUEE STRIP */
+.strip{background:var(--ink);color:var(--cream);padding:20px 0;overflow:hidden}
+.strip-in{display:flex;gap:50px;white-space:nowrap;animation:slide 28s linear infinite;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem}
+.strip-in span{opacity:.9}
+.strip-in span::before{content:"\2022";color:var(--rose);margin-right:50px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION SHELL */
+section{padding:100px 0}
+.sec-head{max-width:680px}
+.sec-head h2{font-size:3rem;margin:16px 0}
+.sec-head.center{margin:0 auto;text-align:center}
+.sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+/* PHILOSOPHY */
+.philo{background:var(--cream)}
+.philo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:54px}
+.pcard{background:var(--paper);padding:34px 26px;border-radius:18px;border:1px solid var(--line);transition:.4s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(35,33,29,.22);border-color:var(--rose-soft)}
+.pcard .ic{width:46px;height:46px;margin-bottom:20px}
+.pcard h4{font-size:1.45rem;margin-bottom:8px}
+.pcard p{font-size:.92rem;color:var(--ink-soft)}
+
+/* SERVICES */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:54px}
+.scard{position:relative;display:flex;gap:24px;padding:34px;border-radius:20px;background:var(--paper);border:1px solid var(--line);overflow:hidden;transition:.4s}
+.scard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--rose);transform:scaleY(0);transform-origin:top;transition:.4s}
+.scard:hover{transform:translateY(-5px);box-shadow:0 28px 54px -26px rgba(35,33,29,.24)}
+.scard:hover:before{transform:scaleY(1)}
+.scard.s2:before{background:var(--sage)}
+.scard .num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:var(--rose-soft);flex:0 0 auto;line-height:1}
+.scard.s2 .num{color:var(--sage-soft)}
+.scard h3{font-size:1.7rem;margin-bottom:8px}
+.scard p{font-size:.94rem;color:var(--ink-soft);margin-bottom:12px}
+.scard .more{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);font-weight:500}
+.scard.s2 .more{color:var(--sage)}
+
+/* GALLERY */
+.gallery{background:var(--cream-2)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px}
+.gtile{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#efe6d6;box-shadow:0 16px 36px -22px rgba(35,33,29,.3);transition:.45s}
+.gtile:hover{transform:translateY(-7px) rotate(-1deg)}
+.gtile svg{width:100%;height:100%;display:block}
+.gtile .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(35,33,29,.7));color:var(--cream)}
+.gtile .cap b{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;display:block}
+.gtile .cap span{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.gal-note{text-align:center;margin-top:34px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft)}
+
+/* DOCTOR */
+.doc-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.doc-portrait{position:relative;aspect-ratio:1/1.15;border-radius:24px;background:linear-gradient(155deg,#e8dcc8,#dcccb2);overflow:hidden;box-shadow:0 38px 70px -34px rgba(35,33,29,.32)}
+.doc-portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.doc-portrait .badge{position:absolute;left:24px;bottom:24px;background:var(--ink);color:var(--cream);padding:14px 22px;border-radius:14px}
+.doc-portrait .badge b{font-family:'Cormorant Garamond',serif;font-size:2rem;display:block;line-height:1;color:var(--gold)}
+.doc-portrait .badge span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+.doc-grid h2{font-size:2.8rem;margin:14px 0 18px}
+.doc-grid blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--ink);border-left:2px solid var(--rose);padding-left:22px;margin:26px 0}
+.doc-grid p{color:var(--ink-soft);margin-bottom:16px}
+.doc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 30px}
+.doc-list li{font-size:.9rem;color:var(--ink-soft);padding-left:24px;position:relative}
+.doc-list li:before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--sage)}
+
+/* BOOKING */
+.book{position:relative;background:var(--ink);color:var(--cream);overflow:hidden}
+.book:before{content:"";position:absolute;top:-120px;right:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(185,129,124,.32),transparent 70%)}
+.book:after{content:"";position:absolute;bottom:-140px;left:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(138,150,131,.28),transparent 70%)}
+.book-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.book h2{font-size:3.2rem;color:var(--cream);margin:16px 0 18px}
+.book h2 em{font-style:italic;color:var(--rose-soft)}
+.book p{color:#d8d2c8;max-width:440px}
+.book-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
+.phone-card{background:rgba(247,242,234,.06);border:1px solid rgba(247,242,234,.18);border-radius:22px;padding:38px 36px;backdrop-filter:blur(4px)}
+.phone-card .eyebrow{color:var(--rose-soft)}
+.phone-card .ph{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:600;color:var(--cream);display:block;margin:6px 0 4px;letter-spacing:.5px;transition:.3s}
+.phone-card a.ph:hover{color:var(--rose-soft)}
+.phone-card .hrs{margin-top:24px;border-top:1px solid rgba(247,242,234,.16);padding-top:20px}
+.phone-card .hrs .row{display:flex;justify-content:space-between;font-size:.86rem;padding:5px 0;color:#cfc9bf}
+.phone-card .hrs .row span:last-child{color:var(--cream)}
+.book-info{margin-top:30px;display:grid;gap:14px}
+.book-info div{font-size:.92rem;color:#d8d2c8}
+.book-info b{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:2px}
+
+/* FOOTER */
+footer{background:var(--cream);padding:70px 0 30px;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot-brand .nm{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600}
+.foot-brand p{font-size:.9rem;color:var(--ink-soft);margin-top:12px;max-width:300px}
+.foot-col h5{font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:var(--ink-soft);margin-bottom:9px;transition:.25s}
+.foot-col a:hover{color:var(--rose)}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px}
+.foot-bot p{font-size:.8rem;color:var(--ink-soft)}
+.foot-bot .credit{font-size:.72rem;color:#a89e8d;letter-spacing:.1em}
+
+@media(max-width:900px){
+  .hero-grid,.doc-grid,.book-grid{grid-template-columns:1fr}
+  .hero h1{font-size:3.3rem}
+  .philo-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}
+  .serv-grid{grid-template-columns:1fr}
+  .art{max-width:420px;margin:0 auto}
+  .doc-portrait{max-width:380px}
+  .navlinks{position:fixed;top:80px;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:0;max-height:0;overflow:hidden;transition:.4s;border-bottom:1px solid var(--line)}
+  .navlinks.open{max-height:480px;padding:14px 0}
+  .navlinks a{padding:13px 28px;width:100%}
+  .navlinks .btn{margin:10px 28px;text-align:center}
+  .menu-tog{display:flex}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .hero h1{font-size:2.6rem}
+  .sec-head h2{font-size:2.3rem}
+  .philo-grid,.gal-grid,.foot-grid{grid-template-columns:1fr}
+  .doc-list{grid-template-columns:1fr}
+  section{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Brampton Dental Arts">
+      <svg class="mk" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="19" stroke="#b9817c" stroke-width="1.2"/>
+        <path d="M20 9c-4 0-7 2.6-7 7 0 4 1.6 6.5 2.8 10.5C16.4 29 17.5 31 20 31s3.6-2 4.2-4.5C25.4 22.5 27 20 27 16c0-4.4-3-7-7-7z" fill="#b9817c" opacity=".9"/>
+        <path d="M20 13v9M16.5 16.5h7" stroke="#fbf8f3" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      <span class="nm">Brampton Dental Arts<small>The Art of a Smile</small></span>
+    </a>
+    <nav class="navlinks" id="nav">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Smile Gallery</a>
+      <a href="#doctor">Dr. Sheikh</a>
+      <a href="#book" class="btn btn-fill">Book a Visit</a>
+    </nav>
+    <button class="menu-tog" id="tog" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Refined Cosmetic &amp; Family Dentistry &middot; Brampton, ON</span>
+      <h1>The quiet <em>art</em> of a beautiful smile.</h1>
+      <p class="lead">At Brampton Dental Arts, a smile is shaped with the patience of a craft and the calm of a place designed for ease. Cosmetic detail, honest guidance, and care you can understand.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-fill">Reserve Your Consultation</a>
+        <a href="tel:+19057918768" class="btn btn-out">Call (905) 791-8768</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>20+</b><span>Years of Artistry</span></div>
+        <div><b>6 days</b><span>A Week, For You</span></div>
+        <div><b>CDCP</b><span>Accepted Here</span></div>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="frame"></div>
+      <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fbf8f3"/><stop offset="1" stop-color="#f1e7d6"/>
+          </linearGradient>
+        </defs>
+        <rect width="300" height="375" fill="url(#g1)"/>
+        <g opacity=".5" stroke="#d7afa9" fill="none" stroke-width="1">
+          <circle cx="150" cy="150" r="120"/><circle cx="150" cy="150" r="92"/>
+        </g>
+        <path d="M95 168c0-24 22-40 55-40s55 16 55 40c0 22-12 50-30 64-9 7-16 12-25 12s-16-5-25-12c-18-14-30-42-30-64z" fill="#fff" stroke="#e1d6c5"/>
+        <g fill="#fbf8f3" stroke="#e9dcc8" stroke-width=".8">
+          <path d="M112 158c8-8 22-9 28-2 5 6 1 16-6 20-9 5-20 1-24-6-3-5-2-9 2-12z"/>
+          <path d="M188 158c-8-8-22-9-28-2-5 6-1 16 6 20 9 5 20 1 24-6 3-5 2-9-2-12z"/>
+          <path d="M132 188c5-5 14-5 18 0 3 5 1 12-4 15-6 4-14 1-16-5-2-4-1-7 2-10z"/>
+          <path d="M168 188c-5-5-14-5-18 0-3 5-1 12 4 15 6 4 14 1 16-5 2-4 1-7-2-10z"/>
+        </g>
+        <path d="M150 250c14 0 26-8 26-8-4 12-15 20-26 20s-22-8-26-20c0 0 12 8 26 8z" fill="#d7afa9"/>
+        <g fill="#c9a86a"><circle cx="150" cy="92" r="3"/><circle cx="118" cy="108" r="2"/><circle cx="182" cy="108" r="2"/></g>
+      </svg>
+      <div class="tag">"Where we create smiles."</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-in">
+    <span>Porcelain Veneers</span><span>Teeth Whitening</span><span>Invisalign Clear Aligners</span><span>Dental Implants</span><span>The Hollywood Smile</span><span>Sedation Comfort</span>
+    <span>Porcelain Veneers</span><span>Teeth Whitening</span><span>Invisalign Clear Aligners</span><span>Dental Implants</span><span>The Hollywood Smile</span><span>Sedation Comfort</span>
+  </div>
+</div>
+
+<section class="philo" id="philosophy">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow sage">Our Philosophy</span>
+      <h2>A dental team you can trust, every visit, every smile.</h2>
+      <p>We start by listening. From there, every recommendation is clear, unhurried, and shaped around how you want to feel.</p>
+    </div>
+    <div class="philo-grid">
+      <div class="pcard">
+        <svg class="ic" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="16" r="8" stroke="#b9817c" stroke-width="1.6"/><path d="M9 38c0-8 6-13 14-13s14 5 14 13" stroke="#b9817c" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h4>Patient-First</h4>
+        <p>We listen first, then guide you with straightforward advice and build a relationship that lasts.</p>
+      </div>
+      <div class="pcard">
+        <svg class="ic" viewBox="0 0 46 46" fill="none"><rect x="11" y="9" width="24" height="28" rx="3" stroke="#8a9683" stroke-width="1.6"/><path d="M17 18h12M17 24h12M17 30h7" stroke="#8a9683" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h4>Honest Care</h4>
+        <p>You will always know why a treatment is recommended, with no pressure to decide before you are ready.</p>
+      </div>
+      <div class="pcard">
+        <svg class="ic" viewBox="0 0 46 46" fill="none"><path d="M23 36s-13-8-13-18a6.5 6.5 0 0 1 13-2 6.5 6.5 0 0 1 13 2c0 10-13 18-13 18z" stroke="#b9817c" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h4>Family-Focused</h4>
+        <p>From children to grandparents, one familiar clinic in Brampton for your whole family.</p>
+      </div>
+      <div class="pcard">
+        <svg class="ic" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="14" stroke="#8a9683" stroke-width="1.6"/><path d="M16 25c2 3 4 4 7 4s5-1 7-4" stroke="#8a9683" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="19" r="1.5" fill="#8a9683"/><circle cx="28" cy="19" r="1.5" fill="#8a9683"/></svg>
+        <h4>Calming Setting</h4>
+        <p>A comfortable, soothing space designed to ease anxiety from the moment you arrive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cosmetic &amp; Restorative</span>
+      <h2>Crafted treatments for a smile worth showing.</h2>
+      <p>From a subtle refinement to a complete transformation, our cosmetic work is matched with the comprehensive care your family needs, all under one roof.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="scard">
+        <div class="num">01</div>
+        <div>
+          <h3>Porcelain Veneers &amp; Lumineers</h3>
+          <p>Thin, hand-shaded shells that reshape, brighten, and align in a way that looks effortlessly natural, the cornerstone of a Hollywood smile.</p>
+          <span class="more">Veneers &amp; Lumineers</span>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="num">02</div>
+        <div>
+          <h3>Professional Teeth Whitening</h3>
+          <p>A bright, even tone achieved gently and safely in our care, lifting years of stain to restore your natural radiance.</p>
+          <span class="more">Cosmetic Whitening</span>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="num">03</div>
+        <div>
+          <h3>Invisalign &amp; Clear Aligners</h3>
+          <p>Straighten discreetly with a series of nearly invisible aligners, refining your smile without brackets or wires.</p>
+          <span class="more">Clear Aligners</span>
+        </div>
+      </div>
+      <div class="scard s2">
+        <div class="num">04</div>
+        <div>
+          <h3>Dental Implants &amp; All-on-X</h3>
+          <p>A damaged tooth can often be removed and replaced the same day, restoring both function and the look of a complete smile.</p>
+          <span class="more">Same-Day Implants</span>
+        </div>
+      </div>
+      <div class="scard s2">
+        <div class="num">05</div>
+        <div>
+          <h3>Family &amp; General Dentistry</h3>
+          <p>Exams, cleanings, fillings, and preventive care for every age, delivered with a steady, respectful approach.</p>
+          <span class="more">Comprehensive Care</span>
+        </div>
+      </div>
+      <div class="scard s2">
+        <div class="num">06</div>
+        <div>
+          <h3>Sedation &amp; Sleep Dentistry</h3>
+          <p>Nitrous oxide, oral, and IV sedation make anxiety-free dentistry possible, so care feels calm from start to finish.</p>
+          <span class="more">Comfort Options</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">The Smile Gallery</span>
+      <h2>An artist's eye for every detail.</h2>
+      <p>A look at the qualities we shape in every smile, illustrated in our own hand. Every result is tailored, never templated.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gtile">
+        <svg viewBox="0 0 150 200"><rect width="150" height="200" fill="#f3ead9"/><g fill="#fff" stroke="#e6d9c4"><rect x="40" y="70" width="14" height="34" rx="6"/><rect x="58" y="66" width="16" height="40" rx="6"/><rect x="78" y="66" width="16" height="40" rx="6"/><rect x="98" y="70" width="14" height="34" rx="6"/></g><path d="M40 118q35 24 70 0" stroke="#b9817c" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <div class="cap"><b>Veneers</b><span>Shape &amp; Symmetry</span></div>
+      </div>
+      <div class="gtile">
+        <svg viewBox="0 0 150 200"><rect width="150" height="200" fill="#eef1ea"/><g fill="#fff" stroke="#d6ddcf"><rect x="44" y="72" width="15" height="36" rx="6"/><rect x="63" y="70" width="16" height="40" rx="6"/><rect x="83" y="70" width="16" height="40" rx="6"/></g><g fill="#c9a86a"><circle cx="105" cy="62" r="3"/><circle cx="115" cy="74" r="2"/><circle cx="100" cy="50" r="2"/></g></svg>
+        <div class="cap"><b>Whitening</b><span>Tone &amp; Radiance</span></div>
+      </div>
+      <div class="gtile">
+        <svg viewBox="0 0 150 200"><rect width="150" height="200" fill="#f2e7e4"/><g fill="none" stroke="#d7afa9" stroke-width="2"><rect x="38" y="74" width="74" height="52" rx="26"/><path d="M55 74v52M75 70v60M95 74v52"/></g></svg>
+        <div class="cap"><b>Invisalign</b><span>Alignment</span></div>
+      </div>
+      <div class="gtile">
+        <svg viewBox="0 0 150 200"><rect width="150" height="200" fill="#eceee9"/><path d="M75 58c-9 0-16 6-16 16 0 9 4 16 7 26 2 6 4 12 9 12s7-6 9-12c3-10 7-17 7-26 0-10-7-16-16-16z" fill="#fff" stroke="#8a9683" stroke-width="1.5"/><rect x="71" y="116" width="8" height="22" rx="3" fill="#8a9683"/></svg>
+        <div class="cap"><b>Implants</b><span>Function &amp; Form</span></div>
+      </div>
+    </div>
+    <p class="gal-note">Illustrations only. Your consultation reveals what is possible for you.</p>
+  </div>
+</section>
+
+<section class="doctor" id="doctor">
+  <div class="wrap doc-grid">
+    <div class="doc-portrait" aria-hidden="true">
+      <svg viewBox="0 0 300 345" preserveAspectRatio="xMidYMid slice">
+        <rect width="300" height="345" fill="#e6d9c4"/>
+        <circle cx="150" cy="130" r="62" fill="#f3ead9"/>
+        <path d="M150 80c-26 0-40 18-40 42 0 10 3 18 7 24-3 2-5 5-5 9 0 6 5 9 11 9 5 8 16 14 27 14s22-6 27-14c6 0 11-3 11-9 0-4-2-7-5-9 4-6 7-14 7-24 0-24-14-42-40-42z" fill="#ecdcc4"/>
+        <path d="M110 116c0-22 16-36 40-36s40 14 40 36c-4-8-12-16-24-16-6 0-9 3-16 3s-10-3-16-3c-12 0-20 8-24 16z" fill="#3a352c"/>
+        <path d="M96 345c0-46 24-72 54-72s54 26 54 72z" fill="#fbf8f3"/>
+        <path d="M150 273c-14 0-22 8-22 20l22 52 22-52c0-12-8-20-22-20z" fill="#8a9683" opacity=".55"/>
+        <circle cx="150" cy="300" r="5" fill="#c9a86a"/><circle cx="150" cy="318" r="4" fill="#c9a86a"/>
+      </svg>
+      <div class="badge"><b>20+</b><span>Years Experience</span></div>
+    </div>
+    <div>
+      <span class="eyebrow">Meet The Doctor</span>
+      <h2>Dr. Azeem Sheikh</h2>
+      <blockquote>"A calm, thoughtful chair-side approach, so you feel comfortable before treatment ever begins."</blockquote>
+      <p>With more than 20 years of experience as a dentist in Brampton, Dr. Sheikh blends clinical precision with the patience of an artist. Patients sit at the centre of every decision, with treatment options explained clearly and without pressure.</p>
+      <ul class="doc-list">
+        <li>20+ years in practice</li>
+        <li>Cosmetic &amp; restorative focus</li>
+        <li>Gentle, anxiety-aware care</li>
+        <li>Proud 123Dentist member</li>
+      </ul>
+      <a href="#book" class="btn btn-out">Book With Dr. Sheikh</a>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div>
+      <span class="eyebrow">Your Forever Smile Starts Here</span>
+      <h2>Reserve your <em>consultation</em> today.</h2>
+      <p>Care that is clear, comfortable, and tailored to you. We are accepting new patients and proudly accept the Canadian Dental Care Plan (CDCP). Find us in a quiet plaza near TD Bank and Tim Hortons, with free parking steps from the door.</p>
+      <div class="book-cta">
+        <a href="tel:+19057918768" class="btn btn-light">Call (905) 791-8768</a>
+        <a href="https://www.bramptondentalarts.com/accepting-new-patients/" class="btn btn-light">Request Appointment</a>
+      </div>
+      <div class="book-info">
+        <div><b>Visit Us</b>105 Father Tobin Road, Unit #7, Brampton, ON L6R 0W9</div>
+        <div><b>Find Us</b>A quiet residential plaza near TD Bank &amp; Tim Hortons, free parking at the door.</div>
+      </div>
+    </div>
+    <div class="phone-card">
+      <span class="eyebrow">Call To Book</span>
+      <a href="tel:+19057918768" class="ph">(905) 791-8768</a>
+      <div class="hrs">
+        <div class="row"><span>Monday</span><span>8:30am - 5:30pm</span></div>
+        <div class="row"><span>Tuesday</span><span>8:00am - 5:00pm</span></div>
+        <div class="row"><span>Wednesday</span><span>8:00am - 5:00pm</span></div>
+        <div class="row"><span>Thursday</span><span>8:00am - 5:00pm</span></div>
+        <div class="row"><span>Friday</span><span>8:00am - 1:00pm</span></div>
+        <div class="row"><span>Saturday</span><span>10:00am - 3:00pm</span></div>
+        <div class="row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="nm">Brampton Dental Arts</span>
+        <p>Refined cosmetic and family dentistry where every visit is clear, calm, and respectful. Where we create smiles.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Treatments</h5>
+        <a href="#services">Porcelain Veneers</a>
+        <a href="#services">Teeth Whitening</a>
+        <a href="#services">Invisalign</a>
+        <a href="#services">Dental Implants</a>
+        <a href="#services">Sedation Dentistry</a>
+      </div>
+      <div class="foot-col">
+        <h5>Visit Us</h5>
+        <p>105 Father Tobin Road, Unit #7<br>Brampton, ON L6R 0W9</p>
+        <a href="tel:+19057918768">(905) 791-8768</a>
+        <a href="#book">Book an Appointment</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>Brampton Dental Arts &middot; Brampton, ON &middot; (905) 791-8768</p>
+      <p class="credit">Concept site by WebCraft Global</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>20)hdr.classList.add('scrolled');else hdr.classList.remove('scrolled');
+  });
+  var tog=document.getElementById('tog'),nav=document.getElementById('nav');
+  tog.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open');});
+  });
+})();
+</script>
+</body>
+</html>

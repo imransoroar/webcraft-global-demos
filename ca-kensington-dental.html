@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kensington Dental | Trusted Family Dentist in Brampton, ON</title>
+<meta name="description" content="A long-established neighbourhood dental practice serving Brampton for over 35 years. Gentle, trusted family care at Kensington Dental. Call (905) 791-7549.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--green:#0f3d2e;--green-deep:#0a2c20;--green-soft:#1a503d;
+--cream:#f4efe2;--cream-deep:#ebe3d0;--paper:#faf7ef;
+--brass:#b08d4f;--brass-light:#c9a96a;--brass-deep:#8a6d36;
+--ink:#1c2420;--muted:#5e6660;
+--serif:'Cormorant Garamond',Georgia,serif;
+--sans:'Jost',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.7;font-weight:300;font-size:16px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-deep)}
+.brass-rule{display:inline-block;width:54px;height:2px;background:var(--brass);vertical-align:middle}
+
+/* Top bar */
+.topbar{background:var(--green-deep);color:var(--cream);font-size:.78rem;letter-spacing:.06em}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:42px;gap:18px;flex-wrap:wrap}
+.topbar a{color:var(--cream);transition:color .25s}
+.topbar a:hover{color:var(--brass-light)}
+.topbar .badge{color:var(--brass-light);font-weight:500}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(244,239,226,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--cream-deep)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px}
+.brand{display:flex;align-items:center;gap:14px}
+.crest{width:46px;height:46px;flex:none}
+.brand-txt b{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:var(--green);display:block;line-height:1}
+.brand-txt span{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--brass-deep)}
+.navlinks{display:flex;gap:34px;align-items:center}
+.navlinks a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);font-weight:400;transition:color .25s;position:relative}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--brass);transition:width .3s}
+.navlinks a:hover{color:var(--brass-deep)}
+.navlinks a:hover::after{width:100%}
+.btn{display:inline-block;font-family:var(--sans);font-weight:500;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:13px 26px;border-radius:2px;transition:all .3s;cursor:pointer;border:1.5px solid transparent}
+.btn-brass{background:var(--brass);color:#fff}
+.btn-brass:hover{background:var(--brass-deep);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--cream);color:var(--cream)}
+.btn-ghost:hover{background:var(--cream);color:var(--green)}
+.btn-green{border-color:var(--green);color:var(--green)}
+.btn-green:hover{background:var(--green);color:var(--cream)}
+.menu-tog{display:none;background:none;border:none;cursor:pointer;color:var(--green)}
+
+/* Hero */
+.hero{background:var(--green);color:var(--cream);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 22%,rgba(176,141,79,.18),transparent 55%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding-top:78px;padding-bottom:78px;position:relative;z-index:2}
+.hero .est{color:var(--brass-light);letter-spacing:.3em}
+.hero h1{font-size:4rem;margin:18px 0 6px;color:var(--cream)}
+.hero h1 em{font-style:italic;color:var(--brass-light);font-weight:500}
+.hero .lede{font-size:1.08rem;color:#d8d2c2;max-width:46ch;margin:20px 0 32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-tel{font-family:var(--serif);font-size:1.3rem;color:var(--cream);font-weight:600}
+.hero-tel small{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light);font-weight:400}
+
+/* Hero crest panel */
+.crest-panel{background:linear-gradient(160deg,var(--green-soft),var(--green-deep));border:1px solid rgba(176,141,79,.4);border-radius:4px;padding:40px 34px;text-align:center;position:relative}
+.crest-panel::after{content:"";position:absolute;inset:9px;border:1px solid rgba(176,141,79,.25);border-radius:2px;pointer-events:none}
+.crest-panel .big{font-family:var(--serif);font-size:5rem;color:var(--brass-light);line-height:.9;font-weight:700}
+.crest-panel .lbl{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:#cfc8b8;margin-top:8px}
+.crest-panel hr{border:none;border-top:1px solid rgba(176,141,79,.3);margin:24px 0}
+.crest-panel .pts{text-align:left;font-size:.86rem;color:#d8d2c2}
+.crest-panel .pts div{display:flex;gap:11px;align-items:flex-start;margin:13px 0}
+.crest-panel .pts svg{flex:none;margin-top:3px}
+
+/* Sections */
+.sec{padding:84px 0}
+.sec-head{max-width:680px}
+.sec-head .eyebrow{display:block;margin-bottom:14px}
+.sec-head h2{font-size:2.7rem;color:var(--green);margin-bottom:10px}
+.sec-head p{color:var(--muted);font-size:1.04rem}
+
+/* Trust */
+.trust{background:var(--cream)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.tcard{background:var(--paper);border:1px solid var(--cream-deep);border-radius:3px;padding:30px 26px;transition:all .35s;position:relative}
+.tcard::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.tcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,61,46,.1)}
+.tcard:hover::before{transform:scaleX(1)}
+.tcard .ic{width:48px;height:48px;color:var(--brass-deep);margin-bottom:18px}
+.tcard h3{font-size:1.42rem;color:var(--green);margin-bottom:10px}
+.tcard p{font-size:.92rem;color:var(--muted)}
+
+/* Services register */
+.reg-list{margin-top:46px;border-top:1px solid var(--cream-deep)}
+.reg-row{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--cream-deep);transition:background .3s,padding .3s}
+.reg-row:hover{background:var(--cream);padding-left:22px}
+.reg-num{font-family:var(--serif);font-size:1.5rem;color:var(--brass);font-weight:600;font-variant-numeric:tabular-nums}
+.reg-row h3{font-size:1.55rem;color:var(--green)}
+.reg-row p{font-size:.92rem;color:var(--muted);margin-top:3px}
+.reg-tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-deep);font-weight:500;white-space:nowrap}
+
+/* Comfort split */
+.comfort{background:var(--green);color:var(--cream)}
+.comfort .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.comfort h2{font-size:2.8rem;color:var(--cream);margin:14px 0 18px}
+.comfort h2 em{font-style:italic;color:var(--brass-light);font-weight:500}
+.comfort p{color:#d4cebe;margin-bottom:18px}
+.comfort .eyebrow{color:var(--brass-light)}
+.comfort-vis{position:relative;aspect-ratio:1/1;background:linear-gradient(150deg,var(--green-soft),var(--green-deep));border:1px solid rgba(176,141,79,.35);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.comfort-vis::after{content:"";position:absolute;inset:14px;border:1px solid rgba(176,141,79,.22);border-radius:2px}
+.comfort-quote{margin-top:26px;padding-left:22px;border-left:2px solid var(--brass);font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--cream);line-height:1.4}
+.comfort-quote span{display:block;font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light);margin-top:12px}
+
+/* Hours / insurance band */
+.band{background:var(--cream)}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.panel{background:var(--paper);border:1px solid var(--cream-deep);border-radius:3px;padding:38px 36px;position:relative}
+.panel h3{font-size:1.85rem;color:var(--green);margin-bottom:6px}
+.panel .eyebrow{display:block;margin-bottom:14px}
+.hours-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dotted var(--cream-deep);font-size:.95rem}
+.hours-row:last-child{border-bottom:none}
+.hours-row b{font-weight:500;color:var(--green)}
+.hours-row span{color:var(--muted);font-variant-numeric:tabular-nums}
+.hours-row.closed span{color:var(--brass-deep);font-style:italic}
+.ins-list{list-style:none;margin-top:6px}
+.ins-list li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;font-size:.95rem;color:var(--ink);border-bottom:1px dotted var(--cream-deep)}
+.ins-list li:last-child{border-bottom:none}
+.ins-list svg{flex:none;margin-top:4px;color:var(--brass-deep)}
+.cdcp{margin-top:22px;background:var(--green);color:var(--cream);padding:18px 22px;border-radius:3px;font-size:.9rem}
+.cdcp b{color:var(--brass-light);font-family:var(--serif);font-size:1.1rem;display:block;margin-bottom:3px}
+
+/* Team */
+.team{background:var(--paper)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:46px}
+.tm{text-align:center}
+.tm-av{width:96px;height:96px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(150deg,var(--green-soft),var(--green-deep));border:2px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.7rem;color:var(--brass-light);font-weight:600;transition:transform .35s}
+.tm:hover .tm-av{transform:scale(1.06)}
+.tm h3{font-size:1.32rem;color:var(--green)}
+.tm .role{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-deep);font-weight:500;margin:4px 0 10px}
+.tm p{font-size:.86rem;color:var(--muted)}
+
+/* Booking */
+.book{background:var(--green-deep);color:var(--cream);position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(176,141,79,.16),transparent 50%)}
+.book .wrap{position:relative;z-index:2;text-align:center;max-width:780px}
+.book .eyebrow{color:var(--brass-light)}
+.book h2{font-size:3rem;color:var(--cream);margin:16px 0 14px}
+.book h2 em{font-style:italic;color:var(--brass-light);font-weight:500}
+.book p{color:#d4cebe;max-width:52ch;margin:0 auto 30px}
+.book-tel{display:inline-flex;flex-direction:column;align-items:center;margin:8px 0 26px}
+.book-tel .num{font-family:var(--serif);font-size:3rem;color:var(--brass-light);font-weight:700;line-height:1}
+.book-tel small{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:#cfc8b8;margin-top:8px}
+.book-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.book-addr{margin-top:30px;font-size:.88rem;color:#bdb6a6;letter-spacing:.04em}
+
+/* Footer */
+footer{background:#081e15;color:#b6c2bb;font-size:.88rem;padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:34px;border-bottom:1px solid rgba(176,141,79,.18)}
+.foot-brand b{font-family:var(--serif);font-size:1.55rem;color:var(--cream);font-weight:700}
+.foot-brand p{margin-top:12px;max-width:34ch;color:#9aa69f}
+.foot-col h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light);margin-bottom:16px;font-family:var(--sans);font-weight:600}
+.foot-col a,.foot-col p{display:block;color:#9aa69f;margin-bottom:9px;transition:color .25s}
+.foot-col a:hover{color:var(--brass-light)}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.78rem;color:#7d897f}
+.foot-bot .concept{color:#5f6b62;letter-spacing:.08em}
+.foot-bot .concept:hover{color:var(--brass-deep)}
+
+@media(max-width:960px){
+.hero .wrap,.comfort .wrap,.band .wrap{grid-template-columns:1fr;gap:40px}
+.trust-grid,.team-grid{grid-template-columns:1fr 1fr}
+.hero h1{font-size:3.2rem}
+.foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid var(--cream-deep)}
+.navlinks.open{display:flex}
+.navlinks a{padding:14px 28px;width:100%}
+.navlinks .btn{margin:10px 28px;text-align:center}
+.menu-tog{display:block}
+.trust-grid,.team-grid{grid-template-columns:1fr}
+.hero h1{font-size:2.6rem}
+.sec-head h2,.comfort h2,.book h2{font-size:2.1rem}
+.reg-row{grid-template-columns:auto 1fr;gap:16px}
+.reg-tag{grid-column:2;margin-top:4px}
+.foot-grid{grid-template-columns:1fr}
+.book-tel .num{font-size:2.3rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<div class="wrap">
+<span>Serving Brampton for over 35 years</span>
+<span><a href="https://kensingtondentists.com/accepting-new-patients/" target="_blank" rel="noopener" class="badge">Accepting New Patients</a> &nbsp;|&nbsp; <a href="tel:9057917549">(905) 791-7549</a></span>
+</div>
+</div>
+
+<header>
+<div class="wrap nav">
+<a href="#top" class="brand">
+<svg class="crest" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+<path d="M30 3l24 8v18c0 16-10 24-24 28C16 53 6 45 6 29V11z" fill="#0f3d2e" stroke="#b08d4f" stroke-width="1.5"/>
+<path d="M30 14c-5 0-8 3-8 8 0 6 8 16 8 16s8-10 8-16c0-5-3-8-8-8z" fill="#c9a96a"/>
+<circle cx="30" cy="22" r="3.2" fill="#0f3d2e"/>
+</svg>
+<span class="brand-txt"><b>Kensington Dental</b><span>Brampton &middot; Ontario</span></span>
+</a>
+<nav class="navlinks" id="nav">
+<a href="#trust">Why Us</a>
+<a href="#services">Services</a>
+<a href="#comfort">Comfort</a>
+<a href="#hours">Hours</a>
+<a href="#book" class="btn btn-green">Book a Visit</a>
+</nav>
+<button class="menu-tog" id="tog" aria-label="Menu">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+</button>
+</div>
+</header>
+
+<section class="hero" id="top">
+<div class="wrap">
+<div>
+<span class="est eyebrow">Established Neighbourhood Practice</span>
+<h1>Trusted, gentle care<br><em>for every smile.</em></h1>
+<p class="lede">Good dental care starts with feeling understood. At Kensington Dental, visits are built around clear conversations, steady support, and treatment that respects your comfort, your goals, and your pace.</p>
+<div class="hero-cta">
+<a href="#book" class="btn btn-brass">Book an Appointment</a>
+<a href="tel:9057917549" class="hero-tel">(905) 791-7549<small>Call our front desk</small></a>
+</div>
+</div>
+<div class="crest-panel">
+<div class="big">35<span style="font-size:2rem;vertical-align:super">+</span></div>
+<div class="lbl">Years Serving Brampton</div>
+<hr>
+<div class="pts">
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a96a" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Family care for all ages</div>
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a96a" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Evening &amp; weekend hours</div>
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a96a" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Canadian Dental Care Plan accepted</div>
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a96a" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Proud 123Dentist member</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec trust" id="trust">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow"><span class="brass-rule"></span> &nbsp;Brampton's Trusted Clinic</span>
+<h2>Why patients return, year after year</h2>
+<p>Trust develops when care feels consistent and communication feels honest. Our team takes time to explain what we are seeing, answer questions fully, and outline options without pressure.</p>
+</div>
+<div class="trust-grid">
+<div class="tcard">
+<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+<h3>Built Around Prevention</h3>
+<p>Regular exams, hygiene visits, and early detection help keep care predictable and manageable over time.</p>
+</div>
+<div class="tcard">
+<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v2m8-2v2M7 22h10"/></svg>
+<h3>Clear, Modern Technology</h3>
+<p>Digital X-rays, intraoral cameras, and digital scanners let us capture detail and walk through findings together.</p>
+</div>
+<div class="tcard">
+<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+<h3>A Calm Experience</h3>
+<p>Appointments are designed to feel unhurried, with space for questions and explanations in plain language.</p>
+</div>
+<div class="tcard">
+<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4-7-9a7 7 0 0114 0c0 5-7 9-7 9z"/><circle cx="12" cy="12" r="2.5"/></svg>
+<h3>Care for Every Need</h3>
+<p>From children's dentistry to restorative and cosmetic care, we help patients manage evolving needs in one familiar place.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="services" style="background:var(--paper)">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow"><span class="brass-rule"></span> &nbsp;A Register of Services</span>
+<h2>Comprehensive care for every stage of life</h2>
+<p>One familiar setting for prevention, restoration, and the gentle attention your smile deserves.</p>
+</div>
+<div class="reg-list">
+<div class="reg-row">
+<span class="reg-num">01</span>
+<div><h3>Dental Hygiene</h3><p>Professional cleanings remove buildup, support gum health, and reduce the risk of future concerns.</p></div>
+<span class="reg-tag">Preventive</span>
+</div>
+<div class="reg-row">
+<span class="reg-num">02</span>
+<div><h3>Comprehensive Oral Exam</h3><p>A thorough new-patient exam gives a clear picture of your oral health and a thoughtful starting point.</p></div>
+<span class="reg-tag">General</span>
+</div>
+<div class="reg-row">
+<span class="reg-num">03</span>
+<div><h3>Emergency Dentistry</h3><p>If pain, swelling, or damage appears suddenly, we help you understand what is happening and find relief.</p></div>
+<span class="reg-tag">Urgent</span>
+</div>
+<div class="reg-row">
+<span class="reg-num">04</span>
+<div><h3>Crowns, Bridges &amp; Fillings</h3><p>Restorative dentistry that protects and rebuilds damaged teeth, with comfort kept front of mind.</p></div>
+<span class="reg-tag">Restorative</span>
+</div>
+<div class="reg-row">
+<span class="reg-num">05</span>
+<div><h3>Teeth Whitening &amp; Veneers</h3><p>Cosmetic options that brighten and refine your smile safely, guided by your own goals.</p></div>
+<span class="reg-tag">Cosmetic</span>
+</div>
+<div class="reg-row">
+<span class="reg-num">06</span>
+<div><h3>Dental Implants &amp; Invisalign</h3><p>Modern solutions for replacing teeth and straightening smiles, planned around your long-term health.</p></div>
+<span class="reg-tag">Specialty</span>
+</div>
+<div class="reg-row">
+<span class="reg-num">07</span>
+<div><h3>Pediatric &amp; Family Dentistry</h3><p>Gentle, welcoming care for children and the whole family, from first visits onward.</p></div>
+<span class="reg-tag">Family</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec comfort" id="comfort">
+<div class="wrap">
+<div>
+<span class="eyebrow"><span class="brass-rule" style="background:var(--brass-light)"></span> &nbsp;Comfort &amp; Trust</span>
+<h2>Dental care with a <em>personal touch</em></h2>
+<p>Patients of all ages are welcomed here, from young families to working professionals and seniors. Whether you are here for prevention, maintenance, or help with a specific concern, care is shaped around what matters most to you.</p>
+<p>Our team prioritizes thoughtful guidance and long-term oral health, with the steady, familiar feel of a neighbourhood practice that has known this community for decades.</p>
+<div class="comfort-quote">"Trust develops when care feels consistent and communication feels honest."<span>The Kensington Dental Promise</span></div>
+</div>
+<div class="comfort-vis">
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+<circle cx="100" cy="100" r="78" stroke="#b08d4f" stroke-width="1" opacity=".4"/>
+<circle cx="100" cy="100" r="64" stroke="#b08d4f" stroke-width="1" opacity=".25"/>
+<path d="M100 52c-14 0-22 9-22 23 0 18 22 50 22 50s22-32 22-50c0-14-8-23-22-23z" fill="#c9a96a"/>
+<circle cx="100" cy="76" r="9" fill="#0a2c20"/>
+<path d="M70 140q30 18 60 0" stroke="#c9a96a" stroke-width="2" fill="none" opacity=".6"/>
+</svg>
+</div>
+</div>
+</section>
+
+<section class="sec band" id="hours">
+<div class="wrap">
+<div class="panel">
+<span class="eyebrow">Office Hours</span>
+<h3>When to find us</h3>
+<div class="hours-row"><b>Monday</b><span>10:00 am - 8:00 pm</span></div>
+<div class="hours-row"><b>Tuesday</b><span>10:00 am - 8:00 pm</span></div>
+<div class="hours-row"><b>Wednesday</b><span>8:00 am - 4:00 pm</span></div>
+<div class="hours-row"><b>Thursday</b><span>10:00 am - 6:00 pm</span></div>
+<div class="hours-row"><b>Friday</b><span>8:00 am - 4:00 pm</span></div>
+<div class="hours-row"><b>Saturday</b><span>9:00 am - 2:00 pm</span></div>
+<div class="hours-row closed"><b>Sunday</b><span>Closed</span></div>
+</div>
+<div class="panel">
+<span class="eyebrow">Insurance &amp; Payment</span>
+<h3>Care made easier to manage</h3>
+<ul class="ins-list">
+<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Most major insurance plans accepted</li>
+<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Direct billing to simplify your visit</li>
+<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Clear estimates before treatment begins</li>
+<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Realistic options for uninsured patients</li>
+</ul>
+<div class="cdcp"><b>Canadian Dental Care Plan</b>We proudly accept the CDCP and will help you understand what is covered before your visit, so there are no surprises.</div>
+</div>
+</div>
+</section>
+
+<section class="sec team">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow"><span class="brass-rule"></span> &nbsp;Our Dentists</span>
+<h2>A familiar, steady team</h2>
+<p>Experienced clinicians who value clear communication, thoughtful treatment planning, and patient comfort.</p>
+</div>
+<div class="team-grid">
+<div class="tm">
+<div class="tm-av">SS</div>
+<h3>Dr. Shivani Shah</h3>
+<div class="role">General Dentist</div>
+<p>Committed to patient-focused care, with clear communication and thoughtful treatment planning at every visit.</p>
+</div>
+<div class="tm">
+<div class="tm-av">NF</div>
+<h3>Dr. Neyaz Ferrahi</h3>
+<div class="role">General Dentist</div>
+<p>Brings a calm, attentive approach, focused on preventive care and helping patients feel at ease during treatment.</p>
+</div>
+<div class="tm">
+<div class="tm-av">RW</div>
+<h3>Dr. Richard Wohl</h3>
+<div class="role">General Dentist</div>
+<p>DDS from Western Ontario, with decades of experience in dental surgery, including complex extractions.</p>
+</div>
+<div class="tm">
+<div class="tm-av">DJ</div>
+<h3>Dr. Deepak Joshi</h3>
+<div class="role">General Dentist</div>
+<p>Trained at King's College, University of London, with a steady, thoughtful approach to patient care.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec book" id="book">
+<div class="wrap">
+<span class="eyebrow">Your Dental Care, With Clarity and Comfort</span>
+<h2>Reserve your <em>appointment</em></h2>
+<p>Book online or give us a call, whatever works best for you. Our front desk is glad to help you find a time and answer any questions before your visit.</p>
+<a href="tel:9057917549" class="book-tel"><span class="num">(905) 791-7549</span><small>Call Kensington Dental</small></a>
+<div class="book-cta">
+<a href="https://kensingtondentists.com/accepting-new-patients/" target="_blank" rel="noopener" class="btn btn-brass">Book an Appointment</a>
+<a href="tel:9057917549" class="btn btn-ghost">Call the Office</a>
+</div>
+<p class="book-addr">18 Kensington Rd #305, Brampton, ON L6T 4S5 &nbsp;&middot;&nbsp; In the heart of Bramalea, near Bramalea City Centre</p>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="foot-grid">
+<div class="foot-brand">
+<b>Kensington Dental</b>
+<p>A trusted neighbourhood dental practice serving Brampton families with gentle, personal care for over 35 years.</p>
+</div>
+<div class="foot-col">
+<h4>Visit</h4>
+<p>18 Kensington Rd #305<br>Brampton, ON L6T 4S5</p>
+<a href="tel:9057917549">(905) 791-7549</a>
+<a href="mailto:info@kensingtondentaloffice.com">info@kensingtondentaloffice.com</a>
+</div>
+<div class="foot-col">
+<h4>Explore</h4>
+<a href="#trust">Why Choose Us</a>
+<a href="#services">Our Services</a>
+<a href="#hours">Hours &amp; Insurance</a>
+<a href="#book">Book a Visit</a>
+</div>
+</div>
+<div class="foot-bot">
+<span>&copy; 2026 Kensington Dental &middot; Brampton, ON &middot; (905) 791-7549</span>
+<span class="concept">Concept site by WebCraft Global</span>
+</div>
+</div>
+</footer>
+
+<script>
+var tog=document.getElementById('tog'),nav=document.getElementById('nav');
+tog.addEventListener('click',function(){nav.classList.toggle('open');});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+</script>
+</body>
+</html>
